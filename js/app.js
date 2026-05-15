@@ -59,27 +59,81 @@
     setEl('[data-hero-asof]', t.asOf);
   }
 
-  // ---------- Live quote (Stooq, delayed, no key) ----------
-  async function loadQuote() {
+  // ---------- Live quote ----------
+  // Strategy:
+  //   1. Try data/quote.json (same-origin, refreshed by GitHub Action from a
+  //      Google Sheet pulling =GOOGLEFINANCE("NASDAQ:EOSE", ...)). This works
+  //      on GitHub Pages because there's no cross-origin request.
+  //   2. Fallback: direct Stooq fetch (works on file:// + permissive browsers
+  //      but is blocked by CORS from github.io — that's expected).
+  //   3. If both fail, the page renders gracefully without a live price.
+  function setQuoteUnavailable(reason) {
+    setEl('[data-tk-price]', '$—');
+    const ch = document.querySelector('[data-tk-change]');
+    if (ch) ch.textContent = 'quote unavailable';
+    setEl('[data-hero-price]', '$—');
+    const hc = document.querySelector('[data-hero-change]');
+    if (hc) hc.textContent = 'live quote unavailable — see your broker';
+    setEl('[data-hero-asof]', reason || 'no source reachable');
+  }
+
+  function applyQuote(q, sourceLabel) {
+    if (!q || !isFinite(q.price) || q.price <= 0) return false;
+    D.ticker.price = q.price;
+    D.ticker.change = isFinite(q.change) ? q.change : 0;
+    D.ticker.changePct = isFinite(q.changePct) ? q.changePct
+                       : (D.ticker.change && q.price ? (D.ticker.change / (q.price - D.ticker.change)) * 100 : 0);
+    D.ticker.volume = isFinite(q.volume) ? q.volume : 0;
+    D.ticker.high52 = isFinite(q.high52) ? q.high52 : 0;
+    D.ticker.low52  = isFinite(q.low52)  ? q.low52  : 0;
+    D.ticker.marketCap = isFinite(q.marketCap) && q.marketCap > 0
+      ? q.marketCap
+      : q.price * D.ticker.shares;
+    D.ticker.asOf = sourceLabel + (q.asof ? ' · ' + q.asof : ' · ' + new Date().toLocaleString());
+    renderTicker();
+    renderHero();
+    return true;
+  }
+
+  async function loadFromGoogleSheetJson() {
+    try {
+      const r = await fetch('data/quote.json', { cache: 'no-store' });
+      if (!r.ok) return false;
+      const j = await r.json();
+      if (j.price == null || !isFinite(j.price)) return false;
+      // GOOGLEFINANCE returns volume as raw shares (e.g. 18400000). Normalize to millions.
+      const volMillions = isFinite(j.volume) && j.volume > 0 ? j.volume / 1e6 : 0;
+      const mcapMillions = isFinite(j.marketcap) && j.marketcap > 0 ? j.marketcap / 1e6 : 0;
+      return applyQuote({
+        price: j.price,
+        change: j.change,
+        changePct: j.changepct,
+        volume: volMillions,
+        high52: j.high52,
+        low52: j.low52,
+        marketCap: mcapMillions,
+        asof: j._refreshed ? new Date(j._refreshed).toLocaleString() : null
+      }, 'Google Finance via GitHub Action');
+    } catch (e) {
+      return false;
+    }
+  }
+
+  async function loadFromStooq() {
     try {
       const r = await fetch('https://stooq.com/q/l/?s=eose.us&f=sd2t2ohlcv&h&e=csv');
       const txt = await r.text();
       const rows = txt.trim().split('\n');
-      if (rows.length < 2) throw new Error('no data');
+      if (rows.length < 2) return false;
       const cells = rows[1].split(',');
       const o = parseFloat(cells[3]);
       const c = parseFloat(cells[6]);
       const v = parseInt(cells[7], 10);
-      if (!isFinite(c) || c === 0) throw new Error('stale');
+      if (!isFinite(c) || c === 0) return false;
       const chg = c - o;
-      const pct = (chg / o) * 100;
-      D.ticker.price = c;
-      D.ticker.change = chg;
-      D.ticker.changePct = pct;
-      D.ticker.volume = isFinite(v) ? v / 1e6 : 0;
-      D.ticker.marketCap = c * D.ticker.shares;
-      D.ticker.asOf = 'Stooq · ' + new Date().toLocaleString();
-      // 52-week range from daily history
+      const pct = o ? (chg / o) * 100 : 0;
+      // Try 52w
+      let high52 = 0, low52 = 0;
       try {
         const today = new Date();
         const past = new Date(); past.setFullYear(past.getFullYear() - 1);
@@ -88,22 +142,22 @@
         const ht = await hr.text();
         const hrows = ht.trim().split('\n').slice(1);
         const closes = hrows.map(r => parseFloat(r.split(',')[4])).filter(isFinite);
-        if (closes.length) {
-          D.ticker.high52 = Math.max(...closes);
-          D.ticker.low52  = Math.min(...closes);
-        }
+        if (closes.length) { high52 = Math.max(...closes); low52 = Math.min(...closes); }
       } catch (e) { /* non-fatal */ }
-      renderTicker();
-      renderHero();
+      return applyQuote({
+        price: c, change: chg, changePct: pct,
+        volume: isFinite(v) ? v / 1e6 : 0,
+        high52, low52, marketCap: c * D.ticker.shares
+      }, 'Stooq (delayed)');
     } catch (e) {
-      setEl('[data-tk-price]', '$—');
-      const ch = document.querySelector('[data-tk-change]');
-      if (ch) ch.textContent = 'quote unavailable';
-      setEl('[data-hero-price]', '$—');
-      const hc = document.querySelector('[data-hero-change]');
-      if (hc) hc.textContent = 'live quote unavailable — see your broker';
-      setEl('[data-hero-asof]', 'Stooq blocked or offline');
+      return false;
     }
+  }
+
+  async function loadQuote() {
+    if (await loadFromGoogleSheetJson()) return;
+    if (await loadFromStooq()) return;
+    setQuoteUnavailable('Configure GOOGLEFINANCE sheet (see README) or run on a CORS-permissive origin');
   }
 
   // ---------- KPIs ----------

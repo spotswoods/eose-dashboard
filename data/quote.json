@@ -1,0 +1,12 @@
+{
+  "_refreshed": "2026-05-15T00:00:00Z",
+  "_note": "Placeholder — first Google-Sheets-backed refresh happens after the Action runs. See README for setup.",
+  "price": null,
+  "change": null,
+  "changepct": null,
+  "volume": null,
+  "high52": null,
+  "low52": null,
+  "marketcap": null,
+  "shares": 339.5
+}

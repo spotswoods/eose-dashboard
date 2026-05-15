@@ -33,7 +33,66 @@ js/
 3. **Settings → Pages → Branch: `main` / folder: `/ (root)` → Save**
 4. Your dashboard is live at: `https://YOUR-USERNAME.github.io/eose-dashboard`
 
-The page works fully without any API keys. The live quote uses [Stooq](https://stooq.com/q/?s=eose.us) (delayed, no key) — if Stooq is blocked the rest of the page still renders.
+The page works fully without any API keys.
+
+---
+
+## Live quote — Google Sheets + GitHub Action
+
+GitHub Pages can't fetch from Stooq or Yahoo directly because those endpoints don't send CORS headers and most free public proxies are now paywalled. The fix: a tiny GitHub Action that fetches a Google Sheet (populated with `=GOOGLEFINANCE("NASDAQ:EOSE", ...)`) every 5 minutes, writes the values into `data/quote.json` inside the repo, and the dashboard reads that file same-origin.
+
+### One-time setup (~5 minutes)
+
+**1. Create the Google Sheet**
+
+Open a new sheet at [sheets.new](https://sheets.new) and paste this into A1:
+
+```
+price      =GOOGLEFINANCE("NASDAQ:EOSE","price")
+change     =GOOGLEFINANCE("NASDAQ:EOSE","change")
+changepct  =GOOGLEFINANCE("NASDAQ:EOSE","changepct")
+volume     =GOOGLEFINANCE("NASDAQ:EOSE","volume")
+high52     =GOOGLEFINANCE("NASDAQ:EOSE","high52")
+low52      =GOOGLEFINANCE("NASDAQ:EOSE","low52")
+marketcap  =GOOGLEFINANCE("NASDAQ:EOSE","marketcap")
+pe         =GOOGLEFINANCE("NASDAQ:EOSE","pe")
+```
+
+(Two-column key/value layout — column A is the field name, column B is the formula.)
+
+**2. Share the sheet publicly**
+
+File → Share → "Anyone with the link can view". This is required so the GitHub Action can read the CSV export without authentication.
+
+**3. Copy the Sheet ID**
+
+The ID is the long string in the URL between `/d/` and `/edit`:
+
+```
+https://docs.google.com/spreadsheets/d/  ←── this part ──→  /edit
+                                       ^ID^
+```
+
+**4. Add the ID as a repository variable**
+
+GitHub repo → **Settings → Secrets and variables → Actions → Variables tab → New repository variable**
+
+- Name: `QUOTE_SHEET_ID`
+- Value: *(paste the Sheet ID)*
+
+(Optional: also set `QUOTE_SHEET_GID` if you put the data on a tab other than the first one. The default is `0`.)
+
+**5. Trigger the first run**
+
+Actions tab → "Update EOSE quote" → "Run workflow" → main. After ~20s you'll see a new commit `chore(quote): refresh $X.XX at YYYY-MM-DDTHH:MMZ` and the dashboard will pick it up on its next page load.
+
+The Action runs every 5 minutes thereafter. It only commits when a field actually changes, so the commit history stays clean during off-hours.
+
+### Caveats
+
+- **Total delay** can reach ~30 min worst case: GOOGLEFINANCE is ~15–20 min delayed for free Google Finance data, plus GitHub Actions scheduled-cron lag of 5–15 min during peak periods.
+- **GitHub Actions free tier** is unlimited for public repos. For private repos, this Action uses ~30s per run × 12 runs/hr × 24 = ~2 hr/day, well under the 2,000 min/month free tier.
+- The dashboard **falls back to direct Stooq** for local development (`file://` and `localhost`). On `github.io`, only the JSON path works (CORS).
 
 ---
 
