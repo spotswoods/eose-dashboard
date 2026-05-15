@@ -92,6 +92,7 @@
     D.ticker.asOf = sourceLabel + (q.asof ? ' · ' + q.asof : ' · ' + new Date().toLocaleString());
     renderTicker();
     renderHero();
+    renderScenarios();  // recompute upside vs. live price
     return true;
   }
 
@@ -232,15 +233,23 @@
   function renderScenarios() {
     const grid = document.querySelector('[data-scenarios]');
     if (!grid) return;
-    grid.innerHTML = D.scenarios.map(s => `
-      <div class="scenario ${s.name.toLowerCase().replace(' ', '-')} ${s.name === 'Bull' ? 'bull' : ''}">
+    // Anchor upside math to live price (with $4.50 fallback if quote hasn't loaded).
+    const live = D.ticker.price > 0;
+    const anchor = live ? D.ticker.price : 4.50;
+    const anchorLabel = live ? `current $${anchor.toFixed(2)}` : '$4.50 ref';
+    grid.innerHTML = D.scenarios.map(s => {
+      const pct = ((s.price - anchor) / anchor) * 100;
+      const upStr = (pct >= 0 ? '+' : '') + pct.toFixed(0) + '%';
+      const tone = pct >= 0 ? 'up' : 'down';
+      return `<div class="scenario ${s.name.toLowerCase().replace(' ', '-')} ${s.name === 'Bull' ? 'bull' : ''}">
         <div class="scenario__name">${s.name} case</div>
         <div class="scenario__price">$${s.price.toFixed(2)}</div>
-        <div class="scenario__upside ${s.tone}">${s.upside} vs. $4.50</div>
+        <div class="scenario__upside ${tone}">${upStr} vs. ${anchorLabel}</div>
         <div class="scenario__row"><span class="k">FY28 Revenue</span><span class="v">${C.fmtMoney(s.rev)}</span></div>
         <div class="scenario__row"><span class="k">EV / Revenue</span><span class="v">${s.ev.toFixed(1)}x</span></div>
         <div class="scenario__row"><span class="k">Implied mcap</span><span class="v">$${(s.mcap / 1000).toFixed(2)}B</span></div>
-      </div>`).join('');
+      </div>`;
+    }).join('');
   }
 
   function renderFunnel() {
