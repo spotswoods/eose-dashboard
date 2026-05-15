@@ -1,0 +1,1103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>EOSE — Investor Dashboard</title>
+<!--
+  ╔══════════════════════════════════════════════════════════════╗
+  ║  EOSE INVESTOR DASHBOARD — GitHub Pages Setup               ║
+  ║  1. Create a new GitHub repo (e.g. "eose-dashboard")        ║
+  ║  2. Upload this index.html file                             ║
+  ║  3. Settings → Pages → Branch: main / root → Save          ║
+  ║  4. Live at: https://USERNAME.github.io/eose-dashboard      ║
+  ║                                                              ║
+  ║  DATA UPDATE: Edit the DATA block in the <script> below     ║
+  ║  after each earnings release. Clearly marked with comments. ║
+  ╚══════════════════════════════════════════════════════════════╝
+-->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<style>
+:root {
+  --bg:       #0d1117;
+  --bg2:      #161b22;
+  --bg3:      #1c2128;
+  --border:   rgba(255,255,255,0.08);
+  --border2:  rgba(255,255,255,0.14);
+  --text:     #e6edf3;
+  --muted:    #8b949e;
+  --green:    #3fb950;
+  --green2:   rgba(63,185,80,0.18);
+  --blue:     #58a6ff;
+  --blue2:    rgba(88,166,255,0.18);
+  --red:      #f85149;
+  --amber:    #d29922;
+  --purple:   #bc8cff;
+  --orange:   #f78166;
+  --radius:   8px;
+  --radius-lg:12px;
+}
+@media (prefers-color-scheme: light) {
+  :root {
+    --bg:     #f6f8fa;
+    --bg2:    #ffffff;
+    --bg3:    #eaeef2;
+    --border: rgba(0,0,0,0.08);
+    --border2:rgba(0,0,0,0.14);
+    --text:   #1f2328;
+    --muted:  #636c76;
+  }
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { font-size: 15px; }
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  line-height: 1.6;
+  min-height: 100vh;
+}
+a { color: var(--blue); text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+/* ── Layout ── */
+.wrap { max-width: 1100px; margin: 0 auto; padding: 0 1.25rem 3rem; }
+
+/* ── Header ── */
+.site-header {
+  background: var(--bg2);
+  border-bottom: 1px solid var(--border);
+  padding: 1rem 0 0;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+.hdr-inner { max-width: 1100px; margin: 0 auto; padding: 0 1.25rem; }
+.hdr-top { display: flex; align-items: baseline; gap: 10px; flex-wrap: wrap; margin-bottom: 3px; }
+.hdr-top h1 { font-size: 1.3rem; font-weight: 600; }
+.ticker { font-size: .8rem; color: var(--muted); font-weight: 400; }
+.hdr-sub { font-size: .8rem; color: var(--muted); margin-bottom: .6rem; }
+.note-bar {
+  display: inline-flex; align-items: center; gap: 6px;
+  font-size: .75rem; padding: 3px 10px;
+  border-radius: var(--radius);
+  background: rgba(210,153,34,0.12);
+  color: var(--amber);
+  border: 1px solid rgba(210,153,34,0.25);
+  margin-bottom: .75rem;
+}
+
+/* ── KPI strip ── */
+.kpi-strip {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 8px;
+  padding: .75rem 0;
+  border-top: 1px solid var(--border);
+}
+.kpi {
+  background: var(--bg3);
+  border-radius: var(--radius);
+  padding: 8px 12px;
+}
+.kpi-label { font-size: .68rem; text-transform: uppercase; letter-spacing: .05em; color: var(--muted); margin-bottom: 2px; }
+.kpi-val { font-size: 1.15rem; font-weight: 600; }
+.kpi-sub { font-size: .72rem; margin-top: 1px; }
+.pos { color: var(--green); }
+.neg { color: var(--red); }
+.neu { color: var(--muted); }
+
+/* ── Tabs ── */
+.tab-nav {
+  display: flex; gap: 2px; flex-wrap: wrap;
+  border-bottom: 1px solid var(--border);
+  background: var(--bg2);
+  max-width: 1100px; margin: 0 auto; padding: 0 1.25rem;
+}
+.tab-btn {
+  background: none; border: none;
+  border-bottom: 2px solid transparent;
+  cursor: pointer;
+  font-size: .82rem;
+  color: var(--muted);
+  padding: 9px 14px;
+  margin-bottom: -1px;
+  transition: color .15s;
+  white-space: nowrap;
+}
+.tab-btn:hover { color: var(--text); }
+.tab-btn.active { color: var(--green); border-bottom-color: var(--green); font-weight: 600; }
+
+/* ── Panels ── */
+.panel { display: none; padding-top: 1.5rem; }
+.panel.visible { display: block; }
+
+/* ── Section titles ── */
+.section-label {
+  font-size: .7rem; font-weight: 600;
+  text-transform: uppercase; letter-spacing: .07em;
+  color: var(--muted);
+  margin-bottom: .6rem;
+}
+
+/* ── Cards ── */
+.card {
+  background: var(--bg2);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 1rem 1.1rem;
+  margin-bottom: 1.25rem;
+}
+.card-title { font-size: .8rem; color: var(--muted); margin-bottom: .5rem; }
+
+/* ── Grid layouts ── */
+.g2 { display: grid; grid-template-columns: 1fr 1fr; gap: 1.1rem; margin-bottom: 1.25rem; }
+.g3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 1.1rem; margin-bottom: 1.25rem; }
+@media (max-width: 700px) { .g2, .g3 { grid-template-columns: 1fr; } }
+
+/* ── Legends ── */
+.legend { display: flex; flex-wrap: wrap; gap: 12px; font-size: .72rem; color: var(--muted); margin-bottom: 6px; }
+.ld { width: 9px; height: 9px; border-radius: 2px; display: inline-block; margin-right: 3px; vertical-align: middle; }
+.ll { width: 20px; height: 2px; display: inline-block; margin-right: 3px; vertical-align: middle; }
+
+/* ── Tables ── */
+.tbl-wrap { overflow-x: auto; }
+table.dt {
+  width: 100%; border-collapse: collapse;
+  font-size: .78rem;
+}
+table.dt th {
+  font-size: .68rem; font-weight: 500;
+  color: var(--muted);
+  text-align: right; padding: 6px 8px;
+  border-bottom: 1px solid var(--border);
+}
+table.dt th:first-child { text-align: left; }
+table.dt td {
+  padding: 6px 8px;
+  border-bottom: 1px solid var(--border);
+  text-align: right;
+}
+table.dt td:first-child { text-align: left; color: var(--muted); }
+table.dt tr.proj td { opacity: .72; font-style: italic; }
+table.dt tr:last-child td { border-bottom: none; }
+table.dt tr:hover { background: var(--bg3); }
+
+/* ── Badges ── */
+.badge {
+  display: inline-block;
+  font-size: .65rem; font-weight: 600;
+  padding: 2px 6px; border-radius: 4px;
+}
+.b-green { background: var(--green2); color: var(--green); }
+.b-blue  { background: var(--blue2);  color: var(--blue); }
+.b-amber { background: rgba(210,153,34,.18); color: var(--amber); }
+.b-red   { background: rgba(248,81,73,.18);  color: var(--red); }
+.b-muted { background: var(--bg3); color: var(--muted); }
+
+/* ── Funnel ── */
+.funnel-row { margin-bottom: 8px; }
+.funnel-meta { display: flex; justify-content: space-between; font-size: .72rem; color: var(--muted); margin-bottom: 3px; }
+.funnel-track { height: 22px; background: var(--bg3); border-radius: 4px; overflow: hidden; }
+.funnel-fill { height: 100%; border-radius: 4px; transition: width .4s ease; }
+
+/* ── Filings ── */
+.filing-item {
+  display: flex; align-items: flex-start; gap: 12px;
+  padding: 10px 0;
+  border-bottom: 1px solid var(--border);
+}
+.filing-item:last-child { border-bottom: none; }
+.filing-form {
+  min-width: 52px; text-align: center;
+  font-size: .68rem; font-weight: 700;
+  padding: 3px 6px; border-radius: 5px;
+  background: var(--bg3);
+  color: var(--muted);
+}
+.filing-form.f-10k { background: var(--green2); color: var(--green); }
+.filing-form.f-10q { background: var(--blue2); color: var(--blue); }
+.filing-form.f-8k  { background: rgba(210,153,34,.18); color: var(--amber); }
+.filing-meta { flex: 1; }
+.filing-date { font-size: .7rem; color: var(--muted); margin-top: 2px; }
+.loading-msg { color: var(--muted); font-size: .82rem; padding: 1rem 0; }
+
+/* ── Price display ── */
+.price-block { display: flex; align-items: baseline; gap: 8px; margin-bottom: .25rem; }
+.price-val { font-size: 2rem; font-weight: 700; }
+.price-chg { font-size: .85rem; }
+
+/* ── Config banner ── */
+.config-banner {
+  background: var(--bg3);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: .75rem 1rem;
+  font-size: .75rem;
+  color: var(--muted);
+  margin-bottom: 1.25rem;
+  display: flex; align-items: center; gap: 8px;
+}
+.config-banner code {
+  background: var(--bg2);
+  padding: 1px 5px;
+  border-radius: 4px;
+  font-size: .72rem;
+  color: var(--text);
+}
+
+/* ── Last updated ── */
+.last-updated { font-size: .7rem; color: var(--muted); margin-top: 1rem; text-align: right; }
+
+/* ── Scenario table ── */
+table.scen { width: 100%; border-collapse: collapse; font-size: .82rem; }
+table.scen th { font-size: .7rem; color: var(--muted); font-weight: 500; padding: 7px 10px; border-bottom: 1px solid var(--border); text-align: left; }
+table.scen td { padding: 9px 10px; border-bottom: 1px solid var(--border); }
+table.scen tr:last-child td { border-bottom: none; }
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="hdr-inner">
+    <div class="hdr-top">
+      <h1>Eos Energy Enterprises</h1>
+      <span class="ticker">NASDAQ: EOSE</span>
+    </div>
+    <div class="hdr-sub">Zinc-based long-duration energy storage — investor dashboard</div>
+    <div class="note-bar">
+      ⚠ Q1 2026 earnings reported May 13, 2026 — data update pending in this model
+    </div>
+    <div class="kpi-strip">
+      <div class="kpi">
+        <div class="kpi-label">Q4'25 Revenue</div>
+        <div class="kpi-val">$58.0M</div>
+        <div class="kpi-sub pos">+90% QoQ</div>
+      </div>
+      <div class="kpi">
+        <div class="kpi-label">FY2025 Revenue</div>
+        <div class="kpi-val">$114.2M</div>
+        <div class="kpi-sub pos">+631% YoY</div>
+      </div>
+      <div class="kpi">
+        <div class="kpi-label">Contracted Backlog</div>
+        <div class="kpi-val">$1.16B</div>
+        <div class="kpi-sub pos">Q2'26E incl. new deals</div>
+      </div>
+      <div class="kpi">
+        <div class="kpi-label">Liquidity (Q4'25)</div>
+        <div class="kpi-val">$625M</div>
+        <div class="kpi-sub neu">incl. DOE loan facility</div>
+      </div>
+      <div class="kpi">
+        <div class="kpi-label">P/S Multiple</div>
+        <div class="kpi-val">12.1x</div>
+        <div class="kpi-sub neu">FY2025 basis</div>
+      </div>
+      <div class="kpi">
+        <div class="kpi-label">Production Uptime</div>
+        <div class="kpi-val">51.4%</div>
+        <div class="kpi-sub pos">Q4'25 | target 75%</div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<div class="tab-nav" id="tabNav">
+  <button class="tab-btn active" onclick="showTab('overview')">Overview</button>
+  <button class="tab-btn" onclick="showTab('financials')">Financials</button>
+  <button class="tab-btn" onclick="showTab('production')">Production</button>
+  <button class="tab-btn" onclick="showTab('pipeline')">Pipeline &amp; Contracts</button>
+  <button class="tab-btn" onclick="showTab('valuation')">Valuation</button>
+  <button class="tab-btn" onclick="showTab('filings')">Filings &amp; News</button>
+</div>
+
+<div class="wrap">
+
+<!-- ═══════════════ OVERVIEW ═══════════════ -->
+<div id="panel-overview" class="panel visible">
+  <div class="section-label">Revenue ramp — Q1'25 actuals through Q4'28 projections</div>
+  <div class="card">
+    <div class="legend">
+      <span><span class="ld" style="background:var(--green)"></span>Actual</span>
+      <span><span class="ld" style="background:rgba(63,185,80,0.35)"></span>Projected</span>
+    </div>
+    <div style="position:relative;height:240px">
+      <canvas id="c-revRamp" role="img" aria-label="Quarterly revenue bar chart from Q1 2025 through Q4 2028">Revenue growing from $10M in Q1 2025 to projected $320M by Q4 2028.</canvas>
+    </div>
+  </div>
+  <div class="g2">
+    <div class="card">
+      <div class="card-title">Gross margin % — path to profitability (clamped at -350%)</div>
+      <div class="legend">
+        <span><span class="ll" style="background:var(--blue)"></span>Actual</span>
+        <span><span class="ll" style="background:rgba(88,166,255,.5);"></span>Projected</span>
+        <span><span class="ll" style="background:var(--red)"></span>Breakeven</span>
+      </div>
+      <div style="position:relative;height:210px">
+        <canvas id="c-gm" role="img" aria-label="Gross margin line chart improving from extreme negatives to positive territory">Gross margin improving from deeply negative to positive by Q2 2026.</canvas>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-title">Annual revenue — FY2021–FY2028E</div>
+      <div class="legend">
+        <span><span class="ld" style="background:var(--green)"></span>Actual</span>
+        <span><span class="ld" style="background:rgba(63,185,80,0.35)"></span>Projected</span>
+      </div>
+      <div style="position:relative;height:210px">
+        <canvas id="c-ann" role="img" aria-label="Annual revenue bar chart from FY2021 to FY2028 projected at $1.1 billion">Annual revenue reaching $1.1B by FY2028.</canvas>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════ FINANCIALS ═══════════════ -->
+<div id="panel-financials" class="panel">
+  <div class="g2">
+    <div class="card">
+      <div class="card-title">Quarterly revenue — full history Q1'23–Q4'28E ($M)</div>
+      <div class="legend">
+        <span><span class="ld" style="background:var(--green)"></span>Actual</span>
+        <span><span class="ld" style="background:rgba(63,185,80,0.35)"></span>Projected</span>
+      </div>
+      <div style="position:relative;height:210px">
+        <canvas id="c-revAll" role="img" aria-label="Full quarterly revenue history Q1 2023 through Q4 2028">Revenue history showing acceleration from 2024.</canvas>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-title">Operating income — path to profitability ($M)</div>
+      <div class="legend">
+        <span><span class="ld" style="background:var(--green)"></span>Profit</span>
+        <span><span class="ld" style="background:var(--red)"></span>Loss</span>
+        <span><span class="ld" style="background:rgba(248,81,73,.35)"></span>Proj. loss</span>
+        <span><span class="ld" style="background:rgba(63,185,80,.35)"></span>Proj. profit</span>
+      </div>
+      <div style="position:relative;height:210px">
+        <canvas id="c-op" role="img" aria-label="Operating income bar chart showing losses narrowing toward profitability in Q4 2027">Operating income reaching profitability in late 2027.</canvas>
+      </div>
+    </div>
+  </div>
+  <div class="g2">
+    <div class="card">
+      <div class="card-title">Liquidity — cash, equivalents &amp; DOE facility ($M)</div>
+      <div class="legend">
+        <span><span class="ll" style="background:var(--blue)"></span>Actual</span>
+        <span><span class="ll" style="background:rgba(88,166,255,.5)"></span>Projected</span>
+      </div>
+      <div style="position:relative;height:210px">
+        <canvas id="c-liq" role="img" aria-label="Liquidity line chart from Q1 2025 showing cash runway through 2028">Liquidity declining from $625M as operations scale up.</canvas>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-title">Gross margin % — full quarterly view</div>
+      <div class="legend">
+        <span><span class="ll" style="background:var(--blue)"></span>Actual</span>
+        <span><span class="ll" style="background:rgba(88,166,255,.5)"></span>Projected</span>
+      </div>
+      <div style="position:relative;height:210px">
+        <canvas id="c-gmFull" role="img" aria-label="Full gross margin history clamped at -350 percent">Gross margin trend from all historical quarters.</canvas>
+      </div>
+    </div>
+  </div>
+
+  <div class="section-label">Quarterly financial summary</div>
+  <div class="card">
+    <div class="tbl-wrap">
+      <table class="dt">
+        <thead>
+          <tr>
+            <th>Quarter</th>
+            <th>Revenue $M</th>
+            <th>Gross Margin %</th>
+            <th>Op. Income $M</th>
+            <th>Liquidity $M</th>
+            <th>Type</th>
+          </tr>
+        </thead>
+        <tbody id="fin-tbody"></tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════ PRODUCTION ═══════════════ -->
+<div id="panel-production" class="panel">
+  <div class="section-label">GWh manufacturing capacity — 5-line ramp</div>
+  <div class="card">
+    <div class="legend">
+      <span><span class="ld" style="background:var(--green)"></span>Line 1</span>
+      <span><span class="ld" style="background:var(--blue)"></span>Line 2</span>
+      <span><span class="ld" style="background:var(--purple)"></span>Line 3</span>
+      <span><span class="ld" style="background:var(--amber)"></span>Line 4</span>
+      <span><span class="ld" style="background:var(--orange)"></span>Line 5</span>
+    </div>
+    <div style="position:relative;height:260px">
+      <canvas id="c-cap" role="img" aria-label="Stacked bar chart of GWh capacity by manufacturing line from Q3 2024 to Q4 2028">Capacity growing from 0.25 GWh to over 10 GWh across five production lines.</canvas>
+    </div>
+  </div>
+  <div class="g2">
+    <div class="card">
+      <div class="card-title">Production uptime (%)</div>
+      <div style="position:relative;height:200px">
+        <canvas id="c-up" role="img" aria-label="Line chart of production uptime improving from 5 percent to 75 percent">Uptime improving toward 75% long-term target.</canvas>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-title">Graphite felt deliveries (metric tonnes) — key supply input</div>
+      <div style="position:relative;height:200px">
+        <canvas id="c-felt" role="img" aria-label="Bar chart of graphite felt deliveries by quarter">Material deliveries underpinning production ramp.</canvas>
+      </div>
+    </div>
+  </div>
+
+  <div class="section-label">Production KPI summary</div>
+  <div class="g3">
+    <div class="card">
+      <div class="kpi-label">Peak Line 1 Capacity</div>
+      <div class="kpi-val">2.0 GWh</div>
+      <div class="kpi-sub neu">Annual, fully ramped</div>
+    </div>
+    <div class="card">
+      <div class="kpi-label">Total 5-Line Target</div>
+      <div class="kpi-val">10.5 GWh</div>
+      <div class="kpi-sub neu">Full ramp by FY2028</div>
+    </div>
+    <div class="card">
+      <div class="kpi-label">Uptime Target</div>
+      <div class="kpi-val">75%</div>
+      <div class="kpi-sub neu">vs. 51.4% Q4'25 actual</div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════ PIPELINE ═══════════════ -->
+<div id="panel-pipeline" class="panel">
+  <div class="section-label">Opportunity funnel (log-scale bars)</div>
+  <div class="card" id="pipelineFunnel"></div>
+
+  <div class="g2">
+    <div class="card">
+      <div class="card-title">Contracted backlog ($M) — Q1'23 through Q2'26E</div>
+      <div style="position:relative;height:210px">
+        <canvas id="c-bl" role="img" aria-label="Line chart of contracted backlog growing to $1.16 billion">Backlog surging to $1.16B in Q2 2026 including large new orders.</canvas>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-title">New bookings per quarter ($M)</div>
+      <div style="position:relative;height:210px">
+        <canvas id="c-bk" role="img" aria-label="Bar chart of quarterly new order bookings with large Q2 2026 deal">Q2 2026 booking of $592M represents a transformational contract.</canvas>
+      </div>
+    </div>
+  </div>
+
+  <div class="section-label">Signed contracts &amp; key customers</div>
+  <div class="card">
+    <div class="tbl-wrap">
+      <table class="dt">
+        <thead>
+          <tr>
+            <th>Customer</th>
+            <th style="text-align:left">MWh</th>
+            <th style="text-align:left">Region</th>
+            <th style="text-align:left">Status</th>
+            <th>Est. Value</th>
+          </tr>
+        </thead>
+        <tbody id="contract-tbody"></tbody>
+      </table>
+    </div>
+    <p style="font-size:.7rem;color:var(--muted);margin-top:.75rem">* Contract values are estimates based on public disclosures. MWh sizes for smaller customers are approximate.</p>
+  </div>
+</div>
+
+<!-- ═══════════════ VALUATION ═══════════════ -->
+<div id="panel-valuation" class="panel">
+  <div class="g2">
+    <div class="card">
+      <div class="card-title">Price / Sales multiple — FY basis</div>
+      <div style="position:relative;height:210px">
+        <canvas id="c-ps" role="img" aria-label="Line chart of price to sales multiple from FY2018 to FY2025 declining from 189x to 12x">P/S multiple declining from bubble-era peak of 189x to 12x.</canvas>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-title">Market capitalization ($M)</div>
+      <div style="position:relative;height:210px">
+        <canvas id="c-mc" role="img" aria-label="Bar chart of EOSE market cap from FY2018 to FY2025">Market cap peaking in 2021 SPAC era, now at more moderate levels.</canvas>
+      </div>
+    </div>
+  </div>
+
+  <div class="section-label">Revenue &amp; margin bridge — FY2025 to FY2028E</div>
+  <div class="card">
+    <div class="legend">
+      <span><span class="ll" style="background:var(--green)"></span>Revenue $M (left axis)</span>
+      <span><span class="ll" style="background:var(--blue)"></span>Gross Margin % (right axis)</span>
+    </div>
+    <div style="position:relative;height:230px">
+      <canvas id="c-vb" role="img" aria-label="Dual-axis chart showing revenue growth and gross margin improvement through FY2028">Revenue and margins converging toward sustained profitability.</canvas>
+    </div>
+  </div>
+
+  <div class="section-label">Scenario analysis — FY2028E</div>
+  <div class="card">
+    <table class="scen">
+      <thead>
+        <tr>
+          <th>Scenario</th>
+          <th>FY2028E Revenue</th>
+          <th>EV / Revenue</th>
+          <th>Implied Mkt Cap</th>
+          <th>Implied Price</th>
+          <th>Upside vs. ~$4.50</th>
+        </tr>
+      </thead>
+      <tbody id="scen-tbody"></tbody>
+    </table>
+  </div>
+
+  <div class="section-label" style="margin-top:1.5rem">Historical P/S context</div>
+  <div class="g3">
+    <div class="card">
+      <div class="kpi-label">Peak P/S (FY2020)</div>
+      <div class="kpi-val">188.9x</div>
+      <div class="kpi-sub neg">SPAC bubble era</div>
+    </div>
+    <div class="card">
+      <div class="kpi-label">Current P/S (FY2025)</div>
+      <div class="kpi-val">12.1x</div>
+      <div class="kpi-sub neu">Trailing basis</div>
+    </div>
+    <div class="card">
+      <div class="kpi-label">Forward P/S (FY2026E)</div>
+      <div class="kpi-val">~4.0x</div>
+      <div class="kpi-sub pos">Based on $342M proj.</div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════ FILINGS & NEWS ═══════════════ -->
+<div id="panel-filings" class="panel">
+  <div class="config-banner">
+    ℹ Live SEC filings fetched from EDGAR (CIK 1805077). Data refreshes each page load.
+    For news headlines, add a free <a href="https://www.alphavantage.co/support/#api-key" target="_blank">Alpha Vantage key</a>
+    in the <code>CONFIG</code> block at the top of the script.
+  </div>
+
+  <div class="g2">
+    <div>
+      <div class="section-label">Recent SEC filings</div>
+      <div class="card" id="filings-list">
+        <div class="loading-msg" id="filings-loading">Loading filings from SEC EDGAR…</div>
+      </div>
+    </div>
+    <div>
+      <div class="section-label">News &amp; press releases</div>
+      <div class="card" id="news-list">
+        <div class="loading-msg" id="news-loading">Loading…</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section-label">Key dates &amp; catalysts</div>
+  <div class="card">
+    <table class="dt">
+      <thead><tr><th>Date</th><th style="text-align:left">Event</th><th style="text-align:left">Status</th></tr></thead>
+      <tbody>
+        <tr><td>May 13, 2026</td><td style="text-align:left">Q1 2026 Earnings Release</td><td style="text-align:left"><span class="badge b-green">Reported</span></td></tr>
+        <tr><td>Q2 2026</td><td style="text-align:left">Q2 2026 Earnings (est.)</td><td style="text-align:left"><span class="badge b-amber">Pending</span></td></tr>
+        <tr><td>Q2 2026</td><td style="text-align:left">DOE Loan Facility Drawdown Update</td><td style="text-align:left"><span class="badge b-amber">Watch</span></td></tr>
+        <tr><td>2026</td><td style="text-align:left">Line 2 Production Ramp</td><td style="text-align:left"><span class="badge b-blue">In progress</span></td></tr>
+        <tr><td>2026–27</td><td style="text-align:left">MN8 Energy Large Order Delivery</td><td style="text-align:left"><span class="badge b-blue">Contracted</span></td></tr>
+        <tr><td>FY2027</td><td style="text-align:left">Gross Margin Positive Target (>10%)</td><td style="text-align:left"><span class="badge b-muted">Projected</span></td></tr>
+        <tr><td>Q4 2027</td><td style="text-align:left">Operating Income Breakeven</td><td style="text-align:left"><span class="badge b-muted">Projected</span></td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="last-updated" id="last-updated"></div>
+</div>
+
+</div><!-- /wrap -->
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
+<script>
+// ╔═══════════════════════════════════════════════════════════════╗
+// ║  CONFIG — optional API keys                                   ║
+// ╚═══════════════════════════════════════════════════════════════╝
+const CONFIG = {
+  ALPHA_VANTAGE_KEY: '391F6WT9NL6WAYSR',   // get free key at alphavantage.co
+  EDGAR_CIK: '0001805077',
+};
+
+// ╔═══════════════════════════════════════════════════════════════╗
+// ║  DATA — Update these arrays after each earnings release      ║
+// ║  Last updated: Model through Q4 2025 actual                  ║
+// ╚═══════════════════════════════════════════════════════════════╝
+const DATA = {
+  // Quarter labels
+  qActual:  ['Q1\'23','Q2\'23','Q3\'23','Q4\'23','Q1\'24','Q2\'24','Q3\'24','Q4\'24','Q1\'25','Q2\'25','Q3\'25','Q4\'25'],
+  qProj:    ['Q1\'26','Q2\'26','Q3\'26','Q4\'26','Q1\'27','Q2\'27','Q3\'27','Q4\'27','Q1\'28','Q2\'28','Q3\'28','Q4\'28'],
+
+  // Quarterly revenue ($M)
+  revActual:  [8.835, 0.249, 0.684, 6.610, 6.601, 0.898, 0.854, 7.253, 10.457, 15.236, 30.512, 57.998],
+  revProj:    [56.5, 78.0, 95.47, 112.13, 146.25, 182.88, 225.75, 236.25, 243.75, 262.5, 300.0, 320.0],
+
+  // Gross margin % (quarterly)
+  gmActual:   [-204.9, -4416.5, -3008.5, -359.2, -327.6, -1472.5, -2916.9, -324.0, -234.7, -203.2, -111.2, -93.8],
+  gmProj:     [-25.0, 0.0, 2.5, 5.0, 7.5, 10.0, 12.5, 15.0, 17.5, 20.0, 22.5, 25.0],
+
+  // Operating income ($M)
+  opActual:   [-38.27, -34.60, -37.84, -42.24, -41.14, -29.04, -53.33, -51.70, -52.93, -63.85, -61.22, -81.27],
+  opProj:     [-41.88, -27.75, -25.36, -22.14, -19.83, -12.51, -2.58, 4.64, 8.66, 18.5, 33.5, 46.0],
+
+  // Liquidity ($M) — Q1'25 through Q4'25 actual, then projected Q1'26-Q4'28
+  liqActual:  [111.69, 183.18, 126.80, 624.57],
+  liqProj:    [579.57, 534.57, 489.57, 444.57, 399.57, 354.57, 309.57, 264.57, 219.57, 174.57, 129.57, 84.57],
+
+  // Annual revenue ($M) — FY2021–FY2028
+  annLabels:  ['FY2021','FY2022','FY2023','FY2024','FY2025','FY2026E','FY2027E','FY2028E'],
+  annActual:  [1.494, 17.573, 22.694, 15.606, 114.203, null, null, null],
+  annProj:    [null, null, null, null, null, 342.1, 791.1, 1126.3],
+
+  // GWh capacity by line — 18 quarters Q3'24–Q4'28
+  capLabels:  ['Q3\'24','Q4\'24','Q1\'25','Q2\'25','Q3\'25','Q4\'25','Q1\'26','Q2\'26','Q3\'26','Q4\'26','Q1\'27','Q2\'27','Q3\'27','Q4\'27','Q1\'28','Q2\'28','Q3\'28','Q4\'28'],
+  line1:      [0.25, 0.50, 0.65, 0.90, 1.20, 1.80, 2.00, 2.00, 2.00, 2.00, 2.00, 2.00, 2.00, 1.00, 0,    0,    0,    0   ],
+  line2:      [0,    0,    0,    0,    0,    0,    0,    0,    0.50, 1.00, 1.50, 1.75, 2.00, 2.00, 2.00, 2.00, 2.00, 2.00],
+  line3:      [0,    0,    0,    0,    0,    0,    0,    0,    0,    0.50, 1.00, 1.50, 2.00, 2.50, 2.50, 2.50, 2.50, 2.50],
+  line4:      [0,    0,    0,    0,    0,    0,    0,    0,    0,    0,    0,    0.50, 1.00, 1.50, 2.00, 2.50, 2.50, 2.50],
+  line5:      [0,    0,    0,    0,    0,    0,    0,    0,    0,    0,    0,    0,    0.50, 1.00, 1.50, 2.00, 2.00, 2.00],
+
+  // Production uptime % — Q3'24 through Q4'27
+  upLabels:   ['Q3\'24','Q4\'24','Q1\'25','Q2\'25','Q3\'25','Q4\'25','Q1\'26','Q2\'26','Q3\'26','Q4\'26','Q1\'27','Q2\'27','Q3\'27','Q4\'27'],
+  uptime:     [5.34, 22.11, 24.57, 26.18, 39.46, 51.44, 55.0, 60.0, 65.0, 65.0, 65.0, 70.0, 70.0, 75.0],
+
+  // Graphite felt deliveries (metric tonnes) — Q3'23 through Q4'25
+  feltLabels: ['Q3\'23','Q4\'23','Q1\'24','Q2\'24','Q3\'24','Q4\'24','Q1\'25','Q2\'25','Q3\'25','Q4\'25'],
+  felt:       [59.5, 41.2, 57.3, 13.4, 85.7, 93.1, 78.0, 301.4, 283.6, 99.1],
+
+  // Contracted backlog ($M) — Q1'23 through Q2'26E
+  blLabels:   ['Q1\'23','Q2\'23','Q3\'23','Q4\'23','Q1\'24','Q2\'24','Q3\'24','Q4\'24','Q1\'25','Q2\'25','Q3\'25','Q4\'25','Q1\'26E','Q2\'26E'],
+  backlog:    [535.1, 533.6, 539.0, 534.8, 602.7, 586.8, 588.9, 682.2, 680.9, 672.5, 644.4, 701.5, 645.0, 1159.0],
+  bookings:   [86.3, 0.6, 5.8, 2.8, 125.0, 8.1, 3.4, 174.2, 9.2, 6.9, 2.4, 240.0, 0, 592.0],
+
+  // Valuation — FY basis
+  fyValLabels:['FY2018','FY2019','FY2020','FY2021','FY2022','FY2023','FY2024','FY2025'],
+  psMultiple: [7.91, 76.54, 188.91, 37.15, 20.52, 21.55, 26.29, 12.12],
+  mktCap:     [208.8, 274.9, 645.3, 1077.9, 858.2, 1313.2, 3208.4, 2811.7],
+};
+
+// ─── Color helpers ───────────────────────────────────────────────
+const C = {
+  green:  '#3fb950', greenA: 'rgba(63,185,80,0.32)',
+  blue:   '#58a6ff', blueA:  'rgba(88,166,255,0.32)',
+  red:    '#f85149', redA:   'rgba(248,81,73,0.32)',
+  amber:  '#d29922', amberA: 'rgba(210,153,34,0.32)',
+  purple: '#bc8cff', orange: '#f78166',
+};
+const isDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+const gridCol  = isDark ? 'rgba(255,255,255,0.06)' : 'rgba(0,0,0,0.06)';
+const tickCol  = isDark ? '#8b949e' : '#636c76';
+const tooltipBg = isDark ? '#161b22' : '#ffffff';
+const tooltipTx = isDark ? '#e6edf3' : '#1f2328';
+const tooltipMt = isDark ? '#8b949e' : '#636c76';
+const tooltipBd = isDark ? 'rgba(255,255,255,0.1)' : 'rgba(0,0,0,0.1)';
+
+function baseOpts(overrides) {
+  return Object.assign({
+    responsive: true,
+    maintainAspectRatio: false,
+    plugins: {
+      legend: { display: false },
+      tooltip: {
+        backgroundColor: tooltipBg,
+        titleColor: tooltipTx,
+        bodyColor: tooltipMt,
+        borderColor: tooltipBd,
+        borderWidth: 1,
+      }
+    },
+    scales: {
+      x: { grid: { color: gridCol }, ticks: { color: tickCol, font: { size: 10 } }, border: { color: 'transparent' } },
+      y: { grid: { color: gridCol }, ticks: { color: tickCol, font: { size: 10 } }, border: { color: 'transparent' } },
+    }
+  }, overrides || {});
+}
+
+// ─── Tab switching ───────────────────────────────────────────────
+function showTab(name) {
+  document.querySelectorAll('.panel').forEach(p => p.classList.remove('visible'));
+  document.getElementById('panel-' + name).classList.add('visible');
+  document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+  event.currentTarget.classList.add('active');
+  if (name === 'filings' && !window._filingsLoaded) loadFilings();
+}
+
+// ─── Build charts ────────────────────────────────────────────────
+function buildCharts() {
+  const { qActual: qA, qProj: qP, revActual: rA, revProj: rP,
+          gmActual: gmA, gmProj: gmP, opActual: opA, opProj: opP,
+          liqActual: lA, liqProj: lP, annLabels: aL, annActual: anA, annProj: anP } = DATA;
+
+  // 1 — Revenue ramp (Q1'25+)
+  new Chart(document.getElementById('c-revRamp'), {
+    type: 'bar',
+    data: {
+      labels: [...qA.slice(8), ...qP],
+      datasets: [
+        { label: 'Actual',    data: [...rA.slice(8), ...Array(12).fill(null)], backgroundColor: C.green,  borderRadius: 3 },
+        { label: 'Projected', data: [...Array(4).fill(null), ...rP],           backgroundColor: C.greenA, borderRadius: 3 },
+      ]
+    },
+    options: baseOpts({ scales: { x: { grid: {color:gridCol}, ticks:{color:tickCol,font:{size:10},maxRotation:45}, border:{color:'transparent'} }, y: { grid:{color:gridCol}, ticks:{color:tickCol,font:{size:10},callback:v=>'$'+v+'M'}, border:{color:'transparent'} } } }),
+  });
+
+  // 2 — Gross margin (overview)
+  const gmCl = gmA.map(v => Math.max(v, -350));
+  new Chart(document.getElementById('c-gm'), {
+    type: 'line',
+    data: {
+      labels: [...qA, ...qP],
+      datasets: [
+        { label: 'Actual',    data: [...gmCl,          ...Array(12).fill(null)], borderColor: C.blue,             backgroundColor: C.blueA, fill: true,  tension: 0.3, pointRadius: 3, borderWidth: 2 },
+        { label: 'Projected', data: [...Array(12).fill(null), ...gmP],            borderColor: 'rgba(88,166,255,.5)', fill: false, tension: 0.3, pointRadius: 3, borderWidth: 2, borderDash: [5,4] },
+        { label: 'Breakeven', data: Array(24).fill(0),                            borderColor: C.red, pointRadius: 0, borderWidth: 1, borderDash: [4,3], fill: false },
+      ]
+    },
+    options: baseOpts({ scales: { x: { grid:{color:gridCol}, ticks:{color:tickCol,font:{size:9},maxRotation:45}, border:{color:'transparent'} }, y: { min:-350, grid:{color:gridCol}, ticks:{color:tickCol,font:{size:10},callback:v=>v+'%'}, border:{color:'transparent'} } } }),
+  });
+
+  // 3 — Annual revenue
+  const anVals = aL.map((_,i) => anA[i] != null ? anA[i] : anP[i]);
+  const anColors = aL.map((_,i) => i < 5 ? C.green : C.greenA);
+  new Chart(document.getElementById('c-ann'), {
+    type: 'bar',
+    data: { labels: aL, datasets: [{ label: 'Revenue', data: anVals, backgroundColor: anColors, borderRadius: 4 }] },
+    options: baseOpts({ scales: { x: { grid:{color:gridCol}, ticks:{color:tickCol,font:{size:10}}, border:{color:'transparent'} }, y: { grid:{color:gridCol}, ticks:{color:tickCol,font:{size:10},callback:v=>'$'+v+'M'}, border:{color:'transparent'} } } }),
+  });
+
+  // 4 — Rev detail full
+  new Chart(document.getElementById('c-revAll'), {
+    type: 'bar',
+    data: {
+      labels: [...qA, ...qP],
+      datasets: [
+        { label: 'Actual',    data: [...rA,              ...Array(12).fill(null)], backgroundColor: C.green,  borderRadius: 3 },
+        { label: 'Projected', data: [...Array(12).fill(null), ...rP],              backgroundColor: C.greenA, borderRadius: 3 },
+      ]
+    },
+    options: baseOpts({ scales: { x: { grid:{color:gridCol}, ticks:{color:tickCol,font:{size:9},maxRotation:60,autoSkip:true}, border:{color:'transparent'} }, y: { grid:{color:gridCol}, ticks:{color:tickCol,font:{size:10},callback:v=>'$'+v+'M'}, border:{color:'transparent'} } } }),
+  });
+
+  // 5 — Operating income (colored by sign)
+  const opAll = [...opA, ...opP];
+  const opBg  = [...opA.map(v=>v>=0?C.green:C.red), ...opP.map(v=>v>=0?C.greenA:C.redA)];
+  new Chart(document.getElementById('c-op'), {
+    type: 'bar',
+    data: { labels:[...qA,...qP], datasets:[{ label:'Op. Income', data:opAll, backgroundColor:opBg, borderRadius:3 }] },
+    options: baseOpts({ scales: { x:{grid:{color:gridCol},ticks:{color:tickCol,font:{size:9},maxRotation:60,autoSkip:true},border:{color:'transparent'}}, y:{grid:{color:gridCol},ticks:{color:tickCol,font:{size:10},callback:v=>(v<0?'-$':'$')+Math.abs(v)+'M'},border:{color:'transparent'}} } }),
+  });
+
+  // 6 — Liquidity
+  const liqLabels = ['Q1\'25','Q2\'25','Q3\'25','Q4\'25', ...qP];
+  new Chart(document.getElementById('c-liq'), {
+    type: 'line',
+    data: {
+      labels: liqLabels,
+      datasets: [
+        { label: 'Actual',    data: [...lA,               ...Array(12).fill(null)], borderColor: C.blue, backgroundColor: C.blueA, fill:true, tension:0.3, pointRadius:4, borderWidth:2 },
+        { label: 'Projected', data: [null,null,null,624.57,...lP],                   borderColor: 'rgba(88,166,255,.5)', fill:false, tension:0.3, pointRadius:3, borderWidth:2, borderDash:[5,4] },
+      ]
+    },
+    options: baseOpts({ scales: { x:{grid:{color:gridCol},ticks:{color:tickCol,font:{size:10},maxRotation:45},border:{color:'transparent'}}, y:{grid:{color:gridCol},ticks:{color:tickCol,font:{size:10},callback:v=>'$'+v+'M'},border:{color:'transparent'}} } }),
+  });
+
+  // 7 — Gross margin full (financials tab)
+  new Chart(document.getElementById('c-gmFull'), {
+    type: 'line',
+    data: {
+      labels: [...qA, ...qP],
+      datasets: [
+        { label:'Actual',    data:[...gmCl,...Array(12).fill(null)], borderColor:C.blue, backgroundColor:C.blueA, fill:true, tension:0.3, pointRadius:3, borderWidth:2 },
+        { label:'Projected', data:[...Array(12).fill(null),...gmP],  borderColor:'rgba(88,166,255,.5)', fill:false, tension:0.3, pointRadius:3, borderWidth:2, borderDash:[5,4] },
+        { label:'Breakeven', data:Array(24).fill(0), borderColor:C.red, pointRadius:0, borderWidth:1, borderDash:[4,3], fill:false },
+      ]
+    },
+    options: baseOpts({ scales: { x:{grid:{color:gridCol},ticks:{color:tickCol,font:{size:9},maxRotation:60,autoSkip:true},border:{color:'transparent'}}, y:{min:-350,grid:{color:gridCol},ticks:{color:tickCol,font:{size:10},callback:v=>v+'%'},border:{color:'transparent'}} } }),
+  });
+
+  // 8 — Capacity stacked
+  new Chart(document.getElementById('c-cap'), {
+    type: 'bar',
+    data: {
+      labels: DATA.capLabels,
+      datasets: [
+        { label:'Line 1', data:DATA.line1, backgroundColor:C.green,  borderRadius:2 },
+        { label:'Line 2', data:DATA.line2, backgroundColor:C.blue,   borderRadius:2 },
+        { label:'Line 3', data:DATA.line3, backgroundColor:C.purple, borderRadius:2 },
+        { label:'Line 4', data:DATA.line4, backgroundColor:C.amber,  borderRadius:2 },
+        { label:'Line 5', data:DATA.line5, backgroundColor:C.orange, borderRadius:2 },
+      ]
+    },
+    options: baseOpts({ scales: { x:{stacked:true,grid:{color:gridCol},ticks:{color:tickCol,font:{size:9},maxRotation:45},border:{color:'transparent'}}, y:{stacked:true,grid:{color:gridCol},ticks:{color:tickCol,font:{size:10},callback:v=>v+' GWh'},border:{color:'transparent'}} } }),
+  });
+
+  // 9 — Uptime
+  new Chart(document.getElementById('c-up'), {
+    type: 'line',
+    data: { labels:DATA.upLabels, datasets:[{ label:'Uptime %', data:DATA.uptime, borderColor:C.green, backgroundColor:'rgba(63,185,80,0.1)', fill:true, tension:0.3, pointRadius:4, borderWidth:2 }] },
+    options: baseOpts({ scales: { x:{grid:{color:gridCol},ticks:{color:tickCol,font:{size:9},maxRotation:45},border:{color:'transparent'}}, y:{min:0,max:100,grid:{color:gridCol},ticks:{color:tickCol,font:{size:10},callback:v=>v+'%'},border:{color:'transparent'}} } }),
+  });
+
+  // 10 — Felt deliveries
+  new Chart(document.getElementById('c-felt'), {
+    type: 'bar',
+    data: { labels:DATA.feltLabels, datasets:[{ label:'Felt (t)', data:DATA.felt, backgroundColor:C.amber, borderRadius:3 }] },
+    options: baseOpts({ scales: { x:{grid:{color:gridCol},ticks:{color:tickCol,font:{size:9}},border:{color:'transparent'}}, y:{grid:{color:gridCol},ticks:{color:tickCol,font:{size:10},callback:v=>v+'t'},border:{color:'transparent'}} } }),
+  });
+
+  // 11 — Pipeline funnel
+  const funnel = [
+    { label:'Total addressable market', val:50000, color:'rgba(88,166,255,0.6)' },
+    { label:'Identified opportunities',  val:8500,  color:'rgba(63,185,80,0.6)' },
+    { label:'Active pipeline (late stage)', val:3200, color:'rgba(210,153,34,0.75)' },
+    { label:'Contracted backlog',         val:1159,  color:'rgba(63,185,80,0.9)' },
+    { label:'Revenue — FY2025 TTM',       val:114,   color:'#3fb950' },
+  ];
+  const pf = document.getElementById('pipelineFunnel');
+  pf.innerHTML = funnel.map(({label,val,color}) => {
+    const pct = (Math.log10(val) / Math.log10(50000) * 100).toFixed(1);
+    const disp = val >= 1000 ? '$' + (val/1000).toFixed(2) + 'B' : '$' + val + 'M';
+    return `<div class="funnel-row">
+      <div class="funnel-meta"><span>${label}</span><strong>${disp}</strong></div>
+      <div class="funnel-track"><div class="funnel-fill" style="width:${pct}%;background:${color}"></div></div>
+    </div>`;
+  }).join('');
+
+  // 12 — Backlog
+  new Chart(document.getElementById('c-bl'), {
+    type: 'line',
+    data: { labels:DATA.blLabels, datasets:[{ label:'Backlog $M', data:DATA.backlog, borderColor:C.green, backgroundColor:'rgba(63,185,80,0.08)', fill:true, tension:0.3, pointRadius:4, borderWidth:2 }] },
+    options: baseOpts({ scales: { x:{grid:{color:gridCol},ticks:{color:tickCol,font:{size:9},maxRotation:45},border:{color:'transparent'}}, y:{grid:{color:gridCol},ticks:{color:tickCol,font:{size:10},callback:v=>'$'+v+'M'},border:{color:'transparent'}} } }),
+  });
+
+  // 13 — Bookings
+  const bkBg = DATA.bookings.map(v => v > 200 ? C.green : v > 50 ? 'rgba(63,185,80,0.6)' : C.greenA);
+  new Chart(document.getElementById('c-bk'), {
+    type: 'bar',
+    data: { labels:DATA.blLabels, datasets:[{ label:'Bookings $M', data:DATA.bookings, backgroundColor:bkBg, borderRadius:3 }] },
+    options: baseOpts({ scales: { x:{grid:{color:gridCol},ticks:{color:tickCol,font:{size:9},maxRotation:45},border:{color:'transparent'}}, y:{grid:{color:gridCol},ticks:{color:tickCol,font:{size:10},callback:v=>'$'+v+'M'},border:{color:'transparent'}} } }),
+  });
+
+  // 14 — P/S
+  new Chart(document.getElementById('c-ps'), {
+    type: 'line',
+    data: { labels:DATA.fyValLabels, datasets:[{ label:'P/S', data:DATA.psMultiple, borderColor:C.purple, backgroundColor:'rgba(188,140,255,0.1)', fill:true, tension:0.3, pointRadius:5, borderWidth:2 }] },
+    options: baseOpts({ scales: { x:{grid:{color:gridCol},ticks:{color:tickCol,font:{size:10}},border:{color:'transparent'}}, y:{grid:{color:gridCol},ticks:{color:tickCol,font:{size:10},callback:v=>v+'x'},border:{color:'transparent'}} } }),
+  });
+
+  // 15 — Market cap
+  const mcMax = Math.max(...DATA.mktCap);
+  new Chart(document.getElementById('c-mc'), {
+    type: 'bar',
+    data: { labels:DATA.fyValLabels, datasets:[{ label:'Mkt Cap $M', data:DATA.mktCap, backgroundColor:DATA.mktCap.map(v=>v===mcMax?C.blue:C.blueA), borderRadius:4 }] },
+    options: baseOpts({ scales: { x:{grid:{color:gridCol},ticks:{color:tickCol,font:{size:10}},border:{color:'transparent'}}, y:{grid:{color:gridCol},ticks:{color:tickCol,font:{size:10},callback:v=>'$'+v+'M'},border:{color:'transparent'}} } }),
+  });
+
+  // 16 — Valuation bridge (dual axis)
+  new Chart(document.getElementById('c-vb'), {
+    type: 'line',
+    data: {
+      labels: ['FY2025','FY2026E','FY2027E','FY2028E'],
+      datasets: [
+        { label:'Revenue $M',      data:[114.203,342.1,791.1,1126.3], borderColor:C.green,  backgroundColor:'rgba(63,185,80,0.07)', fill:true,  tension:0.3, pointRadius:6, borderWidth:2, yAxisID:'y'  },
+        { label:'Gross Margin %',  data:[-65.0, -5.0,  11.3,   20.0], borderColor:C.blue,   fill:false, tension:0.3, pointRadius:6, borderWidth:2, borderDash:[4,3], yAxisID:'y2' },
+      ]
+    },
+    options: {
+      responsive:true, maintainAspectRatio:false,
+      plugins:{ legend:{display:false}, tooltip:{backgroundColor:tooltipBg,titleColor:tooltipTx,bodyColor:tooltipMt,borderColor:tooltipBd,borderWidth:1} },
+      scales:{
+        x:  { grid:{color:gridCol}, ticks:{color:tickCol,font:{size:11}}, border:{color:'transparent'} },
+        y:  { grid:{color:gridCol}, ticks:{color:tickCol,font:{size:10},callback:v=>'$'+v+'M'}, border:{color:'transparent'} },
+        y2: { position:'right', grid:{display:false}, ticks:{color:C.blue,font:{size:10},callback:v=>v+'%'}, border:{color:'transparent'} },
+      }
+    }
+  });
+}
+
+// ─── Populate tables ─────────────────────────────────────────────
+function buildTables() {
+  // Financial summary table
+  const finRows = [
+    ['Q1\'25', 10.457, -234.7, -52.93, 111.69, 'A'],
+    ['Q2\'25', 15.236, -203.2, -63.85, 183.18, 'A'],
+    ['Q3\'25', 30.512, -111.2, -61.22, 126.80, 'A'],
+    ['Q4\'25', 57.998,  -93.8, -81.27, 624.57, 'A'],
+    ['Q1\'26E', 56.5,  -25.0, -41.88, 579.57, 'P'],
+    ['Q2\'26E', 78.0,    0.0, -27.75, 534.57, 'P'],
+    ['Q3\'26E', 95.47,   2.5, -25.36, 489.57, 'P'],
+    ['Q4\'26E',112.13,   5.0, -22.14, 444.57, 'P'],
+    ['Q1\'27E',146.25,   7.5, -19.83, 399.57, 'P'],
+    ['Q2\'27E',182.88,  10.0, -12.51, 354.57, 'P'],
+    ['Q3\'27E',225.75,  12.5,  -2.58, 309.57, 'P'],
+    ['Q4\'27E',236.25,  15.0,   4.64, 264.57, 'P'],
+  ];
+  const finTb = document.getElementById('fin-tbody');
+  finRows.forEach(([q,r,gm,op,liq,t]) => {
+    const tr = document.createElement('tr');
+    if (t==='P') tr.className = 'proj';
+    const gmColor = gm >= 0 ? 'var(--green)' : gm > -50 ? 'inherit' : gm > -150 ? 'var(--amber)' : 'var(--red)';
+    const opColor = op >= 0 ? 'var(--green)' : 'var(--red)';
+    tr.innerHTML = `
+      <td>${q}</td>
+      <td>$${r.toFixed(1)}M</td>
+      <td style="color:${gmColor}">${gm.toFixed(1)}%</td>
+      <td style="color:${opColor}">${op >= 0 ? '$'+op.toFixed(2)+'M' : '($'+Math.abs(op).toFixed(2)+'M)'}</td>
+      <td>$${liq.toFixed(0)}M</td>
+      <td><span class="badge ${t==='A'?'b-green':'b-muted'}">${t==='A'?'Actual':'Projected'}</span></td>
+    `;
+    finTb.appendChild(tr);
+  });
+
+  // Contracts table
+  const contracts = [
+    ['MN8 Energy',        '~590 MWh', 'USA',       'Contracted', '~$295M'],
+    ['NV Energy',         '300 MWh',  'USA (NV)',   'Contracted', '~$150M'],
+    ['PG&E',              '182.5 MWh','USA (CA)',   'Contracted', '~$91M' ],
+    ['National Grid',     '100 MWh',  'USA / UK',  'Contracted', '~$50M' ],
+    ['AES Clean Energy',  '80 MWh',   'USA',        'Contracted', '~$40M' ],
+    ['Enel North America','75 MWh',   'USA',        'Contracted', '~$38M' ],
+    ['Deseret Power',     '60 MWh',   'USA (UT)',   'Contracted', '~$30M' ],
+    ['TransAlta',         '50 MWh',   'Canada',     'Contracted', '~$25M' ],
+    ['Fortis Alberta',    '40 MWh',   'Canada',     'In progress','~$20M' ],
+    ['Duke Energy',       '35 MWh',   'USA (SE)',   'In progress','~$18M' ],
+    ['Xcel Energy',       '30 MWh',   'USA (MW)',   'In progress','~$15M' ],
+    ['Avista Utilities',  '25 MWh',   'USA (NW)',   'In progress','~$13M' ],
+  ];
+  const ctTb = document.getElementById('contract-tbody');
+  contracts.forEach(([name, mwh, region, status, val]) => {
+    const tr = document.createElement('tr');
+    const bc = status === 'Contracted' ? 'b-green' : 'b-blue';
+    tr.innerHTML = `
+      <td style="font-weight:600">${name}</td>
+      <td style="text-align:left">${mwh}</td>
+      <td style="text-align:left;color:var(--muted)">${region}</td>
+      <td style="text-align:left"><span class="badge ${bc}">${status}</span></td>
+      <td>${ val }</td>
+    `;
+    ctTb.appendChild(tr);
+  });
+
+  // Valuation scenarios
+  const scenarios = [
+    { name:'Bull', rev:'$1,126M', mult:'4.0x', mktcap:'~$4.5B', price:'~$18–22', upside:'+300–400%', color:'var(--green)' },
+    { name:'Base', rev:'$900M',   mult:'2.5x', mktcap:'~$2.3B', price:'~$10–14', upside:'+120–210%', color:'var(--blue)' },
+    { name:'Bear', rev:'$600M',   mult:'1.5x', mktcap:'~$900M', price:'~$4–6',   upside:'-10 to +30%',color:'var(--red)'  },
+  ];
+  const scenTb = document.getElementById('scen-tbody');
+  scenarios.forEach(s => {
+    const tr = document.createElement('tr');
+    tr.innerHTML = `
+      <td style="font-weight:700;color:${s.color}">${s.name}</td>
+      <td>${s.rev}</td><td>${s.mult}</td><td>${s.mktcap}</td>
+      <td style="font-weight:600">${s.price}</td>
+      <td style="color:${s.color}">${s.upside}</td>
+    `;
+    scenTb.appendChild(tr);
+  });
+}
+
+// ─── Live SEC EDGAR filings ──────────────────────────────────────
+async function loadFilings() {
+  window._filingsLoaded = true;
+  const listEl  = document.getElementById('filings-list');
+  const newsEl  = document.getElementById('news-list');
+  const loadEl  = document.getElementById('filings-loading');
+  const newsLoad = document.getElementById('news-loading');
+  const dateEl  = document.getElementById('last-updated');
+
+  try {
+    const r = await fetch(`https://data.sec.gov/submissions/CIK${CONFIG.EDGAR_CIK}.json`);
+    const data = await r.json();
+    const f = data.filings.recent;
+
+    // Filter to meaningful form types
+    const keep = ['10-K','10-Q','8-K','S-3','DEF 14A'];
+    const items = [];
+    for (let i = 0; i < Math.min(f.form.length, 80); i++) {
+      if (keep.includes(f.form[i])) {
+        items.push({
+          form:    f.form[i],
+          date:    f.filingDate[i],
+          desc:    f.primaryDocDescription[i] || '',
+          accNo:   f.accessionNumber[i].replace(/-/g,''),
+          accRaw:  f.accessionNumber[i],
+          doc:     f.primaryDocument[i],
+        });
+        if (items.length >= 20) break;
+      }
+    }
+
+    const formClass = t => {
+      if (t==='10-K') return 'f-10k';
+      if (t==='10-Q') return 'f-10q';
+      if (t.startsWith('8-K')) return 'f-8k';
+      return '';
+    };
+
+    listEl.innerHTML = items.map(it => {
+      const url = `https://www.sec.gov/Archives/edgar/data/1805077/${it.accNo}/${it.doc}`;
+      const label = it.desc || (it.form==='10-K'?'Annual Report':it.form==='10-Q'?'Quarterly Report':it.form==='8-K'?'Current Report':it.form);
+      return `<div class="filing-item">
+        <span class="filing-form ${formClass(it.form)}">${it.form}</span>
+        <div class="filing-meta">
+          <a href="${url}" target="_blank" rel="noopener">${label}</a>
+          <div class="filing-date">${it.date}</div>
+        </div>
+      </div>`;
+    }).join('');
+
+    dateEl.textContent = 'Filings last fetched: ' + new Date().toLocaleString();
+
+  } catch(e) {
+    listEl.innerHTML = `<p class="loading-msg">Could not load filings. <a href="https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0001805077&type=&dateb=&owner=include&count=40&search_text=" target="_blank">View on EDGAR →</a></p>`;
+  }
+
+  // News via Alpha Vantage (optional)
+  if (CONFIG.ALPHA_VANTAGE_KEY) {
+    try {
+      const nr = await fetch(`https://www.alphavantage.co/query?function=NEWS_SENTIMENT&tickers=EOSE&apikey=${CONFIG.ALPHA_VANTAGE_KEY}&limit=15`);
+      const nd = await nr.json();
+      const feed = nd.feed || [];
+      newsEl.innerHTML = feed.slice(0,12).map(n => `
+        <div class="filing-item">
+          <div class="filing-meta">
+            <a href="${n.url}" target="_blank" rel="noopener">${n.title}</a>
+            <div class="filing-date">${n.time_published?.slice(0,8)} · ${n.source}</div>
+          </div>
+        </div>`).join('');
+    } catch(e) {
+      newsEl.innerHTML = `<p class="loading-msg">News load failed. Add a valid Alpha Vantage key in CONFIG.</p>`;
+    }
+  } else {
+    newsEl.innerHTML = `
+      <div class="filing-item" style="flex-direction:column;gap:8px">
+        <p style="font-size:.8rem;color:var(--muted)">Add a free Alpha Vantage key to <code style="background:var(--bg3);padding:1px 5px;border-radius:4px">CONFIG.ALPHA_VANTAGE_KEY</code> to enable live news headlines.</p>
+        <p style="font-size:.8rem"><a href="https://www.alphavantage.co/support/#api-key" target="_blank">Get a free key →</a></p>
+        <hr style="border:none;border-top:1px solid var(--border);margin:.5rem 0">
+        <p style="font-size:.8rem;color:var(--muted)">Direct sources:</p>
+        <p style="font-size:.82rem"><a href="https://ir.eosenergy.com/" target="_blank">Eos Energy Investor Relations →</a></p>
+        <p style="font-size:.82rem"><a href="https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0001805077" target="_blank">SEC EDGAR all filings →</a></p>
+        <p style="font-size:.82rem"><a href="https://finance.yahoo.com/quote/EOSE/news/" target="_blank">Yahoo Finance EOSE News →</a></p>
+      </div>`;
+  }
+}
+
+// ─── Init ────────────────────────────────────────────────────────
+document.addEventListener('DOMContentLoaded', () => {
+  buildCharts();
+  buildTables();
+});
+</script>
+</body>
+</html>
