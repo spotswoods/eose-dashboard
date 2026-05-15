@@ -1,0 +1,1365 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>EOSE — Investor Dashboard</title>
+<!--
+  ╔══════════════════════════════════════════════════════════════╗
+  ║  EOSE INVESTOR DASHBOARD — GitHub Pages Setup               ║
+  ║  1. Create a new GitHub repo (e.g. "eose-dashboard")        ║
+  ║  2. Upload this index.html file                             ║
+  ║  3. Settings → Pages → Branch: main / root → Save          ║
+  ║  4. Live at: https://USERNAME.github.io/eose-dashboard      ║
+  ║                                                              ║
+  ║  DATA UPDATE: Edit the DATA block in the <script> below     ║
+  ║  after each earnings release. Clearly marked with comments. ║
+  ╚══════════════════════════════════════════════════════════════╝
+-->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<style>
+:root {
+  --bg:       #0d1117;
+  --bg2:      #161b22;
+  --bg3:      #1c2128;
+  --border:   rgba(255,255,255,0.08);
+  --border2:  rgba(255,255,255,0.14);
+  --text:     #e6edf3;
+  --muted:    #8b949e;
+  --green:    #3fb950;
+  --green2:   rgba(63,185,80,0.18);
+  --blue:     #58a6ff;
+  --blue2:    rgba(88,166,255,0.18);
+  --red:      #f85149;
+  --amber:    #d29922;
+  --purple:   #bc8cff;
+  --orange:   #f78166;
+  --radius:   8px;
+  --radius-lg:12px;
+}
+@media (prefers-color-scheme: light) {
+  :root {
+    --bg:     #f6f8fa;
+    --bg2:    #ffffff;
+    --bg3:    #eaeef2;
+    --border: rgba(0,0,0,0.08);
+    --border2:rgba(0,0,0,0.14);
+    --text:   #1f2328;
+    --muted:  #636c76;
+  }
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { font-size: 15px; }
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  line-height: 1.6;
+  min-height: 100vh;
+}
+a { color: var(--blue); text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+/* ── Layout ── */
+.wrap { max-width: 1100px; margin: 0 auto; padding: 0 1.25rem 3rem; }
+
+/* ── Header ── */
+.site-header {
+  background: var(--bg2);
+  border-bottom: 1px solid var(--border);
+  padding: 1rem 0 0;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+.hdr-inner { max-width: 1100px; margin: 0 auto; padding: 0 1.25rem; }
+.hdr-top { display: flex; align-items: baseline; gap: 10px; flex-wrap: wrap; margin-bottom: 3px; }
+.hdr-top h1 { font-size: 1.3rem; font-weight: 600; }
+.ticker { font-size: .8rem; color: var(--muted); font-weight: 400; }
+.hdr-sub { font-size: .8rem; color: var(--muted); margin-bottom: .6rem; }
+.note-bar {
+  display: inline-flex; align-items: center; gap: 6px;
+  font-size: .75rem; padding: 3px 10px;
+  border-radius: var(--radius);
+  background: rgba(210,153,34,0.12);
+  color: var(--amber);
+  border: 1px solid rgba(210,153,34,0.25);
+  margin-bottom: .75rem;
+}
+
+/* ── KPI strip ── */
+.kpi-strip {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 8px;
+  padding: .75rem 0;
+  border-top: 1px solid var(--border);
+}
+.kpi {
+  background: var(--bg3);
+  border-radius: var(--radius);
+  padding: 8px 12px;
+}
+.kpi-label { font-size: .68rem; text-transform: uppercase; letter-spacing: .05em; color: var(--muted); margin-bottom: 2px; }
+.kpi-val { font-size: 1.15rem; font-weight: 600; }
+.kpi-sub { font-size: .72rem; margin-top: 1px; }
+.pos { color: var(--green); }
+.neg { color: var(--red); }
+.neu { color: var(--muted); }
+
+/* ── Tabs ── */
+.tab-nav {
+  display: flex; gap: 2px; flex-wrap: wrap;
+  border-bottom: 1px solid var(--border);
+  background: var(--bg2);
+  max-width: 1100px; margin: 0 auto; padding: 0 1.25rem;
+}
+.tab-btn {
+  background: none; border: none;
+  border-bottom: 2px solid transparent;
+  cursor: pointer;
+  font-size: .82rem;
+  color: var(--muted);
+  padding: 9px 14px;
+  margin-bottom: -1px;
+  transition: color .15s;
+  white-space: nowrap;
+}
+.tab-btn:hover { color: var(--text); }
+.tab-btn.active { color: var(--green); border-bottom-color: var(--green); font-weight: 600; }
+
+/* ── Panels ── */
+.panel { display: none; padding-top: 1.5rem; }
+.panel.visible { display: block; }
+
+/* ── Section titles ── */
+.section-label {
+  font-size: .7rem; font-weight: 600;
+  text-transform: uppercase; letter-spacing: .07em;
+  color: var(--muted);
+  margin-bottom: .6rem;
+}
+
+/* ── Cards ── */
+.card {
+  background: var(--bg2);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 1rem 1.1rem;
+  margin-bottom: 1.25rem;
+}
+.card-title { font-size: .8rem; color: var(--muted); margin-bottom: .5rem; }
+
+/* ── Grid layouts ── */
+.g2 { display: grid; grid-template-columns: 1fr 1fr; gap: 1.1rem; margin-bottom: 1.25rem; }
+.g3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 1.1rem; margin-bottom: 1.25rem; }
+@media (max-width: 700px) { .g2, .g3 { grid-template-columns: 1fr; } }
+
+/* ── Legends ── */
+.legend { display: flex; flex-wrap: wrap; gap: 12px; font-size: .72rem; color: var(--muted); margin-bottom: 6px; }
+.ld { width: 9px; height: 9px; border-radius: 2px; display: inline-block; margin-right: 3px; vertical-align: middle; }
+.ll { width: 20px; height: 2px; display: inline-block; margin-right: 3px; vertical-align: middle; }
+
+/* ── Tables ── */
+.tbl-wrap { overflow-x: auto; }
+table.dt {
+  width: 100%; border-collapse: collapse;
+  font-size: .78rem;
+}
+table.dt th {
+  font-size: .68rem; font-weight: 500;
+  color: var(--muted);
+  text-align: right; padding: 6px 8px;
+  border-bottom: 1px solid var(--border);
+}
+table.dt th:first-child { text-align: left; }
+table.dt td {
+  padding: 6px 8px;
+  border-bottom: 1px solid var(--border);
+  text-align: right;
+}
+table.dt td:first-child { text-align: left; color: var(--muted); }
+table.dt tr.proj td { opacity: .72; font-style: italic; }
+table.dt tr:last-child td { border-bottom: none; }
+table.dt tr:hover { background: var(--bg3); }
+
+/* ── Badges ── */
+.badge {
+  display: inline-block;
+  font-size: .65rem; font-weight: 600;
+  padding: 2px 6px; border-radius: 4px;
+}
+.b-green { background: var(--green2); color: var(--green); }
+.b-blue  { background: var(--blue2);  color: var(--blue); }
+.b-amber { background: rgba(210,153,34,.18); color: var(--amber); }
+.b-red   { background: rgba(248,81,73,.18);  color: var(--red); }
+.b-muted { background: var(--bg3); color: var(--muted); }
+
+/* ── Funnel ── */
+.funnel-row { margin-bottom: 8px; }
+.funnel-meta { display: flex; justify-content: space-between; font-size: .72rem; color: var(--muted); margin-bottom: 3px; }
+.funnel-track { height: 22px; background: var(--bg3); border-radius: 4px; overflow: hidden; }
+.funnel-fill { height: 100%; border-radius: 4px; transition: width .4s ease; }
+
+/* ── Filings ── */
+.filing-item {
+  display: flex; align-items: flex-start; gap: 12px;
+  padding: 10px 0;
+  border-bottom: 1px solid var(--border);
+}
+.filing-item:last-child { border-bottom: none; }
+.filing-form {
+  min-width: 52px; text-align: center;
+  font-size: .68rem; font-weight: 700;
+  padding: 3px 6px; border-radius: 5px;
+  background: var(--bg3);
+  color: var(--muted);
+}
+.filing-form.f-10k { background: var(--green2); color: var(--green); }
+.filing-form.f-10q { background: var(--blue2); color: var(--blue); }
+.filing-form.f-8k  { background: rgba(210,153,34,.18); color: var(--amber); }
+.filing-meta { flex: 1; }
+.filing-date { font-size: .7rem; color: var(--muted); margin-top: 2px; }
+.loading-msg { color: var(--muted); font-size: .82rem; padding: 1rem 0; }
+
+/* ── Price display ── */
+.price-block { display: flex; align-items: baseline; gap: 8px; margin-bottom: .25rem; }
+.price-val { font-size: 2rem; font-weight: 700; }
+.price-chg { font-size: .85rem; }
+
+/* ── Config banner ── */
+.config-banner {
+  background: var(--bg3);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: .75rem 1rem;
+  font-size: .75rem;
+  color: var(--muted);
+  margin-bottom: 1.25rem;
+  display: flex; align-items: center; gap: 8px;
+}
+.config-banner code {
+  background: var(--bg2);
+  padding: 1px 5px;
+  border-radius: 4px;
+  font-size: .72rem;
+  color: var(--text);
+}
+
+/* ── Last updated ── */
+.last-updated { font-size: .7rem; color: var(--muted); margin-top: 1rem; text-align: right; }
+
+/* ── Scenario table ── */
+table.scen { width: 100%; border-collapse: collapse; font-size: .82rem; }
+table.scen th { font-size: .7rem; color: var(--muted); font-weight: 500; padding: 7px 10px; border-bottom: 1px solid var(--border); text-align: left; }
+table.scen td { padding: 9px 10px; border-bottom: 1px solid var(--border); }
+table.scen tr:last-child td { border-bottom: none; }
+
+/* ── Footer ── */
+.site-footer { max-width:1100px; margin:2rem auto 0; padding:1.25rem; font-size:.7rem; color:var(--muted); border-top:1px solid var(--border); line-height:1.6; }
+.site-footer strong { color:var(--text); }
+.site-footer a { color:var(--blue); }
+
+/* ── Print ── */
+@media print {
+  :root { --bg:#fff; --bg2:#fff; --bg3:#f6f6f6; --text:#000; --muted:#444; --border:#ccc; }
+  body { background:#fff; color:#000; }
+  .site-header, .tab-nav { position:static; }
+  .tab-nav { display:none; }
+  .panel { display:block !important; page-break-before: always; padding-top: 0.5rem; }
+  .panel:first-of-type { page-break-before: avoid; }
+  .card { break-inside: avoid; box-shadow: none; }
+  canvas { max-height: 200px !important; }
+  a { color:#000; text-decoration:none; }
+  .note-bar, .config-banner { display:none; }
+}
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="hdr-inner">
+    <div class="hdr-top">
+      <h1>Eos Energy Enterprises</h1>
+      <span class="ticker">NASDAQ: EOSE</span>
+    </div>
+    <div class="hdr-sub">Zinc-based long-duration energy storage — investor dashboard</div>
+    <div class="note-bar" style="background:rgba(63,185,80,.12);color:var(--green);border-color:rgba(63,185,80,.25)">
+      ✓ Updated through Q1 2026 actuals (filed May 13, 2026 · <a href="https://www.sec.gov/Archives/edgar/data/1805077/000162828026034368/eose-20260331.htm" target="_blank" rel="noopener" style="color:var(--green);text-decoration:underline">10-Q</a>)
+    </div>
+    <div class="kpi-strip">
+      <div class="kpi">
+        <div class="kpi-label">Q1'26 Revenue</div>
+        <div class="kpi-val">$57.0M</div>
+        <div class="kpi-sub pos">+445% YoY</div>
+      </div>
+      <div class="kpi">
+        <div class="kpi-label">FY2026 Guidance</div>
+        <div class="kpi-val">$300–400M</div>
+        <div class="kpi-sub pos">reaffirmed Q1'26</div>
+      </div>
+      <div class="kpi">
+        <div class="kpi-label">Backlog (3/31/26)</div>
+        <div class="kpi-val">$644.6M</div>
+        <div class="kpi-sub neu">2.6 GWh · +2 GWh Frontier post-Q1</div>
+      </div>
+      <div class="kpi">
+        <div class="kpi-label">Commercial Pipeline</div>
+        <div class="kpi-val">$24.3B</div>
+        <div class="kpi-sub pos">+56% YoY</div>
+      </div>
+      <div class="kpi">
+        <div class="kpi-label">Total Cash (3/31/26)</div>
+        <div class="kpi-val">$472.4M</div>
+        <div class="kpi-sub neu">incl. $61.7M restricted</div>
+      </div>
+      <div class="kpi">
+        <div class="kpi-label">Gross Margin Q1'26</div>
+        <div class="kpi-val">-78.0%</div>
+        <div class="kpi-sub pos">+157 ppt YoY · +16 ppt QoQ</div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<div class="tab-nav" id="tabNav">
+  <button class="tab-btn active" data-tab="overview"   onclick="showTab('overview', event)">Overview</button>
+  <button class="tab-btn"        data-tab="financials" onclick="showTab('financials', event)">Financials</button>
+  <button class="tab-btn"        data-tab="production" onclick="showTab('production', event)">Production</button>
+  <button class="tab-btn"        data-tab="pipeline"   onclick="showTab('pipeline', event)">Pipeline &amp; Contracts</button>
+  <button class="tab-btn"        data-tab="valuation"  onclick="showTab('valuation', event)">Valuation</button>
+  <button class="tab-btn"        data-tab="filings"    onclick="showTab('filings', event)">Filings &amp; News</button>
+</div>
+
+<div class="wrap">
+
+<!-- ═══════════════ OVERVIEW ═══════════════ -->
+<div id="panel-overview" class="panel visible">
+
+  <div class="section-label">Live quote · Q1 2026 highlights</div>
+  <div class="g2">
+    <div class="card" id="quote-card">
+      <div class="card-title">EOSE — last sale (delayed ~15 min)</div>
+      <div class="price-block">
+        <span class="price-val" id="q-price">—</span>
+        <span class="price-chg" id="q-chg">loading…</span>
+      </div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:6px 16px;font-size:.75rem;color:var(--muted);margin-top:8px" id="q-meta">
+        <span>52w range: <span id="q-range">—</span></span>
+        <span>Volume: <span id="q-vol">—</span></span>
+        <span>Mkt cap: <span id="q-mc">—</span></span>
+        <span>Shares out: 339.5M</span>
+      </div>
+      <p style="font-size:.65rem;color:var(--muted);margin-top:8px">Source: Stooq (free, delayed). For real-time use your broker.</p>
+    </div>
+    <div class="card">
+      <div class="card-title">Q1 2026 — what changed</div>
+      <ul style="list-style:none;font-size:.82rem;line-height:1.65">
+        <li>✓ <strong>Revenue $57.0M</strong>, +445% YoY — two consecutive quarters now exceed full FY2025</li>
+        <li>✓ <strong>GM −78.0%</strong> (+157 ppt YoY, +16 ppt QoQ) — scale economics arriving</li>
+        <li>✓ <strong>Op. loss $(79.3)M</strong>; adj. EBITDA loss $(68.0)M</li>
+        <li>✓ <strong>$472.4M total cash</strong> (incl. $61.7M restricted)</li>
+        <li>✓ <strong>Pipeline $24.3B</strong> (+56% YoY); backlog $644.6M / 2.6 GWh</li>
+        <li>✓ <strong>FY2026 guidance reaffirmed at $300–400M</strong></li>
+        <li>✓ <strong>Line 2</strong> installation/power-on underway at Thorn Hill; initial production by end Q2'26</li>
+        <li>✓ <strong>&gt;6.0 GWh cumulative discharged energy</strong> on Eos technology</li>
+      </ul>
+      <p style="font-size:.65rem;color:var(--muted);margin-top:.5rem">All figures: <a href="https://www.sec.gov/Archives/edgar/data/1805077/000162828026034368/eose-20260331.htm" target="_blank">Q1'26 10-Q</a> · <a href="https://www.sec.gov/Archives/edgar/data/1805077/000162828026034367/eoseq1fy26earningsreleas.htm" target="_blank">earnings release</a></p>
+    </div>
+  </div>
+
+  <div class="section-label">Frontier Power USA — newly formed Cerberus joint venture (May 13, 2026)</div>
+  <div class="card" style="border-left:3px solid var(--purple)">
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:1.2rem">
+      <div>
+        <p style="font-size:.85rem;margin-bottom:8px"><strong>What it is.</strong> Stand-alone development &amp; investment company to build, own, and operate a portfolio of long-duration battery storage projects deploying Eos' Z3 zinc bromide systems, targeting Independent Power Producer (IPP) status.</p>
+        <p style="font-size:.85rem"><strong>Why it matters.</strong> Solves the chicken-and-egg of LDES financing by combining (i) Eos' tech, (ii) Cerberus capital + operating muscle, and (iii) a <em>Technology Performance Insurance</em> (TPI) wrap from Ariel Green that lets project lenders treat Z3 output as financeable.</p>
+      </div>
+      <div style="font-size:.8rem">
+        <div style="display:grid;grid-template-columns:auto 1fr;gap:6px 14px">
+          <span style="color:var(--muted)">Cerberus equity:</span><strong>$100M committed</strong>
+          <span style="color:var(--muted)">Eos target contribution:</span><strong>~$150M*</strong>
+          <span style="color:var(--muted)">Anchor reservation:</span><strong>2 GWh firm capacity</strong>
+          <span style="color:var(--muted)">Pipeline target:</span><strong>Multi-GWh across DC, utility, industrial</strong>
+          <span style="color:var(--muted)">TPI underwriter:</span><strong>Ariel Green (specialty)</strong>
+          <span style="color:var(--muted)">Cerberus lock-up:</span><strong>Extended through YE 2026</strong>
+        </div>
+        <p style="font-size:.65rem;color:var(--muted);margin-top:8px">*Subject to Eos' ability to raise funding and third-party approvals.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="section-label">Revenue ramp — Q1'25 actuals through Q4'28 projections</div>
+  <div class="card">
+    <div class="legend">
+      <span><span class="ld" style="background:var(--green)"></span>Actual</span>
+      <span><span class="ld" style="background:rgba(63,185,80,0.35)"></span>Projected</span>
+    </div>
+    <div style="position:relative;height:240px">
+      <canvas id="c-revRamp" role="img" aria-label="Quarterly revenue bar chart from Q1 2025 through Q4 2028">Revenue growing from $10M in Q1 2025 to projected $320M by Q4 2028.</canvas>
+    </div>
+  </div>
+  <div class="g2">
+    <div class="card">
+      <div class="card-title">Gross margin % — path to profitability (clamped at -350%)</div>
+      <div class="legend">
+        <span><span class="ll" style="background:var(--blue)"></span>Actual</span>
+        <span><span class="ll" style="background:rgba(88,166,255,.5);"></span>Projected</span>
+        <span><span class="ll" style="background:var(--red)"></span>Breakeven</span>
+      </div>
+      <div style="position:relative;height:210px">
+        <canvas id="c-gm" role="img" aria-label="Gross margin line chart improving from extreme negatives to positive territory">Gross margin improving from deeply negative to positive by Q2 2026.</canvas>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-title">Annual revenue — FY2021–FY2028E</div>
+      <div class="legend">
+        <span><span class="ld" style="background:var(--green)"></span>Actual</span>
+        <span><span class="ld" style="background:rgba(63,185,80,0.35)"></span>Projected</span>
+      </div>
+      <div style="position:relative;height:210px">
+        <canvas id="c-ann" role="img" aria-label="Annual revenue bar chart from FY2021 to FY2028 projected at $1.1 billion">Annual revenue reaching $1.1B by FY2028.</canvas>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════ FINANCIALS ═══════════════ -->
+<div id="panel-financials" class="panel">
+  <div class="g2">
+    <div class="card">
+      <div class="card-title">Quarterly revenue — full history Q1'23–Q4'28E ($M)</div>
+      <div class="legend">
+        <span><span class="ld" style="background:var(--green)"></span>Actual</span>
+        <span><span class="ld" style="background:rgba(63,185,80,0.35)"></span>Projected</span>
+      </div>
+      <div style="position:relative;height:210px">
+        <canvas id="c-revAll" role="img" aria-label="Full quarterly revenue history Q1 2023 through Q4 2028">Revenue history showing acceleration from 2024.</canvas>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-title">Operating income — path to profitability ($M)</div>
+      <div class="legend">
+        <span><span class="ld" style="background:var(--green)"></span>Profit</span>
+        <span><span class="ld" style="background:var(--red)"></span>Loss</span>
+        <span><span class="ld" style="background:rgba(248,81,73,.35)"></span>Proj. loss</span>
+        <span><span class="ld" style="background:rgba(63,185,80,.35)"></span>Proj. profit</span>
+      </div>
+      <div style="position:relative;height:210px">
+        <canvas id="c-op" role="img" aria-label="Operating income bar chart showing losses narrowing toward profitability in Q4 2027">Operating income reaching profitability in late 2027.</canvas>
+      </div>
+    </div>
+  </div>
+  <div class="g2">
+    <div class="card">
+      <div class="card-title">Liquidity — cash, equivalents &amp; DOE facility ($M)</div>
+      <div class="legend">
+        <span><span class="ll" style="background:var(--blue)"></span>Actual</span>
+        <span><span class="ll" style="background:rgba(88,166,255,.5)"></span>Projected</span>
+      </div>
+      <div style="position:relative;height:210px">
+        <canvas id="c-liq" role="img" aria-label="Liquidity line chart from Q1 2025 showing cash runway through 2028">Liquidity declining from $625M as operations scale up.</canvas>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-title">Gross margin % — full quarterly view</div>
+      <div class="legend">
+        <span><span class="ll" style="background:var(--blue)"></span>Actual</span>
+        <span><span class="ll" style="background:rgba(88,166,255,.5)"></span>Projected</span>
+      </div>
+      <div style="position:relative;height:210px">
+        <canvas id="c-gmFull" role="img" aria-label="Full gross margin history clamped at -350 percent">Gross margin trend from all historical quarters.</canvas>
+      </div>
+    </div>
+  </div>
+
+  <div class="section-label">
+    Quarterly financial summary
+    <button onclick="exportCSV()" style="float:right;background:var(--bg3);color:var(--text);border:1px solid var(--border);border-radius:4px;font-size:.7rem;padding:3px 10px;cursor:pointer;font-weight:600">⬇ CSV</button>
+  </div>
+  <div class="card">
+    <div class="tbl-wrap">
+      <table class="dt">
+        <thead>
+          <tr>
+            <th>Quarter</th>
+            <th>Revenue $M</th>
+            <th>Gross Margin %</th>
+            <th>Op. Income $M</th>
+            <th>Cash $M</th>
+            <th>Type</th>
+          </tr>
+        </thead>
+        <tbody id="fin-tbody"></tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="section-label">Capital structure — as of March 31, 2026</div>
+  <div class="g2">
+    <div class="card">
+      <div class="card-title">Liabilities &amp; preferred ($M)</div>
+      <table class="dt">
+        <tbody>
+          <tr><td>Long-term debt</td><td>$506.4M</td></tr>
+          <tr><td>Notes payable — related party (Cerberus)</td><td>$113.1M</td></tr>
+          <tr><td>Warrants liability</td><td>$112.8M</td></tr>
+          <tr><td>Warrants liability — related party</td><td>$203.5M</td></tr>
+          <tr><td>Series B Preferred Stock (Cerberus)</td><td>$582.7M</td></tr>
+          <tr><td>Other current + LT liabilities</td><td>$149.3M</td></tr>
+          <tr style="font-weight:700"><td>Total liabilities + preferred</td><td>$1,667.8M</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="card">
+      <div class="card-title">Equity, shares &amp; key cash items</div>
+      <table class="dt">
+        <tbody>
+          <tr><td>Common shares outstanding</td><td>339,459,021</td></tr>
+          <tr><td>Authorized shares</td><td>600,000,000</td></tr>
+          <tr><td>Common stock par value</td><td>$0.0001</td></tr>
+          <tr><td>Additional paid-in capital</td><td>$1,247.7M</td></tr>
+          <tr><td>Accumulated deficit</td><td>$(2,026.9)M</td></tr>
+          <tr><td>Total shareholders' deficit</td><td style="color:var(--red)">$(868.4)M</td></tr>
+          <tr><td>45X IRA grant receivable</td><td style="color:var(--green)">$21.4M</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="card" style="background:var(--bg3);border-left:3px solid var(--amber)">
+    <div style="font-size:.78rem;line-height:1.6">
+      <strong style="color:var(--amber)">⚠ Capital structure reading guide.</strong>
+      The $868M shareholders' deficit is largely a function of mark-to-market accounting on Cerberus convertibles and warrants — not an economic deficit. Most of these instruments either convert to equity at strike or settle via the Cerberus structure. Watch four things: (1) <strong>cash burn</strong>: $(152)M in Q1'26 alone (Q4'25 $625M → Q1'26 $472M) — implied runway absent new capital is ~3 quarters; (2) <strong>shelf capacity</strong>: S-3ASR filed May 13, 2026 (well-known seasoned issuer); (3) <strong>Frontier Power USA</strong> would absorb Eos' ~$150M commitment if it closes; (4) <strong>Cerberus dilution</strong>: Series B preferred carries remeasurement (Q1'26: +$778.9M remeas) and converts into common over time. Reconcile against the 10-Q before acting.
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════ PRODUCTION ═══════════════ -->
+<div id="panel-production" class="panel">
+  <div class="section-label">GWh manufacturing capacity — 5-line ramp</div>
+  <div class="card">
+    <div class="legend">
+      <span><span class="ld" style="background:var(--green)"></span>Line 1</span>
+      <span><span class="ld" style="background:var(--blue)"></span>Line 2</span>
+      <span><span class="ld" style="background:var(--purple)"></span>Line 3</span>
+      <span><span class="ld" style="background:var(--amber)"></span>Line 4</span>
+      <span><span class="ld" style="background:var(--orange)"></span>Line 5</span>
+    </div>
+    <div style="position:relative;height:260px">
+      <canvas id="c-cap" role="img" aria-label="Stacked bar chart of GWh capacity by manufacturing line from Q3 2024 to Q4 2028">Capacity growing from 0.25 GWh to over 10 GWh across five production lines.</canvas>
+    </div>
+  </div>
+  <div class="g2">
+    <div class="card">
+      <div class="card-title">Production uptime (%)</div>
+      <div style="position:relative;height:200px">
+        <canvas id="c-up" role="img" aria-label="Line chart of production uptime improving from 5 percent to 75 percent">Uptime improving toward 75% long-term target.</canvas>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-title">Graphite felt deliveries (metric tonnes) — key supply input</div>
+      <div style="position:relative;height:200px">
+        <canvas id="c-felt" role="img" aria-label="Bar chart of graphite felt deliveries by quarter">Material deliveries underpinning production ramp.</canvas>
+      </div>
+    </div>
+  </div>
+
+  <div class="section-label">Production KPI summary</div>
+  <div class="g3">
+    <div class="card">
+      <div class="kpi-label">Peak Line 1 Capacity</div>
+      <div class="kpi-val">2.0 GWh</div>
+      <div class="kpi-sub neu">Annual, fully ramped</div>
+    </div>
+    <div class="card">
+      <div class="kpi-label">Total 5-Line Target</div>
+      <div class="kpi-val">10.5 GWh</div>
+      <div class="kpi-sub neu">Full ramp by FY2028</div>
+    </div>
+    <div class="card">
+      <div class="kpi-label">Cumulative Discharged</div>
+      <div class="kpi-val">&gt;6.0 GWh</div>
+      <div class="kpi-sub pos">Q1'26 milestone</div>
+    </div>
+  </div>
+
+  <div class="section-label">Z3® product technical profile</div>
+  <div class="card">
+    <div class="tbl-wrap">
+      <table class="dt">
+        <thead><tr><th>Attribute</th><th style="text-align:left">Z3 / Eos Cube</th><th style="text-align:left">Why it matters</th></tr></thead>
+        <tbody>
+          <tr><td>Chemistry</td><td style="text-align:left">Aqueous zinc bromide (Znyth®)</td><td style="text-align:left">Non-flammable; no thermal runaway risk vs. Li-ion</td></tr>
+          <tr><td>Duration</td><td style="text-align:left">4 – 16+ hours</td><td style="text-align:left">Target LDES segment Li-ion can't economically reach</td></tr>
+          <tr><td>Cube energy</td><td style="text-align:left">~280 kWh DC per cube</td><td style="text-align:left">Modular building block; field-replaceable</td></tr>
+          <tr><td>Cycle life</td><td style="text-align:left">~6,000+ cycles to 100% DoD</td><td style="text-align:left">Roughly 1 cycle/day for 16+ years; no calendar derate</td></tr>
+          <tr><td>Round-trip efficiency</td><td style="text-align:left">~75–80% (improving per DawnOS)</td><td style="text-align:left">Below Li-ion (~85–90%) — offset by longer duration use cases</td></tr>
+          <tr><td>Operating temperature</td><td style="text-align:left">-20 °C to +50 °C, no HVAC required</td><td style="text-align:left">Big BOS / capex savings on container conditioning</td></tr>
+          <tr><td>Supply chain</td><td style="text-align:left">Zinc + bromine — non-CRM, US-sourced</td><td style="text-align:left">IRA 45X qualified; ITC/PTC tailwinds; no China dependence</td></tr>
+          <tr><td>Controls</td><td style="text-align:left">DawnOS® (proprietary)</td><td style="text-align:left">Closed-loop optimization; firmware-driven RTE gains</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p style="font-size:.65rem;color:var(--muted);margin-top:.6rem">Specs compiled from Eos product literature, 10-K disclosures, and press releases. Always verify against the latest data sheet at <a href="https://eose.com" target="_blank">eose.com</a>.</p>
+  </div>
+
+  <div class="section-label">Competitive landscape — LDES &amp; bulk-storage technologies</div>
+  <div class="card">
+    <div class="tbl-wrap">
+      <table class="dt">
+        <thead><tr><th>Technology</th><th style="text-align:left">Lead company</th><th style="text-align:left">Duration sweet spot</th><th style="text-align:left">Status</th><th style="text-align:left">Eos advantage</th></tr></thead>
+        <tbody>
+          <tr><td>Zinc bromide (Znyth)</td><td style="text-align:left"><strong>Eos Energy</strong></td><td style="text-align:left">4–16+ hr</td><td style="text-align:left">Commercial, scaling</td><td style="text-align:left">— (this is Eos)</td></tr>
+          <tr><td>Lithium-ion (NMC/LFP)</td><td style="text-align:left">Tesla Megapack, CATL, BYD</td><td style="text-align:left">2–4 hr</td><td style="text-align:left">Dominant incumbent</td><td style="text-align:left">Safer, longer-duration, no CRMs</td></tr>
+          <tr><td>Iron-air</td><td style="text-align:left">Form Energy</td><td style="text-align:left">100 hr</td><td style="text-align:left">Pre-commercial</td><td style="text-align:left">Higher RTE, faster to revenue</td></tr>
+          <tr><td>Iron flow</td><td style="text-align:left">ESS Inc.</td><td style="text-align:left">4–12 hr</td><td style="text-align:left">Limited commercial</td><td style="text-align:left">Higher energy density, simpler BOP</td></tr>
+          <tr><td>Vanadium flow</td><td style="text-align:left">Invinity, Stryten</td><td style="text-align:left">4–12 hr</td><td style="text-align:left">Niche</td><td style="text-align:left">No vanadium price exposure</td></tr>
+          <tr><td>Compressed air</td><td style="text-align:left">Hydrostor</td><td style="text-align:left">8–24 hr</td><td style="text-align:left">Limited projects</td><td style="text-align:left">Modular, no geology dependence</td></tr>
+          <tr><td>Gravity / thermal</td><td style="text-align:left">Energy Vault, MGA</td><td style="text-align:left">8+ hr</td><td style="text-align:left">Early</td><td style="text-align:left">Proven chemistry vs. demo-stage</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════ PIPELINE ═══════════════ -->
+<div id="panel-pipeline" class="panel">
+  <div class="section-label">Opportunity funnel (log-scale bars)</div>
+  <div class="card" id="pipelineFunnel"></div>
+
+  <div class="g2">
+    <div class="card">
+      <div class="card-title">Contracted backlog ($M) — Q1'23 through Q2'26E</div>
+      <div style="position:relative;height:210px">
+        <canvas id="c-bl" role="img" aria-label="Line chart of contracted backlog growing to $1.16 billion">Backlog surging to $1.16B in Q2 2026 including large new orders.</canvas>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-title">New bookings per quarter ($M)</div>
+      <div style="position:relative;height:210px">
+        <canvas id="c-bk" role="img" aria-label="Bar chart of quarterly new order bookings with large Q2 2026 deal">Q2 2026 booking of $592M represents a transformational contract.</canvas>
+      </div>
+    </div>
+  </div>
+
+  <div class="section-label">Signed contracts &amp; key customers</div>
+  <div class="card">
+    <div class="tbl-wrap">
+      <table class="dt">
+        <thead>
+          <tr>
+            <th>Customer</th>
+            <th style="text-align:left">MWh</th>
+            <th style="text-align:left">Region</th>
+            <th style="text-align:left">Status</th>
+            <th>Est. Value</th>
+          </tr>
+        </thead>
+        <tbody id="contract-tbody"></tbody>
+      </table>
+    </div>
+    <p style="font-size:.7rem;color:var(--muted);margin-top:.75rem">* Contract values are estimates based on public disclosures. MWh sizes for smaller customers are approximate.</p>
+  </div>
+</div>
+
+<!-- ═══════════════ VALUATION ═══════════════ -->
+<div id="panel-valuation" class="panel">
+  <div class="g2">
+    <div class="card">
+      <div class="card-title">Price / Sales multiple — FY basis</div>
+      <div style="position:relative;height:210px">
+        <canvas id="c-ps" role="img" aria-label="Line chart of price to sales multiple from FY2018 to FY2025 declining from 189x to 12x">P/S multiple declining from bubble-era peak of 189x to 12x.</canvas>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-title">Market capitalization ($M)</div>
+      <div style="position:relative;height:210px">
+        <canvas id="c-mc" role="img" aria-label="Bar chart of EOSE market cap from FY2018 to FY2025">Market cap peaking in 2021 SPAC era, now at more moderate levels.</canvas>
+      </div>
+    </div>
+  </div>
+
+  <div class="section-label">Revenue &amp; margin bridge — FY2025 to FY2028E</div>
+  <div class="card">
+    <div class="legend">
+      <span><span class="ll" style="background:var(--green)"></span>Revenue $M (left axis)</span>
+      <span><span class="ll" style="background:var(--blue)"></span>Gross Margin % (right axis)</span>
+    </div>
+    <div style="position:relative;height:230px">
+      <canvas id="c-vb" role="img" aria-label="Dual-axis chart showing revenue growth and gross margin improvement through FY2028">Revenue and margins converging toward sustained profitability.</canvas>
+    </div>
+  </div>
+
+  <div class="section-label">Scenario analysis — FY2028E</div>
+  <div class="card">
+    <table class="scen">
+      <thead>
+        <tr>
+          <th>Scenario</th>
+          <th>FY2028E Revenue</th>
+          <th>EV / Revenue</th>
+          <th>Implied Mkt Cap</th>
+          <th>Implied Price</th>
+          <th>Upside vs. ~$4.50</th>
+        </tr>
+      </thead>
+      <tbody id="scen-tbody"></tbody>
+    </table>
+  </div>
+
+  <div class="section-label" style="margin-top:1.5rem">Historical P/S context</div>
+  <div class="g3">
+    <div class="card">
+      <div class="kpi-label">Peak P/S (FY2020)</div>
+      <div class="kpi-val">188.9x</div>
+      <div class="kpi-sub neg">SPAC bubble era</div>
+    </div>
+    <div class="card">
+      <div class="kpi-label">Current P/S (FY2025)</div>
+      <div class="kpi-val">12.1x</div>
+      <div class="kpi-sub neu">Trailing basis</div>
+    </div>
+    <div class="card">
+      <div class="kpi-label">Forward P/S (FY2026E)</div>
+      <div class="kpi-val">~4.0x</div>
+      <div class="kpi-sub pos">Based on $342M proj.</div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════ FILINGS & NEWS ═══════════════ -->
+<div id="panel-filings" class="panel">
+  <div class="config-banner">
+    ℹ Live SEC filings fetched from EDGAR (CIK 1805077). Data refreshes each page load.
+    For news headlines, add a free <a href="https://www.alphavantage.co/support/#api-key" target="_blank">Alpha Vantage key</a>
+    in the <code>CONFIG</code> block at the top of the script.
+  </div>
+
+  <div class="g2">
+    <div>
+      <div class="section-label">Recent SEC filings</div>
+      <div class="card" id="filings-list">
+        <div class="loading-msg" id="filings-loading">Loading filings from SEC EDGAR…</div>
+      </div>
+    </div>
+    <div>
+      <div class="section-label">News &amp; press releases</div>
+      <div class="card" id="news-list">
+        <div class="loading-msg" id="news-loading">Loading…</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section-label">Key dates &amp; catalysts</div>
+  <div class="card">
+    <table class="dt">
+      <thead><tr><th>Date</th><th style="text-align:left">Event</th><th style="text-align:left">Status</th></tr></thead>
+      <tbody>
+        <tr><td>May 13, 2026</td><td style="text-align:left">Q1 2026 earnings · Frontier Power USA · S-3ASR shelf filed</td><td style="text-align:left"><span class="badge b-green">Reported</span></td></tr>
+        <tr><td>End of Q2 2026</td><td style="text-align:left">Line 2 initial production at Thorn Hill</td><td style="text-align:left"><span class="badge b-amber">In progress</span></td></tr>
+        <tr><td>Q2 2026</td><td style="text-align:left">Frontier Power USA closing conditions / Eos $150M funding plan</td><td style="text-align:left"><span class="badge b-amber">Watch</span></td></tr>
+        <tr><td>~Aug 2026</td><td style="text-align:left">Q2 2026 earnings release</td><td style="text-align:left"><span class="badge b-muted">Pending</span></td></tr>
+        <tr><td>2026</td><td style="text-align:left">Cerberus lock-up extension through year-end</td><td style="text-align:left"><span class="badge b-blue">Confirmed</span></td></tr>
+        <tr><td>2026</td><td style="text-align:left">First commercial deployment of DawnOS-controlled fleet</td><td style="text-align:left"><span class="badge b-blue">In progress</span></td></tr>
+        <tr><td>2026–27</td><td style="text-align:left">TURBINE-X JDA execution (gas + storage hybrid)</td><td style="text-align:left"><span class="badge b-blue">Signed JDA</span></td></tr>
+        <tr><td>FY2026</td><td style="text-align:left">Revenue $300–400M (reaffirmed Q1'26)</td><td style="text-align:left"><span class="badge b-green">Guidance</span></td></tr>
+        <tr><td>FY2027</td><td style="text-align:left">Gross margin positive target</td><td style="text-align:left"><span class="badge b-muted">Projected</span></td></tr>
+        <tr><td>FY2027–28</td><td style="text-align:left">Operating income breakeven (model)</td><td style="text-align:left"><span class="badge b-muted">Projected</span></td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="section-label">Risk factors — bear thesis cheat sheet</div>
+  <div class="card">
+    <table class="dt">
+      <thead><tr><th style="text-align:left">Risk</th><th style="text-align:left">What to watch</th></tr></thead>
+      <tbody>
+        <tr><td style="text-align:left;color:var(--text)"><strong>Cash burn vs. shelf timing</strong></td><td style="text-align:left">$152M cash decline Q4'25 → Q1'26. At current burn, the S-3ASR shelf is a when, not if. Watch for follow-on offering size and pricing relative to last trade.</td></tr>
+        <tr><td style="text-align:left;color:var(--text)"><strong>Cerberus structural dominance</strong></td><td style="text-align:left">Cerberus holds Series B preferred ($583M), warrants ($203M related-party), and convertible notes ($113M). Series B remeasurement was +$779M in Q1'26 alone. Conversion math drives common dilution.</td></tr>
+        <tr><td style="text-align:left;color:var(--text)"><strong>Customer concentration</strong></td><td style="text-align:left">In Q1'26, 93.3% of revenue came from customers each >10% of total. Loss/delay from any one of them moves guidance materially.</td></tr>
+        <tr><td style="text-align:left;color:var(--text)"><strong>Frontier funding execution</strong></td><td style="text-align:left">Frontier Power USA needs Eos to fund ~$150M. Release says "subject to ability to raise funding" — explicit dependency on capital markets access.</td></tr>
+        <tr><td style="text-align:left;color:var(--text)"><strong>Margin trajectory</strong></td><td style="text-align:left">GM still −78%. Path to break-even requires both Line 2 ramp <em>and</em> Z3 unit economics holding up. Watch fixed-cost absorption per Cube shipped.</td></tr>
+        <tr><td style="text-align:left;color:var(--text)"><strong>RTE vs. Li-ion economics</strong></td><td style="text-align:left">~75–80% RTE vs. ~90% Li-ion. Eos wins only where duration &gt;6h or where safety/lifetime offset the round-trip gap. Watch project mix.</td></tr>
+        <tr><td style="text-align:left;color:var(--text)"><strong>IRA / 45X policy risk</strong></td><td style="text-align:left">$21.4M grant receivable; 45X PTC accrued as COGS offset. Policy reversal would compress GM by several hundred bps.</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="last-updated" id="last-updated"></div>
+</div>
+
+</div><!-- /wrap -->
+
+<footer class="site-footer">
+  <p><strong>Data sources.</strong>
+    Income statement &amp; balance sheet: <a href="https://www.sec.gov/Archives/edgar/data/1805077/000162828026034368/eose-20260331.htm" target="_blank">Q1 2026 10-Q</a> (filed 2026-05-13).
+    Earnings narrative: <a href="https://www.sec.gov/Archives/edgar/data/1805077/000162828026034367/eoseq1fy26earningsreleas.htm" target="_blank">Q1'26 earnings release (8-K Ex. 99.1)</a>.
+    Frontier Power USA: same 8-K + <a href="https://www.sec.gov/Archives/edgar/data/1805077/000162828026034367/eosepressreleasefrontier.htm" target="_blank">Frontier press release</a>.
+    FY2025 actuals: <a href="https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0001805077&type=10-K" target="_blank">FY2025 10-K</a> (filed 2026-02-26).
+    Live quote: <a href="https://stooq.com/q/?s=eose.us" target="_blank">Stooq</a> (delayed). All EOSE filings: <a href="https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0001805077" target="_blank">SEC EDGAR (CIK 1805077)</a>.
+  </p>
+  <p style="margin-top:8px"><strong>Estimates &amp; projections.</strong> Quarterly projections beyond Q1'26 are model assumptions consistent with FY2026 guidance ($300–400M) and management's prior cadence — not company-issued forecasts. Contract values marked with "*" are model estimates derived from disclosed MWh sizes and an implied $400–500/kWh; the formal $ values are not publicly disclosed for most counterparties.</p>
+  <p style="margin-top:8px"><strong>Not investment advice.</strong> This page is a personal research dashboard. Verify all figures against primary SEC filings before making any investment decision. No affiliation with Eos Energy Enterprises, Inc.</p>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
+<script>
+// ╔═══════════════════════════════════════════════════════════════╗
+// ║  CONFIG — optional API keys                                   ║
+// ╚═══════════════════════════════════════════════════════════════╝
+// SECURITY: do not hardcode a real key here if you deploy this publicly.
+// Either (a) leave blank and the page falls back to direct-source links, or
+// (b) read from a deploy-time env var via a build step or serverless proxy.
+const CONFIG = {
+  ALPHA_VANTAGE_KEY: '',   // free key at alphavantage.co (25 req/day)
+  EDGAR_CIK: '0001805077',
+};
+
+// ╔═══════════════════════════════════════════════════════════════╗
+// ║  DATA — Update these arrays after each earnings release      ║
+// ║  Last updated: Model through Q4 2025 actual                  ║
+// ╚═══════════════════════════════════════════════════════════════╝
+const DATA = {
+  // Quarter labels
+  qActual:  ['Q1\'23','Q2\'23','Q3\'23','Q4\'23','Q1\'24','Q2\'24','Q3\'24','Q4\'24','Q1\'25','Q2\'25','Q3\'25','Q4\'25','Q1\'26'],
+  qProj:    ['Q2\'26','Q3\'26','Q4\'26','Q1\'27','Q2\'27','Q3\'27','Q4\'27','Q1\'28','Q2\'28','Q3\'28','Q4\'28'],
+
+  // Quarterly revenue ($M) — Q1'26 actual: $56.963M per 10-Q
+  revActual:  [8.835, 0.249, 0.684, 6.610, 6.601, 0.898, 0.854, 7.253, 10.457, 15.236, 30.512, 57.998, 56.963],
+  // Q2'26–Q4'26 projection sums to ~$293M; combined with Q1'26 $57M gives $350M = midpoint of $300–400M guidance
+  revProj:    [82.0, 100.0, 110.0, 146.25, 182.88, 225.75, 236.25, 243.75, 262.5, 300.0, 320.0],
+
+  // Gross margin % (quarterly) — Q1'26: -44.427 / 56.963 = -77.99%
+  gmActual:   [-204.9, -4416.5, -3008.5, -359.2, -327.6, -1472.5, -2916.9, -324.0, -234.7, -203.2, -111.2, -93.8, -78.0],
+  gmProj:     [-55.0, -35.0, -15.0, 0.0, 7.5, 12.5, 18.0, 20.0, 22.0, 24.0, 25.0],
+
+  // Operating income ($M) — Q1'26 actual: $(79.312)M per 10-Q
+  opActual:   [-38.27, -34.60, -37.84, -42.24, -41.14, -29.04, -53.33, -51.70, -52.93, -63.85, -61.22, -81.27, -79.31],
+  opProj:     [-65.0, -48.0, -32.0, -22.0, -15.0, -5.0, 5.0, 12.0, 22.0, 35.0, 46.0],
+
+  // Total cash ($M) — incl. restricted. Q1'25–Q1'26 actual. Q1'26 = $410.66M + $39.77M + $21.94M = $472.37M
+  liqActual:  [111.69, 183.18, 126.80, 624.57, 472.37],
+  liqProj:    [420.0, 370.0, 320.0, 280.0, 245.0, 215.0, 200.0, 195.0, 200.0, 215.0, 230.0],
+
+  // Annual revenue ($M) — FY2021–FY2028. FY2026E = guidance midpoint $350M
+  annLabels:  ['FY2021','FY2022','FY2023','FY2024','FY2025','FY2026E','FY2027E','FY2028E'],
+  annActual:  [1.494, 17.573, 22.694, 15.606, 114.203, null, null, null],
+  annProj:    [null, null, null, null, null, 350.0, 791.1, 1126.3],
+  annGuideLow:[null, null, null, null, null, 300.0, null, null],
+  annGuideHi: [null, null, null, null, null, 400.0, null, null],
+
+  // GWh capacity by line — 18 quarters Q3'24–Q4'28
+  capLabels:  ['Q3\'24','Q4\'24','Q1\'25','Q2\'25','Q3\'25','Q4\'25','Q1\'26','Q2\'26','Q3\'26','Q4\'26','Q1\'27','Q2\'27','Q3\'27','Q4\'27','Q1\'28','Q2\'28','Q3\'28','Q4\'28'],
+  line1:      [0.25, 0.50, 0.65, 0.90, 1.20, 1.80, 2.00, 2.00, 2.00, 2.00, 2.00, 2.00, 2.00, 1.00, 0,    0,    0,    0   ],
+  line2:      [0,    0,    0,    0,    0,    0,    0,    0,    0.50, 1.00, 1.50, 1.75, 2.00, 2.00, 2.00, 2.00, 2.00, 2.00],
+  line3:      [0,    0,    0,    0,    0,    0,    0,    0,    0,    0.50, 1.00, 1.50, 2.00, 2.50, 2.50, 2.50, 2.50, 2.50],
+  line4:      [0,    0,    0,    0,    0,    0,    0,    0,    0,    0,    0,    0.50, 1.00, 1.50, 2.00, 2.50, 2.50, 2.50],
+  line5:      [0,    0,    0,    0,    0,    0,    0,    0,    0,    0,    0,    0,    0.50, 1.00, 1.50, 2.00, 2.00, 2.00],
+
+  // Production uptime % — Q3'24 through Q4'27
+  upLabels:   ['Q3\'24','Q4\'24','Q1\'25','Q2\'25','Q3\'25','Q4\'25','Q1\'26','Q2\'26','Q3\'26','Q4\'26','Q1\'27','Q2\'27','Q3\'27','Q4\'27'],
+  uptime:     [5.34, 22.11, 24.57, 26.18, 39.46, 51.44, 55.0, 60.0, 65.0, 65.0, 65.0, 70.0, 70.0, 75.0],
+
+  // Graphite felt deliveries (metric tonnes) — Q3'23 through Q4'25
+  feltLabels: ['Q3\'23','Q4\'23','Q1\'24','Q2\'24','Q3\'24','Q4\'24','Q1\'25','Q2\'25','Q3\'25','Q4\'25'],
+  felt:       [59.5, 41.2, 57.3, 13.4, 85.7, 93.1, 78.0, 301.4, 283.6, 99.1],
+
+  // Contracted backlog ($M) — Q1'23 through Q1'26 actuals; Q2'26E adds Frontier 2 GWh capacity reservation (post-quarter)
+  blLabels:   ['Q1\'23','Q2\'23','Q3\'23','Q4\'23','Q1\'24','Q2\'24','Q3\'24','Q4\'24','Q1\'25','Q2\'25','Q3\'25','Q4\'25','Q1\'26','Q2\'26E'],
+  backlog:    [535.1, 533.6, 539.0, 534.8, 602.7, 586.8, 588.9, 682.2, 680.9, 672.5, 644.4, 701.5, 644.6, 1500.0],
+  // Bookings derived; Q1'26 ≈ 0 (Frontier signed post-quarter); Q2'26E ≈ Frontier ~$900M est. (2 GWh @ ~$450/kWh)
+  bookings:   [86.3, 0.6, 5.8, 2.8, 125.0, 8.1, 3.4, 174.2, 9.2, 6.9, 2.4, 240.0, 0.1, 900.0],
+
+  // Valuation — FY basis
+  fyValLabels:['FY2018','FY2019','FY2020','FY2021','FY2022','FY2023','FY2024','FY2025'],
+  psMultiple: [7.91, 76.54, 188.91, 37.15, 20.52, 21.55, 26.29, 12.12],
+  mktCap:     [208.8, 274.9, 645.3, 1077.9, 858.2, 1313.2, 3208.4, 2811.7],
+};
+
+// ─── Color helpers ───────────────────────────────────────────────
+const C = {
+  green:  '#3fb950', greenA: 'rgba(63,185,80,0.32)',
+  blue:   '#58a6ff', blueA:  'rgba(88,166,255,0.32)',
+  red:    '#f85149', redA:   'rgba(248,81,73,0.32)',
+  amber:  '#d29922', amberA: 'rgba(210,153,34,0.32)',
+  purple: '#bc8cff', orange: '#f78166',
+};
+const isDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+const gridCol  = isDark ? 'rgba(255,255,255,0.06)' : 'rgba(0,0,0,0.06)';
+const tickCol  = isDark ? '#8b949e' : '#636c76';
+const tooltipBg = isDark ? '#161b22' : '#ffffff';
+const tooltipTx = isDark ? '#e6edf3' : '#1f2328';
+const tooltipMt = isDark ? '#8b949e' : '#636c76';
+const tooltipBd = isDark ? 'rgba(255,255,255,0.1)' : 'rgba(0,0,0,0.1)';
+
+function baseOpts(overrides) {
+  return Object.assign({
+    responsive: true,
+    maintainAspectRatio: false,
+    plugins: {
+      legend: { display: false },
+      tooltip: {
+        backgroundColor: tooltipBg,
+        titleColor: tooltipTx,
+        bodyColor: tooltipMt,
+        borderColor: tooltipBd,
+        borderWidth: 1,
+      }
+    },
+    scales: {
+      x: { grid: { color: gridCol }, ticks: { color: tickCol, font: { size: 10 } }, border: { color: 'transparent' } },
+      y: { grid: { color: gridCol }, ticks: { color: tickCol, font: { size: 10 } }, border: { color: 'transparent' } },
+    }
+  }, overrides || {});
+}
+
+// ─── Tab switching ───────────────────────────────────────────────
+function showTab(name, evt) {
+  document.querySelectorAll('.panel').forEach(p => p.classList.remove('visible'));
+  document.getElementById('panel-' + name).classList.add('visible');
+  document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+  const trigger = (evt && evt.currentTarget) || document.querySelector(`.tab-btn[data-tab="${name}"]`);
+  if (trigger) trigger.classList.add('active');
+  if (name === 'filings' && !window._filingsLoaded) loadFilings();
+  // sync URL hash for shareable links
+  if (history.replaceState) history.replaceState(null, '', '#' + name);
+}
+
+// ─── Build charts ────────────────────────────────────────────────
+function buildCharts() {
+  const { qActual: qA, qProj: qP, revActual: rA, revProj: rP,
+          gmActual: gmA, gmProj: gmP, opActual: opA, opProj: opP,
+          liqActual: lA, liqProj: lP, annLabels: aL, annActual: anA, annProj: anP } = DATA;
+  const nA = qA.length, nP = qP.length, nT = nA + nP;
+  const padA = Array(nA).fill(null);  // pad to skip the actual region
+  const padP = Array(nP).fill(null);  // pad to skip the projection region
+
+  // 1 — Revenue ramp (Q1'25+)
+  const recentStart = 8; // start from Q1'25
+  new Chart(document.getElementById('c-revRamp'), {
+    type: 'bar',
+    data: {
+      labels: [...qA.slice(recentStart), ...qP],
+      datasets: [
+        { label: 'Actual',    data: [...rA.slice(recentStart), ...padP], backgroundColor: C.green,  borderRadius: 3 },
+        { label: 'Projected', data: [...Array(nA-recentStart).fill(null), ...rP], backgroundColor: C.greenA, borderRadius: 3 },
+      ]
+    },
+    options: baseOpts({ scales: { x: { grid: {color:gridCol}, ticks:{color:tickCol,font:{size:10},maxRotation:45}, border:{color:'transparent'} }, y: { grid:{color:gridCol}, ticks:{color:tickCol,font:{size:10},callback:v=>'$'+v+'M'}, border:{color:'transparent'} } } }),
+  });
+
+  // 2 — Gross margin (overview)
+  const gmCl = gmA.map(v => Math.max(v, -350));
+  new Chart(document.getElementById('c-gm'), {
+    type: 'line',
+    data: {
+      labels: [...qA, ...qP],
+      datasets: [
+        { label: 'Actual',    data: [...gmCl,    ...padP], borderColor: C.blue, backgroundColor: C.blueA, fill: true,  tension: 0.3, pointRadius: 3, borderWidth: 2 },
+        { label: 'Projected', data: [...padA, ...gmP],     borderColor: 'rgba(88,166,255,.5)', fill: false, tension: 0.3, pointRadius: 3, borderWidth: 2, borderDash: [5,4] },
+        { label: 'Breakeven', data: Array(nT).fill(0),     borderColor: C.red, pointRadius: 0, borderWidth: 1, borderDash: [4,3], fill: false },
+      ]
+    },
+    options: baseOpts({ scales: { x: { grid:{color:gridCol}, ticks:{color:tickCol,font:{size:9},maxRotation:45}, border:{color:'transparent'} }, y: { min:-350, grid:{color:gridCol}, ticks:{color:tickCol,font:{size:10},callback:v=>v+'%'}, border:{color:'transparent'} } } }),
+  });
+
+  // 3 — Annual revenue
+  const anVals = aL.map((_,i) => anA[i] != null ? anA[i] : anP[i]);
+  const anColors = aL.map((_,i) => i < 5 ? C.green : C.greenA);
+  new Chart(document.getElementById('c-ann'), {
+    type: 'bar',
+    data: { labels: aL, datasets: [{ label: 'Revenue', data: anVals, backgroundColor: anColors, borderRadius: 4 }] },
+    options: baseOpts({ scales: { x: { grid:{color:gridCol}, ticks:{color:tickCol,font:{size:10}}, border:{color:'transparent'} }, y: { grid:{color:gridCol}, ticks:{color:tickCol,font:{size:10},callback:v=>'$'+v+'M'}, border:{color:'transparent'} } } }),
+  });
+
+  // 4 — Rev detail full
+  new Chart(document.getElementById('c-revAll'), {
+    type: 'bar',
+    data: {
+      labels: [...qA, ...qP],
+      datasets: [
+        { label: 'Actual',    data: [...rA,   ...padP], backgroundColor: C.green,  borderRadius: 3 },
+        { label: 'Projected', data: [...padA, ...rP],   backgroundColor: C.greenA, borderRadius: 3 },
+      ]
+    },
+    options: baseOpts({ scales: { x: { grid:{color:gridCol}, ticks:{color:tickCol,font:{size:9},maxRotation:60,autoSkip:true}, border:{color:'transparent'} }, y: { grid:{color:gridCol}, ticks:{color:tickCol,font:{size:10},callback:v=>'$'+v+'M'}, border:{color:'transparent'} } } }),
+  });
+
+  // 5 — Operating income (colored by sign)
+  const opAll = [...opA, ...opP];
+  const opBg  = [...opA.map(v=>v>=0?C.green:C.red), ...opP.map(v=>v>=0?C.greenA:C.redA)];
+  new Chart(document.getElementById('c-op'), {
+    type: 'bar',
+    data: { labels:[...qA,...qP], datasets:[{ label:'Op. Income', data:opAll, backgroundColor:opBg, borderRadius:3 }] },
+    options: baseOpts({ scales: { x:{grid:{color:gridCol},ticks:{color:tickCol,font:{size:9},maxRotation:60,autoSkip:true},border:{color:'transparent'}}, y:{grid:{color:gridCol},ticks:{color:tickCol,font:{size:10},callback:v=>(v<0?'-$':'$')+Math.abs(v)+'M'},border:{color:'transparent'}} } }),
+  });
+
+  // 6 — Liquidity (total cash incl. restricted)
+  const liqLabels = ['Q1\'25','Q2\'25','Q3\'25','Q4\'25','Q1\'26', ...qP];
+  const nLiqA = lA.length;
+  new Chart(document.getElementById('c-liq'), {
+    type: 'line',
+    data: {
+      labels: liqLabels,
+      datasets: [
+        { label: 'Actual',    data: [...lA, ...padP], borderColor: C.blue, backgroundColor: C.blueA, fill:true, tension:0.3, pointRadius:4, borderWidth:2 },
+        // bridge the last actual into projection by repeating it as the first projection point
+        { label: 'Projected', data: [...Array(nLiqA-1).fill(null), lA[nLiqA-1], ...lP], borderColor: 'rgba(88,166,255,.5)', fill:false, tension:0.3, pointRadius:3, borderWidth:2, borderDash:[5,4] },
+      ]
+    },
+    options: baseOpts({ scales: { x:{grid:{color:gridCol},ticks:{color:tickCol,font:{size:10},maxRotation:45},border:{color:'transparent'}}, y:{grid:{color:gridCol},ticks:{color:tickCol,font:{size:10},callback:v=>'$'+v+'M'},border:{color:'transparent'}} } }),
+  });
+
+  // 7 — Gross margin full (financials tab)
+  new Chart(document.getElementById('c-gmFull'), {
+    type: 'line',
+    data: {
+      labels: [...qA, ...qP],
+      datasets: [
+        { label:'Actual',    data:[...gmCl, ...padP], borderColor:C.blue, backgroundColor:C.blueA, fill:true, tension:0.3, pointRadius:3, borderWidth:2 },
+        { label:'Projected', data:[...padA, ...gmP],  borderColor:'rgba(88,166,255,.5)', fill:false, tension:0.3, pointRadius:3, borderWidth:2, borderDash:[5,4] },
+        { label:'Breakeven', data:Array(nT).fill(0),  borderColor:C.red, pointRadius:0, borderWidth:1, borderDash:[4,3], fill:false },
+      ]
+    },
+    options: baseOpts({ scales: { x:{grid:{color:gridCol},ticks:{color:tickCol,font:{size:9},maxRotation:60,autoSkip:true},border:{color:'transparent'}}, y:{min:-350,grid:{color:gridCol},ticks:{color:tickCol,font:{size:10},callback:v=>v+'%'},border:{color:'transparent'}} } }),
+  });
+
+  // 8 — Capacity stacked
+  new Chart(document.getElementById('c-cap'), {
+    type: 'bar',
+    data: {
+      labels: DATA.capLabels,
+      datasets: [
+        { label:'Line 1', data:DATA.line1, backgroundColor:C.green,  borderRadius:2 },
+        { label:'Line 2', data:DATA.line2, backgroundColor:C.blue,   borderRadius:2 },
+        { label:'Line 3', data:DATA.line3, backgroundColor:C.purple, borderRadius:2 },
+        { label:'Line 4', data:DATA.line4, backgroundColor:C.amber,  borderRadius:2 },
+        { label:'Line 5', data:DATA.line5, backgroundColor:C.orange, borderRadius:2 },
+      ]
+    },
+    options: baseOpts({ scales: { x:{stacked:true,grid:{color:gridCol},ticks:{color:tickCol,font:{size:9},maxRotation:45},border:{color:'transparent'}}, y:{stacked:true,grid:{color:gridCol},ticks:{color:tickCol,font:{size:10},callback:v=>v+' GWh'},border:{color:'transparent'}} } }),
+  });
+
+  // 9 — Uptime
+  new Chart(document.getElementById('c-up'), {
+    type: 'line',
+    data: { labels:DATA.upLabels, datasets:[{ label:'Uptime %', data:DATA.uptime, borderColor:C.green, backgroundColor:'rgba(63,185,80,0.1)', fill:true, tension:0.3, pointRadius:4, borderWidth:2 }] },
+    options: baseOpts({ scales: { x:{grid:{color:gridCol},ticks:{color:tickCol,font:{size:9},maxRotation:45},border:{color:'transparent'}}, y:{min:0,max:100,grid:{color:gridCol},ticks:{color:tickCol,font:{size:10},callback:v=>v+'%'},border:{color:'transparent'}} } }),
+  });
+
+  // 10 — Felt deliveries
+  new Chart(document.getElementById('c-felt'), {
+    type: 'bar',
+    data: { labels:DATA.feltLabels, datasets:[{ label:'Felt (t)', data:DATA.felt, backgroundColor:C.amber, borderRadius:3 }] },
+    options: baseOpts({ scales: { x:{grid:{color:gridCol},ticks:{color:tickCol,font:{size:9}},border:{color:'transparent'}}, y:{grid:{color:gridCol},ticks:{color:tickCol,font:{size:10},callback:v=>v+'t'},border:{color:'transparent'}} } }),
+  });
+
+  // 11 — Pipeline funnel — values from Q1'26 10-Q (3/31/26)
+  const funnel = [
+    { label:'Commercial opportunity pipeline (Q1\'26)', val:24300, color:'rgba(88,166,255,0.6)', src:'10-Q' },
+    { label:'+ Frontier Power USA 2 GWh reservation (post-Q1\'26)', val:900, color:'rgba(188,140,255,0.7)', src:'8-K' },
+    { label:'Contracted backlog (3/31/26)', val:644.6, color:'rgba(210,153,34,0.85)', src:'10-Q' },
+    { label:'FY2026 revenue guidance midpoint',  val:350, color:'rgba(63,185,80,0.7)', src:'guidance' },
+    { label:'Q1\'26 revenue actual',  val:57, color:'#3fb950', src:'10-Q' },
+  ];
+  const pf = document.getElementById('pipelineFunnel');
+  const fMax = Math.max(...funnel.map(f=>f.val));
+  pf.innerHTML = funnel.map(({label,val,color,src}) => {
+    const pct = (Math.log10(val) / Math.log10(fMax) * 100).toFixed(1);
+    const disp = val >= 1000 ? '$' + (val/1000).toFixed(2) + 'B' : '$' + val.toFixed(0) + 'M';
+    return `<div class="funnel-row">
+      <div class="funnel-meta"><span>${label} <span style="color:var(--muted);font-size:.65rem">[${src}]</span></span><strong>${disp}</strong></div>
+      <div class="funnel-track"><div class="funnel-fill" style="width:${pct}%;background:${color}"></div></div>
+    </div>`;
+  }).join('');
+
+  // 12 — Backlog
+  new Chart(document.getElementById('c-bl'), {
+    type: 'line',
+    data: { labels:DATA.blLabels, datasets:[{ label:'Backlog $M', data:DATA.backlog, borderColor:C.green, backgroundColor:'rgba(63,185,80,0.08)', fill:true, tension:0.3, pointRadius:4, borderWidth:2 }] },
+    options: baseOpts({ scales: { x:{grid:{color:gridCol},ticks:{color:tickCol,font:{size:9},maxRotation:45},border:{color:'transparent'}}, y:{grid:{color:gridCol},ticks:{color:tickCol,font:{size:10},callback:v=>'$'+v+'M'},border:{color:'transparent'}} } }),
+  });
+
+  // 13 — Bookings
+  const bkBg = DATA.bookings.map(v => v > 200 ? C.green : v > 50 ? 'rgba(63,185,80,0.6)' : C.greenA);
+  new Chart(document.getElementById('c-bk'), {
+    type: 'bar',
+    data: { labels:DATA.blLabels, datasets:[{ label:'Bookings $M', data:DATA.bookings, backgroundColor:bkBg, borderRadius:3 }] },
+    options: baseOpts({ scales: { x:{grid:{color:gridCol},ticks:{color:tickCol,font:{size:9},maxRotation:45},border:{color:'transparent'}}, y:{grid:{color:gridCol},ticks:{color:tickCol,font:{size:10},callback:v=>'$'+v+'M'},border:{color:'transparent'}} } }),
+  });
+
+  // 14 — P/S
+  new Chart(document.getElementById('c-ps'), {
+    type: 'line',
+    data: { labels:DATA.fyValLabels, datasets:[{ label:'P/S', data:DATA.psMultiple, borderColor:C.purple, backgroundColor:'rgba(188,140,255,0.1)', fill:true, tension:0.3, pointRadius:5, borderWidth:2 }] },
+    options: baseOpts({ scales: { x:{grid:{color:gridCol},ticks:{color:tickCol,font:{size:10}},border:{color:'transparent'}}, y:{grid:{color:gridCol},ticks:{color:tickCol,font:{size:10},callback:v=>v+'x'},border:{color:'transparent'}} } }),
+  });
+
+  // 15 — Market cap
+  const mcMax = Math.max(...DATA.mktCap);
+  new Chart(document.getElementById('c-mc'), {
+    type: 'bar',
+    data: { labels:DATA.fyValLabels, datasets:[{ label:'Mkt Cap $M', data:DATA.mktCap, backgroundColor:DATA.mktCap.map(v=>v===mcMax?C.blue:C.blueA), borderRadius:4 }] },
+    options: baseOpts({ scales: { x:{grid:{color:gridCol},ticks:{color:tickCol,font:{size:10}},border:{color:'transparent'}}, y:{grid:{color:gridCol},ticks:{color:tickCol,font:{size:10},callback:v=>'$'+v+'M'},border:{color:'transparent'}} } }),
+  });
+
+  // 16 — Valuation bridge (dual axis)
+  new Chart(document.getElementById('c-vb'), {
+    type: 'line',
+    data: {
+      labels: ['FY2025','FY2026E','FY2027E','FY2028E'],
+      datasets: [
+        { label:'Revenue $M',      data:[114.203,342.1,791.1,1126.3], borderColor:C.green,  backgroundColor:'rgba(63,185,80,0.07)', fill:true,  tension:0.3, pointRadius:6, borderWidth:2, yAxisID:'y'  },
+        { label:'Gross Margin %',  data:[-65.0, -5.0,  11.3,   20.0], borderColor:C.blue,   fill:false, tension:0.3, pointRadius:6, borderWidth:2, borderDash:[4,3], yAxisID:'y2' },
+      ]
+    },
+    options: {
+      responsive:true, maintainAspectRatio:false,
+      plugins:{ legend:{display:false}, tooltip:{backgroundColor:tooltipBg,titleColor:tooltipTx,bodyColor:tooltipMt,borderColor:tooltipBd,borderWidth:1} },
+      scales:{
+        x:  { grid:{color:gridCol}, ticks:{color:tickCol,font:{size:11}}, border:{color:'transparent'} },
+        y:  { grid:{color:gridCol}, ticks:{color:tickCol,font:{size:10},callback:v=>'$'+v+'M'}, border:{color:'transparent'} },
+        y2: { position:'right', grid:{display:false}, ticks:{color:C.blue,font:{size:10},callback:v=>v+'%'}, border:{color:'transparent'} },
+      }
+    }
+  });
+}
+
+// ─── Populate tables ─────────────────────────────────────────────
+function buildTables() {
+  // Financial summary table — Q1'26 actual from 10-Q; projections are model assumptions
+  const finRows = [
+    ['Q1\'25', 10.457, -234.7, -52.93, 111.69, 'A'],
+    ['Q2\'25', 15.236, -203.2, -63.85, 183.18, 'A'],
+    ['Q3\'25', 30.512, -111.2, -61.22, 126.80, 'A'],
+    ['Q4\'25', 57.998,  -93.8, -81.27, 624.57, 'A'],
+    ['Q1\'26', 56.963,  -78.0, -79.31, 472.37, 'A'],
+    ['Q2\'26E', 82.0,  -55.0, -65.0, 420.0, 'P'],
+    ['Q3\'26E',100.0,  -35.0, -48.0, 370.0, 'P'],
+    ['Q4\'26E',110.0,  -15.0, -32.0, 320.0, 'P'],
+    ['Q1\'27E',146.25,   0.0, -22.0, 280.0, 'P'],
+    ['Q2\'27E',182.88,   7.5, -15.0, 245.0, 'P'],
+    ['Q3\'27E',225.75,  12.5,  -5.0, 215.0, 'P'],
+    ['Q4\'27E',236.25,  18.0,   5.0, 200.0, 'P'],
+  ];
+  const finTb = document.getElementById('fin-tbody');
+  finRows.forEach(([q,r,gm,op,liq,t]) => {
+    const tr = document.createElement('tr');
+    if (t==='P') tr.className = 'proj';
+    const gmColor = gm >= 0 ? 'var(--green)' : gm > -50 ? 'inherit' : gm > -150 ? 'var(--amber)' : 'var(--red)';
+    const opColor = op >= 0 ? 'var(--green)' : 'var(--red)';
+    tr.innerHTML = `
+      <td>${q}</td>
+      <td>$${r.toFixed(1)}M</td>
+      <td style="color:${gmColor}">${gm.toFixed(1)}%</td>
+      <td style="color:${opColor}">${op >= 0 ? '$'+op.toFixed(2)+'M' : '($'+Math.abs(op).toFixed(2)+'M)'}</td>
+      <td>$${liq.toFixed(0)}M</td>
+      <td><span class="badge ${t==='A'?'b-green':'b-muted'}">${t==='A'?'Actual':'Projected'}</span></td>
+    `;
+    finTb.appendChild(tr);
+  });
+
+  // Contracts table — public deals + post-Q1'26 announcements. Smaller customer values are model estimates.
+  const contracts = [
+    ['Frontier Power USA (Cerberus JV)', '2,000 MWh', 'USA',       'Capacity Reservation', '~$900M*'],
+    ['TURBINE-X Energy JDA',             'up to 2,000 MWh', 'USA', 'JDA — pending', '~$900M*'],
+    ['MN8 Energy',                       '~590 MWh',  'USA',       'Contracted',  '~$295M*'],
+    ['Indian Energy / Viejas',           '300 MWh',   'USA (CA)',  'Contracted',  '~$150M*'],
+    ['City Utilities Springfield',       '155 MWh',   'USA (MO)',  'Contracted',  '~$78M*' ],
+    ['Pine Gate Renewables',             '140 MWh',   'USA',       'Contracted',  '~$70M*' ],
+    ['International Electric Power',     '100 MWh',   'USA',       'Contracted',  '~$50M*' ],
+    ['Bridgelink Commodities',           '~80 MWh',   'USA',       'Contracted',  '~$40M*' ],
+    ['Carson Hybrid Energy Storage',     '70 MWh',    'USA (CA)',  'Contracted',  '~$35M*' ],
+    ['Various utility / C&I',            '160 MWh',   'USA',       'Contracted',  '~$80M*' ],
+  ];
+  const ctTb = document.getElementById('contract-tbody');
+  contracts.forEach(([name, mwh, region, status, val]) => {
+    const tr = document.createElement('tr');
+    const bc = status === 'Contracted' ? 'b-green' : 'b-blue';
+    tr.innerHTML = `
+      <td style="font-weight:600">${name}</td>
+      <td style="text-align:left">${mwh}</td>
+      <td style="text-align:left;color:var(--muted)">${region}</td>
+      <td style="text-align:left"><span class="badge ${bc}">${status}</span></td>
+      <td>${ val }</td>
+    `;
+    ctTb.appendChild(tr);
+  });
+
+  // Valuation scenarios — FY2028E. Price refs use 339.5M shares outstanding (Q1'26 actual)
+  // Live price plugged in at runtime; using $4.50 placeholder for upside math
+  const scenarios = [
+    { name:'Bull', rev:'$1,200M+', mult:'5.0x', mktcap:'~$6.0B', price:'~$17–18', upside:'+280–300%', color:'var(--green)', note:'10 GWh ramp + 25% GM' },
+    { name:'Base', rev:'$900M',    mult:'3.0x', mktcap:'~$2.7B', price:'~$8–9',   upside:'+80–100%',  color:'var(--blue)',  note:'Guide + Frontier flow' },
+    { name:'Bear', rev:'$500M',    mult:'1.5x', mktcap:'~$750M', price:'~$2–3',   upside:'-40 to -55%',color:'var(--red)',  note:'Ramp slip + dilution' },
+  ];
+  const scenTb = document.getElementById('scen-tbody');
+  scenarios.forEach(s => {
+    const tr = document.createElement('tr');
+    tr.innerHTML = `
+      <td style="font-weight:700;color:${s.color}">${s.name}<div style="font-size:.65rem;color:var(--muted);font-weight:400;margin-top:2px">${s.note||''}</div></td>
+      <td>${s.rev}</td><td>${s.mult}</td><td>${s.mktcap}</td>
+      <td style="font-weight:600">${s.price}</td>
+      <td style="color:${s.color}">${s.upside}</td>
+    `;
+    scenTb.appendChild(tr);
+  });
+}
+
+// ─── Live SEC EDGAR filings ──────────────────────────────────────
+async function loadFilings() {
+  window._filingsLoaded = true;
+  const listEl  = document.getElementById('filings-list');
+  const newsEl  = document.getElementById('news-list');
+  const loadEl  = document.getElementById('filings-loading');
+  const newsLoad = document.getElementById('news-loading');
+  const dateEl  = document.getElementById('last-updated');
+
+  try {
+    const r = await fetch(`https://data.sec.gov/submissions/CIK${CONFIG.EDGAR_CIK}.json`);
+    const data = await r.json();
+    const f = data.filings.recent;
+
+    // Filter to meaningful form types
+    const keep = ['10-K','10-Q','8-K','S-3','DEF 14A'];
+    const items = [];
+    for (let i = 0; i < Math.min(f.form.length, 80); i++) {
+      if (keep.includes(f.form[i])) {
+        items.push({
+          form:    f.form[i],
+          date:    f.filingDate[i],
+          desc:    f.primaryDocDescription[i] || '',
+          accNo:   f.accessionNumber[i].replace(/-/g,''),
+          accRaw:  f.accessionNumber[i],
+          doc:     f.primaryDocument[i],
+        });
+        if (items.length >= 20) break;
+      }
+    }
+
+    const formClass = t => {
+      if (t==='10-K') return 'f-10k';
+      if (t==='10-Q') return 'f-10q';
+      if (t.startsWith('8-K')) return 'f-8k';
+      return '';
+    };
+
+    listEl.innerHTML = items.map(it => {
+      const url = `https://www.sec.gov/Archives/edgar/data/1805077/${it.accNo}/${it.doc}`;
+      const label = it.desc || (it.form==='10-K'?'Annual Report':it.form==='10-Q'?'Quarterly Report':it.form==='8-K'?'Current Report':it.form);
+      return `<div class="filing-item">
+        <span class="filing-form ${formClass(it.form)}">${it.form}</span>
+        <div class="filing-meta">
+          <a href="${url}" target="_blank" rel="noopener">${label}</a>
+          <div class="filing-date">${it.date}</div>
+        </div>
+      </div>`;
+    }).join('');
+
+    dateEl.textContent = 'Filings last fetched: ' + new Date().toLocaleString();
+
+  } catch(e) {
+    listEl.innerHTML = `<p class="loading-msg">Could not load filings. <a href="https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0001805077&type=&dateb=&owner=include&count=40&search_text=" target="_blank">View on EDGAR →</a></p>`;
+  }
+
+  // News via Alpha Vantage (optional)
+  if (CONFIG.ALPHA_VANTAGE_KEY) {
+    try {
+      const nr = await fetch(`https://www.alphavantage.co/query?function=NEWS_SENTIMENT&tickers=EOSE&apikey=${CONFIG.ALPHA_VANTAGE_KEY}&limit=15`);
+      const nd = await nr.json();
+      const feed = nd.feed || [];
+      newsEl.innerHTML = feed.slice(0,12).map(n => `
+        <div class="filing-item">
+          <div class="filing-meta">
+            <a href="${n.url}" target="_blank" rel="noopener">${n.title}</a>
+            <div class="filing-date">${n.time_published?.slice(0,8)} · ${n.source}</div>
+          </div>
+        </div>`).join('');
+    } catch(e) {
+      newsEl.innerHTML = `<p class="loading-msg">News load failed. Add a valid Alpha Vantage key in CONFIG.</p>`;
+    }
+  } else {
+    newsEl.innerHTML = `
+      <div class="filing-item" style="flex-direction:column;gap:8px">
+        <p style="font-size:.8rem;color:var(--muted)">Add a free Alpha Vantage key to <code style="background:var(--bg3);padding:1px 5px;border-radius:4px">CONFIG.ALPHA_VANTAGE_KEY</code> to enable live news headlines.</p>
+        <p style="font-size:.8rem"><a href="https://www.alphavantage.co/support/#api-key" target="_blank">Get a free key →</a></p>
+        <hr style="border:none;border-top:1px solid var(--border);margin:.5rem 0">
+        <p style="font-size:.8rem;color:var(--muted)">Direct sources:</p>
+        <p style="font-size:.82rem"><a href="https://ir.eosenergy.com/" target="_blank">Eos Energy Investor Relations →</a></p>
+        <p style="font-size:.82rem"><a href="https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0001805077" target="_blank">SEC EDGAR all filings →</a></p>
+        <p style="font-size:.82rem"><a href="https://finance.yahoo.com/quote/EOSE/news/" target="_blank">Yahoo Finance EOSE News →</a></p>
+      </div>`;
+  }
+}
+
+// ─── Live quote (Stooq, delayed, no key needed) ──────────────────
+async function loadQuote() {
+  const set = (id, txt) => { const el = document.getElementById(id); if (el) el.textContent = txt; };
+  try {
+    // Stooq returns CSV. EOSE on Nasdaq.
+    const r = await fetch('https://stooq.com/q/l/?s=eose.us&f=sd2t2ohlcv&h&e=csv');
+    const txt = await r.text();
+    const rows = txt.trim().split('\n');
+    if (rows.length < 2) throw new Error('no data');
+    const cells = rows[1].split(',');
+    // s,d,t,o,h,l,c,v
+    const o = parseFloat(cells[3]), c = parseFloat(cells[6]), v = parseInt(cells[7], 10);
+    if (!isFinite(c) || c === 0) throw new Error('stale');
+    const chg = c - o, pct = (chg / o) * 100;
+    const sign = chg >= 0 ? '+' : '';
+    set('q-price', '$' + c.toFixed(2));
+    const chgEl = document.getElementById('q-chg');
+    if (chgEl) {
+      chgEl.textContent = `${sign}${chg.toFixed(2)} (${sign}${pct.toFixed(2)}%) today`;
+      chgEl.className = 'price-chg ' + (chg >= 0 ? 'pos' : 'neg');
+    }
+    set('q-vol', v ? (v/1e6).toFixed(2) + 'M' : '—');
+    set('q-mc', '$' + (c * 339.5).toFixed(0) + 'M');
+    // 52w high/low — second request to Stooq daily history
+    try {
+      const today = new Date();
+      const past = new Date(); past.setFullYear(past.getFullYear() - 1);
+      const fmt = d => d.toISOString().slice(0,10).replace(/-/g,'');
+      const hr = await fetch(`https://stooq.com/q/d/l/?s=eose.us&d1=${fmt(past)}&d2=${fmt(today)}&i=d`);
+      const ht = await hr.text();
+      const hrows = ht.trim().split('\n').slice(1);
+      const closes = hrows.map(r => parseFloat(r.split(',')[4])).filter(isFinite);
+      if (closes.length) {
+        set('q-range', '$' + Math.min(...closes).toFixed(2) + ' – $' + Math.max(...closes).toFixed(2));
+      }
+    } catch {}
+  } catch (e) {
+    set('q-price', 'n/a');
+    const chgEl = document.getElementById('q-chg');
+    if (chgEl) { chgEl.textContent = 'quote unavailable — check your broker'; chgEl.className = 'price-chg neu'; }
+  }
+}
+
+// ─── CSV export ──────────────────────────────────────────────────
+function exportCSV() {
+  const { qActual, qProj, revActual, revProj, gmActual, gmProj, opActual, opProj } = DATA;
+  const rows = [['Quarter','Revenue $M','Gross Margin %','Operating Income $M','Type']];
+  qActual.forEach((q,i) => rows.push([q, revActual[i], gmActual[i], opActual[i], 'Actual']));
+  qProj.forEach((q,i) => rows.push([q, revProj[i], gmProj[i], opProj[i], 'Projected']));
+  const csv = rows.map(r => r.map(c => `"${c}"`).join(',')).join('\n');
+  const blob = new Blob([csv], { type: 'text/csv' });
+  const a = document.createElement('a');
+  a.href = URL.createObjectURL(blob);
+  a.download = `EOSE-quarterly-${new Date().toISOString().slice(0,10)}.csv`;
+  a.click();
+}
+
+// ─── Init ────────────────────────────────────────────────────────
+document.addEventListener('DOMContentLoaded', () => {
+  buildCharts();
+  buildTables();
+  loadQuote();
+  // Deep-link to tab via URL hash (#financials, #valuation, etc.)
+  const valid = ['overview','financials','production','pipeline','valuation','filings'];
+  const h = (location.hash || '').slice(1);
+  if (valid.includes(h) && h !== 'overview') showTab(h);
+});
+</script>
+</body>
+</html>
