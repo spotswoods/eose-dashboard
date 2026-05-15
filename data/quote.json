@@ -1,12 +1,11 @@
 {
-  "_refreshed": "2026-05-15T00:00:00Z",
-  "_note": "Placeholder — first Google-Sheets-backed refresh happens after the Action runs. See README for setup.",
-  "price": null,
-  "change": null,
-  "changepct": null,
-  "volume": null,
-  "high52": null,
-  "low52": null,
-  "marketcap": null,
-  "shares": 339.5
+  "_refreshed": "2026-05-15T21:26:02.692Z",
+  "price": 7.87,
+  "change": -0.31,
+  "changepct": -3.73,
+  "volume": 25517298,
+  "high52": 19.86,
+  "low52": 3.69,
+  "marketcap": 2670277532,
+  "pe": "#N/A"
 }
