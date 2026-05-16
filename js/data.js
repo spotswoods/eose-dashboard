@@ -421,6 +421,49 @@ window.EOSE_DATA = {
     }
   },
 
+  // ────────── NEW: Near-term decision window ──────────
+  // Three regulatory decisions land within ~5 months, all touching Eos
+  // hardware demand through the project-finance bottleneck. Framing rules:
+  //   - State the window the regulator actually announced
+  //   - Compute days-out to the END of that window (conservative upper bound)
+  //   - Describe Eos exposure factually
+  //   - Pair "upside" + "downside" + "base" outcomes equally — don't predict
+  catalystWindow: {
+    framing: 'Three regulatory decisions sit within the next ~5 months that touch the project-finance bottleneck LDES has always had. Eos hardware is in the application stack on all three. The decisions don\'t guarantee Eos revenue — they shape it, in both directions.',
+    upcoming: [
+      {
+        targetEnd: '2026-06-20',
+        anchor:    'Spring 2026',
+        regulator: 'Ofgem (UK)',
+        label:     'Initial Decision List · LDES Cap & Floor Window 1',
+        eosExposure: 'Frontier UK\'s ~11 GWh of Eos-based projects either advance to the shortlist or don\'t. A "yes" doesn\'t commit revenue; a "no" prunes the UK pipeline materially.',
+        kind: 'preliminary'
+      },
+      {
+        targetEnd: '2026-09-22',
+        anchor:    'Summer 2026',
+        regulator: 'Ofgem (UK)',
+        label:     'Final cap & floor awards · Window 1',
+        eosExposure: 'Final regulated revenue floor for awarded UK LDES projects. This is when the Frontier UK pipeline either becomes financeable at scale or doesn\'t.',
+        kind: 'final'
+      },
+      {
+        targetEnd: '2026-09-30',
+        anchor:    'Q3 2026',
+        regulator: 'NYSERDA (NY State)',
+        label:     'Bulk Storage ISCRFP25-1 awards',
+        eosExposure: 'NYSERDA already cites Eos zinc-halide chemistry in at least one funded project. Award mix determines whether the 8+ hr tier flows to Eos or competing chemistries.',
+        kind: 'final'
+      }
+    ],
+    scenarios: {
+      upside: 'Frontier UK wins meaningful Window 1 share AND NYSERDA awards include 8+ hr projects using Eos. Adds contracted volume above the current FY27 model; project finance becomes available for those volumes — historically the binding constraint.',
+      base:   'Partial wins on one or both sides. Eos benefits even at ~25% of the UK pipeline. The information itself is the pivot — markets will reprice once the rankings are public, regardless of magnitude.',
+      downside: 'Frontier UK shut out of Window 1 AND NYSERDA skews to Li-ion or other chemistries. Doesn\'t kill the thesis — Frontier USA + TURBINE-X + existing US contracts remain — but pushes the project-finance unlock 2–4 quarters right.'
+    },
+    sourceNote: 'Decision windows are the regulators\' own stated timing (Ofgem: Spring/Summer 2026 per the LDES Cap & Floor scheme page; NYSERDA: Q3 2026 per the ISCRFP25-1 program page). Days-out below count to the END of the stated window — they\'re upper bounds, not predictions.'
+  },
+
   // ────────── NEW: Regulated demand programs (US + UK) ──────────
   // Both NYSERDA's Index Storage Credit and Ofgem's Cap & Floor are
   // government-backed revenue-floor mechanisms specifically designed to

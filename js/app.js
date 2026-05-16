@@ -289,13 +289,22 @@
   function renderCatalysts() {
     const host = document.querySelector('[data-catalysts]');
     if (!host) return;
-    host.innerHTML = D.catalysts.map(c => `
-      <div class="cat__row">
-        <div class="cat__date">${c.date}</div>
-        <div class="cat__event">${c.event}</div>
-        <span class="pill ${c.tone}">${c.status}</span>
-        <button class="cat__btn">+ Calendar</button>
-      </div>`).join('');
+    host.innerHTML = D.catalysts.map(c => {
+      // Subtle accent for regulator-decision catalysts so the reader can spot
+      // structural decision points vs. company milestones at a glance.
+      const isRegulator = /\[Regulator\]/.test(c.status || '');
+      const accent = isRegulator
+        ? 'border-left:3px solid var(--accent);padding-left:14px;background:linear-gradient(90deg,var(--accent-soft),transparent 60%)'
+        : '';
+      const prefix = isRegulator ? '<span style="color:var(--accent);font-weight:700;margin-right:6px">↳ DECISION</span>' : '';
+      return `
+        <div class="cat__row" style="${accent}">
+          <div class="cat__date">${c.date}</div>
+          <div class="cat__event">${prefix}${c.event}</div>
+          <span class="pill ${c.tone}">${c.status}</span>
+          <button class="cat__btn">+ Calendar</button>
+        </div>`;
+    }).join('');
   }
 
   function renderRisks() {
@@ -326,6 +335,41 @@
     };
     sideRenderer('uk', 'uk');
     sideRenderer('us', 'us');
+  }
+
+  // ---------- NEW: Decision-window catalyst card ----------
+  function daysFromToday(isoDate) {
+    const today = new Date();
+    today.setUTCHours(0, 0, 0, 0);
+    const target = new Date(isoDate + 'T00:00:00Z');
+    return Math.round((target - today) / 86400000);
+  }
+  function renderCatalystWindow() {
+    if (!D.catalystWindow) return;
+    const cw = D.catalystWindow;
+    setEl('[data-catalyst-window-framing]', cw.framing);
+    setEl('[data-catalyst-window-srcnote]', cw.sourceNote);
+    const host = document.querySelector('[data-catalyst-window-cards]');
+    if (host) {
+      host.innerHTML = cw.upcoming.map(c => {
+        const d = daysFromToday(c.targetEnd);
+        const dStr = d <= 0 ? 'window passed' : `~${d} day${d === 1 ? '' : 's'}`;
+        const dColor = d <= 30 ? 'var(--warning)' : d <= 90 ? 'var(--accent)' : 'var(--fg-1)';
+        const kindLabel = c.kind === 'final' ? 'FINAL DECISION' : 'PRELIMINARY';
+        return `<div style="background:var(--bg-1);padding:14px;border-radius:8px;border:1px solid var(--line-1)">
+          <div style="font-size:10.5px;color:var(--fg-3);letter-spacing:.1em;font-weight:700;text-transform:uppercase">${c.regulator} · ${kindLabel}</div>
+          <div style="margin-top:6px;font-size:14px;font-weight:600;color:var(--fg-0)">${c.label}</div>
+          <div style="margin-top:10px;display:flex;align-items:baseline;gap:10px">
+            <span style="font-size:28px;font-weight:600;font-variant-numeric:tabular-nums;color:${dColor}">${dStr}</span>
+            <span style="font-size:11.5px;color:var(--fg-3)">to end of ${c.anchor}</span>
+          </div>
+          <div style="margin-top:10px;font-size:12.5px;color:var(--fg-2);line-height:1.55">${c.eosExposure}</div>
+        </div>`;
+      }).join('');
+    }
+    setEl('[data-catalyst-window-upside]',   cw.scenarios.upside);
+    setEl('[data-catalyst-window-base]',     cw.scenarios.base);
+    setEl('[data-catalyst-window-downside]', cw.scenarios.downside);
   }
 
   // ---------- NEW: Regulated demand programs (Ofgem + NYSERDA) ----------
@@ -650,6 +694,7 @@
     renderSentiment();
     renderRumors();
     renderRegulatedPrograms();
+    renderCatalystWindow();
 
     // Charts
     chart('[data-chart-revenue]',  h => C.barChart(h, D.quarterlyRevenue, { colorByType: true, height: 340 }));
