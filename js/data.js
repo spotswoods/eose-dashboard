@@ -193,7 +193,7 @@ window.EOSE_DATA = {
   // ────────── Opportunity funnel — 10-Q discloses $24.3B pipeline ──────────
   funnel: [
     { stage: 'Commercial pipeline (Q1\'26)', value: 24300,  label: '$24.3B'  },
-    { stage: '+ Frontier 2 GWh reservation', value: 900,    label: '~$900M*' },
+    { stage: '+ Frontier USA 2 GWh reservation @ $225/kWh', value: 450,    label: '~$450M*' },
     { stage: 'Contracted backlog (3/31/26)', value: 644.6,  label: '$644.6M' },
     { stage: 'FY26 revenue (guidance mid)',  value: 350,    label: '$350M'   }
   ],
@@ -213,7 +213,8 @@ window.EOSE_DATA = {
     { q: '3Q25', v: 644.4 },
     { q: '4Q25', v: 701.5 },
     { q: '1Q26', v: 644.6 },
-    { q: '2Q26', v: 1500.0, type: 'projected' }   // post-quarter Frontier reservation
+    // 2 GWh Frontier USA at $225/kWh = ~$450M added to Q1'26 backlog of $644.6M
+    { q: '2Q26', v: 1095.0, type: 'projected' }
   ],
 
   // ────────── New bookings per quarter ($M) ──────────
@@ -231,24 +232,35 @@ window.EOSE_DATA = {
     { q: '3Q25', v: 2.4  },
     { q: '4Q25', v: 240.0},
     { q: '1Q26', v: 0.1  },
-    { q: '2Q26', v: 900.0, type: 'projected' }    // Frontier 2 GWh @ ~$450/kWh est.
+    // Frontier USA 2 GWh @ $225/kWh = ~$450M. Prior estimate used $450/kWh
+    // which was out of line with Eos historical pricing (~$250/kWh per Iceberg
+    // Research) and current LDES market benchmarks. See contracts methodology.
+    { q: '2Q26', v: 450.0, type: 'projected' }
   ],
 
   // ────────── Contracts ──────────
   // Documented (publicly-named) Eos counterparties + post-Q1'26 deal additions.
-  // All $ values are model estimates from disclosed MWh × ~$400–500/kWh (flagged *).
-  // MWh figures are public-disclosure approximations; consult the 10-K Item 1
-  // (Business — Customers) for the company's own characterization.
+  // All $ values marked * are conservative model estimates from disclosed MWh ×
+  // $225/kWh. The $225 figure is anchored to two data points:
+  //   - Iceberg Research (Oct 2024) documented Eos pricing at $250-$255/kWh
+  //     from 1Q21-2Q24, with Pine Gate MSA "similarly priced at approximately
+  //     $250/kWh"
+  //   - BloombergNEF 2025 Li-ion BESS turnkey average: $117/kWh globally
+  //     ($150/kWh in US), so $225/kWh represents a modest LDES premium —
+  //     defensible, not aggressive
+  // We use $225 (vs. $250 historical) to be conservative given continued
+  // industry-wide price compression. Eos does not publicly disclose per-kWh
+  // pricing on individual contracts.
   contracts: [
-    { customer: 'Frontier Power Ltd. (UK) — first order',  mwh: 228,    region: 'UK',       status: 'Delivering',   value: '~$114M*' },
-    { customer: 'Frontier Power Ltd. (UK) — 5 GWh framework', mwh: 5000, region: 'UK',     status: 'Framework',     value: '~$2.5B*' },
-    { customer: 'Frontier Power USA (Cerberus JV)',  mwh: 2000,    region: 'USA',      status: 'Contracted',   value: '~$900M*'  },
+    { customer: 'Frontier Power Ltd. (UK) — first order',  mwh: 228,    region: 'UK',       status: 'Delivering',   value: '~$51M*' },
+    { customer: 'Frontier Power Ltd. (UK) — 5 GWh framework', mwh: 5000, region: 'UK',     status: 'Framework',     value: '~$1.1B*' },
+    { customer: 'Frontier Power USA (Cerberus JV)',  mwh: 2000,    region: 'USA',      status: 'Contracted',   value: '~$450M*'  },
     { customer: 'TURBINE-X Energy (JDA, AI data center)', mwh: '≤2000', region: 'USA', status: 'Negotiation',  value: 'TBD (JDA)' },
-    { customer: 'MN8 Energy',                        mwh: '~590',  region: 'USA',     status: 'Delivering',   value: '~$295M*'  },
-    { customer: 'Indian Energy / Viejas microgrid',  mwh: 300,     region: 'USA (CA)', status: 'Contracted',   value: '~$150M*'  },
+    { customer: 'MN8 Energy',                        mwh: '~590',  region: 'USA',     status: 'Delivering',   value: '~$133M*'  },
+    { customer: 'Indian Energy / Viejas microgrid',  mwh: 300,     region: 'USA (CA)', status: 'Contracted',   value: '~$68M*'  },
     { customer: 'Southeast utility (4hr→10hr expansion)', mwh: 'expanded', region: 'USA (SE)', status: 'Delivering', value: 'undisclosed' },
     { customer: 'NYSERDA NYC project (zinc-halide cited)', mwh: '~MW-scale', region: 'USA (NY)', status: 'Contracted', value: 'undisclosed' },
-    { customer: 'Other publicly-disclosed counterparties', mwh: '~500', region: 'USA / mixed', status: 'Mixed', value: '~$200M*' }
+    { customer: 'Other publicly-disclosed counterparties', mwh: '~500', region: 'USA / mixed', status: 'Mixed', value: '~$110M*' }
   ],
 
   // ────────── P/S multiple ──────────
