@@ -587,17 +587,74 @@
       `<a href="${s.url}" target="_blank" rel="noopener" style="color:var(--accent);text-decoration:underline">${s.label}</a>`).join(' · ');
   }
 
-  // ---------- NEW: Product specs + competitive ----------
+  // ---------- NEW: Product family (Indensity / Cube / Z3 / DawnOS) + competitive ----------
   function renderProduct() {
-    const ps = document.querySelector('[data-product-specs] tbody');
-    if (ps && D.productSpecs) {
-      ps.innerHTML = D.productSpecs.map(r => `
-        <tr><td style="color:var(--fg-2)">${r.k}</td><td><b>${r.v}</b></td><td style="color:var(--fg-2);font-size:12.5px">${r.why}</td></tr>`).join('');
-    }
+    // Competitive landscape (kept from before)
     const cb = document.querySelector('[data-competitive] tbody');
     if (cb && D.competitive) {
       cb.innerHTML = D.competitive.map(r => `
         <tr><td><b>${r.tech}</b></td><td style="color:var(--fg-2)">${r.lead}</td><td class="num">${r.duration}</td><td style="color:var(--fg-2);font-size:12.5px">${r.status}</td><td style="font-size:12.5px">${r.edge}</td></tr>`).join('');
+    }
+    if (!D.products) return;
+
+    const srcLinks = (sources) => (sources || []).map(s =>
+      `<a href="${s.url}" target="_blank" rel="noopener" style="color:var(--accent);text-decoration:underline">${s.label}</a>`).join(' · ');
+
+    const attrTable = (rows) => rows.map(r =>
+      `<tr><td style="color:var(--fg-2);width:38%">${r.k}</td><td><b>${r.v}</b>${r.note ? `<div style="color:var(--fg-3);font-size:11.5px;margin-top:2px;font-weight:400">${r.note}</div>` : ''}</td></tr>`).join('');
+
+    // Indensity
+    const ind = D.products.indensity;
+    if (ind) {
+      setEl('[data-prod-indensity-name]',      ind.name);
+      setEl('[data-prod-indensity-tagline]',   ind.tagline);
+      setEl('[data-prod-indensity-launched]',  ind.launched ? 'Launched ' + ind.launched : '');
+      setEl('[data-prod-indensity-summary]',   ind.summary);
+      const t = document.querySelector('[data-prod-indensity-attrs] tbody');
+      if (t) t.innerHTML = attrTable(ind.attributes || []);
+      const ap = document.querySelector('[data-prod-indensity-apps]');
+      if (ap) ap.innerHTML = (ind.applications || []).map(a => `<li>${a}</li>`).join('');
+      const sr = document.querySelector('[data-prod-indensity-sources]');
+      if (sr) sr.innerHTML = srcLinks(ind.sources);
+    }
+
+    // Cube
+    const cube = D.products.cube;
+    if (cube) {
+      setEl('[data-prod-cube-name]',     cube.name);
+      setEl('[data-prod-cube-tagline]',  cube.tagline);
+      setEl('[data-prod-cube-launched]', cube.launched || '');
+      setEl('[data-prod-cube-summary]',  cube.summary);
+      const t = document.querySelector('[data-prod-cube-attrs] tbody');
+      if (t) t.innerHTML = attrTable(cube.attributes || []);
+      const sr = document.querySelector('[data-prod-cube-sources]');
+      if (sr) sr.innerHTML = srcLinks(cube.sources);
+    }
+
+    // Z3 module
+    const z3 = D.products.z3Module;
+    if (z3) {
+      setEl('[data-prod-z3-name]',    z3.name);
+      setEl('[data-prod-z3-tagline]', z3.tagline);
+      const t = document.querySelector('[data-prod-z3-attrs] tbody');
+      if (t) t.innerHTML = attrTable(z3.attributes || []);
+      const sr = document.querySelector('[data-prod-z3-sources]');
+      if (sr) sr.innerHTML = srcLinks(z3.sources);
+    }
+
+    // DawnOS
+    const dawn = D.products.dawnos;
+    if (dawn) {
+      setEl('[data-prod-dawnos-name]',     dawn.name);
+      setEl('[data-prod-dawnos-tagline]',  dawn.tagline);
+      setEl('[data-prod-dawnos-launched]', dawn.launched ? 'Launched ' + dawn.launched : '');
+      setEl('[data-prod-dawnos-summary]',  dawn.summary);
+      const t = document.querySelector('[data-prod-dawnos-caps] tbody');
+      if (t) t.innerHTML = attrTable(dawn.capabilities || []);
+      const sec = document.querySelector('[data-prod-dawnos-security]');
+      if (sec) sec.innerHTML = (dawn.security || []).map(s => `<li>${s}</li>`).join('');
+      const sr = document.querySelector('[data-prod-dawnos-sources]');
+      if (sr) sr.innerHTML = srcLinks(dawn.sources);
     }
   }
 

@@ -529,17 +529,104 @@ window.EOSE_DATA = {
     note: 'The $868M shareholders\' deficit is largely a function of mark-to-market accounting on Cerberus instruments and warrants — not an economic deficit. Series B preferred remeasurement was +$778.9M in Q1\'26 alone (non-cash). Reconcile against the 10-Q before acting on any single line item.'
   },
 
-  // ────────── NEW: Z3 product specs ──────────
-  productSpecs: [
-    { k: 'Chemistry',           v: 'Aqueous zinc-bromide (Znyth®)',           why: 'Non-flammable; no thermal runaway risk vs. Li-ion' },
-    { k: 'Duration',            v: '4 – 16+ hours',                            why: 'LDES sweet spot Li-ion can\'t reach economically' },
-    { k: 'Cube energy',         v: '~280 kWh DC per cube',                    why: 'Modular, field-replaceable building block' },
-    { k: 'Cycle life',          v: '~6,000+ cycles to 100% DoD',              why: '~1 cycle/day for 16+ years; no calendar derate' },
-    { k: 'Round-trip efficiency',v: '~75–80% (improving via DawnOS)',         why: 'Below Li-ion (~85–90%); offset by long-duration use' },
-    { k: 'Operating temp.',     v: '−20 °C → +50 °C, no HVAC',                why: 'BOS / capex savings on container conditioning' },
-    { k: 'Supply chain',        v: 'Zinc + bromine — non-CRM, US-sourced',    why: 'IRA 45X qualified; ITC tailwinds; no China dependency' },
-    { k: 'Controls',            v: 'DawnOS® (proprietary)',                   why: 'Closed-loop optimization; firmware-driven RTE gains' }
-  ],
+  // ────────── NEW: Product family (Indensity / Cube / DawnOS) ──────────
+  // Specs sourced directly from eose.com solution pages + ENF/NALA datasheet
+  // exports of the original Cube spec sheet. Where a value is from secondary
+  // datasheet rather than the current site, the source is labeled inline.
+  products: {
+    indensity: {
+      name:        'Eos Indensity™',
+      tagline:     'Stackable, high-density LDES architecture',
+      launched:    'January 14, 2026',
+      summary:     'New modular architecture that integrates Z3 modules, DawnOS controls, onboard cooling, and power management into a self-contained "Indensity Core™" — stackable horizontally and vertically into a steel superstructure. Designed for sites where conventional BESS footprints don\'t fit.',
+      attributes: [
+        { k: 'Energy density',           v: '~1 GWh per acre',                       note: '~4× incumbent BESS (~250 MWh/acre)' },
+        { k: 'Round-trip efficiency',    v: 'Up to 90%',                              note: 'Materially above legacy Cube (~75–80%) — driven by integrated DawnOS controls' },
+        { k: 'Discharge duration',       v: '4 – 16+ hours',                          note: 'Cycle-by-cycle adjustable' },
+        { k: 'Response time',            v: 'Millisecond-class',                      note: 'Supports complex cycling profiles' },
+        { k: 'Capacity retention',       v: '~97% over 25-year life',                 note: 'Per Eos solution page' },
+        { k: 'Operating range',          v: 'Freezing to blistering heat',            note: 'Exact temperature range not published on the solution page' },
+        { k: 'Form factor',              v: 'Indensity Core™ slotted into steel superstructure',    note: 'Stacks horizontally AND vertically' },
+        { k: 'Deployment',               v: 'Indoor + outdoor weather-ready',        note: 'Adapts to constrained site footprints' },
+        { k: 'Integrated components',    v: 'Z3 modules + DawnOS + onboard cooling + power mgmt', note: 'Single self-contained unit' },
+        { k: 'Safety',                   v: 'Non-flammable, recyclable, cyber-hardened via DawnOS', note: 'No thermal runaway risk' }
+      ],
+      applications: ['AI data centers', 'Military bases', 'Manufacturing facilities', 'Urban infrastructure', 'Grid support'],
+      sources: [
+        { label: 'eose.com · Indensity solution page',  url: 'https://www.eose.com/solutions/eos-indensity/' },
+        { label: 'Eos IR · Indensity launch (Jan 2026)', url: 'https://investors.eose.com/news-releases/news-release-details/eos-energy-announces-indensitytm-breakthrough-battery-energy' }
+      ]
+    },
+    cube: {
+      name:        'Eos Cube™',
+      tagline:     'Containerized BESS — the legacy commercial product',
+      launched:    'Commercial since 2020 (Z3 module: 2023)',
+      summary:     'Fully containerized BESS that loads 672 Z3 battery modules into an outdoor-rated container. The original commercial Eos product and the underlying hardware that Indensity now re-packages.',
+      attributes: [
+        { k: 'Container',                v: '8\' × 16\' outdoor-rated shipping container', note: 'Per eose.com Cube solution page' },
+        { k: 'Container dimensions',     v: '2.50m W × 2.50m H × 5.03m D',           note: 'Per ENF datasheet export of original Cube spec' },
+        { k: 'Container weight',         v: '~20,900 kg (~46,000 lb)',                note: 'Per ENF datasheet' },
+        { k: 'Z3 modules per Cube',      v: '672',                                    note: 'eose.com Cube page' },
+        { k: 'Usable energy',            v: '691–800 kWh',                            note: 'Per ENF datasheet — range reflects discharge duration setting' },
+        { k: 'Max power',                v: '~191 kW',                                note: 'Per ENF datasheet — yields ~4 hr at 800 kWh' },
+        { k: 'Discharge duration',       v: '4 – 16+ hours',                          note: 'Cycle-by-cycle adjustable depth + duration' },
+        { k: 'Design life',              v: '25+ years',                              note: 'No moving parts; closed system' },
+        { k: 'Capacity retention',       v: '~97% of rated capacity',                 note: 'eose.com Cube page' },
+        { k: 'Hazmat classification',    v: '"Zero charge" for shipping',             note: 'Non-flammable, non-corrosive' },
+        { k: 'Certifications',           v: 'UL 1973 + UL 9540A',                     note: 'Per Z3 module product sheet' }
+      ],
+      sources: [
+        { label: 'eose.com · Cube solution page',           url: 'https://www.eose.com/solutions/eos-cube/' },
+        { label: 'Z3 product sheet (PDF, May 2023)',         url: 'https://www.eose.com/wp-content/uploads/2023/05/eos_productsheet_Z3_050223.pdf' },
+        { label: 'Eos Cube brochure (PDF, Sep 2022)',         url: 'https://cdn.enfsolar.com/z/pp/2023/10/g99ecrrdpy8x401q/eos-cube-brochure-090822.pdf' },
+        { label: 'ENF datasheet export',                       url: 'https://www.enfsolar.com/pv/storage-system-datasheet/10797' }
+      ]
+    },
+    z3Module: {
+      name:        'Eos Z3™ Battery Module',
+      tagline:     'Underlying building block — used in both Cube and Indensity',
+      attributes: [
+        { k: 'Chemistry',                v: 'Zinc hybrid cathode (Znyth®)',           note: 'Aqueous electrolyte using zinc bromide' },
+        { k: 'Construction',             v: 'Bipolar electrodes in polymer casing',    note: 'No precious metals; non-CRM bill of materials' },
+        { k: 'Voltage range',            v: '22 – 48 VDC',                            note: 'Per Z3 product sheet' },
+        { k: 'Rated power',              v: '0.15 kW',                                note: 'Per module' },
+        { k: 'Energy per module',        v: '0.8 kWh',                                note: 'Per module' },
+        { k: 'Certifications',           v: 'UL 1973 + UL 9540A',                     note: 'Safety + fire propagation' },
+        { k: 'Supply chain',             v: 'Zinc + bromine, US-sourced',              note: 'Qualifies for 45X PTC; no FEOC exposure' }
+      ],
+      sources: [
+        { label: 'Z3 product sheet (PDF)', url: 'https://www.eose.com/wp-content/uploads/2023/05/eos_productsheet_Z3_050223.pdf' }
+      ]
+    },
+    dawnos: {
+      name:        'DawnOS™ Platform',
+      tagline:     'US-developed BMS + controls + analytics layer',
+      launched:    'September 8, 2025',
+      summary:     'Proprietary battery management system, controls, and analytics platform. 100% US-developed with no foreign code and no external cloud dependencies. Now deployed in all new Eos projects; can be integrated into select legacy projects. The "controls IQ" layer that drove the recent RTE improvement.',
+      capabilities: [
+        { k: 'Scope',                    v: 'Manages thousands of modules in real time, individual module monitoring', note: 'Module-level granularity, not just string-level' },
+        { k: 'State tracking',           v: 'State of Charge / State of Health / State of Energy per module', note: 'For grid dispatch + revenue optimization' },
+        { k: 'Control actions',          v: 'Charge / discharge / bypass commands per module',  note: 'Active module-level routing' },
+        { k: 'String voltage management',v: 'DC/DC converters maintain common voltage during module switching', note: 'Allows dynamic configuration without disrupting output' },
+        { k: 'Balancing',                v: 'Independent module-balancing strategies',           note: 'Reduces need for field service visits' },
+        { k: 'Anomaly detection',        v: 'Proactive, live in production',                     note: 'Plus predictive balancing + dynamic switching' },
+        { k: 'DawnOS Insights',          v: 'AI-enabled analytics platform (Beta since Apr 2025)',note: 'Aggregated metrics + string/battery-level detail' },
+        { k: 'Telemetry scale',          v: 'Processes 20+ billion signals across deployed fleet', note: 'Eos\' own stated figure' },
+        { k: 'Hardware compatibility',   v: 'Z3 zinc-based systems (primary)',                  note: 'Designed specifically for Z3' }
+      ],
+      security: [
+        '100% US-developed code — no foreign software in the stack',
+        'No external cloud dependencies; hosted on US infrastructure',
+        'Domestic data retention',
+        'Designed for grid-resilience + national-security use cases',
+        '"Designed by American minds, built by American hands, secured on American soil" (Eos messaging)'
+      ],
+      sources: [
+        { label: 'eose.com · DawnOS solution page',           url: 'https://www.eose.com/solutions/dawnos/' },
+        { label: 'Eos IR · DawnOS launch (Sep 8, 2025)',       url: 'https://investors.eose.com/news-releases/news-release-details/eos-energy-unlocks-advanced-control-and-system-optimization' }
+      ]
+    }
+  },
 
   // ────────── NEW: Competitive landscape (refreshed May 2026) ──────────
   // Source narrative from PV Magazine USA (Apr 2026): "EOS and ESS showing
