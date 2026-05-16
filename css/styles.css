@@ -130,11 +130,12 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
 .shell { max-width: 1480px; margin: 0 auto; padding: 0 32px 96px; }
 
 /* ========== Top ticker bar ========== */
+/* Solid background (not color-mix + backdrop-filter) — the previous
+   semi-transparent + blur combo caused Chrome compositor to blank out
+   sections during fast programmatic scroll. */
 .ticker {
   position: sticky; top: 0; z-index: 60;
-  background: color-mix(in oklab, var(--bg-0) 80%, transparent);
-  -webkit-backdrop-filter: blur(20px) saturate(160%);
-  backdrop-filter: blur(20px) saturate(160%);
+  background: var(--bg-0);
   border-bottom: 1px solid var(--line-1);
 }
 .ticker__inner {
@@ -236,9 +237,7 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
 /* ========== Section navigation ========== */
 .section-nav {
   position: sticky; top: 53px; z-index: 50;
-  background: color-mix(in oklab, var(--bg-0) 75%, transparent);
-  -webkit-backdrop-filter: blur(20px);
-  backdrop-filter: blur(20px);
+  background: var(--bg-0);
   border-bottom: 1px solid var(--line-1);
 }
 .section-nav__inner {
@@ -555,3 +554,61 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { animation: none !important; transition: none !important; }
 }
+
+/* ========== Toast notification (CSV download feedback, etc.) ========== */
+.toast {
+  position: fixed; bottom: 24px; right: 24px; z-index: 200;
+  background: var(--bg-1); color: var(--fg-0);
+  border: 1px solid var(--accent);
+  border-left: 3px solid var(--accent);
+  padding: 14px 18px; border-radius: 10px;
+  font-size: 13.5px; line-height: 1.45;
+  box-shadow: 0 16px 40px -16px rgba(0,0,0,0.5);
+  opacity: 0; transform: translateY(16px);
+  transition: opacity .22s var(--ease), transform .22s var(--ease);
+  pointer-events: none;
+  max-width: 340px;
+}
+.toast.is-visible { opacity: 1; transform: translateY(0); pointer-events: auto; }
+.toast strong { color: var(--accent); display: block; font-size: 12px; letter-spacing: .06em; text-transform: uppercase; margin-bottom: 4px; }
+
+/* ========== Search panel (slides down below ticker) ========== */
+.search-panel {
+  position: fixed; top: 53px; left: 0; right: 0; z-index: 55;
+  background: var(--bg-1); border-bottom: 1px solid var(--line-2);
+  padding: 14px 32px; box-shadow: 0 16px 40px -20px rgba(0,0,0,0.5);
+  transform: translateY(-100%); transition: transform .25s var(--ease);
+}
+.search-panel.is-open { transform: translateY(0); }
+.search-panel__inner { max-width: 720px; margin: 0 auto; }
+.search-panel input {
+  width: 100%; background: var(--bg-2); color: var(--fg-0);
+  border: 1px solid var(--line-2); border-radius: 10px;
+  padding: 12px 14px; font-size: 15px; font-family: var(--font-sans);
+  outline: none;
+}
+.search-panel input:focus { border-color: var(--accent); }
+.search-panel__results {
+  margin-top: 10px; max-height: 340px; overflow-y: auto;
+  display: flex; flex-direction: column; gap: 2px;
+}
+.search-panel__results a {
+  display: flex; align-items: center; gap: 12px;
+  padding: 10px 12px; border-radius: 8px; font-size: 14px;
+  color: var(--fg-1); cursor: pointer;
+}
+.search-panel__results a:hover, .search-panel__results a.is-active {
+  background: var(--accent-soft); color: var(--accent);
+}
+.search-panel__results .num {
+  font-family: var(--font-mono); font-size: 11.5px;
+  color: var(--fg-3); min-width: 32px;
+}
+.search-panel__results .desc { color: var(--fg-3); font-size: 12.5px; }
+.search-panel__hint { font-size: 11.5px; color: var(--fg-3); margin-top: 8px; }
+.search-panel__hint kbd {
+  background: var(--bg-3); border: 1px solid var(--line-1);
+  border-radius: 4px; padding: 1px 6px; font-family: var(--font-mono);
+  font-size: 10.5px; color: var(--fg-1);
+}
+.icon-btn.is-active { background: var(--accent-soft); color: var(--accent); }

@@ -30,11 +30,8 @@
         <span class="ticker__item">Shares <b>339.5M</b></span>
       </div>
       <div class="ticker__actions">
-        <button class="icon-btn" title="Search" aria-label="Search">
+        <button class="icon-btn" data-search-toggle title="Search sections (press /)" aria-label="Search sections">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4-4"/></svg>
-        </button>
-        <button class="icon-btn" title="Watchlist" aria-label="Watchlist">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"/></svg>
         </button>
         <button class="icon-btn" data-theme-toggle title="Toggle theme" aria-label="Toggle theme">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -44,6 +41,17 @@
       </div>
     </div>
   </header>
+
+  <!-- Search panel (slides down on click of search icon or "/" key) -->
+  <div class="search-panel" id="searchPanel" role="dialog" aria-label="Search sections">
+    <div class="search-panel__inner">
+      <input type="text" id="searchInput" placeholder="Search section names — e.g. Frontier, NYSERDA, Cap Structure, Insiders…" autocomplete="off">
+      <div class="search-panel__results" id="searchResults"></div>
+      <div class="search-panel__hint">
+        <kbd>/</kbd> open · <kbd>↑</kbd> <kbd>↓</kbd> navigate · <kbd>Enter</kbd> jump · <kbd>Esc</kbd> close
+      </div>
+    </div>
+  </div>
 
   <!-- ============ Hero ============ -->
   <section class="hero">

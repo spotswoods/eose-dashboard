@@ -289,7 +289,7 @@
   function renderCatalysts() {
     const host = document.querySelector('[data-catalysts]');
     if (!host) return;
-    host.innerHTML = D.catalysts.map(c => {
+    host.innerHTML = D.catalysts.map((c, i) => {
       // Subtle accent for regulator-decision catalysts so the reader can spot
       // structural decision points vs. company milestones at a glance.
       const isRegulator = /\[Regulator\]/.test(c.status || '');
@@ -297,14 +297,26 @@
         ? 'border-left:3px solid var(--accent);padding-left:14px;background:linear-gradient(90deg,var(--accent-soft),transparent 60%)'
         : '';
       const prefix = isRegulator ? '<span style="color:var(--accent);font-weight:700;margin-right:6px">↳ DECISION</span>' : '';
+      const isDone = /Reported/i.test(c.status || '') || c.tone === 'done';
+      const btnLabel = isDone ? '✓ Done' : '+ Calendar';
+      const btnAttr  = isDone ? 'disabled style="opacity:.5;cursor:not-allowed"' : `data-cat-idx="${i}"`;
       return `
         <div class="cat__row" style="${accent}">
           <div class="cat__date">${c.date}</div>
           <div class="cat__event">${prefix}${c.event}</div>
           <span class="pill ${c.tone}">${c.status}</span>
-          <button class="cat__btn">+ Calendar</button>
+          <button class="cat__btn" ${btnAttr}>${btnLabel}</button>
         </div>`;
     }).join('');
+
+    // Delegate the calendar button click — single listener
+    host.addEventListener('click', e => {
+      const btn = e.target.closest('[data-cat-idx]');
+      if (!btn) return;
+      const idx = parseInt(btn.dataset.catIdx, 10);
+      const cat = D.catalysts[idx];
+      if (cat) downloadCatalystICS(cat);
+    }, { once: false });
   }
 
   function renderRisks() {
@@ -738,30 +750,250 @@
     }
   }
 
-  // ---------- CSV export ----------
+  // ---------- Toast (visual feedback for downloads etc.) ----------
+  let __toastTimer = null;
+  function showToast(title, body) {
+    let host = document.getElementById('toast');
+    if (!host) {
+      host = document.createElement('div');
+      host.id = 'toast';
+      host.className = 'toast';
+      host.setAttribute('role', 'status');
+      host.setAttribute('aria-live', 'polite');
+      document.body.appendChild(host);
+    }
+    host.innerHTML = `<strong>${title}</strong>${body || ''}`;
+    requestAnimationFrame(() => host.classList.add('is-visible'));
+    clearTimeout(__toastTimer);
+    __toastTimer = setTimeout(() => host.classList.remove('is-visible'), 3200);
+  }
+
+  // ---------- CSV export (with toast feedback) ----------
   function exportCSV() {
     const rows = [['Quarter', 'Revenue $M', 'Gross Margin %', 'Operating Income $M', 'Cash $M', 'Type']];
     D.quarterTable.forEach(r => rows.push([r.q, r.rev, r.gm, r.op, r.liq, r.type === 'A' ? 'Actual' : 'Projected']));
-    // also append full quarterly revenue series
     rows.push([]);
     rows.push(['Quarter', 'Revenue $M', 'Type']);
     D.quarterlyRevenue.forEach(r => rows.push([r.q, r.v, r.type]));
     const csv = rows.map(r => r.map(c => `"${c == null ? '' : c}"`).join(',')).join('\n');
     const blob = new Blob([csv], { type: 'text/csv;charset=utf-8' });
+    const filename = `EOSE-data-${new Date().toISOString().slice(0, 10)}.csv`;
     const a = document.createElement('a');
     a.href = URL.createObjectURL(blob);
-    a.download = `EOSE-data-${new Date().toISOString().slice(0, 10)}.csv`;
-    document.body.appendChild(a); a.click(); a.remove();
+    a.download = filename;
+    document.body.appendChild(a); a.click();
+    setTimeout(() => { URL.revokeObjectURL(a.href); a.remove(); }, 250);
+    showToast('Downloaded ✓', `${filename} (${(blob.size / 1024).toFixed(1)} KB) — check your downloads folder`);
+  }
+
+  // ---------- Calendar (.ics) export for catalysts ----------
+  // Parses the catalyst date string and produces a single-event .ics file.
+  // Handles vague windows ("Spring 2026", "Q3 2026", "FY2027") by using the
+  // END of that period as the all-day event date — conservative anchor.
+  function parseCatalystDate(s) {
+    if (!s) return null;
+    const today = new Date();
+    const yearNow = today.getUTCFullYear();
+    const yMatch = s.match(/\b(20\d{2})\b/);
+    const year = yMatch ? parseInt(yMatch[1], 10) : yearNow;
+
+    // Explicit Mon DD, YYYY
+    const monthDay = s.match(/\b(Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec)[a-z]*\s+(\d{1,2}),?\s*(20\d{2})?\b/);
+    if (monthDay) {
+      const monIdx = ['jan','feb','mar','apr','may','jun','jul','aug','sep','oct','nov','dec'].indexOf(monthDay[1].toLowerCase());
+      const d = parseInt(monthDay[2], 10);
+      return new Date(Date.UTC(parseInt(monthDay[3] || year, 10), monIdx, d));
+    }
+
+    // Seasons (UK/US northern hemisphere): use end of season
+    if (/spring/i.test(s))  return new Date(Date.UTC(year, 5, 20));  // Jun 20
+    if (/summer/i.test(s))  return new Date(Date.UTC(year, 8, 22));  // Sep 22
+    if (/autumn|fall/i.test(s)) return new Date(Date.UTC(year, 11, 21)); // Dec 21
+    if (/winter/i.test(s))  return new Date(Date.UTC(year + 1, 2, 19));  // Mar 19 next year
+
+    // Quarters
+    const qMatch = s.match(/\bQ([1-4])\s*(?:20\d{2})?\b/i);
+    if (qMatch) {
+      const endMonths = [2, 5, 8, 11];
+      const endDays   = [31, 30, 30, 31];
+      const q = parseInt(qMatch[1], 10);
+      return new Date(Date.UTC(year, endMonths[q - 1], endDays[q - 1]));
+    }
+
+    // "End Q2 2026" / "End of Q2"
+    const endQ = s.match(/end\s+(?:of\s+)?Q([1-4])/i);
+    if (endQ) {
+      const endMonths = [2, 5, 8, 11];
+      const endDays   = [31, 30, 30, 31];
+      const q = parseInt(endQ[1], 10);
+      return new Date(Date.UTC(year, endMonths[q - 1], endDays[q - 1]));
+    }
+
+    // FY YYYY
+    const fyMatch = s.match(/FY\s*(20\d{2})/i);
+    if (fyMatch) return new Date(Date.UTC(parseInt(fyMatch[1], 10), 11, 31));
+
+    // Year-only
+    if (yMatch) return new Date(Date.UTC(year, 11, 31));
+    return null;
+  }
+  function icsEscape(s) {
+    return String(s || '').replace(/[\\,;]/g, m => '\\' + m).replace(/\r?\n/g, '\\n');
+  }
+  function downloadCatalystICS(catalyst) {
+    const d = parseCatalystDate(catalyst.date) || new Date();
+    const fmt = (date) => date.toISOString().slice(0, 10).replace(/-/g, '');
+    const startDate = fmt(d);
+    const endDate = fmt(new Date(d.getTime() + 86400000));
+    const uid = `eose-${startDate}-${Math.random().toString(36).slice(2, 8)}@spotswoods.github.io`;
+    const stamp = new Date().toISOString().replace(/[-:]/g, '').slice(0, 15) + 'Z';
+    const ics = [
+      'BEGIN:VCALENDAR',
+      'VERSION:2.0',
+      'PRODID:-//EOSE Dashboard//EN',
+      'CALSCALE:GREGORIAN',
+      'METHOD:PUBLISH',
+      'BEGIN:VEVENT',
+      `UID:${uid}`,
+      `DTSTAMP:${stamp}`,
+      `DTSTART;VALUE=DATE:${startDate}`,
+      `DTEND;VALUE=DATE:${endDate}`,
+      `SUMMARY:EOSE — ${icsEscape(catalyst.event)}`,
+      `DESCRIPTION:Catalyst from spotswoods.github.io/eose-dashboard\\nStatus: ${icsEscape(catalyst.status)}\\nOriginal date label: ${icsEscape(catalyst.date)}`,
+      'URL:https://spotswoods.github.io/eose-dashboard/#catalysts',
+      'END:VEVENT',
+      'END:VCALENDAR',
+      ''
+    ].join('\r\n');
+    const blob = new Blob([ics], { type: 'text/calendar;charset=utf-8' });
+    const a = document.createElement('a');
+    a.href = URL.createObjectURL(blob);
+    a.download = `EOSE-${catalyst.event.slice(0, 40).replace(/[^a-z0-9]/gi, '_')}.ics`;
+    document.body.appendChild(a); a.click();
+    setTimeout(() => { URL.revokeObjectURL(a.href); a.remove(); }, 250);
+    showToast('Calendar event downloaded ✓', `${a.download} — open it to add to your calendar`);
+  }
+
+  // ---------- Search panel ----------
+  function initSearch() {
+    const panel = document.getElementById('searchPanel');
+    const input = document.getElementById('searchInput');
+    const results = document.getElementById('searchResults');
+    const toggle = document.querySelector('[data-search-toggle]');
+    if (!panel || !input || !results || !toggle) return;
+
+    // Build the searchable index from the section nav links + visible h2
+    const navLinks = Array.from(document.querySelectorAll('.section-nav a'));
+    const index = navLinks.map(a => {
+      const href = a.getAttribute('href');
+      const sec = document.querySelector(href);
+      const h2 = sec && sec.querySelector('h2');
+      return {
+        num: a.querySelector('.num')?.textContent || '',
+        label: (a.textContent || '').replace(/^\s*\S+\s*/, '').trim(),
+        desc: h2 ? h2.textContent.trim() : '',
+        href
+      };
+    });
+
+    let activeIdx = 0;
+    function render(query) {
+      const q = (query || '').toLowerCase().trim();
+      const matches = q
+        ? index.filter(i => (i.label + ' ' + i.desc + ' ' + i.num).toLowerCase().includes(q))
+        : index;
+      activeIdx = 0;
+      results.innerHTML = matches.map((m, i) => `
+        <a href="${m.href}" data-i="${i}" class="${i === 0 ? 'is-active' : ''}">
+          <span class="num">${m.num}</span>
+          <span><b>${m.label}</b><div class="desc">${m.desc}</div></span>
+        </a>`).join('') || '<div style="padding:14px;color:var(--fg-3);font-size:13px">No matches.</div>';
+      results._matches = matches;
+    }
+    function open() {
+      panel.classList.add('is-open');
+      toggle.classList.add('is-active');
+      input.value = '';
+      render('');
+      setTimeout(() => input.focus(), 60);
+    }
+    function close() {
+      panel.classList.remove('is-open');
+      toggle.classList.remove('is-active');
+    }
+    function jump(href) {
+      const target = document.querySelector(href);
+      if (!target) return;
+      close();
+      const y = target.getBoundingClientRect().top + window.scrollY - 120;
+      window.scrollTo({ top: y, behavior: 'smooth' });
+      if (history.replaceState) history.replaceState(null, '', href);
+    }
+    function moveActive(delta) {
+      const items = results.querySelectorAll('a');
+      if (!items.length) return;
+      activeIdx = (activeIdx + delta + items.length) % items.length;
+      items.forEach((el, i) => el.classList.toggle('is-active', i === activeIdx));
+      items[activeIdx].scrollIntoView({ block: 'nearest' });
+    }
+
+    toggle.addEventListener('click', () => panel.classList.contains('is-open') ? close() : open());
+    input.addEventListener('input', e => render(e.target.value));
+    input.addEventListener('keydown', e => {
+      if (e.key === 'Escape') close();
+      else if (e.key === 'ArrowDown') { e.preventDefault(); moveActive(1); }
+      else if (e.key === 'ArrowUp')   { e.preventDefault(); moveActive(-1); }
+      else if (e.key === 'Enter') {
+        e.preventDefault();
+        const item = results.querySelectorAll('a')[activeIdx];
+        if (item) jump(item.getAttribute('href'));
+      }
+    });
+    results.addEventListener('click', e => {
+      const a = e.target.closest('a');
+      if (!a) return;
+      e.preventDefault();
+      jump(a.getAttribute('href'));
+    });
+    // Global "/" shortcut to open search (unless user is typing in a field)
+    document.addEventListener('keydown', e => {
+      const tag = (e.target && e.target.tagName) || '';
+      if (e.key === '/' && tag !== 'INPUT' && tag !== 'TEXTAREA') {
+        e.preventDefault();
+        open();
+      } else if (e.key === 'Escape' && panel.classList.contains('is-open')) {
+        close();
+      }
+    });
+    // Click outside to close
+    document.addEventListener('click', e => {
+      if (!panel.contains(e.target) && !toggle.contains(e.target) && panel.classList.contains('is-open')) {
+        close();
+      }
+    });
   }
 
   // ---------- Section nav: scroll spy + URL hash ----------
   function initScrollSpy() {
     const links = document.querySelectorAll('.section-nav a');
     const sections = Array.from(links).map(a => document.querySelector(a.getAttribute('href'))).filter(Boolean);
+    // Cache section offsetTops — reading them in every scroll handler triggers
+    // a layout flush per section, which contributes to scroll lag with 19+ sections.
+    let sectionTops = sections.map(s => s.offsetTop);
+    let recalcTimer = null;
+    window.addEventListener('resize', () => {
+      clearTimeout(recalcTimer);
+      recalcTimer = setTimeout(() => { sectionTops = sections.map(s => s.offsetTop); }, 150);
+    }, { passive: true });
+    // Recompute once after charts have finished rendering (heights may have changed)
+    setTimeout(() => { sectionTops = sections.map(s => s.offsetTop); }, 800);
+
     function onScroll() {
       const y = window.scrollY + 220;
       let active = 0;
-      sections.forEach((s, i) => { if (s && s.offsetTop <= y) active = i; });
+      for (let i = 0; i < sectionTops.length; i++) {
+        if (sectionTops[i] <= y) active = i;
+      }
       links.forEach((l, i) => l.classList.toggle('is-active', i === active));
     }
     window.addEventListener('scroll', onScroll, { passive: true });
@@ -855,6 +1087,7 @@
 
     initScrollSpy();
     initToggles();
+    initSearch();
 
     // Live quote (fire-and-forget; non-blocking)
     loadQuote();
