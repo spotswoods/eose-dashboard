@@ -450,19 +450,15 @@
       if (srcEl) srcEl.href = si.source;
     }
 
-    // Insiders
+    // Insiders — summary card now (full transactions in §09d)
     if (s.insiders) {
       const ins = s.insiders;
-      setEl('[data-sentiment-insider-net]', 'Net activity: ' + ins.trailing12moNet);
-      const buys = document.querySelector('[data-sentiment-buys] tbody');
-      if (buys) buys.innerHTML = ins.recentBuys.map(b => `
-        <tr><td><b>${b.name}</b><div style="color:var(--fg-3);font-size:11.5px">${b.date} · ${b.kind}</div></td>
-        <td class="num pos"><b>${b.value}</b><div style="color:var(--fg-3);font-size:11.5px">${b.shares.toLocaleString()} sh @ ${b.price}</div></td></tr>`).join('');
-      const sells = document.querySelector('[data-sentiment-sells] tbody');
-      if (sells) sells.innerHTML = ins.recentSells.map(r => `
-        <tr><td><b>${r.name}</b><div style="color:var(--fg-3);font-size:11.5px">${r.date} · ${r.kind}</div></td>
-        <td class="num neg"><b>${r.value}</b><div style="color:var(--fg-3);font-size:11.5px">${r.shares.toLocaleString()} sh @ ${r.price}</div></td></tr>`).join('');
       setEl('[data-sentiment-insider-summary]', ins.summary);
+      const cta = document.querySelector('[data-sentiment-insider-cta]');
+      if (cta) {
+        cta.textContent = ins.ctaText || 'See full Form 4 log →';
+        cta.href = ins.ctaHref || '#insiders';
+      }
       const isrc = document.querySelector('[data-sentiment-insider-src]');
       if (isrc) isrc.href = ins.source;
     }
@@ -480,6 +476,90 @@
       setEl('[data-sentiment-retail-summary]', s.retail.summary);
       const rsrc = document.querySelector('[data-sentiment-retail-src]');
       if (rsrc) rsrc.href = s.retail.source;
+    }
+  }
+
+  // ---------- NEW: Insider trades — SEC Form 4 ----------
+  function fmtUSD(v) {
+    if (!isFinite(v) || v === 0) return '—';
+    if (v >= 1e6) return '$' + (v / 1e6).toFixed(2) + 'M';
+    if (v >= 1e3) return '$' + (v / 1e3).toFixed(0) + 'k';
+    return '$' + v.toFixed(0);
+  }
+  function edgarUrl(acc) {
+    // Accession 0001628280-26-016249 -> /Archives/edgar/data/1805077/000162828026016249/
+    return 'https://www.sec.gov/Archives/edgar/data/1805077/' + acc.replace(/-/g, '') + '/';
+  }
+  function renderInsiderTrades() {
+    if (!D.insiderTrades) return;
+    const it = D.insiderTrades;
+    setEl('[data-insider-asof]', it.asOf || '');
+
+    // Summary tiles
+    const s = it.summary;
+    if (s) {
+      setEl('[data-insider-buys-total]',  fmtUSD(s.openMarketBuys));
+      setEl('[data-insider-buys-meta]',   `${s.buyCount} txns · ${s.buyersUnique} insiders`);
+      setEl('[data-insider-sells-total]', fmtUSD(s.openMarketSells));
+      setEl('[data-insider-sells-meta]',  `${s.sellCount} txns · before Feb 26 −39% drop`);
+      setEl('[data-insider-tax-total]',   fmtUSD(s.taxWithholding));
+      setEl('[data-insider-reading]',     s.reading || '');
+    }
+
+    // Code legend
+    const leg = document.querySelector('[data-insider-legend]');
+    if (leg && it.codeLegend) {
+      leg.innerHTML = it.codeLegend.map(c => {
+        const color = c.tone === 'buy'  ? 'var(--positive)'
+                    : c.tone === 'sell' ? 'var(--negative)'
+                    : 'var(--fg-2)';
+        return `<div>
+          <span style="display:inline-block;font-family:var(--font-mono);font-weight:700;
+                       color:${color};background:${color};color:#fff;
+                       padding:1px 7px;border-radius:4px;font-size:11.5px;margin-right:6px">${c.code}</span>
+          <strong>${c.label}</strong>
+          <div style="color:var(--fg-2);font-size:11.5px;margin-top:2px;margin-left:22px">${c.note}</div>
+        </div>`;
+      }).join('');
+    }
+
+    // Transactions table
+    const tb = document.querySelector('[data-insider-table] tbody');
+    if (tb && it.transactions) {
+      // sorted newest first already in data
+      tb.innerHTML = it.transactions.map(t => {
+        const sign = t.ad === 'A' ? '+' : t.ad === 'D' ? '−' : '';
+        // Code badge — color by tone
+        let codeColor = 'var(--fg-2)';
+        if (t.code === 'P') codeColor = 'var(--positive)';
+        else if (t.code === 'S') codeColor = 'var(--negative)';
+        else if (t.code === 'F') codeColor = 'var(--warning)';
+        const valColor = t.code === 'P' ? 'var(--positive)' : t.code === 'S' ? 'var(--negative)' : 'var(--fg-1)';
+        const valDisplay = t.value > 0 ? sign + fmtUSD(t.value) : '—';
+        const priceDisplay = t.price > 0 ? '$' + t.price.toFixed(2) : '—';
+        return `<tr>
+          <td style="color:var(--fg-2);font-variant-numeric:tabular-nums">${t.date}</td>
+          <td><b>${t.name}</b></td>
+          <td style="color:var(--fg-2);font-size:11.5px">${t.role}</td>
+          <td><span style="display:inline-block;background:${codeColor};color:#fff;
+                            font-family:var(--font-mono);font-weight:700;font-size:11px;
+                            padding:1px 6px;border-radius:4px">${t.code}</span></td>
+          <td class="num">${sign}${t.shares.toLocaleString()}</td>
+          <td class="num">${priceDisplay}</td>
+          <td class="num" style="color:${valColor};font-weight:600">${valDisplay}</td>
+          <td><a href="${edgarUrl(t.acc)}" target="_blank" rel="noopener"
+                 style="color:var(--accent);font-size:11.5px;text-decoration:underline"
+                 title="${t.acc}">View ↗</a></td>
+        </tr>`;
+      }).join('');
+    }
+
+    // Source links
+    const srcs = document.querySelector('[data-insider-sources]');
+    if (srcs && it.sources) {
+      srcs.innerHTML = it.sources.map(x =>
+        `<a href="${x.url}" target="_blank" rel="noopener" style="color:var(--accent);text-decoration:underline">${x.label}</a>`
+      ).join(' · ');
     }
   }
 
@@ -749,6 +829,7 @@
     renderLegal();
     renderScorecard();
     renderSentiment();
+    renderInsiderTrades();
     renderRumors();
     renderRegulatedPrograms();
     renderCatalystWindow();

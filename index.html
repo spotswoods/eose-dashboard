@@ -86,7 +86,8 @@
       <a href="#valuation"><span class="num">09</span> Valuation</a>
       <a href="#analysts"><span class="num">09b</span> Analysts</a>
       <a href="#sentiment"><span class="num">09c</span> Sentiment</a>
-      <a href="#rumors"><span class="num">09d</span> Rumors</a>
+      <a href="#insiders"><span class="num">09d</span> Insiders</a>
+      <a href="#rumors"><span class="num">09e</span> Rumors</a>
       <a href="#catalysts"><span class="num">10</span> Catalysts</a>
       <a href="#filings"><span class="num">11</span> Filings</a>
       <a href="#policy"><span class="num">11b</span> Policy</a>
@@ -684,19 +685,13 @@
           <p style="font-size:12px;color:var(--fg-3);margin-top:8px"><strong>Verify live:</strong> <a data-sentiment-short-src target="_blank" rel="noopener" style="color:var(--accent);text-decoration:underline">Nasdaq short interest</a></p>
         </div>
         <div class="card col-8">
-          <div class="card__head"><div><h3 class="card__title">Insider activity · trailing 12 months</h3><div class="card__sub" data-sentiment-insider-net></div></div></div>
-          <div style="display:grid;grid-template-columns:1fr 1fr;gap:18px">
-            <div>
-              <div style="font-size:11.5px;color:var(--positive);text-transform:uppercase;letter-spacing:.08em;font-weight:700;margin-bottom:8px">▲ Recent buys</div>
-              <table class="table" data-sentiment-buys style="font-size:12.5px"><tbody></tbody></table>
-            </div>
-            <div>
-              <div style="font-size:11.5px;color:var(--negative);text-transform:uppercase;letter-spacing:.08em;font-weight:700;margin-bottom:8px">▼ Recent sells</div>
-              <table class="table" data-sentiment-sells style="font-size:12.5px"><tbody></tbody></table>
-            </div>
-          </div>
-          <p style="font-size:12.5px;color:var(--fg-2);line-height:1.55;margin-top:14px;border-top:1px solid var(--line-1);padding-top:12px" data-sentiment-insider-summary></p>
-          <p style="font-size:12px;color:var(--fg-3);margin-top:8px"><strong>Verify live:</strong> <a data-sentiment-insider-src target="_blank" rel="noopener" style="color:var(--accent);text-decoration:underline">OpenInsider</a></p>
+          <div class="card__head"><div><h3 class="card__title">Insider activity · summary</h3><div class="card__sub">Trailing 6 months (Form 4 filings) — full transaction log below in §09d</div></div></div>
+          <p style="font-size:13.5px;line-height:1.65;color:var(--fg-1)" data-sentiment-insider-summary></p>
+          <p style="margin-top:14px">
+            <a data-sentiment-insider-cta href="#insiders" style="display:inline-flex;align-items:center;gap:6px;background:var(--accent-soft);color:var(--accent);padding:8px 14px;border-radius:999px;font-size:13px;font-weight:600;text-decoration:none"></a>
+            &nbsp;
+            <a data-sentiment-insider-src target="_blank" rel="noopener" style="color:var(--fg-2);font-size:12px;text-decoration:underline">Verify live on SEC EDGAR ↗</a>
+          </p>
         </div>
         <div class="card col-6">
           <div class="card__head"><div><h3 class="card__title">Institutional</h3></div></div>
@@ -711,11 +706,70 @@
       </div>
     </section>
 
-    <!-- ============ 09d · Rumors & Open Debates ============ -->
+    <!-- ============ 09d · Insider Trades — SEC Form 4 ============ -->
+    <section class="section" id="insiders" data-screen-label="09d Insider Trades">
+      <div class="section__head">
+        <div>
+          <div class="section__num">09d · INSIDER TRADES · SEC FORM 4</div>
+          <h2>Every Form 4 transaction, parsed straight from EDGAR</h2>
+          <p>The 18 most recent insider transactions filed for EOSE (CIK 1805077), with the SEC transaction code, share count, price, dollar value, and a direct link to each filing. Read the codes carefully — derivative exercises (M) and tax-withholding shares (F) are NOT discretionary capital decisions; only P (buy) and S (sell) reflect insider conviction.</p>
+        </div>
+        <div class="right" data-insider-asof></div>
+      </div>
+
+      <!-- Summary tiles -->
+      <div class="grid-12" style="margin-bottom:14px">
+        <div class="card col-3" style="border-left:3px solid var(--positive)">
+          <div style="font-size:11px;color:var(--fg-2);text-transform:uppercase;letter-spacing:.08em;font-weight:700">▲ Open-market buys (P)</div>
+          <div style="font-size:24px;font-weight:600;margin-top:6px;color:var(--positive)" data-insider-buys-total></div>
+          <div style="font-size:12px;color:var(--fg-3);margin-top:2px" data-insider-buys-meta></div>
+        </div>
+        <div class="card col-3" style="border-left:3px solid var(--negative)">
+          <div style="font-size:11px;color:var(--fg-2);text-transform:uppercase;letter-spacing:.08em;font-weight:700">▼ Open-market sells (S)</div>
+          <div style="font-size:24px;font-weight:600;margin-top:6px;color:var(--negative)" data-insider-sells-total></div>
+          <div style="font-size:12px;color:var(--fg-3);margin-top:2px" data-insider-sells-meta></div>
+        </div>
+        <div class="card col-3" style="border-left:3px solid var(--fg-3)">
+          <div style="font-size:11px;color:var(--fg-2);text-transform:uppercase;letter-spacing:.08em;font-weight:700">◇ Tax withholding (F)</div>
+          <div style="font-size:24px;font-weight:600;margin-top:6px;color:var(--fg-1)" data-insider-tax-total></div>
+          <div style="font-size:12px;color:var(--fg-3);margin-top:2px">Non-discretionary · paid to IRS in shares</div>
+        </div>
+        <div class="card col-3" style="border-left:3px solid var(--accent)">
+          <div style="font-size:11px;color:var(--fg-2);text-transform:uppercase;letter-spacing:.08em;font-weight:700">◆ Reading</div>
+          <div style="font-size:13px;color:var(--fg-1);margin-top:6px;line-height:1.5" data-insider-reading></div>
+        </div>
+      </div>
+
+      <!-- Transaction code legend -->
+      <div class="card" style="margin-bottom:14px;background:var(--bg-3)">
+        <div style="font-size:11.5px;color:var(--fg-2);text-transform:uppercase;letter-spacing:.08em;font-weight:600;margin-bottom:10px">SEC Form 4 transaction codes</div>
+        <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:12px;font-size:12.5px" data-insider-legend></div>
+      </div>
+
+      <!-- Transaction table -->
+      <div class="card">
+        <div class="card__head"><div><h3 class="card__title">Full transaction log</h3><div class="card__sub">Sorted newest first · click any row to open the underlying Form 4 on SEC.gov</div></div></div>
+        <div style="overflow-x:auto">
+          <table class="table" data-insider-table style="font-size:12.5px;min-width:760px">
+            <thead><tr>
+              <th>Date</th><th>Insider</th><th>Role</th><th>Code</th><th>Shares</th><th>$ / share</th><th>Value</th><th>Filing</th>
+            </tr></thead>
+            <tbody></tbody>
+          </table>
+        </div>
+        <p style="font-size:12px;color:var(--fg-3);margin-top:14px;border-top:1px solid var(--line-1);padding-top:12px">
+          <strong style="color:var(--fg-1)">Verify live (always up-to-date):</strong> <span data-insider-sources></span>
+        </p>
+      </div>
+    </section>
+
+    <!-- ============ 09e · Rumors & Open Debates ============ -->
+    <!-- (was 09d before the Insider Trades section was inserted; anchor name unchanged for stable links) -->
+
     <section class="section" id="rumors" data-screen-label="09d Rumors & Open Debates">
       <div class="section__head">
         <div>
-          <div class="section__num">09d · RUMORS &amp; OPEN DEBATES</div>
+          <div class="section__num">09e · RUMORS &amp; OPEN DEBATES</div>
           <h2>What's circulating — and what the evidence actually shows</h2>
           <p>Specific bull and bear claims being discussed on Stocktwits, X, and message boards. We address each one with what the public record actually supports. Neither endorsing nor dismissing — just citing.</p>
         </div>

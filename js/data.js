@@ -762,19 +762,12 @@ window.EOSE_DATA = {
       source: 'https://www.nasdaq.com/market-activity/stocks/eose/short-interest'
     },
     insiders: {
-      trailing12moNet: '−$14M (insiders sold $14M more than they bought)',
-      recentBuys: [
-        { date: '2026-03-04', name: 'Joe Mastrangelo (CEO)',          shares: 23900,  price: '~$5.20', value: '~$124k', kind: 'open-market buy' },
-        { date: '2026-03-02', name: 'Alexander Dimitrief (Director)', shares: 15000,  price: '$6.04',  value: '~$91k',  kind: 'open-market buy' }
-      ],
-      recentSells: [
-        { date: 'Trailing 12 mo', name: 'Russell M. Stidolph',         shares: 766134, price: '—',    value: '~$11.47M', kind: '4 sales' },
-        { date: 'Trailing 12 mo', name: 'Nathan Kroeker (Interim CFO)',shares: 50000,  price: '~$16',  value: '~$802k',   kind: 'open-market sell' },
-        { date: 'Trailing 12 mo', name: 'Marian Walters',              shares: 50000,  price: '~$16',  value: '~$790k',   kind: 'open-market sell' },
-        { date: 'Trailing 12 mo', name: 'Michael Silberman (CLO)',     shares: 41667,  price: '~$18',  value: '~$739k',   kind: 'open-market sell' }
-      ],
-      summary: '13 insider trades in trailing 6 months: 4 buys, 9 sells. Reading: top of house (CEO + a director) bought at the lows; middle and senior leadership were net sellers when the stock was higher. Mixed signal — both directions are real.',
-      source: 'http://openinsider.com/search?q=eose'
+      // High-level summary — full transaction log lives in `insiderTrades` below
+      // and renders as its own §09d section directly from SEC Form 4 filings.
+      summary: 'Trailing 6 months show ~$693k of open-market buys (4 transactions, 3 insiders — all post-FY25 crash) against ~$14.4M of open-market sells (mostly Director Stidolph $11M in Dec 2025 + Officer sells in Jan 2026 at $14–18 — all BEFORE the −39% Feb 26 drop). The full transaction list with direct EDGAR links is in §09d below.',
+      ctaText:  'See §09d Insider Trades — SEC Form 4 →',
+      ctaHref:  '#insiders',
+      source:   'https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0001805077&type=4'
     },
     institutional: {
       summary: 'Cerberus is the dominant structural holder via Series B preferred ($582.7M), warrants ($203.5M related-party), and notes ($113.1M). Track 13D/A filings on EDGAR for changes — most recent Cerberus 13D/A filed May 14, 2026.',
@@ -788,6 +781,62 @@ window.EOSE_DATA = {
       summary: 'Stocktwits sentiment classified "extremely bullish" post-Q1\'26 print (per Stocktwits aggregated mention data). Pre-market spike to +30% on the Frontier announcement, faded toward flat by close — classic news-pop pattern.',
       source: 'https://stocktwits.com/symbol/EOSE'
     }
+  },
+
+  // ────────── NEW: Insider trades — sourced directly from SEC Form 4 ──────────
+  // 14 most recent Form 4 filings (2025-12-04 through 2026-03-10), parsed from
+  // EDGAR XML. Every row is linkable to the actual filing on SEC.gov.
+  // Transaction codes follow the SEC Form 4 standard:
+  //   P = open-market purchase     S = open-market sale
+  //   A = grant/award (free)       M = exercise of derivative
+  //   F = shares withheld to pay   G = bona fide gift
+  //       option exercise/taxes    J = other acquisition/disposition
+  // The "Open-market net" figure below uses ONLY P and S transactions —
+  // i.e., the discretionary capital decisions, not vesting mechanics.
+  insiderTrades: {
+    asOf: 'Trailing ~6 months · pulled from SEC EDGAR (CIK 1805077, Form 4)',
+    summary: {
+      openMarketBuys:    692962,        // 4 P transactions
+      openMarketSells: 14415975,        // multiple S transactions
+      taxWithholding:   1428011,        // F code, non-discretionary
+      buyCount: 4,
+      sellCount: 7,
+      buyersUnique: 3,                  // Mastrangelo, Dimitrief, Urban
+      reading: 'Top of house (CEO + 2 directors) put fresh capital in at $5.75–$6.58 after the Feb 26 crash. The larger sells were Officer/Director sells in Dec 2025 + Jan 2026 at $14–$18 — before the −39% drop. Read directionally, not as net dollars.'
+    },
+    codeLegend: [
+      { code: 'P', label: 'Open-market purchase', tone: 'buy', note: 'Discretionary buy — strongest insider signal' },
+      { code: 'S', label: 'Open-market sale',     tone: 'sell',note: 'Discretionary sell — strongest negative signal' },
+      { code: 'A', label: 'Grant / award',         tone: 'neutral', note: 'Comp — not a market signal' },
+      { code: 'M', label: 'Derivative exercise',   tone: 'neutral', note: 'Option/RSU conversion — usually paired with F/S' },
+      { code: 'F', label: 'Tax withholding',        tone: 'neutral', note: 'Non-discretionary — auto-sold to pay taxes' },
+      { code: 'G', label: 'Bona fide gift',         tone: 'neutral', note: 'Charitable or estate transfer' }
+    ],
+    // Each row carries the SEC accession number so we can build the direct URL
+    transactions: [
+      { date: '2026-03-09', name: 'David Urban',          role: 'Director',                code: 'P', ad: 'A', shares: 16250,  price: 6.16,  value: 100100,  acc: '0001628280-26-016249' },
+      { date: '2026-03-04', name: 'Joe Mastrangelo',       role: 'CEO & Director',          code: 'P', ad: 'A', shares: 23900,  price: 6.58,  value: 157262,  acc: '0001628280-26-015015' },
+      { date: '2026-03-02', name: 'Joe Mastrangelo',       role: 'CEO & Director',          code: 'P', ad: 'A', shares: 60000,  price: 5.75,  value: 345000,  acc: '0001628280-26-014413' },
+      { date: '2026-03-02', name: 'Alexander Dimitrief',   role: 'Director',                code: 'P', ad: 'A', shares: 15000,  price: 6.04,  value: 90600,   acc: '0001628280-26-013586' },
+      { date: '2026-01-26', name: 'Nathan Kroeker',        role: 'CCO & Interim CFO',       code: 'S', ad: 'D', shares: 50000,  price: 16.04, value: 802000,  acc: '0001628280-26-003430' },
+      { date: '2026-01-23', name: 'Nathan Kroeker',        role: 'CCO & Interim CFO',       code: 'M', ad: 'A', shares: 100000, price: 0,     value: 0,        acc: '0001628280-26-003430' },
+      { date: '2026-01-23', name: 'Michael Silberman',     role: 'Chief Legal Officer',     code: 'S', ad: 'D', shares: 41667,  price: 17.74, value: 739173,  acc: '0001628280-26-003307' },
+      { date: '2026-01-22', name: 'Michael Silberman',     role: 'Chief Legal Officer',     code: 'M', ad: 'A', shares: 83334,  price: 0,     value: 0,        acc: '0001628280-26-003307' },
+      { date: '2025-12-08', name: 'Russell M. Stidolph',   role: 'Director',                code: 'S', ad: 'D', shares: 235367, price: 14.89, value: 3504615, acc: '0001628280-25-055938' },
+      { date: '2025-12-08', name: 'Russell M. Stidolph',   role: 'Director',                code: 'S', ad: 'D', shares: 29999,  price: 15.36, value: 460785,  acc: '0001628280-25-055938' },
+      { date: '2025-12-08', name: 'Russell M. Stidolph',   role: 'Director',                code: 'F', ad: 'D', shares: 60304,  price: 14.85, value: 895225,  acc: '0001628280-25-055938' },
+      { date: '2025-12-08', name: 'Russell M. Stidolph',   role: 'Director',                code: 'M', ad: 'A', shares: 296439, price: 2.99,  value: 895261,  acc: '0001628280-25-055938' },
+      { date: '2025-12-05', name: 'Russell M. Stidolph',   role: 'Director',                code: 'S', ad: 'D', shares: 500000, price: 14.99, value: 7495000, acc: '0001628280-25-055931' },
+      { date: '2025-12-05', name: 'Jeffrey S. Bornstein',  role: 'Director',                code: 'S', ad: 'D', shares: 32328,  price: 15.05, value: 486536,  acc: '0001628280-25-055940' },
+      { date: '2025-12-05', name: 'Alexander Dimitrief',   role: 'Director',                code: 'F', ad: 'D', shares: 17704,  price: 15.03, value: 266091,  acc: '0001628280-25-055940' },
+      { date: '2025-12-04', name: 'Marian Walters',        role: 'Director',                code: 'S', ad: 'D', shares: 50000,  price: 15.81, value: 790500,  acc: '0001628280-25-055433' },
+      { date: '2025-12-04', name: 'Marian Walters',        role: 'Director',                code: 'F', ad: 'D', shares: 16933,  price: 15.75, value: 266695,  acc: '0001628280-25-055433' },
+      { date: '2025-12-04', name: 'Jeffrey S. Bornstein',  role: 'Director',                code: 'S', ad: 'D', shares: 8000,   price: 15.75, value: 126000,  acc: '0001628280-25-055930' }
+    ],
+    sources: [
+      { label: 'SEC EDGAR — all Eos Form 4 filings (live)', url: 'https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0001805077&type=4&dateb=&owner=include&count=40' },
+      { label: 'OpenInsider — EOSE summary',                  url: 'http://openinsider.com/search?q=eose' }
+    ]
   },
 
   // ────────── NEW: Rumors & open debates ──────────
