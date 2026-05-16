@@ -340,6 +340,94 @@
     setEl('[data-capstr-note]', cs.note);
   }
 
+  // ---------- NEW: Recent history (3b timeline) ----------
+  function renderHistory() {
+    const host = document.querySelector('[data-history]');
+    if (!host || !D.recentHistory) return;
+    // sort newest first
+    const items = [...D.recentHistory].sort((a, b) => (b.date || '').localeCompare(a.date || ''));
+    host.innerHTML = items.map(h => `
+      <div class="cat__row" style="grid-template-columns:140px 1fr 100px">
+        <div class="cat__date">${h.date}</div>
+        <div class="cat__event"><strong>${h.title}</strong><div style="color:var(--fg-2);font-size:12.5px;margin-top:4px;line-height:1.5">${h.body}</div></div>
+        <a class="cat__btn" href="${h.url || '#'}" target="_blank" rel="noopener">Source ↗</a>
+      </div>`).join('');
+  }
+
+  // ---------- NEW: Analyst coverage ----------
+  function renderAnalysts() {
+    if (!D.analystCoverage) return;
+    const a = D.analystCoverage;
+    setEl('[data-analyst-asof]', a.asOf || '');
+    const cons = document.querySelector('[data-analyst-consensus] tbody');
+    if (cons) {
+      const c = a.consensus;
+      cons.innerHTML = `
+        <tr><td style="color:var(--fg-2)">Avg price target</td><td class="num"><b>$${c.avgPriceTarget.toFixed(2)}</b></td></tr>
+        <tr><td style="color:var(--fg-2)">High target</td><td class="num pos"><b>$${c.highTarget.toFixed(2)}</b></td></tr>
+        <tr><td style="color:var(--fg-2)">Low target</td><td class="num neg"><b>$${c.lowTarget.toFixed(2)}</b></td></tr>
+        <tr><td style="color:var(--fg-2)">Covering analysts</td><td class="num"><b>${c.coveringAnalysts}</b></td></tr>
+        <tr><td style="color:var(--fg-2)">Prior avg (pre-cuts)</td><td class="num"><b>$${c.priorAvgTarget.toFixed(2)}</b></td></tr>
+        <tr><td style="color:var(--fg-2)">Rating mix</td><td><b style="font-size:12.5px">${c.ratingMix}</b></td></tr>`;
+    }
+    const acts = document.querySelector('[data-analyst-actions] tbody');
+    if (acts) {
+      acts.innerHTML = a.recentActions.map(r => `
+        <tr>
+          <td class="num">${r.date}</td>
+          <td><b>${r.firm}</b></td>
+          <td style="color:var(--fg-2)">${r.analyst}</td>
+          <td><span class="pill ${r.action.includes('cut') ? 'negotiation' : 'mixed'}">${r.action}</span></td>
+          <td style="color:var(--fg-2);font-size:12.5px">${r.note}</td>
+        </tr>`).join('');
+    }
+    const sent = document.querySelector('[data-analyst-sentiment]');
+    if (sent) {
+      sent.innerHTML = `
+        <div><div style="color:var(--fg-2);font-size:11.5px;text-transform:uppercase;letter-spacing:.08em;font-weight:600">Retail</div><div style="margin-top:6px">${a.sentiment.retail}</div></div>
+        <div><div style="color:var(--fg-2);font-size:11.5px;text-transform:uppercase;letter-spacing:.08em;font-weight:600">Institutional</div><div style="margin-top:6px">${a.sentiment.institutional}</div></div>
+        <div><div style="color:var(--fg-2);font-size:11.5px;text-transform:uppercase;letter-spacing:.08em;font-weight:600">Short interest</div><div style="margin-top:6px">${a.sentiment.shortInterest}</div></div>`;
+    }
+    const srcs = document.querySelector('[data-analyst-sources]');
+    if (srcs) {
+      srcs.innerHTML = a.sources.map(s => `<a href="${s.url}" target="_blank" rel="noopener" style="color:var(--accent);text-decoration:underline">${s.label}</a>`).join(' · ');
+    }
+  }
+
+  // ---------- NEW: Policy (45X / FEOC) ----------
+  function renderPolicy() {
+    if (!D.policy) return;
+    setEl('[data-policy-title]', D.policy.title);
+    setEl('[data-policy-summary]', D.policy.summary);
+    setEl('[data-policy-impact]', D.policy.eosImpact);
+    setEl('[data-policy-risk]', D.policy.riskNote);
+    const srcs = document.querySelector('[data-policy-sources]');
+    if (srcs) srcs.innerHTML = D.policy.sources.map(s =>
+      `<a href="${s.url}" target="_blank" rel="noopener" style="color:var(--accent);text-decoration:underline">${s.label}</a>`).join(' · ');
+  }
+
+  // ---------- NEW: Legal disclosure ----------
+  function renderLegal() {
+    if (!D.legal) return;
+    const c = D.legal.case;
+    const tbody = document.querySelector('[data-legal-case] tbody');
+    if (tbody) {
+      tbody.innerHTML = `
+        <tr><td style="color:var(--fg-2);width:30%">Case</td><td><b>${c.name}</b></td></tr>
+        <tr><td style="color:var(--fg-2)">Docket</td><td><b>${c.number}</b> · ${c.court}</td></tr>
+        <tr><td style="color:var(--fg-2)">Class period</td><td>${c.classPeriod}</td></tr>
+        <tr><td style="color:var(--fg-2)">Lead-plaintiff deadline</td><td>${c.leadDeadline}</td></tr>
+        <tr><td style="color:var(--fg-2)">Status</td><td>${c.status}</td></tr>
+        <tr><td style="color:var(--fg-2)">Allegations</td><td>${c.allegations}</td></tr>
+        <tr><td style="color:var(--fg-2)">Trigger event</td><td>${c.trigger}</td></tr>`;
+    }
+    setEl('[data-legal-note]', D.legal.note);
+    setEl('[data-legal-firms]', D.legal.advertisingFirms.join(' · '));
+    const srcs = document.querySelector('[data-legal-sources]');
+    if (srcs) srcs.innerHTML = D.legal.sources.map(s =>
+      `<a href="${s.url}" target="_blank" rel="noopener" style="color:var(--accent);text-decoration:underline">${s.label}</a>`).join(' · ');
+  }
+
   // ---------- NEW: Product specs + competitive ----------
   function renderProduct() {
     const ps = document.querySelector('[data-product-specs] tbody');
@@ -439,6 +527,10 @@
     renderFrontier();
     renderCapStructure();
     renderProduct();
+    renderHistory();
+    renderAnalysts();
+    renderPolicy();
+    renderLegal();
 
     // Charts
     chart('[data-chart-revenue]',  h => C.barChart(h, D.quarterlyRevenue, { colorByType: true, height: 340 }));

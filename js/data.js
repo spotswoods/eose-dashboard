@@ -28,12 +28,12 @@ window.EOSE_DATA = {
 
   // ────────── KPI strip — Q1'26 actuals ──────────
   kpis: [
-    { label: 'Q1\'26 Revenue',      value: '$57.0M',     delta: '+445% YoY',                tone: 'up'   },
-    { label: 'FY26 Guidance',       value: '$300–400M',  delta: 'Reaffirmed Q1\'26',         tone: 'up'   },
-    { label: 'Backlog (3/31/26)',   value: '$644.6M',    delta: '2.6 GWh · +2 GWh Frontier', tone: 'up'   },
-    { label: 'Commercial Pipeline', value: '$24.3B',     delta: '+56% YoY',                 tone: 'up'   },
-    { label: 'Total Cash',          value: '$472.4M',    delta: 'incl. $61.7M restricted',  tone: 'flat' },
-    { label: 'Gross Margin',        value: '−78.0%',     delta: '+157 ppt YoY · +16 ppt QoQ', tone: 'up' }
+    { label: 'Q1\'26 Revenue',      value: '$57.0M',     delta: '+445% YoY · cube deliv. +5.7×', tone: 'up'   },
+    { label: 'Adj. EPS surprise',   value: '$0.12',      delta: 'vs. −$0.22 cons. · beat 154%',  tone: 'up'   },
+    { label: 'Backlog (3/31/26)',   value: '$644.6M',    delta: '2.6 GWh · +2 GWh Frontier',     tone: 'up'   },
+    { label: 'Commercial Pipeline', value: '$24.3B',     delta: '+56% YoY',                      tone: 'up'   },
+    { label: 'Total Cash',          value: '$472.4M',    delta: 'op. cash burn $119.7M Q1',      tone: 'flat' },
+    { label: 'FY26 Guidance',       value: '$300–400M',  delta: 'Reaffirmed Q1\'26',              tone: 'up'   }
   ],
 
   // ────────── Quarterly revenue ($M) — actuals from 10-Qs / 10-Ks ──────────
@@ -412,14 +412,109 @@ window.EOSE_DATA = {
     { k: 'Controls',            v: 'DawnOS® (proprietary)',                   why: 'Closed-loop optimization; firmware-driven RTE gains' }
   ],
 
-  // ────────── NEW: Competitive landscape ──────────
+  // ────────── NEW: Competitive landscape (refreshed May 2026) ──────────
+  // Source narrative from PV Magazine USA (Apr 2026): "EOS and ESS showing
+  // stress; Form Energy outpacing projections." Updated statuses reflect this.
   competitive: [
-    { tech: 'Zinc-bromide (Znyth)',  lead: 'Eos Energy',           duration: '4–16+ hr', status: 'Commercial, scaling', edge: '— (this is Eos)' },
-    { tech: 'Lithium-ion (NMC/LFP)', lead: 'Tesla, CATL, BYD',     duration: '2–4 hr',   status: 'Dominant incumbent',   edge: 'Safer, longer duration, no CRMs' },
-    { tech: 'Iron-air',              lead: 'Form Energy',          duration: '100 hr',   status: 'Pre-commercial',       edge: 'Higher RTE, faster to revenue' },
-    { tech: 'Iron flow',             lead: 'ESS Inc.',             duration: '4–12 hr',  status: 'Limited commercial',   edge: 'Higher energy density, simpler BOP' },
+    { tech: 'Zinc-bromide (Znyth)',  lead: 'Eos Energy',           duration: '4–16+ hr', status: 'Commercial, scaling Line 2',   edge: '— (this is Eos)' },
+    { tech: 'Lithium-ion (NMC/LFP)', lead: 'Tesla, CATL, BYD',     duration: '2–4 hr',   status: 'Dominant incumbent (~$80/kWh)', edge: 'Safer, longer duration, no CRMs' },
+    { tech: 'Iron-air',              lead: 'Form Energy',          duration: '100 hr',   status: 'Scaling — outpacing projections', edge: 'Faster to revenue; higher RTE on shorter durations' },
+    { tech: 'Iron flow',             lead: 'ESS Inc.',             duration: '4–12 hr',  status: 'Stressed — FY25 rev only $1.6M', edge: 'Eos has 70× the revenue + financed JV' },
+    { tech: 'Sodium-ion',            lead: 'CATL, HiNa, Faradion', duration: '2–8 hr',   status: 'Emerging for data-center backup', edge: 'Long duration use cases vs. SIB short duration' },
     { tech: 'Vanadium flow',         lead: 'Invinity, Stryten',    duration: '4–12 hr',  status: 'Niche',                edge: 'No vanadium price exposure' },
     { tech: 'Compressed air',        lead: 'Hydrostor',            duration: '8–24 hr',  status: 'Limited projects',     edge: 'Modular, no geology dependence' },
     { tech: 'Gravity / thermal',     lead: 'Energy Vault, MGA',    duration: '8+ hr',    status: 'Early',                edge: 'Proven chemistry vs. demo-stage' }
+  ],
+
+  // ────────── NEW: Analyst coverage ──────────
+  // Consensus as of mid-May 2026 per Simply Wall St + public.com + Benzinga aggregations.
+  analystCoverage: {
+    asOf: 'Updated May 2026',
+    consensus: {
+      avgPriceTarget: 8.86,
+      highTarget:     18.00,
+      lowTarget:       5.00,
+      coveringAnalysts: 7,
+      priorAvgTarget:  9.71,   // before recent cuts
+      ratingMix:       'Mixed (Hold/Neutral skew post-FY25 miss; bullish bias on Frontier)'
+    },
+    recentActions: [
+      { date: '2026-05',    firm: 'JPMorgan',     analyst: 'Mark Strouse', action: 'PT cut $9 → $6, Neutral', note: 'Cited cash burn + Frontier capital stack questions on Q1 call' },
+      { date: '2026-02-27', firm: 'Roth Capital', analyst: 'Chip Moore',   action: 'PT $6.00',                 note: 'Post FY25 miss; flagged execution risk' },
+      { date: 'Range',      firm: '7 covering',   analyst: '—',             action: 'PT range $5–$18',          note: 'Bull case from data-center / Frontier flow' }
+    ],
+    sentiment: {
+      retail: 'Stocktwits "extremely bullish" post-Q1\'26 print',
+      institutional: 'Cerberus dominant via Series B + warrants; tracking 13D/A filings for changes',
+      shortInterest: 'Elevated — see Nasdaq short interest page (refreshed semi-monthly)'
+    },
+    sources: [
+      { label: 'Simply Wall St analyst forecasts', url: 'https://simplywall.st/stocks/us/capital-goods/nasdaq-eose/eos-energy-enterprises/future' },
+      { label: 'Public.com EOSE forecast',          url: 'https://public.com/stocks/eose/forecast-price-target' },
+      { label: 'Benzinga analyst ratings',           url: 'https://www.benzinga.com/quote/EOSE/analyst-ratings' },
+      { label: 'MarketBeat institutional ownership', url: 'https://www.marketbeat.com/stocks/NASDAQ/EOSE/institutional-ownership/' },
+      { label: 'Nasdaq short interest',              url: 'https://www.nasdaq.com/market-activity/stocks/eose/short-interest' }
+    ]
+  },
+
+  // ────────── NEW: Legal disclosure ──────────
+  // Public-record securities class action filed against EOSE. Material to any
+  // investor reading this page; surfacing it is straightforward integrity.
+  legal: {
+    case: {
+      name:           'Yung v. Eos Energy Enterprises, Inc.',
+      number:         'No. 26-cv-02372',
+      court:          'U.S. District Court for the District of New Jersey',
+      classPeriod:    'November 5, 2025 – February 26, 2026',
+      leadDeadline:   'May 5, 2026 (passed)',
+      status:         'Pending — lead-plaintiff motions filed; consolidation/appointment in progress',
+      allegations:    'Misrepresented near-term revenue growth and the timing, execution, and feasibility of manufacturing initiatives',
+      trigger:        'Feb 26, 2026 FY2025 release: revenue $114.2M vs. guided $150–160M; capacity milestone "reached 5 weeks later than planned." Stock dropped −39% on the news.',
+    },
+    advertisingFirms: [
+      'Rosen Law', 'Hagens Berman', 'Bleichmar Fonti & Auld', 'Berger Montague', 'Robbins Geller'
+    ],
+    sources: [
+      { label: 'Hagens Berman investor alert', url: 'https://www.prnewswire.com/news-releases/eose-investor-alert-eos-energy-enterprises-inc-securities-fraud-lawsuit---investors-with-losses-may-seek-to-lead-the-class-action-after-allegedly-misrepresenting-production-scale--hagens-berman-302757907.html' },
+      { label: 'Rosen Law case page',          url: 'https://rosenlegal.com/case/eos-energy-enterprises-inc/' },
+      { label: 'BFA Law case page',             url: 'https://www.bfalaw.com/cases/eos-energy-class-action-lawsuit' },
+      { label: 'Robbins Geller case page',     url: 'https://www.rgrdlaw.com/cases-eos-energy-enterprises-class-action-lawsuit-eose.html' }
+    ],
+    note: 'Class-action allegations are claims, not findings. EOSE has not been adjudicated liable for any of these claims; the company has the opportunity to respond. Listed here because public investor coverage routinely references the case.'
+  },
+
+  // ────────── NEW: Policy / regulatory tailwinds ──────────
+  policy: {
+    title: 'OBBBA preserved 45X with FEOC guardrails — structurally bullish for US-content LDES',
+    summary: 'The One Big Beautiful Bill Act (signed July 4, 2025) preserved the IRA Section 45X advanced-manufacturing production credit largely intact, but added "prohibited foreign entity" (FEOC) guardrails effective for tax years beginning after July 4, 2025. Phase-out unchanged: begins 2030.',
+    eosImpact: 'Net positive. Eos\' Znyth chemistry uses zinc + bromine sourced domestically; no China-linked component supply. Competitors with Chinese-linked cathode, anode, electrolyte, or critical-mineral sourcing face credit reduction or loss. Eos already accrues 45X as a COGS offset ($21.4M grant receivable on the Q1\'26 balance sheet).',
+    riskNote: 'Treasury safe-harbor tables defining "material assistance from prohibited foreign entities" expected by end of 2026 — final scoring is still in flux.',
+    sources: [
+      { label: 'White & Case — IRA amendments summary',  url: 'https://www.whitecase.com/insight-alert/amendments-to-ira-tax-credits-congressional-budget-bill-july-6' },
+      { label: 'Miller & Chevalier — OBBBA 45X analysis', url: 'https://www.millerchevalier.com/publication/obbba-brings-45x-changes-though-not-wholesale-repeal' },
+      { label: 'IRS — 45X official guidance',              url: 'https://www.irs.gov/credits-deductions/advanced-manufacturing-production-credit' }
+    ]
+  },
+
+  // ────────── NEW: Recent history (context for cold readers) ──────────
+  recentHistory: [
+    {
+      date:  '2026-04-15',
+      title: 'TURBINE-X JDA announced',
+      body:  'Joint development agreement for up to 2 GWh of Eos storage paired with gas-fired generation, targeting hyperscale AI data centers on accelerated timelines. First deployments expected 2027. Stock jumped ~13%.',
+      url:   'https://www.globenewswire.com/news-release/2026/04/15/3274432/0/en/Eos-Energy-Enterprises-TURBINE-X-Launch-Private-Power-Infrastructure-Solution-for-AI-Delivering-Hyperscale-Capacity-in-Months-Not-Years.html'
+    },
+    {
+      date:  '2026-02-26',
+      title: 'FY2025 revenue miss · −39% one-day drop',
+      body:  'FY25 revenue $114.2M vs. guided $150–160M. Adj. EBITDA loss $219.1M. Net loss $969.6M. CFO acknowledged the capacity milestone slipped 5 weeks. Triggered the Yung v. Eos securities class action (see Legal).',
+      url:   'https://investors.eose.com/news-releases'
+    },
+    {
+      date:  '2026-05-13',
+      title: 'Q1 2026 beat · Frontier Power USA · S-3ASR shelf',
+      body:  'Revenue $57.0M (+445% YoY), Adj. EPS $0.12 vs. −$0.22 consensus (beat by 154%). Cerberus JV formed with $100M anchor commitment. Stock spiked +30% pre-market, faded to flat by close.',
+      url:   'https://investors.eose.com/news-releases/news-release-details/eos-energy-enterprises-reports-first-quarter-2026-financial'
+    }
   ]
 };
