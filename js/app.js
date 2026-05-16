@@ -340,6 +340,90 @@
     setEl('[data-capstr-note]', cs.note);
   }
 
+  // ---------- NEW: Bull / Bear scorecard ----------
+  function renderScorecard() {
+    if (!D.scorecard) return;
+    const renderList = (sel, arr) => {
+      const host = document.querySelector(sel);
+      if (!host) return;
+      host.innerHTML = arr.map(p => `
+        <li style="margin-bottom:10px">
+          <span>${p.point}</span>
+          <span style="display:block;font-size:11.5px;color:var(--fg-3);margin-top:3px">↳ ${p.src}</span>
+        </li>`).join('');
+    };
+    renderList('[data-scorecard-bull]', D.scorecard.bull);
+    renderList('[data-scorecard-bear]', D.scorecard.bear);
+  }
+
+  // ---------- NEW: Sentiment & positioning ----------
+  function renderSentiment() {
+    if (!D.sentiment) return;
+    const s = D.sentiment;
+    setEl('[data-sentiment-asof]', s.asOf || '');
+
+    // Short interest
+    const shortTb = document.querySelector('[data-sentiment-short] tbody');
+    if (shortTb && s.shortInterest) {
+      const si = s.shortInterest;
+      shortTb.innerHTML = `
+        <tr><td style="color:var(--fg-2)">% of float</td><td class="num"><b>${si.pctOfFloat}</b></td></tr>
+        <tr><td style="color:var(--fg-2)">Shares short</td><td class="num"><b>${si.sharesShort}</b></td></tr>
+        <tr><td style="color:var(--fg-2)">Days to cover</td><td class="num"><b>${si.daysToCover}</b></td></tr>`;
+      setEl('[data-sentiment-short-note]', si.interpretation);
+      const srcEl = document.querySelector('[data-sentiment-short-src]');
+      if (srcEl) srcEl.href = si.source;
+    }
+
+    // Insiders
+    if (s.insiders) {
+      const ins = s.insiders;
+      setEl('[data-sentiment-insider-net]', 'Net activity: ' + ins.trailing12moNet);
+      const buys = document.querySelector('[data-sentiment-buys] tbody');
+      if (buys) buys.innerHTML = ins.recentBuys.map(b => `
+        <tr><td><b>${b.name}</b><div style="color:var(--fg-3);font-size:11.5px">${b.date} · ${b.kind}</div></td>
+        <td class="num pos"><b>${b.value}</b><div style="color:var(--fg-3);font-size:11.5px">${b.shares.toLocaleString()} sh @ ${b.price}</div></td></tr>`).join('');
+      const sells = document.querySelector('[data-sentiment-sells] tbody');
+      if (sells) sells.innerHTML = ins.recentSells.map(r => `
+        <tr><td><b>${r.name}</b><div style="color:var(--fg-3);font-size:11.5px">${r.date} · ${r.kind}</div></td>
+        <td class="num neg"><b>${r.value}</b><div style="color:var(--fg-3);font-size:11.5px">${r.shares.toLocaleString()} sh @ ${r.price}</div></td></tr>`).join('');
+      setEl('[data-sentiment-insider-summary]', ins.summary);
+      const isrc = document.querySelector('[data-sentiment-insider-src]');
+      if (isrc) isrc.href = ins.source;
+    }
+
+    // Institutional
+    if (s.institutional) {
+      setEl('[data-sentiment-inst-summary]', s.institutional.summary);
+      const isrcs = document.querySelector('[data-sentiment-inst-sources]');
+      if (isrcs) isrcs.innerHTML = s.institutional.sources.map(x =>
+        `<a href="${x.url}" target="_blank" rel="noopener" style="color:var(--accent);text-decoration:underline">${x.label}</a>`).join(' · ');
+    }
+
+    // Retail
+    if (s.retail) {
+      setEl('[data-sentiment-retail-summary]', s.retail.summary);
+      const rsrc = document.querySelector('[data-sentiment-retail-src]');
+      if (rsrc) rsrc.href = s.retail.source;
+    }
+  }
+
+  // ---------- NEW: Rumors & open debates ----------
+  function renderRumors() {
+    if (!D.rumors) return;
+    const renderSide = (sel, arr, sideColor) => {
+      const host = document.querySelector(sel);
+      if (!host) return;
+      host.innerHTML = arr.map(r => `
+        <div style="padding:14px 0;border-top:1px solid var(--line-1);font-size:13.5px;line-height:1.55">
+          <div style="font-weight:600;color:var(--fg-0);margin-bottom:6px">${r.claim}</div>
+          <div style="color:var(--fg-2)"><strong style="color:${sideColor}">Evidence:</strong> ${r.evidence}</div>
+        </div>`).join('');
+    };
+    renderSide('[data-rumors-bull]', D.rumors.bull, 'var(--positive)');
+    renderSide('[data-rumors-bear]', D.rumors.bear, 'var(--negative)');
+  }
+
   // ---------- NEW: Recent history (3b timeline) ----------
   function renderHistory() {
     const host = document.querySelector('[data-history]');
@@ -531,6 +615,9 @@
     renderAnalysts();
     renderPolicy();
     renderLegal();
+    renderScorecard();
+    renderSentiment();
+    renderRumors();
 
     // Charts
     chart('[data-chart-revenue]',  h => C.barChart(h, D.quarterlyRevenue, { colorByType: true, height: 340 }));

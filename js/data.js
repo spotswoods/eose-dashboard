@@ -496,6 +496,114 @@ window.EOSE_DATA = {
     ]
   },
 
+  // ────────── NEW: Bull / Bear scorecard ──────────
+  // Equal real estate, equal point-count, every point evidenced.
+  // The page is balanced when a skeptic could read this and feel heard.
+  scorecard: {
+    bull: [
+      { point: 'Q1\'26 revenue +445% YoY with adj. EPS beating consensus by 154 ppt ($0.12 vs −$0.22). Two consecutive quarters now exceed full FY25.', src: 'Q1\'26 8-K' },
+      { point: 'Pipeline $24.3B (+56% YoY); backlog $644.6M; post-quarter +2 GWh Frontier reservation. Demand isn\'t the constraint.', src: '10-Q + Frontier 8-K' },
+      { point: 'Cerberus is doubling down: $100M into Frontier IPP, lock-up extended through YE 2026, Series B remeasurement +$779M Q1 (warrant in-the-money).', src: 'Q1\'26 10-Q + Frontier release' },
+      { point: 'Margin trajectory: GM −78% Q1\'26, +157 ppt YoY, +16 ppt sequentially. Cube deliveries +5.7×. Operational leverage actually arriving.', src: 'Q1\'26 release' },
+      { point: 'AI/data-center is now the demand vector. TURBINE-X JDA targets up to 2 GWh of hyperscale capacity with first deployments 2027.', src: 'Apr 2026 TURBINE-X release' },
+      { point: '45X PTC preserved under OBBBA with FEOC guardrails — structurally favors US-content LDES vs. China-linked competitors. $21.4M grant receivable on Q1\'26 BS.', src: 'OBBBA / 10-Q' },
+      { point: 'Short interest ~28% of float (Nasdaq, latest); ~3.5 days to cover. Asymmetric squeeze setup on any clean catalyst.', src: 'Nasdaq short interest' },
+      { point: 'CEO Mastrangelo bought 23,900 shares Mar 4, 2026 post-FY25 crash. Director Dimitrief bought 15,000 at $6.04. Insiders putting fresh capital in at lows.', src: 'Form 4 / OpenInsider' }
+    ],
+    bear: [
+      { point: 'Op cash burn $119.7M in Q1\'26 alone. At that pace, $472M total cash is ~4 quarters runway absent new capital. S-3ASR shelf filed May 13 — secondary offering is a when, not if.', src: '10-Q cash flow + S-3ASR' },
+      { point: 'GM still −78%. The path to mgmt\'s implied FY27 GM-positive requires both Line 2 ramping AND Z3 unit economics holding at higher volume. Neither proven yet.', src: 'Q1\'26 release' },
+      { point: 'Active securities class action (Yung v. Eos, D.N.J. 26-cv-02372) alleging misrepresentation of FY25 production capacity. Settlement risk is material if certified.', src: 'court filings' },
+      { point: 'Shares outstanding +18% trailing 12 months. Insiders sold $14M more than they bought over the same window — Stidolph $11.5M, Kroeker (interim CFO) $802k, Silberman (CLO) $739k.', src: 'OpenInsider / Simply Wall St' },
+      { point: 'Customer concentration: 93.3% of Q1\'26 revenue from a handful of >10% customers. One project slip = guidance miss.', src: '10-Q footnotes' },
+      { point: 'Frontier needs Eos to fund ~$150M — explicitly "subject to ability to raise funding." That funding likely comes from the shelf. Bear: dilution wrapped in growth story.', src: 'Frontier release language' },
+      { point: 'No public hyperscaler customer despite the AI narrative. TURBINE-X is targeting hyperscalers; nothing closed. The "AI demand" thesis is bidding, not winning, today.', src: 'all public disclosures' },
+      { point: 'JPMorgan cut PT $9→$6 (Neutral) post-FY25; Roth Capital $6 PT (Chip Moore). Consensus PT compressed from $9.71 to $8.86. Sell-side is skeptical.', src: 'JPMorgan, Roth Capital research' }
+    ]
+  },
+
+  // ────────── NEW: Sentiment & positioning ──────────
+  // Insider trades and short interest — concrete positioning data, mixed by nature.
+  sentiment: {
+    asOf: 'Latest available — verify links for live figures',
+    shortInterest: {
+      pctOfFloat:    '~28% (latest reported)',
+      sharesShort:   '~88.7M',
+      daysToCover:   '~3.5',
+      interpretation: 'Elevated. Above 20% is the "potential squeeze" threshold; below 5 days-to-cover means a clean positive catalyst can move price hard. Bears argue the level is deserved given execution history.',
+      source: 'https://www.nasdaq.com/market-activity/stocks/eose/short-interest'
+    },
+    insiders: {
+      trailing12moNet: '−$14M (insiders sold $14M more than they bought)',
+      recentBuys: [
+        { date: '2026-03-04', name: 'Joe Mastrangelo (CEO)',          shares: 23900,  price: '~$5.20', value: '~$124k', kind: 'open-market buy' },
+        { date: '2026-03-02', name: 'Alexander Dimitrief (Director)', shares: 15000,  price: '$6.04',  value: '~$91k',  kind: 'open-market buy' }
+      ],
+      recentSells: [
+        { date: 'Trailing 12 mo', name: 'Russell M. Stidolph',         shares: 766134, price: '—',    value: '~$11.47M', kind: '4 sales' },
+        { date: 'Trailing 12 mo', name: 'Nathan Kroeker (Interim CFO)',shares: 50000,  price: '~$16',  value: '~$802k',   kind: 'open-market sell' },
+        { date: 'Trailing 12 mo', name: 'Marian Walters',              shares: 50000,  price: '~$16',  value: '~$790k',   kind: 'open-market sell' },
+        { date: 'Trailing 12 mo', name: 'Michael Silberman (CLO)',     shares: 41667,  price: '~$18',  value: '~$739k',   kind: 'open-market sell' }
+      ],
+      summary: '13 insider trades in trailing 6 months: 4 buys, 9 sells. Reading: top of house (CEO + a director) bought at the lows; middle and senior leadership were net sellers when the stock was higher. Mixed signal — both directions are real.',
+      source: 'http://openinsider.com/search?q=eose'
+    },
+    institutional: {
+      summary: 'Cerberus is the dominant structural holder via Series B preferred ($582.7M), warrants ($203.5M related-party), and notes ($113.1M). Track 13D/A filings on EDGAR for changes — most recent Cerberus 13D/A filed May 14, 2026.',
+      sources: [
+        { label: 'EDGAR — all 13D/13G filings',                url: 'https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0001805077&type=SC+13' },
+        { label: 'MarketBeat — institutional ownership',         url: 'https://www.marketbeat.com/stocks/NASDAQ/EOSE/institutional-ownership/' },
+        { label: 'Quiver Quantitative — institutional flows',     url: 'https://www.quiverquant.com/stock/EOSE/institutions/' }
+      ]
+    },
+    retail: {
+      summary: 'Stocktwits sentiment classified "extremely bullish" post-Q1\'26 print (per Stocktwits aggregated mention data). Pre-market spike to +30% on the Frontier announcement, faded toward flat by close — classic news-pop pattern.',
+      source: 'https://stocktwits.com/symbol/EOSE'
+    }
+  },
+
+  // ────────── NEW: Rumors & open debates ──────────
+  // Each rumor: what's being said + what the evidence actually shows.
+  // Goal: address the rumor without endorsing it.
+  rumors: {
+    bull: [
+      {
+        claim: 'A hyperscaler MOU is coming (Microsoft, Amazon, Google, or Meta).',
+        evidence: 'No public evidence of a closed deal with any named hyperscaler. The TURBINE-X JDA (Apr 15, 2026) explicitly targets hyperscale data centers and references "multiple large-scale projects in active development" — but no customer named. Treat as plausible direction, not booked fact.'
+      },
+      {
+        claim: 'Cerberus is positioning for a take-private or strategic buyout.',
+        evidence: 'No filings indicate this. Cerberus IS expanding its structural position (Series B preferred, warrants, Frontier $100M anchor, lock-up extension through YE 2026). That setup gives Cerberus optionality but doesn\'t evidence an acquisition.'
+      },
+      {
+        claim: 'Short squeeze imminent — 28% of float is short.',
+        evidence: 'Short interest is real (~28%, ~3.5 days to cover per Nasdaq). Mechanically a squeeze is possible on any clean positive catalyst. But "possible" is not "imminent" — the stock has carried similar SI levels for months without breaking out.'
+      },
+      {
+        claim: 'Frontier is a Cerberus-funded subsidy for Eos demand.',
+        evidence: 'Partially fair framing: Cerberus is anchoring with $100M equity and structuring TPI-wrapped project finance that Eos couldn\'t access alone. But Eos must contribute ~$150M itself, and Frontier transactions will be arm\'s-length per the release. Not a free ride.'
+      }
+    ],
+    bear: [
+      {
+        claim: 'A dilutive secondary offering is coming "any day" via the S-3ASR shelf.',
+        evidence: 'The May 13 S-3ASR is a "well-known seasoned issuer" automatic shelf — gives the company unlimited capacity to issue. Combined with $119.7M Q1 op-cash burn + the ~$150M Frontier funding contingency, a raise within 6-12 months is the consensus expectation. Timing and pricing unknown. The shelf is real; the raise is highly likely but not yet announced.'
+      },
+      {
+        claim: 'The Yung v. Eos lawsuit will cost the company $50M+ to settle.',
+        evidence: 'No basis for any specific dollar figure yet. Typical securities class action settlements for companies at this market cap range from $5M to $50M+ depending on class size and merits. The case is in lead-plaintiff selection (deadline passed May 5, 2026). Years of litigation ahead.'
+      },
+      {
+        claim: 'Eos won\'t close its $150M Frontier commitment.',
+        evidence: 'The release itself says the contribution is "subject to the ability to raise funding and certain other third-party approvals." That language is explicit conditionality — bears are reading the disclosure correctly. The question is timing of the raise, not whether it\'s contingent.'
+      },
+      {
+        claim: 'The path to GM-positive in FY27 is fantasy.',
+        evidence: 'GM was −78% in Q1\'26. To reach positive in 6-7 quarters requires roughly +12-15 ppt per quarter of GM expansion — Q1\'26 delivered +16 ppt QoQ, so the trajectory is technically defensible at recent pace. But Q4\'25 → Q1\'26 GM improvement reflected one-time SBC/D&A timing; the underlying product margin path is the open question.'
+      }
+    ]
+  },
+
   // ────────── NEW: Recent history (context for cold readers) ──────────
   recentHistory: [
     {
