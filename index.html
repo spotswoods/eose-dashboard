@@ -380,7 +380,33 @@
       </div>
 
       <!-- Indensity: flagship architecture, full-width -->
-      <div class="card" style="border-left:3px solid var(--accent);margin-bottom:14px">
+      <div class="card" style="border-left:3px solid var(--accent);margin-bottom:14px;overflow:hidden">
+        <!-- Concept animation — clearly labelled as imagined view, not actual footage -->
+        <div style="position:relative;border-radius:12px;overflow:hidden;margin:-4px -4px 18px;background:#000;aspect-ratio:16/9;box-shadow:0 16px 40px -16px rgba(0,0,0,0.6)">
+          <video autoplay loop muted playsinline preload="metadata"
+                 style="width:100%;height:100%;display:block;object-fit:cover"
+                 aria-label="Concept animation depicting an imagined view of the Indensity Core architecture">
+            <source src="assets/indensity-concept.mp4" type="video/mp4">
+          </video>
+          <!-- Top-right CONCEPT badge -->
+          <div style="position:absolute;top:14px;right:14px;display:inline-flex;align-items:center;gap:6px;
+                      background:rgba(0,0,0,0.55);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);
+                      color:#ECF6E0;font-size:10.5px;letter-spacing:.12em;
+                      padding:6px 11px;border-radius:999px;font-weight:700;
+                      border:1px solid rgba(255,255,255,0.18)">
+            <span style="display:inline-block;width:6px;height:6px;border-radius:50%;background:var(--accent)"></span>
+            CONCEPT · IMAGINED VIEW
+          </div>
+          <!-- Bottom-left caption -->
+          <div style="position:absolute;left:14px;bottom:14px;
+                      background:rgba(0,0,0,0.6);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);
+                      color:#ECF6E0;font-size:11.5px;line-height:1.4;
+                      padding:7px 11px;border-radius:8px;
+                      border:1px solid rgba(255,255,255,0.12);
+                      max-width:min(70%, 480px)">
+            Speculative rendering of an Indensity Core stack. Not actual product footage — included to visualize the stackable architecture described below.
+          </div>
+        </div>
         <div class="card__head">
           <div>
             <h3 class="card__title" style="font-size:18px" data-prod-indensity-name></h3>
