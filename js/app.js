@@ -308,16 +308,47 @@
       </div>`).join('');
   }
 
-  // ---------- NEW: Frontier section ----------
+  // ---------- NEW: Frontier platform — UK + USA ----------
   function renderFrontier() {
-    if (!D.frontier) return;
-    const summary = document.querySelector('[data-frontier-summary]');
-    const why     = document.querySelector('[data-frontier-why]');
-    const terms   = document.querySelector('[data-frontier-terms] tbody');
-    if (summary) summary.innerHTML = `<strong>${D.frontier.name}</strong> · ${D.frontier.announced}. ${D.frontier.summary}`;
-    if (why)     why.textContent = D.frontier.why;
-    if (terms)   terms.innerHTML = D.frontier.terms.map(t => `
-      <tr><td style="color:var(--fg-2);width:42%">${t.k}</td><td><b>${t.v}</b></td></tr>`).join('');
+    if (!D.frontierPlatform) return;
+    const sideRenderer = (key, prefix) => {
+      const side = D.frontierPlatform[key];
+      if (!side) return;
+      setEl(`[data-frontier-${prefix}-meta]`, `Founded ${side.founded} · ${side.announced}`);
+      setEl(`[data-frontier-${prefix}-summary]`, side.summary);
+      setEl(`[data-frontier-${prefix}-why]`, side.why);
+      const tb = document.querySelector(`[data-frontier-${prefix}-terms] tbody`);
+      if (tb) tb.innerHTML = side.terms.map(t =>
+        `<tr><td style="color:var(--fg-2);width:42%">${t.k}</td><td><b>${t.v}</b></td></tr>`).join('');
+      const srcs = document.querySelector(`[data-frontier-${prefix}-sources]`);
+      if (srcs) srcs.innerHTML = (side.sources || []).map(s =>
+        `<a href="${s.url}" target="_blank" rel="noopener" style="color:var(--accent);text-decoration:underline">${s.label}</a>`).join(' · ');
+    };
+    sideRenderer('uk', 'uk');
+    sideRenderer('us', 'us');
+  }
+
+  // ---------- NEW: Regulated demand programs (Ofgem + NYSERDA) ----------
+  function renderRegulatedPrograms() {
+    if (!D.regulatedPrograms) return;
+    const sideRenderer = (key, prefix) => {
+      const p = D.regulatedPrograms[key];
+      if (!p) return;
+      setEl(`[data-program-${prefix}-title]`, p.title);
+      setEl(`[data-program-${prefix}-framework]`, p.framework);
+      setEl(`[data-program-${prefix}-relevance]`, p.eosRelevance);
+      const tl = document.querySelector(`[data-program-${prefix}-timeline]`);
+      if (tl) tl.innerHTML = p.timeline.map(t =>
+        `<div style="display:grid;grid-template-columns:130px 1fr;gap:10px;padding:4px 0;border-bottom:1px solid var(--line-1)">
+          <span style="color:var(--fg-2);font-variant-numeric:tabular-nums">${t.date}</span>
+          <span>${t.event}</span>
+        </div>`).join('');
+      const srcs = document.querySelector(`[data-program-${prefix}-sources]`);
+      if (srcs) srcs.innerHTML = (p.sources || []).map(s =>
+        `<a href="${s.url}" target="_blank" rel="noopener" style="color:var(--accent);text-decoration:underline">${s.label}</a>`).join(' · ');
+    };
+    sideRenderer('ofgem', 'ofgem');
+    sideRenderer('nyserda', 'nyserda');
   }
 
   // ---------- NEW: Capital structure ----------
@@ -618,6 +649,7 @@
     renderScorecard();
     renderSentiment();
     renderRumors();
+    renderRegulatedPrograms();
 
     // Charts
     chart('[data-chart-revenue]',  h => C.barChart(h, D.quarterlyRevenue, { colorByType: true, height: 340 }));

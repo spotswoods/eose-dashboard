@@ -240,11 +240,14 @@ window.EOSE_DATA = {
   // MWh figures are public-disclosure approximations; consult the 10-K Item 1
   // (Business — Customers) for the company's own characterization.
   contracts: [
-    { customer: 'Frontier Power USA (Cerberus JV)',  mwh: 2000,  region: 'USA',      status: 'Contracted',   value: '~$900M*'  },
-    { customer: 'TURBINE-X Energy (JDA)',            mwh: '≤2000', region: 'USA',    status: 'Negotiation',  value: 'TBD (JDA)' },
-    { customer: 'MN8 Energy',                        mwh: '~590', region: 'USA',     status: 'Delivering',   value: '~$295M*'  },
-    { customer: 'Indian Energy / Viejas microgrid',  mwh: 300,   region: 'USA (CA)', status: 'Contracted',   value: '~$150M*'  },
+    { customer: 'Frontier Power Ltd. (UK) — first order',  mwh: 228,    region: 'UK',       status: 'Delivering',   value: '~$114M*' },
+    { customer: 'Frontier Power Ltd. (UK) — 5 GWh framework', mwh: 5000, region: 'UK',     status: 'Framework',     value: '~$2.5B*' },
+    { customer: 'Frontier Power USA (Cerberus JV)',  mwh: 2000,    region: 'USA',      status: 'Contracted',   value: '~$900M*'  },
+    { customer: 'TURBINE-X Energy (JDA, AI data center)', mwh: '≤2000', region: 'USA', status: 'Negotiation',  value: 'TBD (JDA)' },
+    { customer: 'MN8 Energy',                        mwh: '~590',  region: 'USA',     status: 'Delivering',   value: '~$295M*'  },
+    { customer: 'Indian Energy / Viejas microgrid',  mwh: 300,     region: 'USA (CA)', status: 'Contracted',   value: '~$150M*'  },
     { customer: 'Southeast utility (4hr→10hr expansion)', mwh: 'expanded', region: 'USA (SE)', status: 'Delivering', value: 'undisclosed' },
+    { customer: 'NYSERDA NYC project (zinc-halide cited)', mwh: '~MW-scale', region: 'USA (NY)', status: 'Contracted', value: 'undisclosed' },
     { customer: 'Other publicly-disclosed counterparties', mwh: '~500', region: 'USA / mixed', status: 'Mixed', value: '~$200M*' }
   ],
 
@@ -284,10 +287,14 @@ window.EOSE_DATA = {
   // "Company" = sourced from Eos disclosure. "Model" = our projection, not company-issued.
   catalysts: [
     { date: 'May 13, 2026', event: 'Q1 2026 earnings · Frontier Power USA formation · S-3ASR shelf filed', status: 'Reported [Company]',         tone: 'done'   },
+    { date: 'Spring 2026',  event: 'Ofgem publishes Initial Decision List for LDES Cap & Floor Window 1 (UK)', status: 'Watch [Regulator]',        tone: 'soon'   },
     { date: 'End Q2 2026',  event: 'Line 2 initial production at Thorn Hill (per Q1\'26 release)',          status: 'In progress [Company]',      tone: 'soon'   },
     { date: 'Q2 2026',      event: 'Frontier Power USA closing conditions · Eos ~$150M funding plan',      status: 'Watch [Company]',            tone: 'soon'   },
+    { date: 'Summer 2026',  event: 'Ofgem final cap & floor awards Window 1 — 11 GWh Frontier UK pipeline uses Eos tech', status: 'Catalyst [Regulator]', tone: 'soon' },
     { date: '~Aug 2026',    event: 'Q2 2026 earnings release (estimated cadence)',                         status: 'Pending',                    tone: 'future' },
+    { date: 'Q3 2026',      event: 'NYSERDA Bulk Storage Program ISCRFP25-1 awards (Eos qualifies for 8+ hr tier)', status: 'Catalyst [Regulator]', tone: 'soon' },
     { date: 'YE 2026',      event: 'Cerberus equity lock-up expiration (extended through year-end 2026)',  status: 'Confirmed [Company]',        tone: 'live'   },
+    { date: 'YE 2026',      event: 'Treasury safe-harbor tables for 45X FEOC scoring (sets credit magnitude)', status: 'Watch [Regulator]',    tone: 'future' },
     { date: '2026–27',      event: 'TURBINE-X JDA execution (gas + storage hybrid, up to 2 GWh)',          status: 'Signed JDA [Company]',       tone: 'live'   },
     { date: 'FY2026',       event: 'Revenue $300–400M (management guidance, reaffirmed at Q1\'26)',        status: 'Guidance [Company]',         tone: 'live'   },
     { date: 'FY2027',       event: 'Gross margin positive — our model assumption, not company guidance',   status: 'Projected [Model]',          tone: 'future' },
@@ -358,22 +365,101 @@ window.EOSE_DATA = {
     { y: 'FY28', rev: 1126, gm: 22  }
   ],
 
-  // ────────── NEW: Frontier Power USA deal terms ──────────
-  frontier: {
-    name:        'Frontier Power USA',
-    announced:   'May 13, 2026 (8-K Ex. 99.2)',
-    summary:     'Stand-alone development & investment company formed with Cerberus to build, own and operate a portfolio of long-duration battery energy storage projects deploying Eos\' Z3 zinc-bromide systems. Targeting Independent Power Producer (IPP) status.',
-    why:         'Combines (1) Eos\' vertically integrated technology, (2) Cerberus institutional capital + operating muscle, and (3) a Technology Performance Insurance (TPI) wrap arranged with Ariel Green that lets project lenders treat Z3 output as financeable — unlocking project-finance for LDES that historically has been unbankable at scale.',
-    terms: [
-      { k: 'Cerberus equity commitment',    v: '$100M (subject to closing conditions)' },
-      { k: 'Eos target contribution',       v: '~$150M (subject to ability to raise funding + third-party approvals)' },
-      { k: 'Anchor reservation',            v: '2 GWh firm capacity reservation agreement' },
-      { k: 'Pipeline target',               v: 'Multi-GWh across data center, utility, and industrial end markets' },
-      { k: 'Tech Performance Insurance',    v: 'Ariel Green specialty insurer (project-lender wrap)' },
-      { k: 'Cerberus lock-up',              v: 'Extended through year-end 2026' },
-      { k: 'Governance',                    v: 'Independent investment committee; arm\'s-length commercial terms with Eos' },
-      { k: 'Additional debt financing',     v: 'Evaluating institutional placements (IG target) + commercial bank project facilities under TPI framework' }
-    ]
+  // ────────── NEW: Frontier Power platform — TWO distinct entities ──────────
+  // These are NOT the same company:
+  //   Frontier Power Ltd. (UK) — energy infra developer founded 2009; signed
+  //     a 5 GWh framework with Eos in April 2025; placed first 228 MWh order
+  //     in October 2025; has ~11 GWh advancing in Ofgem's Cap & Floor LDES
+  //     Window 1 (UK regulated revenue floor scheme).
+  //   Frontier Power USA — newly formed with Cerberus on May 13, 2026 as a
+  //     US IPP; $100M Cerberus + ~$150M Eos contingent commitment; 2 GWh
+  //     anchor reservation; Ariel Green TPI wrap.
+  // Same brand family, different vehicles. The "11 GWh" figure often quoted
+  // belongs to the UK entity's Ofgem submissions, not the US IPP.
+  frontierPlatform: {
+    uk: {
+      name:      'Frontier Power Ltd. (UK)',
+      founded:   '2009',
+      announced: 'MoU: April 15, 2025 · First order: October 31, 2025',
+      summary:   'UK energy infrastructure developer (est. 2009). In April 2025 signed a 5 GWh framework agreement with Eos covering UK long-duration storage. Booked first 228 MWh order under that framework on Oct 31, 2025 — concurrently meeting the final Cerberus milestone of the prior £159M strategic partnership (PwC Corporate Finance advised).',
+      why:       'The UK has Ofgem\'s Cap & Floor LDES scheme — a regulated revenue floor specifically designed to make non-lithium long-duration storage bankable. Frontier UK has 11 GWh of projects (all using Eos Z3 zinc-bromide tech) advancing through Window 1 of that scheme. Ofgem Initial Decision List due Spring 2026; final awards Summer 2026. Eos is a primary technology supplier to a leading applicant in a state-supported program.',
+      terms: [
+        { k: 'Framework agreement',         v: '5 GWh between Eos and Frontier UK (April 2025)' },
+        { k: 'First order booked',          v: '228 MWh of Z3™ systems (Oct 31, 2025)' },
+        { k: 'Cerberus → Frontier UK',      v: '£159M strategic partnership (PwC-advised), separate from US' },
+        { k: 'Ofgem Cap & Floor pipeline',  v: '~11 GWh advancing in Window 1, all using Eos technology' },
+        { k: 'Window 1 timeline',           v: 'Initial Decision Spring 2026 · Final awards Summer 2026' },
+        { k: 'UK manufacturing exploration',v: 'Partnership "opens the door" to local Eos manufacturing in UK' },
+        { k: 'Battery tech in scope',       v: 'Zinc-bromine (Eos) + vanadium flow — first-of-kind dual-tech program' }
+      ],
+      sources: [
+        { label: '5 GWh MoU (Apr 2025)',         url: 'https://www.globenewswire.com/news-release/2025/04/15/3061738/0/en/Eos-Energy-and-Frontier-Power-Announce-5-GWh-Memorandum-of-Understanding-to-Advance-Long-Duration-Energy-Storage-in-the-United-Kingdom.html' },
+        { label: '228 MWh first order (Oct 31, 2025)', url: 'https://investors.eose.com/news-releases/news-release-details/eos-energy-secures-strategic-228-mwh-order-frontier-power-under' },
+        { label: 'PwC: Cerberus £159M into Frontier UK', url: 'https://www.pwc.co.uk/services/deals/recent-deals/pwc-corporate-finance-advises-frontier-power-on-strategic-partnership-with-cerberus-capital-management.html' }
+      ]
+    },
+    us: {
+      name:      'Frontier Power USA',
+      founded:   'May 13, 2026',
+      announced: 'May 13, 2026 (8-K Ex. 99.2)',
+      summary:   'Stand-alone US development & investment company formed with Cerberus to build, own, and operate LDES projects deploying Eos\' Z3. Targeting Independent Power Producer (IPP) status. NOT to be confused with Frontier Power Ltd. (UK).',
+      why:       'Combines (1) Eos\' vertically integrated technology, (2) Cerberus institutional capital + operating muscle, and (3) a Technology Performance Insurance (TPI) wrap arranged with Ariel Green that lets project lenders treat Z3 output as financeable — unlocking project-finance for LDES that historically has been unbankable at scale.',
+      terms: [
+        { k: 'Cerberus equity commitment',    v: '$100M (subject to closing conditions)' },
+        { k: 'Eos target contribution',       v: '~$150M (subject to ability to raise funding + third-party approvals)' },
+        { k: 'Anchor reservation',            v: '2 GWh firm capacity reservation agreement' },
+        { k: 'Pipeline target',               v: 'Multi-GWh across data center, utility, and industrial end markets' },
+        { k: 'Tech Performance Insurance',    v: 'Ariel Green specialty insurer (project-lender wrap)' },
+        { k: 'Cerberus lock-up',              v: 'Extended through year-end 2026' },
+        { k: 'Governance',                    v: 'Independent investment committee; arm\'s-length commercial terms with Eos' },
+        { k: 'Additional debt financing',     v: 'Evaluating institutional placements (IG target) + commercial bank project facilities under TPI framework' }
+      ],
+      sources: [
+        { label: 'Frontier Power USA 8-K (May 13)', url: 'https://www.sec.gov/Archives/edgar/data/1805077/000162828026034367/eosepressreleasefrontier.htm' },
+        { label: 'Q1 2026 earnings release',          url: 'https://www.sec.gov/Archives/edgar/data/1805077/000162828026034367/eoseq1fy26earningsreleas.htm' }
+      ]
+    }
+  },
+
+  // ────────── NEW: Regulated demand programs (US + UK) ──────────
+  // Both NYSERDA's Index Storage Credit and Ofgem's Cap & Floor are
+  // government-backed revenue-floor mechanisms specifically designed to
+  // de-risk long-duration storage project finance. Both have explicit
+  // near-term decision dates that act as concrete catalysts for Eos.
+  regulatedPrograms: {
+    nyserda: {
+      title:     'NYSERDA Bulk Energy Storage Program · Index Storage Credit (ISCRFP25-1)',
+      framework: 'New York State (NYSERDA) competitive solicitation for bulk storage. Index Storage Credit (ISC) provides contracted project owners with a market-based revenue mechanism — effectively a regulated revenue floor — to fund the state\'s 6 GW by 2030 goal.',
+      timeline: [
+        { date: 'July 28, 2025',    event: 'NYSERDA issues inaugural Index Storage Credit solicitation (ISCRFP25-1)' },
+        { date: 'January 29, 2026', event: 'Bid proposals due' },
+        { date: 'February 2026',    event: 'Bid evaluation concluded' },
+        { date: 'Q3 2026',          event: 'Awards announcement expected (concrete near-term catalyst)' }
+      ],
+      eosRelevance: 'NYSERDA requires 8+ hr duration projects to be at TRL 8 or higher — Eos Z3 qualifies. NYSERDA-funded NYC battery storage project already specifies "Zinc Halide chemistry from EOS Energy Technology" in its public project summary. Eos\' NYSERDA relationship dates to 2013 (Con Edison pilot + $1M commercialization award).',
+      sources: [
+        { label: 'NYSERDA Bulk Storage Program',       url: 'https://www.nyserda.ny.gov/All-Programs/Energy-Storage-Program/Developers-and-Contractors/Bulk-Storage-Incentives' },
+        { label: 'ISCRFP25-1 launch (Jul 2025)',        url: 'https://www.nyserda.ny.gov/About/Newsroom/2025-Announcements/2025-07-28-Gov-Hochul-Announces-First-Bulk-Energy_Storage-Solicitation-NY-Energy-Roadmap' },
+        { label: 'NYC project summary (cites Eos)',      url: 'https://www.nyserda.ny.gov/-/media/Project/Nyserda/Files/Programs/Energy-Storage/Bulk-Storage-Incentives/NYC-Energy-Battery-Storage-Project_Att_B_Public_Project_Summary.pdf' }
+      ]
+    },
+    ofgem: {
+      title:     'Ofgem Cap & Floor LDES Scheme · UK',
+      framework: 'UK regulated revenue floor (and cap) for long-duration storage. Designed to make non-lithium LDES bankable for project lenders. First-of-its-kind in Europe — analogous in spirit to NYSERDA\'s ISC but with both floor and cap.',
+      timeline: [
+        { date: 'April 8, 2025',  event: 'Window 1 application opens' },
+        { date: 'September 2025', event: '77 applications pass eligibility screening into Phase 2 (project assessment)' },
+        { date: 'Spring 2026',    event: 'Ofgem publishes Initial Decision List (catalyst)' },
+        { date: 'Summer 2026',    event: 'Final cap & floor awards (Window 1) — concrete catalyst' },
+        { date: 'TBD (Q1 2026+)', event: 'Window 2 timing to be announced post-Window 1 learnings' }
+      ],
+      eosRelevance: 'Frontier Power Ltd. (UK) has ~11 GWh of LDES projects advancing in Window 1 — all using Eos Z3 zinc-bromide technology. Eos is also one of two battery technologies named in the Cerberus £159M / Frontier UK partnership (the other being vanadium flow). Award outcomes flow directly to Eos hardware demand.',
+      sources: [
+        { label: 'Ofgem LDES Cap & Floor decision page',  url: 'https://www.ofgem.gov.uk/decision/long-duration-electricity-storage-cap-and-floor-application-window-1' },
+        { label: 'Modo Energy — Window 1 project ranking', url: 'https://modoenergy.com/research/gb-great-britain-long-duration-energy-electricity-storage-ldes-cap-floor-ofgem-eligibility-september-2025-assessment-bess' },
+        { label: 'Linklaters — scheme primer',              url: 'https://sustainablefutures.linklaters.com/post/102k8od/super-batteries-a-look-at-ofgems-new-cap-and-floor-regime' }
+      ]
+    }
   },
 
   // ────────── NEW: Capital structure (3/31/26) — from 10-Q ──────────
@@ -502,13 +588,13 @@ window.EOSE_DATA = {
   scorecard: {
     bull: [
       { point: 'Q1\'26 revenue +445% YoY with adj. EPS beating consensus by 154 ppt ($0.12 vs −$0.22). Two consecutive quarters now exceed full FY25.', src: 'Q1\'26 8-K' },
-      { point: 'Pipeline $24.3B (+56% YoY); backlog $644.6M; post-quarter +2 GWh Frontier reservation. Demand isn\'t the constraint.', src: '10-Q + Frontier 8-K' },
-      { point: 'Cerberus is doubling down: $100M into Frontier IPP, lock-up extended through YE 2026, Series B remeasurement +$779M Q1 (warrant in-the-money).', src: 'Q1\'26 10-Q + Frontier release' },
+      { point: 'Pipeline $24.3B (+56% YoY); backlog $644.6M; post-quarter +2 GWh Frontier USA reservation. Demand isn\'t the constraint.', src: '10-Q + Frontier 8-K' },
+      { point: 'UK pipeline: Frontier Power Ltd. has ~11 GWh advancing through Ofgem Cap & Floor Window 1, all using Eos Z3 tech. Initial Decision Spring 2026; final awards Summer 2026 — regulated revenue floor de-risks project finance.', src: 'Ofgem / Modo Energy' },
+      { point: 'Cerberus is doubling down on BOTH sides of the Atlantic: $100M into Frontier USA + £159M earlier into Frontier UK. Lock-up extended through YE 2026.', src: 'Frontier releases · PwC UK' },
       { point: 'Margin trajectory: GM −78% Q1\'26, +157 ppt YoY, +16 ppt sequentially. Cube deliveries +5.7×. Operational leverage actually arriving.', src: 'Q1\'26 release' },
-      { point: 'AI/data-center is now the demand vector. TURBINE-X JDA targets up to 2 GWh of hyperscale capacity with first deployments 2027.', src: 'Apr 2026 TURBINE-X release' },
+      { point: 'AI/data-center demand vector: TURBINE-X JDA targets up to 2 GWh of hyperscale capacity with first deployments 2027. NYSERDA ISC awards (Q3 2026) is another concrete near-term catalyst.', src: 'TURBINE-X release · NYSERDA' },
       { point: '45X PTC preserved under OBBBA with FEOC guardrails — structurally favors US-content LDES vs. China-linked competitors. $21.4M grant receivable on Q1\'26 BS.', src: 'OBBBA / 10-Q' },
-      { point: 'Short interest ~28% of float (Nasdaq, latest); ~3.5 days to cover. Asymmetric squeeze setup on any clean catalyst.', src: 'Nasdaq short interest' },
-      { point: 'CEO Mastrangelo bought 23,900 shares Mar 4, 2026 post-FY25 crash. Director Dimitrief bought 15,000 at $6.04. Insiders putting fresh capital in at lows.', src: 'Form 4 / OpenInsider' }
+      { point: 'Short interest ~28% of float; ~3.5 days to cover. CEO Mastrangelo bought 23,900 shares post-FY25 crash; Director Dimitrief bought 15,000 at $6.04. Asymmetric setup on any clean catalyst.', src: 'Nasdaq SI · Form 4 / OpenInsider' }
     ],
     bear: [
       { point: 'Op cash burn $119.7M in Q1\'26 alone. At that pace, $472M total cash is ~4 quarters runway absent new capital. S-3ASR shelf filed May 13 — secondary offering is a when, not if.', src: '10-Q cash flow + S-3ASR' },
