@@ -298,10 +298,13 @@ window.EOSE_DATA = {
   // ────────── Catalysts ──────────
   // "Company" = sourced from Eos disclosure. "Model" = our projection, not company-issued.
   catalysts: [
+    { date: 'Apr 30, 2026', event: 'CFO appointment announced: Alessandro Lagi (from Johnson Controls, prior Baker Hughes)',  status: 'Reported [Company]',     tone: 'done'   },
     { date: 'May 13, 2026', event: 'Q1 2026 earnings · Frontier Power USA formation · S-3ASR shelf filed', status: 'Reported [Company]',         tone: 'done'   },
+    { date: 'Jun 8, 2026',  event: 'Lagi CFO effective date · Kroeker returns to CCO-only role',           status: 'Imminent [Company]',         tone: 'soon'   },
     { date: 'Spring 2026',  event: 'Ofgem publishes Initial Decision List for LDES Cap & Floor Window 1 (UK)', status: 'Watch [Regulator]',        tone: 'soon'   },
     { date: 'End Q2 2026',  event: 'Line 2 initial production at Thorn Hill (per Q1\'26 release)',          status: 'In progress [Company]',      tone: 'soon'   },
-    { date: 'Q2 2026',      event: 'Frontier Power USA closing conditions · Eos ~$150M funding plan',      status: 'Watch [Company]',            tone: 'soon'   },
+    { date: 'Q2/Q3 2026',   event: 'Pro-rata rights offering to fund Eos\' ~$150M Frontier USA contribution — pricing + size TBD', status: 'Watch [Company]', tone: 'soon' },
+    { date: 'Q2 2026',      event: 'Frontier Power USA closing conditions (Cerberus warrants + controlling JV equity)',      status: 'Watch [Company]',            tone: 'soon'   },
     { date: 'Summer 2026',  event: 'Ofgem final cap & floor awards Window 1 — 11 GWh Frontier UK pipeline uses Eos tech', status: 'Catalyst [Regulator]', tone: 'soon' },
     { date: '~Aug 2026',    event: 'Q2 2026 earnings release (estimated cadence)',                         status: 'Pending',                    tone: 'future' },
     { date: 'Q3 2026',      event: 'NYSERDA Bulk Storage Program ISCRFP25-1 awards (Eos qualifies for 8+ hr tier)', status: 'Catalyst [Regulator]', tone: 'soon' },
@@ -351,8 +354,8 @@ window.EOSE_DATA = {
 
   // ────────── Risk factors — focused bear thesis ──────────
   risks: [
-    { title: 'Cash burn vs. shelf timing',
-      body: 'Total cash fell $152M from Q4\'25 ($624.6M) to Q1\'26 ($472.4M). At current burn, the S-3ASR shelf filed May 13 is a when, not if. Watch the size and pricing of any follow-on offering relative to the last trade.' },
+    { title: 'Cash burn vs. shelf timing + rights offering',
+      body: 'Total cash fell $152M from Q4\'25 ($624.6M) to Q1\'26 ($472.4M). On top of the S-3ASR shelf filed May 13, Eos announced it intends to fund its ~$150M Frontier USA contribution via a pro-rata rights offering to existing shareholders (subscription rights + warrants). The structure is designed to limit dilution for participating shareholders, but anyone who skips the rights offering will be diluted. Watch announcement of rights pricing, subscription period, and Cerberus\' warrant terms.' },
     { title: 'Cerberus structural dominance',
       body: 'Cerberus holds Series B preferred ($582.7M), warrant liabilities ($203.5M related-party), and convertible notes ($113.1M). The Series B remeasurement was +$778.9M in Q1\'26 alone — these are non-cash but the conversion math drives common-share dilution over time.' },
     { title: 'Customer concentration',
@@ -417,13 +420,14 @@ window.EOSE_DATA = {
       summary:   'Stand-alone US development & investment company formed with Cerberus to build, own, and operate LDES projects deploying Eos\' Z3. Targeting Independent Power Producer (IPP) status. NOT to be confused with Frontier Power Ltd. (UK).',
       why:       'Combines (1) Eos\' vertically integrated technology, (2) Cerberus institutional capital + operating muscle, and (3) a Technology Performance Insurance (TPI) wrap arranged with Ariel Green that lets project lenders treat Z3 output as financeable — unlocking project-finance for LDES that historically has been unbankable at scale.',
       terms: [
-        { k: 'Cerberus equity commitment',    v: '$100M (subject to closing conditions)' },
-        { k: 'Eos target contribution',       v: '~$150M (subject to ability to raise funding + third-party approvals)' },
+        { k: 'Cerberus equity commitment',    v: '$100M anchor (subject to closing conditions) — Cerberus also expected to receive Eos warrants AND controlling equity in Frontier USA' },
+        { k: 'Eos target contribution',       v: '~$150M — to be funded via a pro-rata rights offering to EXISTING shareholders (structured to limit dilution to participating holders)' },
         { k: 'Anchor reservation',            v: '2 GWh firm capacity reservation agreement' },
         { k: 'Pipeline target',               v: 'Multi-GWh across data center, utility, and industrial end markets' },
-        { k: 'Tech Performance Insurance',    v: 'Ariel Green specialty insurer (project-lender wrap)' },
+        { k: 'Tech Performance Insurance',    v: '~$1.5B project-level capacity · 15-year non-cancellable · written through Lloyd\'s of London consortium (A+/AA-) · arranged with Ariel Green (a division of Ariel Re)' },
+        { k: 'Why the TPI matters',           v: 'The wrap allows Frontier USA project debt to achieve investment-grade characteristics at competitive terms — solves the LDES bankability bottleneck' },
         { k: 'Cerberus lock-up',              v: 'Extended through year-end 2026' },
-        { k: 'Governance',                    v: 'Independent investment committee; arm\'s-length commercial terms with Eos' },
+        { k: 'Governance',                    v: 'Independent investment committee; arm\'s-length commercial terms with Eos; separates project capital from Eos\' corporate balance sheet' },
         { k: 'Additional debt financing',     v: 'Evaluating institutional placements (IG target) + commercial bank project facilities under TPI framework' }
       ],
       sources: [
@@ -538,7 +542,7 @@ window.EOSE_DATA = {
       { k: 'Total shareholders\' deficit',v: '$(868.4)M' },
       { k: '45X IRA grant receivable',    v: '$21.4M' }
     ],
-    note: 'The $868M shareholders\' deficit is largely a function of mark-to-market accounting on Cerberus instruments and warrants — not an economic deficit. Series B preferred remeasurement was +$778.9M in Q1\'26 alone (non-cash). Reconcile against the 10-Q before acting on any single line item.'
+    note: 'The $868M shareholders\' deficit is largely a function of mark-to-market accounting on Cerberus instruments and warrants — not an economic deficit. Series B preferred remeasurement was +$778.9M in Q1\'26 alone (non-cash). Reconcile against the 10-Q before acting on any single line item. <br/><br/><strong style="color:var(--warning)">Coming change to watch:</strong> Eos has stated (May 13, 2026 release) it intends to fund its ~$150M Frontier USA equity contribution via a pro-rata rights offering to existing shareholders (subscription rights + corresponding warrants). The structure is designed to limit dilution to <em>participating</em> shareholders — non-participants will be diluted. Cerberus is separately expected to receive Eos warrants in exchange for its $100M Frontier USA anchor. Pricing + timing TBD; watch for the supplemental prospectus filing.'
   },
 
   // ────────── NEW: Product family (Indensity / Cube / DawnOS) ──────────
@@ -739,7 +743,7 @@ window.EOSE_DATA = {
       { point: 'Short interest ~28% of float; ~3.5 days to cover. CEO Mastrangelo bought 23,900 shares post-FY25 crash; Director Dimitrief bought 15,000 at $6.04. Asymmetric setup on any clean catalyst.', src: 'Nasdaq SI · Form 4 / OpenInsider' }
     ],
     bear: [
-      { point: 'Op cash burn $119.7M in Q1\'26 alone. At that pace, $472M total cash is ~4 quarters runway absent new capital. S-3ASR shelf filed May 13 — secondary offering is a when, not if.', src: '10-Q cash flow + S-3ASR' },
+      { point: 'Op cash burn $119.7M in Q1\'26 alone. At that pace, $472M total cash is ~4 quarters runway absent new capital. S-3ASR shelf filed May 13 — plus a pro-rata rights offering targeting ~$150M coming to fund the Frontier USA contribution. Dilution is a "when," not "if."', src: '10-Q cash flow + S-3ASR + Frontier 8-K' },
       { point: 'GM still −78%. The path to mgmt\'s implied FY27 GM-positive requires both Line 2 ramping AND Z3 unit economics holding at higher volume. Neither proven yet.', src: 'Q1\'26 release' },
       { point: 'Active securities class action (Yung v. Eos, D.N.J. 26-cv-02372) alleging misrepresentation of FY25 production capacity. Settlement risk is material if certified.', src: 'court filings' },
       { point: 'Shares outstanding +18% trailing 12 months. Insiders sold $14M more than they bought over the same window — Stidolph $11.5M, Kroeker (interim CFO) $802k, Silberman (CLO) $739k.', src: 'OpenInsider / Simply Wall St' },
@@ -795,6 +799,11 @@ window.EOSE_DATA = {
   // i.e., the discretionary capital decisions, not vesting mechanics.
   insiderTrades: {
     asOf: 'Trailing ~6 months · pulled from SEC EDGAR (CIK 1805077, Form 4)',
+    pending: {
+      label: 'Pending — incoming CFO Alessandro Lagi (effective June 8, 2026)',
+      detail: 'New CFO\'s Form 3 (initial holdings) + Form 4 for the $2M initial RSU grant will likely file in the first business days after June 8. Employment agreement: $470k base salary, 100% target bonus, $2M initial RSU grant (3-year vest), $1M annual LTI target. Source: 8-K filed April 28, 2026.',
+      sourceUrl: 'https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0001805077&type=8-K&dateb=&owner=include&count=10'
+    },
     summary: {
       openMarketBuys:    692962,        // 4 P transactions
       openMarketSells: 14415975,        // multiple S transactions
@@ -802,7 +811,7 @@ window.EOSE_DATA = {
       buyCount: 4,
       sellCount: 7,
       buyersUnique: 3,                  // Mastrangelo, Dimitrief, Urban
-      reading: 'Top of house (CEO + 2 directors) put fresh capital in at $5.75–$6.58 after the Feb 26 crash. The larger sells were Officer/Director sells in Dec 2025 + Jan 2026 at $14–$18 — before the −39% drop. Read directionally, not as net dollars.'
+      reading: 'Top of house (CEO + 2 directors) put fresh capital in at $5.75–$6.58 after the Feb 26 crash. The larger sells were Officer/Director sells in Dec 2025 + Jan 2026 at $14–$18 — before the −39% drop. Read directionally, not as net dollars. The new CFO\'s initial RSU grant ($2M, time-vesting over 3 years) will appear here when his Form 3/4 files post-June 8.'
     },
     codeLegend: [
       { code: 'P', label: 'Open-market purchase', tone: 'buy', note: 'Discretionary buy — strongest insider signal' },
@@ -864,7 +873,7 @@ window.EOSE_DATA = {
     bear: [
       {
         claim: 'A dilutive secondary offering is coming "any day" via the S-3ASR shelf.',
-        evidence: 'The May 13 S-3ASR is a "well-known seasoned issuer" automatic shelf — gives the company unlimited capacity to issue. Combined with $119.7M Q1 op-cash burn + the ~$150M Frontier funding contingency, a raise within 6-12 months is the consensus expectation. Timing and pricing unknown. The shelf is real; the raise is highly likely but not yet announced.'
+        evidence: 'Confirmed in the Frontier release itself: Eos intends to fund its ~$150M Frontier USA contribution via a PRO-RATA RIGHTS OFFERING to existing shareholders — subscription rights to buy Eos securities + corresponding warrants. Structured to limit dilution to PARTICIPATING shareholders; anyone who skips will be diluted. Timing + pricing TBD. Separately, the S-3ASR shelf gives the company unlimited capacity for additional follow-ons.'
       },
       {
         claim: 'The Yung v. Eos lawsuit will cost the company $50M+ to settle.',
@@ -883,6 +892,12 @@ window.EOSE_DATA = {
 
   // ────────── NEW: Recent history (context for cold readers) ──────────
   recentHistory: [
+    {
+      date:  '2026-04-30',
+      title: 'CFO appointment: Alessandro Lagi',
+      body:  'Eos appointed Alessandro Lagi (ex-Johnson Controls Global FP&A, prior Baker Hughes/BHGE) as CFO effective June 8, 2026. Succeeds interim CFO Nathan Kroeker (who continues as CCO). Employment agreement dated Apr 28 sets $470K base salary, 100% target bonus, $2M initial RSU grant (3-yr vest), $1M annual LTI target. Stock dipped ~5% on the announcement — read variously as the market preferring continuity (Kroeker) or just normal exec-transition uncertainty.',
+      url:   'https://investors.eose.com/news-releases/news-release-details/eos-energy-enterprises-appoints-alessandro-lagi-chief-financial'
+    },
     {
       date:  '2026-04-15',
       title: 'TURBINE-X JDA announced',

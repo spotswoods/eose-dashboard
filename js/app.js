@@ -424,7 +424,9 @@
       eq.innerHTML = cs.equity.map(r => `
         <tr><td>${r.k}</td><td class="num"><b>${r.v}</b></td></tr>`).join('');
     }
-    setEl('[data-capstr-note]', cs.note);
+    // cs.note now contains HTML (rights-offering callout) — use innerHTML, not textContent
+    const noteEl = document.querySelector('[data-capstr-note]');
+    if (noteEl) noteEl.innerHTML = cs.note;
   }
 
   // ---------- NEW: Bull / Bear scorecard ----------
@@ -506,6 +508,18 @@
     if (!D.insiderTrades) return;
     const it = D.insiderTrades;
     setEl('[data-insider-asof]', it.asOf || '');
+
+    // Pending filing banner (e.g., incoming CFO RSU grant before Form 3/4 files)
+    if (it.pending) {
+      const card = document.getElementById('insider-pending');
+      if (card) {
+        card.style.display = '';
+        setEl('[data-insider-pending-label]',  it.pending.label || '');
+        setEl('[data-insider-pending-detail]', it.pending.detail || '');
+        const a = document.querySelector('[data-insider-pending-src]');
+        if (a && it.pending.sourceUrl) a.href = it.pending.sourceUrl;
+      }
+    }
 
     // Summary tiles
     const s = it.summary;
