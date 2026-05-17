@@ -31,8 +31,8 @@ window.EOSE_DATA = {
     { label: 'Q1\'26 Revenue',      value: '$57.0M',     delta: '+445% YoY · cube deliv. +5.7×', tone: 'up'   },
     { label: 'Adj. EPS surprise',   value: '$0.12',      delta: 'vs. −$0.22 cons. · beat 154%',  tone: 'up'   },
     { label: 'Backlog (3/31/26)',   value: '$644.6M',    delta: '2.6 GWh · +2 GWh Frontier',     tone: 'up'   },
-    { label: 'Commercial Pipeline', value: '$24.3B',     delta: '+56% YoY',                      tone: 'up'   },
-    { label: 'Total Cash',          value: '$472.4M',    delta: 'op. cash burn $119.7M Q1',      tone: 'flat' },
+    { label: 'Commercial Pipeline', value: '$24.3B',     delta: 'Proposals + LOIs · +56% YoY · not contracted', tone: 'up' },
+    { label: 'Total Cash',          value: '$472.4M',    delta: 'Q1 op. cash flow: −$119.7M',    tone: 'flat' },
     { label: 'FY26 Guidance',       value: '$300–400M',  delta: 'Reaffirmed Q1\'26',              tone: 'up'   }
   ],
 
@@ -305,7 +305,7 @@ window.EOSE_DATA = {
     { date: 'End Q2 2026',  event: 'Line 2 initial production at Thorn Hill (per Q1\'26 release)',          status: 'In progress [Company]',      tone: 'soon'   },
     { date: 'Q2/Q3 2026',   event: 'Pro-rata rights offering to fund Eos\' ~$150M Frontier USA contribution — pricing + size TBD', status: 'Watch [Company]', tone: 'soon' },
     { date: 'Q2 2026',      event: 'Frontier Power USA closing conditions (Cerberus warrants + controlling JV equity)',      status: 'Watch [Company]',            tone: 'soon'   },
-    { date: 'Summer 2026',  event: 'Ofgem final cap & floor awards Window 1 — 11 GWh Frontier UK pipeline uses Eos tech', status: 'Catalyst [Regulator]', tone: 'soon' },
+    { date: 'Summer 2026',  event: 'Ofgem final cap & floor awards (Window 1) — Frontier UK\'s 11 GWh of Eos-tech projects either awarded the revenue floor or not', status: 'Catalyst [Regulator]', tone: 'soon' },
     { date: '~Aug 2026',    event: 'Q2 2026 earnings release (estimated cadence)',                         status: 'Pending',                    tone: 'future' },
     { date: 'Q3 2026',      event: 'NYSERDA Bulk Storage Program ISCRFP25-1 awards (Eos qualifies for 8+ hr tier)', status: 'Catalyst [Regulator]', tone: 'soon' },
     { date: 'YE 2026',      event: 'Cerberus equity lock-up expiration (extended through year-end 2026)',  status: 'Confirmed [Company]',        tone: 'live'   },
@@ -397,12 +397,12 @@ window.EOSE_DATA = {
       founded:   '2009',
       announced: 'MoU: April 15, 2025 · First order: October 31, 2025',
       summary:   'UK energy infrastructure developer (est. 2009). In April 2025 signed a 5 GWh framework agreement with Eos covering UK long-duration storage. Booked first 228 MWh order under that framework on Oct 31, 2025 — concurrently meeting the final Cerberus milestone of the prior £159M strategic partnership (PwC Corporate Finance advised).',
-      why:       'The UK has Ofgem\'s Cap & Floor LDES scheme — a regulated revenue floor specifically designed to make non-lithium long-duration storage bankable. Frontier UK has 11 GWh of projects (all using Eos Z3 zinc-bromide tech) advancing through Window 1 of that scheme. Ofgem Initial Decision List due Spring 2026; final awards Summer 2026. Eos is a primary technology supplier to a leading applicant in a state-supported program.',
+      why:       'The UK has Ofgem\'s Cap & Floor LDES scheme — a regulated revenue floor specifically designed to make non-lithium long-duration storage bankable. Frontier UK has 11 GWh of projects (all using Eos Z3 zinc-bromide tech) that passed Window 1 eligibility and are in the second-round Project Assessment phase — approval not yet awarded. Ofgem Initial Decision List due Spring 2026; final awards Summer 2026. Eos is a primary technology supplier to a leading applicant in a state-supported program.',
       terms: [
         { k: 'Framework agreement',         v: '5 GWh between Eos and Frontier UK (April 2025)' },
         { k: 'First order booked',          v: '228 MWh of Z3™ systems (Oct 31, 2025)' },
         { k: 'Cerberus → Frontier UK',      v: '£159M strategic partnership (PwC-advised), separate from US' },
-        { k: 'Ofgem Cap & Floor pipeline',  v: '~11 GWh advancing in Window 1, all using Eos technology' },
+        { k: 'Ofgem Cap & Floor pipeline',  v: '~11 GWh in Window 1 second-round evaluation (approval pending), all using Eos technology' },
         { k: 'Window 1 timeline',           v: 'Initial Decision Spring 2026 · Final awards Summer 2026' },
         { k: 'UK manufacturing exploration',v: 'Partnership "opens the door" to local Eos manufacturing in UK' },
         { k: 'Battery tech in scope',       v: 'Zinc-bromine (Eos) + vanadium flow — first-of-kind dual-tech program' }
@@ -512,7 +512,7 @@ window.EOSE_DATA = {
         { date: 'Summer 2026',    event: 'Final cap & floor awards (Window 1) — concrete catalyst' },
         { date: 'TBD (Q1 2026+)', event: 'Window 2 timing to be announced post-Window 1 learnings' }
       ],
-      eosRelevance: 'Frontier Power Ltd. (UK) has ~11 GWh of LDES projects advancing in Window 1 — all using Eos Z3 zinc-bromide technology. Eos is also one of two battery technologies named in the Cerberus £159M / Frontier UK partnership (the other being vanadium flow). Award outcomes flow directly to Eos hardware demand.',
+      eosRelevance: 'Frontier Power Ltd. (UK) has ~11 GWh of LDES projects in Window 1\'s second-round Project Assessment phase — all using Eos Z3 zinc-bromide technology. These are NOT yet awarded the cap-and-floor revenue mechanism; the Initial Decision List is due Spring 2026 and final awards Summer 2026. Eos is also one of two battery technologies named in the Cerberus £159M / Frontier UK partnership (the other being vanadium flow). Award outcomes flow directly to Eos hardware demand.',
       sources: [
         { label: 'Ofgem LDES Cap & Floor decision page',  url: 'https://www.ofgem.gov.uk/decision/long-duration-electricity-storage-cap-and-floor-application-window-1' },
         { label: 'Modo Energy — Window 1 project ranking', url: 'https://modoenergy.com/research/gb-great-britain-long-duration-energy-electricity-storage-ldes-cap-floor-ofgem-eligibility-september-2025-assessment-bess' },
@@ -542,7 +542,7 @@ window.EOSE_DATA = {
       { k: 'Total shareholders\' deficit',v: '$(868.4)M' },
       { k: '45X IRA grant receivable',    v: '$21.4M' }
     ],
-    note: 'The $868M shareholders\' deficit is largely a function of mark-to-market accounting on Cerberus instruments and warrants — not an economic deficit. Series B preferred remeasurement was +$778.9M in Q1\'26 alone (non-cash). Reconcile against the 10-Q before acting on any single line item. <br/><br/><strong style="color:var(--warning)">Coming change to watch:</strong> Eos has stated (May 13, 2026 release) it intends to fund its ~$150M Frontier USA equity contribution via a pro-rata rights offering to existing shareholders (subscription rights + corresponding warrants). The structure is designed to limit dilution to <em>participating</em> shareholders — non-participants will be diluted. Cerberus is separately expected to receive Eos warrants in exchange for its $100M Frontier USA anchor. Pricing + timing TBD; watch for the supplemental prospectus filing.'
+    note: 'The $868M shareholders\' deficit is driven by non-cash mark-to-market adjustments on Cerberus warrants and preferred instruments — it does not reflect cash consumed or owed. Series B preferred remeasurement alone was +$778.9M in Q1\'26 (non-cash). Reconcile against the 10-Q before acting on any single line item. <br/><br/><strong style="color:var(--warning)">Coming change to watch:</strong> Eos has stated (May 13, 2026 release) it intends to fund its ~$150M Frontier USA equity contribution via a pro-rata rights offering to existing shareholders (subscription rights + corresponding warrants). The structure is designed to limit dilution to <em>participating</em> shareholders — non-participants will be diluted. Cerberus is separately expected to receive Eos warrants in exchange for its $100M Frontier USA anchor. Pricing + timing TBD; watch for the supplemental prospectus filing.'
   },
 
   // ────────── NEW: Product family (Indensity / Cube / DawnOS) ──────────
@@ -735,7 +735,7 @@ window.EOSE_DATA = {
     bull: [
       { point: 'Q1\'26 revenue +445% YoY with adj. EPS beating consensus by 154 ppt ($0.12 vs −$0.22). Two consecutive quarters now exceed full FY25.', src: 'Q1\'26 8-K' },
       { point: 'Pipeline $24.3B (+56% YoY); backlog $644.6M; post-quarter +2 GWh Frontier USA reservation. Demand isn\'t the constraint.', src: '10-Q + Frontier 8-K' },
-      { point: 'UK pipeline: Frontier Power Ltd. has ~11 GWh advancing through Ofgem Cap & Floor Window 1, all using Eos Z3 tech. Initial Decision Spring 2026; final awards Summer 2026 — regulated revenue floor de-risks project finance.', src: 'Ofgem / Modo Energy' },
+      { point: 'UK pipeline: Frontier Power Ltd. has ~11 GWh in Ofgem Cap & Floor Window 1 second-round evaluation, all using Eos Z3 tech. Approval is pending — Initial Decision Spring 2026, final awards Summer 2026. If awarded, the regulated revenue floor de-risks project finance.', src: 'Ofgem / Modo Energy' },
       { point: 'Cerberus is doubling down on BOTH sides of the Atlantic: $100M into Frontier USA + £159M earlier into Frontier UK. Lock-up extended through YE 2026.', src: 'Frontier releases · PwC UK' },
       { point: 'Margin trajectory: GM −78% Q1\'26, +157 ppt YoY, +16 ppt sequentially. Cube deliveries +5.7×. Operational leverage actually arriving.', src: 'Q1\'26 release' },
       { point: 'AI/data-center demand vector: TURBINE-X JDA targets up to 2 GWh of hyperscale capacity with first deployments 2027. NYSERDA ISC awards (Q3 2026) is another concrete near-term catalyst.', src: 'TURBINE-X release · NYSERDA' },
@@ -743,7 +743,7 @@ window.EOSE_DATA = {
       { point: 'Short interest ~28% of float; ~3.5 days to cover. CEO Mastrangelo bought 23,900 shares post-FY25 crash; Director Dimitrief bought 15,000 at $6.04. Asymmetric setup on any clean catalyst.', src: 'Nasdaq SI · Form 4 / OpenInsider' }
     ],
     bear: [
-      { point: 'Op cash burn $119.7M in Q1\'26 alone. At that pace, $472M total cash is ~4 quarters runway absent new capital. S-3ASR shelf filed May 13 — plus a pro-rata rights offering targeting ~$150M coming to fund the Frontier USA contribution. Dilution is a "when," not "if."', src: '10-Q cash flow + S-3ASR + Frontier 8-K' },
+      { point: 'Q1\'26 operating cash flow was −$119.7M (per cash flow statement — distinct from the −$79.3M operating loss on the P&L). At that pace, $472M total cash is ~4 quarters of runway absent new capital. S-3ASR shelf filed May 13 + a pro-rata rights offering targeting ~$150M to fund the Frontier USA contribution. Dilution is a "when," not "if."', src: '10-Q cash flow + S-3ASR + Frontier 8-K' },
       { point: 'GM still −78%. The path to mgmt\'s implied FY27 GM-positive requires both Line 2 ramping AND Z3 unit economics holding at higher volume. Neither proven yet.', src: 'Q1\'26 release' },
       { point: 'Active securities class action (Yung v. Eos, D.N.J. 26-cv-02372) alleging misrepresentation of FY25 production capacity. Settlement risk is material if certified.', src: 'court filings' },
       { point: 'Shares outstanding +18% trailing 12 months. Insiders sold $14M more than they bought over the same window — Stidolph $11.5M, Kroeker (interim CFO) $802k, Silberman (CLO) $739k.', src: 'OpenInsider / Simply Wall St' },
