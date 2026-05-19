@@ -1,0 +1,27 @@
+# EOSE Investor Dashboard — robots.txt
+# https://spotswoods.github.io/eose-dashboard/
+
+User-agent: *
+Allow: /
+
+# Don't crawl the legacy single-file fallback (duplicates main page content)
+Disallow: /index-legacy.html
+
+# Don't crawl the auto-generated quote JSON or workflow internals
+Disallow: /data/
+Disallow: /.github/
+
+# Be friendly to LLM crawlers / answer engines too
+User-agent: GPTBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+Sitemap: https://spotswoods.github.io/eose-dashboard/sitemap.xml

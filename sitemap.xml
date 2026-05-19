@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset
+  xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:image="http://www.google.com/schemas/sitemap-image/1.1"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml">
+
+  <!-- Canonical single-page dashboard -->
+  <url>
+    <loc>https://spotswoods.github.io/eose-dashboard/</loc>
+    <lastmod>2026-05-19</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>1.0</priority>
+    <image:image>
+      <image:loc>https://spotswoods.github.io/eose-dashboard/assets/eose-logo.png</image:loc>
+      <image:title>Eos Energy Enterprises (EOSE) logo</image:title>
+      <image:caption>Eos Energy (EOSE) Investor Dashboard — Q1 2026 Analysis</image:caption>
+    </image:image>
+  </url>
+
+</urlset>
