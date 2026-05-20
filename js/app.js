@@ -559,13 +559,16 @@
         let codeColor = 'var(--fg-2)';
         if (t.code === 'P') codeColor = 'var(--positive)';
         else if (t.code === 'S') codeColor = 'var(--negative)';
-        else if (t.code === 'F') codeColor = 'var(--warning)';
+        else if (t.code === 'F' || t.code === 'D') codeColor = 'var(--warning)';
         const valColor = t.code === 'P' ? 'var(--positive)' : t.code === 'S' ? 'var(--negative)' : 'var(--fg-1)';
         const valDisplay = t.value > 0 ? sign + fmtUSD(t.value) : '—';
         const priceDisplay = t.price > 0 ? '$' + t.price.toFixed(2) : '—';
+        const noteLine = t.note
+          ? `<div style="color:var(--fg-3);font-size:10.5px;margin-top:2px;font-style:italic">${t.note}</div>`
+          : '';
         return `<tr>
           <td style="color:var(--fg-2);font-variant-numeric:tabular-nums">${t.date}</td>
-          <td><b>${t.name}</b></td>
+          <td><b>${t.name}</b>${noteLine}</td>
           <td style="color:var(--fg-2);font-size:11.5px">${t.role}</td>
           <td><span style="display:inline-block;background:${codeColor};color:#fff;
                             font-family:var(--font-mono);font-weight:700;font-size:11px;

@@ -798,31 +798,50 @@ window.EOSE_DATA = {
   // The "Open-market net" figure below uses ONLY P and S transactions —
   // i.e., the discretionary capital decisions, not vesting mechanics.
   insiderTrades: {
-    asOf: 'Trailing ~6 months · pulled from SEC EDGAR (CIK 1805077, Form 4)',
+    asOf: 'Trailing ~6 months · pulled from SEC EDGAR (CIK 1805077, Form 4) · last refreshed May 20, 2026',
     pending: {
       label: 'Pending — incoming CFO Alessandro Lagi (effective June 8, 2026)',
       detail: 'New CFO\'s Form 3 (initial holdings) + Form 4 for the $2M initial RSU grant will likely file in the first business days after June 8. Employment agreement: $470k base salary, 100% target bonus, $2M initial RSU grant (3-year vest), $1M annual LTI target. Source: 8-K filed April 28, 2026.',
       sourceUrl: 'https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0001805077&type=8-K&dateb=&owner=include&count=10'
     },
     summary: {
-      openMarketBuys:    692962,        // 4 P transactions
-      openMarketSells: 14415975,        // multiple S transactions
-      taxWithholding:   1428011,        // F code, non-discretionary
+      openMarketBuys:    692962,        // 4 P transactions (unchanged since March)
+      openMarketSells:  14470280,       // +$54,305 from Walters May 19 cashless-exercise sale
+      taxWithholding:    1777812,       // +$349,801 May 19 director RSU tax withholdings (D-code)
+      grants:             159019,       // NEW: A-code grants — Nixon's 23,111 sh @ $6.88 implied
+      vestingNetShares:   135864,       // NEW: Total May 19 RSU/option vesting NET of withholdings (shares retained by directors)
       buyCount: 4,
-      sellCount: 7,
+      sellCount: 8,                     // +1 (Walters May 19)
       buyersUnique: 3,                  // Mastrangelo, Dimitrief, Urban
-      reading: 'Top of house (CEO + 2 directors) put fresh capital in at $5.75–$6.58 after the Feb 26 crash. The larger sells were Officer/Director sells in Dec 2025 + Jan 2026 at $14–$18 — before the −39% drop. Read directionally, not as net dollars. The new CFO\'s initial RSU grant ($2M, time-vesting over 3 years) will appear here when his Form 3/4 files post-June 8.'
+      reading: 'Two clusters tell the story. (1) March 2026 post-crash: CEO Mastrangelo + 2 directors put $693k of fresh capital in at $5.75–$6.58 — discretionary buys, strongest insider signal. (2) Dec 2025/Jan 2026 pre-crash: Officer + Director sells of $14M at $14–$18 — well above current price. (3) May 19, 2026 routine annual director RSU vesting: 7 directors settled equity comp on the same day — ~$350k in tax-withholding (non-discretionary, code D), ~136k net shares retained, and just $54k in actual open-market selling (Walters\' cashless option exercise). The vesting cluster looks dramatic in volume but only $54k of it was a real capital decision. New director Nathaniel Fick filed a Form 3 on Apr 3 (initial holdings: zero — typical for new outside directors).'
     },
     codeLegend: [
       { code: 'P', label: 'Open-market purchase', tone: 'buy', note: 'Discretionary buy — strongest insider signal' },
       { code: 'S', label: 'Open-market sale',     tone: 'sell',note: 'Discretionary sell — strongest negative signal' },
       { code: 'A', label: 'Grant / award',         tone: 'neutral', note: 'Comp — not a market signal' },
-      { code: 'M', label: 'Derivative exercise',   tone: 'neutral', note: 'Option/RSU conversion — usually paired with F/S' },
-      { code: 'F', label: 'Tax withholding',        tone: 'neutral', note: 'Non-discretionary — auto-sold to pay taxes' },
+      { code: 'M', label: 'Derivative exercise',   tone: 'neutral', note: 'Option/RSU conversion — usually paired with F/D/S' },
+      { code: 'F', label: 'Tax withholding',        tone: 'neutral', note: 'Non-discretionary — securities withheld to pay taxes' },
+      { code: 'D', label: 'Disposition to issuer',  tone: 'neutral', note: 'Non-discretionary — shares disposed back to company (Rule 16b-3(e)). Mechanically similar to F' },
       { code: 'G', label: 'Bona fide gift',         tone: 'neutral', note: 'Charitable or estate transfer' }
     ],
     // Each row carries the SEC accession number so we can build the direct URL
     transactions: [
+      // === May 19, 2026 — Annual director RSU vesting cluster (7 filings) ===
+      { date: '2026-05-19', name: 'Jeffrey S. Bornstein', role: 'Director',                code: 'M', ad: 'A', shares: 30815,  price: 0,     value: 0,        acc: '0001628280-26-036656', note: 'RSU vest' },
+      { date: '2026-05-19', name: 'Jeffrey S. Bornstein', role: 'Director',                code: 'D', ad: 'D', shares: 12326,  price: 6.88,  value: 84803,   acc: '0001628280-26-036656', note: 'Tax withholding (Rule 16b-3(e))' },
+      { date: '2026-05-19', name: 'Alexander Dimitrief',  role: 'Director',                code: 'M', ad: 'A', shares: 26963,  price: 0,     value: 0,        acc: '0001628280-26-036653', note: 'RSU vest' },
+      { date: '2026-05-19', name: 'Alexander Dimitrief',  role: 'Director',                code: 'D', ad: 'D', shares: 10785,  price: 6.88,  value: 74201,   acc: '0001628280-26-036653', note: 'Tax withholding (Rule 16b-3(e))' },
+      { date: '2026-05-19', name: 'Claude Demby',         role: 'Director',                code: 'M', ad: 'A', shares: 23111,  price: 0,     value: 0,        acc: '0001628280-26-036654', note: 'RSU vest' },
+      { date: '2026-05-19', name: 'Claude Demby',         role: 'Director',                code: 'D', ad: 'D', shares: 9244,   price: 6.88,  value: 63599,   acc: '0001628280-26-036654', note: 'Tax withholding (Rule 16b-3(e))' },
+      { date: '2026-05-19', name: 'Gregory S. Nixon',     role: 'Director',                code: 'A', ad: 'A', shares: 23111,  price: 0,     value: 0,        acc: '0001628280-26-036652', note: 'New RSU grant' },
+      { date: '2026-05-19', name: 'Gregory S. Nixon',     role: 'Director',                code: 'D', ad: 'D', shares: 9244,   price: 6.88,  value: 63599,   acc: '0001628280-26-036652', note: 'Tax withholding (Rule 16b-3(e))' },
+      { date: '2026-05-19', name: 'Marian Walters',       role: 'Director',                code: 'M', ad: 'A', shares: 23111,  price: 0,     value: 0,        acc: '0001628280-26-036651', note: 'RSU vest' },
+      { date: '2026-05-19', name: 'Marian Walters',       role: 'Director',                code: 'M', ad: 'A', shares: 7681,   price: 1.18,  value: 9064,    acc: '0001628280-26-036651', note: 'Option exercise @ $1.18 strike' },
+      { date: '2026-05-19', name: 'Marian Walters',       role: 'Director',                code: 'S', ad: 'D', shares: 7681,   price: 7.07,  value: 54305,   acc: '0001628280-26-036651', note: 'Cashless exercise sell (same-day)' },
+      { date: '2026-05-19', name: 'Jeff McNeil',          role: 'Director',                code: 'M', ad: 'A', shares: 23111,  price: 0,     value: 0,        acc: '0001628280-26-036657', note: 'RSU vest' },
+      { date: '2026-05-19', name: 'David Urban',          role: 'Director',                code: 'M', ad: 'A', shares: 23111,  price: 0,     value: 0,        acc: '0001628280-26-036648', note: 'RSU vest' },
+
+      // === March 2026 — Post-FY25-crash discretionary buys ===
       { date: '2026-03-09', name: 'David Urban',          role: 'Director',                code: 'P', ad: 'A', shares: 16250,  price: 6.16,  value: 100100,  acc: '0001628280-26-016249' },
       { date: '2026-03-04', name: 'Joe Mastrangelo',       role: 'CEO & Director',          code: 'P', ad: 'A', shares: 23900,  price: 6.58,  value: 157262,  acc: '0001628280-26-015015' },
       { date: '2026-03-02', name: 'Joe Mastrangelo',       role: 'CEO & Director',          code: 'P', ad: 'A', shares: 60000,  price: 5.75,  value: 345000,  acc: '0001628280-26-014413' },
@@ -892,6 +911,18 @@ window.EOSE_DATA = {
 
   // ────────── NEW: Recent history (context for cold readers) ──────────
   recentHistory: [
+    {
+      date:  '2026-05-19',
+      title: 'Annual director RSU vesting cluster (7 Form 4s)',
+      body:  'Seven directors settled annual equity comp on the same day: ~177k shares of RSUs / options vested across Bornstein, Dimitrief, Demby, Nixon (new grant), Walters, McNeil, Urban. ~$350k in shares went back to the company as tax withholding (Rule 16b-3(e), code D), ~136k net shares retained by directors. The only discretionary trade was Walters\' cashless option exercise — sold 7,681 shares at $7.07 ($54k). Routine compensation event; reads dramatic in volume but only $54k was a capital decision.',
+      url:   'https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0001805077&type=4&dateb=&owner=include&count=20'
+    },
+    {
+      date:  '2026-04-03',
+      title: 'New director: Nathaniel Fick',
+      body:  'Nathaniel Fick filed a Form 3 (initial statement of beneficial ownership) — confirms appointment to the Eos board. Initial holdings: zero common shares (typical for an outside director joining; equity grant typically follows in next director comp cycle). Fick is a former US Ambassador-at-Large for Cyberspace and Digital Policy and an experienced national-security / technology executive.',
+      url:   'https://www.sec.gov/Archives/edgar/data/1805077/000162828026023633/'
+    },
     {
       date:  '2026-04-30',
       title: 'CFO appointment: Alessandro Lagi',
