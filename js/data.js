@@ -254,7 +254,8 @@ window.EOSE_DATA = {
   contracts: [
     { customer: 'Frontier Power Ltd. (UK) — first order',  mwh: 228,    region: 'UK',       status: 'Delivering',   value: '~$51M*' },
     { customer: 'Frontier Power Ltd. (UK) — 5 GWh framework', mwh: 5000, region: 'UK',     status: 'Framework',     value: '~$1.1B*' },
-    { customer: 'Frontier Power USA (Cerberus JV)',  mwh: 2000,    region: 'USA',      status: 'Contracted',   value: '~$450M*'  },
+    { customer: 'Frontier Power USA — Bimergen Texas portfolio (3 ERCOT projects)', mwh: 480, region: 'USA (TX)', status: 'Firm — NTPs mid-2026', value: '~$108M*' },
+    { customer: 'Frontier Power USA — remaining capacity reservation',                mwh: 1520, region: 'USA',     status: 'Reservation',          value: '~$342M*'  },
     { customer: 'TURBINE-X Energy (JDA, AI data center)', mwh: '≤2000', region: 'USA', status: 'Negotiation',  value: 'TBD (JDA)' },
     { customer: 'MN8 Energy',                        mwh: '~590',  region: 'USA',     status: 'Delivering',   value: '~$133M*'  },
     { customer: 'Indian Energy / Viejas microgrid',  mwh: 300,     region: 'USA (CA)', status: 'Contracted',   value: '~$68M*'  },
@@ -300,6 +301,8 @@ window.EOSE_DATA = {
   catalysts: [
     { date: 'Apr 30, 2026', event: 'CFO appointment announced: Alessandro Lagi (from Johnson Controls, prior Baker Hughes)',  status: 'Reported [Company]',     tone: 'done'   },
     { date: 'May 13, 2026', event: 'Q1 2026 earnings · Frontier Power USA formation · S-3ASR shelf filed', status: 'Reported [Company]',         tone: 'done'   },
+    { date: 'May 21, 2026', event: 'FPUSA converts 480 MWh from Bimergen (3 ERCOT projects) — first deployment under the 2 GWh reservation', status: 'Reported [Counterparty]', tone: 'done' },
+    { date: 'Mid-2026',     event: 'Notices-to-Proceed (NTPs) on the 480 MWh Texas portfolio',              status: 'Watch [Counterparty]',     tone: 'soon'   },
     { date: 'Jun 8, 2026',  event: 'Lagi CFO effective date · Kroeker returns to CCO-only role',           status: 'Imminent [Company]',         tone: 'soon'   },
     { date: 'Spring 2026',  event: 'Ofgem publishes Initial Decision List for LDES Cap & Floor Window 1 (UK)', status: 'Watch [Regulator]',        tone: 'soon'   },
     { date: 'End Q2 2026',  event: 'Line 2 initial production at Thorn Hill (per Q1\'26 release)',          status: 'In progress [Company]',      tone: 'soon'   },
@@ -420,9 +423,10 @@ window.EOSE_DATA = {
       summary:   'Stand-alone US development & investment company formed with Cerberus to build, own, and operate LDES projects deploying Eos\' Z3. Targeting Independent Power Producer (IPP) status. NOT to be confused with Frontier Power Ltd. (UK).',
       why:       'Combines (1) Eos\' vertically integrated technology, (2) Cerberus institutional capital + operating muscle, and (3) a Technology Performance Insurance (TPI) wrap arranged with Ariel Green that lets project lenders treat Z3 output as financeable — unlocking project-finance for LDES that historically has been unbankable at scale.',
       terms: [
+        { k: 'First deployment (May 21, 2026)', v: '480 MWh portfolio acquired from Bimergen Energy Corp. (NYSE: BESS) — 3 ERCOT projects (2× ~40 MWh "Texas 10" + 1× 100MW/400MWh). FPUSA holds 92.5%, Bimergen retains 7.5%. NTPs expected mid-2026. Stella Energy Solutions execution partner. ~24% of the 2 GWh reservation now firm.' },
         { k: 'Cerberus equity commitment',    v: '$100M anchor (subject to closing conditions) — Cerberus also expected to receive Eos warrants AND controlling equity in Frontier USA' },
         { k: 'Eos target contribution',       v: '~$150M — to be funded via a pro-rata rights offering to EXISTING shareholders (structured to limit dilution to participating holders)' },
-        { k: 'Anchor reservation',            v: '2 GWh firm capacity reservation agreement' },
+        { k: 'Anchor reservation',            v: '2 GWh firm capacity reservation agreement (480 MWh deployed May 21, 2026; 1,520 MWh remaining)' },
         { k: 'Pipeline target',               v: 'Multi-GWh across data center, utility, and industrial end markets' },
         { k: 'Tech Performance Insurance',    v: '~$1.5B project-level capacity · 15-year non-cancellable · written through Lloyd\'s of London consortium (A+/AA-) · arranged with Ariel Green (a division of Ariel Re)' },
         { k: 'Why the TPI matters',           v: 'The wrap allows Frontier USA project debt to achieve investment-grade characteristics at competitive terms — solves the LDES bankability bottleneck' },
@@ -432,7 +436,8 @@ window.EOSE_DATA = {
       ],
       sources: [
         { label: 'Frontier Power USA 8-K (May 13)', url: 'https://www.sec.gov/Archives/edgar/data/1805077/000162828026034367/eosepressreleasefrontier.htm' },
-        { label: 'Q1 2026 earnings release',          url: 'https://www.sec.gov/Archives/edgar/data/1805077/000162828026034367/eoseq1fy26earningsreleas.htm' }
+        { label: 'Q1 2026 earnings release',          url: 'https://www.sec.gov/Archives/edgar/data/1805077/000162828026034367/eoseq1fy26earningsreleas.htm' },
+        { label: 'Bimergen 480 MWh acquisition (May 21, 2026)', url: 'https://finance.yahoo.com/sectors/energy/articles/fpusa-converts-480-mwh-long-110000028.html' }
       ]
     }
   },
@@ -735,6 +740,7 @@ window.EOSE_DATA = {
     bull: [
       { point: 'Q1\'26 revenue +445% YoY with adj. EPS beating consensus by 154 ppt ($0.12 vs −$0.22). Two consecutive quarters now exceed full FY25.', src: 'Q1\'26 8-K' },
       { point: 'Pipeline $24.3B (+56% YoY); backlog $644.6M; post-quarter +2 GWh Frontier USA reservation. Demand isn\'t the constraint.', src: '10-Q + Frontier 8-K' },
+      { point: 'Frontier USA executing fast: 480 MWh (24% of the 2 GWh reservation) converted from "reservation" to "firm projects" via the Bimergen acquisition on May 21 — 8 days after FPUSA\'s formation. Three ERCOT projects, NTPs mid-2026, Z3 + Ariel Green TPI deployed.', src: 'May 21 Yahoo Finance / Bimergen release' },
       { point: 'UK pipeline: Frontier Power Ltd. has ~11 GWh in Ofgem Cap & Floor Window 1 second-round evaluation, all using Eos Z3 tech. Approval is pending — Initial Decision Spring 2026, final awards Summer 2026. If awarded, the regulated revenue floor de-risks project finance.', src: 'Ofgem / Modo Energy' },
       { point: 'Cerberus is doubling down on BOTH sides of the Atlantic: $100M into Frontier USA + £159M earlier into Frontier UK. Lock-up extended through YE 2026.', src: 'Frontier releases · PwC UK' },
       { point: 'Margin trajectory: GM −78% Q1\'26, +157 ppt YoY, +16 ppt sequentially. Cube deliveries +5.7×. Operational leverage actually arriving.', src: 'Q1\'26 release' },
@@ -886,7 +892,7 @@ window.EOSE_DATA = {
       },
       {
         claim: 'Frontier is a Cerberus-funded subsidy for Eos demand.',
-        evidence: 'Partially fair framing: Cerberus is anchoring with $100M equity and structuring TPI-wrapped project finance that Eos couldn\'t access alone. But Eos must contribute ~$150M itself, and Frontier transactions will be arm\'s-length per the release. Not a free ride.'
+        evidence: 'Partially fair framing: Cerberus is anchoring with $100M equity and structuring TPI-wrapped project finance that Eos couldn\'t access alone. But Eos must contribute ~$150M itself, and Frontier transactions are arm\'s-length per the release. Not a free ride. UPDATE May 21, 2026: FPUSA acquired the Bimergen 480 MWh Texas portfolio — first conversion of the reservation into firm projects, 8 days after FPUSA\'s formation. Independent evidence that FPUSA is operating like a real IPP (acquiring development pipeline, not just rubber-stamping Eos hardware orders).'
       }
     ],
     bear: [
@@ -911,6 +917,12 @@ window.EOSE_DATA = {
 
   // ────────── NEW: Recent history (context for cold readers) ──────────
   recentHistory: [
+    {
+      date:  '2026-05-21',
+      title: 'Frontier Power USA converts 480 MWh from Bimergen — first deployment under the 2 GWh reservation',
+      body:  'FPUSA (Cerberus-anchored Eos IPP) acquired a 480 MWh portfolio of three ERCOT-based BESS development projects from Bimergen Energy Corporation (NYSE: BESS) — two "Texas 10" projects (~40 MWh each) + one 100 MW / 400 MWh project. FPUSA holds 92.5% post-closing, Bimergen retains 7.5% economic interest + a development fee. Projects deploy Eos Z3 systems under the Ariel Green TPI framework. Notices-to-Proceed expected mid-2026. Stella Energy Solutions is execution partner. This is the FIRST conversion of the May 13 anchor reservation into firm projects — 480 / 2,000 MWh = 24% of the reservation deployed within 8 days of FPUSA\'s formation. No dollar values disclosed; at our $225/kWh model basis the order is ~$108M of Eos hardware demand.',
+      url:   'https://finance.yahoo.com/sectors/energy/articles/fpusa-converts-480-mwh-long-110000028.html'
+    },
     {
       date:  '2026-05-19',
       title: 'Annual director RSU vesting cluster (7 Form 4s)',
