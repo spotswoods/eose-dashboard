@@ -6,14 +6,14 @@
 
   <!-- Canonical single-page dashboard -->
   <url>
-    <loc>https://spotswoods.github.io/eose-dashboard/</loc>
-    <lastmod>2026-05-19</lastmod>
+    <loc>https://eosesource.com/</loc>
+    <lastmod>2026-05-21</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
     <image:image>
-      <image:loc>https://spotswoods.github.io/eose-dashboard/assets/eose-logo.png</image:loc>
+      <image:loc>https://eosesource.com/assets/eose-logo.png</image:loc>
       <image:title>Eos Energy Enterprises (EOSE) logo</image:title>
-      <image:caption>Eos Energy (EOSE) Investor Dashboard — Q1 2026 Analysis</image:caption>
+      <image:caption>Eos Energy (EOSE) Investor Dashboard — Independent Research</image:caption>
     </image:image>
   </url>
 

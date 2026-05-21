@@ -1,5 +1,5 @@
 # EOSE Investor Dashboard — robots.txt
-# https://spotswoods.github.io/eose-dashboard/
+# https://eosesource.com/
 
 User-agent: *
 Allow: /
@@ -24,4 +24,4 @@ Allow: /
 User-agent: Google-Extended
 Allow: /
 
-Sitemap: https://spotswoods.github.io/eose-dashboard/sitemap.xml
+Sitemap: https://eosesource.com/sitemap.xml
