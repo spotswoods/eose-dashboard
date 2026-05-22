@@ -158,6 +158,9 @@
         <span class="ticker__item">Shares <b>339.5M</b></span>
       </div>
       <div class="ticker__actions">
+        <button class="icon-btn" data-music-toggle title="Music (off by default)" aria-label="Background music player">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/></svg>
+        </button>
         <button class="icon-btn" data-search-toggle title="Search sections (press /)" aria-label="Search sections">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4-4"/></svg>
         </button>
@@ -169,6 +172,27 @@
       </div>
     </div>
   </header>
+
+  <!-- ============ Music player popover ============ -->
+  <div class="music-pop" id="musicPop" role="dialog" aria-label="Background music player" hidden>
+    <div class="music-pop__head">
+      <span>♪ Background music</span>
+      <button class="music-pop__x" data-music-close aria-label="Close">✕</button>
+    </div>
+    <div class="music-pop__now">
+      <div class="music-pop__title" data-music-title>—</div>
+      <div class="music-pop__sub" data-music-sub></div>
+    </div>
+    <div class="music-pop__controls">
+      <button class="music-pop__btn" data-music-prev aria-label="Previous track">⏮</button>
+      <button class="music-pop__btn music-pop__play" data-music-play aria-label="Play / pause">▶</button>
+      <button class="music-pop__btn" data-music-next aria-label="Next track">⏭</button>
+      <input class="music-pop__vol" type="range" min="0" max="100" value="30" data-music-vol aria-label="Volume" />
+    </div>
+    <ol class="music-pop__list" data-music-list></ol>
+    <div class="music-pop__note">Off by default · your choice is remembered on this device</div>
+  </div>
+  <audio id="musicAudio" preload="none"></audio>
 
   <!-- Search panel (slides down on click of search icon or "/" key) -->
   <div class="search-panel" id="searchPanel" role="dialog" aria-label="Search sections">

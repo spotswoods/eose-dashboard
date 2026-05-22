@@ -14,6 +14,7 @@ index-legacy.html           ← original single-file version, kept for reference
 README.md
 assets/
   eose-logo.png
+  music/                    ← optional background-music tracks (opt-in player, off by default)
 css/
   styles.css                ← dark + light theme tokens, layout, components
 js/
