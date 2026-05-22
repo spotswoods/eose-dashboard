@@ -335,6 +335,16 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
 
 /* Chart shell */
 .chart-svg { width: 100%; height: auto; display: block; }
+/* Reserve each chart's rendered height BEFORE its SVG injects, so the
+   client-rendered charts don't shift layout (Core Web Vitals: CLS / VSI).
+   Heights mirror the opts.height passed in app.js. */
+[data-chart-price]    { min-height: 380px; }
+[data-chart-revenue], [data-chart-margin], [data-chart-opincome],
+[data-chart-capacity], [data-chart-bridge] { min-height: 320px; }
+[data-chart-backlog]  { min-height: 300px; }
+[data-chart-annual], [data-chart-liquidity] { min-height: 280px; }
+[data-chart-ps], [data-chart-mcap] { min-height: 260px; }
+[data-chart-uptime], [data-chart-graphite], [data-chart-bookings] { min-height: 240px; }
 .chart-axis text { fill: var(--fg-3); font-size: 11px; font-family: var(--font-mono); }
 .chart-grid line { stroke: var(--grid); stroke-dasharray: 2 4; }
 .chart-baseline { stroke: var(--line-strong); stroke-dasharray: 4 4; }
