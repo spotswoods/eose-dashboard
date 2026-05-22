@@ -635,9 +635,14 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
   position: fixed; top: 53px; left: 0; right: 0; z-index: 55;
   background: var(--bg-1); border-bottom: 1px solid var(--line-2);
   padding: 14px 32px; box-shadow: 0 16px 40px -20px rgba(0,0,0,0.5);
-  transform: translateY(-100%); transition: transform .25s var(--ease);
+  /* translateY(-100%) alone leaves the bottom row (the hint) flush with the
+     ticker's lower edge, so it can peek through if the ticker height != 53px.
+     visibility:hidden guarantees nothing renders while closed; it transitions
+     stepwise so the slide-out still animates before the panel disappears. */
+  transform: translateY(-100%); visibility: hidden; pointer-events: none;
+  transition: transform .25s var(--ease), visibility .25s var(--ease);
 }
-.search-panel.is-open { transform: translateY(0); }
+.search-panel.is-open { transform: translateY(0); visibility: visible; pointer-events: auto; }
 .search-panel__inner { max-width: 720px; margin: 0 auto; }
 .search-panel input {
   width: 100%; background: var(--bg-2); color: var(--fg-0);
