@@ -27,7 +27,7 @@
   // ║  or set localStorage 'eose-finnhub-key' to override at runtime.║
   // ╚═══════════════════════════════════════════════════════════════╝
   const CONFIG = {
-    FINNHUB_KEY: '',     // <-- paste your free Finnhub key here
+    FINNHUB_KEY: 'd2tku99r01qr5a733ra0d2tku99r01qr5a733rag',  // free read-only quote key
     POLL_SECONDS: 25     // live refresh cadence while the tab is visible
   };
   // Runtime overrides (so you can test without committing a key)
