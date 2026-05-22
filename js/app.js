@@ -144,6 +144,7 @@
     renderTicker();
     renderHero();
     renderScenarios();  // recompute upside vs. live price
+    renderPriceChart(); // overlay live price onto the candlestick (no-op until history loads)
     return true;
   }
 
@@ -182,6 +183,41 @@
       if (isFinite(m['52WeekLow']))  D.ticker.low52  = m['52WeekLow'];
       renderTicker();
     } catch (e) { /* non-fatal */ }
+  }
+
+  // ---------- Price history candlestick ----------
+  let priceBars = null;
+  async function loadHistory() {
+    try {
+      const r = await fetch('data/history.json', { cache: 'no-store' });
+      if (!r.ok) return;
+      const j = await r.json();
+      priceBars = (j && j.bars && j.bars.length) ? j.bars : null;
+      renderPriceChart();
+    } catch (e) { /* chart simply won't show if history is unavailable */ }
+  }
+  function renderPriceChart() {
+    const host = document.querySelector('[data-chart-price]');
+    if (!host || !priceBars) return;
+    const live = D.ticker.price;
+    let bars = priceBars;
+    // Overlay the live price onto TODAY's bar only (don't mutate a stale last bar)
+    if (live > 0 && priceBars.length) {
+      const todayStr = new Date().toISOString().slice(0, 10);
+      if (priceBars[priceBars.length - 1].t === todayStr) {
+        bars = priceBars.slice();
+        const last = Object.assign({}, bars[bars.length - 1]);
+        last.c = live;
+        last.h = Math.max(last.h, live);
+        last.l = Math.min(last.l, live);
+        bars[bars.length - 1] = last;
+      }
+    }
+    C.candlestick(host, bars, {
+      events: D.priceEvents || [],
+      livePrice: live > 0 ? live : null,
+      height: 380
+    });
   }
 
   // ---------- Live polling (visibility-aware) ----------
@@ -1211,13 +1247,15 @@
     chart('[data-chart-ps]',       h => C.areaChart(h, D.psMultiple, { height: 260, yFormat: v => v.toFixed(0) + 'x', tipFormat: v => v.toFixed(1) + 'x' }));
     chart('[data-chart-mcap]',     h => C.barChart(h, D.marketCap, { fill: 'var(--accent)', height: 260 }));
     chart('[data-chart-bridge]',   h => C.dualBridge(h, D.bridge,  { height: 320 }));
+    chart('[data-chart-price]',    () => renderPriceChart());  // re-renders on resize
     renderAllCharts();
 
     initScrollSpy();
     initToggles();
     initSearch();
 
-    // Live quote (fire-and-forget; non-blocking)
+    // Price history candlestick (fire-and-forget) + live quote
+    loadHistory();
     loadQuote();
 
     window.addEventListener('resize', () => {

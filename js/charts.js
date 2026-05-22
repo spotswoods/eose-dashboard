@@ -449,6 +449,153 @@
     host.appendChild(svg);
   }
 
+  // ---------- Chart 6: Candlestick w/ event markers + live price ----------
+  // data: [{ t:'YYYY-MM-DD', o,h,l,c,v }]
+  // opts: { height, events:[{date,type,label,detail}], livePrice:Number, volume:Bool }
+  function candlestick(host, data, opts = {}) {
+    if (!data || !data.length) return;
+    const W = host.clientWidth || 900;
+    const H = opts.height || 380;
+    const M = { top: 16, right: 58, bottom: 46, left: 12 };
+    const volH = opts.volume === false ? 0 : 46;     // volume sub-panel height
+    const evH = 22;                                    // event rail height
+    const innerW = W - M.left - M.right;
+    const priceH = H - M.top - M.bottom - volH - evH;
+
+    const lows = data.map(d => d.l), highs = data.map(d => d.h);
+    let minP = Math.min(...lows), maxP = Math.max(...highs);
+    if (opts.livePrice && isFinite(opts.livePrice)) {
+      minP = Math.min(minP, opts.livePrice); maxP = Math.max(maxP, opts.livePrice);
+    }
+    const padP = (maxP - minP) * 0.06 || 1;
+    minP -= padP; maxP += padP;
+
+    const n = data.length;
+    const slot = innerW / n;
+    const bodyW = Math.max(1.5, Math.min(9, slot * 0.62));
+    const xMid = i => M.left + slot * (i + 0.5);
+    const yP = v => M.top + priceH - ((v - minP) / (maxP - minP)) * priceH;
+
+    const maxV = Math.max(...data.map(d => d.v || 0)) || 1;
+    const volTop = M.top + priceH + evH;
+    const yV = v => volTop + volH - (v / maxV) * volH;
+
+    const svg = el('svg', { class: 'chart-svg', viewBox: `0 0 ${W} ${H}` });
+    const up = cssVar('--positive'), down = cssVar('--negative');
+    const grid = el('g', { class: 'chart-grid' }, svg);
+    const axis = el('g', { class: 'chart-axis' }, svg);
+
+    // price grid + right-axis labels
+    ticks(minP, maxP, 5).forEach(t => {
+      el('line', { x1: M.left, x2: W - M.right, y1: yP(t), y2: yP(t) }, grid);
+      el('text', { x: W - M.right + 8, y: yP(t) + 4, 'text-anchor': 'start' }, axis).textContent = '$' + t.toFixed(2);
+    });
+
+    // x date labels (~every nth bar)
+    const step = Math.ceil(n / 7);
+    data.forEach((d, i) => {
+      if (i % step === 0 || i === n - 1) {
+        const dt = new Date(d.t + 'T00:00:00Z');
+        const lbl = dt.toLocaleDateString('en-US', { month: 'short', day: 'numeric', timeZone: 'UTC' });
+        el('text', { x: xMid(i), y: H - 26, 'text-anchor': 'middle' }, axis).textContent = lbl;
+      }
+    });
+
+    // volume bars (subtle)
+    if (volH) {
+      data.forEach((d, i) => {
+        const c = (d.c >= d.o) ? up : down;
+        const h = Math.max(0.5, (d.v / maxV) * volH);
+        el('rect', { x: xMid(i) - bodyW / 2, y: volTop + volH - h, width: bodyW, height: h, fill: c, opacity: 0.22 }, svg);
+      });
+    }
+
+    // candles
+    data.forEach((d, i) => {
+      const isUp = d.c >= d.o;
+      const col = isUp ? up : down;
+      const x = xMid(i);
+      // wick
+      el('line', { x1: x, x2: x, y1: yP(d.h), y2: yP(d.l), stroke: col, 'stroke-width': 1 }, svg);
+      // body
+      const yo = yP(d.o), yc = yP(d.c);
+      const top = Math.min(yo, yc), hgt = Math.max(1, Math.abs(yc - yo));
+      el('rect', { x: x - bodyW / 2, y: top, width: bodyW, height: hgt, fill: col, rx: 0.5 }, svg);
+    });
+
+    // live price line + label
+    if (opts.livePrice && isFinite(opts.livePrice)) {
+      const y = yP(opts.livePrice);
+      el('line', { x1: M.left, x2: W - M.right, y1: y, y2: y, stroke: cssVar('--accent'), 'stroke-width': 1, 'stroke-dasharray': '4 3', opacity: 0.9 }, svg);
+      const tagW = 52;
+      el('rect', { x: W - M.right, y: y - 9, width: tagW, height: 18, rx: 3, fill: cssVar('--accent') }, svg);
+      el('text', { x: W - M.right + tagW / 2, y: y + 4, 'text-anchor': 'middle', style: `fill:#02130E;font-weight:700;font-size:11px;font-family:var(--font-mono)` }, svg).textContent = '$' + opts.livePrice.toFixed(2);
+    }
+
+    // event markers on a rail just below the price panel
+    const railY = M.top + priceH + evH / 2;
+    const evColors = {
+      earnings: cssVar('--blue') || '#58a6ff',
+      'insider-buy': up,
+      'insider-sell': down,
+      deal: cssVar('--brand-violet') || '#7C7CFF',
+      regulatory: cssVar('--accent')
+    };
+    const evGlyph = { earnings: 'E', 'insider-buy': '▲', 'insider-sell': '▼', deal: '◆', regulatory: '§' };
+    const dateToIdx = (ds) => {
+      // nearest bar at or before the event date
+      let idx = -1;
+      for (let i = 0; i < n; i++) { if (data[i].t <= ds) idx = i; else break; }
+      return idx === -1 ? 0 : idx;
+    };
+    (opts.events || []).forEach(ev => {
+      const i = dateToIdx(ev.date);
+      const x = xMid(i);
+      const col = evColors[ev.type] || cssVar('--accent');
+      // faint vertical guide
+      el('line', { x1: x, x2: x, y1: M.top, y2: M.top + priceH, stroke: col, 'stroke-width': 1, 'stroke-dasharray': '2 4', opacity: 0.25 }, svg);
+      const g = el('g', {}, svg);
+      el('circle', { cx: x, cy: railY, r: 7, fill: col, opacity: 0.92 }, g);
+      el('text', { x: x, y: railY + 3, 'text-anchor': 'middle', style: `fill:#02130E;font-weight:700;font-size:8.5px` }, g).textContent = evGlyph[ev.type] || '•';
+      // hover area
+      const hit = el('rect', { x: x - 9, y: railY - 9, width: 18, height: 18, fill: 'transparent', style: 'cursor:pointer' }, g);
+      const fmtDate = new Date(ev.date + 'T00:00:00Z').toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric', timeZone: 'UTC' });
+      hit.addEventListener('mousemove', e => {
+        showTip(`<div class="label">${fmtDate}</div><div class="value" style="font-size:13px">${ev.label}</div>${ev.detail ? `<div class="row" style="margin-top:4px;color:var(--fg-2)">${ev.detail}</div>` : ''}`, e.clientX, e.clientY);
+      });
+      hit.addEventListener('mouseleave', hideTip);
+    });
+
+    // crosshair + OHLC tooltip over the price panel
+    const cursor = el('line', { class: 'chart-cursor', x1: 0, x2: 0, y1: M.top, y2: M.top + priceH }, svg);
+    const hit = el('rect', { class: 'chart-hit', x: M.left, y: M.top, width: innerW, height: priceH }, svg);
+    hit.addEventListener('mousemove', e => {
+      const rect = svg.getBoundingClientRect();
+      const scale = rect.width / W;
+      const px = (e.clientX - rect.left) / scale;
+      const i = Math.max(0, Math.min(n - 1, Math.floor((px - M.left) / slot)));
+      const d = data[i];
+      const x = xMid(i);
+      cursor.setAttribute('x1', x); cursor.setAttribute('x2', x); cursor.classList.add('is-visible');
+      const chg = d.c - d.o, pct = d.o ? (chg / d.o) * 100 : 0;
+      const sign = chg >= 0 ? '+' : '';
+      const fmtDate = new Date(d.t + 'T00:00:00Z').toLocaleDateString('en-US', { weekday: 'short', month: 'short', day: 'numeric', timeZone: 'UTC' });
+      showTip(
+        `<div class="label">${fmtDate}</div>
+         <div class="row"><span>O</span><b>$${d.o.toFixed(2)}</b></div>
+         <div class="row"><span>H</span><b>$${d.h.toFixed(2)}</b></div>
+         <div class="row"><span>L</span><b>$${d.l.toFixed(2)}</b></div>
+         <div class="row"><span>C</span><b style="color:${chg>=0?up:down}">$${d.c.toFixed(2)} (${sign}${pct.toFixed(1)}%)</b></div>
+         <div class="row"><span>Vol</span><b>${(d.v/1e6).toFixed(1)}M</b></div>`,
+        e.clientX, e.clientY
+      );
+    });
+    hit.addEventListener('mouseleave', () => { cursor.classList.remove('is-visible'); hideTip(); });
+
+    clearSvg(host);
+    host.appendChild(svg);
+  }
+
   // ---------- Public API ----------
-  window.EOSE_CHARTS = { barChart, areaChart, stackedBars, sparkline, dualBridge, fmtMoney, fmtPct, fmtNum };
+  window.EOSE_CHARTS = { barChart, areaChart, stackedBars, sparkline, dualBridge, candlestick, fmtMoney, fmtPct, fmtNum };
 })();

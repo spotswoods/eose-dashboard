@@ -260,6 +260,27 @@
           <a href="https://www.sec.gov/Archives/edgar/data/1805077/000162828026034367/eoseq1fy26earningsreleas.htm" target="_blank" rel="noopener" style="color:var(--accent);text-decoration:underline">8-K release</a>
         </div>
       </div>
+
+      <!-- Price & events candlestick — leads the Overview -->
+      <div class="card" style="margin-bottom:14px">
+        <div class="card__head">
+          <div>
+            <h3 class="card__title">EOSE — 1-Year Price &amp; Events</h3>
+            <div class="card__sub">Daily OHLC candles · markers flag earnings, insider trades &amp; major deals · the dashed line tracks the live price</div>
+          </div>
+          <div class="card__legend">
+            <span><span class="swatch" style="background:var(--blue)"></span>Earnings / filing</span>
+            <span><span class="swatch" style="background:var(--positive)"></span>Insider buy</span>
+            <span><span class="swatch" style="background:var(--negative)"></span>Insider sell</span>
+            <span><span class="swatch" style="background:var(--brand-violet)"></span>Deal / news</span>
+          </div>
+        </div>
+        <div data-chart-price></div>
+        <p style="font-size:11.5px;color:var(--fg-3);margin-top:8px">
+          Daily bars from <a href="https://finance.yahoo.com/quote/EOSE/history" target="_blank" rel="noopener" style="color:var(--fg-2);text-decoration:underline">Yahoo Finance</a> (refreshed via GitHub Action); intraday last price live from Finnhub. Hover any candle for OHLC, or any marker for event detail.
+        </p>
+      </div>
+
       <!-- Static KPI fallback content for crawler first-pass visibility.
            JavaScript replaces these tiles with the data.js values + sparklines on render.
            Keep these in sync with `kpis` in js/data.js so crawler-indexed values match what users see. -->

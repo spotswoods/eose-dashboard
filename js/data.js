@@ -733,6 +733,19 @@ window.EOSE_DATA = {
     ]
   },
 
+  // ────────── NEW: Price-chart event markers ──────────
+  // type: earnings | insider-buy | insider-sell | deal | regulatory
+  // Dates are YYYY-MM-DD; the chart snaps each to the nearest trading bar.
+  priceEvents: [
+    { date: '2025-10-31', type: 'deal',        label: 'Frontier UK — first 228 MWh order',  detail: 'First order under the 5 GWh UK framework; final Cerberus milestone met' },
+    { date: '2026-02-26', type: 'earnings',    label: 'FY2025 10-K filed',                  detail: 'Full-year results; >7× YoY revenue growth; FY26 guidance initiated' },
+    { date: '2026-03-02', type: 'insider-buy', label: 'Director buy — Dimitrief 15,000 sh', detail: 'Open-market purchase @ ~$6.04' },
+    { date: '2026-03-04', type: 'insider-buy', label: 'CEO buy — Mastrangelo 23,900 sh',    detail: 'Open-market purchase post-FY25 print' },
+    { date: '2026-04-15', type: 'deal',        label: 'TURBINE-X JDA',                      detail: 'Gas + Eos Indensity for AI data centers; up to 2 GWh over 36 months (stock +12%)' },
+    { date: '2026-04-30', type: 'deal',        label: 'CFO appointment',                    detail: 'Alessandro Lagi named CFO (eff. Jun 8); from Johnson Controls / Baker Hughes' },
+    { date: '2026-05-13', type: 'earnings',    label: 'Q1 2026 earnings + Frontier USA',    detail: 'Rev $57.0M (+445% YoY); Frontier Power USA (Cerberus IPP) formed; S-3ASR shelf filed' }
+  ],
+
   // ────────── NEW: Bull / Bear scorecard ──────────
   // Equal real estate, equal point-count, every point evidenced.
   // The page is balanced when a skeptic could read this and feel heard.
