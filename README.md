@@ -19,7 +19,7 @@ css/
 js/
   data.js                   ← all data (Q1'26 actuals + projections + structures)
   charts.js                 ← custom SVG chart library (bar, area, stacked, sparkline, dual-bridge)
-  app.js                    ← rendering, live Stooq quote, CSV export, scroll-spy, theme toggle
+  app.js                    ← rendering, live quote (Finnhub poll + JSON fallback), CSV export, search, scroll-spy, theme
   tweaks-panel.jsx          ← React-based design tweaks (palette, density, font, etc.)
   tweaks-app.jsx
 ```
@@ -37,9 +37,33 @@ The page works fully without any API keys.
 
 ---
 
-## Live quote — Google Sheets + GitHub Action
+## Live quote — two tiers
 
-GitHub Pages can't fetch from Stooq or Yahoo directly because those endpoints don't send CORS headers and most free public proxies are now paywalled. The fix: a tiny GitHub Action that fetches a Google Sheet (populated with `=GOOGLEFINANCE("NASDAQ:EOSE", ...)`) every 5 minutes, writes the values into `data/quote.json` inside the repo, and the dashboard reads that file same-origin.
+The dashboard resolves the quote in priority order, and never breaks if a tier is unavailable:
+
+| Tier | Source | Cadence | Key? |
+|---|---|---|---|
+| 1 (best) | **Finnhub** REST poll | ~25s while tab is visible | Free key |
+| 2 | **Google Sheets + GitHub Action** → `data/quote.json` | ~5 min | No key |
+| 3 (local dev) | Stooq direct | on load | No key (CORS-blocked on github.io) |
+
+### Tier 1 — Finnhub (near-live, recommended)
+
+This is the "almost live" path. While the page is open it polls Finnhub every ~25 seconds (paused when the browser tab isn't visible, to conserve quota) and flashes the price green/red on each tick.
+
+1. Get a free key (30s, no card) at [finnhub.io/register](https://finnhub.io/register).
+2. Open `js/app.js`, find the `CONFIG` block near the top, paste your key into `FINNHUB_KEY: ''`.
+3. Commit + push. Done.
+
+Notes:
+- Finnhub's free tier is **real-time for US equities**, 60 calls/min, CORS-enabled — so it works directly from the browser (unlike Stooq/Yahoo).
+- The key is **read-only quote access** and will be visible in the public `app.js`. That's expected for a free quote key. If you'd rather not commit it, append `?finnhub=YOUR_KEY` to the URL or set `localStorage['eose-finnhub-key']` — both override the blank `CONFIG` value at runtime (handy for testing).
+- If the key is blank, throttled, or the request fails, the page silently falls back to Tier 2 (`quote.json`). Nothing breaks.
+- 52-week high/low comes from a one-time Finnhub `/stock/metric` call; volume falls back to the `quote.json` baseline (Finnhub's `/quote` endpoint doesn't include intraday volume).
+
+### Tier 2 — Google Sheets + GitHub Action (keyless baseline)
+
+Even with Finnhub on, keep this configured — it's the at-load baseline (volume, 52w range) and the fallback. GitHub Pages can't fetch Stooq/Yahoo directly (no CORS headers, and free public proxies are now paywalled), so this Action fetches a Google Sheet (populated with `=GOOGLEFINANCE("NASDAQ:EOSE", ...)`) every 5 minutes, writes the values into `data/quote.json`, and the dashboard reads that file same-origin.
 
 ### One-time setup (~5 minutes)
 
@@ -90,9 +114,10 @@ The Action runs every 5 minutes thereafter. It only commits when a field actuall
 
 ### Caveats
 
-- **Total delay** can reach ~30 min worst case: GOOGLEFINANCE is ~15–20 min delayed for free Google Finance data, plus GitHub Actions scheduled-cron lag of 5–15 min during peak periods.
+- **Finnhub (Tier 1)** is the near-live path. Without it, the page is limited by Tier 2's floor: GOOGLEFINANCE is ~15–20 min delayed and GitHub Actions cron lags 5–15 min, so the keyless quote can be up to ~30 min stale.
 - **GitHub Actions free tier** is unlimited for public repos. For private repos, this Action uses ~30s per run × 12 runs/hr × 24 = ~2 hr/day, well under the 2,000 min/month free tier.
-- The dashboard **falls back to direct Stooq** for local development (`file://` and `localhost`). On `github.io`, only the JSON path works (CORS).
+- The dashboard **falls back to direct Stooq** for local development (`file://` and `localhost`). On `github.io`, only the JSON + Finnhub paths work (CORS).
+- This is a "bonus" feature — the dashboard is research, not a trading terminal. The ~25s poll is intentionally relaxed.
 
 ---
 

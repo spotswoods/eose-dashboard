@@ -612,3 +612,11 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
   font-size: 10.5px; color: var(--fg-1);
 }
 .icon-btn.is-active { background: var(--accent-soft); color: var(--accent); }
+
+/* ========== Live price tick flash ========== */
+/* Brief highlight when the polled price changes — Bloomberg-style up/down tick. */
+@keyframes tick-up   { 0% { background: color-mix(in oklab, var(--positive) 38%, transparent); } 100% { background: transparent; } }
+@keyframes tick-down { 0% { background: color-mix(in oklab, var(--negative) 38%, transparent); } 100% { background: transparent; } }
+[data-tk-price], [data-hero-price] { border-radius: 6px; padding: 0 2px; transition: background .2s; }
+.tick-up   { animation: tick-up   .85s ease-out; }
+.tick-down { animation: tick-down .85s ease-out; }

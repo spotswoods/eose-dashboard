@@ -3,10 +3,42 @@
 //   • Frontier Power USA (terms + narrative)
 //   • Capital structure (liabilities, equity, reading-guide note)
 //   • Z3 product specs + competitive landscape
-// Pulls a live delayed quote from Stooq (no API key) and overrides the ticker bar.
+// Quote strategy (best → fallback):
+//   1. Finnhub REST poll every ~25s (near-live, free key in CONFIG below)
+//   2. data/quote.json — GitHub Action snapshot (~5 min, no key)
+//   3. Stooq direct (local dev only; CORS-blocked on github.io)
+// Whichever is available wins; the page never breaks if the key is absent.
 (function () {
   const D = window.EOSE_DATA;
   const C = window.EOSE_CHARTS;
+
+  // ╔═══════════════════════════════════════════════════════════════╗
+  // ║  CONFIG — near-live quote (optional)                          ║
+  // ║                                                                ║
+  // ║  Paste a FREE Finnhub key to upgrade the quote from the        ║
+  // ║  ~5-min GitHub-Action snapshot to a ~25-second live poll.      ║
+  // ║  Get one (30 seconds, no card) at:  https://finnhub.io/register║
+  // ║                                                                ║
+  // ║  The key is read-only quote access. It is visible in this      ║
+  // ║  public file — that's expected/acceptable for a free quote     ║
+  // ║  key. If it's blank or rate-limited, the page automatically    ║
+  // ║  falls back to data/quote.json (the GitHub Action), so nothing ║
+  // ║  ever breaks. You can also append ?finnhub=YOUR_KEY to the URL ║
+  // ║  or set localStorage 'eose-finnhub-key' to override at runtime.║
+  // ╚═══════════════════════════════════════════════════════════════╝
+  const CONFIG = {
+    FINNHUB_KEY: '',     // <-- paste your free Finnhub key here
+    POLL_SECONDS: 25     // live refresh cadence while the tab is visible
+  };
+  // Runtime overrides (so you can test without committing a key)
+  try {
+    const urlKey = new URLSearchParams(location.search).get('finnhub');
+    if (urlKey) CONFIG.FINNHUB_KEY = urlKey;
+    else {
+      const lsKey = localStorage.getItem('eose-finnhub-key');
+      if (lsKey) CONFIG.FINNHUB_KEY = lsKey;
+    }
+  } catch (e) { /* ignore */ }
 
   // ---------- Theme ----------
   function setTheme(t) {
@@ -77,15 +109,34 @@
     setEl('[data-hero-asof]', reason || 'no source reachable');
   }
 
+  let __lastPrice = null;
+  function flashPrice(direction) {
+    const cls = direction > 0 ? 'tick-up' : 'tick-down';
+    ['[data-tk-price]', '[data-hero-price]'].forEach(sel => {
+      const el = document.querySelector(sel);
+      if (!el) return;
+      el.classList.remove('tick-up', 'tick-down');
+      // force reflow so the animation restarts even on consecutive ticks
+      void el.offsetWidth;
+      el.classList.add(cls);
+    });
+  }
+
   function applyQuote(q, sourceLabel) {
     if (!q || !isFinite(q.price) || q.price <= 0) return false;
+    // Tick flash only on a genuine change from a prior live value
+    if (__lastPrice != null && q.price !== __lastPrice) {
+      flashPrice(q.price > __lastPrice ? 1 : -1);
+    }
+    __lastPrice = q.price;
     D.ticker.price = q.price;
     D.ticker.change = isFinite(q.change) ? q.change : 0;
     D.ticker.changePct = isFinite(q.changePct) ? q.changePct
                        : (D.ticker.change && q.price ? (D.ticker.change / (q.price - D.ticker.change)) * 100 : 0);
-    D.ticker.volume = isFinite(q.volume) ? q.volume : 0;
-    D.ticker.high52 = isFinite(q.high52) ? q.high52 : 0;
-    D.ticker.low52  = isFinite(q.low52)  ? q.low52  : 0;
+    // Preserve last-known slow-moving fields if this source doesn't carry them
+    D.ticker.volume = isFinite(q.volume) ? q.volume : (D.ticker.volume || 0);
+    D.ticker.high52 = isFinite(q.high52) && q.high52 > 0 ? q.high52 : (D.ticker.high52 || 0);
+    D.ticker.low52  = isFinite(q.low52)  && q.low52  > 0 ? q.low52  : (D.ticker.low52  || 0);
     D.ticker.marketCap = isFinite(q.marketCap) && q.marketCap > 0
       ? q.marketCap
       : q.price * D.ticker.shares;
@@ -94,6 +145,55 @@
     renderHero();
     renderScenarios();  // recompute upside vs. live price
     return true;
+  }
+
+  // ---------- Finnhub (near-live, key required) ----------
+  // /quote returns { c: current, d: change, dp: %change, h, l, o, pc, t }
+  // Free tier: real-time US equities, 60 calls/min, CORS-enabled.
+  async function loadFromFinnhub(isPoll) {
+    if (!CONFIG.FINNHUB_KEY) return false;
+    try {
+      const r = await fetch(`https://finnhub.io/api/v1/quote?symbol=EOSE&token=${encodeURIComponent(CONFIG.FINNHUB_KEY)}`, { cache: 'no-store' });
+      if (!r.ok) return false;
+      const q = await r.json();
+      if (!q || !isFinite(q.c) || q.c === 0) return false;
+      const stamp = q.t ? new Date(q.t * 1000) : new Date();
+      return applyQuote({
+        price: q.c,
+        change: isFinite(q.d) ? q.d : null,
+        changePct: isFinite(q.dp) ? q.dp : null,
+        // keep volume / 52w / mcap from the JSON baseline (set on first load)
+        marketCap: q.c * D.ticker.shares,
+        asof: 'live · ' + stamp.toLocaleTimeString()
+      }, 'Finnhub');
+    } catch (e) {
+      return false;
+    }
+  }
+  // One-time metrics pull for 52-week range (not in /quote)
+  async function loadFinnhubMetrics() {
+    if (!CONFIG.FINNHUB_KEY) return;
+    try {
+      const r = await fetch(`https://finnhub.io/api/v1/stock/metric?symbol=EOSE&metric=all&token=${encodeURIComponent(CONFIG.FINNHUB_KEY)}`, { cache: 'no-store' });
+      if (!r.ok) return;
+      const j = await r.json();
+      const m = (j && j.metric) || {};
+      if (isFinite(m['52WeekHigh'])) D.ticker.high52 = m['52WeekHigh'];
+      if (isFinite(m['52WeekLow']))  D.ticker.low52  = m['52WeekLow'];
+      renderTicker();
+    } catch (e) { /* non-fatal */ }
+  }
+
+  // ---------- Live polling (visibility-aware) ----------
+  let __pollTimer = null;
+  function startLivePolling() {
+    if (!CONFIG.FINNHUB_KEY || __pollTimer) return;
+    const tick = () => { if (document.visibilityState === 'visible') loadFromFinnhub(true); };
+    __pollTimer = setInterval(tick, Math.max(10, CONFIG.POLL_SECONDS) * 1000);
+    // Refresh immediately whenever the tab regains focus (price may be stale)
+    document.addEventListener('visibilitychange', () => {
+      if (document.visibilityState === 'visible') loadFromFinnhub(true);
+    });
   }
 
   async function loadFromGoogleSheetJson() {
@@ -156,9 +256,20 @@
   }
 
   async function loadQuote() {
-    if (await loadFromGoogleSheetJson()) return;
+    // 1. Baseline from the GitHub-Action JSON (volume, 52w range, market cap).
+    const gotJson = await loadFromGoogleSheetJson();
+
+    // 2. If a Finnhub key is configured, overlay a near-live price + start polling.
+    if (CONFIG.FINNHUB_KEY) {
+      loadFinnhubMetrics();                // one-time 52w range (async, non-blocking)
+      const gotLive = await loadFromFinnhub(false);
+      if (gotLive) { startLivePolling(); return; }
+    }
+
+    // 3. Fallbacks if we have nothing yet.
+    if (gotJson) return;
     if (await loadFromStooq()) return;
-    setQuoteUnavailable('Configure GOOGLEFINANCE sheet (see README) or run on a CORS-permissive origin');
+    setQuoteUnavailable('Add a free Finnhub key (see README) or configure the GOOGLEFINANCE sheet');
   }
 
   // ---------- KPIs ----------
