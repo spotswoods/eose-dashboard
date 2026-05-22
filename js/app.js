@@ -1205,7 +1205,6 @@
   // ---------- Background music player (opt-in, off by default) ----------
   // Playlist order = play order (advance + loop). Edit/reorder/remove freely.
   const MUSIC = [
-    { title: 'Charge the Future',     sub: 'The Joe M. Anthem', src: 'assets/music/charge-the-future.mp3' },
     { title: 'The Heartland Shift',   sub: '',                  src: 'assets/music/the-heartland-shift.mp3' },
     { title: 'Zinc and the Iron Core',sub: '',                  src: 'assets/music/zinc-and-the-iron-core.mp3' },
     { title: 'Zinc in Our Blood',     sub: '',                  src: 'assets/music/zinc-in-our-blood.mp3' }
