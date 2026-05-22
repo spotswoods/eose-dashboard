@@ -1249,7 +1249,22 @@
     }
     function playNow() {
       if (!audio.src) load(idx, false);
-      audio.play().then(() => reflect(true)).catch(() => { /* blocked until a user gesture */ });
+      // With preload="none" the element may have no buffered data, and in some
+      // browsers play() then stalls until a seek/load nudges buffering (the
+      // "play does nothing until I scrub" symptom). Force a load and also retry
+      // once data is ready.
+      audio.preload = 'auto';
+      const attempt = () => {
+        const p = audio.play();
+        if (p && p.then) p.then(() => reflect(true)).catch(() => {});
+      };
+      if (audio.readyState >= 2) {           // HAVE_CURRENT_DATA — safe to play now
+        attempt();
+      } else {
+        audio.addEventListener('canplay', attempt, { once: true });
+        try { audio.load(); } catch (e) { /* ignore */ }
+        attempt();                            // most browsers start here directly
+      }
     }
 
     els.play.addEventListener('click', () => audio.paused ? playNow() : (audio.pause(), reflect(false)));
