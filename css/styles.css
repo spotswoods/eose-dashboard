@@ -199,12 +199,43 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
   mask-image: radial-gradient(900px 500px at 70% 40%, black, transparent 70%);
   pointer-events: none;
 }
+/* "Current" pulses that travel along the grid lines now and then. Dots are
+   injected by initGridPulse() in app.js and aligned to the centered 56px grid.
+   Same radial mask as the grid so they fade out toward the edges. */
+.grid-pulse-layer {
+  position: absolute; inset: 0; pointer-events: none; overflow: hidden; z-index: 1;
+  -webkit-mask-image: radial-gradient(900px 500px at 70% 40%, black, transparent 70%);
+  mask-image: radial-gradient(900px 500px at 70% 40%, black, transparent 70%);
+}
+.grid-pulse {
+  position: absolute; width: 6px; height: 6px; border-radius: 50%;
+  background: var(--accent);
+  box-shadow: 0 0 7px 2px color-mix(in oklab, var(--accent) 70%, transparent),
+              0 0 2px 1px color-mix(in oklab, var(--accent) 90%, transparent);
+  opacity: 0; will-change: transform, opacity;
+}
+.grid-pulse.is-h { left: -3px; animation: grid-pulse-h linear forwards; }
+.grid-pulse.is-v { top: -3px;  animation: grid-pulse-v linear forwards; }
+@keyframes grid-pulse-h {
+  0%   { transform: translateX(0);              opacity: 0; }
+  12%  { opacity: 1; }
+  88%  { opacity: 1; }
+  100% { transform: translateX(var(--travel));  opacity: 0; }
+}
+@keyframes grid-pulse-v {
+  0%   { transform: translateY(0);              opacity: 0; }
+  12%  { opacity: 1; }
+  88%  { opacity: 1; }
+  100% { transform: translateY(var(--travel));  opacity: 0; }
+}
+@media (prefers-reduced-motion: reduce) { .grid-pulse-layer { display: none; } }
 .hero__inner {
   max-width: 1480px; margin: 0 auto;
   padding: 56px 32px 40px;
   display: grid; grid-template-columns: 1.05fr 0.95fr; gap: 56px;
   align-items: end;
   position: relative;
+  z-index: 2;   /* keep hero content above the grid + current-pulse layers */
 }
 .hero__eyebrow { color: var(--fg-2); font-size: 12px; letter-spacing: 0.18em; text-transform: uppercase; }
 .hero__eyebrow b { color: var(--accent); font-weight: 700; letter-spacing: 0.18em; }

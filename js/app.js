@@ -1295,6 +1295,58 @@
     }
   }
 
+  // ---------- Hero grid "current" pulses ----------
+  // Occasionally sends a glowing dot travelling along one of the hero's grid
+  // lines, like current flowing through the grid. Subtle, low-frequency,
+  // pauses when the tab is hidden, and disabled for reduced-motion users.
+  function initGridPulse() {
+    const hero = document.querySelector('.hero');
+    if (!hero) return;
+    if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+    const GRID = 56;                 // must match .hero__grid-bg background-size
+    const EDGE = 40;                 // keep pulses off the very edges
+    const layer = document.createElement('div');
+    layer.className = 'grid-pulse-layer';
+    hero.appendChild(layer);
+
+    function spawn() {
+      const w = hero.clientWidth, h = hero.clientHeight;
+      if (!w || !h) return;
+      const horizontal = Math.random() < 0.5;
+      const dot = document.createElement('span');
+      dot.className = 'grid-pulse ' + (horizontal ? 'is-h' : 'is-v');
+      const dur = (2.2 + Math.random() * 1.8).toFixed(2) + 's';   // 2.2–4.0s
+      dot.style.animationDuration = dur;
+      // Grid lines are centered (background-position:center), so they sit at
+      // center ± k·56. Snap the pulse onto one of those lines.
+      const cx = w / 2, cy = h / 2;
+      if (horizontal) {
+        const kMin = Math.ceil((EDGE - cy) / GRID);
+        const kMax = Math.floor((h - EDGE - cy) / GRID);
+        const k = kMin + Math.floor(Math.random() * (kMax - kMin + 1));
+        dot.style.top = (cy + k * GRID - 3) + 'px';
+        dot.style.setProperty('--travel', w + 'px');
+      } else {
+        const kMin = Math.ceil((EDGE - cx) / GRID);
+        const kMax = Math.floor((w - EDGE - cx) / GRID);
+        const k = kMin + Math.floor(Math.random() * (kMax - kMin + 1));
+        dot.style.left = (cx + k * GRID - 3) + 'px';
+        dot.style.setProperty('--travel', h + 'px');
+      }
+      dot.addEventListener('animationend', () => dot.remove());
+      layer.appendChild(dot);
+    }
+    function schedule() {
+      const delay = 1800 + Math.random() * 3400;   // every ~1.8–5.2s
+      clearTimeout(layer._t);
+      layer._t = setTimeout(() => {
+        if (document.visibilityState === 'visible') spawn();
+        schedule();
+      }, delay);
+    }
+    schedule();
+  }
+
   // ---------- Init ----------
   document.addEventListener('DOMContentLoaded', () => {
     initTheme();
@@ -1347,6 +1399,7 @@
     initToggles();
     initSearch();
     initMusic();
+    initGridPulse();
 
     // Price history candlestick (fire-and-forget) + live quote
     loadHistory();
