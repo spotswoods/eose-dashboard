@@ -747,48 +747,6 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
   font-size: 10.5px; color: var(--fg-1);
 }
 .icon-btn.is-active { background: var(--accent-soft); color: var(--accent); }
-/* gentle pulse on the music icon while a track is playing */
-.icon-btn.is-playing { background: var(--accent-soft); color: var(--accent); }
-.icon-btn.is-playing svg { animation: music-bob 1.6s ease-in-out infinite; }
-@keyframes music-bob { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-1.5px); } }
-
-/* ========== Music player popover ========== */
-.music-pop {
-  position: fixed; top: 58px; right: 16px; z-index: 120;
-  width: 300px; max-width: calc(100vw - 24px);
-  background: var(--bg-1); border: 1px solid var(--line-2);
-  border-radius: var(--r-lg); box-shadow: 0 24px 60px -20px rgba(0,0,0,0.6);
-  padding: 14px; color: var(--fg-0);
-  transform-origin: top right;
-  animation: music-in .18s var(--ease);
-}
-@keyframes music-in { from { opacity: 0; transform: translateY(-6px) scale(.98); } to { opacity: 1; transform: none; } }
-.music-pop[hidden] { display: none; }
-.music-pop__head { display: flex; align-items: center; justify-content: space-between; font-size: 12px; letter-spacing: .06em; text-transform: uppercase; color: var(--fg-2); font-weight: 600; }
-.music-pop__x { color: var(--fg-3); font-size: 13px; padding: 2px 6px; border-radius: 6px; }
-.music-pop__x:hover { color: var(--fg-0); background: var(--bg-2); }
-.music-pop__now { margin: 12px 0 10px; }
-.music-pop__title { font-size: 15px; font-weight: 600; letter-spacing: -0.01em; }
-.music-pop__sub { font-size: 12px; color: var(--fg-2); margin-top: 2px; }
-.music-pop__controls { display: flex; align-items: center; gap: 8px; }
-.music-pop__btn {
-  width: 34px; height: 34px; border-radius: 9px; display: inline-grid; place-items: center;
-  background: var(--bg-2); color: var(--fg-1); font-size: 13px; transition: background .15s, color .15s;
-}
-.music-pop__btn:hover { background: var(--accent-soft); color: var(--accent); }
-.music-pop__play { background: var(--accent); color: #02130E; font-size: 14px; }
-.music-pop__play:hover { background: var(--accent); color: #02130E; opacity: .9; }
-.music-pop__vol { flex: 1; accent-color: var(--accent); cursor: pointer; min-width: 0; }
-.music-pop__list { list-style: none; margin: 12px 0 0; padding: 0; max-height: 200px; overflow-y: auto; }
-.music-pop__list li {
-  display: flex; align-items: center; gap: 8px; padding: 8px 10px; border-radius: 8px;
-  font-size: 13px; color: var(--fg-1); cursor: pointer;
-}
-.music-pop__list li:hover { background: var(--bg-2); }
-.music-pop__list li.is-current { background: var(--accent-soft); color: var(--accent); font-weight: 600; }
-.music-pop__list li .idx { color: var(--fg-3); font-family: var(--font-mono); font-size: 11px; min-width: 16px; }
-.music-pop__list li.is-current .idx { color: var(--accent); }
-.music-pop__note { font-size: 11px; color: var(--fg-3); margin-top: 10px; line-height: 1.4; }
 
 /* ========== Live price tick flash ========== */
 /* Brief highlight when the polled price changes — Bloomberg-style up/down tick. */

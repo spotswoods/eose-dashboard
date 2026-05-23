@@ -1202,99 +1202,6 @@
     });
   }
 
-  // ---------- Background music player (opt-in, off by default) ----------
-  // Playlist order = play order (advance + loop). Edit/reorder/remove freely.
-  const MUSIC = [
-    { title: 'The Heartland Shift',   sub: '',                  src: 'assets/music/the-heartland-shift.mp3' },
-    { title: 'Zinc and the Iron Core',sub: '',                  src: 'assets/music/zinc-and-the-iron-core.mp3' },
-    { title: 'Zinc in Our Blood',     sub: '',                  src: 'assets/music/zinc-in-our-blood.mp3' }
-  ];
-  function initMusic() {
-    const audio  = document.getElementById('musicAudio');
-    const pop    = document.getElementById('musicPop');
-    const toggle = document.querySelector('[data-music-toggle]');
-    if (!audio || !pop || !toggle || !MUSIC.length) return;
-    const q = sel => pop.querySelector(sel);
-    const els = {
-      title: q('[data-music-title]'), sub: q('[data-music-sub]'),
-      play: q('[data-music-play]'), prev: q('[data-music-prev]'), next: q('[data-music-next]'),
-      vol: q('[data-music-vol]'), list: q('[data-music-list]'), close: q('[data-music-close]')
-    };
-
-    let idx = parseInt(localStorage.getItem('eose-music-track') || '0', 10);
-    if (!(idx >= 0 && idx < MUSIC.length)) idx = 0;
-    let vol = parseFloat(localStorage.getItem('eose-music-vol'));
-    if (!(vol >= 0 && vol <= 1)) vol = 0.30;
-    audio.volume = vol; els.vol.value = Math.round(vol * 100);
-
-    function renderList() {
-      els.list.innerHTML = MUSIC.map((t, i) =>
-        `<li class="${i === idx ? 'is-current' : ''}" data-i="${i}"><span class="idx">${i + 1}</span><span>${t.title}</span></li>`).join('');
-    }
-    function reflect(isPlaying) {
-      els.play.textContent = isPlaying ? '⏸' : '▶';
-      toggle.classList.toggle('is-playing', isPlaying);
-      localStorage.setItem('eose-music-on', isPlaying ? '1' : '0');
-    }
-    function load(i, autoplay) {
-      idx = (i + MUSIC.length) % MUSIC.length;
-      localStorage.setItem('eose-music-track', String(idx));
-      const t = MUSIC[idx];
-      audio.src = t.src;
-      els.title.textContent = t.title;
-      els.sub.textContent = t.sub || '';
-      renderList();
-      if (autoplay) playNow();
-    }
-    function playNow() {
-      if (!audio.src) load(idx, false);
-      // With preload="none" the element may have no buffered data, and in some
-      // browsers play() then stalls until a seek/load nudges buffering (the
-      // "play does nothing until I scrub" symptom). Force a load and also retry
-      // once data is ready.
-      audio.preload = 'auto';
-      const attempt = () => {
-        const p = audio.play();
-        if (p && p.then) p.then(() => reflect(true)).catch(() => {});
-      };
-      if (audio.readyState >= 2) {           // HAVE_CURRENT_DATA — safe to play now
-        attempt();
-      } else {
-        audio.addEventListener('canplay', attempt, { once: true });
-        try { audio.load(); } catch (e) { /* ignore */ }
-        attempt();                            // most browsers start here directly
-      }
-    }
-
-    els.play.addEventListener('click', () => audio.paused ? playNow() : (audio.pause(), reflect(false)));
-    els.prev.addEventListener('click', () => load(idx - 1, true));
-    els.next.addEventListener('click', () => load(idx + 1, true));
-    els.vol.addEventListener('input', e => { audio.volume = (e.target.value / 100); localStorage.setItem('eose-music-vol', String(audio.volume)); });
-    els.list.addEventListener('click', e => { const li = e.target.closest('li'); if (li) load(parseInt(li.dataset.i, 10), true); });
-    audio.addEventListener('ended', () => load(idx + 1, true));   // advance + loop
-    audio.addEventListener('play',  () => reflect(true));
-    audio.addEventListener('pause', () => reflect(false));
-
-    const open  = () => { pop.hidden = false; toggle.classList.add('is-active'); };
-    const close = () => { pop.hidden = true;  toggle.classList.remove('is-active'); };
-    toggle.addEventListener('click', () => pop.hidden ? open() : close());
-    els.close.addEventListener('click', close);
-    document.addEventListener('click', e => {
-      if (!pop.hidden && !pop.contains(e.target) && !toggle.contains(e.target)) close();
-    });
-    document.addEventListener('keydown', e => { if (e.key === 'Escape' && !pop.hidden) close(); });
-
-    load(idx, false);   // show metadata, don't autoplay
-
-    // If the user previously had music on, resume after their first gesture
-    // (browsers block autoplay-with-sound until then).
-    if (localStorage.getItem('eose-music-on') === '1') {
-      const resume = () => { playNow(); window.removeEventListener('pointerdown', resume); window.removeEventListener('keydown', resume); };
-      window.addEventListener('pointerdown', resume, { once: true });
-      window.addEventListener('keydown', resume, { once: true });
-    }
-  }
-
   // ---------- Hero grid "current" pulses ----------
   // Occasionally sends a glowing dot travelling along one of the hero's grid
   // lines, like current flowing through the grid. Subtle, low-frequency,
@@ -1411,7 +1318,6 @@
     initScrollSpy();
     initToggles();
     initSearch();
-    initMusic();
     initGridPulse();
 
     // Price history candlestick (fire-and-forget) + live quote
