@@ -323,7 +323,7 @@
     ];
     D.kpis.forEach((k, i) => {
       const node = document.createElement('div');
-      node.className = 'kpi';
+      node.className = 'kpi' + (k.accent ? ' kpi--' + k.accent : '');
       const arrow = k.tone === 'up' ? '↑' : k.tone === 'down' ? '↓' : '→';
       node.innerHTML = `
         <div class="kpi__label">${k.label}</div>

@@ -27,13 +27,14 @@ window.EOSE_DATA = {
   },
 
   // ────────── KPI strip — Q1'26 actuals ──────────
+  // accent drives the card's left border (meaning-tied): pos | warn | neg | info
   kpis: [
-    { label: 'Q1\'26 Revenue',      value: '$57.0M',     delta: '+445% YoY · cube deliv. +5.7×', tone: 'up'   },
-    { label: 'Adj. EPS surprise',   value: '$0.12',      delta: 'vs. −$0.22 cons. · beat 154%',  tone: 'up'   },
-    { label: 'Backlog (3/31/26)',   value: '$644.6M',    delta: '2.6 GWh · +2 GWh Frontier',     tone: 'up'   },
-    { label: 'Commercial Pipeline', value: '$24.3B',     delta: 'Proposals + LOIs · +56% YoY · not contracted', tone: 'up' },
-    { label: 'Total Cash',          value: '$472.4M',    delta: 'Q1 op. cash flow: −$119.7M',    tone: 'flat' },
-    { label: 'FY26 Guidance',       value: '$300–400M',  delta: 'Reaffirmed Q1\'26',              tone: 'up'   }
+    { label: 'Q1\'26 Revenue',      value: '$57.0M',     delta: '+445% YoY · cube deliv. +5.7×', tone: 'up',   accent: 'pos'  },
+    { label: 'Adj. EPS surprise',   value: '$0.12',      delta: 'vs. −$0.22 cons. · beat 154%',  tone: 'up',   accent: 'pos'  },
+    { label: 'Backlog (3/31/26)',   value: '$644.6M',    delta: '2.6 GWh · +2 GWh Frontier',     tone: 'up',   accent: 'pos'  },
+    { label: 'Commercial Pipeline', value: '$24.3B',     delta: 'Proposals + LOIs · +56% YoY · not contracted', tone: 'up', accent: 'info' },
+    { label: 'Total Cash',          value: '$472.4M',    delta: 'Q1 op. cash flow: −$119.7M',    tone: 'flat', accent: 'neg'  },
+    { label: 'FY26 Guidance',       value: '$300–400M',  delta: 'Reaffirmed Q1\'26',              tone: 'up',   accent: 'warn' }
   ],
 
   // ────────── Quarterly revenue ($M) — actuals from 10-Qs / 10-Ks ──────────

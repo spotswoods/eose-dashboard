@@ -320,32 +320,32 @@
            JavaScript replaces these tiles with the data.js values + sparklines on render.
            Keep these in sync with `kpis` in js/data.js so crawler-indexed values match what users see. -->
       <div class="kpis" data-kpis>
-        <div class="kpi">
+        <div class="kpi kpi--pos">
           <div class="kpi__label">Q1'26 Revenue</div>
           <div class="kpi__value">$57.0M</div>
           <div class="kpi__delta up">↑ +445% YoY · cube deliv. +5.7×</div>
         </div>
-        <div class="kpi">
+        <div class="kpi kpi--pos">
           <div class="kpi__label">Adj. EPS surprise</div>
           <div class="kpi__value">$0.12</div>
           <div class="kpi__delta up">↑ vs. −$0.22 cons. · beat 154%</div>
         </div>
-        <div class="kpi">
+        <div class="kpi kpi--pos">
           <div class="kpi__label">Backlog (3/31/26)</div>
           <div class="kpi__value">$644.6M</div>
           <div class="kpi__delta up">↑ 2.6 GWh · +2 GWh Frontier</div>
         </div>
-        <div class="kpi">
+        <div class="kpi kpi--info">
           <div class="kpi__label">Commercial Pipeline</div>
           <div class="kpi__value">$24.3B</div>
           <div class="kpi__delta up">↑ Proposals + LOIs · +56% YoY · not contracted</div>
         </div>
-        <div class="kpi">
+        <div class="kpi kpi--neg">
           <div class="kpi__label">Total Cash</div>
           <div class="kpi__value">$472.4M</div>
           <div class="kpi__delta flat">→ Q1 op. cash flow: −$119.7M</div>
         </div>
-        <div class="kpi">
+        <div class="kpi kpi--warn">
           <div class="kpi__label">FY26 Guidance</div>
           <div class="kpi__value">$300–400M</div>
           <div class="kpi__delta up">↑ Reaffirmed Q1'26</div>
@@ -366,8 +366,8 @@
         <div class="card col-6" style="border-left:3px solid var(--positive)">
           <div class="card__head">
             <div>
-              <h3 class="card__title" style="color:var(--positive)">▲ Bull case</h3>
-              <div class="card__sub">Eight evidenced points · sources inline</div>
+              <h3 class="card__title"><span class="signal-badge signal-badge--bull">▲ Bull case</span></h3>
+              <div class="card__sub" style="margin-top:8px">Eight evidenced points · sources inline</div>
             </div>
           </div>
           <ol style="padding-left:20px;font-size:13.5px;line-height:1.6;margin:0" data-scorecard-bull></ol>
@@ -375,8 +375,8 @@
         <div class="card col-6" style="border-left:3px solid var(--negative)">
           <div class="card__head">
             <div>
-              <h3 class="card__title" style="color:var(--negative)">▼ Bear case</h3>
-              <div class="card__sub">Eight evidenced points · sources inline</div>
+              <h3 class="card__title"><span class="signal-badge signal-badge--bear">▼ Bear case</span></h3>
+              <div class="card__sub" style="margin-top:8px">Eight evidenced points · sources inline</div>
             </div>
           </div>
           <ol style="padding-left:20px;font-size:13.5px;line-height:1.6;margin:0" data-scorecard-bear></ol>
@@ -996,11 +996,11 @@
       </div>
       <div class="grid-12">
         <div class="card col-6" style="border-left:3px solid var(--positive)">
-          <div class="card__head"><div><h3 class="card__title" style="color:var(--positive)">▲ Bull-side rumors</h3></div></div>
+          <div class="card__head"><div><h3 class="card__title"><span class="signal-badge signal-badge--bull">▲ Bull-side rumors</span></h3></div></div>
           <div data-rumors-bull></div>
         </div>
         <div class="card col-6" style="border-left:3px solid var(--negative)">
-          <div class="card__head"><div><h3 class="card__title" style="color:var(--negative)">▼ Bear-side rumors</h3></div></div>
+          <div class="card__head"><div><h3 class="card__title"><span class="signal-badge signal-badge--bear">▼ Bear-side rumors</span></h3></div></div>
           <div data-rumors-bear></div>
         </div>
       </div>

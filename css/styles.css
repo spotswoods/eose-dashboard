@@ -136,13 +136,15 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
 .shell { max-width: 1480px; margin: 0 auto; padding: 0 32px 96px; }
 
 /* ========== Top ticker bar ========== */
-/* Solid background (not color-mix + backdrop-filter) — the previous
-   semi-transparent + blur combo caused Chrome compositor to blank out
-   sections during fast programmatic scroll. */
+/* Frosted glass, kept ~90% opaque + will-change:transform so the old
+   smooth-scroll black-flash can't recur (see .section-nav note). */
 .ticker {
   position: sticky; top: 0; z-index: 60;
-  background: var(--bg-0);
+  background: color-mix(in oklab, var(--bg-0) 90%, transparent);
+  -webkit-backdrop-filter: blur(14px) saturate(140%);
+  backdrop-filter: blur(14px) saturate(140%);
   border-bottom: 1px solid var(--line-1);
+  will-change: transform;
 }
 .ticker__inner {
   max-width: 1480px; margin: 0 auto;
@@ -243,17 +245,17 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
 @media (prefers-reduced-motion: reduce) { .grid-pulse-layer { display: none; } }
 .hero__inner {
   max-width: 1480px; margin: 0 auto;
-  padding: 56px 32px 40px;
-  display: grid; grid-template-columns: 1.05fr 0.95fr; gap: 56px;
-  align-items: end;
+  padding: 52px 32px 40px;
+  display: grid; grid-template-columns: 1fr 1fr; gap: 48px;
+  align-items: center;   /* balance the title column with the chart card */
   position: relative;
   z-index: 2;   /* keep hero content above the grid + current-pulse layers */
 }
 .hero__eyebrow { color: var(--fg-2); font-size: 12px; letter-spacing: 0.18em; text-transform: uppercase; }
 .hero__eyebrow b { color: var(--accent); font-weight: 700; letter-spacing: 0.18em; }
 .hero h1 {
-  font-size: 56px; line-height: 1.04; letter-spacing: -0.02em;
-  margin: 16px 0 14px; font-weight: 700; max-width: 14ch;
+  font-size: clamp(30px, 3.4vw, 44px); line-height: 1.08; letter-spacing: -0.02em;
+  margin: 16px 0 14px; font-weight: 700; max-width: 20ch;
 }
 .hero__sub { color: var(--fg-2); font-size: 16px; max-width: 52ch; }
 .hero__price {
@@ -274,20 +276,27 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
 .hero__spark {
   position: relative;
   background: var(--bg-1);
-  border: 1px solid var(--line-1);
+  border: 1px solid var(--line-2);
   border-radius: var(--r-lg);
-  padding: 22px 22px 14px;
+  padding: 24px 26px 18px;
   box-shadow: var(--shadow-card);
 }
-.hero__spark h3 { margin: 0; font-size: 13px; color: var(--fg-2); font-weight: 500; letter-spacing: 0.02em; text-transform: uppercase; }
+.hero__spark h3 { margin: 0; font-size: 13.5px; color: var(--fg-1); font-weight: 600; letter-spacing: 0.04em; text-transform: uppercase; }
 .hero__spark .legend { display: flex; gap: 16px; margin-top: 4px; font-size: 12px; color: var(--fg-2); }
 .hero__spark .swatch { width: 10px; height: 10px; border-radius: 3px; display: inline-block; margin-right: 6px; vertical-align: -1px; }
 
 /* ========== Section navigation ========== */
+/* Frosted glass. The background stays ~85% opaque so that if Chrome ever drops
+   the backdrop-filter layer during a programmatic smooth-scroll (the old
+   black-flash bug), the worst case is a slightly-less-blurred dark bar — never
+   see-through-to-black. will-change:transform keeps it on a stable layer. */
 .section-nav {
   position: sticky; top: 53px; z-index: 50;
-  background: var(--bg-0);
+  background: color-mix(in oklab, var(--bg-0) 85%, transparent);
+  -webkit-backdrop-filter: blur(14px) saturate(140%);
+  backdrop-filter: blur(14px) saturate(140%);
   border-bottom: 1px solid var(--line-1);
+  will-change: transform;
 }
 .section-nav__inner {
   max-width: 1480px; margin: 0 auto;
@@ -306,6 +315,15 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
 .section-nav a.is-active { color: var(--fg-0); background: var(--bg-2); }
 .section-nav a.is-active .num { color: var(--accent); }
 
+/* ========== Bull / Bear signal pill badges ========== */
+.signal-badge {
+  display: inline-flex; align-items: center; gap: 6px;
+  font-size: 12px; font-weight: 700; letter-spacing: .04em; text-transform: uppercase;
+  padding: 5px 12px; border-radius: 999px; line-height: 1;
+}
+.signal-badge--bull { background: var(--positive); color: #02130E; box-shadow: 0 4px 14px -6px var(--positive); }
+.signal-badge--bear { background: var(--negative); color: #fff; box-shadow: 0 4px 14px -6px var(--negative); }
+
 /* ========== Featured deep-dive banner ========== */
 .deepdive-banner {
   display: flex; align-items: center; gap: 18px; flex-wrap: wrap;
@@ -319,7 +337,13 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
 .deepdive-banner__badge {
   font-size: 11px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase;
   color: #02130E; background: var(--accent); padding: 5px 11px; border-radius: 999px; white-space: nowrap;
+  animation: badge-glow 2.6s ease-in-out infinite;
 }
+@keyframes badge-glow {
+  0%, 100% { box-shadow: 0 0 0 0 color-mix(in oklab, var(--accent) 55%, transparent); }
+  50%      { box-shadow: 0 0 14px 2px color-mix(in oklab, var(--accent) 55%, transparent); }
+}
+@media (prefers-reduced-motion: reduce) { .deepdive-banner__badge { animation: none; } }
 .deepdive-banner__body { flex: 1; min-width: 240px; }
 .deepdive-banner__title { font-weight: 700; font-size: 16px; letter-spacing: -0.01em; color: var(--fg-0); }
 .deepdive-banner__sub { color: var(--fg-2); font-size: 13.5px; margin-top: 3px; line-height: 1.5; }
@@ -331,7 +355,16 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
   display: flex; align-items: end; justify-content: space-between; gap: 24px;
   margin-bottom: 28px;
 }
-.section__num { color: var(--fg-3); font-size: 12px; letter-spacing: 0.2em; font-weight: 600; }
+.section__num {
+  color: var(--fg-2); font-size: 13px; letter-spacing: 0.16em; font-weight: 700;
+  display: inline-flex; align-items: center; gap: 9px;
+}
+.section__num::before {
+  content: ''; width: 8px; height: 8px; border-radius: 50%;
+  background: var(--accent);
+  box-shadow: 0 0 0 4px var(--accent-soft);
+  flex: none;
+}
 .section__head h2 {
   margin: 6px 0 0; font-size: 30px; letter-spacing: -0.015em; font-weight: 600;
 }
@@ -347,13 +380,19 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
 .kpi {
   background: var(--bg-1);
   border: 1px solid var(--line-1);
+  border-left: 3px solid var(--line-2);   /* accent rail, recolored by tone below */
   border-radius: var(--r-lg);
   padding: 18px 18px 16px;
   position: relative;
   box-shadow: var(--shadow-card);
   transition: transform .25s var(--ease), box-shadow .25s var(--ease), border-color .25s;
 }
-.kpi:hover { transform: translateY(-2px); box-shadow: var(--shadow-hover); border-color: var(--line-2); }
+.kpi:hover { transform: translateY(-2px); box-shadow: var(--shadow-hover); }
+/* Meaning-tied left accent */
+.kpi--pos  { border-left-color: var(--positive); }
+.kpi--warn { border-left-color: var(--warning); }
+.kpi--neg  { border-left-color: var(--negative); }
+.kpi--info { border-left-color: var(--brand-violet); }
 .kpi__label { font-size: 11.5px; color: var(--fg-2); letter-spacing: 0.06em; text-transform: uppercase; font-weight: 600; }
 .kpi__value {
   margin-top: 10px;
@@ -368,7 +407,7 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
 .kpi__delta.up   { color: var(--positive); }
 .kpi__delta.down { color: var(--negative); }
 .kpi__spark {
-  position: absolute; right: 14px; top: 14px; width: 72px; height: 28px; opacity: 0.9;
+  position: absolute; right: 14px; top: 14px; width: 92px; height: 36px; opacity: 0.95;
 }
 
 /* ========== Cards ========== */
@@ -407,6 +446,19 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
 [data-chart-annual], [data-chart-liquidity] { min-height: 280px; }
 [data-chart-ps], [data-chart-mcap] { min-height: 260px; }
 [data-chart-uptime], [data-chart-graphite], [data-chart-bookings] { min-height: 240px; }
+/* Give chart cards more presence than table/text cards: a defined border +
+   subtle inset depth so the plot area reads as a distinct "instrument". */
+.card:has([data-chart-price]),
+.card:has([data-chart-revenue]), .card:has([data-chart-annual]),
+.card:has([data-chart-margin]), .card:has([data-chart-opincome]),
+.card:has([data-chart-liquidity]), .card:has([data-chart-capacity]),
+.card:has([data-chart-uptime]), .card:has([data-chart-graphite]),
+.card:has([data-chart-backlog]), .card:has([data-chart-bookings]),
+.card:has([data-chart-ps]), .card:has([data-chart-mcap]),
+.card:has([data-chart-bridge]) {
+  border-color: var(--line-2);
+  box-shadow: var(--shadow-card), inset 0 0 36px -16px rgba(0,0,0,0.45);
+}
 .chart-axis text { fill: var(--fg-3); font-size: 11px; font-family: var(--font-mono); }
 .chart-grid line { stroke: var(--grid); stroke-dasharray: 2 4; }
 .chart-baseline { stroke: var(--line-strong); stroke-dasharray: 4 4; }
@@ -453,10 +505,13 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
   font-feature-settings: var(--num-features);
 }
 .table th {
-  text-align: left; font-weight: 600; color: var(--fg-2);
-  font-size: 11.5px; letter-spacing: 0.06em; text-transform: uppercase;
-  padding: 12px 16px; border-bottom: 1px solid var(--line-1);
+  text-align: left; font-weight: 700; color: var(--fg-1);
+  font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase;
+  padding: 11px 16px; border-bottom: 1px solid var(--line-2);
+  background: var(--bg-2);
 }
+.table thead th:first-child { border-top-left-radius: 8px; }
+.table thead th:last-child  { border-top-right-radius: 8px; }
 .table td {
   padding: 14px 16px; border-bottom: 1px solid var(--line-1); color: var(--fg-1);
   vertical-align: middle;
