@@ -1321,20 +1321,30 @@
       // the lines sit at (dimension - S)/2 + k·S — NOT center + k·S. Snap the
       // pulse exactly onto a line. The 5px dot is centered on the 1px line by
       // offsetting -2px (dot half-width 2.5 minus line half-width 0.5).
+      //
+      // The radial mask only reveals the grid in the TOP-RIGHT, so confine
+      // pulses there: horizontal lines live in the top band and travel across
+      // the right band; vertical lines live in the right band and travel down
+      // the top band. (The mask still does the final edge fade.)
+      const pickLine = (base, lo, hi) => {
+        const kMin = Math.ceil((lo - base) / GRID);
+        const kMax = Math.floor((hi - base) / GRID);
+        if (kMax < kMin) return null;
+        return base + (kMin + Math.floor(Math.random() * (kMax - kMin + 1))) * GRID;
+      };
       if (horizontal) {
-        const base = (h - GRID) / 2;                 // first horizontal line
-        const kMin = Math.ceil((EDGE - base) / GRID);
-        const kMax = Math.floor((h - EDGE - base) / GRID);
-        const k = kMin + Math.floor(Math.random() * (kMax - kMin + 1));
-        dot.style.top = (base + k * GRID - 2) + 'px';
-        dot.style.setProperty('--travel', (w + 8) + 'px');
+        const y = pickLine((h - GRID) / 2, EDGE, h * 0.50);   // top band
+        if (y == null) return;
+        const startX = w * 0.46;                              // right band only
+        dot.style.top = (y - 2) + 'px';
+        dot.style.left = startX + 'px';
+        dot.style.setProperty('--travel', (w - startX + 6) + 'px');
       } else {
-        const base = (w - GRID) / 2;                 // first vertical line
-        const kMin = Math.ceil((EDGE - base) / GRID);
-        const kMax = Math.floor((w - EDGE - base) / GRID);
-        const k = kMin + Math.floor(Math.random() * (kMax - kMin + 1));
-        dot.style.left = (base + k * GRID - 2) + 'px';
-        dot.style.setProperty('--travel', (h + 8) + 'px');
+        const x = pickLine((w - GRID) / 2, w * 0.56, w - EDGE); // right band
+        if (x == null) return;
+        dot.style.left = (x - 2) + 'px';
+        dot.style.top = '0px';
+        dot.style.setProperty('--travel', (h * 0.58) + 'px');   // top band only
       }
       dot.addEventListener('animationend', () => dot.remove());
       layer.appendChild(dot);
