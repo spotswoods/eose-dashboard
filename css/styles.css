@@ -208,14 +208,26 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
   mask-image: radial-gradient(900px 500px at 70% 40%, black, transparent 70%);
 }
 .grid-pulse {
-  position: absolute; width: 6px; height: 6px; border-radius: 50%;
+  position: absolute; width: 5px; height: 5px; border-radius: 50%;
   background: var(--accent);
-  box-shadow: 0 0 7px 2px color-mix(in oklab, var(--accent) 70%, transparent),
+  box-shadow: 0 0 6px 2px color-mix(in oklab, var(--accent) 65%, transparent),
               0 0 2px 1px color-mix(in oklab, var(--accent) 90%, transparent);
   opacity: 0; will-change: transform, opacity;
 }
-.grid-pulse.is-h { left: -3px; animation: grid-pulse-h linear forwards; }
-.grid-pulse.is-v { top: -3px;  animation: grid-pulse-v linear forwards; }
+/* comet trail so the pulse reads as current running ALONG the line */
+.grid-pulse::before { content: ''; position: absolute; border-radius: 2px; opacity: .55; }
+.grid-pulse.is-h { left: -4px; animation: grid-pulse-h linear forwards; }
+.grid-pulse.is-v { top: -4px;  animation: grid-pulse-v linear forwards; }
+.grid-pulse.is-h::before {
+  right: 2px; top: 50%; transform: translateY(-50%);
+  width: 42px; height: 2px;
+  background: linear-gradient(to left, color-mix(in oklab, var(--accent) 80%, transparent), transparent);
+}
+.grid-pulse.is-v::before {
+  bottom: 2px; left: 50%; transform: translateX(-50%);
+  width: 2px; height: 42px;
+  background: linear-gradient(to top, color-mix(in oklab, var(--accent) 80%, transparent), transparent);
+}
 @keyframes grid-pulse-h {
   0%   { transform: translateX(0);              opacity: 0; }
   12%  { opacity: 1; }

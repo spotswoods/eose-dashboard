@@ -1317,21 +1317,24 @@
       dot.className = 'grid-pulse ' + (horizontal ? 'is-h' : 'is-v');
       const dur = (2.2 + Math.random() * 1.8).toFixed(2) + 's';   // 2.2–4.0s
       dot.style.animationDuration = dur;
-      // Grid lines are centered (background-position:center), so they sit at
-      // center ± k·56. Snap the pulse onto one of those lines.
-      const cx = w / 2, cy = h / 2;
+      // The CSS grid uses background-position:center, so with background-size S
+      // the lines sit at (dimension - S)/2 + k·S — NOT center + k·S. Snap the
+      // pulse exactly onto a line. The 5px dot is centered on the 1px line by
+      // offsetting -2px (dot half-width 2.5 minus line half-width 0.5).
       if (horizontal) {
-        const kMin = Math.ceil((EDGE - cy) / GRID);
-        const kMax = Math.floor((h - EDGE - cy) / GRID);
+        const base = (h - GRID) / 2;                 // first horizontal line
+        const kMin = Math.ceil((EDGE - base) / GRID);
+        const kMax = Math.floor((h - EDGE - base) / GRID);
         const k = kMin + Math.floor(Math.random() * (kMax - kMin + 1));
-        dot.style.top = (cy + k * GRID - 3) + 'px';
-        dot.style.setProperty('--travel', w + 'px');
+        dot.style.top = (base + k * GRID - 2) + 'px';
+        dot.style.setProperty('--travel', (w + 8) + 'px');
       } else {
-        const kMin = Math.ceil((EDGE - cx) / GRID);
-        const kMax = Math.floor((w - EDGE - cx) / GRID);
+        const base = (w - GRID) / 2;                 // first vertical line
+        const kMin = Math.ceil((EDGE - base) / GRID);
+        const kMax = Math.floor((w - EDGE - base) / GRID);
         const k = kMin + Math.floor(Math.random() * (kMax - kMin + 1));
-        dot.style.left = (cx + k * GRID - 3) + 'px';
-        dot.style.setProperty('--travel', h + 'px');
+        dot.style.left = (base + k * GRID - 2) + 'px';
+        dot.style.setProperty('--travel', (h + 8) + 'px');
       }
       dot.addEventListener('animationend', () => dot.remove());
       layer.appendChild(dot);
