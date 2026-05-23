@@ -115,7 +115,9 @@ html, body { margin: 0; padding: 0; }
 /* Hard guard against horizontal page bleed on small screens. Any element that
    tries to exceed the viewport scrolls within its own container instead of
    pushing the whole page wide. */
-html, body { overflow-x: hidden; max-width: 100%; }
+/* overflow-x: clip (not hidden) — prevents horizontal bleed WITHOUT creating a
+   scroll container, which would break position:sticky on the nav bars. */
+html, body { overflow-x: clip; max-width: 100%; }
 body {
   font-family: var(--font-sans);
   background: var(--bg-0);
@@ -136,15 +138,15 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
 .shell { max-width: 1480px; margin: 0 auto; padding: 0 32px 96px; }
 
 /* ========== Top ticker bar ========== */
-/* Frosted glass, kept ~90% opaque + will-change:transform so the old
-   smooth-scroll black-flash can't recur (see .section-nav note). */
+/* Frosted glass kept ~92% opaque: if Chrome ever drops the backdrop-filter
+   layer mid-scroll, the worst case is a near-solid dark bar, never black.
+   (No will-change here — it breaks position:sticky.) */
 .ticker {
   position: sticky; top: 0; z-index: 60;
-  background: color-mix(in oklab, var(--bg-0) 90%, transparent);
+  background: color-mix(in oklab, var(--bg-0) 92%, transparent);
   -webkit-backdrop-filter: blur(14px) saturate(140%);
   backdrop-filter: blur(14px) saturate(140%);
   border-bottom: 1px solid var(--line-1);
-  will-change: transform;
 }
 .ticker__inner {
   max-width: 1480px; margin: 0 auto;
@@ -286,17 +288,15 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
 .hero__spark .swatch { width: 10px; height: 10px; border-radius: 3px; display: inline-block; margin-right: 6px; vertical-align: -1px; }
 
 /* ========== Section navigation ========== */
-/* Frosted glass. The background stays ~85% opaque so that if Chrome ever drops
-   the backdrop-filter layer during a programmatic smooth-scroll (the old
-   black-flash bug), the worst case is a slightly-less-blurred dark bar — never
-   see-through-to-black. will-change:transform keeps it on a stable layer. */
+/* Frosted glass kept ~92% opaque so a dropped backdrop-filter layer degrades
+   to a near-solid dark bar, never see-through-to-black.
+   (No will-change — it breaks position:sticky in Chrome.) */
 .section-nav {
   position: sticky; top: 53px; z-index: 50;
-  background: color-mix(in oklab, var(--bg-0) 85%, transparent);
+  background: color-mix(in oklab, var(--bg-0) 92%, transparent);
   -webkit-backdrop-filter: blur(14px) saturate(140%);
   backdrop-filter: blur(14px) saturate(140%);
   border-bottom: 1px solid var(--line-1);
-  will-change: transform;
 }
 .section-nav__inner {
   max-width: 1480px; margin: 0 auto;
