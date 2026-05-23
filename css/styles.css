@@ -306,6 +306,25 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
 .section-nav a.is-active { color: var(--fg-0); background: var(--bg-2); }
 .section-nav a.is-active .num { color: var(--accent); }
 
+/* ========== Featured deep-dive banner ========== */
+.deepdive-banner {
+  display: flex; align-items: center; gap: 18px; flex-wrap: wrap;
+  margin: 24px 0 4px; padding: 18px 22px;
+  border: 1px solid var(--accent-line); border-left: 3px solid var(--accent);
+  border-radius: var(--r-lg);
+  background: linear-gradient(90deg, var(--accent-soft), transparent 72%);
+  transition: transform .2s var(--ease), box-shadow .2s var(--ease), border-color .2s;
+}
+.deepdive-banner:hover { transform: translateY(-2px); box-shadow: var(--shadow-hover); border-color: var(--accent); }
+.deepdive-banner__badge {
+  font-size: 11px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase;
+  color: #02130E; background: var(--accent); padding: 5px 11px; border-radius: 999px; white-space: nowrap;
+}
+.deepdive-banner__body { flex: 1; min-width: 240px; }
+.deepdive-banner__title { font-weight: 700; font-size: 16px; letter-spacing: -0.01em; color: var(--fg-0); }
+.deepdive-banner__sub { color: var(--fg-2); font-size: 13.5px; margin-top: 3px; line-height: 1.5; }
+.deepdive-banner__cta { color: var(--accent); font-weight: 600; font-size: 14.5px; white-space: nowrap; }
+
 /* ========== Section header ========== */
 .section { padding-top: 88px; }
 .section__head {

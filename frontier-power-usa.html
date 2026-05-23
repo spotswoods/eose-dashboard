@@ -1,0 +1,458 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <title>Frontier Power USA Explained — EOS Energy (EOSE) Deep Dive</title>
+  <meta name="description" content="A retail investor's plain-English guide to Frontier Power USA — the EOS Energy + Cerberus joint venture. What it is, how the money works, the Q1 2026 financials, the rights offering, and the bull vs bear case. Not investment advice." />
+  <meta name="author" content="spotswoods (independent investor research)" />
+  <meta name="robots" content="index, follow, max-image-preview:large" />
+  <link rel="canonical" href="https://eosesource.com/frontier-power-usa.html" />
+  <meta name="theme-color" content="#02130E" />
+  <link rel="icon" type="image/png" href="assets/eose-logo.png" />
+
+  <meta property="og:type" content="article" />
+  <meta property="og:site_name" content="EOSE Investor Dashboard" />
+  <meta property="og:title" content="Frontier Power USA Explained — EOS Energy (EOSE) Deep Dive" />
+  <meta property="og:description" content="A retail investor's plain-English guide to the EOS Energy + Cerberus joint venture: what it is, how the money works, financials, the rights offering, and the bull vs bear case." />
+  <meta property="og:url" content="https://eosesource.com/frontier-power-usa.html" />
+  <meta property="og:image" content="https://eosesource.com/assets/eose-logo.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Frontier Power USA Explained — EOS Energy (EOSE) Deep Dive" />
+  <meta name="twitter:description" content="What just happened at EOS Energy, explained for retail investors: the Cerberus JV, the capital stack, the financials, and the risks." />
+  <meta name="twitter:image" content="https://eosesource.com/assets/eose-logo.png" />
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "AnalysisNewsArticle",
+        "@id": "https://eosesource.com/frontier-power-usa.html#article",
+        "url": "https://eosesource.com/frontier-power-usa.html",
+        "headline": "Frontier Power USA Explained — A Retail Investor's Guide to What Just Happened at EOS Energy",
+        "description": "Plain-English explainer of Frontier Power USA, the EOS Energy (NASDAQ: EOSE) and Cerberus Capital joint venture announced May 13, 2026.",
+        "datePublished": "2026-05-23T00:00:00Z",
+        "dateModified": "2026-05-23T00:00:00Z",
+        "inLanguage": "en-US",
+        "image": "https://eosesource.com/assets/eose-logo.png",
+        "author": { "@type": "Person", "name": "spotswoods", "url": "https://github.com/spotswoods" },
+        "publisher": { "@type": "Organization", "name": "EOSE Investor Dashboard", "url": "https://eosesource.com/", "logo": { "@type": "ImageObject", "url": "https://eosesource.com/assets/eose-logo.png" } },
+        "about": { "@type": "Corporation", "name": "Eos Energy Enterprises, Inc.", "tickerSymbol": "EOSE", "exchange": "NASDAQ", "url": "https://www.eose.com/" }
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "EOSE Investor Dashboard", "item": "https://eosesource.com/" },
+          { "@type": "ListItem", "position": 2, "name": "Frontier Power USA Deep Dive", "item": "https://eosesource.com/frontier-power-usa.html" }
+        ]
+      }
+    ]
+  }
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap" />
+  <link rel="stylesheet" href="css/styles.css" />
+
+  <style>
+    /* ===== Deep-dive page-specific styles (extends css/styles.css) ===== */
+    .dd-top { position: sticky; top: 0; z-index: 60; background: var(--bg-0); border-bottom: 1px solid var(--line-1); }
+    .dd-top__in { max-width: 920px; margin: 0 auto; padding: 12px 24px; display: flex; align-items: center; justify-content: space-between; gap: 16px; }
+    .dd-back { display: inline-flex; align-items: center; gap: 8px; font-size: 13.5px; color: var(--fg-1); font-weight: 600; }
+    .dd-back:hover { color: var(--accent); }
+    .dd-top__tag { font-size: 12px; color: var(--fg-3); font-family: var(--font-mono); }
+
+    .dd { max-width: 920px; margin: 0 auto; padding: 0 24px 96px; }
+    .dd-hero { padding: 48px 0 8px; border-bottom: 1px solid var(--line-1); margin-bottom: 8px; }
+    .dd-eyebrow { color: var(--accent); font-weight: 700; letter-spacing: .14em; text-transform: uppercase; font-size: 12px; }
+    .dd-hero h1 { font-size: 40px; line-height: 1.08; letter-spacing: -0.02em; margin: 14px 0 6px; font-weight: 700; }
+    .dd-hero .sub { font-size: 18px; color: var(--fg-1); font-weight: 500; }
+    .dd-meta { color: var(--fg-3); font-size: 13px; margin-top: 14px; font-family: var(--font-mono); }
+
+    .callout { border-left: 3px solid var(--accent); background: var(--accent-soft); padding: 18px 20px; border-radius: 12px; margin: 22px 0; font-size: 15.5px; line-height: 1.6; }
+    .callout b, .callout strong { color: var(--fg-0); }
+    .callout--warn { border-color: var(--negative); background: var(--negative-soft); }
+    .callout--warn .lead { color: var(--negative); font-weight: 700; }
+    .callout .lead { display: block; color: var(--accent); font-weight: 700; font-size: 12px; letter-spacing: .08em; text-transform: uppercase; margin-bottom: 6px; }
+
+    .dd-sec { padding-top: 52px; }
+    .dd-sec__num { color: var(--accent); font-family: var(--font-mono); font-size: 12.5px; letter-spacing: .08em; font-weight: 600; }
+    .dd-sec h2 { font-size: 26px; letter-spacing: -0.015em; margin: 6px 0 4px; font-weight: 600; }
+    .dd-sec h3 { font-size: 17px; margin: 26px 0 8px; font-weight: 600; color: var(--fg-0); }
+    .dd p { color: var(--fg-1); font-size: 15.5px; line-height: 1.65; margin: 12px 0; }
+    .dd a.inline { color: var(--accent); text-decoration: underline; text-underline-offset: 2px; }
+    .dd ul.bullets { margin: 12px 0; padding-left: 22px; }
+    .dd ul.bullets li { color: var(--fg-1); font-size: 15px; line-height: 1.7; }
+
+    /* Comparison table */
+    .compare { width: 100%; border-collapse: collapse; margin: 18px 0; font-size: 14.5px; }
+    .compare th, .compare td { padding: 12px 14px; border-bottom: 1px solid var(--line-1); text-align: left; }
+    .compare thead th { font-size: 12px; text-transform: uppercase; letter-spacing: .05em; color: var(--fg-2); }
+    .compare th:first-child { color: var(--fg-2); font-weight: 500; }
+    .compare .col-eos { background: var(--accent-soft); color: var(--fg-0); font-weight: 600; }
+    .compare thead .col-eos { color: var(--accent); }
+    .compare .col-li { color: var(--fg-2); }
+
+    /* Timeline */
+    .timeline { position: relative; margin: 22px 0; padding-left: 28px; }
+    .timeline::before { content: ''; position: absolute; left: 7px; top: 4px; bottom: 4px; width: 2px; background: var(--line-2); }
+    .tl-item { position: relative; padding: 0 0 20px 0; }
+    .tl-item::before { content: ''; position: absolute; left: -28px; top: 3px; width: 16px; height: 16px; border-radius: 50%; background: var(--accent); box-shadow: 0 0 0 4px var(--bg-0); }
+    .tl-date { font-family: var(--font-mono); font-size: 12.5px; color: var(--accent); font-weight: 600; }
+    .tl-body { color: var(--fg-1); font-size: 14.5px; margin-top: 2px; }
+    .tl-body b { color: var(--fg-0); }
+
+    /* Capital-stack diagram */
+    .stack { border: 1px solid var(--line-2); border-radius: var(--r-lg); overflow: hidden; margin: 22px 0; background: var(--bg-1); }
+    .stack__top { background: linear-gradient(90deg, var(--accent-soft), transparent); padding: 16px 20px; font-weight: 700; font-size: 16px; border-bottom: 1px solid var(--line-1); letter-spacing: -0.01em; }
+    .stack__top small { display: block; font-weight: 500; font-size: 12.5px; color: var(--fg-2); letter-spacing: 0; margin-top: 2px; }
+    .pillars { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: var(--line-1); }
+    .pillar { background: var(--bg-1); padding: 18px; }
+    .pillar__icon { font-size: 24px; }
+    .pillar__name { font-weight: 700; font-size: 15px; margin-top: 8px; }
+    .pillar__amt { font-size: 20px; font-weight: 700; margin-top: 6px; font-variant-numeric: tabular-nums; }
+    .pillar--eos .pillar__amt { color: var(--accent); }
+    .pillar--cerberus .pillar__amt { color: var(--blue, #58a6ff); }
+    .pillar--ariel .pillar__amt { color: var(--warning); }
+    .pillar__role { font-size: 12.5px; color: var(--fg-3); margin-top: 2px; }
+    .pillar ul { margin: 12px 0 0; padding-left: 18px; }
+    .pillar li { font-size: 13px; color: var(--fg-1); line-height: 1.6; }
+    .stack__debt { padding: 14px 20px; border-top: 1px solid var(--line-1); background: var(--bg-2); font-size: 13.5px; color: var(--fg-1); }
+    .stack__target { padding: 14px 20px; border-top: 1px solid var(--line-1); font-size: 13.5px; color: var(--fg-2); }
+    .stack__target b { color: var(--fg-0); }
+
+    /* Stat cards */
+    .stats { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; margin: 20px 0; }
+    .stat { background: var(--bg-1); border: 1px solid var(--line-1); border-radius: var(--r-md); padding: 16px 18px; }
+    .stat__label { font-size: 12px; color: var(--fg-2); text-transform: uppercase; letter-spacing: .05em; }
+    .stat__value { font-size: 24px; font-weight: 700; margin-top: 6px; font-variant-numeric: tabular-nums; }
+    .stat__value.pos { color: var(--positive); }
+    .stat__value.neg { color: var(--negative); }
+    .stat__note { font-size: 13px; color: var(--fg-2); margin-top: 6px; line-height: 1.5; }
+
+    /* Bull/Bear */
+    .bb { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin: 20px 0; }
+    .bb__col { border: 1px solid var(--line-1); border-radius: var(--r-lg); padding: 18px; }
+    .bb__col.bull { border-left: 3px solid var(--positive); }
+    .bb__col.bear { border-left: 3px solid var(--negative); }
+    .bb__h { font-weight: 700; font-size: 15px; margin-bottom: 10px; }
+    .bb__col.bull .bb__h { color: var(--positive); }
+    .bb__col.bear .bb__h { color: var(--negative); }
+    .bb__col ol { margin: 0; padding-left: 20px; }
+    .bb__col li { font-size: 14px; line-height: 1.6; color: var(--fg-1); margin-bottom: 12px; }
+    .bb__col li b { color: var(--fg-0); }
+
+    /* Key numbers + general table */
+    .keytable { width: 100%; border-collapse: collapse; font-size: 14.5px; margin: 16px 0; }
+    .keytable td { padding: 11px 14px; border-bottom: 1px solid var(--line-1); }
+    .keytable td:first-child { color: var(--fg-2); }
+    .keytable td:last-child { text-align: right; font-weight: 600; font-variant-numeric: tabular-nums; }
+
+    .dd-foot { margin-top: 56px; padding-top: 24px; border-top: 1px solid var(--line-1); color: var(--fg-3); font-size: 12.5px; line-height: 1.6; }
+    .dd-foot a { color: var(--accent); }
+    .dd-sources { margin-top: 14px; }
+    .dd-sources li { margin-bottom: 6px; }
+
+    @media (max-width: 720px) {
+      .dd-hero h1 { font-size: 30px; }
+      .pillars { grid-template-columns: 1fr; }
+      .stats { grid-template-columns: 1fr; }
+      .bb { grid-template-columns: 1fr; }
+      .compare { display: block; overflow-x: auto; white-space: nowrap; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Sticky top bar -->
+  <div class="dd-top">
+    <div class="dd-top__in">
+      <a class="dd-back" href="index.html">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+        Back to the EOSE dashboard
+      </a>
+      <span class="dd-top__tag">DEEP DIVE · NASDAQ: EOSE</span>
+    </div>
+  </div>
+
+  <main class="dd">
+
+    <!-- Hero -->
+    <div class="dd-hero">
+      <div class="dd-eyebrow">EOS Energy &amp; Frontier Power USA</div>
+      <h1>A Retail Investor's Guide to What Just Happened</h1>
+      <div class="sub">EOS Energy just stood up a new company — Frontier Power USA — to turn its batteries into power plants, with hundreds of millions of dollars behind it.</div>
+      <div class="dd-meta">Ticker: EOSE (NASDAQ) · Report date: May 23, 2026 · Independent research, not investment advice</div>
+    </div>
+
+    <div class="callout">
+      <span class="lead">The short version</span>
+      EOS Energy just announced a major new company called <b>Frontier Power USA</b> — a joint venture with Wall Street giant <b>Cerberus Capital</b> — designed to turn EOS's battery technology into actual power plants, with hundreds of millions of dollars behind it. This could be a serious inflection point. But there are also real risks every shareholder needs to understand.
+    </div>
+
+    <!-- Part 1 -->
+    <section class="dd-sec">
+      <div class="dd-sec__num">PART 1</div>
+      <h2>Who is EOS Energy?</h2>
+      <p>EOS Energy Enterprises (NASDAQ: EOSE) is an American company that makes a specific kind of battery — not the lithium-ion type you find in your phone or a Tesla, but a <b>zinc-based long-duration energy storage (LDES) battery</b> called the <b>Z3</b>, built around zinc-bromide chemistry.</p>
+
+      <h3>What makes their battery different?</h3>
+      <p>Think of a lithium-ion battery like a sprinter — great at delivering a short burst of power (1–4 hours). EOS's Z3 is more like a marathon runner — designed to store and release energy for <b>4 to 16+ hours</b>, which is what the grid actually needs when the sun goes down or the wind stops blowing.</p>
+
+      <table class="compare">
+        <thead>
+          <tr><th>Feature</th><th class="col-eos">EOS Z3 (Zinc-Bromide)</th><th class="col-li">Typical Lithium-Ion</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Duration</td><td class="col-eos">4–16+ hours</td><td class="col-li">2–4 hours</td></tr>
+          <tr><td>Flammability</td><td class="col-eos">Non-flammable</td><td class="col-li">Flammable (fire risk)</td></tr>
+          <tr><td>Depth of discharge</td><td class="col-eos">100%</td><td class="col-li">~80%</td></tr>
+          <tr><td>Lifespan</td><td class="col-eos">~25 years / 6,000 cycles</td><td class="col-li">~10–15 years</td></tr>
+          <tr><td>Rare earth materials</td><td class="col-eos">None</td><td class="col-li">Yes (cobalt, lithium)</td></tr>
+          <tr><td>Made in USA?</td><td class="col-eos">Yes (Pittsburgh, PA)</td><td class="col-li">Mostly imported</td></tr>
+        </tbody>
+      </table>
+
+      <p>The "non-flammable" part is a big deal. Lithium battery fires at grid-scale installations have caused headlines and regulatory headaches. EOS's zinc chemistry simply doesn't catch fire — a meaningful advantage as utilities, data centers, and regulators become more risk-conscious.</p>
+      <p>EOS manufactures its batteries at a facility in Thorn Hill, Pennsylvania, and is bringing a second automated production line online (expected by end of Q2 2026).</p>
+
+      <h3>The software layer</h3>
+      <p>EOS also makes proprietary software called <b>DawnOS™</b>, which manages how their batteries operate on the grid — optimizing performance, tracking efficiency, and integrating with utility systems. Hardware alone isn't enough; software is what makes batteries financially valuable in the real world. A newer product, <b>Indensity™</b>, is a higher energy-density architecture targeting markets like AI data centers that need power in tight spaces.</p>
+    </section>
+
+    <!-- Part 2 -->
+    <section class="dd-sec">
+      <div class="dd-sec__num">PART 2</div>
+      <h2>The Cerberus Relationship — How We Got Here</h2>
+      <p>To understand Frontier Power USA, you need to understand how Cerberus Capital Management became EOS's most important financial partner.</p>
+
+      <h3>Who is Cerberus?</h3>
+      <p>Cerberus Capital Management is one of America's largest alternative investment firms, managing approximately <b>$70 billion</b> in assets. They specialize in complex, often distressed situations — buying businesses or assets that need capital and operational muscle, fixing them, and generating returns. They've owned Chrysler, major banks, and defense contractors. They are not a passive investor: when Cerberus shows up, they get control and they get involved.</p>
+
+      <h3>The original 2024 deal</h3>
+      <p>In <b>June 2024</b>, Cerberus made a major strategic bet on EOS — a deal worth up to <b>$315.5 million</b>, structured as:</p>
+      <ul class="bullets">
+        <li><b>Initial funding:</b> $75 million at closing (June 21, 2024).</li>
+        <li><b>Delayed Draw Term Loan (DDTL):</b> an additional $210.5 million EOS could draw <i>only if it hit specific operational milestones</i> — production output, manufacturing efficiency, delivery numbers. Cerberus's way of saying: "We'll fund you, but you have to prove you can execute."</li>
+        <li><b>A $105 million revolver:</b> an additional credit line at Cerberus's discretion.</li>
+        <li><b>What Cerberus got:</b> penny warrants (very cheap options) and non-voting convertible preferred stock that could give them up to <b>49% of EOS's equity</b> fully diluted — the right to become EOS's largest shareholder.</li>
+      </ul>
+
+      <h3>The milestone-by-milestone funding</h3>
+      <p>EOS actually hit its targets:</p>
+      <div class="timeline">
+        <div class="tl-item"><div class="tl-date">August 2024</div><div class="tl-body">First set of four milestones achieved → drew an additional <b>$30 million</b>.</div></div>
+        <div class="tl-item"><div class="tl-date">October 2024</div><div class="tl-body">Second set of milestones hit → drew an additional <b>$65 million</b>.</div></div>
+        <div class="tl-item"><div class="tl-date">January 2025</div><div class="tl-body">Final tranche drawn → the full <b>$210.5 million DDTL</b> completely funded.</div></div>
+      </div>
+      <p>Cerberus didn't just write a check — they made EOS earn it. And EOS earned it. That pattern of milestone-based execution is part of why Cerberus is now ready to partner more deeply.</p>
+    </section>
+
+    <!-- Part 3 -->
+    <section class="dd-sec">
+      <div class="dd-sec__num">PART 3</div>
+      <h2>What Is Frontier Power USA?</h2>
+      <p>Announced on <b>May 13, 2026</b>, Frontier Power USA is a brand-new, standalone company — a joint venture between EOS and Cerberus — designed to do something neither company has done before.</p>
+
+      <h3>The simple explanation</h3>
+      <p>Right now, when a utility or data center wants an EOS battery system, they have to arrange the financing themselves. That's slow and complicated, and it's been one of the biggest bottlenecks for EOS's growth. Frontier Power USA fixes that by combining three things every storage project needs:</p>
+      <ul class="bullets">
+        <li><b>The technology</b> — EOS's Z3 battery system and software</li>
+        <li><b>The money</b> — Cerberus's institutional capital and financing expertise</li>
+        <li><b>The insurance</b> — Ariel Green's performance guarantee, which makes lenders comfortable</li>
+      </ul>
+      <p>Instead of just <i>selling</i> batteries, Frontier Power USA will <b>build, own, and operate</b> battery storage projects — becoming an <b>Independent Power Producer (IPP)</b>. Think of the difference between selling someone lumber versus building them a house and collecting rent. EOS moves from equipment vendor to infrastructure owner.</p>
+
+      <h3>How the money works — the capital stack</h3>
+      <div class="stack">
+        <div class="stack__top">FRONTIER POWER USA <small>Independent Power Producer · builds, owns &amp; operates LDES projects</small></div>
+        <div class="pillars">
+          <div class="pillar pillar--eos">
+            <div class="pillar__icon">🔋</div>
+            <div class="pillar__name">EOS Energy</div>
+            <div class="pillar__amt">~$150M</div>
+            <div class="pillar__role">equity via rights offering · minority stake</div>
+            <ul><li>Z3 battery systems</li><li>DawnOS™ software</li><li>2 GWh supply commitment</li></ul>
+          </div>
+          <div class="pillar pillar--cerberus">
+            <div class="pillar__icon">🏦</div>
+            <div class="pillar__name">Cerberus Capital</div>
+            <div class="pillar__amt">$100M</div>
+            <div class="pillar__role">equity · controlling stake</div>
+            <ul><li>Institutional capital</li><li>Operations expertise</li><li>EOS lockup extended → YE 2026</li></ul>
+          </div>
+          <div class="pillar pillar--ariel">
+            <div class="pillar__icon">🛡️</div>
+            <div class="pillar__name">Ariel Green</div>
+            <div class="pillar__amt">~$1.5B</div>
+            <div class="pillar__role">Technology Performance Insurance</div>
+            <ul><li>15-yr non-cancellable policy</li><li>Makes Z3 output financeable</li><li>Lloyd's-backed (A+ / AA-)</li></ul>
+          </div>
+        </div>
+        <div class="stack__debt"><b>+ Project-level debt</b> — investment-grade bonds &amp; commercial bank loans, unlocked because the insurance removes "what if the batteries underperform?" risk for lenders.</div>
+        <div class="stack__target"><b>Target:</b> gigawatt-scale LDES projects across <b>AI data centers</b>, <b>utilities</b>, and <b>industrial</b> sites. Total equity base ~$250M; the insurance + debt layers fund the rest <i>off EOS's balance sheet</i>.</div>
+      </div>
+
+      <h3>Why the insurance is the clever part</h3>
+      <p>When a bank decides whether to lend money to build a battery project, the biggest question is: <i>"What if the batteries don't work as advertised?"</i> Ariel Green's 15-year, non-cancellable Technology Performance Insurance (TPI) — covering up to ~$1.5 billion of capacity — removes that question. With the TPI in place, lenders can provide <b>investment-grade debt</b>: cheaper, longer-term financing that wasn't available before.</p>
+
+      <h3>What Frontier will build</h3>
+      <p>Frontier Power USA has already signed a <b>2 GWh firm capacity reservation agreement</b> with EOS — committing to buy and deploy enough batteries to power roughly 200,000 homes for a day. This is a binding commercial agreement that goes directly into EOS's backlog. The pipeline Frontier can draw from is already in the multi-gigawatt range.</p>
+    </section>
+
+    <!-- Part 4 -->
+    <section class="dd-sec">
+      <div class="dd-sec__num">PART 4</div>
+      <h2>The Financials — What Do the Numbers Actually Say?</h2>
+      <p>Q1 2026 results were announced May 13, 2026.</p>
+
+      <div class="stats">
+        <div class="stat"><div class="stat__label">Q1 2026 Revenue</div><div class="stat__value pos">$57.0M</div><div class="stat__note">Up 445% from $10.5M a year ago. The last two quarters already surpassed all of FY2025 — the manufacturing ramp is working.</div></div>
+        <div class="stat"><div class="stat__label">Gross margin</div><div class="stat__value neg">−78%</div><div class="stat__note">Still selling batteries at a loss — but up from −235% a year ago. A 157-point improvement in one year; trajectory is sharply positive.</div></div>
+        <div class="stat"><div class="stat__label">Adjusted EBITDA</div><div class="stat__value neg">−$68M</div><div class="stat__note">The cleaner picture of cash burned to operate &amp; grow. Improved 294 points YoY as the business scales.</div></div>
+        <div class="stat"><div class="stat__label">Cash on hand</div><div class="stat__value">$472.4M</div><div class="stat__note">Down from $624M; ~$152M spent in Q1. Roughly 3 quarters of runway before the rights-offering proceeds.</div></div>
+      </div>
+
+      <div class="callout callout--warn">
+        <span class="lead">⚠ Don't be fooled by the "$508.9M net income" headline</span>
+        That number is <b>almost entirely non-cash</b>. It comes from mark-to-market accounting on Cerberus's warrants and derivatives when EOS's stock moved during the quarter. It is a paper gain, <b>not cash in the bank</b>. The company is not generating $508M in real profit.
+      </div>
+
+      <h3>Balance sheet snapshot (March 31, 2026)</h3>
+      <table class="keytable">
+        <tbody>
+          <tr><td>Cash &amp; equivalents</td><td>$410.7M</td></tr>
+          <tr><td>Total assets</td><td>$799.3M</td></tr>
+          <tr><td>Total liabilities</td><td>$1,085.1M</td></tr>
+          <tr><td>Preferred stock (Cerberus)</td><td>$582.7M</td></tr>
+          <tr><td>Total stockholders' deficit</td><td>−$868.4M</td></tr>
+        </tbody>
+      </table>
+      <p>The company carries more liabilities than assets — a stockholders' deficit — largely because of how Cerberus's preferred stock sits on the balance sheet. Not unusual for a growth company in an intense capital-deployment phase, but it is a risk factor.</p>
+
+      <h3>Guidance &amp; pipeline</h3>
+      <ul class="bullets">
+        <li><b>FY2026 guidance:</b> $300–400M revenue. With Q1 at $57M, hitting even the low end needs significant back-half acceleration — the second battery line is central to that.</li>
+        <li><b>Backlog:</b> $644.6M (2.6 GWh of committed orders).</li>
+        <li><b>Opportunity pipeline:</b> $24.3B (up 56% YoY) — projects in active discussion or with submitted proposals.</li>
+        <li><b>Discharged-energy milestone:</b> deployed systems have surpassed <b>6 GWh</b> of discharged energy, validating real-world performance.</li>
+      </ul>
+    </section>
+
+    <!-- Part 5 -->
+    <section class="dd-sec">
+      <div class="dd-sec__num">PART 5</div>
+      <h2>The Rights Offering — What Does This Mean for You?</h2>
+      <p>To fund its ~$150 million contribution to Frontier Power USA, EOS plans to launch a <b>rights offering</b>.</p>
+
+      <h3>What is a rights offering?</h3>
+      <p>It gives <i>existing shareholders</i> the chance to buy new shares — at a discounted price — before the company sells them to outside investors. The key word is "pro rata": if you own 1% of EOS today, you receive the right to buy 1% of the new shares.</p>
+
+      <h3>Why it's shareholder-friendly (in theory)</h3>
+      <p>Most dilutive raises sell new shares straight to institutions, diluting retail holders without a chance to participate. A rights offering flips that — <i>you</i> get first dibs at the discount. If you don't want to buy, the rights are expected to be transferable, so you can sell them on the open market.</p>
+
+      <h3>The dilution reality</h3>
+      <p>There is still dilution. EOS will issue ~$150M of new shares, and Cerberus is receiving warrants. Shareholders have already been diluted significantly: share count grew roughly <b>49%</b> over the past year — from ~225 million basic shares in Q1 2025 to ~340 million by Q1 2026.</p>
+
+      <h3>The deal is announced, not closed</h3>
+      <p>Frontier Power USA and the rights offering still require:</p>
+      <ul class="bullets">
+        <li>A shareholder vote to increase authorized shares</li>
+        <li>Department of Energy approval</li>
+        <li>Negotiation and signing of final definitive agreements</li>
+        <li>Certain other third-party consents</li>
+      </ul>
+      <p>A binding term sheet is signed, but the deal is <b>not done</b>. There is real execution risk.</p>
+    </section>
+
+    <!-- Part 6 + 7: Bull / Bear -->
+    <section class="dd-sec">
+      <div class="dd-sec__num">PART 6 &amp; 7</div>
+      <h2>Why This Matters — Bull Case vs Bear Case</h2>
+      <div class="bb">
+        <div class="bb__col bull">
+          <div class="bb__h">▲ The Bull Case</div>
+          <ol>
+            <li><b>Vendor → owner.</b> Selling a battery is a one-time sale; owning the project generates years of recurring cash flow. Frontier gives EOS a path to becoming an infrastructure company with stable earnings.</li>
+            <li><b>Cerberus is doubling down.</b> They could have started selling by year-end. Instead they extended the lockup through 2026 <i>and</i> added $100M. For a returns-driven firm, that's a real signal.</li>
+            <li><b>The insurance unlocks institutional capital.</b> The $1.5B TPI solves project-finance's hardest problem — underwriting battery-tech risk — opening investment-grade debt that wasn't available before.</li>
+            <li><b>Powerful tailwinds.</b> AI data centers are driving record electricity demand; grids increasingly require long-duration storage; domestic manufacturing is favored by policy. EOS's pipeline alone is $24.3B.</li>
+            <li><b>A proven playbook.</b> The structure mirrors aircraft-leasing vehicles (GECC, ILFC) that manufacturers used to accelerate adoption — applied to energy storage.</li>
+          </ol>
+        </div>
+        <div class="bb__col bear">
+          <div class="bb__h">▼ The Bear Case</div>
+          <ol>
+            <li><b>Not yet profitable.</b> ~$68M adjusted-EBITDA burn per quarter. Growth is real, but the gap between cost and price must close to become self-sustaining.</li>
+            <li><b>Margins deeply negative.</b> At −78%, EOS sells batteries at a loss. It needs the second (and more) production lines to reach the scale economics that turn margins positive.</li>
+            <li><b>Frontier isn't closed.</b> The $100M, the $150M rights offering, DOE approval — all conditional. Complex deals can be restructured or fall apart.</li>
+            <li><b>Cerberus holds control.</b> Cerberus gets controlling equity in Frontier. EOS shareholders are two levels removed from the actual assets and cash flows. If interests diverge, Cerberus controls the outcome.</li>
+            <li><b>Dilution is ongoing.</b> Rights offerings, warrants, preferred-to-common conversions — non-participating holders keep getting diluted.</li>
+            <li><b>The "net income" is misleading.</b> The $508M headline is non-cash mark-to-market, not real profit. Buying on that number is a mistake.</li>
+            <li><b>Cash-burn clock.</b> At ~$120M/quarter operating burn, $472M is ~4 quarters of runway. The rights offering extends it, but the pipeline must convert to revenue at scale.</li>
+          </ol>
+        </div>
+      </div>
+    </section>
+
+    <!-- Part 9: Bottom line -->
+    <section class="dd-sec">
+      <div class="dd-sec__num">PART 8</div>
+      <h2>The Bottom Line — What Should a Retail Investor Take Away?</h2>
+      <p><b>EOS Energy is at a genuine inflection point.</b> Revenue is growing explosively (+445% YoY), the technology works (6 GWh discharged and counting), manufacturing is scaling, and they've announced a structure that could transform them from a battery company into an energy-infrastructure company.</p>
+      <p><b>Frontier Power USA is the most significant announcement in EOS's history.</b> It solves the financing bottleneck that has slowed energy-storage deployment industry-wide — by combining technology, capital, and insurance in one purpose-built entity. If it closes and executes, it creates a flywheel: project cash flows fund new projects, which buy more EOS batteries, which builds revenue and manufacturing scale, which improves margins.</p>
+      <p><b>But this is still a high-risk, early-stage growth story.</b> The company loses money on every battery it sells today. The Frontier deal isn't closed. Cerberus holds significant leverage and control. And the rights offering will dilute anyone who doesn't participate.</p>
+      <div class="callout">
+        <span class="lead">The question to answer for yourself</span>
+        Do you believe EOS's technology is real, the market opportunity is as large as the $24.3B pipeline suggests, and Cerberus sees the same thing you do — a path to enormous value if execution continues? If yes, Frontier Power USA is a major accelerant. If you're uncertain, the dilution risk and cash burn make this a stock to monitor closely rather than hold passively.
+      </div>
+    </section>
+
+    <!-- Key numbers -->
+    <section class="dd-sec">
+      <div class="dd-sec__num">QUICK REFERENCE</div>
+      <h2>Key Numbers at a Glance</h2>
+      <table class="keytable">
+        <tbody>
+          <tr><td>Ticker</td><td>EOSE (NASDAQ)</td></tr>
+          <tr><td>Q1 2026 revenue</td><td>$57.0M</td></tr>
+          <tr><td>Q1 revenue growth (YoY)</td><td>+445%</td></tr>
+          <tr><td>Q1 gross margin</td><td>−78% (from −235%)</td></tr>
+          <tr><td>Q1 adjusted EBITDA</td><td>−$68M</td></tr>
+          <tr><td>Cash on hand</td><td>$472.4M</td></tr>
+          <tr><td>Orders backlog</td><td>$644.6M (2.6 GWh)</td></tr>
+          <tr><td>Commercial pipeline</td><td>$24.3B</td></tr>
+          <tr><td>FY2026 revenue guidance</td><td>$300M – $400M</td></tr>
+          <tr><td>Frontier — Cerberus equity</td><td>$100M</td></tr>
+          <tr><td>Frontier — EOS equity (target)</td><td>$150M</td></tr>
+          <tr><td>TPI insurance capacity</td><td>~$1.5B</td></tr>
+          <tr><td>TPI duration</td><td>15 years, non-cancellable</td></tr>
+          <tr><td>Capacity reservation agreement</td><td>2 GWh</td></tr>
+          <tr><td>Cerberus lockup extended through</td><td>Year-end 2026</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <!-- Footer / sources -->
+    <div class="dd-foot">
+      <p><i>This report is for informational purposes only and is not financial advice. EOS Energy's forward-looking statements involve risks and uncertainties. Investors should conduct their own due diligence and consult a financial advisor before making investment decisions. All figures sourced from EOS Energy press releases and SEC filings dated May 13, 2026.</i></p>
+      <p><b>Sources</b></p>
+      <ul class="dd-sources">
+        <li><a href="https://www.globenewswire.com/news-release/2026/05/13/3293802/0/en/Eos-Energy-Enterprises-and-Cerberus-Capital-Management-Announce-Frontier-Power-USA-to-Deploy-American-Made-Long-Duration-Energy-Storage-at-Scale.html" target="_blank" rel="noopener">Frontier Power USA Announcement — GlobeNewswire</a></li>
+        <li><a href="https://www.globenewswire.com/news-release/2026/05/13/3293810/0/en/Eos-Energy-Enterprises-Reports-First-Quarter-2026-Financial-Results-and-Announces-Frontier-Power-USA.html" target="_blank" rel="noopener">Q1 2026 Financial Results — GlobeNewswire</a></li>
+        <li><a href="https://investors.eose.com/news-releases/news-release-details/eos-energy-announces-strategic-investment-3155-million-cerberus" target="_blank" rel="noopener">Original Cerberus $315.5M Investment — EOS IR</a></li>
+        <li><a href="https://investors.eose.com/news-releases/news-release-details/eos-energy-secures-cerberus-delayed-draw-term-loan-full-funding" target="_blank" rel="noopener">Cerberus DDTL Fully Funded — EOS IR</a></li>
+        <li><a href="https://www.eose.com/technology/" target="_blank" rel="noopener">EOS Technology Overview</a></li>
+      </ul>
+      <p style="margin-top:18px"><a href="index.html">← Back to the full EOSE investor dashboard</a></p>
+    </div>
+
+  </main>
+
+  <!-- Cloudflare Web Analytics (cookieless, deferred) -->
+  <script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "7f21e028bb474554a12d8c8472c9cdb2"}'></script>
+</body>
+</html>
