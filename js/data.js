@@ -711,8 +711,8 @@ window.EOSE_DATA = {
       classPeriod:    'November 5, 2025 – February 26, 2026',
       leadDeadline:   'May 5, 2026 (passed)',
       status:         'Pending — lead-plaintiff motions filed; consolidation/appointment in progress',
-      allegations:    'Misrepresented near-term revenue growth and the timing, execution, and feasibility of manufacturing initiatives',
-      trigger:        'Feb 26, 2026 FY2025 release: revenue $114.2M vs. guided $150–160M; capacity milestone "reached 5 weeks later than planned." Stock dropped −39% on the news.',
+      allegations:    'Omitted manufacturing / operational problems that made its reaffirmed guidance unachievable — misrepresenting near-term revenue growth and the timing, execution, and feasibility of its manufacturing scale-up',
+      trigger:        'The class period opens Nov 5, 2025 — the Q3\'25 earnings call where EOS posted a record $30.5M quarter and REAFFIRMED $150–160M FY25 guidance — and closes Feb 26, 2026, when EOS reported FY25 revenue of $114.2M (~$40M / ≈25% short) and the stock fell −39.4% to $6.74. The complaint (filed Mar 6, 2026) centers on that reaffirm-then-miss gap.',
     },
     advertisingFirms: [
       'Rosen Law', 'Hagens Berman', 'Bleichmar Fonti & Auld', 'Berger Montague', 'Robbins Geller'
@@ -968,8 +968,8 @@ window.EOSE_DATA = {
     },
     {
       date:  '2026-02-26',
-      title: 'FY2025 revenue miss · −39% one-day drop',
-      body:  'FY25 revenue $114.2M vs. guided $150–160M. Adj. EBITDA loss $219.1M. Net loss $969.6M. CFO acknowledged the capacity milestone slipped 5 weeks. Triggered the Yung v. Eos securities class action (see Legal).',
+      title: 'FY2025 guidance miss · −39% one-day drop',
+      body:  'The setup: at Q3 2025 (Nov 5, 2025) EOS posted a record $30.5M quarter (double Q2) and REAFFIRMED full-year guidance of $150–160M. The result: on Feb 26, 2026 it reported FY25 revenue of just $114.2M — ~$40M (≈25%) short — with the CFO acknowledging a key capacity milestone slipped ~5 weeks. Stock fell −39.4% in a day to $6.74. Context cuts both ways: $114.2M was still +632% YoY (FY24 $15.6M → a ~7× growth year) and a company record — the miss was against management\'s own reaffirmed target, not against the prior year. Adj. EBITDA loss $219.1M; net loss $969.6M (mostly non-cash). The Nov 5 reaffirmation → Feb 26 miss window is exactly the class period of the Yung v. Eos securities suit (see §11c Legal).',
       url:   'https://investors.eose.com/news-releases'
     },
     {
