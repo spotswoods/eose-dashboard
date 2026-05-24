@@ -1192,9 +1192,9 @@
           if (target === 'revenue') {
             const host = document.querySelector('[data-chart-revenue]');
             if (mode === 'quarterly') {
-              C.barChart(host, D.quarterlyRevenue, { colorByType: true, height: 340 });
+              C.barChart(host, D.quarterlyRevenue, { colorByType: true, height: 340, growth: 'both' });
             } else {
-              C.barChart(host, D.annualRevenue, { colorByType: true, height: 340 });
+              C.barChart(host, D.annualRevenue, { colorByType: true, height: 340, growth: 'yoy', inlineGrowth: true });
             }
           }
         });
@@ -1296,9 +1296,9 @@
     renderCatalystWindow();
 
     // Charts
-    chart('[data-chart-revenue]',  h => C.barChart(h, D.quarterlyRevenue, { colorByType: true, height: 340 }));
-    chart('[data-chart-annual]',   h => C.barChart(h, D.annualRevenue,    { colorByType: true, height: 280 }));
-    chart('[data-chart-margin]',   h => C.areaChart(h, D.grossMargin,     { clamp: [-350, 50], breakeven: true, height: 320, yFormat: v => v.toFixed(0) + '%', tipFormat: v => v.toFixed(0) + '%' }));
+    chart('[data-chart-revenue]',  h => C.barChart(h, D.quarterlyRevenue, { colorByType: true, height: 340, growth: 'both' }));
+    chart('[data-chart-annual]',   h => C.barChart(h, D.annualRevenue,    { colorByType: true, height: 280, growth: 'yoy', inlineGrowth: true }));
+    chart('[data-chart-margin]',   h => C.areaChart(h, D.grossMargin,     { clamp: [-350, 50], breakeven: true, height: 320, yFormat: v => v.toFixed(0) + '%', tipFormat: v => v.toFixed(0) + '%', growth: 'ppt' }));
     chart('[data-chart-opincome]', h => C.barChart(h, D.opIncome,         { colorByType: true, profitColor: true, height: 320 }));
     chart('[data-chart-liquidity]',h => C.areaChart(h, D.liquidity,       { height: 280 }));
     chart('[data-chart-capacity]', h => C.stackedBars(h, D.capacity, {
@@ -1307,7 +1307,7 @@
     }));
     chart('[data-chart-uptime]',   h => C.areaChart(h, D.uptime, { height: 240, yFormat: v => v.toFixed(0) + '%', tipFormat: v => v.toFixed(1) + '%' }));
     chart('[data-chart-graphite]', h => C.barChart(h, D.graphite, { fill: 'var(--brand-violet)', height: 240, tipFormat: v => v.toFixed(0) + ' t', yFormat: v => v.toFixed(0) + ' t' }));
-    chart('[data-chart-backlog]',  h => C.areaChart(h, D.backlog,  { height: 300 }));
+    chart('[data-chart-backlog]',  h => C.areaChart(h, D.backlog,  { height: 300, growth: 'qoq' }));
     chart('[data-chart-bookings]', h => C.barChart(h, D.bookings,  { fill: 'var(--accent)', height: 240 }));
     chart('[data-chart-ps]',       h => C.areaChart(h, D.psMultiple, { height: 260, yFormat: v => v.toFixed(0) + 'x', tipFormat: v => v.toFixed(1) + 'x' }));
     chart('[data-chart-mcap]',     h => C.barChart(h, D.marketCap, { fill: 'var(--accent)', height: 260 }));

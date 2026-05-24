@@ -13,6 +13,37 @@
   const fmtPct = (v) => (v >= 0 ? '+' : '') + v.toFixed(0) + '%';
   const fmtNum = (v, suffix = '') => v.toFixed(v < 10 ? 1 : 0) + suffix;
 
+  // ---------- Period-over-period growth helpers ----------
+  function pctChange(cur, prev) {
+    if (prev == null || cur == null || Math.abs(prev) < 1e-9) return null;
+    return ((cur - prev) / Math.abs(prev)) * 100;
+  }
+  function fmtSignedPct(p) {
+    if (p == null || !isFinite(p)) return '—';
+    const dec = Math.abs(p) < 10 ? 1 : 0;
+    return (p >= 0 ? '+' : '') + p.toFixed(dec) + '%';
+  }
+  // Returns tooltip HTML rows for QoQ / YoY (% modes) or ppt change.
+  // mode: 'qoq' | 'yoy' | 'both' | 'ppt'.  'both' = QoQ (i-1) + YoY (i-4, quarterly).
+  function growthRows(data, i, mode) {
+    if (!mode) return '';
+    const cur = data[i].v;
+    const rows = [];
+    const add = (lbl, val, unit) => {
+      if (val == null) return;
+      const col = val >= 0 ? cssVar('--positive') : cssVar('--negative');
+      const txt = unit === 'ppt' ? (val >= 0 ? '+' : '') + val.toFixed(1) + ' ppt' : fmtSignedPct(val);
+      rows.push(`<div class="row"><span>${lbl}</span><b style="color:${col}">${txt}</b></div>`);
+    };
+    if (mode === 'ppt') { if (i >= 1) add('vs prior', cur - data[i - 1].v, 'ppt'); return rows.join(''); }
+    if (mode === 'both' || mode === 'qoq') { if (i >= 1) add('QoQ', pctChange(cur, data[i - 1].v)); }
+    if (mode === 'both' || mode === 'yoy') {
+      const lag = (mode === 'yoy') ? 1 : 4;       // annual: prior bar; quarterly: 4 bars back
+      if (i >= lag) add('YoY', pctChange(cur, data[i - lag].v));
+    }
+    return rows.join('');
+  }
+
   // ---------- Tooltip ----------
   let tipEl = null;
   function tip() {
@@ -150,13 +181,25 @@
         const tag = (d.type === 'projected' || d.type === 'E') ? ' · Projected' : (d.type ? ' · Actual' : '');
         const html =
           `<div class="label">${label}${tag}</div>
-           <div class="value">${valStr}</div>`;
+           <div class="value">${valStr}</div>${growthRows(data, i, opts.growth)}`;
         showTip(html, e.clientX, e.clientY);
       });
       hit.addEventListener('mouseleave', () => {
         rect.removeAttribute('opacity');
         hideTip();
       });
+
+      // Inline period-over-period % label above the bar (sparse charts only).
+      if (opts.inlineGrowth && i >= 1) {
+        const p = pctChange(d.v, data[i - 1].v);
+        if (p != null) {
+          const lblY = Math.max(M.top + 9, (d.v >= 0 ? y(d.v) : y(0)) - 6);
+          el('text', {
+            x: M.left + bw * (i + 0.5), y: lblY, 'text-anchor': 'middle',
+            style: `fill:${p >= 0 ? positive : negative};font-size:10px;font-weight:700;font-family:var(--font-mono)`
+          }, svg).textContent = fmtSignedPct(p);
+        }
+      }
     });
 
     clearSvg(host);
@@ -275,7 +318,7 @@
       dot.classList.add('is-visible');
       const valStr = opts.tipFormat ? opts.tipFormat(d.v) : fmtMoney(d.v);
       const tag = (d.type === 'projected') ? ' · Projected' : ' · Actual';
-      showTip(`<div class="label">${d.q || d.y}${tag}</div><div class="value">${valStr}</div>`, e.clientX, e.clientY);
+      showTip(`<div class="label">${d.q || d.y}${tag}</div><div class="value">${valStr}</div>${growthRows(data, idx, opts.growth)}`, e.clientX, e.clientY);
     });
     hit.addEventListener('mouseleave', () => {
       cursor.classList.remove('is-visible');
