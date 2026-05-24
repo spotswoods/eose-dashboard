@@ -667,19 +667,23 @@ window.EOSE_DATA = {
   // ────────── NEW: Analyst coverage ──────────
   // Consensus as of mid-May 2026 per Simply Wall St + public.com + Benzinga aggregations.
   analystCoverage: {
-    asOf: 'Updated May 2026',
+    asOf: 'Updated May 24, 2026',
     consensus: {
-      avgPriceTarget: 8.86,
-      highTarget:     18.00,
+      // Aggregators genuinely disagree (different analyst sets + update timing):
+      // stockanalysis ~$7.68 (13), MarketBeat ~$10.94, others $11.08 (6) / median $15 (12).
+      // We show MarketBeat's blended figure and surface the dispersion in the note.
+      avgPriceTarget: 10.94,
+      highTarget:     22.00,
       lowTarget:       5.00,
-      coveringAnalysts: 7,
-      priorAvgTarget:  9.71,   // before recent cuts
-      ratingMix:       'Mixed (Hold/Neutral skew post-FY25 miss; bullish bias on Frontier)'
+      coveringAnalysts: '8–13 (varies by source)',
+      priorAvgTarget:  8.86,   // our prior tracked figure
+      ratingMix:       'Hold/Neutral skew (~3 Buy · 5 Hold · 0 Sell). Targets dispersed $7.68–$15 by source; recovering post-Q1 as TD Cowen lifted PT $7→$8.'
     },
     recentActions: [
-      { date: '2026-05',    firm: 'JPMorgan',     analyst: 'Mark Strouse', action: 'PT cut $9 → $6, Neutral', note: 'Cited cash burn + Frontier capital stack questions on Q1 call' },
-      { date: '2026-02-27', firm: 'Roth Capital', analyst: 'Chip Moore',   action: 'PT $6.00',                 note: 'Post FY25 miss; flagged execution risk' },
-      { date: 'Range',      firm: '7 covering',   analyst: '—',             action: 'PT range $5–$18',          note: 'Bull case from data-center / Frontier flow' }
+      { date: '2026-05-14', firm: 'TD Cowen',     analyst: '—',            action: 'Maintains Hold, PT $7 → $8', note: 'First post-Q1\'26 action; modest raise, neutral stance' },
+      { date: '2026-05',    firm: 'JPMorgan',     analyst: 'Mark Strouse', action: 'PT cut $9 → $6, Neutral',     note: 'Cited cash burn + Frontier capital-stack questions on Q1 call' },
+      { date: '2026-02-27', firm: 'Roth Capital', analyst: 'Chip Moore',   action: 'PT $6.00',                    note: 'Post FY25 miss; flagged execution risk' },
+      { date: 'Range',      firm: '8–13 covering',analyst: '—',            action: 'PT range $5–$22',             note: 'Wide dispersion; bull case from data-center / Frontier flow' }
     ],
     sentiment: {
       retail: 'Stocktwits "extremely bullish" post-Q1\'26 print',
@@ -687,10 +691,11 @@ window.EOSE_DATA = {
       shortInterest: 'Elevated — see Nasdaq short interest page (refreshed semi-monthly)'
     },
     sources: [
-      { label: 'Simply Wall St analyst forecasts', url: 'https://simplywall.st/stocks/us/capital-goods/nasdaq-eose/eos-energy-enterprises/future' },
-      { label: 'Public.com EOSE forecast',          url: 'https://public.com/stocks/eose/forecast-price-target' },
+      { label: 'TD Cowen PT raise to $8 (May 14, 2026)', url: 'https://www.gurufocus.com/news/8859423/eose-maintained-by-td-cowen-price-target-raised-to-800' },
+      { label: 'StockAnalysis EOSE forecast',        url: 'https://stockanalysis.com/stocks/eose/forecast/' },
+      { label: 'MarketBeat EOSE forecast',           url: 'https://www.marketbeat.com/stocks/NASDAQ/EOSE/forecast/' },
+      { label: 'Simply Wall St analyst forecasts',   url: 'https://simplywall.st/stocks/us/capital-goods/nasdaq-eose/eos-energy-enterprises/future' },
       { label: 'Benzinga analyst ratings',           url: 'https://www.benzinga.com/quote/EOSE/analyst-ratings' },
-      { label: 'MarketBeat institutional ownership', url: 'https://www.marketbeat.com/stocks/NASDAQ/EOSE/institutional-ownership/' },
       { label: 'Nasdaq short interest',              url: 'https://www.nasdaq.com/market-activity/stocks/eose/short-interest' }
     ]
   },
