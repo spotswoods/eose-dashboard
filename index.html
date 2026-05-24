@@ -161,6 +161,15 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap" />
   <link rel="stylesheet" href="css/styles.css" />
+  <script>
+    /* Design A/B test: ?design=v2 loads the elevated "v2" override layer
+       on top of styles.css. Default URL is unaffected. */
+    if (new URLSearchParams(location.search).get('design') === 'v2') {
+      var __v2 = document.createElement('link');
+      __v2.rel = 'stylesheet'; __v2.href = 'css/refresh.css';
+      document.head.appendChild(__v2);
+    }
+  </script>
 </head>
 <body>
 

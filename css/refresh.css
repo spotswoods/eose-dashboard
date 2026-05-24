@@ -1,0 +1,79 @@
+/* ============================================================
+   refresh.css — "v2" visual-elevation TEST layer.
+   Loaded ONLY when the URL has ?design=v2 (see the loader in index.html).
+   Same palette — every color here is an existing CSS variable or a
+   neutral white/black highlight at low opacity. The goal is more polish:
+   a display typeface for headings, lit-from-top cards, subtle background
+   depth, rounder nav, and smoother micro-interactions.
+   ============================================================ */
+
+/* 1) Display typeface for headings + big numbers.
+   Space Grotesk is already loaded in <head>; gives headlines real
+   character vs. body Inter. Numbers stay tabular. */
+.hero h1,
+.section__head h2,
+.card__title,
+.kpi__value,
+.hero__price .num,
+.deepdive-banner__title {
+  font-family: "Space Grotesk", var(--font-sans);
+  letter-spacing: -0.022em;
+}
+
+/* 2) Subtle page-background depth — two faint glows in the existing greens
+   so the canvas isn't dead-flat. No new hues, no fixed-attachment jank. */
+body {
+  background:
+    radial-gradient(1100px 520px at 100% -6%, color-mix(in oklab, var(--accent) 7%, transparent), transparent 55%),
+    radial-gradient(900px 720px at -12% 112%, color-mix(in oklab, var(--brand-forest) 45%, transparent), transparent 55%),
+    var(--bg-0);
+}
+
+/* 3) Cards: lit-from-top gradient + crisper border + a 1px top highlight,
+   for a premium "glass panel" read. Smoother hover lift on all cards. */
+.card {
+  background: linear-gradient(180deg, color-mix(in oklab, var(--bg-1) 93%, #fff), var(--bg-1));
+  border-color: var(--line-2);
+  border-radius: 16px;
+  box-shadow: var(--shadow-card), inset 0 1px 0 rgba(255, 255, 255, 0.05);
+  transition: transform .25s var(--ease), box-shadow .25s var(--ease), border-color .25s;
+}
+.card:hover { transform: translateY(-2px); box-shadow: var(--shadow-hover), inset 0 1px 0 rgba(255, 255, 255, 0.07); }
+
+/* 4) KPI tiles: slightly larger value, rounder, tighter label tracking. */
+.kpi { border-radius: 14px; background: linear-gradient(180deg, color-mix(in oklab, var(--bg-1) 93%, #fff), var(--bg-1)); }
+.kpi__value { font-size: 30px; }
+.kpi__label { letter-spacing: 0.08em; }
+
+/* 5) Section headers: a touch larger + more confident. */
+.section__head h2 { font-size: 28px; letter-spacing: -0.02em; }
+.section__num { font-size: 13px; letter-spacing: 0.18em; }
+
+/* 6) Section nav: fully rounded pills, accent-tinted active state. */
+.section-nav a { border-radius: 999px; }
+.section-nav a.is-active { background: var(--accent-soft); color: var(--accent); }
+.section-nav a.is-active .num { color: var(--accent); }
+
+/* 7) Tables: a touch more air + stronger header tracking. */
+.table thead th { letter-spacing: 0.1em; }
+.table td { padding: 13px 16px; }
+
+/* 8) Hero price: bigger, tighter — the marquee number. */
+.hero__price .num { font-size: 68px; letter-spacing: -0.035em; }
+
+/* 9) Deep-dive banner: rounder to match the new card radius. */
+.deepdive-banner { border-radius: 16px; }
+
+/* 10) Smoother global micro-interactions. */
+a, button, .pill, .icon-btn { transition: color .18s var(--ease), background .18s var(--ease), border-color .18s var(--ease), transform .18s var(--ease); }
+
+/* Tiny "you're viewing the test layer" marker so it's obvious which look is on. */
+body::after {
+  content: "design v2 — test layer";
+  position: fixed; bottom: 10px; left: 12px; z-index: 240;
+  font: 600 10.5px/1 var(--font-mono);
+  letter-spacing: .08em; text-transform: uppercase;
+  color: var(--accent); background: var(--accent-soft);
+  border: 1px solid var(--accent-line); border-radius: 999px;
+  padding: 5px 10px; pointer-events: none; opacity: .85;
+}
