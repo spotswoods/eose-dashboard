@@ -1,0 +1,330 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <title>The EOS Rights Offering Explained — What It Means &amp; How It Works</title>
+  <meta name="description" content="A plain-English guide to Eos Energy's (EOSE) ~$150M pro-rata rights offering: what a rights offering is, why EOS is doing one to fund Frontier Power USA, your three choices as a shareholder, the dilution math, the Cerberus warrants, and the June 3, 2026 vote + DOE/debt consents. Not investment advice." />
+  <meta name="author" content="spotswoods (independent investor research)" />
+  <meta name="robots" content="index, follow, max-image-preview:large" />
+  <link rel="canonical" href="https://eosesource.com/rights-offering.html" />
+  <meta name="theme-color" content="#02130E" />
+  <link rel="icon" type="image/png" href="assets/eose-logo.png" />
+
+  <meta property="og:type" content="article" />
+  <meta property="og:site_name" content="EOSE Investor Dashboard" />
+  <meta property="og:title" content="The EOS Rights Offering Explained — What It Means &amp; How It Works" />
+  <meta property="og:description" content="Plain-English guide to Eos Energy's ~$150M rights offering that funds Frontier Power USA: how it works, your three choices, the dilution math, the warrants, and the June 3, 2026 vote." />
+  <meta property="og:url" content="https://eosesource.com/rights-offering.html" />
+  <meta property="og:image" content="https://eosesource.com/assets/eose-logo.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="The EOS Rights Offering Explained" />
+  <meta name="twitter:description" content="What Eos Energy's ~$150M rights offering means for shareholders, how it works, and the dilution math — in plain English." />
+  <meta name="twitter:image" content="https://eosesource.com/assets/eose-logo.png" />
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "AnalysisNewsArticle",
+        "@id": "https://eosesource.com/rights-offering.html#article",
+        "url": "https://eosesource.com/rights-offering.html",
+        "headline": "The EOS Rights Offering Explained — What It Means and How It Works",
+        "description": "Plain-English explainer of Eos Energy's (NASDAQ: EOSE) ~$150M pro-rata rights offering to fund its contribution to Frontier Power USA.",
+        "datePublished": "2026-05-25T00:00:00Z",
+        "dateModified": "2026-05-25T00:00:00Z",
+        "inLanguage": "en-US",
+        "image": "https://eosesource.com/assets/eose-logo.png",
+        "author": { "@type": "Person", "name": "spotswoods", "url": "https://github.com/spotswoods" },
+        "publisher": { "@type": "Organization", "name": "EOSE Investor Dashboard", "url": "https://eosesource.com/", "logo": { "@type": "ImageObject", "url": "https://eosesource.com/assets/eose-logo.png" } },
+        "about": { "@type": "Corporation", "name": "Eos Energy Enterprises, Inc.", "tickerSymbol": "EOSE", "exchange": "NASDAQ", "url": "https://www.eose.com/" }
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "EOSE Investor Dashboard", "item": "https://eosesource.com/" },
+          { "@type": "ListItem", "position": 2, "name": "Rights Offering Explained", "item": "https://eosesource.com/rights-offering.html" }
+        ]
+      },
+      {
+        "@type": "FAQPage",
+        "@id": "https://eosesource.com/rights-offering.html#faq",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "What is a rights offering?",
+            "acceptedAnswer": { "@type": "Answer", "text": "A rights offering gives a company's existing shareholders the right to buy newly issued shares, usually at a discount, in proportion to what they already own (pro rata). You can exercise the rights to buy your share of the new stock, sell the rights to someone else (they are expected to be transferable), or do nothing — in which case your ownership percentage is diluted. It is generally more shareholder-friendly than selling new shares straight to institutions, because existing holders get first claim at the discounted price." }
+          },
+          {
+            "@type": "Question",
+            "name": "Why is Eos Energy doing a rights offering?",
+            "acceptedAnswer": { "@type": "Answer", "text": "Eos plans to raise roughly $150 million to fund its equity contribution to Frontier Power USA, the Cerberus-backed independent power producer announced May 13, 2026. Cerberus is putting in $100 million and taking controlling equity in the venture; Eos's ~$150 million comes from the rights offering, subject to a June 3, 2026 shareholder vote (which also authorizes more shares), U.S. Department of Energy consent on its DOE loan, and debt-holder consents." }
+          },
+          {
+            "@type": "Question",
+            "name": "Will the rights offering dilute EOSE shareholders?",
+            "acceptedAnswer": { "@type": "Answer", "text": "Yes — new shares are issued, so the total share count rises. The key feature of a rights offering is that existing holders can participate pro rata to avoid being diluted: if you exercise your full allotment, your ownership percentage is preserved. If you do nothing, your stake is diluted by roughly the size of the raise relative to the company. Separately, Cerberus is expected to receive warrants priced at a 20% discount to a 15-day VWAP-based exercise price, which is additional potential dilution." }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap" />
+  <link rel="stylesheet" href="css/styles.css" />
+  <link rel="stylesheet" href="css/deepdive.css" />
+</head>
+<body>
+
+  <div class="dd-top">
+    <div class="dd-top__in">
+      <a class="dd-back" href="index.html">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+        Back to the EOSE dashboard
+      </a>
+      <span class="dd-top__tag">RIGHTS OFFERING · NASDAQ: EOSE</span>
+    </div>
+  </div>
+
+  <main class="dd">
+
+    <div class="dd-hero">
+      <div class="dd-eyebrow">EOS Energy · The Rights Offering</div>
+      <h1>What the Rights Offering Means — and How It Works</h1>
+      <div class="sub">To fund its slice of Frontier Power USA, Eos plans to let existing shareholders buy new stock at a discount before anyone else. Here's what that means for you, in plain English.</div>
+      <div class="dd-meta">NASDAQ: EOSE · Report date: May 25, 2026 · Independent research, not investment advice · <a class="inline" href="frontier-power-usa.html">See the Frontier Power USA deep dive →</a></div>
+    </div>
+
+    <div class="callout">
+      <span class="lead">The short version</span>
+      Eos needs ~<b>$150M</b> to fund its share of <b>Frontier Power USA</b> (the Cerberus joint venture). Rather than sell new shares straight to Wall Street, it's running a <b>rights offering</b> — giving <b>you, the existing shareholder</b>, first claim to buy the new stock at a discount, proportional to what you already own. Participate and your ownership % is preserved; sit it out and you get diluted. It still needs a <b>June 3, 2026 shareholder vote</b> plus DOE and debt-holder sign-off before it happens.
+    </div>
+
+    <!-- Part 1 -->
+    <section class="dd-sec">
+      <div class="dd-sec__num">PART 1</div>
+      <h2>What is a rights offering?</h2>
+      <p>A rights offering is a way for a company to raise money from <em>its own existing shareholders</em>. Instead of selling new shares to outside institutions, it hands every current holder a set of <b>"rights"</b> — short-dated coupons that let you buy newly issued shares, usually at a <b>discount</b> to the market price, in proportion to what you already own.</p>
+      <p>"Pro rata" is the key phrase: if you own 0.1% of the company today, you get the right to buy 0.1% of the new shares. That's what makes it different from — and friendlier than — a typical secondary offering, where the company sells stock straight to big funds and existing retail holders simply get diluted with no chance to participate.</p>
+      <div class="callout">
+        <span class="lead">Plain analogy</span>
+        Imagine a co-op apartment building issuing new shares to fund a roof repair. Instead of selling those shares to a stranger, it offers them to the current owners first, at a discount — so the people who already live there can keep their proportional ownership. A rights offering is that, for a public company.
+      </div>
+    </section>
+
+    <!-- Part 2 -->
+    <section class="dd-sec">
+      <div class="dd-sec__num">PART 2</div>
+      <h2>Why is Eos doing one?</h2>
+      <p>On <b>May 13, 2026</b>, Eos and Cerberus announced <b>Frontier Power USA</b> — a standalone company that will build, own, and operate battery-storage projects using Eos's Z3 technology (the full structure is in the <a class="inline" href="frontier-power-usa.html">Frontier deep dive</a>). The venture needs equity from both partners:</p>
+      <ul class="bullets">
+        <li><b>Cerberus contributes $100M</b> and is expected to take <b>controlling equity</b> in Frontier Power USA — so the project entity is effectively Cerberus-controlled.</li>
+        <li><b>Eos targets ~$150M</b> — and it intends to raise that money through this rights offering, in exchange for a <b>minority</b> stake in Frontier.</li>
+      </ul>
+      <p>So the rights offering isn't a sign of distress in the usual sense — it's earmarked to buy Eos a seat in an infrastructure vehicle it expects to drive years of recurring battery demand (a <b>2 GWh Capacity Reservation Agreement</b> already locks in manufacturing for Frontier). But it does mean issuing new stock, which is why the mechanics matter to you.</p>
+    </section>
+
+    <!-- Part 3 -->
+    <section class="dd-sec">
+      <div class="dd-sec__num">PART 3</div>
+      <h2>Your three choices as a shareholder</h2>
+      <p>When the offering opens, every share you own earns you rights. You'll have three options:</p>
+      <div class="actions">
+        <div class="action-card action-card--keep">
+          <span class="action-card__tag">▲ Exercise</span>
+          <h4>Buy your full allotment</h4>
+          <p>Use your rights to buy your pro-rata share of the new stock at the discounted subscription price.</p>
+          <div class="out"><b>Outcome:</b> your ownership % is preserved — no dilution. You commit more cash.</div>
+        </div>
+        <div class="action-card action-card--sell">
+          <span class="action-card__tag">↔ Sell the rights</span>
+          <h4>Trade them away</h4>
+          <p>The rights are expected to be <b>transferable</b>, so you can sell them on the open market to someone who wants to subscribe.</p>
+          <div class="out"><b>Outcome:</b> you get cash for the rights (partly offsetting dilution), but your % stake still shrinks.</div>
+        </div>
+        <div class="action-card action-card--skip">
+          <span class="action-card__tag">▼ Do nothing</span>
+          <h4>Let them lapse</h4>
+          <p>If you ignore the rights, they expire worthless at the deadline.</p>
+          <div class="out"><b>Outcome:</b> you forfeit the discount <em>and</em> get fully diluted. Usually the worst option.</div>
+        </div>
+      </div>
+      <p>Because the rights are transferable, even shareholders who don't want to add cash can recover <em>some</em> value by selling them — which is the shareholder-friendly part. The only choice that leaves value on the table is doing nothing.</p>
+    </section>
+
+    <!-- Part 4 -->
+    <section class="dd-sec">
+      <div class="dd-sec__num">PART 4</div>
+      <h2>The dilution math (worked example)</h2>
+      <p>The exact subscription ratio and price won't be known until Eos files the offering prospectus. The numbers below are <b>illustrative</b> — to show the <em>shape</em> of the math, not the final terms.</p>
+      <div class="note-box">
+        <h4>Illustrative — assumes a $150M raise priced at ~$6.50 (a discount to ~$8 trading)</h4>
+        <div class="row"><span>New shares issued (≈ $150M ÷ $6.50)</span><b>~23.1M</b></div>
+        <div class="row"><span>Shares outstanding before (Q1'26)</span><b>~339.5M</b></div>
+        <div class="row"><span>Shares outstanding after</span><b>~362.6M</b></div>
+        <div class="row"><span>Dilution if you DON'T participate</span><b style="color:var(--negative)">≈ −6.4%</b></div>
+        <div class="row"><span>If you own 1,000 shares, your pro-rata right</span><b>buy ~68 shares @ ~$6.50 (~$442)</b></div>
+        <div class="row"><span>Exercise in full → your stake</span><b style="color:var(--positive)">preserved</b></div>
+      </div>
+      <p>Two takeaways. First, the dilution is meaningful but not catastrophic — roughly the size of the raise divided by the company. Second, participation is the lever entirely in your hands: exercise your rights and you hold your ground; ignore them and you absorb the full ~6% hit.</p>
+      <div class="callout">
+        <span class="lead">Context worth remembering</span>
+        Eos shareholders have already been diluted heavily — share count grew ~49% over the past year (from ~225M to ~340M). The rights offering adds to that, but unlike most of the prior dilution, this one comes with a built-in way to protect your percentage.
+      </div>
+    </section>
+
+    <!-- Part 5 -->
+    <section class="dd-sec">
+      <div class="dd-sec__num">PART 5</div>
+      <h2>The Cerberus warrants — separate, and dilutive too</h2>
+      <p>Alongside the deal, Cerberus is expected to receive <b>warrants</b> on Eos stock — options to buy shares cheaply later. Per the disclosures, those warrants are expected to be priced at a <b>20% discount to a 15-day VWAP-based exercise price</b> (VWAP = volume-weighted average price; using a 15-day window smooths out single-day spikes).</p>
+      <p>Why it matters: these warrants are <em>additional</em> potential dilution beyond the rights offering, and they go to Cerberus, not to you. As Cerberus's overall position grows — Series B preferred, prior warrants, the Frontier controlling stake, and now these — its leverage over Eos's capital structure deepens. That's a recurring theme in the bear case worth weighing.</p>
+    </section>
+
+    <!-- Part 6 -->
+    <section class="dd-sec">
+      <div class="dd-sec__num">PART 6</div>
+      <h2>Timeline &amp; conditions — it isn't done yet</h2>
+      <p>The rights offering is announced and backed by a binding term sheet, but several gates must clear first:</p>
+      <div class="timeline">
+        <div class="tl-item is-done">
+          <div class="tl-date">May 13, 2026 — done</div>
+          <div class="tl-body"><b>Frontier Power USA announced</b> with Cerberus; ~$150M Eos contribution to be funded via this rights offering.</div>
+        </div>
+        <div class="tl-item is-pending">
+          <div class="tl-date">June 3, 2026 — the key gate</div>
+          <div class="tl-body"><b>Shareholder vote</b>, which specifically includes <b>authorizing additional shares</b> so the new stock can be issued. No "yes" here, no offering.</div>
+        </div>
+        <div class="tl-item is-pending">
+          <div class="tl-date">Before closing</div>
+          <div class="tl-body"><b>U.S. Department of Energy consent</b> (Eos carries a DOE loan, so the DOE must sign off) plus <b>debt-holder consents</b>.</div>
+        </div>
+        <div class="tl-item is-pending">
+          <div class="tl-date">After approvals</div>
+          <div class="tl-body"><b>Offering prospectus filed</b> — this is when the actual subscription <b>ratio and price</b> become public, and the rights start trading.</div>
+        </div>
+      </div>
+      <div class="callout callout--warn">
+        <span class="lead">⚠ Execution risk</span>
+        The deal is announced, not closed. The June 3 vote, DOE consent, and debt-holder consents are all real conditions. Complex deals like this can be delayed or restructured — don't treat the announced terms as final.
+      </div>
+    </section>
+
+    <!-- Part 7 -->
+    <section class="dd-sec">
+      <div class="dd-sec__num">PART 7</div>
+      <h2>What the $150M unlocks</h2>
+      <p>Your ~$150M (via the rights offering) is one leg of a larger capital stack that funds gigawatt-scale storage projects <em>off Eos's own balance sheet</em>:</p>
+      <div class="stack">
+        <div class="stack__top">FRONTIER POWER USA <small>Independent Power Producer · Cerberus-controlled</small></div>
+        <div class="pillars">
+          <div class="pillar pillar--eos">
+            <div class="pillar__icon">🔋</div>
+            <div class="pillar__name">EOS Energy</div>
+            <div class="pillar__amt">~$150M</div>
+            <div class="pillar__role">equity via this rights offering · minority stake</div>
+            <ul><li>Z3 batteries + DawnOS™</li><li>2 GWh Capacity Reservation Agreement</li></ul>
+          </div>
+          <div class="pillar pillar--cerberus">
+            <div class="pillar__icon">🏦</div>
+            <div class="pillar__name">Cerberus Capital</div>
+            <div class="pillar__amt">$100M</div>
+            <div class="pillar__role">equity · controlling stake</div>
+            <ul><li>Institutional capital + operations</li><li>Warrants on EOS (20% disc. / 15-day VWAP)</li></ul>
+          </div>
+          <div class="pillar pillar--ariel">
+            <div class="pillar__icon">🛡️</div>
+            <div class="pillar__name">Ariel Re — Ariel Green</div>
+            <div class="pillar__amt">~$1.5B</div>
+            <div class="pillar__role">Technology Performance Insurance</div>
+            <ul><li>15-yr non-cancellable policy</li><li>Makes Z3 output financeable for lenders</li></ul>
+          </div>
+        </div>
+        <div class="stack__debt"><b>+ Project-level debt</b> — investment-grade bonds &amp; bank loans, unlocked because the Ariel Green insurance removes battery-performance risk for lenders.</div>
+        <div class="stack__target"><b>The point:</b> your $150M buys Eos a minority seat in an infrastructure platform — turning one-time battery <em>sales</em> into recurring, owned project demand. Full structure in the <a class="inline" href="frontier-power-usa.html">Frontier Power USA deep dive</a>.</div>
+      </div>
+    </section>
+
+    <!-- Part 8 -->
+    <section class="dd-sec">
+      <div class="dd-sec__num">PART 8</div>
+      <h2>Is this good or bad for shareholders?</h2>
+      <div class="bb">
+        <div class="bb__col bull">
+          <div class="bb__h">▲ The friendlier read</div>
+          <ol>
+            <li><b>You get first claim at a discount.</b> Unlike a straight institutional placement, retail holders can participate pro rata and protect their stake.</li>
+            <li><b>Transferable rights</b> mean even non-participants can recover some value by selling them.</li>
+            <li><b>The cash is earmarked for growth</b>, not survival — buying into a contracted, insurance-wrapped project pipeline.</li>
+            <li><b>Cerberus is co-investing $100M</b> and extending its lockup — capital alongside, not just taking.</li>
+          </ol>
+        </div>
+        <div class="bb__col bear">
+          <div class="bb__h">▼ The cautious read</div>
+          <ol>
+            <li><b>It's still dilution.</b> Non-participants get diluted ~6%; participants must commit fresh cash to stand still.</li>
+            <li><b>Warrants pile on.</b> Cerberus's 20%-discount warrants are extra dilution that flows to Cerberus, not you.</li>
+            <li><b>Cerberus controls Frontier.</b> Your $150M buys a <em>minority</em> stake in a Cerberus-controlled entity — you're two levels removed from the assets.</li>
+            <li><b>It can still fall through.</b> June 3 vote, DOE consent, and debt-holder consents are unresolved conditions.</li>
+          </ol>
+        </div>
+      </div>
+    </section>
+
+    <!-- Bottom line -->
+    <section class="dd-sec">
+      <div class="dd-sec__num">BOTTOM LINE</div>
+      <h2>What to actually do with this</h2>
+      <p>If the offering proceeds and you intend to stay a shareholder, the default rational move is to <b>not ignore your rights</b> — either exercise them (to preserve your stake) or sell them (to recover their value). Letting them lapse is the one choice that simply hands value away.</p>
+      <p>Whether you <em>want</em> to commit more capital comes back to the bigger question the dashboard frames everywhere: do you believe Frontier Power USA turns Eos's technology into durable, owned cash flow? If yes, the rights offering is the on-ramp to that upside at a discount. If you're unsure, selling the rights is the hedge — you participate in the value of the rights without doubling down on the thesis.</p>
+      <div class="callout">
+        <span class="lead">Mark your calendar</span>
+        The <b>June 3, 2026 shareholder vote</b> is the gate that decides whether any of this happens. Watch for the offering prospectus afterward — that's when the real subscription ratio and price are set.
+      </div>
+    </section>
+
+    <!-- Key facts -->
+    <section class="dd-sec">
+      <div class="dd-sec__num">QUICK REFERENCE</div>
+      <h2>Key facts at a glance</h2>
+      <table class="keytable">
+        <tbody>
+          <tr><td>Instrument</td><td>Pro-rata rights offering (transferable rights)</td></tr>
+          <tr><td>Target raise</td><td>~$150 million</td></tr>
+          <tr><td>Use of proceeds</td><td>Eos equity contribution to Frontier Power USA</td></tr>
+          <tr><td>Cerberus equity into Frontier</td><td>$100M (controlling stake)</td></tr>
+          <tr><td>Cerberus warrants</td><td>20% discount to 15-day VWAP exercise price</td></tr>
+          <tr><td>Insurance enabling project debt</td><td>~$1.5B, Ariel Re (Ariel Green), 15-yr non-cancellable</td></tr>
+          <tr><td>Manufacturing lock-in</td><td>2 GWh Capacity Reservation Agreement</td></tr>
+          <tr><td>Shareholder vote (incl. authorizing shares)</td><td>June 3, 2026</td></tr>
+          <tr><td>Other approvals needed</td><td>U.S. DOE consent + debt-holder consents</td></tr>
+          <tr><td>Subscription ratio &amp; price</td><td>TBD — set in the offering prospectus</td></tr>
+          <tr><td>Prior-year dilution (context)</td><td>share count +~49% (≈225M → ≈340M)</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <div class="dd-foot">
+      <p><i>This page is for informational purposes only and is not financial advice. Terms of the rights offering are not final and will be set in Eos's offering prospectus; forward-looking statements involve risks and uncertainties. Verify all details against Eos's SEC filings before making any decision. No affiliation with Eos Energy Enterprises, Inc.</i></p>
+      <p><b>Sources</b></p>
+      <ul class="dd-sources">
+        <li><a href="https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0001805077&type=8-K" target="_blank" rel="noopener">Eos Energy 8-K filings (SEC EDGAR)</a></li>
+        <li><a href="https://investors.eose.com/news-releases/news-release-details/eos-energy-enterprises-and-cerberus-capital-management-announce" target="_blank" rel="noopener">Eos &amp; Cerberus announce Frontier Power USA (investors.eose.com)</a></li>
+        <li><a href="https://www.fool.com/earnings/call-transcripts/2026/05/13/eos-energy-enterprises-eose-q1-2026-earnings-call-t/" target="_blank" rel="noopener">EOSE Q1 2026 earnings call transcript (Motley Fool)</a></li>
+        <li><a href="https://www.globenewswire.com/news-release/2026/05/13/3293802/0/en/Eos-Energy-Enterprises-and-Cerberus-Capital-Management-Announce-Frontier-Power-USA-to-Deploy-American-Made-Long-Duration-Energy-Storage-at-Scale.html" target="_blank" rel="noopener">Frontier Power USA announcement (GlobeNewswire)</a></li>
+        <li><a href="https://www.stocktitan.net/news/EOSE/eos-energy-enterprises-and-cerberus-capital-management-announce-8d69f2s1x83w.html" target="_blank" rel="noopener">Eos, Cerberus fund Frontier Power USA (StockTitan)</a></li>
+      </ul>
+      <p style="margin-top:18px"><a href="frontier-power-usa.html">← The Frontier Power USA deep dive</a> &nbsp;·&nbsp; <a href="index.html">Back to the full EOSE dashboard</a></p>
+    </div>
+
+  </main>
+
+  <!-- Cloudflare Web Analytics (cookieless, deferred) -->
+  <script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "7f21e028bb474554a12d8c8472c9cdb2"}'></script>
+</body>
+</html>
