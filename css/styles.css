@@ -360,6 +360,15 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
 .deepdive-banner__title { font-weight: 700; font-size: 16px; letter-spacing: -0.01em; color: var(--fg-0); }
 .deepdive-banner__sub { color: var(--fg-2); font-size: 13.5px; margin-top: 3px; line-height: 1.5; }
 .deepdive-banner__cta { color: var(--accent); font-weight: 600; font-size: 14.5px; white-space: nowrap; }
+/* Card with a stretched link + a real interactive "Listen" button */
+.deepdive-banner__cover { position: absolute; inset: 0; z-index: 1; border-radius: inherit; }
+.deepdive-banner > .deepdive-banner__badge,
+.deepdive-banner > .deepdive-banner__body,
+.deepdive-banner > .deepdive-banner__cta { position: relative; z-index: 2; pointer-events: none; }
+.dd-listen { position: relative; z-index: 2; display: inline-flex; align-items: center; gap: 6px; white-space: nowrap;
+  font-size: 12.5px; font-weight: 700; color: var(--accent); background: var(--accent-soft);
+  border: 1px solid var(--accent-line); border-radius: 999px; padding: 7px 13px; transition: background .15s, transform .15s; }
+.dd-listen:hover { background: color-mix(in oklab, var(--accent) 24%, transparent); transform: translateY(-1px); }
 
 /* ========== Section header ========== */
 .section { padding-top: 88px; }

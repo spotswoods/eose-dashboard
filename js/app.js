@@ -1267,6 +1267,25 @@
     schedule();
   }
 
+  // ---------- Deep-dive "Listen" button (lazy audio, no fetch until click) ----------
+  function initDeepDiveAudio() {
+    let audio = null;
+    document.querySelectorAll('.dd-listen[data-dd-audio]').forEach(btn => {
+      btn.addEventListener('click', e => {
+        e.preventDefault(); e.stopPropagation();
+        if (!audio) {
+          audio = new Audio();
+          audio.preload = 'none';            // nothing fetched until play()
+          audio.src = btn.dataset.ddAudio;
+          audio.addEventListener('play',  () => { btn.textContent = '⏸ Pause'; });
+          audio.addEventListener('pause', () => { btn.textContent = '▶ Listen'; });
+          audio.addEventListener('ended', () => { btn.textContent = '▶ Listen'; });
+        }
+        if (audio.paused) audio.play().catch(() => {}); else audio.pause();
+      });
+    });
+  }
+
   // ---------- Init ----------
   document.addEventListener('DOMContentLoaded', () => {
     initTheme();
@@ -1319,6 +1338,7 @@
     initToggles();
     initSearch();
     initGridPulse();
+    initDeepDiveAudio();
 
     // Price history candlestick (fire-and-forget) + live quote
     loadHistory();

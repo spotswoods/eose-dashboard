@@ -87,6 +87,17 @@
       EOS Energy just announced a major new company called <b>Frontier Power USA</b> — a joint venture with Wall Street giant <b>Cerberus Capital</b> — designed to turn EOS's battery technology into actual power plants, with hundreds of millions of dollars behind it. This could be a serious inflection point. But there are also real risks every shareholder needs to understand.
     </div>
 
+    <!-- Listen to this page (audio reading; nothing loads until you press play) -->
+    <div class="listen">
+      <button class="listen__btn" id="listenBtn" aria-label="Play the audio reading of this page">▶</button>
+      <div class="listen__txt">
+        <div class="listen__title">Listen to this page</div>
+        <div class="listen__sub">Full audio reading — prefer to listen instead of read?</div>
+      </div>
+      <span class="listen__time" id="listenTime">tap play</span>
+      <audio id="ddAudio" preload="none"><source src="frontier-power-usa-full.mp3" type="audio/mpeg"></audio>
+    </div>
+
     <!-- Part 1 -->
     <section class="dd-sec">
       <div class="dd-sec__num">PART 1</div>
@@ -347,6 +358,24 @@
     </div>
 
   </main>
+
+  <!-- "Listen to this page" player — audio only fetches on first play (preload="none") -->
+  <script>
+    (function () {
+      var a = document.getElementById('ddAudio'),
+          b = document.getElementById('listenBtn'),
+          t = document.getElementById('listenTime');
+      if (!a || !b) return;
+      function fmt(s) { if (!isFinite(s)) return '0:00'; var m = Math.floor(s / 60), x = Math.floor(s % 60); return m + ':' + (x < 10 ? '0' : '') + x; }
+      function upd() { t.textContent = fmt(a.currentTime) + (isFinite(a.duration) ? ' / ' + fmt(a.duration) : ''); }
+      b.addEventListener('click', function () { if (a.paused) { a.play().catch(function () {}); } else { a.pause(); } });
+      a.addEventListener('play',  function () { b.textContent = '⏸'; });
+      a.addEventListener('pause', function () { b.textContent = '▶'; });
+      a.addEventListener('ended', function () { b.textContent = '▶'; a.currentTime = 0; });
+      a.addEventListener('timeupdate', upd);
+      a.addEventListener('loadedmetadata', upd);
+    })();
+  </script>
 
   <!-- Cloudflare Web Analytics (cookieless, deferred) -->
   <script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "7f21e028bb474554a12d8c8472c9cdb2"}'></script>
