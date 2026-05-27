@@ -26,33 +26,6 @@ window.EOSE_DATA = {
     asOf: 'live · Stooq delayed quote'
   },
 
-  // ────────── Morning / evening note (refreshed twice daily by scheduled task) ──────────
-  // Refreshed by /equity-research:morning-note via a scheduled task in Cowork.
-  // session = 'pre-open' (Swedish AM, ~07:00 CEST) | 'post-close' (Swedish PM, ~22:30 CEST)
-  morningNote: {
-    updatedAt: '2026-05-27T07:30:00+02:00',
-    session:   'pre-open',
-    headline:  'EOSE $8.49 pre-mkt (-3.9%); digesting Tue +12% surge — no new catalysts overnight',
-    takeaway:  'EOSE closed ~$8.81 Tue after a +12% session on the Cerberus/Frontier Power JV + Q1 beat; pre-market Wed $8.49 (-3.9%) on normal consolidation. No new 8-K overnight — JV definitive docs and rights-offering S-3 remain the next binary triggers.',
-    bullets: [
-      'Tape: EOSE closed ~$8.81 Tue (+12.1%), now $8.49 pre-market (-$0.32, -3.9%) on profit-taking. +37% since 5/1 low. No negative catalyst overnight; volume and breadth suggest consolidation not reversal.',
-      'No new SEC filings overnight. Key pending: definitive JV agreement, S-3 for ~$150M rights offering, proxy for authorized-share vote — all required before Frontier Power USA closes.',
-      'Frontier Power USA (Cerberus JV): $100M Cerberus equity + Eos ~$150M via rights offering, 2 GWh initial capacity, data-center/utility targets. Closing contingent on DOE consent + shareholder vote.',
-      'Sell-side: Needham Buy/$11 (5/21, +30% vs pre-mkt), Stifel Buy reaffirmed. CEO Mastrangelo at Stifel June 2 and JPM June 23 — conference appearances may drive incremental coverage. Avg PT ~$9.63.',
-      'Litigation: Yung v. Eos class action (NJ Dist Ct) in motion-practice phase; no new court docket activity flagged. Monitor for lead-counsel appointment and motion-to-dismiss briefing schedule.',
-      'Setup: US opens 15:30 Stockholm. Watch for 8-K on JV definitive docs or rights-offering launch. Macro: AI/data-center power demand narrative supports LDES peers into the open.'
-    ],
-    price:   { last: 8.49, changePct: -3.92, note: 'pre-market May 27 (Yahoo Finance)' },
-    sources: [
-      { label: 'EOSE pre-market quote (Yahoo Finance)', url: 'https://finance.yahoo.com/quote/EOSE/' },
-      { label: 'EOSE 5/26 stock action recap (StocksToTrade)', url: 'https://stockstotrade.com/news/eos-energy-enterprises-inc-eose-news-2026_05_26/' },
-      { label: '8-K — Cerberus JV term sheet (5/12)', url: 'https://www.sec.gov/Archives/edgar/data/0001805077/000162828026034367/eose-20260512.htm' },
-      { label: 'Frontier Power USA JV details (TipRanks)', url: 'https://www.tipranks.com/news/company-announcements/eos-energy-forms-frontier-power-usa-battery-joint-venture' },
-      { label: 'EOSE analyst ratings & PT (StockAnalysis)', url: 'https://stockanalysis.com/stocks/eose/' },
-      { label: 'Yung v. Eos class-action summary (Rosen Law)', url: 'https://rosenlegal.com/case/eos-energy-enterprises-inc/' }
-    ]
-  },
-
   // ────────── KPI strip — Q1'26 actuals ──────────
   // accent drives the card's left border (meaning-tied): pos | warn | neg | info
   kpis: [
