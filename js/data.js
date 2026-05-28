@@ -30,26 +30,25 @@ window.EOSE_DATA = {
   // Refreshed by /equity-research:morning-note via a scheduled task in Cowork.
   // session = 'pre-open' (Swedish AM, ~07:00 CEST) | 'post-close' (Swedish PM, ~22:30 CEST)
   morningNote: {
-    updatedAt: '2026-05-28T07:17:00+02:00',
-    session:   'pre-open',
-    headline:  'EOSE ~$8.49 pre-market, flat overnight; no new filings; Stifel conf Jun 2 next catalyst',
-    takeaway:  'EOSE held ~$8.49 pre-market (flat vs $8.47 Wed close, 1.24M vol) with no overnight news or SEC filings. Tape is consolidating after the May 13-21 +36% surge. Next binary: Stifel Growth conf Jun 2 (Stockholm 15:30) and pending JV definitive agreement / S-3 rights-offering launch.',
+    updatedAt: '2026-05-28T22:05:00+02:00',
+    session:   'post-close',
+    headline:  'EOSE surges ~+9% to ~$9.23 close on light vol; no new filings; JV/S-3 still pending',
+    takeaway:  'EOSE closed ~$9.23 (+~9% vs $8.47 prior close) on below-average equity volume (11.5M vs 39M avg), with call options running 2× normal — options-led move, no fundamental catalyst today. No new SEC filings or IR news. Stifel Growth conf Jun 2 (Stockholm 15:30) remains next catalyst.',
     bullets: [
-      'Tape: EOSE ~$8.49 pre-market (+0.2% vs $8.47 Wed close, vol 1.24M). +31% from May 1 low $6.45; holding the $8.32–$8.99 band formed after Tue\'s +12% Q1/JV surge. No institutional overnight print.',
-      'No new SEC filings overnight. Pending watch: JV definitive agreement (8-K), S-3 for ~$150M rights offering, and shareholder proxy for authorized-share vote — all required before Frontier Power USA closes.',
-      'Stifel Growth Conference Jun 2 (Stockholm 15:30) is next CEO Mastrangelo appearance; JPM conference Jun 23 follows. Both are potential venues for JV close update or S-3 launch timing guidance.',
-      'Sector tailwind: BNEF forecasts record 158GW global energy storage deployments in 2026 (vs 112GW in 2025); LDES annual adds set to quadruple — non-Li-ion chemistries gaining share, direct read-through for Eos zinc-bromide.',
-      'Manufacturing: Line 2 at Thorn Hill targeted for production by end-Q2 (Jun 30). Online = capacity doubles, critical to hitting $300–400M FY26 guidance midpoint. Reaffirmed on Q1 call; no update since.',
-      'Litigation: Yung v. Eos class action (NJ Dist Ct) — no overnight docket activity. BFA Law, Block & Leviton, Schall still soliciting shareholders. MTD briefing schedule is key near-term risk to monitor.'
+      'Price: EOSE closed ~$9.23 (+~9% vs $8.47 Thu close); equity vol 11.5M vs 39M 30-day avg — light tape. Calls 2× avg daily options flow, suggesting positioning/speculation rather than institutional accumulation.',
+      'No new SEC filings today. Pending watch: JV definitive agreement 8-K, S-3 for ~$150M rights offering, and authorized-share proxy — all required before Frontier Power USA formally closes.',
+      'Stifel Growth Conference Jun 2 (Stockholm 15:30) is next management appearance; JPM conference Jun 23 follows. Both potential venues for JV close timing or S-3 launch guidance from CEO Mastrangelo.',
+      'Manufacturing: Line 2 at Thorn Hill targeted for production by end-Q2 (Jun 30). Online = capacity doubles; critical path to $300–400M FY26 revenue guidance midpoint. No update since Q1 call.',
+      'Frontier Power USA (Cerberus $100M + 2 GWh reservation) + TURBINE-X JDA (gas-battery hybrid for AI data centers) remain pending definitive agreement; no company update since May 13 announcement.',
+      'Litigation: Yung v. Eos class action (NJ Dist Ct, filed Mar 6) — no new docket activity today. MTD briefing schedule is key event risk; multiple plaintiff firms still soliciting shareholders.'
     ],
-    price:   { last: 8.49, changePct: 0.24, note: 'pre-market May 28 · Yahoo Finance (delayed)' },
+    price:   { last: 9.23, changePct: 9.0, note: 'close May 28 · Yahoo Finance / web (delayed/approx)' },
     sources: [
       { label: 'EOSE quote — Yahoo Finance', url: 'https://finance.yahoo.com/quote/EOSE/' },
-      { label: 'EOSE news tracker — StockTitan', url: 'https://www.stocktitan.net/news/EOSE/' },
-      { label: 'Eos IR — News Releases', url: 'https://investors.eose.com/news-releases/' },
-      { label: 'SEC EDGAR — EOSE latest filings', url: 'https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0001805077&type=&dateb=&owner=include&count=10' },
-      { label: 'BNEF: Energy Storage 100GW era', url: 'https://about.bnef.com/insights/clean-energy/energy-storage-enters-the-100-gigawatt-era-three-things-to-know/' },
-      { label: 'Q1\'26 PR + Frontier Power USA (GlobeNewswire)', url: 'https://www.globenewswire.com/news-release/2026/05/13/3293810/0/en/eos-energy-enterprises-reports-first-quarter-2026-financial-results-and-announces-frontier-power-usa.html' }
+      { label: 'EOSE SEC filings — EDGAR', url: 'https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0001805077&type=&dateb=&owner=include&count=10' },
+      { label: 'Q1\'26 PR + Frontier Power USA (GlobeNewswire)', url: 'https://www.globenewswire.com/news-release/2026/05/13/3293810/0/en/eos-energy-enterprises-reports-first-quarter-2026-financial-results-and-announces-frontier-power-usa.html' },
+      { label: 'EOSE insider activity — StockTitan Form 4', url: 'https://www.stocktitan.net/sec-filings/EOSE/form-4-eos-energy-enterprises-inc-insider-trading-activity-f1284c5a2e58.html' },
+      { label: 'Eos IR — News Releases', url: 'https://investors.eose.com/news-releases/' }
     ]
   },
 
