@@ -755,6 +755,106 @@
     renderSide('[data-rumors-bear]', D.rumors.bear, 'var(--negative)');
   }
 
+  // ---------- News items feed (01b) ----------
+  function renderNewsItems() {
+    const n = D.newsItems;
+    if (!n) return;
+
+    const fmtUpdated = (() => {
+      if (!n.updatedAt) return 'Awaiting first refresh';
+      try {
+        const d = new Date(n.updatedAt);
+        return d.toLocaleString('sv-SE', { timeZone: 'Europe/Stockholm', hour12: false }) + ' (Stockholm)';
+      } catch (e) { return n.updatedAt; }
+    })();
+    const sessionLabel = n.session === 'post-close'
+      ? 'Post-close · US session wrap'
+      : n.session === 'pre-open'
+        ? 'Pre-open · overnight scan'
+        : '';
+    setEl('[data-ni-meta]', sessionLabel ? `${sessionLabel} · ${fmtUpdated}` : fmtUpdated);
+
+    const feed = document.querySelector('[data-ni-feed]');
+    if (!feed) return;
+
+    const tagMeta = {
+      'catalyst':   { bg: 'var(--positive-soft)',  color: 'var(--positive)', label: 'Catalyst'   },
+      'sec-filing': { bg: 'var(--accent-soft)',     color: 'var(--accent)',   label: 'SEC Filing' },
+      'analyst':    { bg: 'rgba(255,179,71,0.15)',  color: 'var(--warning)', label: 'Analyst'    },
+      'general':    { bg: 'var(--bg-2)',            color: 'var(--fg-2)',    label: 'News'       }
+    };
+
+    const items = n.items || [];
+    if (!items.length) {
+      feed.innerHTML = '<div class="card" style="color:var(--fg-2);font-size:14px;padding:20px">No news items yet — next refresh at 07:30 CEST.</div>';
+      return;
+    }
+
+    feed.innerHTML = items.map(item => {
+      const tm = tagMeta[item.tag] || tagMeta.general;
+      return `
+      <div class="card" style="margin-bottom:10px">
+        <div style="display:flex;align-items:flex-start;justify-content:space-between;gap:16px">
+          <div style="flex:1;min-width:0">
+            <div style="display:flex;align-items:center;gap:8px;margin-bottom:7px;flex-wrap:wrap">
+              <span style="font-size:11px;font-weight:700;padding:3px 9px;border-radius:999px;background:${tm.bg};color:${tm.color};text-transform:uppercase;letter-spacing:.06em">${tm.label}</span>
+              <span style="font-size:12px;color:var(--fg-3)">${item.source || ''}</span>
+              ${item.date ? `<span style="font-size:12px;color:var(--fg-3)">· ${item.date}</span>` : ''}
+            </div>
+            <a href="${item.url || '#'}" target="_blank" rel="noopener"
+               style="font-size:14.5px;font-weight:600;color:var(--fg-0);text-decoration:none;line-height:1.4;display:block;margin-bottom:5px">${item.headline || ''}</a>
+            ${item.summary ? `<p style="margin:0;font-size:13px;color:var(--fg-2);line-height:1.55">${item.summary}</p>` : ''}
+          </div>
+          ${item.url ? `<a href="${item.url}" target="_blank" rel="noopener"
+               style="flex-shrink:0;font-size:12px;color:var(--accent);white-space:nowrap;margin-top:4px;text-decoration:none">Read ↗</a>` : ''}
+        </div>
+      </div>`;
+    }).join('');
+  }
+
+  // ---------- NEW: Morning note (01b) ----------
+  function renderMorningNote() {
+    const mn = D.morningNote;
+    if (!mn) return;
+    const fmtUpdated = (() => {
+      try {
+        const d = new Date(mn.updatedAt);
+        return d.toLocaleString('sv-SE', { timeZone: 'Europe/Stockholm', hour12: false }) + ' (Stockholm)';
+      } catch (e) { return mn.updatedAt || ''; }
+    })();
+    setEl('[data-mn-meta]', `Updated ${fmtUpdated}`);
+    setEl('[data-mn-headline]', mn.headline || '');
+    const sessionLabel = mn.session === 'post-close'
+      ? 'Post-close run · US session wrap'
+      : mn.session === 'pre-open'
+        ? 'Pre-open run · overnight setup'
+        : (mn.session || '');
+    setEl('[data-mn-session]', sessionLabel);
+    setEl('[data-mn-takeaway]', mn.takeaway || '');
+    const bullets = document.querySelector('[data-mn-bullets]');
+    if (bullets) {
+      bullets.innerHTML = (mn.bullets || []).map(b => `<li>${b}</li>`).join('');
+    }
+    const priceEl = document.querySelector('[data-mn-price]');
+    if (priceEl) {
+      const p = mn.price || {};
+      if (p.last != null) {
+        const pct = (p.changePct != null) ? `${p.changePct >= 0 ? '+' : ''}${p.changePct.toFixed(2)}%` : '';
+        const cls = (p.changePct >= 0) ? 'pos' : 'neg';
+        priceEl.innerHTML = `<b>$${Number(p.last).toFixed(2)}</b> <span class="${cls}">${pct}</span>${p.note ? ` · <span style="color:var(--fg-3)">${p.note}</span>` : ''}`;
+      } else {
+        priceEl.textContent = p.note || '—';
+      }
+    }
+    const srcs = document.querySelector('[data-mn-sources]');
+    if (srcs) {
+      const list = mn.sources || [];
+      srcs.innerHTML = list.length
+        ? 'Sources: ' + list.map(s => `<a href="${s.url}" target="_blank" rel="noopener" style="color:var(--accent);text-decoration:underline">${s.label}</a>`).join(' · ')
+        : '';
+    }
+  }
+
   // ---------- NEW: Recent history (3b timeline) ----------
   function renderHistory() {
     const host = document.querySelector('[data-history]');
@@ -1303,6 +1403,8 @@
     renderFrontier();
     renderCapStructure();
     renderProduct();
+    renderNewsItems();
+    renderMorningNote();
     renderHistory();
     renderAnalysts();
     renderPolicy();

@@ -53,6 +53,16 @@ window.EOSE_DATA = {
     ]
   },
 
+  // ────────── Live news feed (refreshed twice daily by scheduled routine) ──────────
+  // Populated by CCR routines: pre-open 07:30 CEST, post-close 22:30 CEST (Mon–Fri).
+  // Each item: { date, source, headline, url, summary, tag }
+  // tag: 'catalyst' | 'sec-filing' | 'analyst' | 'general'
+  newsItems: {
+    updatedAt: null,
+    session:   null,
+    items:     []
+  },
+
   // ────────── KPI strip — Q1'26 actuals ──────────
   // accent drives the card's left border (meaning-tied): pos | warn | neg | info
   kpis: [
