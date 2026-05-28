@@ -58,9 +58,66 @@ window.EOSE_DATA = {
   // Each item: { date, source, headline, url, summary, tag }
   // tag: 'catalyst' | 'sec-filing' | 'analyst' | 'general'
   newsItems: {
-    updatedAt: null,
-    session:   null,
-    items:     []
+    updatedAt: '2026-05-28T18:45:00+02:00',
+    session:   'post-close',
+    items: [
+      {
+        date:     'May 22, 2026',
+        source:   'Needham',
+        headline: 'Needham Initiates Eos Energy at Buy with $11 Price Target',
+        url:      'https://stockanalysis.com/stocks/eose/forecast/',
+        summary:  'Analyst Sean Milligan initiated coverage with a Buy rating and $11 PT — the highest on the Street — citing the Frontier Power USA JV and Q1 beat as transformative catalysts.',
+        tag:      'analyst'
+      },
+      {
+        date:     'May 19, 2026',
+        source:   'J.P. Morgan',
+        headline: 'J.P. Morgan Raises EOSE Price Target from $6 to $9, Maintains Neutral',
+        url:      'https://stockanalysis.com/stocks/eose/forecast/',
+        summary:  'Mark Strouse raised the PT 50% to $9 reflecting improved near-term visibility following the Q1 beat and Frontier Power USA announcement, while keeping a Neutral on execution risk.',
+        tag:      'analyst'
+      },
+      {
+        date:     'May 14, 2026',
+        source:   'Stifel / TD Cowen',
+        headline: 'Stifel Maintains Buy/$12, TD Cowen Raises to $8 — Post Q1 Analyst Roundup',
+        url:      'https://stockanalysis.com/stocks/eose/forecast/',
+        summary:  'Stifel (Stephen Gengaro) maintained Buy/$12. TD Cowen (Jeff Osborne) raised to $8 from $7. Roth MKM kept $6. Consensus PT now ~$9.43 across 10 analysts.',
+        tag:      'analyst'
+      },
+      {
+        date:     'May 13, 2026',
+        source:   'Eos Energy IR',
+        headline: 'Q1 2026: Revenue $57M (+445% YoY), Surprise EPS Beat of $0.12 vs. −$0.22 Consensus',
+        url:      'https://www.stocktitan.net/news/EOSE/eos-energy-enterprises-reports-first-quarter-2026-financial-results-3n7ulb6smcd9.html',
+        summary:  'Record production quarter with backlog of $644.6M and commercial pipeline of $24.3B. FY26 guidance of $300–400M reaffirmed. Adj. EPS beat by 154%.',
+        tag:      'catalyst'
+      },
+      {
+        date:     'May 13, 2026',
+        source:   'Eos Energy / Cerberus',
+        headline: 'Frontier Power USA Announced — Cerberus $100M Equity + Eos $150M Rights Offering for 2 GWh LDES Platform',
+        url:      'https://www.stocktitan.net/news/EOSE/eos-energy-enterprises-and-cerberus-capital-management-announce-8d69f2s1x83w.html',
+        summary:  'Frontier Power USA will deploy Eos Z3 zinc-bromide batteries at scale targeting data-center and utility customers. Closing contingent on DOE consent and authorized-share shareholder vote.',
+        tag:      'catalyst'
+      },
+      {
+        date:     'Apr 30, 2026',
+        source:   'Eos Energy IR',
+        headline: 'Eos Energy Appoints Alessandro Lagi as Chief Financial Officer',
+        url:      'https://www.stocktitan.net/news/EOSE/eos-energy-enterprises-appoints-alessandro-lagi-as-chief-financial-jlj1mso677q5.html',
+        summary:  'Lagi joins as CFO to lead financial strategy as the company scales manufacturing and closes the Frontier Power USA joint venture.',
+        tag:      'general'
+      },
+      {
+        date:     'Apr 15, 2026',
+        source:   'Eos Energy / TURBINE-X',
+        headline: 'Eos Energy & TURBINE-X Launch Private Power Infrastructure for AI Hyperscale Data Centers',
+        url:      'https://www.stocktitan.net/news/EOSE/eos-energy-enterprises-turbine-x-launch-private-power-infrastructure-m4humszjfvgf.html',
+        summary:  'JDA targets up to 2 GWh of Eos Indensity storage paired with gas-fired generation for AI data center customers. Initial deployments targeted for 2027.',
+        tag:      'catalyst'
+      }
+    ]
   },
 
   // ────────── KPI strip — Q1'26 actuals ──────────
