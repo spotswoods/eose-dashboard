@@ -58,9 +58,25 @@ window.EOSE_DATA = {
   // Each item: { date, source, headline, url, summary, tag }
   // tag: 'catalyst' | 'sec-filing' | 'analyst' | 'general'
   newsItems: {
-    updatedAt: '2026-05-28T18:45:00+02:00',
+    updatedAt: '2026-05-28T20:30:00+02:00',
     session:   'post-close',
     items: [
+      {
+        date:     'May 28, 2026',
+        source:   'GlobeNewsWire',
+        headline: 'FPUSA and Stella Energy Solutions Announce Strategic Framework Across 2+ GWh Storage Pipeline',
+        url:      'https://finance.yahoo.com/sectors/energy/articles/fpusa-stella-energy-solutions-announce-113000300.html',
+        summary:  'Frontier Power USA names Stella its designated execution partner for LDES development and gains exclusive evaluation rights on Stella\'s 2+ GWh late-stage BESS pipeline — anchored in ERCOT, Texas. FPUSA will fund 100% of construction equity for eligible projects upon full capitalisation.',
+        tag:      'catalyst'
+      },
+      {
+        date:     'May 21, 2026',
+        source:   'GlobeNewsWire',
+        headline: 'FPUSA Converts 480 MWh of Long-Duration Energy Storage Projects from the Bimergen Energy Portfolio',
+        url:      'https://www.globenewswire.com/news-release/2026/05/21/3299183/0/en/FPUSA-Converts-480-MWh-of-Long-Duration-Energy-Storage-Projects-from-the-Bimergen-Energy-Portfolio.html',
+        summary:  'Frontier Power USA acquired and converted 480 MWh of late-stage BESS development projects from Bimergen Energy Corporation onto the FPUSA platform — the first concrete pipeline conversion since the JV was announced on May 13.',
+        tag:      'catalyst'
+      },
       {
         date:     'May 22, 2026',
         source:   'Needham',
