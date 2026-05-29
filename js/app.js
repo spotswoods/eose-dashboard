@@ -1367,6 +1367,33 @@
     schedule();
   }
 
+  // ---------- Frontier Power USA news (same-origin JSON written by the Action) ----------
+  function escHtml(s) {
+    return String(s == null ? '' : s).replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
+  }
+  async function renderFrontierNews() {
+    const host = document.querySelector('[data-frontier-news]');
+    if (!host) return;
+    try {
+      const r = await fetch('data/frontier-news.json', { cache: 'no-store' });
+      if (!r.ok) throw new Error('no file');
+      const j = await r.json();
+      const items = (j && j.items) || [];
+      host.innerHTML = items.length ? items.map(it => `
+        <a class="fn-item" href="${escHtml(it.link)}" target="_blank" rel="noopener">
+          <span class="fn-date">${escHtml(it.date)}</span>
+          <span><span class="fn-title">${escHtml(it.title)}</span>${it.excerpt ? `<span class="fn-ex">${escHtml(it.excerpt)}</span>` : ''}</span>
+          <span class="fn-cta">Read ↗</span>
+        </a>`).join('') : '<div style="color:var(--fg-3);font-size:13px">No news items yet.</div>';
+      const m = document.querySelector('[data-frontier-news-meta]');
+      if (m) m.innerHTML = 'Auto-updated from frontierpowerusa.com (WordPress REST API)'
+        + (j.meta && j.meta._refreshed ? ' · last refresh ' + new Date(j.meta._refreshed).toLocaleString() : '')
+        + ' · <a href="frontier-news.xml" target="_blank" rel="noopener" style="color:var(--accent)">RSS feed</a>';
+    } catch (e) {
+      host.innerHTML = '<div style="color:var(--fg-3);font-size:13px">News unavailable right now — see <a href="https://www.frontierpowerusa.com/" target="_blank" rel="noopener" style="color:var(--accent)">frontierpowerusa.com</a>.</div>';
+    }
+  }
+
   // ---------- Deep-dive "Listen" button (lazy audio, no fetch until click) ----------
   function initDeepDiveAudio() {
     let audio = null;
@@ -1441,6 +1468,7 @@
     initSearch();
     initGridPulse();
     initDeepDiveAudio();
+    renderFrontierNews();
 
     // Price history candlestick (fire-and-forget) + live quote
     loadHistory();
