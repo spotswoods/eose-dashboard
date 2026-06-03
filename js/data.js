@@ -30,25 +30,26 @@ window.EOSE_DATA = {
   // Refreshed by /equity-research:morning-note via a scheduled task in Cowork.
   // session = 'pre-open' (Swedish AM, ~07:00 CEST) | 'post-close' (Swedish PM, ~22:30 CEST)
   morningNote: {
-    updatedAt: '2026-05-28T22:05:00+02:00',
+    updatedAt: '2026-06-03T22:45:00+02:00',
     session:   'post-close',
-    headline:  'EOSE surges ~+9% to ~$9.23 close on light vol; no new filings; JV/S-3 still pending',
-    takeaway:  'EOSE closed ~$9.23 (+~9% vs $8.47 prior close) on below-average equity volume (11.5M vs 39M avg), with call options running 2× normal — options-led move, no fundamental catalyst today. No new SEC filings or IR news. Stifel Growth conf Jun 2 (Stockholm 15:30) remains next catalyst.',
+    headline:  'AGM day: EOSE closes ~$9.42 (+6.4%) — share-auth vote likely clears; 8-K pending overnight',
+    takeaway:  'EOSE surged ~6.4% to ~$9.42 on AGM day as shareholders almost certainly approved the 600M→800M authorized share increase needed to close the Cerberus/FPUSA structure. No 8-K filed within first 30 min AH. Watch for the voting 8-K overnight — confirmation unlocks the rights offering and is the next re-rating catalyst.',
     bullets: [
-      'Price: EOSE closed ~$9.23 (+~9% vs $8.47 Thu close); equity vol 11.5M vs 39M 30-day avg — light tape. Calls 2× avg daily options flow, suggesting positioning/speculation rather than institutional accumulation.',
-      'No new SEC filings today. Pending watch: JV definitive agreement 8-K, S-3 for ~$150M rights offering, and authorized-share proxy — all required before Frontier Power USA formally closes.',
-      'Stifel Growth Conference Jun 2 (Stockholm 15:30) is next management appearance; JPM conference Jun 23 follows. Both potential venues for JV close timing or S-3 launch guidance from CEO Mastrangelo.',
-      'Manufacturing: Line 2 at Thorn Hill targeted for production by end-Q2 (Jun 30). Online = capacity doubles; critical path to $300–400M FY26 revenue guidance midpoint. No update since Q1 call.',
-      'Frontier Power USA (Cerberus $100M + 2 GWh reservation) + TURBINE-X JDA (gas-battery hybrid for AI data centers) remain pending definitive agreement; no company update since May 13 announcement.',
-      'Litigation: Yung v. Eos class action (NJ Dist Ct, filed Mar 6) — no new docket activity today. MTD briefing schedule is key event risk; multiple plaintiff firms still soliciting shareholders.'
+      'Jun 3 close ~$9.42 (+~6.4%, avg vol ~10M): Strong AGM-day session. Up ~12% from $8.43 on May 29 as FPUSA re-rating continues. $9.00 is near-term support; $10 is next resistance and Needham PT floor.',
+      'AGM vote (10am ET, virtual): Five proposals on ballot incl. authorized share expansion 600M→800M. No 8-K filed as of 22:45 CEST — expect overnight filing. Approval unlocks Eos\' ~$150M rights offering to fund FPUSA equity stake alongside Cerberus\' $100M+ commitment.',
+      'FPUSA pipeline: Stella Energy (2+ GWh ERCOT BESS) and 480 MWh Bimergen portfolio converted. $24.3B commercial opportunity pipeline (+56% YoY) and $644.6M backlog (2.6 GWh) provide revenue visibility for $300–400M FY26 guide.',
+      'Line 2 Thorn Hill — June 30 hard deadline: No status update since Q1 call (May 13). Go-live confirmation in coming weeks is the most critical near-term operational catalyst. Slip would pressure FY26 revenue guidance.',
+      'CFO Alessandro Lagi starts June 8: First executive addition post-FPUSA. Watch for any IR guidance on rights offering timeline and funding close.',
+      'Next key event: J.P. Morgan Natural Resources Conference June 23 — CEO Mastrangelo\'s first public appearance post-AGM. Read on FPUSA capital raise, Line 2, and 2026 guidance cadence.'
     ],
-    price:   { last: 9.23, changePct: 9.0, note: 'close May 28 · Yahoo Finance / web (delayed/approx)' },
+    price:   { last: 9.42, changePct: 6.41, note: 'close Jun 3 · TradingView/search data (approx.)' },
     sources: [
       { label: 'EOSE quote — Yahoo Finance', url: 'https://finance.yahoo.com/quote/EOSE/' },
-      { label: 'EOSE SEC filings — EDGAR', url: 'https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0001805077&type=&dateb=&owner=include&count=10' },
-      { label: 'Q1\'26 PR + Frontier Power USA (GlobeNewswire)', url: 'https://www.globenewswire.com/news-release/2026/05/13/3293810/0/en/eos-energy-enterprises-reports-first-quarter-2026-financial-results-and-announces-frontier-power-usa.html' },
-      { label: 'EOSE insider activity — StockTitan Form 4', url: 'https://www.stocktitan.net/sec-filings/EOSE/form-4-eos-energy-enterprises-inc-insider-trading-activity-f1284c5a2e58.html' },
-      { label: 'Eos IR — News Releases', url: 'https://investors.eose.com/news-releases/' }
+      { label: 'EOSE IR — News Releases', url: 'https://investors.eose.com/news-releases/' },
+      { label: 'Q1 2026 earnings + FPUSA — Eos IR', url: 'https://investors.eose.com/news-releases/news-release-details/eos-energy-enterprises-reports-first-quarter-2026-financial' },
+      { label: 'EOSE 2026 proxy (AGM June 3) — StockTitan', url: 'https://www.stocktitan.net/sec-filings/EOSE/def-14a-eos-energy-enterprises-inc-definitive-proxy-statement-c7dc97172ec8.html' },
+      { label: 'EOSE stock chart — TradingView', url: 'https://www.tradingview.com/symbols/NASDAQ-EOSE/' },
+      { label: 'EOSE news — StockTitan', url: 'https://www.stocktitan.net/news/EOSE/' }
     ]
   },
 
@@ -447,23 +448,8 @@ window.EOSE_DATA = {
       url: 'https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0001805077' }
   ],
 
-  // ────────── News & coverage sources ──────────
-  // We deliberately link to category pages (live, updated by the source) rather than
-  // hand-curate headlines, to avoid stale or fabricated attributions.
-  news: [
-    { date: 'Live',         src: 'Eos IR',        title: 'Investor Relations newsroom (press releases, presentations, events)',
-      url: 'https://ir.eosenergy.com/news-events/press-releases' },
-    { date: 'Live',         src: 'Yahoo Finance', title: 'EOSE news feed — aggregated coverage',
-      url: 'https://finance.yahoo.com/quote/EOSE/news/' },
-    { date: 'Live',         src: 'Google News',   title: 'EOSE — recent headlines (Google News)',
-      url: 'https://news.google.com/search?q=%22Eos+Energy+Enterprises%22+OR+EOSE&hl=en-US' },
-    { date: 'Live',         src: 'Seeking Alpha', title: 'EOSE coverage on Seeking Alpha',
-      url: 'https://seekingalpha.com/symbol/EOSE/news' },
-    { date: 'May 13, 2026', src: 'SEC 8-K',       title: 'Q1 2026 earnings release + Frontier Power USA formation (primary source)',
-      url: 'https://www.sec.gov/Archives/edgar/data/1805077/000162828026034367/' },
-    { date: 'May 13, 2026', src: 'SEC 8-K Ex 99.2', title: 'Frontier Power USA press release (the deal terms in their own words)',
-      url: 'https://www.sec.gov/Archives/edgar/data/1805077/000162828026034367/eosepressreleasefrontier.htm' }
-  ],
+  // (Static 'news' array retired — superseded by the auto-refreshed §01b EOSE
+  //  News Feed and §03a Frontier Power USA news. §11 is now SEC filings only.)
 
   // ────────── Risk factors — focused bear thesis ──────────
   risks: [
