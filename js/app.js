@@ -424,7 +424,7 @@
 
   function renderNews() {
     const host = document.querySelector('[data-news]');
-    if (!host) return;
+    if (!host || !D.news) return;
     host.innerHTML = D.news.map(n => `
       <a class="news__item" href="${n.url || '#'}" ${n.url ? 'target="_blank" rel="noopener"' : 'onclick="return false;"'}>
         <div class="list__date">${n.date}</div>
