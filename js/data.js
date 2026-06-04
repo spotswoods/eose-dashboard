@@ -30,26 +30,26 @@ window.EOSE_DATA = {
   // Refreshed by /equity-research:morning-note via a scheduled task in Cowork.
   // session = 'pre-open' (Swedish AM, ~07:00 CEST) | 'post-close' (Swedish PM, ~22:30 CEST)
   morningNote: {
-    updatedAt: '2026-06-03T22:45:00+02:00',
-    session:   'post-close',
-    headline:  'AGM day: EOSE closes ~$9.42 (+6.4%) — share-auth vote likely clears; 8-K pending overnight',
-    takeaway:  'EOSE surged ~6.4% to ~$9.42 on AGM day as shareholders almost certainly approved the 600M→800M authorized share increase needed to close the Cerberus/FPUSA structure. No 8-K filed within first 30 min AH. Watch for the voting 8-K overnight — confirmation unlocks the rights offering and is the next re-rating catalyst.',
+    updatedAt: '2026-06-04T07:30:00+02:00',
+    session:   'pre-open',
+    headline:  'AGM voting 8-K still outstanding; Line 2 go-live is the next binary catalyst',
+    takeaway:  'No material overnight news post-AGM. The voting 8-K confirming share-auth expansion (600M→800M) has not been filed as of pre-open — watch for it today. Once confirmed, rights offering mechanics become the focus and FPUSA capitalisation can close.',
     bullets: [
-      'Jun 3 close ~$9.42 (+~6.4%, avg vol ~10M): Strong AGM-day session. Up ~12% from $8.43 on May 29 as FPUSA re-rating continues. $9.00 is near-term support; $10 is next resistance and Needham PT floor.',
-      'AGM vote (10am ET, virtual): Five proposals on ballot incl. authorized share expansion 600M→800M. No 8-K filed as of 22:45 CEST — expect overnight filing. Approval unlocks Eos\' ~$150M rights offering to fund FPUSA equity stake alongside Cerberus\' $100M+ commitment.',
-      'FPUSA pipeline: Stella Energy (2+ GWh ERCOT BESS) and 480 MWh Bimergen portfolio converted. $24.3B commercial opportunity pipeline (+56% YoY) and $644.6M backlog (2.6 GWh) provide revenue visibility for $300–400M FY26 guide.',
-      'Line 2 Thorn Hill — June 30 hard deadline: No status update since Q1 call (May 13). Go-live confirmation in coming weeks is the most critical near-term operational catalyst. Slip would pressure FY26 revenue guidance.',
-      'CFO Alessandro Lagi starts June 8: First executive addition post-FPUSA. Watch for any IR guidance on rights offering timeline and funding close.',
-      'Next key event: J.P. Morgan Natural Resources Conference June 23 — CEO Mastrangelo\'s first public appearance post-AGM. Read on FPUSA capital raise, Line 2, and 2026 guidance cadence.'
+      'AGM 8-K pending: June 3 shareholder vote on share-auth expansion (600M→800M) outcome not yet formally filed. Approval required to execute Eos\' ~$150M rights offering and close Cerberus\' $100M equity into FPUSA. First item to watch at open.',
+      'EOSE closed ~$9.42 (+6.4%) on AGM day (Jun 3) — up ~12% from May 29 close. $9.00 is near-term support; $10.00 is next resistance with Needham\'s $11 PT as the bull-case target.',
+      'CFO Alessandro Lagi officially starts Monday Jun 8 — first post-FPUSA exec hire. His opening agenda: rights offering logistics, FPUSA capitalisation timeline, and IR strategy into the capital raise.',
+      'Line 2 Thorn Hill — June 30 hard deadline: No operational update since Q1 call (May 13). Go-live is the most critical near-term catalyst; a slip would put pressure on the $300–400M FY26 guide.',
+      'TURBINE-X JDA: Integrated gas + Indensity solution targeting up to 2 GWh in AI/HPC data-centre deployments. Not yet reflected in $644.6M backlog — watch for conversion.',
+      'Next public catalyst: J.P. Morgan Natural Resources Conference June 23. CEO Mastrangelo\'s first post-AGM appearance — read on rights offering timeline, Line 2 status, and guidance cadence.'
     ],
-    price:   { last: 9.42, changePct: 6.41, note: 'close Jun 3 · TradingView/search data (approx.)' },
+    price:   { last: 9.42, changePct: 6.41, note: 'Jun 3 close · approx. from web data; pre-mkt unavailable' },
     sources: [
       { label: 'EOSE quote — Yahoo Finance', url: 'https://finance.yahoo.com/quote/EOSE/' },
       { label: 'EOSE IR — News Releases', url: 'https://investors.eose.com/news-releases/' },
-      { label: 'Q1 2026 earnings + FPUSA — Eos IR', url: 'https://investors.eose.com/news-releases/news-release-details/eos-energy-enterprises-reports-first-quarter-2026-financial' },
-      { label: 'EOSE 2026 proxy (AGM June 3) — StockTitan', url: 'https://www.stocktitan.net/sec-filings/EOSE/def-14a-eos-energy-enterprises-inc-definitive-proxy-statement-c7dc97172ec8.html' },
-      { label: 'EOSE stock chart — TradingView', url: 'https://www.tradingview.com/symbols/NASDAQ-EOSE/' },
-      { label: 'EOSE news — StockTitan', url: 'https://www.stocktitan.net/news/EOSE/' }
+      { label: 'Q1 2026 + FPUSA announcement — GlobeNewsWire', url: 'https://www.globenewswire.com/news-release/2026/05/13/3293810/0/en/eos-energy-enterprises-reports-first-quarter-2026-financial-results-and-announces-frontier-power-usa.html' },
+      { label: 'EOSE + TURBINE-X JDA — StockTitan', url: 'https://www.stocktitan.net/news/EOSE/' },
+      { label: 'EOSE insider Form 4 (Walters RSU, Jun 2) — StockTitan', url: 'https://www.stocktitan.net/sec-filings/EOSE/form-4-eos-energy-enterprises-inc-insider-trading-activity-a5cd6a266c02.html' },
+      { label: 'EOSE AGM proxy 2026 — SEC DEF 14A', url: 'https://www.sec.gov/Archives/edgar/data/1805077/000162828026025071/eose-20260414.htm' }
     ]
   },
 
