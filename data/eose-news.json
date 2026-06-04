@@ -1,0 +1,142 @@
+{
+  "meta": {
+    "_refreshed": "2026-06-04T22:52:09.782Z",
+    "sources": [
+      "eose.com (WordPress REST API)",
+      "SEC EDGAR submissions API"
+    ],
+    "counts": {
+      "pressReleases": 20,
+      "secFilings": 306,
+      "shown": 14
+    }
+  },
+  "items": [
+    {
+      "iso": "2026-05-13T21:15:06",
+      "date": "2026-05-13",
+      "source": "Eos Energy (press release)",
+      "headline": "Eos Energy Enterprises and Cerberus Capital Management Announce Frontier Power USA to Deploy American-Made Long Duration Energy Storage at Scale",
+      "url": "https://www.eose.com/eos-energy-enterprises-and-cerberus-capital-management-announce-frontier-power-usa-to-deploy-american-made-long-duration-energy-storage-at-scale/",
+      "summary": "Frontier Power USA is expected to be a purpose-built independent development and investment company utilizing Eos’ vertically integrated technology stack to accelerate gigawatt-scale deployment of American-made energy storage 2 GWh Firm…",
+      "tag": "catalyst"
+    },
+    {
+      "iso": "2026-05-13T21:13:14",
+      "date": "2026-05-13",
+      "source": "Eos Energy (press release)",
+      "headline": "Eos Energy Enterprises Reports First Quarter 2026 Financial Results and Announces Frontier Power USA",
+      "url": "https://www.eose.com/eos-energy-enterprises-reports-first-quarter-2026-financial-results-and-announces-frontier-power-usa/",
+      "summary": "Announced with Cerberus the formation of Frontier Power USA, a stand-alone purpose-built entity to develop, finance, and operate LDES projects to accelerate energy storage deployments Entered into a 2 GWh firm capacity reservation…",
+      "tag": "catalyst"
+    },
+    {
+      "iso": "2026-05-13T12:00:00Z",
+      "date": "2026-05-13",
+      "source": "SEC EDGAR",
+      "headline": "Quarterly report (10-Q)",
+      "url": "https://www.sec.gov/Archives/edgar/data/1805077/000162828026034368/eose-20260331.htm",
+      "summary": "10-Q",
+      "tag": "sec-filing"
+    },
+    {
+      "iso": "2026-05-13T12:00:00Z",
+      "date": "2026-05-13",
+      "source": "SEC EDGAR",
+      "headline": "Material event (8-K)",
+      "url": "https://www.sec.gov/Archives/edgar/data/1805077/000162828026034367/eose-20260512.htm",
+      "summary": "8-K",
+      "tag": "sec-filing"
+    },
+    {
+      "iso": "2026-05-13T12:00:00Z",
+      "date": "2026-05-13",
+      "source": "SEC EDGAR",
+      "headline": "Automatic shelf (S-3ASR)",
+      "url": "https://www.sec.gov/Archives/edgar/data/1805077/000095010326007123/dp246541_s3asr.htm",
+      "summary": "FORM S-3ASR",
+      "tag": "sec-filing"
+    },
+    {
+      "iso": "2026-05-11T12:37:20",
+      "date": "2026-05-11",
+      "source": "Eos Energy (press release)",
+      "headline": "Eos Energy Enterprises Appoints Alessandro Lagi as Chief Financial Officer to Advance American Storage Infrastructure at Scale",
+      "url": "https://www.eose.com/eos-energy-enterprises-appoints-alessandro-lagi-as-chief-financial-officer-to-advance-american-storage-infrastructure-at-scale/",
+      "summary": "Veteran finance executive brings 25 Years of global energy value chain leadership to Eos PITTSBURGH, April 30, 2026 (GLOBE NEWSWIRE) — Eos Energy Enterprises, Inc. (NASDAQ: EOSE) (“Eos” or the “Company”), an American energy company and…",
+      "tag": "catalyst"
+    },
+    {
+      "iso": "2026-04-30T12:00:00Z",
+      "date": "2026-04-30",
+      "source": "SEC EDGAR",
+      "headline": "Material event (8-K)",
+      "url": "https://www.sec.gov/Archives/edgar/data/1805077/000162828026028611/eose-20260429.htm",
+      "summary": "8-K",
+      "tag": "sec-filing"
+    },
+    {
+      "iso": "2026-04-16T01:09:40",
+      "date": "2026-04-16",
+      "source": "Eos Energy (press release)",
+      "headline": "Eos Energy Enterprises & TURBINE-X Launch Private Power Infrastructure Solution for AI, Delivering Hyperscale Capacity in Months, Not Years",
+      "url": "https://www.eose.com/eos-energy-enterprises-turbine-x-launch-private-power-infrastructure-solution-for-ai-delivering-hyperscale-capacity-in-months-not-years/",
+      "summary": "Joint Development Agreement establishes integrated gas-fired generation and Indensity™ storage architecture to meet accelerating power demands of AI infrastructure PITTSBURGH and HOUSTON, April 15, 2026 (GLOBE NEWSWIRE) — Eos Energy…",
+      "tag": "catalyst"
+    },
+    {
+      "iso": "2026-04-16T01:08:19",
+      "date": "2026-04-16",
+      "source": "Eos Energy (press release)",
+      "headline": "Eos Energy Enterprises Reports Preliminary Q1 Revenue, Highlights Record Output and Capacity Expansion",
+      "url": "https://www.eose.com/eos-energy-enterprises-reports-preliminary-q1-revenue-highlights-record-output-and-capacity-expansion/",
+      "summary": "PITTSBURGH, April 09, 2026 (GLOBE NEWSWIRE) — Eos Energy Enterprises, Inc. (NASDAQ: EOSE) (“Eos” or the “Company”), an American energy company and the leading innovator in designing, sourcing, manufacturing, and providing zinc-based…",
+      "tag": "catalyst"
+    },
+    {
+      "iso": "2026-04-14T12:00:00Z",
+      "date": "2026-04-14",
+      "source": "SEC EDGAR",
+      "headline": "Proxy statement (DEF 14A)",
+      "url": "https://www.sec.gov/Archives/edgar/data/1805077/000162828026025071/eose-20260414.htm",
+      "summary": "DEF 14A",
+      "tag": "sec-filing"
+    },
+    {
+      "iso": "2026-04-09T12:00:00Z",
+      "date": "2026-04-09",
+      "source": "SEC EDGAR",
+      "headline": "Material event (8-K)",
+      "url": "https://www.sec.gov/Archives/edgar/data/1805077/000162828026024345/eose-20260409.htm",
+      "summary": "8-K",
+      "tag": "sec-filing"
+    },
+    {
+      "iso": "2026-03-31T12:00:00Z",
+      "date": "2026-03-31",
+      "source": "SEC EDGAR",
+      "headline": "Proxy materials (DEFA14A)",
+      "url": "https://www.sec.gov/Archives/edgar/data/1805077/000162828026022206/eos202614a-12.htm",
+      "summary": "DEFA14A",
+      "tag": "sec-filing"
+    },
+    {
+      "iso": "2026-03-31T12:00:00Z",
+      "date": "2026-03-31",
+      "source": "SEC EDGAR",
+      "headline": "Material event (8-K)",
+      "url": "https://www.sec.gov/Archives/edgar/data/1805077/000095010326005005/dp244527_8k.htm",
+      "summary": "FORM 8-K",
+      "tag": "sec-filing"
+    },
+    {
+      "iso": "2026-03-27T17:49:34",
+      "date": "2026-03-27",
+      "source": "Eos Energy (press release)",
+      "headline": "Eos Energy Enterprises Appoints Nathaniel Fick to Board of Directors",
+      "url": "https://www.eose.com/eos-energy-enterprises-appoints-nathaniel-fick-to-board-of-directors/",
+      "summary": "PITTSBURGH, March 26, 2026 (GLOBE NEWSWIRE) — Eos Energy Enterprises, Inc. (NASDAQ: EOSE) (“Eos” or the “Company”), an American energy company and the leading innovator in designing, sourcing, manufacturing, and providing zinc-based…",
+      "tag": "general"
+    }
+  ]
+}
