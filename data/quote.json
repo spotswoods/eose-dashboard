@@ -1,11 +1,11 @@
 {
-  "_refreshed": "2026-06-05T10:14:09.572Z",
+  "_refreshed": "2026-06-05T12:50:55.805Z",
   "price": 8.08,
-  "change": -0.12,
-  "changepct": -1.46,
-  "volume": 59823,
+  "change": 0,
+  "changepct": 0,
+  "volume": 112016,
   "high52": 19.86,
-  "low52": 3.78,
+  "low52": 3.81,
   "marketcap": 2743273094,
   "pe": "#N/A"
 }
