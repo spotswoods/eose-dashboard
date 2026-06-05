@@ -1,17 +1,26 @@
 {
   "meta": {
-    "_refreshed": "2026-06-04T23:01:29.606Z",
+    "_refreshed": "2026-06-05T13:34:01.470Z",
     "sources": [
       "eose.com (WordPress REST API)",
       "SEC EDGAR submissions API"
     ],
     "counts": {
       "pressReleases": 20,
-      "secFilings": 306,
+      "secFilings": 307,
       "shown": 14
     }
   },
   "items": [
+    {
+      "iso": "2026-06-05T12:00:00Z",
+      "date": "2026-06-05",
+      "source": "SEC EDGAR",
+      "headline": "Material event (8-K)",
+      "url": "https://www.sec.gov/Archives/edgar/data/1805077/000162828026041078/eose-20260603.htm",
+      "summary": "8-K",
+      "tag": "sec-filing"
+    },
     {
       "iso": "2026-05-13T21:15:06",
       "date": "2026-05-13",
@@ -128,15 +137,6 @@
       "url": "https://www.sec.gov/Archives/edgar/data/1805077/000095010326005005/dp244527_8k.htm",
       "summary": "FORM 8-K",
       "tag": "sec-filing"
-    },
-    {
-      "iso": "2026-03-27T17:49:34",
-      "date": "2026-03-27",
-      "source": "Eos Energy (press release)",
-      "headline": "Eos Energy Enterprises Appoints Nathaniel Fick to Board of Directors",
-      "url": "https://www.eose.com/eos-energy-enterprises-appoints-nathaniel-fick-to-board-of-directors/",
-      "summary": "PITTSBURGH, March 26, 2026 (GLOBE NEWSWIRE) — Eos Energy Enterprises, Inc. (NASDAQ: EOSE) (“Eos” or the “Company”), an American energy company and the leading innovator in designing, sourcing, manufacturing, and providing zinc-based…",
-      "tag": "general"
     }
   ]
 }
