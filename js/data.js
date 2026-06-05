@@ -30,25 +30,25 @@ window.EOSE_DATA = {
   // Refreshed by /equity-research:morning-note via a scheduled task in Cowork.
   // session = 'pre-open' (Swedish AM, ~07:00 CEST) | 'post-close' (Swedish PM, ~22:30 CEST)
   morningNote: {
-    updatedAt: '2026-06-05T07:58:00+02:00',
-    session:   'pre-open',
-    headline:  'Quiet overnight — AGM 8-K still absent; CFO Lagi starts Monday',
-    takeaway:  'No overnight catalysts — EOSE enters Friday\'s session consolidating Thursday\'s post-AGM fade near $8.03. The gating item remains the still-unfiled AGM voting 8-K; once posted it unlocks the ~$150M rights offering and Cerberus\' $100M FPUSA equity contribution.',
+    updatedAt: '2026-06-05T22:00:00+02:00',
+    session:   'post-close',
+    headline:  'AGM 8-K drops — share auth confirmed, rights offering clock now running',
+    takeaway:  'EOSE closed $7.17 (\u221210.7% vs Jun 4) as the AGM press release confirmed dilutive share auth passed — market sold the news. 600M\u2192800M authorization clears the legal gate for the ~$150M rights offering and Cerberus\' $100M FPUSA close.',
     bullets: [
-      'AGM voting 8-K still absent (day 2): Jun 3 AGM proposals expected to pass, but 8-K confirming the 600M→800M share-auth vote has not hit EDGAR. Filing gates the ~$150M rights offering and FPUSA close.',
-      'Clean tape overnight: No 8-K, PR, or insider Form 4s on EDGAR since the Jun 4 close. No FPUSA or TURBINE-X wire news. Friday\'s setup is purely technical off the $8.03 close.',
-      'CFO Lagi starts Monday Jun 8: Alessandro Lagi (ex-Baker Hughes Global CFO, Johnson Controls) joins. Immediate agenda: rights offering mechanics, FPUSA capitalisation close, JPM Natural Resources Conference Jun 23.',
-      'Line 2 Thorn Hill — 25 days to Jun 30 deadline: Management guided initial Line 2 production by end of Q2. No update since Q1 call May 13. Go-live is the top binary catalyst for the $300–$400M FY26 revenue guide.',
-      'FPUSA pipeline quiet 8 days: Last press release was May 28 (Stella Energy 2+ GWh framework). No new project conversions, no rights offering launch, no Cerberus equity close update.',
-      'Sector tailwind intact: BloombergNEF forecasts 158GW global BESS deployments in 2026 (+41% YoY). AI data center co-location demand supports the TURBINE-X JDA pipeline (2 GWh over 36 months).'
+      'AGM 8-K filed Jun 5 (09:00 ET): All 5 proposals passed at Jun 3 meeting. Share auth (600M\u2192800M) approved 96.7% of participating votes — unlocks rights offering and FPUSA capitalisation.',
+      'Sold the news: EOSE closed $7.17, down 10.7% from the $8.03 Jun 4 close. Range $7.74\u2013$8.24 early; shares faded as the dilutive rights offering is now imminent.',
+      'Rights offering next — no date set: Company says it will provide \'additional details on structure, timing and terms.\' JPM Natural Resources Conference Jun 23 is the next likely public forum.',
+      'CFO Alessandro Lagi starts Monday Jun 8 (ex-Baker Hughes Global CFO). Immediate agenda: rights offering mechanics, FPUSA capitalisation close with Cerberus ($100M equity).',
+      'Line 2 Thorn Hill — 25 days to Jun 30 deadline: No production update since Q1 call May 13. Go-live by end of Q2 remains the top binary catalyst for the $300\u2013$400M FY26 revenue guide.',
+      'Insider activity — routine equity comp only: Chairman Nigro vested 3,565 RSUs (Jun 3 Form 4); director Walters vested 1,782 RSUs. No open-market buys or sells filed.'
     ],
-    price:   { last: 8.03, changePct: -14.76, note: 'Jun 4 close · no premarket quote available' },
+    price:   { last: 7.17, changePct: -10.71, note: 'Jun 5 close · dashboard price history task' },
     sources: [
-      { label: 'EOSE news — StockTitan', url: 'https://www.stocktitan.net/news/EOSE/' },
-      { label: 'EOSE IR — News Releases', url: 'https://investors.eose.com/news-releases/' },
-      { label: 'FPUSA Stella Energy — GlobeNewsWire', url: 'https://www.globenewswire.com/news-release/2026/05/28/3302710/0/en/FPUSA-and-Stella-Energy-Solutions-Announce-Strategic-Framework-Across-2-GWh-Storage-Pipeline.html' },
-      { label: 'BESS 2026 outlook — Energy-Storage.News', url: 'https://www.energy-storage.news/bloombergnef-forecasts-158gw-of-global-energy-storage-deployments-in-2026/' },
-      { label: 'EOSE Q1 2026 / FPUSA launch — GlobeNewsWire', url: 'https://www.globenewswire.com/news-release/2026/05/13/3293810/0/en/eos-energy-enterprises-reports-first-quarter-2026-financial-results-and-announces-frontier-power-usa.html' }
+      { label: 'AGM results — GlobeNewsWire', url: 'https://www.globenewswire.com/news-release/2026/06/05/3307396/0/en/eos-energy-stockholders-approve-all-proposals-at-2026-annual-meeting.html' },
+      { label: 'AGM 8-K — SEC EDGAR', url: 'https://www.sec.gov/Archives/edgar/data/0001805077/000162828026041078/annualshareholdermeeting.htm' },
+      { label: 'EOSE insider activity — StockTitan', url: 'https://www.stocktitan.net/sec-filings/EOSE/form-4-eos-energy-enterprises-inc-insider-trading-activity-704167da89e8.html' },
+      { label: 'EOSE price — Yahoo Finance', url: 'https://finance.yahoo.com/quote/EOSE/' },
+      { label: 'Needham Buy/$11 PT — StockAnalysis', url: 'https://stockanalysis.com/stocks/eose/forecast/' }
     ]
   },
 
