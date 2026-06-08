@@ -30,26 +30,26 @@ window.EOSE_DATA = {
   // Refreshed by /equity-research:morning-note via a scheduled task in Cowork.
   // session = 'pre-open' (Swedish AM, ~07:00 CEST) | 'post-close' (Swedish PM, ~22:30 CEST)
   morningNote: {
-    updatedAt: '2026-06-08T08:10:00+02:00',
-    session:   'pre-open',
-    headline:  'New CFO Lagi starts today — rights offering + Line 2 are the near-term binaries',
-    takeaway:  'Alessandro Lagi (ex-Baker Hughes Global CFO) takes the EOSE CFO chair today — rights offering structure and FPUSA capitalisation are his first deliverables. Stock enters the week at $7.17 (Jun 5 close) with dilution overhang capping upside until Line 2 fires by Jun 30.',
+    updatedAt: '2026-06-08T22:30:00+02:00',
+    session:   'post-close',
+    headline:  'CFO Day 1 selloff — EOSE -3.9% to $6.93, AH $6.69; rights offering terms still pending',
+    takeaway:  'Alessandro Lagi\'s first day as CFO brought no announcements. EOSE sold off -3.9% to $6.93 (AH: ~$6.69) on avg volume, as dilution overhang from the pending ~$150M rights offering weighed. Line 2 at Thorn Hill remains the key Q2 binary with 22 days to the Jun 30 deadline.',
     bullets: [
-      'New CFO Day 1: Alessandro Lagi (ex-Baker Hughes Oilfield Equipment Global CFO; Johnson Controls FP&A) replaces interim CFO Nathan Kroeker, who shifts to Chief Commercial Officer. Effective today.',
-      'Rights offering imminent — no terms yet: S-3ASR shelf filed post-AGM. ~$150M target, pro-rata subscription rights. Structure and timing expected before JPM Natural Resources Conference Jun 23.',
-      'Line 2 Thorn Hill — 22 days to Jun 30 deadline: Equipment passed factory acceptance, now in power-on/debug. No update since Q1 call (May 13). End-Q2 go-live is the #1 binary for the $300–$400M FY26 guide.',
-      'Price: $7.17 Fri close (-10.7% on AGM share-auth news). Stock −13% off May 14 post-Q1 peak; rights offering dilution overhang limits upside without a Line 2 confirmation.',
-      'Securities litigation ongoing: Class action (Yung) and derivative suit (Berger) pending in NJ District Court, alleging misstatements on production/guidance. Lead plaintiff window closed May 5; entering discovery.',
-      'Sector tailwind: LDES additions set to quadruple to 2GWh in 2026 (BNEF); data center operators emerging as primary backers — the exact use case FPUSA\'s take-or-pay model targets.'
+      'Price: Closed $6.93 (-$0.28, -3.88%) on ~21.9M volume (avg 22.1M). Day range $6.62-$7.35. AH: ~$6.69. Stock -3.9% vs Fri $7.21 close; -15.3% off May 14 post-Q1 peak.',
+      'CFO Day 1 — no new announcements: Lagi officially joins today. Rights offering structure and strategic priorities expected at JPM Natural Resources Conference Jun 23.',
+      'Rights offering overhang: S-3ASR shelf effective since May 13; ~$150M target, pro-rata rights structure. Share auth raised to 800M at Jun 3 AGM. Terms/timing still pending.',
+      'Line 2 Thorn Hill — 22 days to Jun 30: Power-on/debug underway; no update today. End-Q2 production start is the #1 binary for the $300-$400M FY26 revenue guide.',
+      'FPUSA pipeline at ~2.5 GWh (Bimergen 480 MWh + Stella 2+ GWh, ERCOT). No new catalysts today; platform capitalisation and rights offering timing are linked.',
+      'Insider: RSU vestings only — Nigro 3,565 shares (Jun 3) and Walters 1,782 (Jun 2). No open-market transactions. Securities class action (Yung/Berger) in discovery.'
     ],
-    price:   { last: 7.17, changePct: -10.71, note: 'Jun 5 close · Stooq delayed (no weekend trading)' },
+    price:   { last: 6.93, changePct: -3.88, note: 'Jun 8 close · AH ~$6.69 · ~21.9M volume vs 22.1M avg · Stooq delayed' },
     sources: [
-      { label: 'CFO appointment — Eos IR', url: 'https://investors.eose.com/news-releases/news-release-details/eos-energy-enterprises-appoints-alessandro-lagi-chief-financial' },
-      { label: 'CFO 8-K — StockTitan', url: 'https://www.stocktitan.net/sec-filings/EOSE/8-k-eos-energy-enterprises-inc-reports-material-event-484624a49125.html' },
-      { label: 'S-3ASR shelf — StockTitan', url: 'https://www.stocktitan.net/sec-filings/EOSE/s-3asr-eos-energy-enterprises-inc-sec-filing-7441da52a673.html' },
       { label: 'EOSE quote — Yahoo Finance', url: 'https://finance.yahoo.com/quote/EOSE/' },
-      { label: 'LDES sector — IEEFA/SolarQuarter', url: 'https://solarquarter.com/2026/05/30/ieefa-sees-growing-momentum-for-long-duration-energy-storage-as-u-s-battery-market-expands/' },
-      { label: 'Securities suits — Hagens Berman', url: 'https://www.prnewswire.com/news-releases/eose-8-day-deadline-alert-eos-energy-eose-facing-securities-class-action-alleging-misstatements-on-production-scale-guidance--hagens-berman-302754833.html' }
+      { label: 'EOSE news — StockTitan', url: 'https://www.stocktitan.net/news/EOSE/' },
+      { label: 'AGM results — GlobeNewsWire', url: 'https://www.globenewswire.com/news-release/2026/06/05/3307396/0/en/Eos-Energy-Stockholders-Approve-All-Proposals-at-2026-Annual-Meeting.html' },
+      { label: 'CFO appointment — StockTitan', url: 'https://www.stocktitan.net/news/EOSE/eos-energy-enterprises-appoints-alessandro-lagi-as-chief-financial-jlj1mso677q5.html' },
+      { label: 'FPUSA — Energy-Storage.news', url: 'https://www.energy-storage.news/us-roundup-bess-news-from-neovolta-goshe-frontier-power-stella-and-prevalon/' },
+      { label: 'Analyst forecasts — StockAnalysis', url: 'https://stockanalysis.com/stocks/eose/forecast/' }
     ]
   },
 
