@@ -30,26 +30,26 @@ window.EOSE_DATA = {
   // Refreshed by /equity-research:morning-note via a scheduled task in Cowork.
   // session = 'pre-open' (Swedish AM, ~07:00 CEST) | 'post-close' (Swedish PM, ~22:30 CEST)
   morningNote: {
-    updatedAt: '2026-06-08T22:30:00+02:00',
-    session:   'post-close',
-    headline:  'CFO Day 1 selloff — EOSE -3.9% to $6.93, AH $6.69; rights offering terms still pending',
-    takeaway:  'Alessandro Lagi\'s first day as CFO brought no announcements. EOSE sold off -3.9% to $6.93 (AH: ~$6.69) on avg volume, as dilution overhang from the pending ~$150M rights offering weighed. Line 2 at Thorn Hill remains the key Q2 binary with 22 days to the Jun 30 deadline.',
+    updatedAt: '2026-06-09T07:00:00+02:00',
+    session:   'pre-open',
+    headline:  'Quiet overnight — no new filings; Line 2 at 21 days, rights offering terms pending',
+    takeaway:  'Nothing material emerged overnight for EOSE. Stock closed $6.93 Mon (-3.88%), AH ~$6.69; pre-market setup unchanged. JPM Natural Resources Conf (Jun 23) is the next expected catalyst for rights offering terms and CFO Lagi\'s first public investor appearance.',
     bullets: [
-      'Price: Closed $6.93 (-$0.28, -3.88%) on ~21.9M volume (avg 22.1M). Day range $6.62-$7.35. AH: ~$6.69. Stock -3.9% vs Fri $7.21 close; -15.3% off May 14 post-Q1 peak.',
-      'CFO Day 1 — no new announcements: Lagi officially joins today. Rights offering structure and strategic priorities expected at JPM Natural Resources Conference Jun 23.',
-      'Rights offering overhang: S-3ASR shelf effective since May 13; ~$150M target, pro-rata rights structure. Share auth raised to 800M at Jun 3 AGM. Terms/timing still pending.',
-      'Line 2 Thorn Hill — 22 days to Jun 30: Power-on/debug underway; no update today. End-Q2 production start is the #1 binary for the $300-$400M FY26 revenue guide.',
-      'FPUSA pipeline at ~2.5 GWh (Bimergen 480 MWh + Stella 2+ GWh, ERCOT). No new catalysts today; platform capitalisation and rights offering timing are linked.',
-      'Insider: RSU vestings only — Nigro 3,565 shares (Jun 3) and Walters 1,782 (Jun 2). No open-market transactions. Securities class action (Yung/Berger) in discovery.'
+      'Price setup: Last close $6.93 (Mon Jun 8, -3.88%). AH ~$6.69. Dilution overhang from pending ~$150M rights offering weighs; stock -15.3% off the May 14 post-Q1 peak.',
+      'No new filings overnight: no 8-K or prospectus as of this run. Rights offering terms remain the key event risk — next expected at JPM Natural Resources Conf, Jun 23 (CEO fireside + 1x1s).',
+      'Line 2 Thorn Hill — 21 days to Jun 30: Power-on/debug underway per Q1 disclosures; no update overnight. End-Q2 production start gates the $300-$400M FY26 revenue guide — any slip risks a consensus reset.',
+      'FPUSA pipeline steady at ~2.5 GWh: Bimergen 480 MWh converted (May 21) + Stella 2+ GWh ERCOT framework (May 28). Full capitalisation linked to rights offering close; Cerberus backstop committed.',
+      'Litigation background: Yung/Berger securities class action remains in discovery; no new docket entries overnight. Background overhang, caps institutional buying.',
+      'Sector tailwind intact: BloombergNEF forecasts 158 GW global BESS in 2026 (+41% YoY); LDES additions set to quadruple to 2 GW. Structural support for Eos\' Znyth positioning into the US open.'
     ],
-    price:   { last: 6.93, changePct: -3.88, note: 'Jun 8 close · AH ~$6.69 · ~21.9M volume vs 22.1M avg · Stooq delayed' },
+    price:   { last: 6.93, changePct: -3.88, note: 'Jun 8 close · AH ~$6.69 · pre-market N/A · Stooq delayed' },
     sources: [
+      { label: 'EOSE overview — StockAnalysis', url: 'https://stockanalysis.com/stocks/eose/' },
       { label: 'EOSE quote — Yahoo Finance', url: 'https://finance.yahoo.com/quote/EOSE/' },
-      { label: 'EOSE news — StockTitan', url: 'https://www.stocktitan.net/news/EOSE/' },
-      { label: 'AGM results — GlobeNewsWire', url: 'https://www.globenewswire.com/news-release/2026/06/05/3307396/0/en/Eos-Energy-Stockholders-Approve-All-Proposals-at-2026-Annual-Meeting.html' },
-      { label: 'CFO appointment — StockTitan', url: 'https://www.stocktitan.net/news/EOSE/eos-energy-enterprises-appoints-alessandro-lagi-as-chief-financial-jlj1mso677q5.html' },
-      { label: 'FPUSA — Energy-Storage.news', url: 'https://www.energy-storage.news/us-roundup-bess-news-from-neovolta-goshe-frontier-power-stella-and-prevalon/' },
-      { label: 'Analyst forecasts — StockAnalysis', url: 'https://stockanalysis.com/stocks/eose/forecast/' }
+      { label: 'JPM conf — GlobeNewsWire', url: 'https://www.globenewswire.com/news-release/2026/04/23/3280419/0/en/Eos-Energy-Enterprises-Announces-Date-for-First-Quarter-2026-Financial-Results-and-Conference-Call-Announces-Participation-at-Upcoming-Investor-Conferences.html' },
+      { label: 'FPUSA Stella — GlobeNewsWire', url: 'https://www.globenewswire.com/news-release/2026/05/28/3302710/0/en/FPUSA-and-Stella-Energy-Solutions-Announce-Strategic-Framework-Across-2-GWh-Storage-Pipeline.html' },
+      { label: 'BloombergNEF BESS 2026 — Energy-Storage.news', url: 'https://www.energy-storage.news/bloombergnef-forecasts-158gw-of-global-energy-storage-deployments-in-2026/' },
+      { label: 'AGM results — GlobeNewsWire', url: 'https://www.globenewswire.com/news-release/2026/06/05/3307396/0/en/Eos-Energy-Stockholders-Approve-All-Proposals-at-2026-Annual-Meeting.html' }
     ]
   },
 
