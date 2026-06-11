@@ -1,5 +1,24 @@
 [
  {
+  "updatedAt": "2026-06-11T22:50:00+02:00",
+  "session": "post-close",
+  "headline": "Rights offering record date set: July 1 — the $150M raise is formally in motion",
+  "takeaway": "After the Jun 11 close (~4:15 pm ET), Eos set the record date for the rights offering that funds its Frontier Power USA contribution: holders as of July 1 (5 pm ET) receive rights on July 2 to buy units of common stock + warrants at a ~10–20% discount to a 15–30 day VWAP. The dilution overhang now has a schedule — the prospectus supplement with the final ratio and price is the next gate.",
+  "bullets": [
+   "Record date July 1, 2026 (5:00 pm ET); rights distributed July 2. Eligible: common holders plus warrant holders from the Apr/May 2023, Dec 2023 and Nov 2025 issuances.",
+   "Unit structure: common stock + warrants. Subscription price at an approximate 10–20% discount to a 15–30 day VWAP ending the trading day before the record date; warrants valued at ~25–50% of the offering amount (Black-Scholes).",
+   "Over-subscription privilege confirmed — holders who exercise in full can bid for unsubscribed units, supporting the ~$150M target even if participation is uneven.",
+   "Proceeds fund Eos' initial Class B contribution to Frontier Power USA (Cerberus' $100M anchor already committed). This was the last company-controlled step after the June 3 AGM share authorization.",
+   "Mechanics come via a prospectus supplement under the existing S-3 shelf — final ratio, price and rights transferability are set at offering commencement; completion remains conditional (including consents). The 8-K had not hit EDGAR as of ~4:40 pm ET.",
+   "Watch next: the prospectus supplement / 8-K on EDGAR, JPM Energy & Natural Resources Conference Jun 23 (management color on the offering), and Line 2 first production target Jun 30 — three offering-relevant events inside three weeks."
+  ],
+  "price": {
+   "last": 6.07,
+   "changePct": null,
+   "note": "Jun 11 close (dashboard quote feed) · record date announced ~4:15 pm ET, after the close"
+  }
+ },
+ {
   "updatedAt": "2026-06-09T22:30:00+02:00",
   "session": "post-close",
   "headline": "EOSE drifts ~-1% to ~$6.85 on quiet session — no new filings, T-21 to Line 2 start",

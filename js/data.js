@@ -30,26 +30,25 @@ window.EOSE_DATA = {
   // Refreshed by /equity-research:morning-note via a scheduled task in Cowork.
   // session = 'pre-open' (Swedish AM, ~07:00 CEST) | 'post-close' (Swedish PM, ~22:30 CEST)
   morningNote: {
-    updatedAt: '2026-06-09T22:30:00+02:00',
+    updatedAt: '2026-06-11T22:50:00+02:00',
     session:   'post-close',
-    headline:  'EOSE drifts ~-1% to ~$6.85 on quiet session — no new filings, T-21 to Line 2 start',
-    takeaway:  'No material news or filings on Jun 9. Stock extended Mon\'s pullback to ~$6.85, consolidating below $7 as rights offering dilution overhang persists. Line 2 Thorn Hill (Jun 30 target) and JPM Natural Resources Conf (Jun 23) remain the key near-term binary events.',
+    headline:  'Rights offering record date set: July 1 — the $150M raise is formally in motion',
+    takeaway:  'After the Jun 11 close (~4:15 pm ET), Eos set the record date for the rights offering that funds its Frontier Power USA contribution: holders as of July 1 (5 pm ET) receive rights on July 2 to buy units of common stock + warrants at a ~10–20% discount to a 15–30 day VWAP. The dilution overhang now has a schedule — the prospectus supplement with the final ratio and price is the next gate.',
     bullets: [
-      'Price action: EOSE ~$6.85 close (est., -1.2% vs Jun 8 $6.93); no after-hours catalysts noted. Stock ~-50% from Feb $13+ peak, ~+47% from Apr $4.59 trough; range-bound below $7 since rights offering overhang emerged.',
-      'No new filings Jun 9: no 8-K, Form 4, or IR press release found. Most recent filing is Jun 5 8-K confirming AGM approval of 800M authorized-share increase — structural enabler for ~$150M rights offering.',
-      'Line 2 Thorn Hill — T-21 to Jun 30: Power-on/debug underway per Q1 disclosures. First production gates the $300-$400M FY26 revenue guide; any slip risks consensus reset and further de-rating.',
-      'Rights offering terms still unannounced. CEO Mastrangelo expected at JPM Natural Resources Conf Jun 23 (fireside + 1x1s) — primary venue for rights structure and timeline; Cerberus $100M backstop committed.',
-      'FPUSA pipeline ~2.5 GWh: Bimergen 480 MWh converted (May 21) + Stella 2+ GWh ERCOT framework (May 28). TURBINE-X JDA (AI/hyperscale, up to 2 GWh) active; full capitalization contingent on rights offering close.',
-      'Litigation: Yung/Berger class action in discovery; Hagens Berman and BFA suits pending. No new docket activity Jun 9. Overhang limits institutional accumulation near-term.'
+      'Record date July 1, 2026 (5:00 pm ET); rights distributed July 2. Eligible: common holders plus warrant holders from the Apr/May 2023, Dec 2023 and Nov 2025 issuances.',
+      'Unit structure: common stock + warrants. Subscription price at an approximate 10–20% discount to a 15–30 day VWAP ending the trading day before the record date; warrants valued at ~25–50% of the offering amount (Black-Scholes).',
+      'Over-subscription privilege confirmed — holders who exercise in full can bid for unsubscribed units, supporting the ~$150M target even if participation is uneven.',
+      'Proceeds fund Eos\' initial Class B contribution to Frontier Power USA (Cerberus\' $100M anchor already committed). This was the last company-controlled step after the June 3 AGM share authorization.',
+      'Mechanics come via a prospectus supplement under the existing S-3 shelf — final ratio, price and rights transferability are set at offering commencement; completion remains conditional (including consents). The 8-K had not hit EDGAR as of ~4:40 pm ET.',
+      'Watch next: the prospectus supplement / 8-K on EDGAR, JPM Energy & Natural Resources Conference Jun 23 (management color on the offering), and Line 2 first production target Jun 30 — three offering-relevant events inside three weeks.'
     ],
-    price:   { last: 6.85, changePct: -1.15, note: 'Jun 9 close est. · search-snippet source · verify vs Stooq' },
+    price:   { last: 6.07, changePct: null, note: 'Jun 11 close (dashboard quote feed) · record date announced ~4:15 pm ET, after the close' },
     sources: [
-      { label: 'EOSE overview — StockAnalysis', url: 'https://stockanalysis.com/stocks/eose/' },
-      { label: 'EOSE quote — Yahoo Finance', url: 'https://finance.yahoo.com/quote/EOSE/' },
-      { label: 'AGM results — GlobeNewsWire', url: 'https://www.globenewswire.com/news-release/2026/06/05/3307396/0/en/Eos-Energy-Stockholders-Approve-All-Proposals-at-2026-Annual-Meeting.html' },
-      { label: 'FPUSA Stella — GlobeNewsWire', url: 'https://www.globenewswire.com/news-release/2026/05/28/3302710/0/en/FPUSA-and-Stella-Energy-Solutions-Announce-Strategic-Framework-Across-2-GWh-Storage-Pipeline.html' },
-      { label: 'Q1 results + FPUSA — GlobeNewsWire', url: 'https://www.globenewswire.com/news-release/2026/05/13/3293810/0/en/Eos-Energy-Enterprises-Reports-First-Quarter-2026-Financial-Results-and-Announces-Frontier-Power-USA.html' },
-      { label: 'SEC filings — EOSE IR', url: 'https://investors.eose.com/financials/sec-filings' }
+      { label: 'Record date announcement — StockTitan', url: 'https://www.stocktitan.net/news/EOSE/eos-energy-announces-record-date-for-rights-afz7bo6crugt.html' },
+      { label: 'Full release text — GlobeNewswire (reprint)', url: 'https://www.manilatimes.net/2026/06/12/tmt-newswire/globenewswire/eos-energy-announces-record-date-for-rights-offering/2364081' },
+      { label: 'Eos IR newsroom', url: 'https://investors.eose.com/news-releases' },
+      { label: 'EOSE 8-K filings — SEC EDGAR (watch for the filing)', url: 'https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0001805077&type=8-K' },
+      { label: 'How the rights offering works — explainer', url: 'rights-offering.html' }
     ]
   },
 
@@ -417,7 +416,7 @@ window.EOSE_DATA = {
     { date: 'Jun 8, 2026',  event: 'Lagi CFO effective date · Kroeker returns to CCO-only role',           status: 'Imminent [Company]',         tone: 'soon'   },
     { date: 'Spring 2026',  event: 'Ofgem publishes Initial Decision List for LDES Cap & Floor Window 1 (UK)', status: 'Watch [Regulator]',        tone: 'soon'   },
     { date: 'End Q2 2026',  event: 'Line 2 initial production at Thorn Hill (per Q1\'26 release)',          status: 'In progress [Company]',      tone: 'soon'   },
-    { date: 'Q2/Q3 2026',   event: 'Pro-rata rights offering to fund Eos\' ~$150M Frontier USA contribution — pricing + size TBD', status: 'Watch [Company]', tone: 'soon' },
+    { date: 'Jul 1, 2026',  event: 'Rights offering record date (5 pm ET; announced Jun 11) — rights distributed Jul 2; units of stock + warrants at ~10–20% VWAP discount; exact ratio/price in the prospectus supplement', status: 'Announced [Company]', tone: 'soon' },
     { date: 'Q2 2026',      event: 'Frontier Power USA closing conditions (Cerberus warrants + controlling JV equity)',      status: 'Watch [Company]',            tone: 'soon'   },
     { date: 'Summer 2026',  event: 'Ofgem final cap & floor awards (Window 1) — Frontier UK\'s 11 GWh of Eos-tech projects either awarded the revenue floor or not', status: 'Catalyst [Regulator]', tone: 'soon' },
     { date: '~Aug 2026',    event: 'Q2 2026 earnings release (estimated cadence)',                         status: 'Pending',                    tone: 'future' },
@@ -446,6 +445,12 @@ window.EOSE_DATA = {
     { date: '2026-06-30', short: 'Line 2 target',       est: false,
       label: 'Line 2 initial production target (Thorn Hill)',
       detail: 'End-of-Q2 target per the Q1\'26 release — first production on Line 2 gates the $300–400M FY26 revenue guidance.' },
+    { date: '2026-07-01', short: 'Rights record date',  est: false,
+      label: 'Rights offering record date (5:00 pm ET)',
+      detail: 'Holders of record as of 5 pm ET July 1 receive subscription rights for the ~$150M offering; announced June 11, 2026.' },
+    { date: '2026-07-02', short: 'Rights distribution', est: false,
+      label: 'Rights distribution date',
+      detail: 'Subscription rights distributed to eligible holders; final ratio, price and transferability are set in the prospectus supplement at offering commencement.' },
     { date: '2026-08-12', short: 'Q2 earnings (est.)',  est: true,
       label: 'Q2 2026 earnings release (estimated cadence)',
       detail: 'Estimated from prior reporting cadence (Q1 reported May 13); the actual date has not been announced.' },
