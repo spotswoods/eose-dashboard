@@ -96,6 +96,23 @@
   }
   function clearSvg(svg) { while (svg.firstChild) svg.removeChild(svg.firstChild); }
 
+  // Diagonal-stripe fill for PROJECTED bars — visually distinct from actuals
+  // at a glance. One <pattern> per chart+color; ids are unique because
+  // url(#…) resolves document-wide and several charts share the page.
+  let __stripeUid = 0;
+  function stripeFill(svg, color) {
+    let defs = svg.querySelector('defs');
+    if (!defs) defs = el('defs', {}, svg);
+    const id = `proj-stripe-${++__stripeUid}`;
+    const pat = el('pattern', {
+      id, width: 6, height: 6,
+      patternUnits: 'userSpaceOnUse', patternTransform: 'rotate(45)'
+    }, defs);
+    el('rect', { width: 6, height: 6, fill: color, opacity: 0.16 }, pat);
+    el('rect', { width: 3, height: 6, fill: color, opacity: 0.65 }, pat);
+    return `url(#${id})`;
+  }
+
   // ---------- Chart 1: Quarterly bar (revenue / opincome / bookings) ----------
   function barChart(host, data, opts = {}) {
     const W = host.clientWidth || 800;
@@ -143,6 +160,10 @@
     const negative = cssVar('--negative');
     const fg3 = cssVar('--fg-3');
 
+    // Lazily-created striped fills for projected bars (one per color used)
+    const stripes = {};
+    const projFill = (color) => (stripes[color] = stripes[color] || stripeFill(svg, color));
+
     data.forEach((d, i) => {
       const x = M.left + bw * i + padBar / 2;
       const w = bw - padBar;
@@ -150,14 +171,14 @@
       const yBot = d.v >= 0 ? y(0)   : y(d.v);
       const h = Math.max(1, yBot - yTop);
 
-      let fill;
+      let fill, projected = false;
       if (opts.colorByType) {
-        const projected = d.type === 'projected' || d.type === 'E';
+        projected = d.type === 'projected' || d.type === 'E';
         if (opts.profitColor) {
-          if (d.v >= 0) fill = projected ? accentLine : positive;
-          else          fill = projected ? 'rgba(255,107,133,0.4)' : negative;
+          if (d.v >= 0) fill = projected ? projFill(positive) : positive;
+          else          fill = projected ? projFill(negative) : negative;
         } else {
-          fill = projected ? accentLine : accent;
+          fill = projected ? projFill(accent) : accent;
         }
       } else {
         fill = opts.fill || accent;
@@ -167,6 +188,9 @@
         class: 'chart-bar',
         x, y: yTop, width: w, height: h,
         rx: 3, fill,
+        // faint outline so striped bars keep a crisp silhouette
+        stroke: projected ? accentLine : null,
+        'stroke-width': projected ? 1 : null,
       }, svg);
 
       // hover
