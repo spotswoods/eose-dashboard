@@ -7,7 +7,7 @@
   <!-- Canonical single-page dashboard -->
   <url>
     <loc>https://eosesource.com/</loc>
-    <lastmod>2026-06-10</lastmod>
+    <lastmod>2026-06-09</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
     <image:image>
@@ -20,7 +20,7 @@
   <!-- Frontier Power USA deep-dive explainer -->
   <url>
     <loc>https://eosesource.com/frontier-power-usa.html</loc>
-    <lastmod>2026-05-24</lastmod>
+    <lastmod>2026-06-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -28,7 +28,7 @@
   <!-- Rights offering explainer -->
   <url>
     <loc>https://eosesource.com/rights-offering.html</loc>
-    <lastmod>2026-05-25</lastmod>
+    <lastmod>2026-06-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
