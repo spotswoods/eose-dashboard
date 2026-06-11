@@ -262,6 +262,7 @@
   <!-- ============ Section nav ============ -->
   <nav class="section-nav">
     <div class="section-nav__inner">
+      <a href="#latest"><span class="num">·</span> Latest</a>
       <a href="#daily-note"><span class="num">00</span> Daily Note</a>
       <a href="#overview"><span class="num">01</span> Overview</a>
       <a href="#news-feed"><span class="num">01b</span> News</a>
@@ -291,6 +292,34 @@
   </nav>
 
   <main class="shell">
+
+    <!-- ============ Today strip — at-a-glance bar ============
+         Headline mirrors the daily note (§00); chips show the next key dates
+         from EOSE_DATA.keyDates with a live countdown. The 📅 button downloads
+         the same dates as an .ics calendar file. -->
+    <div class="today" id="today" role="region" aria-label="Today at a glance">
+      <div class="today__note">
+        <span class="today__tag">Today</span>
+        <a class="today__headline" href="#daily-note" data-today-headline>EOSE drifts ~-1% to ~$6.85 on quiet session — no new filings, T-21 to Line 2 start</a>
+      </div>
+      <div class="today__chips" data-today-chips></div>
+      <button class="cat__btn" data-ics-download title="Download the upcoming EOSE key dates as a calendar (.ics) file — estimated windows are marked">📅 Calendar</button>
+    </div>
+
+    <!-- ============ Latest — unified feed (note + press + SEC + FPUSA) ============ -->
+    <section class="section" id="latest" data-screen-label="Latest — all sources">
+      <div class="section__head">
+        <div>
+          <div class="section__num">· LATEST · ALL SOURCES MERGED</div>
+          <h2>Latest on EOSE — daily note, press, SEC filings &amp; Frontier in one feed</h2>
+          <p>Everything this page tracks, newest first. <span class="new-pill">NEW</span> marks items published since your last visit. Full archives: <a href="#news-feed" style="color:var(--accent);text-decoration:underline">§01b EOSE news</a> · <a href="#frontier-news" style="color:var(--accent);text-decoration:underline">§03a Frontier news</a>.</p>
+        </div>
+        <div class="right" data-latest-meta style="font-size:12px;color:var(--fg-3)"></div>
+      </div>
+      <div class="card">
+        <div class="latest" data-latest-feed><div style="color:var(--fg-3);font-size:13px">Loading latest items…</div></div>
+      </div>
+    </section>
 
     <!-- ============ Featured deep-dive entry points ============ -->
     <div class="deepdive-grid">

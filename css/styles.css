@@ -28,6 +28,7 @@
   --brand-forest-mid:   #0E5D49;
   --brand-violet:       #7C7CFF;   /* secondary, used sparingly */
   --brand-aqua:         #21D9A8;
+  --blue:               #5BA8FF;   /* info/filing accents (chart legend, SEC badge) */
 
   /* Density */
   --density-pad: 24px;
@@ -570,6 +571,60 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
 /* Daily note (§00) — price line rendered by renderMorningNote() */
 .mn-price .pos { color: var(--positive); font-weight: 600; }
 .mn-price .neg { color: var(--negative); font-weight: 600; }
+
+/* ========== Today strip (at-a-glance bar) ========== */
+.today {
+  display: flex; align-items: center; gap: 14px; flex-wrap: wrap;
+  margin: 20px 0 0; padding: 12px 16px;
+  border: 1px solid var(--line-1); border-left: 3px solid var(--accent);
+  border-radius: var(--r-lg); background: var(--bg-1);
+}
+.today__note { display: flex; align-items: center; gap: 10px; flex: 1.5; min-width: 250px; }
+.today__tag {
+  font-size: 10.5px; font-weight: 800; letter-spacing: .12em; text-transform: uppercase;
+  color: var(--accent); background: var(--accent-soft);
+  border: 1px solid var(--accent-line); border-radius: 999px; padding: 3px 9px;
+  white-space: nowrap;
+}
+.today__headline { font-size: 13.5px; font-weight: 600; color: var(--fg-0); text-decoration: none; line-height: 1.4; }
+.today__headline:hover { color: var(--accent); }
+.today__chips { display: flex; gap: 8px; flex-wrap: wrap; }
+.today__chip {
+  display: inline-flex; align-items: center; gap: 7px;
+  font-size: 12px; color: var(--fg-1); background: var(--bg-2);
+  border: 1px solid var(--line-1); border-radius: 999px; padding: 5px 11px;
+  text-decoration: none; white-space: nowrap;
+  transition: border-color .15s;
+}
+.today__chip b { color: var(--accent); font-weight: 700; font-variant-numeric: tabular-nums; }
+.today__chip:hover { border-color: var(--accent); }
+.today__chip--soon { border-color: var(--accent-line); }
+
+/* ========== Latest — unified feed ========== */
+.latest__row {
+  display: grid; grid-template-columns: 84px 58px 1fr; gap: 12px;
+  align-items: baseline; padding: 10px 0; border-bottom: 1px solid var(--line-1);
+}
+.latest__row:last-child { border-bottom: none; }
+.latest__date { font-size: 12px; color: var(--fg-3); font-variant-numeric: tabular-nums; white-space: nowrap; }
+.latest__badge {
+  font-size: 9.5px; font-weight: 800; letter-spacing: .08em; text-transform: uppercase;
+  text-align: center; border-radius: 5px; padding: 2.5px 4px; line-height: 1;
+}
+.latest__badge--note  { color: var(--accent); background: var(--accent-soft); }
+.latest__badge--sec   { color: var(--blue); background: color-mix(in srgb, var(--blue) 14%, transparent); }
+.latest__badge--pr    { color: var(--brand-violet); background: color-mix(in srgb, var(--brand-violet) 14%, transparent); }
+.latest__badge--fpusa { color: var(--fg-1); background: var(--bg-3); }
+.latest__title { font-size: 13.5px; color: var(--fg-0); text-decoration: none; font-weight: 500; line-height: 1.45; }
+.latest__title:hover { color: var(--accent); }
+.new-pill {
+  display: inline-block; font-size: 9px; font-weight: 800; letter-spacing: .1em;
+  color: var(--bg-0); background: var(--accent); border-radius: 4px;
+  padding: 2px 5px; vertical-align: 1px; line-height: 1;
+}
+@media (max-width: 720px) {
+  .latest__row { grid-template-columns: 74px 50px 1fr; gap: 8px; }
+}
 
 /* Pill */
 .pill {

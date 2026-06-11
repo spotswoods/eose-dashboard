@@ -430,6 +430,33 @@ window.EOSE_DATA = {
     { date: 'FY2027–28',    event: 'Operating income breakeven — our model assumption, not company guidance', status: 'Projected [Model]',       tone: 'future' }
   ],
 
+  // ────────── Key dates — concrete calendar entries (Today strip + .ics download) ──────────
+  // Only events with a real YYYY-MM-DD belong here (the fuzzy ones live in
+  // `catalysts` above). `est: true` marks window-end estimates (regulator
+  // windows, earnings cadence) vs. announced/company-stated dates. Past dates
+  // are filtered out automatically — append new ones as they're announced.
+  // `short` is the compact chip label; `label` goes in the calendar file.
+  keyDates: [
+    { date: '2026-06-20', short: 'Ofgem initial list',  est: true,
+      label: 'Ofgem Initial Decision List — LDES Cap & Floor Window 1',
+      detail: 'End of the regulator\'s stated Spring 2026 window (estimate, not an announced date). Frontier UK has ~11 GWh of Eos-tech projects in the second-round evaluation.' },
+    { date: '2026-06-23', short: 'JPM conference',      est: false,
+      label: 'J.P. Morgan Energy & Natural Resources Conference',
+      detail: 'CEO fireside + 1x1s expected — the likely venue for rights-offering structure/timing color and CFO Lagi\'s first public investor appearance.' },
+    { date: '2026-06-30', short: 'Line 2 target',       est: false,
+      label: 'Line 2 initial production target (Thorn Hill)',
+      detail: 'End-of-Q2 target per the Q1\'26 release — first production on Line 2 gates the $300–400M FY26 revenue guidance.' },
+    { date: '2026-08-12', short: 'Q2 earnings (est.)',  est: true,
+      label: 'Q2 2026 earnings release (estimated cadence)',
+      detail: 'Estimated from prior reporting cadence (Q1 reported May 13); the actual date has not been announced.' },
+    { date: '2026-09-22', short: 'Ofgem final awards',  est: true,
+      label: 'Ofgem final cap & floor awards — Window 1',
+      detail: 'End of the regulator\'s stated Summer 2026 window (estimate). Decides the regulated revenue floor for Frontier UK\'s Eos-tech pipeline.' },
+    { date: '2026-09-30', short: 'NYSERDA awards',      est: true,
+      label: 'NYSERDA Bulk Storage ISCRFP25-1 awards expected',
+      detail: 'End of NYSERDA\'s stated Q3 2026 window (estimate). Eos qualifies for the 8+ hour duration tier.' }
+  ],
+
   // ────────── Filings — real EDGAR documents ──────────
   filings: [
     { date: 'May 14, 2026', form: 'SCH 13D/A', desc: 'Cerberus amended ownership statement',

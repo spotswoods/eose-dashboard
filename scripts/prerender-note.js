@@ -123,6 +123,12 @@ function main() {
     `$1${isoDate}$2${longDate(mn.updatedAt)}$3`,
     'data-dash-updated <time>', 'index.html');
 
+  // Today-strip headline (function replacement: headlines often contain "$")
+  idx = replaceOnce(idx,
+    /(<a class="today__headline" href="#daily-note" data-today-headline>)[^<]*(<\/a>)/,
+    (_, a, b) => a + esc(mn.headline) + b,
+    'today strip headline', 'index.html');
+
   idx = replaceOnce(idx,
     /(property="article:modified_time" content=")[^"]*(")/,
     `$1${isoInstant}$2`,

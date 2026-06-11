@@ -868,6 +868,137 @@
     }
   }
 
+  // ---------- NEW: Today strip (headline + key-date countdown chips) ----------
+  function renderToday() {
+    const strip = document.getElementById('today');
+    if (!strip) return;
+    const mn = D.morningNote;
+    if (mn && mn.headline) {
+      const a = strip.querySelector('[data-today-headline]');
+      if (a) a.textContent = mn.headline;
+    }
+    const chips = strip.querySelector('[data-today-chips]');
+    if (chips && Array.isArray(D.keyDates)) {
+      const today = new Date(); today.setHours(0, 0, 0, 0);
+      const upcoming = D.keyDates
+        .filter(k => new Date(k.date + 'T23:59:59') >= today)
+        .sort((a, b) => a.date.localeCompare(b.date))
+        .slice(0, 3);
+      chips.innerHTML = upcoming.map(k => {
+        const d = new Date(k.date + 'T00:00:00');
+        const days = Math.round((d - today) / 86400000);
+        const when = days <= 0 ? 'today' : days === 1 ? 'tomorrow' : `in ${days}d`;
+        const short = new Date(k.date + 'T12:00:00')
+          .toLocaleDateString('en-US', { month: 'short', day: 'numeric' });
+        return `<a class="today__chip${days <= 7 ? ' today__chip--soon' : ''}" href="#catalysts" title="${escHtml(k.label + ' — ' + (k.detail || ''))}">` +
+               `<b>${when}</b><span>${escHtml(k.short || k.label)} · ${short}${k.est ? ' (est.)' : ''}</span></a>`;
+      }).join('');
+    }
+  }
+
+  // ---------- NEW: .ics calendar download for key dates ----------
+  function buildICS() {
+    const now = new Date();
+    const icsEsc = s => String(s == null ? '' : s)
+      .replace(/\\/g, '\\\\').replace(/;/g, '\\;').replace(/,/g, '\\,').replace(/\r?\n/g, '\\n');
+    const stamp = now.toISOString().replace(/[-:]/g, '').slice(0, 15) + 'Z';
+    const events = (D.keyDates || [])
+      .filter(k => /^\d{4}-\d{2}-\d{2}$/.test(k.date) && new Date(k.date + 'T23:59:59') >= now)
+      .map(k => {
+        const d = k.date.replace(/-/g, '');
+        const end = new Date(k.date + 'T12:00:00');
+        end.setDate(end.getDate() + 1);
+        const dEnd = end.getFullYear() + String(end.getMonth() + 1).padStart(2, '0') + String(end.getDate()).padStart(2, '0');
+        return [
+          'BEGIN:VEVENT',
+          `UID:eose-${k.date}-${(k.short || k.label).toLowerCase().replace(/[^a-z0-9]+/g, '-').slice(0, 40)}@eosesource.com`,
+          `DTSTAMP:${stamp}`,
+          `DTSTART;VALUE=DATE:${d}`,
+          `DTEND;VALUE=DATE:${dEnd}`,
+          `SUMMARY:${icsEsc('EOSE · ' + k.label + (k.est ? ' (estimated window)' : ''))}`,
+          `DESCRIPTION:${icsEsc((k.detail || '') + ' — via eosesource.com. Not investment advice.')}`,
+          'URL:https://eosesource.com/#catalysts',
+          'END:VEVENT'
+        ].join('\r\n');
+      });
+    return ['BEGIN:VCALENDAR', 'VERSION:2.0', 'PRODID:-//eosesource.com//EOSE key dates//EN',
+            'CALSCALE:GREGORIAN', ...events, 'END:VCALENDAR'].join('\r\n') + '\r\n';
+  }
+  function initIcsDownload() {
+    document.querySelectorAll('[data-ics-download]').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const blob = new Blob([buildICS()], { type: 'text/calendar;charset=utf-8' });
+        const a = document.createElement('a');
+        a.href = URL.createObjectURL(blob);
+        a.download = 'eose-key-dates.ics';
+        document.body.appendChild(a); a.click(); a.remove();
+        setTimeout(() => URL.revokeObjectURL(a.href), 4000);
+        showToast('📅 Calendar file downloaded', 'Open eose-key-dates.ics to add the upcoming EOSE dates to your calendar. Estimated decision windows are marked as such.');
+      });
+    });
+  }
+
+  // ---------- NEW: Latest — unified feed (note + press + SEC + FPUSA) ----------
+  async function renderLatest() {
+    const host = document.querySelector('[data-latest-feed]');
+    if (!host) return;
+    const items = [];
+    const mn = D.morningNote;
+    if (mn && mn.headline && mn.updatedAt) {
+      items.push({ iso: mn.updatedAt, badge: 'note', badgeLabel: 'Note', title: mn.headline, href: '#daily-note' });
+    }
+    async function pull(url, map) {
+      try {
+        const r = await fetch(url, { cache: 'no-store' });
+        if (!r.ok) return;
+        const j = await r.json();
+        (j.items || []).forEach(it => {
+          const m = map(it);
+          if (m && m.iso && m.title) items.push(m);
+        });
+      } catch (e) { /* source unavailable — feed renders without it */ }
+    }
+    await Promise.all([
+      pull('data/eose-news.json', it => ({
+        iso: it.iso || it.date,
+        badge: it.tag === 'sec-filing' ? 'sec' : 'pr',
+        badgeLabel: it.tag === 'sec-filing' ? 'SEC' : 'Press',
+        title: it.headline + (it.tag === 'sec-filing' && it.summary && it.summary !== it.headline && it.summary.length > 6 ? ` — ${it.summary}` : ''),
+        href: it.url
+      })),
+      pull('data/frontier-news.json', it => ({
+        iso: it.iso || it.date,
+        badge: 'fpusa', badgeLabel: 'FPUSA',
+        title: it.title,
+        href: it.link
+      }))
+    ]);
+    items.sort((a, b) => new Date(b.iso) - new Date(a.iso));
+    const top = items.slice(0, 9);
+
+    // "New since your last visit" — badge vs. the previous visit's timestamp.
+    let lastVisit = null;
+    try {
+      lastVisit = localStorage.getItem('eose-last-visit');
+      localStorage.setItem('eose-last-visit', new Date().toISOString());
+    } catch (e) { /* storage blocked — no badges, still renders */ }
+    const isNew = it => lastVisit && (new Date(it.iso) > new Date(lastVisit));
+
+    host.innerHTML = top.map(it => {
+      const external = !String(it.href || '#').startsWith('#');
+      return `<div class="latest__row">
+        <span class="latest__date">${escHtml(String(it.iso).slice(0, 10))}</span>
+        <span class="latest__badge latest__badge--${it.badge}">${it.badgeLabel}</span>
+        <a class="latest__title" href="${escHtml(it.href || '#')}"${external ? ' target="_blank" rel="noopener"' : ''}>${escHtml(it.title)}${isNew(it) ? ' <span class="new-pill">NEW</span>' : ''}${external ? ' <span style="color:var(--fg-3);font-size:11px">↗</span>' : ''}</a>
+      </div>`;
+    }).join('') || '<div style="color:var(--fg-3);font-size:13px">No items available right now — see the section archives below.</div>';
+
+    const newCount = top.filter(isNew).length;
+    setEl('[data-latest-meta]', newCount > 0
+      ? `${newCount} new since your last visit`
+      : (lastVisit ? 'Nothing new since your last visit' : `${top.length} most recent items · 4 sources`));
+  }
+
   // ---------- NEW: Recent history (3b timeline) ----------
   function renderHistory() {
     const host = document.querySelector('[data-history]');
@@ -1445,6 +1576,9 @@
     renderProduct();
     renderEoseNews();
     renderMorningNote();
+    renderToday();
+    renderLatest();
+    initIcsDownload();
     renderHistory();
     renderAnalysts();
     renderPolicy();
