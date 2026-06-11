@@ -1402,7 +1402,12 @@
       for (let i = 0; i < sectionTops.length; i++) {
         if (sectionTops[i] <= y) active = i;
       }
-      links.forEach((l, i) => l.classList.toggle('is-active', i === active));
+      links.forEach((l, i) => {
+        l.classList.toggle('is-active', i === active);
+        // Mirror the visual state for assistive tech
+        if (i === active) l.setAttribute('aria-current', 'location');
+        else l.removeAttribute('aria-current');
+      });
     }
     window.addEventListener('scroll', onScroll, { passive: true });
     onScroll();

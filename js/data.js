@@ -2,7 +2,7 @@
 // Projections beyond Q1'26 are model assumptions consistent with management's
 // reaffirmed FY2026 guidance ($300–400M revenue). Not investment advice.
 //
-// Last refresh: 2026-05-15
+// Last refresh: 2026-06-12
 // Primary sources:
 //   10-Q   https://www.sec.gov/Archives/edgar/data/1805077/000162828026034368/eose-20260331.htm
 //   8-K    https://www.sec.gov/Archives/edgar/data/1805077/000162828026034367/
@@ -794,23 +794,23 @@ window.EOSE_DATA = {
   // ────────── NEW: Analyst coverage ──────────
   // Consensus as of mid-May 2026 per Simply Wall St + public.com + Benzinga aggregations.
   analystCoverage: {
-    asOf: 'Updated May 24, 2026',
+    asOf: 'Updated June 12, 2026',
     consensus: {
       // Aggregators genuinely disagree (different analyst sets + update timing):
-      // stockanalysis ~$7.68 (13), MarketBeat ~$10.94, others $11.08 (6) / median $15 (12).
+      // stockanalysis $9.63 (10) · Benzinga $7.96 (15) · MarketBeat $10.94 (10).
       // We show MarketBeat's blended figure and surface the dispersion in the note.
       avgPriceTarget: 10.94,
       highTarget:     22.00,
       lowTarget:       5.00,
-      coveringAnalysts: '8–13 (varies by source)',
-      priorAvgTarget:  8.86,   // our prior tracked figure
-      ratingMix:       'Hold/Neutral skew (~3 Buy · 5 Hold · 0 Sell). Targets dispersed $7.68–$15 by source; recovering post-Q1 as TD Cowen lifted PT $7→$8.'
+      coveringAnalysts: '10–15 (varies by source)',
+      priorAvgTarget:  10.94,   // unchanged since the May 24 refresh
+      ratingMix:       'Hold-skew (2 Strong Buy · 1 Buy · 7 Hold per StockAnalysis; MarketBeat adds 1 Sell). Newest voice is Needham\'s May 22 Buy/$11 initiation; avg PT runs $7.96–$10.94 by aggregator.'
     },
     recentActions: [
-      { date: '2026-05-14', firm: 'TD Cowen',     analyst: '—',            action: 'Maintains Hold, PT $7 → $8', note: 'First post-Q1\'26 action; modest raise, neutral stance' },
-      { date: '2026-05',    firm: 'JPMorgan',     analyst: 'Mark Strouse', action: 'PT cut $9 → $6, Neutral',     note: 'Cited cash burn + Frontier capital-stack questions on Q1 call' },
-      { date: '2026-02-27', firm: 'Roth Capital', analyst: 'Chip Moore',   action: 'PT $6.00',                    note: 'Post FY25 miss; flagged execution risk' },
-      { date: 'Range',      firm: '8–13 covering',analyst: '—',            action: 'PT range $5–$22',             note: 'Wide dispersion; bull case from data-center / Frontier flow' }
+      { date: '2026-05-22', firm: 'Needham',       analyst: 'Sean Milligan', action: 'Initiated Buy, PT $11',      note: 'First new coverage post-Frontier announcement; most bullish recent call' },
+      { date: '2026-05-14', firm: 'TD Cowen',      analyst: 'Jeff Osborne',  action: 'Maintains Hold, PT $7 → $8', note: 'First post-Q1\'26 action; modest raise, neutral stance' },
+      { date: '2026-04-16', firm: 'JPMorgan',      analyst: 'Mark Strouse',  action: 'PT cut $9 → $6, Neutral',    note: 'Cited cash burn + Frontier capital-stack questions' },
+      { date: 'Range',      firm: '10–15 covering',analyst: '—',             action: 'PT range $5–$22',            note: 'Wide dispersion; consensus avg $7.96–$10.94 depending on aggregator' }
     ],
     sentiment: {
       retail: 'Stocktwits "extremely bullish" post-Q1\'26 print',
@@ -892,7 +892,7 @@ window.EOSE_DATA = {
       { point: 'Margin trajectory: GM −78% Q1\'26, +157 ppt YoY, +16 ppt sequentially. Cube deliveries +5.7×. Operational leverage actually arriving.', src: 'Q1\'26 release' },
       { point: 'AI/data-center demand vector: TURBINE-X JDA targets up to 2 GWh of hyperscale capacity with first deployments 2027. NYSERDA ISC awards (Q3 2026) is another concrete near-term catalyst.', src: 'TURBINE-X release · NYSERDA' },
       { point: '45X PTC preserved under OBBBA with FEOC guardrails — structurally favors US-content LDES vs. China-linked competitors. $21.4M grant receivable on Q1\'26 BS.', src: 'OBBBA / 10-Q' },
-      { point: 'Short interest ~28% of float; ~3.5 days to cover. CEO Mastrangelo bought 23,900 shares post-FY25 crash; Director Dimitrief bought 15,000 at $6.04. Asymmetric setup on any clean catalyst.', src: 'Nasdaq SI · Form 4 / OpenInsider' }
+      { point: 'Short interest ~31% of float (~103.5M sh); ~3.4 days to cover. CEO Mastrangelo bought 23,900 shares post-FY25 crash; Director Dimitrief bought 15,000 at $6.04. Asymmetric setup on any clean catalyst.', src: 'Nasdaq SI · Form 4 / OpenInsider' }
     ],
     bear: [
       { point: 'Q1\'26 operating cash flow was −$119.7M (per cash flow statement — distinct from the −$79.3M operating loss on the P&L). At that pace, $472M total cash is ~4 quarters of runway absent new capital. S-3ASR shelf filed May 13 + a pro-rata rights offering targeting ~$150M to fund the Frontier USA contribution. Dilution is a "when," not "if."', src: '10-Q cash flow + S-3ASR + Frontier 8-K' },
@@ -909,11 +909,11 @@ window.EOSE_DATA = {
   // ────────── NEW: Sentiment & positioning ──────────
   // Insider trades and short interest — concrete positioning data, mixed by nature.
   sentiment: {
-    asOf: 'Latest available — verify links for live figures',
+    asOf: 'Short interest per latest semi-monthly settlement · refreshed June 12, 2026 — verify links for live figures',
     shortInterest: {
-      pctOfFloat:    '~28% (latest reported)',
-      sharesShort:   '~88.7M',
-      daysToCover:   '~3.5',
+      pctOfFloat:    '~31% (latest reported)',
+      sharesShort:   '~103.5M',
+      daysToCover:   '~3.4',
       interpretation: 'Elevated. Above 20% is the "potential squeeze" threshold; below 5 days-to-cover means a clean positive catalyst can move price hard. Bears argue the level is deserved given execution history.',
       source: 'https://www.nasdaq.com/market-activity/stocks/eose/short-interest'
     },
@@ -950,12 +950,9 @@ window.EOSE_DATA = {
   // The "Open-market net" figure below uses ONLY P and S transactions —
   // i.e., the discretionary capital decisions, not vesting mechanics.
   insiderTrades: {
-    asOf: 'Trailing ~6 months · pulled from SEC EDGAR (CIK 1805077, Form 4) · last refreshed May 20, 2026',
-    pending: {
-      label: 'Pending — incoming CFO Alessandro Lagi (effective June 8, 2026)',
-      detail: 'New CFO\'s Form 3 (initial holdings) + Form 4 for the $2M initial RSU grant will likely file in the first business days after June 8. Employment agreement: $470k base salary, 100% target bonus, $2M initial RSU grant (3-year vest), $1M annual LTI target. Source: 8-K filed April 28, 2026.',
-      sourceUrl: 'https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0001805077&type=8-K&dateb=&owner=include&count=10'
-    },
+    asOf: 'Trailing ~6 months · pulled from SEC EDGAR (CIK 1805077, Form 4) · last refreshed June 12, 2026',
+    // (pending block cleared June 12, 2026 — CFO Lagi's Form 3 + Form 4 filed
+    //  June 9; they now appear as regular rows in the transaction log below.)
     summary: {
       openMarketBuys:    692962,        // 4 P transactions (unchanged since March)
       openMarketSells:  14470280,       // +$54,305 from Walters May 19 cashless-exercise sale
@@ -978,6 +975,21 @@ window.EOSE_DATA = {
     ],
     // Each row carries the SEC accession number so we can build the direct URL
     transactions: [
+      // === June 2026 — CFO Lagi onboarding + annual director RSU grants ===
+      // Lagi's Form 3 (filed Jun 9) shows 12,114 sh of initial common holdings.
+      // All rows below are comp mechanics (A grants / M vests) — no P or S.
+      { date: '2026-06-08', name: 'Alessandro Lagi',     role: 'CFO',                     code: 'A', ad: 'A', shares: 277773, price: 0,     value: 0,        acc: '0001628280-26-041912', note: 'Initial RSU grant per employment agreement (~$2M, 3-yr vest) — first day as CFO; Form 3 shows 12,114 sh held' },
+      { date: '2026-06-05', name: 'Jeffrey S. Bornstein', role: 'Director',               code: 'A', ad: 'A', shares: 24289,  price: 0,     value: 0,        acc: '0001628280-26-041923', note: 'Annual director RSU grant' },
+      { date: '2026-06-05', name: 'Joseph Nigro',         role: 'Director',               code: 'A', ad: 'A', shares: 24289,  price: 0,     value: 0,        acc: '0001628280-26-041922', note: 'Annual director RSU grant' },
+      { date: '2026-06-05', name: 'Alexander Dimitrief',  role: 'Director',               code: 'A', ad: 'A', shares: 21253,  price: 0,     value: 0,        acc: '0001628280-26-041914', note: 'Annual director RSU grant' },
+      { date: '2026-06-05', name: 'Marian Walters',       role: 'Director',               code: 'A', ad: 'A', shares: 21253,  price: 0,     value: 0,        acc: '0001628280-26-041917', note: 'Annual director RSU grant' },
+      { date: '2026-06-05', name: 'Claude Demby',         role: 'Director',               code: 'A', ad: 'A', shares: 18217,  price: 0,     value: 0,        acc: '0001628280-26-041918', note: 'Annual director RSU grant' },
+      { date: '2026-06-05', name: 'Jeff McNeil',          role: 'Director',               code: 'A', ad: 'A', shares: 18217,  price: 0,     value: 0,        acc: '0001628280-26-041920', note: 'Annual director RSU grant' },
+      { date: '2026-06-05', name: 'Gregory S. Nixon',     role: 'Director',               code: 'A', ad: 'A', shares: 18217,  price: 0,     value: 0,        acc: '0001628280-26-041915', note: 'Annual director RSU grant' },
+      { date: '2026-06-05', name: 'David Urban',          role: 'Director',               code: 'A', ad: 'A', shares: 18217,  price: 0,     value: 0,        acc: '0001628280-26-041916', note: 'Annual director RSU grant' },
+      { date: '2026-06-02', name: 'Joseph Nigro',         role: 'Director',               code: 'M', ad: 'A', shares: 3565,   price: 0,     value: 0,        acc: '0001628280-26-040481', note: 'RSU vest' },
+      { date: '2026-06-02', name: 'Marian Walters',       role: 'Director',               code: 'M', ad: 'A', shares: 1782,   price: 0,     value: 0,        acc: '0001628280-26-040476', note: 'RSU vest' },
+
       // === May 19, 2026 — Annual director RSU vesting cluster (7 filings) ===
       { date: '2026-05-19', name: 'Jeffrey S. Bornstein', role: 'Director',                code: 'M', ad: 'A', shares: 30815,  price: 0,     value: 0,        acc: '0001628280-26-036656', note: 'RSU vest' },
       { date: '2026-05-19', name: 'Jeffrey S. Bornstein', role: 'Director',                code: 'D', ad: 'D', shares: 12326,  price: 6.88,  value: 84803,   acc: '0001628280-26-036656', note: 'Tax withholding (Rule 16b-3(e))' },
@@ -1033,8 +1045,8 @@ window.EOSE_DATA = {
         evidence: 'No filings indicate this. Cerberus IS expanding its structural position (Series B preferred, warrants, Frontier $100M anchor, lock-up extension through YE 2026). That setup gives Cerberus optionality but doesn\'t evidence an acquisition.'
       },
       {
-        claim: 'Short squeeze imminent — 28% of float is short.',
-        evidence: 'Short interest is real (~28%, ~3.5 days to cover per Nasdaq). Mechanically a squeeze is possible on any clean positive catalyst. But "possible" is not "imminent" — the stock has carried similar SI levels for months without breaking out.'
+        claim: 'Short squeeze imminent — ~30% of float is short.',
+        evidence: 'Short interest is real (~31% of float, ~3.4 days to cover per the latest settlement) and has risen from ~28% since May. Mechanically a squeeze is possible on any clean positive catalyst. But "possible" is not "imminent" — the stock has carried similar SI levels for months without breaking out.'
       },
       {
         claim: 'Frontier is a Cerberus-funded subsidy for Eos demand.',
