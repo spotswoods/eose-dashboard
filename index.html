@@ -29,7 +29,7 @@
   <meta property="og:image:alt" content="Eos Energy Enterprises (EOSE) logo" />
   <meta property="og:locale" content="en_US" />
   <meta property="article:published_time" content="2026-05-13T00:00:00Z" />
-  <meta property="article:modified_time" content="2026-05-24T00:00:00Z" />
+  <meta property="article:modified_time" content="2026-06-10T00:00:00Z" />
   <meta property="article:section" content="Investing" />
   <meta property="article:tag" content="EOSE" />
   <meta property="article:tag" content="Eos Energy Enterprises" />
@@ -63,7 +63,7 @@
         "headline": "Eos Energy (EOSE) Investor Dashboard — Independent Research",
         "description": "Independent investor dashboard covering Eos Energy Enterprises (NASDAQ: EOSE): quarterly financials, capital structure, Frontier Power USA JV, pipeline data, insider trades, regulatory catalysts, and a balanced bull/bear case — all linked to primary SEC sources.",
         "datePublished": "2026-05-13T00:00:00Z",
-        "dateModified": "2026-05-24T00:00:00Z",
+        "dateModified": "2026-06-10T00:00:00Z",
         "inLanguage": "en-US",
         "image": "https://eosesource.com/assets/eose-logo.png",
         "author": {
@@ -240,7 +240,7 @@
         </div>
         <div class="hero__asof" data-hero-asof>Google Finance via GitHub Action · refreshes every ~5 min</div>
         <div class="hero__asof" style="margin-top:4px">
-          Dashboard last updated <time datetime="2026-05-24" itemprop="dateModified">May 24, 2026</time>
+          Dashboard last updated <time datetime="2026-06-10" itemprop="dateModified" data-dash-updated>June 10, 2026</time>
           · Q1 2026 figures sourced from
           <a href="https://www.sec.gov/Archives/edgar/data/1805077/000162828026034368/eose-20260331.htm" target="_blank" rel="noopener" style="color:var(--accent);text-decoration:underline">10-Q filed May 13, 2026</a>
           · <a href="#about" style="color:var(--accent);text-decoration:underline">About this dashboard</a>
@@ -260,6 +260,7 @@
   <!-- ============ Section nav ============ -->
   <nav class="section-nav">
     <div class="section-nav__inner">
+      <a href="#daily-note"><span class="num">00</span> Daily Note</a>
       <a href="#overview"><span class="num">01</span> Overview</a>
       <a href="#news-feed"><span class="num">01b</span> News</a>
       <a href="#thesis"><span class="num">02</span> Bull vs Bear</a>
@@ -304,11 +305,29 @@
         <span class="deepdive-banner__badge">★ Deep Dive</span>
         <div class="deepdive-banner__body">
           <div class="deepdive-banner__title">The Rights Offering — what it means &amp; how it works</div>
-          <div class="deepdive-banner__sub">The ~$150M raise that funds Frontier: your three choices, the dilution math, the warrants, and the June 3 vote.</div>
+          <div class="deepdive-banner__sub">The ~$150M raise that funds Frontier: your three choices, the dilution math, and the warrants. Share authorization passed at the June 3 AGM — terms &amp; timing still pending.</div>
         </div>
         <span class="deepdive-banner__cta">Read&nbsp;→</span>
       </a>
     </div>
+
+    <!-- ============ 00 Daily Note (auto-refreshed twice daily by scheduled task) ============ -->
+    <section class="section" id="daily-note" data-screen-label="00 Daily Note">
+      <div class="section__head">
+        <div>
+          <div class="section__num">00 · DAILY NOTE · AUTO-REFRESHED TWICE DAILY</div>
+          <h2 data-mn-headline>Daily market note</h2>
+          <p><span data-mn-session></span></p>
+        </div>
+        <div class="right" data-mn-meta style="font-size:12px;color:var(--fg-3)"></div>
+      </div>
+      <div class="card" style="border-left:3px solid var(--accent)">
+        <p style="font-size:14.5px;line-height:1.65;color:var(--fg-0);margin:0 0 8px" data-mn-takeaway></p>
+        <div class="mn-price" data-mn-price style="font-size:13px;color:var(--fg-2);margin:0 0 12px"></div>
+        <ul data-mn-bullets style="padding-left:18px;font-size:13.5px;line-height:1.65;color:var(--fg-1);margin:0;display:grid;gap:8px"></ul>
+        <p data-mn-sources style="font-size:12px;color:var(--fg-3);margin-top:14px;border-top:1px solid var(--line-1);padding-top:10px"></p>
+      </div>
+    </section>
 
     <!-- ============ 01 Overview ============ -->
     <section class="section" id="overview" data-screen-label="01 Overview">
@@ -1284,12 +1303,59 @@
   <script src="js/charts.js"></script>
   <script src="js/app.js"></script>
 
-  <!-- Tweaks (React) -->
-  <script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
-  <script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
-  <script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
-  <script type="text/babel" src="js/tweaks-panel.jsx"></script>
-  <script type="text/babel" src="js/tweaks-app.jsx"></script>
+  <!-- Tweaks (React) — authoring tool, NOT visitor UI.
+       The React dev builds + Babel standalone weigh ~4.5 MB and compile JSX in
+       the browser, so they are only loaded on demand:
+         · ?tweaks=1 in the URL (sticky via localStorage; ?tweaks=0 to forget)
+         · or when the page runs inside an iframe (the prototype edit-mode host)
+       Normal visitors never download any of it. -->
+  <script>
+    (function () {
+      var want = false;
+      try {
+        var q = new URLSearchParams(location.search).get('tweaks');
+        if (q === '1') { want = true; localStorage.setItem('eose-tweaks', '1'); }
+        else if (q === '0') { localStorage.removeItem('eose-tweaks'); }
+        else if (localStorage.getItem('eose-tweaks') === '1') { want = true; }
+      } catch (e) { /* storage blocked — fall through */ }
+      if (!want && window.self !== window.top) want = true; // edit-mode host embeds us
+      if (!want) return;
+
+      function load(src, integrity) {
+        return new Promise(function (res, rej) {
+          var s = document.createElement('script');
+          s.src = src;
+          if (integrity) { s.integrity = integrity; s.crossOrigin = 'anonymous'; }
+          s.onload = res; s.onerror = rej;
+          document.body.appendChild(s);
+        });
+      }
+      load('https://unpkg.com/react@18.3.1/umd/react.development.js',
+           'sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L')
+        .then(function () {
+          return load('https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js',
+                      'sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm');
+        })
+        .then(function () {
+          return load('https://unpkg.com/@babel/standalone@7.29.0/babel.min.js',
+                      'sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y');
+        })
+        .then(function () {
+          // Fetch + compile the JSX ourselves: Babel's automatic text/babel pass
+          // only runs at DOMContentLoaded, which has long passed by now.
+          return Promise.all(['js/tweaks-panel.jsx', 'js/tweaks-app.jsx'].map(function (u) {
+            return fetch(u).then(function (r) { return r.text(); });
+          }));
+        })
+        .then(function (sources) {
+          sources.forEach(function (code) {
+            var js = window.Babel.transform(code, { presets: ['react'] }).code;
+            (0, eval)(js); // indirect eval = global scope, same as a script tag
+          });
+        })
+        .catch(function (e) { console.warn('Tweaks panel failed to load:', e); });
+    })();
+  </script>
 
   <!-- Cloudflare Web Analytics (cookieless, privacy-friendly, deferred) -->
   <script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "7f21e028bb474554a12d8c8472c9cdb2"}'></script>

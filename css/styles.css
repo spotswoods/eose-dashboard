@@ -558,6 +558,10 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
 .table .pos { color: var(--positive); font-weight: 600; }
 .table .neg { color: var(--negative); font-weight: 600; }
 
+/* Daily note (§00) — price line rendered by renderMorningNote() */
+.mn-price .pos { color: var(--positive); font-weight: 600; }
+.mn-price .neg { color: var(--negative); font-weight: 600; }
+
 /* Pill */
 .pill {
   display: inline-flex; align-items: center; gap: 6px;

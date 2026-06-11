@@ -817,7 +817,18 @@
   // ---------- NEW: Morning note (01b) ----------
   function renderMorningNote() {
     const mn = D.morningNote;
-    if (!mn) return;
+    const sec = document.getElementById('daily-note');
+    if (!mn) { if (sec) sec.style.display = 'none'; return; }
+    // Keep the hero "Dashboard last updated" date honest — the note refreshes
+    // twice daily, so its timestamp is the freshest signal we have.
+    try {
+      const upd = document.querySelector('[data-dash-updated]');
+      const d = new Date(mn.updatedAt);
+      if (upd && !isNaN(d)) {
+        upd.textContent = d.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
+        upd.setAttribute('datetime', mn.updatedAt.slice(0, 10));
+      }
+    } catch (e) { /* keep the static date */ }
     const fmtUpdated = (() => {
       try {
         const d = new Date(mn.updatedAt);
