@@ -18,6 +18,8 @@
 'use strict';
 
 const fs = require('fs');
+const os = require('os');
+const cp = require('child_process');
 const path = require('path');
 const vm = require('vm');
 
@@ -77,7 +79,7 @@ function buildNoteHtml(mn) {
         <div>
           <div class="section__num">00 · DAILY NOTE · AUTO-REFRESHED TWICE DAILY</div>
           <h2 data-mn-headline>${esc(mn.headline)}</h2>
-          <p><span data-mn-session>${esc(sessionLabel)}</span></p>
+          <p><span data-mn-session>${esc(sessionLabel)}</span> · <a href="note-feed.xml" target="_blank" rel="noopener" style="color:var(--accent);text-decoration:underline">🔖 Subscribe via RSS</a></p>
         </div>
         <div class="right" data-mn-meta style="font-size:12px;color:var(--fg-3)">Updated ${esc(stockholmStamp(mn.updatedAt))}</div>
       </div>
@@ -90,6 +92,81 @@ function buildNoteHtml(mn) {
         <p data-mn-sources style="font-size:12px;color:var(--fg-3);margin-top:14px;border-top:1px solid var(--line-1);padding-top:10px">${sources ? 'Sources: ' + sources : ''}</p>
       </div>
       `;
+}
+
+function priceLine(mn) {
+  const p = mn.price || {};
+  if (p.last == null) return '';
+  const pct = p.changePct != null
+    ? ` · ${p.changePct >= 0 ? '+' : ''}${Number(p.changePct).toFixed(2)}%` : '';
+  return `$${Number(p.last).toFixed(2)}${pct}`;
+}
+
+const xmlEsc = (s) => String(s == null ? '' : s)
+  .replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+
+// RSS 2.0 feed of the rolling note archive. Deterministic for a given
+// archive (no wall-clock timestamps) so reruns stay idempotent.
+function buildRss(archive) {
+  const items = archive.map((n) => {
+    const sess = n.session === 'post-close' ? 'Post-close' : n.session === 'pre-open' ? 'Pre-open' : '';
+    const bullets = (n.bullets || []).map((b) => `<li>${b}</li>`).join('');
+    const html = `<p>${n.takeaway || ''}</p>${bullets ? `<ul>${bullets}</ul>` : ''}<p><a href="https://eosesource.com/#daily-note">Full dashboard →</a></p>`;
+    return [
+      '    <item>',
+      `      <title>${xmlEsc((sess ? sess + ': ' : '') + n.headline)}</title>`,
+      '      <link>https://eosesource.com/#daily-note</link>',
+      `      <guid isPermaLink="false">eose-note-${xmlEsc(n.updatedAt)}</guid>`,
+      `      <pubDate>${new Date(n.updatedAt).toUTCString()}</pubDate>`,
+      `      <description>${xmlEsc(html)}</description>`,
+      '    </item>'
+    ].join('\n');
+  }).join('\n');
+  return `<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>EOSE Daily Investor Note — eosesource.com</title>
+    <link>https://eosesource.com/#daily-note</link>
+    <atom:link href="https://eosesource.com/note-feed.xml" rel="self" type="application/rss+xml"/>
+    <description>Twice-daily independent EOSE market note: price action, filings, catalysts. Not investment advice.</description>
+    <language>en-us</language>
+    <lastBuildDate>${archive.length ? new Date(archive[0].updatedAt).toUTCString() : ''}</lastBuildDate>
+${items}
+  </channel>
+</rss>
+`;
+}
+
+// Renders assets/og-daily.png via System.Drawing (Windows-only; the note is
+// only ever refreshed on this machine). Failure is non-fatal — the page just
+// keeps the previous card.
+function renderOgCard(mn) {
+  if (process.platform !== 'win32') return false;
+  const outPng = path.join(ROOT, 'assets', 'og-daily.png');
+  const tmp = path.join(os.tmpdir(), 'eose-og-input.json');
+  const dateline = (() => {
+    try {
+      const d = new Date(mn.updatedAt);
+      const sess = mn.session === 'post-close' ? 'post-close' : mn.session === 'pre-open' ? 'pre-open' : '';
+      return d.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' }) + (sess ? ` · ${sess} note` : '');
+    } catch (e) { return ''; }
+  })();
+  fs.writeFileSync(tmp, JSON.stringify({
+    headline: mn.headline || '',
+    priceline: priceLine(mn),
+    dateline
+  }));
+  try {
+    cp.execFileSync('powershell.exe', [
+      '-NoProfile', '-ExecutionPolicy', 'Bypass',
+      '-File', path.join(ROOT, 'scripts', 'render-og-card.ps1'),
+      '-InputJson', tmp, '-OutPng', outPng
+    ], { stdio: ['ignore', 'ignore', 'pipe'], timeout: 30000 });
+    return fs.existsSync(outPng);
+  } catch (e) {
+    console.error('prerender-note: og card render failed — ' + (e.message || e));
+    return false;
+  }
 }
 
 function replaceOnce(haystack, regex, replacement, what, file) {
@@ -107,6 +184,38 @@ function main() {
   const isoDate = new Date(mn.updatedAt).toISOString().slice(0, 10);
   const isoInstant = new Date(mn.updatedAt).toISOString();
   const changed = [];
+
+  // ---- rolling note archive (data/note-archive.json, newest first) ----
+  const archPath = path.join(ROOT, 'data', 'note-archive.json');
+  let archive = [];
+  try { archive = JSON.parse(fs.readFileSync(archPath, 'utf8')); } catch (e) { /* first run */ }
+  const noteChanged = !archive.length || archive[0].updatedAt !== mn.updatedAt;
+  if (noteChanged) {
+    archive.unshift({
+      updatedAt: mn.updatedAt, session: mn.session || '',
+      headline: mn.headline || '', takeaway: mn.takeaway || '',
+      bullets: mn.bullets || [], price: mn.price || null
+    });
+    archive = archive.slice(0, 30);
+    fs.writeFileSync(archPath, JSON.stringify(archive, null, 1) + '\n');
+    changed.push('data/note-archive.json');
+  }
+
+  // ---- RSS feed of the archive (note-feed.xml) ----
+  const rssPath = path.join(ROOT, 'note-feed.xml');
+  const rss = buildRss(archive);
+  const rssBefore = fs.existsSync(rssPath) ? fs.readFileSync(rssPath, 'utf8') : '';
+  if (rss !== rssBefore) {
+    fs.writeFileSync(rssPath, rss);
+    changed.push('note-feed.xml');
+  }
+
+  // ---- daily share card (assets/og-daily.png) ----
+  const ogPng = path.join(ROOT, 'assets', 'og-daily.png');
+  if (noteChanged || !fs.existsSync(ogPng)) {
+    if (renderOgCard(mn)) changed.push('assets/og-daily.png');
+  }
+  const haveCard = fs.existsSync(ogPng);
 
   // ---- index.html ----
   const idxPath = path.join(ROOT, 'index.html');
@@ -138,6 +247,24 @@ function main() {
     /("dateModified": ")[^"]*(")/,
     `$1${isoInstant}$2`,
     'JSON-LD dateModified', 'index.html');
+
+  // Social share images → the daily card (only once it exists). The ?v=
+  // version derives from updatedAt so scrapers re-fetch on each new note.
+  if (haveCard) {
+    const ogUrl = `https://eosesource.com/assets/og-daily.png?v=${isoInstant.replace(/\D/g, '').slice(0, 12)}`;
+    idx = replaceOnce(idx,
+      /(property="og:image" content=")[^"]*(")/,
+      (_, a, b) => a + ogUrl + b, 'og:image', 'index.html');
+    idx = replaceOnce(idx,
+      /(property="og:image:alt" content=")[^"]*(")/,
+      (_, a, b) => a + esc(mn.headline) + b, 'og:image:alt', 'index.html');
+    idx = replaceOnce(idx,
+      /(name="twitter:image" content=")[^"]*(")/,
+      (_, a, b) => a + ogUrl + b, 'twitter:image', 'index.html');
+    idx = replaceOnce(idx,
+      /(name="twitter:image:alt" content=")[^"]*(")/,
+      (_, a, b) => a + esc(mn.headline) + b, 'twitter:image:alt', 'index.html');
+  }
 
   if (idx !== idxBefore) {
     fs.writeFileSync(idxPath, idx);

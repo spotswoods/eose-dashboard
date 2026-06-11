@@ -1,0 +1,21 @@
+[
+ {
+  "updatedAt": "2026-06-09T22:30:00+02:00",
+  "session": "post-close",
+  "headline": "EOSE drifts ~-1% to ~$6.85 on quiet session — no new filings, T-21 to Line 2 start",
+  "takeaway": "No material news or filings on Jun 9. Stock extended Mon's pullback to ~$6.85, consolidating below $7 as rights offering dilution overhang persists. Line 2 Thorn Hill (Jun 30 target) and JPM Natural Resources Conf (Jun 23) remain the key near-term binary events.",
+  "bullets": [
+   "Price action: EOSE ~$6.85 close (est., -1.2% vs Jun 8 $6.93); no after-hours catalysts noted. Stock ~-50% from Feb $13+ peak, ~+47% from Apr $4.59 trough; range-bound below $7 since rights offering overhang emerged.",
+   "No new filings Jun 9: no 8-K, Form 4, or IR press release found. Most recent filing is Jun 5 8-K confirming AGM approval of 800M authorized-share increase — structural enabler for ~$150M rights offering.",
+   "Line 2 Thorn Hill — T-21 to Jun 30: Power-on/debug underway per Q1 disclosures. First production gates the $300-$400M FY26 revenue guide; any slip risks consensus reset and further de-rating.",
+   "Rights offering terms still unannounced. CEO Mastrangelo expected at JPM Natural Resources Conf Jun 23 (fireside + 1x1s) — primary venue for rights structure and timeline; Cerberus $100M backstop committed.",
+   "FPUSA pipeline ~2.5 GWh: Bimergen 480 MWh converted (May 21) + Stella 2+ GWh ERCOT framework (May 28). TURBINE-X JDA (AI/hyperscale, up to 2 GWh) active; full capitalization contingent on rights offering close.",
+   "Litigation: Yung/Berger class action in discovery; Hagens Berman and BFA suits pending. No new docket activity Jun 9. Overhang limits institutional accumulation near-term."
+  ],
+  "price": {
+   "last": 6.85,
+   "changePct": -1.15,
+   "note": "Jun 9 close est. · search-snippet source · verify vs Stooq"
+  }
+ }
+]
