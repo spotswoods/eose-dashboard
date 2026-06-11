@@ -30,26 +30,26 @@ window.EOSE_DATA = {
   // Refreshed by /equity-research:morning-note via a scheduled task in Cowork.
   // session = 'pre-open' (Swedish AM, ~07:00 CEST) | 'post-close' (Swedish PM, ~22:30 CEST)
   morningNote: {
-    updatedAt: '2026-06-09T07:00:00+02:00',
-    session:   'pre-open',
-    headline:  'Quiet overnight — no new filings; Line 2 at 21 days, rights offering terms pending',
-    takeaway:  'Nothing material emerged overnight for EOSE. Stock closed $6.93 Mon (-3.88%), AH ~$6.69; pre-market setup unchanged. JPM Natural Resources Conf (Jun 23) is the next expected catalyst for rights offering terms and CFO Lagi\'s first public investor appearance.',
+    updatedAt: '2026-06-09T22:30:00+02:00',
+    session:   'post-close',
+    headline:  'EOSE drifts ~-1% to ~$6.85 on quiet session — no new filings, T-21 to Line 2 start',
+    takeaway:  'No material news or filings on Jun 9. Stock extended Mon\'s pullback to ~$6.85, consolidating below $7 as rights offering dilution overhang persists. Line 2 Thorn Hill (Jun 30 target) and JPM Natural Resources Conf (Jun 23) remain the key near-term binary events.',
     bullets: [
-      'Price setup: Last close $6.93 (Mon Jun 8, -3.88%). AH ~$6.69. Dilution overhang from pending ~$150M rights offering weighs; stock -15.3% off the May 14 post-Q1 peak.',
-      'No new filings overnight: no 8-K or prospectus as of this run. Rights offering terms remain the key event risk — next expected at JPM Natural Resources Conf, Jun 23 (CEO fireside + 1x1s).',
-      'Line 2 Thorn Hill — 21 days to Jun 30: Power-on/debug underway per Q1 disclosures; no update overnight. End-Q2 production start gates the $300-$400M FY26 revenue guide — any slip risks a consensus reset.',
-      'FPUSA pipeline steady at ~2.5 GWh: Bimergen 480 MWh converted (May 21) + Stella 2+ GWh ERCOT framework (May 28). Full capitalisation linked to rights offering close; Cerberus backstop committed.',
-      'Litigation background: Yung/Berger securities class action remains in discovery; no new docket entries overnight. Background overhang, caps institutional buying.',
-      'Sector tailwind intact: BloombergNEF forecasts 158 GW global BESS in 2026 (+41% YoY); LDES additions set to quadruple to 2 GW. Structural support for Eos\' Znyth positioning into the US open.'
+      'Price action: EOSE ~$6.85 close (est., -1.2% vs Jun 8 $6.93); no after-hours catalysts noted. Stock ~-50% from Feb $13+ peak, ~+47% from Apr $4.59 trough; range-bound below $7 since rights offering overhang emerged.',
+      'No new filings Jun 9: no 8-K, Form 4, or IR press release found. Most recent filing is Jun 5 8-K confirming AGM approval of 800M authorized-share increase — structural enabler for ~$150M rights offering.',
+      'Line 2 Thorn Hill — T-21 to Jun 30: Power-on/debug underway per Q1 disclosures. First production gates the $300-$400M FY26 revenue guide; any slip risks consensus reset and further de-rating.',
+      'Rights offering terms still unannounced. CEO Mastrangelo expected at JPM Natural Resources Conf Jun 23 (fireside + 1x1s) — primary venue for rights structure and timeline; Cerberus $100M backstop committed.',
+      'FPUSA pipeline ~2.5 GWh: Bimergen 480 MWh converted (May 21) + Stella 2+ GWh ERCOT framework (May 28). TURBINE-X JDA (AI/hyperscale, up to 2 GWh) active; full capitalization contingent on rights offering close.',
+      'Litigation: Yung/Berger class action in discovery; Hagens Berman and BFA suits pending. No new docket activity Jun 9. Overhang limits institutional accumulation near-term.'
     ],
-    price:   { last: 6.93, changePct: -3.88, note: 'Jun 8 close · AH ~$6.69 · pre-market N/A · Stooq delayed' },
+    price:   { last: 6.85, changePct: -1.15, note: 'Jun 9 close est. · search-snippet source · verify vs Stooq' },
     sources: [
       { label: 'EOSE overview — StockAnalysis', url: 'https://stockanalysis.com/stocks/eose/' },
       { label: 'EOSE quote — Yahoo Finance', url: 'https://finance.yahoo.com/quote/EOSE/' },
-      { label: 'JPM conf — GlobeNewsWire', url: 'https://www.globenewswire.com/news-release/2026/04/23/3280419/0/en/Eos-Energy-Enterprises-Announces-Date-for-First-Quarter-2026-Financial-Results-and-Conference-Call-Announces-Participation-at-Upcoming-Investor-Conferences.html' },
+      { label: 'AGM results — GlobeNewsWire', url: 'https://www.globenewswire.com/news-release/2026/06/05/3307396/0/en/Eos-Energy-Stockholders-Approve-All-Proposals-at-2026-Annual-Meeting.html' },
       { label: 'FPUSA Stella — GlobeNewsWire', url: 'https://www.globenewswire.com/news-release/2026/05/28/3302710/0/en/FPUSA-and-Stella-Energy-Solutions-Announce-Strategic-Framework-Across-2-GWh-Storage-Pipeline.html' },
-      { label: 'BloombergNEF BESS 2026 — Energy-Storage.news', url: 'https://www.energy-storage.news/bloombergnef-forecasts-158gw-of-global-energy-storage-deployments-in-2026/' },
-      { label: 'AGM results — GlobeNewsWire', url: 'https://www.globenewswire.com/news-release/2026/06/05/3307396/0/en/Eos-Energy-Stockholders-Approve-All-Proposals-at-2026-Annual-Meeting.html' }
+      { label: 'Q1 results + FPUSA — GlobeNewsWire', url: 'https://www.globenewswire.com/news-release/2026/05/13/3293810/0/en/Eos-Energy-Enterprises-Reports-First-Quarter-2026-Financial-Results-and-Announces-Frontier-Power-USA.html' },
+      { label: 'SEC filings — EOSE IR', url: 'https://investors.eose.com/financials/sec-filings' }
     ]
   },
 
