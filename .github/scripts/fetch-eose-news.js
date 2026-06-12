@@ -6,6 +6,12 @@
 //      https://www.eose.com/wp-json/wp/v2/posts
 //   2. SEC EDGAR material filings — data.sec.gov submissions JSON
 //      https://data.sec.gov/submissions/CIK0001805077.json
+//   3. data/manual-news.json (optional) — hand-curated items for news the
+//      structured sources haven't published yet (e.g. a GlobeNewswire release
+//      that lands before eose.com's WP post or the EDGAR filing). Deduped
+//      against the auto feed by URL and by same-day headline match, so each
+//      manual item drops out automatically once the canonical source appears;
+//      an optional `expires` (YYYY-MM-DD) hard-drops it after that date.
 //
 // Merges, de-dupes, sorts newest-first, tags each item, and writes
 //   data/eose-news.json  — consumed at runtime by renderEoseNews() in app.js
@@ -137,10 +143,34 @@ async function fetchSecFilings() {
   }
 }
 
+// Normalized headline key for cross-source dedupe (manual vs. auto items
+// share the official release title but never the URL).
+function headKey(item) {
+  return item.date + '|' + String(item.headline || '').toLowerCase().replace(/[^a-z0-9]+/g, '');
+}
+
+function readManualItems() {
+  try {
+    const arr = JSON.parse(fs.readFileSync('data/manual-news.json', 'utf8'));
+    if (!Array.isArray(arr)) return [];
+    const today = new Date().toISOString().slice(0, 10);
+    return arr.filter(i => i && i.iso && i.headline && i.url && (!i.expires || i.expires >= today))
+              .map(({ expires, ...item }) => item);   // expires is bookkeeping, not feed data
+  } catch (e) {
+    return [];   // absent or invalid — the auto feed alone is a valid result
+  }
+}
+
 (async () => {
   const [prs, filings] = await Promise.all([fetchPressReleases(), fetchSecFilings()]);
 
-  const merged = [...prs, ...filings]
+  const auto = [...prs, ...filings];
+  const autoUrls = new Set(auto.map(i => i.url));
+  const autoKeys = new Set(auto.map(headKey));
+  const manual = readManualItems()
+    .filter(i => !autoUrls.has(i.url) && !autoKeys.has(headKey(i)));
+
+  const merged = [...manual, ...auto]
     .filter(i => i.iso && daysAgo(i.iso) <= MAX_AGE_DAYS)
     .sort((a, b) => new Date(b.iso) - new Date(a.iso))
     .slice(0, MAX_ITEMS);
@@ -153,11 +183,11 @@ async function fetchSecFilings() {
   fs.writeFileSync('data/eose-news.json', JSON.stringify({
     meta: {
       _refreshed: new Date().toISOString(),
-      sources: ['eose.com (WordPress REST API)', 'SEC EDGAR submissions API'],
-      counts: { pressReleases: prs.length, secFilings: filings.length, shown: merged.length }
+      sources: ['eose.com (WordPress REST API)', 'SEC EDGAR submissions API', 'curated (data/manual-news.json)'],
+      counts: { pressReleases: prs.length, secFilings: filings.length, manual: manual.length, shown: merged.length }
     },
     items: merged
   }, null, 2) + '\n');
 
-  console.log(`Wrote data/eose-news.json — ${merged.length} items (${prs.length} PRs, ${filings.length} filings).`);
+  console.log(`Wrote data/eose-news.json — ${merged.length} items (${prs.length} PRs, ${filings.length} filings, ${manual.length} manual).`);
 })().catch(e => { console.error('fetch-eose-news failed:', e.message); process.exit(1); });

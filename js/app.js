@@ -47,7 +47,15 @@
     document.querySelectorAll('[data-theme-icon]').forEach(el => { el.dataset.themeIcon = t; });
     setTimeout(() => renderAllCharts(), 50);
   }
-  function initTheme() { setTheme(localStorage.getItem('eose-theme') || 'dark'); }
+  function initTheme() {
+    let t = localStorage.getItem('eose-theme');
+    if (!t) {
+      // First visit: honor the OS preference instead of forcing dark
+      try { t = matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark'; }
+      catch (e) { t = 'dark'; }
+    }
+    setTheme(t);
+  }
 
   // ---------- Ticker ----------
   function setEl(sel, txt) {

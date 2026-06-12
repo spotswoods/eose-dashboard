@@ -79,7 +79,7 @@ function buildNoteHtml(mn) {
         <div>
           <div class="section__num">00 · DAILY NOTE · AUTO-REFRESHED TWICE DAILY</div>
           <h2 data-mn-headline>${esc(mn.headline)}</h2>
-          <p><span data-mn-session>${esc(sessionLabel)}</span> · <a href="note-feed.xml" target="_blank" rel="noopener" style="color:var(--accent);text-decoration:underline">🔖 Subscribe via RSS</a></p>
+          <p><span data-mn-session>${esc(sessionLabel)}</span> · <a href="notes.html" style="color:var(--accent);text-decoration:underline">📚 Past notes</a> · <a href="note-feed.xml" target="_blank" rel="noopener" style="color:var(--accent);text-decoration:underline">🔖 Subscribe via RSS</a></p>
         </div>
         <div class="right" data-mn-meta style="font-size:12px;color:var(--fg-3)">Updated ${esc(stockholmStamp(mn.updatedAt))}</div>
       </div>
@@ -105,6 +105,88 @@ function priceLine(mn) {
 const xmlEsc = (s) => String(s == null ? '' : s)
   .replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
 
+// Stable per-note anchor shared by notes.html and the RSS item links,
+// e.g. 'note-2026-06-11T2250'.
+function noteAnchor(n) {
+  return 'note-' + String(n.updatedAt).slice(0, 16).replace(/:/g, '');
+}
+
+function notePriceHtml(n) {
+  const p = n.price || {};
+  if (p.last == null) return p.note ? esc(p.note) : '';
+  const pct = p.changePct != null
+    ? `${p.changePct >= 0 ? '+' : ''}${Number(p.changePct).toFixed(2)}%` : '';
+  const cls = p.changePct >= 0 ? 'pos' : 'neg';
+  return `<b>$${Number(p.last).toFixed(2)}</b> <span class="${cls}">${pct}</span>` +
+    (p.note ? ` · <span style="color:var(--fg-3)">${esc(p.note)}</span>` : '');
+}
+
+// Static archive page (notes.html) — fully pre-rendered from the rolling
+// archive so crawlers and no-JS readers get every past note. Deterministic
+// for a given archive, so reruns stay idempotent.
+function buildArchivePage(archive) {
+  const newest = archive.length ? archive[0].updatedAt : '';
+  const cards = archive.map((n) => {
+    const sess = n.session === 'post-close' ? 'Post-close run · US session wrap'
+      : n.session === 'pre-open' ? 'Pre-open run · overnight setup' : (n.session || '');
+    const bullets = (n.bullets || []).map((b) => `<li>${b}</li>`).join('\n          ');
+    const price = notePriceHtml(n);
+    return `
+      <article class="card" id="${noteAnchor(n)}" style="margin-bottom:14px;border-left:3px solid var(--accent)">
+        <div style="font-size:11.5px;color:var(--fg-3);text-transform:uppercase;letter-spacing:.08em;font-weight:700">${esc(stockholmStamp(n.updatedAt))} · ${esc(sess)}</div>
+        <h2 style="font-size:18px;line-height:1.35;margin:8px 0 10px">${esc(n.headline)}</h2>
+        <p style="font-size:14px;line-height:1.6;color:var(--fg-0);margin:0">${esc(n.takeaway)}</p>
+        ${price ? `<div class="mn-price" style="font-size:13px;color:var(--fg-2);margin:10px 0 0">${price}</div>` : ''}
+        <ul style="padding-left:18px;font-size:13.5px;line-height:1.65;color:var(--fg-1);margin:12px 0 0;display:grid;gap:8px">
+          ${bullets}
+        </ul>
+      </article>`;
+  }).join('\n');
+
+  return `<!doctype html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>EOSE Daily Note Archive — Independent Investor Notes</title>
+  <meta name="description" content="Archive of the twice-daily independent EOSE (Eos Energy) investor note from eosesource.com: price action, SEC filings, catalysts, and rights-offering coverage. Not investment advice." />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://eosesource.com/notes.html" />
+  <meta name="theme-color" content="#02130E" />
+  <link rel="icon" type="image/png" href="assets/eose-logo.png" />
+  <link rel="alternate" type="application/rss+xml" title="EOSE Daily Investor Note — eosesource.com" href="note-feed.xml" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="EOSE Daily Note Archive — Independent Investor Notes" />
+  <meta property="og:url" content="https://eosesource.com/notes.html" />
+  <meta property="og:image" content="https://eosesource.com/assets/og-daily.png" />
+  <meta property="article:modified_time" content="${esc(newest)}" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap" />
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+  <main class="shell" style="max-width:880px;margin:0 auto;padding-top:28px">
+    <section class="section">
+      <div class="section__head">
+        <div>
+          <div class="section__num">EOSESOURCE.COM · DAILY NOTE ARCHIVE</div>
+          <h1 style="font-size:clamp(24px,3vw,32px);letter-spacing:-0.02em;line-height:1.15;margin:6px 0 10px">EOSE Daily Investor Note — Archive</h1>
+          <p style="max-width:640px">The last ${archive.length} editions of the twice-daily note from the <a href="./" style="color:var(--accent);text-decoration:underline">EOSE investor dashboard</a>, newest first. Auto-refreshed pre-open and post-close on US trading days. <a href="note-feed.xml" target="_blank" rel="noopener" style="color:var(--accent);text-decoration:underline">🔖 Subscribe via RSS</a>. Independent research — <strong>not investment advice</strong>; verify against primary SEC sources linked on the dashboard.</p>
+        </div>
+      </div>
+${cards}
+      <p style="font-size:12.5px;color:var(--fg-3);margin-top:18px">© 2026 EOSE Investor Dashboard · <a href="./" style="color:var(--accent);text-decoration:underline">Back to the dashboard</a> · Questions &amp; corrections: <a href="mailto:info@eosesource.com" style="color:var(--accent)">info@eosesource.com</a></p>
+    </section>
+  </main>
+
+  <!-- Cloudflare Web Analytics (cookieless, deferred) -->
+  <script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "7f21e028bb474554a12d8c8472c9cdb2"}'></script>
+</body>
+</html>
+`;
+}
+
 // RSS 2.0 feed of the rolling note archive. Deterministic for a given
 // archive (no wall-clock timestamps) so reruns stay idempotent.
 function buildRss(archive) {
@@ -115,7 +197,7 @@ function buildRss(archive) {
     return [
       '    <item>',
       `      <title>${xmlEsc((sess ? sess + ': ' : '') + n.headline)}</title>`,
-      '      <link>https://eosesource.com/#daily-note</link>',
+      `      <link>https://eosesource.com/notes.html#${noteAnchor(n)}</link>`,
       `      <guid isPermaLink="false">eose-note-${xmlEsc(n.updatedAt)}</guid>`,
       `      <pubDate>${new Date(n.updatedAt).toUTCString()}</pubDate>`,
       `      <description>${xmlEsc(html)}</description>`,
@@ -210,6 +292,15 @@ function main() {
     changed.push('note-feed.xml');
   }
 
+  // ---- static archive page (notes.html) ----
+  const notesPath = path.join(ROOT, 'notes.html');
+  const notesHtml = buildArchivePage(archive);
+  const notesBefore = fs.existsSync(notesPath) ? fs.readFileSync(notesPath, 'utf8') : '';
+  if (notesHtml !== notesBefore) {
+    fs.writeFileSync(notesPath, notesHtml);
+    changed.push('notes.html');
+  }
+
   // ---- daily share card (assets/og-daily.png) ----
   const ogPng = path.join(ROOT, 'assets', 'og-daily.png');
   if (noteChanged || !fs.existsSync(ogPng)) {
@@ -274,10 +365,14 @@ function main() {
   // ---- sitemap.xml ----
   const smPath = path.join(ROOT, 'sitemap.xml');
   const smBefore = fs.readFileSync(smPath, 'utf8');
-  const sm = replaceOnce(smBefore,
+  let sm = replaceOnce(smBefore,
     /(<loc>https:\/\/eosesource\.com\/<\/loc>\s*<lastmod>)[^<]*(<\/lastmod>)/,
     `$1${isoDate}$2`,
     'homepage <lastmod>', 'sitemap.xml');
+  sm = replaceOnce(sm,
+    /(<loc>https:\/\/eosesource\.com\/notes\.html<\/loc>\s*<lastmod>)[^<]*(<\/lastmod>)/,
+    `$1${isoDate}$2`,
+    'notes.html <lastmod>', 'sitemap.xml');
   if (sm !== smBefore) {
     fs.writeFileSync(smPath, sm);
     changed.push('sitemap.xml');

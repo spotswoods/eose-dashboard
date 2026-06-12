@@ -23,8 +23,17 @@ apex (or `curl -L`) when checking the live site.
   in index.html. The local pre-commit hook runs `scripts/prerender-note.js`,
   which regenerates that block from `js/data.js` and also syncs: the hero
   "last updated" date, `article:modified_time`, JSON-LD `dateModified`,
-  `og:image`/`twitter:image` (daily share card), the sitemap lastmod,
-  `data/note-archive.json`, `note-feed.xml`, and `assets/og-daily.png`.
+  `og:image`/`twitter:image` (daily share card), the sitemap lastmods,
+  `data/note-archive.json`, `note-feed.xml`, `notes.html` (static archive
+  page), and `assets/og-daily.png`.
+- **Breaking news before the structured sources publish it:** never edit
+  `data/eose-news.json` directly (the GitHub Action rebuilds it wholesale and
+  wipes manual edits). Instead add the item to `data/manual-news.json` —
+  same fields plus an optional `expires: 'YYYY-MM-DD'`. The fetch script
+  merges it in and auto-drops it once eose.com or EDGAR publishes the same
+  story (deduped by URL and same-day headline). After editing
+  `data/manual-news.json`, run `node .github/scripts/fetch-eose-news.js`
+  locally to rebuild the feed immediately.
 
 ## Morning-note refresh (twice-daily scheduled task)
 
