@@ -44,8 +44,7 @@ window.EOSE_DATA = {
     ],
     price:   { last: 6.07, changePct: null, note: 'Jun 11 close (dashboard quote feed) · record date announced ~4:15 pm ET, after the close' },
     sources: [
-      { label: 'Record date announcement — StockTitan', url: 'https://www.stocktitan.net/news/EOSE/eos-energy-announces-record-date-for-rights-afz7bo6crugt.html' },
-      { label: 'Full release text — GlobeNewswire (reprint)', url: 'https://www.manilatimes.net/2026/06/12/tmt-newswire/globenewswire/eos-energy-announces-record-date-for-rights-offering/2364081' },
+      { label: 'Record date announcement — GlobeNewswire', url: 'https://www.globenewswire.com/news-release/2026/06/11/3310798/0/en/Eos-Energy-Announces-Record-Date-for-Rights-Offering.html' },
       { label: 'Eos IR newsroom', url: 'https://investors.eose.com/news-releases' },
       { label: 'EOSE 8-K filings — SEC EDGAR (watch for the filing)', url: 'https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0001805077&type=8-K' },
       { label: 'How the rights offering works — explainer', url: 'rights-offering.html' }
@@ -950,19 +949,19 @@ window.EOSE_DATA = {
   // The "Open-market net" figure below uses ONLY P and S transactions —
   // i.e., the discretionary capital decisions, not vesting mechanics.
   insiderTrades: {
-    asOf: 'Trailing ~6 months · pulled from SEC EDGAR (CIK 1805077, Form 4) · last refreshed June 12, 2026',
+    asOf: 'Trailing ~6 months · pulled from SEC EDGAR (CIK 1805077, Form 4) · last refreshed June 15, 2026',
     // (pending block cleared June 12, 2026 — CFO Lagi's Form 3 + Form 4 filed
     //  June 9; they now appear as regular rows in the transaction log below.)
     summary: {
       openMarketBuys:    692962,        // 4 P transactions (unchanged since March)
       openMarketSells:  14470280,       // +$54,305 from Walters May 19 cashless-exercise sale
-      taxWithholding:    1777812,       // +$349,801 May 19 director RSU tax withholdings (D-code)
-      grants:             159019,       // NEW: A-code grants — Nixon's 23,111 sh @ $6.88 implied
-      vestingNetShares:   135864,       // NEW: Total May 19 RSU/option vesting NET of withholdings (shares retained by directors)
+      taxWithholding:    2484687,       // +$706,875 June 12 CEO option-exercise tax withholding (F-code)
+      grants:             159019,       // A-code grants — Nixon's 23,111 sh @ $6.88 implied
+      vestingNetShares:   135864,       // Total May 19 RSU/option vesting NET of withholdings (shares retained by directors)
       buyCount: 4,
       sellCount: 8,                     // +1 (Walters May 19)
       buyersUnique: 3,                  // Mastrangelo, Dimitrief, Urban
-      reading: 'Two clusters tell the story. (1) March 2026 post-crash: CEO Mastrangelo + 2 directors put $693k of fresh capital in at $5.75–$6.58 — discretionary buys, strongest insider signal. (2) Dec 2025/Jan 2026 pre-crash: Officer + Director sells of $14M at $14–$18 — well above current price. (3) May 19, 2026 routine annual director RSU vesting: 7 directors settled equity comp on the same day — ~$350k in tax-withholding (non-discretionary, code D), ~136k net shares retained, and just $54k in actual open-market selling (Walters\' cashless option exercise). The vesting cluster looks dramatic in volume but only $54k of it was a real capital decision. New director Nathaniel Fick filed a Form 3 on Apr 3 (initial holdings: zero — typical for new outside directors).'
+      reading: 'Three clusters tell the story. (1) March 2026 post-crash: CEO Mastrangelo + 2 directors put $693k of fresh capital in at $5.75–$6.58 — discretionary buys, strongest insider signal. (2) Dec 2025/Jan 2026 pre-crash: Officer + Director sells of $14M at $14–$18 — well above current price. (3) May 19, 2026 routine annual director RSU vesting: 7 directors settled equity comp on the same day — mostly non-discretionary tax-withholding, just $54k in actual open-market selling (Walters\' cashless exercise). Most recent: on June 12, 2026 — right after the rights-offering record date was set — CEO Mastrangelo exercised 200,000 low-strike ($1.34) options and RETAINED the ~83k net shares after tax withholding rather than selling. Not a cash purchase, but a notable hold-not-sell at $6.06. No discretionary (P/S) insider activity since March.'
     },
     codeLegend: [
       { code: 'P', label: 'Open-market purchase', tone: 'buy', note: 'Discretionary buy — strongest insider signal' },
@@ -975,6 +974,13 @@ window.EOSE_DATA = {
     ],
     // Each row carries the SEC accession number so we can build the direct URL
     transactions: [
+      // === June 12, 2026 — CEO option exercise (filed Jun 15) ===
+      // Mastrangelo exercised 200k options at a $1.34 strike; 116,646 sh withheld
+      // for taxes at $6.06, netting ~83,354 sh RETAINED (not sold) — a hold, days
+      // after the rights-offering record date was announced.
+      { date: '2026-06-12', name: 'Joe Mastrangelo',      role: 'CEO & Director',          code: 'M', ad: 'A', shares: 200000, price: 1.34,  value: 268000,   acc: '0001628280-26-043041', note: 'Stock-option exercise @ $1.34 strike (low-strike legacy option)' },
+      { date: '2026-06-12', name: 'Joe Mastrangelo',      role: 'CEO & Director',          code: 'F', ad: 'D', shares: 116646, price: 6.06,  value: 706875,   acc: '0001628280-26-043041', note: 'Tax withholding on exercise — net ~83,354 sh retained, not sold' },
+
       // === June 2026 — CFO Lagi onboarding + annual director RSU grants ===
       // Lagi's Form 3 (filed Jun 9) shows 12,114 sh of initial common holdings.
       // All rows below are comp mechanics (A grants / M vests) — no P or S.
