@@ -1,6 +1,6 @@
 {
   "meta": {
-    "_refreshed": "2026-06-16T12:41:23.937Z",
+    "_refreshed": "2026-06-16T18:11:52.223Z",
     "sources": [
       "eose.com (WordPress REST API)",
       "SEC EDGAR submissions API",
@@ -9,27 +9,27 @@
     "counts": {
       "pressReleases": 20,
       "secFilings": 307,
-      "manual": 2,
+      "manual": 0,
       "shown": 14
     }
   },
   "items": [
     {
-      "iso": "2026-06-16T12:30:00Z",
+      "iso": "2026-06-16T08:59:37",
       "date": "2026-06-16",
       "source": "Eos Energy (press release)",
       "headline": "Eos Energy Enterprises Launches Commercial Production at Second Manufacturing Facility",
-      "url": "https://www.stocktitan.net/news/EOSE/eos-energy-enterprises-launches-commercial-production-at-second-v3wz0x81mbo8.html",
-      "summary": "Battery Line 2 at Thorn Hill, PA began commercial production after completing Site Acceptance Testing — ahead of the end-of-Q2 target. Targets ~4 GWh annual capacity by end-2026; Line 2's optimized layout cuts raw-material travel 86% and line length 40%. Line 1 already exceeded its full-year 2025 output in the first 164 days of 2026.",
-      "tag": "catalyst"
+      "url": "https://www.eose.com/eos-energy-enterprises-launches-commercial-production-at-second-manufacturing-facility/",
+      "summary": "Successful startup of Battery Line 2 supports repeatable manufacturing platform, expands production capacity, and advances path toward 4 GWh annualized capacity PITTSBURGH, June 16, 2026 (GLOBE NEWSWIRE) — Eos Energy Enterprises, Inc.…",
+      "tag": "general"
     },
     {
-      "iso": "2026-06-11T20:15:00Z",
+      "iso": "2026-06-11T09:11:21",
       "date": "2026-06-11",
       "source": "Eos Energy (press release)",
       "headline": "Eos Energy Announces Record Date for Rights Offering",
-      "url": "https://www.globenewswire.com/news-release/2026/06/11/3310798/0/en/Eos-Energy-Announces-Record-Date-for-Rights-Offering.html",
-      "summary": "Record date July 1, 2026 (5:00 pm ET); rights distributed July 2. Units of common stock + warrants at a ~10–20% discount to a 15–30 day VWAP, with an over-subscription privilege; proceeds fund the ~$150M Frontier Power USA contribution.",
+      "url": "https://www.eose.com/eos-energy-announces-record-date-for-rights-offering/",
+      "summary": "EDISON, N.J., June 11, 2026 (GLOBE NEWSWIRE) — Eos Energy Enterprises, Inc. (NASDAQ: EOSE) (“Eos” or the “Company”), America’s leading innovator in designing, manufacturing, and providing zinc-based long duration energy storage (LDES)…",
       "tag": "catalyst"
     },
     {
