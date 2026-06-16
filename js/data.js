@@ -30,23 +30,23 @@ window.EOSE_DATA = {
   // Refreshed by /equity-research:morning-note via a scheduled task in Cowork.
   // session = 'pre-open' (Swedish AM, ~07:00 CEST) | 'post-close' (Swedish PM, ~22:30 CEST)
   morningNote: {
-    updatedAt: '2026-06-11T22:50:00+02:00',
-    session:   'post-close',
-    headline:  'Rights offering record date set: July 1 — the $150M raise is formally in motion',
-    takeaway:  'After the Jun 11 close (~4:15 pm ET), Eos set the record date for the rights offering that funds its Frontier Power USA contribution: holders as of July 1 (5 pm ET) receive rights on July 2 to buy units of common stock + warrants at a ~10–20% discount to a 15–30 day VWAP. The dilution overhang now has a schedule — the prospectus supplement with the final ratio and price is the next gate.',
+    updatedAt: '2026-06-16T14:00:00+02:00',
+    session:   'pre-open',
+    headline:  'Milestone: Line 2 hits commercial production — Eos doubles its manufacturing base ahead of schedule',
+    takeaway:  'Before the open on Jun 16 (~8:30 am ET), Eos announced its second battery line at Thorn Hill, PA has begun commercial production after passing Site Acceptance Testing — beating the end-of-Q2 target. This is the single most important execution gate for the FY26 $300–400M revenue guide: scaling output is what turns the $24B pipeline into revenue. Line 2 targets a combined ~4 GWh annual run-rate by end-2026.',
     bullets: [
-      'Record date July 1, 2026 (5:00 pm ET); rights distributed July 2. Eligible: common holders plus warrant holders from the Apr/May 2023, Dec 2023 and Nov 2025 issuances.',
-      'Unit structure: common stock + warrants. Subscription price at an approximate 10–20% discount to a 15–30 day VWAP ending the trading day before the record date; warrants valued at ~25–50% of the offering amount (Black-Scholes).',
-      'Over-subscription privilege confirmed — holders who exercise in full can bid for unsubscribed units, supporting the ~$150M target even if participation is uneven.',
-      'Proceeds fund Eos\' initial Class B contribution to Frontier Power USA (Cerberus\' $100M anchor already committed). This was the last company-controlled step after the June 3 AGM share authorization.',
-      'Mechanics come via a prospectus supplement under the existing S-3 shelf — final ratio, price and rights transferability are set at offering commencement; completion remains conditional (including consents). The 8-K had not hit EDGAR as of ~4:40 pm ET.',
-      'Watch next: the prospectus supplement / 8-K on EDGAR, JPM Energy & Natural Resources Conference Jun 23 (management color on the offering), and Line 2 first production target Jun 30 — three offering-relevant events inside three weeks.'
+      'Line 2 is LIVE: commercial production began after Site Acceptance Testing — ahead of the end-of-Q2 (Jun 30) target Eos had guided to at Q1. Removes the biggest near-term execution overhang on the FY26 guide.',
+      'Capacity: the two lines target ~4 GWh combined annual run-rate by end-2026. Line 2\'s optimized layout cuts raw-material travel ~86% and line length ~40% vs. Line 1 — a yield/cost step-up, not just added volume.',
+      'Demand context cited in the release: Line 1 already exceeded its full-year 2025 output in the first 164 days of 2026; multi-GWh agreements across the US and UK underpin the ramp.',
+      'No change to FY26 guidance ($300–400M) in the release — but on-time commissioning is what makes that bridge credible; watch fixed-cost absorption per cube as Line 2 volumes build.',
+      'Capital story unchanged and running in parallel: rights-offering record date is July 1 (rights distributed July 2) to fund the ~$150M Frontier Power USA contribution. See §00→rights-offering explainer.',
+      'Watch next: JPM Energy & Natural Resources Conference Jun 23 (first management appearance post-milestone + offering color), the rights-offering prospectus supplement, and the still-pending record-date 8-K on EDGAR.'
     ],
-    price:   { last: 6.07, changePct: null, note: 'Jun 11 close (dashboard quote feed) · record date announced ~4:15 pm ET, after the close' },
+    price:   { last: 6.38, changePct: null, note: 'Latest dashboard quote (Jun 15 close $6.38, +5.3%) · Line 2 news broke pre-market Jun 16 — see live ticker above for the current print' },
     sources: [
-      { label: 'Record date announcement — GlobeNewswire', url: 'https://www.globenewswire.com/news-release/2026/06/11/3310798/0/en/Eos-Energy-Announces-Record-Date-for-Rights-Offering.html' },
+      { label: 'Line 2 commercial production — announcement', url: 'https://www.stocktitan.net/news/EOSE/eos-energy-enterprises-launches-commercial-production-at-second-v3wz0x81mbo8.html' },
       { label: 'Eos IR newsroom', url: 'https://investors.eose.com/news-releases' },
-      { label: 'EOSE 8-K filings — SEC EDGAR (watch for the filing)', url: 'https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0001805077&type=8-K' },
+      { label: 'Rights offering record date — GlobeNewswire', url: 'https://www.globenewswire.com/news-release/2026/06/11/3310798/0/en/Eos-Energy-Announces-Record-Date-for-Rights-Offering.html' },
       { label: 'How the rights offering works — explainer', url: 'rights-offering.html' }
     ]
   },
@@ -414,7 +414,7 @@ window.EOSE_DATA = {
     { date: 'Mid-2026',     event: 'Notices-to-Proceed (NTPs) on the 480 MWh Texas portfolio',              status: 'Watch [Counterparty]',     tone: 'soon'   },
     { date: 'Jun 8, 2026',  event: 'Lagi CFO effective date · Kroeker returns to CCO-only role',           status: 'Imminent [Company]',         tone: 'soon'   },
     { date: 'Spring 2026',  event: 'Ofgem publishes Initial Decision List for LDES Cap & Floor Window 1 (UK)', status: 'Watch [Regulator]',        tone: 'soon'   },
-    { date: 'End Q2 2026',  event: 'Line 2 initial production at Thorn Hill (per Q1\'26 release)',          status: 'In progress [Company]',      tone: 'soon'   },
+    { date: 'Jun 16, 2026', event: 'Line 2 LAUNCHED commercial production at Thorn Hill (after Site Acceptance Testing) — ahead of the end-Q2 target; ~4 GWh combined run-rate targeted by end-2026', status: 'Reported [Company]', tone: 'done' },
     { date: 'Jul 1, 2026',  event: 'Rights offering record date (5 pm ET; announced Jun 11) — rights distributed Jul 2; units of stock + warrants at ~10–20% VWAP discount; exact ratio/price in the prospectus supplement', status: 'Announced [Company]', tone: 'soon' },
     { date: 'Q2 2026',      event: 'Frontier Power USA closing conditions (Cerberus warrants + controlling JV equity)',      status: 'Watch [Company]',            tone: 'soon'   },
     { date: 'Summer 2026',  event: 'Ofgem final cap & floor awards (Window 1) — Frontier UK\'s 11 GWh of Eos-tech projects either awarded the revenue floor or not', status: 'Catalyst [Regulator]', tone: 'soon' },
@@ -441,9 +441,9 @@ window.EOSE_DATA = {
     { date: '2026-06-23', short: 'JPM conference',      est: false,
       label: 'J.P. Morgan Energy & Natural Resources Conference',
       detail: 'CEO fireside + 1x1s expected — the likely venue for rights-offering structure/timing color and CFO Lagi\'s first public investor appearance.' },
-    { date: '2026-06-30', short: 'Line 2 target',       est: false,
-      label: 'Line 2 initial production target (Thorn Hill)',
-      detail: 'End-of-Q2 target per the Q1\'26 release — first production on Line 2 gates the $300–400M FY26 revenue guidance.' },
+    // Line 2 initial-production target (was 2026-06-30) — ACHIEVED EARLY: commercial
+    // production launched Jun 16, 2026. Removed from the upcoming-dates strip; the
+    // milestone now lives in §06 Production and the news feed.
     { date: '2026-07-01', short: 'Rights record date',  est: false,
       label: 'Rights offering record date (5:00 pm ET)',
       detail: 'Holders of record as of 5 pm ET July 1 receive subscription rights for the ~$150M offering; announced June 11, 2026.' },
@@ -493,13 +493,13 @@ window.EOSE_DATA = {
     { title: 'Frontier funding execution',
       body: 'Frontier Power USA requires Eos to contribute ~$150M alongside Cerberus\' $100M. The release explicitly states this is "subject to the ability to raise funding" — an explicit dependence on capital markets access.' },
     { title: 'Margin trajectory',
-      body: 'GM still −78% in Q1\'26. The path to break-even requires Line 2 ramp by end Q2\'26 AND Z3 unit economics holding up at higher cube volumes. Watch fixed-cost absorption per cube.' },
+      body: 'GM still −78% in Q1\'26. Line 2 reached commercial production Jun 16, 2026 — but the path to break-even still requires it to RAMP to full run-rate AND Z3 unit economics holding up at higher cube volumes. Commissioning is the start of that, not the finish. Watch fixed-cost absorption per cube.' },
     { title: 'Round-trip efficiency vs. Li-ion',
       body: 'Z3 RTE of ~75–80% vs. Li-ion ~85–90%. Eos wins where duration >6h or where safety/cycle-life offsets the RTE gap. Watch project-mix duration distribution.' },
     { title: 'IRA / 45X policy risk',
       body: '$21.4M 45X PTC grant receivable on the balance sheet; the credit is currently accrued as a COGS offset. A material policy reversal would compress reported GM by several hundred basis points.' },
     { title: 'Execution & uptime',
-      body: 'Production uptime was 51.4% in Q4\'25. Sustained yields on Line 1 plus Line 2 commissioning are operational risks. Loss of either materially affects the FY26 guidance bridge.' }
+      body: 'Production uptime was 51.4% in Q4\'25. Line 2 is now commissioned (Jun 16, 2026), but sustained yields on Line 1 plus a clean Line 2 ramp remain operational risks. Slippage on either materially affects the FY26 guidance bridge.' }
   ],
 
   // ────────── Revenue × margin bridge (valuation tab) ──────────
@@ -780,7 +780,7 @@ window.EOSE_DATA = {
   // Source narrative from PV Magazine USA (Apr 2026): "EOS and ESS showing
   // stress; Form Energy outpacing projections." Updated statuses reflect this.
   competitive: [
-    { tech: 'Zinc-bromide (Znyth)',  lead: 'Eos Energy',           duration: '4–16+ hr', status: 'Commercial, scaling Line 2',   edge: '— (this is Eos)' },
+    { tech: 'Zinc-bromide (Znyth)',  lead: 'Eos Energy',           duration: '4–16+ hr', status: 'Commercial; 2 lines running',   edge: '— (this is Eos)' },
     { tech: 'Lithium-ion (NMC/LFP)', lead: 'Tesla, CATL, BYD',     duration: '2–4 hr',   status: 'Dominant incumbent (~$80/kWh)', edge: 'Safer, longer duration, no CRMs' },
     { tech: 'Iron-air',              lead: 'Form Energy',          duration: '100 hr',   status: 'Scaling — outpacing projections', edge: 'Faster to revenue; higher RTE on shorter durations' },
     { tech: 'Iron flow',             lead: 'ESS Inc.',             duration: '4–12 hr',  status: 'Stressed — FY25 rev only $1.6M', edge: 'Eos has 70× the revenue + financed JV' },
@@ -888,7 +888,7 @@ window.EOSE_DATA = {
       { point: 'Frontier USA executing fast: 480 MWh (24% of the 2 GWh reservation) converted from "reservation" to "firm projects" via the Bimergen acquisition on May 21 — 8 days after FPUSA\'s formation. Three ERCOT projects, NTPs mid-2026, Z3 + Ariel Green TPI deployed.', src: 'May 21 Yahoo Finance / Bimergen release' },
       { point: 'UK pipeline: Frontier Power Ltd. has ~11 GWh in Ofgem Cap & Floor Window 1 second-round evaluation, all using Eos Z3 tech. Approval is pending — Initial Decision Spring 2026, final awards Summer 2026. If awarded, the regulated revenue floor de-risks project finance.', src: 'Ofgem / Modo Energy' },
       { point: 'Cerberus is doubling down on BOTH sides of the Atlantic: $100M into Frontier USA + £159M earlier into Frontier UK. Lock-up extended through YE 2026.', src: 'Frontier releases · PwC UK' },
-      { point: 'Margin trajectory: GM −78% Q1\'26, +157 ppt YoY, +16 ppt sequentially. Cube deliveries +5.7×. Operational leverage actually arriving.', src: 'Q1\'26 release' },
+      { point: 'Execution on schedule: Line 2 launched commercial production Jun 16, 2026 — ahead of the end-Q2 target — doubling the manufacturing base toward ~4 GWh/yr. Directly rebuts the "can\'t scale manufacturing" bear/lawsuit narrative. Margin trajectory backs it: GM −78% Q1\'26, +157 ppt YoY, +16 ppt sequentially; cube deliveries +5.7×.', src: 'Jun 16 Line 2 release · Q1\'26 release' },
       { point: 'AI/data-center demand vector: TURBINE-X JDA targets up to 2 GWh of hyperscale capacity with first deployments 2027. NYSERDA ISC awards (Q3 2026) is another concrete near-term catalyst.', src: 'TURBINE-X release · NYSERDA' },
       { point: '45X PTC preserved under OBBBA with FEOC guardrails — structurally favors US-content LDES vs. China-linked competitors. $21.4M grant receivable on Q1\'26 BS.', src: 'OBBBA / 10-Q' },
       { point: 'Short interest ~31% of float (~103.5M sh); ~3.4 days to cover. CEO Mastrangelo bought 23,900 shares post-FY25 crash; Director Dimitrief bought 15,000 at $6.04. Asymmetric setup on any clean catalyst.', src: 'Nasdaq SI · Form 4 / OpenInsider' }

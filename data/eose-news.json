@@ -1,6 +1,6 @@
 {
   "meta": {
-    "_refreshed": "2026-06-15T23:09:44.224Z",
+    "_refreshed": "2026-06-16T12:41:23.937Z",
     "sources": [
       "eose.com (WordPress REST API)",
       "SEC EDGAR submissions API",
@@ -9,11 +9,20 @@
     "counts": {
       "pressReleases": 20,
       "secFilings": 307,
-      "manual": 1,
+      "manual": 2,
       "shown": 14
     }
   },
   "items": [
+    {
+      "iso": "2026-06-16T12:30:00Z",
+      "date": "2026-06-16",
+      "source": "Eos Energy (press release)",
+      "headline": "Eos Energy Enterprises Launches Commercial Production at Second Manufacturing Facility",
+      "url": "https://www.stocktitan.net/news/EOSE/eos-energy-enterprises-launches-commercial-production-at-second-v3wz0x81mbo8.html",
+      "summary": "Battery Line 2 at Thorn Hill, PA began commercial production after completing Site Acceptance Testing — ahead of the end-of-Q2 target. Targets ~4 GWh annual capacity by end-2026; Line 2's optimized layout cuts raw-material travel 86% and line length 40%. Line 1 already exceeded its full-year 2025 output in the first 164 days of 2026.",
+      "tag": "catalyst"
+    },
     {
       "iso": "2026-06-11T20:15:00Z",
       "date": "2026-06-11",
@@ -129,15 +138,6 @@
       "headline": "Material event (8-K)",
       "url": "https://www.sec.gov/Archives/edgar/data/1805077/000162828026024345/eose-20260409.htm",
       "summary": "8-K",
-      "tag": "sec-filing"
-    },
-    {
-      "iso": "2026-03-31T12:00:00Z",
-      "date": "2026-03-31",
-      "source": "SEC EDGAR",
-      "headline": "Proxy materials (DEFA14A)",
-      "url": "https://www.sec.gov/Archives/edgar/data/1805077/000162828026022206/eos202614a-12.htm",
-      "summary": "DEFA14A",
       "tag": "sec-filing"
     }
   ]

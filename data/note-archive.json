@@ -1,5 +1,24 @@
 [
  {
+  "updatedAt": "2026-06-16T14:00:00+02:00",
+  "session": "pre-open",
+  "headline": "Milestone: Line 2 hits commercial production — Eos doubles its manufacturing base ahead of schedule",
+  "takeaway": "Before the open on Jun 16 (~8:30 am ET), Eos announced its second battery line at Thorn Hill, PA has begun commercial production after passing Site Acceptance Testing — beating the end-of-Q2 target. This is the single most important execution gate for the FY26 $300–400M revenue guide: scaling output is what turns the $24B pipeline into revenue. Line 2 targets a combined ~4 GWh annual run-rate by end-2026.",
+  "bullets": [
+   "Line 2 is LIVE: commercial production began after Site Acceptance Testing — ahead of the end-of-Q2 (Jun 30) target Eos had guided to at Q1. Removes the biggest near-term execution overhang on the FY26 guide.",
+   "Capacity: the two lines target ~4 GWh combined annual run-rate by end-2026. Line 2's optimized layout cuts raw-material travel ~86% and line length ~40% vs. Line 1 — a yield/cost step-up, not just added volume.",
+   "Demand context cited in the release: Line 1 already exceeded its full-year 2025 output in the first 164 days of 2026; multi-GWh agreements across the US and UK underpin the ramp.",
+   "No change to FY26 guidance ($300–400M) in the release — but on-time commissioning is what makes that bridge credible; watch fixed-cost absorption per cube as Line 2 volumes build.",
+   "Capital story unchanged and running in parallel: rights-offering record date is July 1 (rights distributed July 2) to fund the ~$150M Frontier Power USA contribution. See §00→rights-offering explainer.",
+   "Watch next: JPM Energy & Natural Resources Conference Jun 23 (first management appearance post-milestone + offering color), the rights-offering prospectus supplement, and the still-pending record-date 8-K on EDGAR."
+  ],
+  "price": {
+   "last": 6.38,
+   "changePct": null,
+   "note": "Latest dashboard quote (Jun 15 close $6.38, +5.3%) · Line 2 news broke pre-market Jun 16 — see live ticker above for the current print"
+  }
+ },
+ {
   "updatedAt": "2026-06-11T22:50:00+02:00",
   "session": "post-close",
   "headline": "Rights offering record date set: July 1 — the $150M raise is formally in motion",
