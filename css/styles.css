@@ -626,6 +626,53 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
   .latest__row { grid-template-columns: 74px 50px 1fr; gap: 8px; }
 }
 
+/* ========== Manufacturing build-out roadmap (§06) ========== */
+/* Capacity ladder — company-stated milestones + model */
+.ladder { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; margin: 4px 0 22px; }
+.ladder__step {
+  position: relative; padding: 12px 12px 12px 14px; border-radius: 10px;
+  background: var(--bg-2); border: 1px solid var(--line-1); border-left: 3px solid var(--accent);
+}
+.ladder__step--model { border-left-style: dashed; border-left-color: var(--fg-3); }
+.ladder__gwh { font-size: 26px; font-weight: 700; letter-spacing: -0.02em; font-variant-numeric: tabular-nums; }
+.ladder__gwh span { font-size: 13px; font-weight: 600; color: var(--fg-2); margin-left: 3px; }
+.ladder__when { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: .07em; color: var(--accent); margin-top: 2px; }
+.ladder__step--model .ladder__when { color: var(--fg-3); }
+.ladder__note { font-size: 11.5px; color: var(--fg-2); line-height: 1.45; margin-top: 7px; }
+.ladder__tag {
+  position: absolute; top: 10px; right: 10px; font-size: 9px; font-weight: 800;
+  letter-spacing: .06em; text-transform: uppercase; padding: 2px 6px; border-radius: 5px;
+}
+.ladder__tag--stated { color: var(--accent); background: var(--accent-soft); }
+.ladder__tag--model  { color: var(--fg-3); background: var(--bg-3); }
+@media (max-width: 720px) { .ladder { grid-template-columns: repeat(2, 1fr); } }
+
+/* Per-line roster with proportional capacity bars */
+.lines { display: grid; gap: 10px; }
+.line-row {
+  display: grid; grid-template-columns: 96px 1fr; gap: 14px; align-items: start;
+  padding: 12px 0; border-top: 1px solid var(--line-1);
+}
+.line-row:first-child { border-top: none; }
+.line-row__name { font-weight: 700; font-size: 14px; color: var(--fg-0); }
+.line-row__site { font-size: 11px; color: var(--fg-3); margin-top: 3px; line-height: 1.35; }
+.line-row__bartrack { position: relative; height: 26px; border-radius: 6px; background: var(--bg-3); overflow: hidden; }
+.line-row__bar { height: 100%; border-radius: 6px; display: flex; align-items: center; padding: 0 10px;
+  font-size: 12px; font-weight: 700; color: var(--bg-0); white-space: nowrap; }
+.line-row__bar--live   { background: var(--accent); }
+.line-row__bar--funded { background: var(--blue); }
+.line-row__bar--model  {
+  background: repeating-linear-gradient(45deg, var(--fg-3) 0 3px, color-mix(in srgb, var(--fg-3) 30%, transparent) 3px 6px);
+  border: 1px solid var(--line-2); color: var(--fg-0);
+}
+.line-row__meta { display: flex; align-items: center; gap: 8px; margin-top: 7px; flex-wrap: wrap; }
+.line-row__badge { font-size: 10px; font-weight: 800; letter-spacing: .05em; text-transform: uppercase; padding: 2px 8px; border-radius: 999px; }
+.line-row__badge--live   { color: var(--accent); background: var(--accent-soft); }
+.line-row__badge--funded { color: var(--blue); background: color-mix(in srgb, var(--blue) 15%, transparent); }
+.line-row__badge--model  { color: var(--fg-2); background: var(--bg-3); }
+.line-row__note { font-size: 12px; color: var(--fg-2); line-height: 1.5; margin-top: 7px; }
+@media (max-width: 720px) { .line-row { grid-template-columns: 1fr; gap: 6px; } }
+
 /* Pill */
 .pill {
   display: inline-flex; align-items: center; gap: 6px;

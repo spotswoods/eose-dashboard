@@ -270,6 +270,41 @@ window.EOSE_DATA = {
     { y: 'FY28', l1: 2.0,  l2: 2.0,  l3: 2.5,  l4: 2.5, l5: 2.0 }
   ],
 
+  // ────────── Manufacturing build-out roadmap (§06 visual) ──────────
+  // Line-by-line status + the company-stated capacity ladder. Distinguishes
+  // what's OPERATING from what's FUNDED (Project AMAZE / DOE Title 17 loan) from
+  // what's a dashboard MODEL assumption. The 8 GWh-by-2027 and 4 GWh-by-end-2026
+  // milestones are company/DOE-stated; the ~11 GWh full build-out is our model
+  // (matches the `capacity` FY28 column above: 2+2+2.5+2.5+2 = 11).
+  productionLines: {
+    asOf: 'June 16, 2026',
+    // Capacity ladder — `stated:true` = company/DOE-stated, false = dashboard model.
+    milestones: [
+      { when: 'Mid-2026 (now)', gwh: 2,  stated: true,  note: 'Line 1 at ~2 GWh nameplate, ramping to full output' },
+      { when: 'End 2026',       gwh: 4,  stated: true,  note: 'Lines 1 + 2 combined — Line 2 commercial since Jun 16, full run-rate Q4\'26' },
+      { when: '2027',           gwh: 8,  stated: true,  note: 'Project AMAZE adds capacity (DOE-backed) — company-stated 8 GWh target' },
+      { when: 'FY28',           gwh: 11, stated: false, note: 'Full five-line build-out — dashboard model assumption, not company guidance' }
+    ],
+    peakGwh: 11,   // scale reference for the bars
+    lines: [
+      { name: 'Line 1',    gwh: 2.0, status: 'Ramping to full',          tone: 'live',   site: 'Turtle Creek (Thorn Hill), PA',
+        note: 'Commercial since 2024. Exceeded its entire FY2025 output in the first 164 days of 2026 — the replication blueprint for every line that follows.' },
+      { name: 'Line 2',    gwh: 2.0, status: 'Commercial · Jun 16, 2026', tone: 'live',   site: 'Turtle Creek (Thorn Hill), PA',
+        note: 'Launched commercial production after Site Acceptance Testing, ahead of the end-Q2 target. Full run-rate targeted Q4 2026; layout cuts raw-material travel ~86% and line length ~40% vs. Line 1.' },
+      { name: 'Lines 3–4', gwh: 4.0, status: 'Funded · Project AMAZE',    tone: 'funded', site: 'Marshall Township, PA — new 432,000 sq ft plant',
+        note: 'The expansion leg of the $500M Project AMAZE, backed by a $303.5M U.S. DOE Title 17 loan (closed Dec 2024). Takes total capacity to a company-stated ~8 GWh by 2027; new plant complements the existing Turtle Creek site.' },
+      { name: 'Line 5+',   gwh: 3.0, status: 'Modeled · not guidance',    tone: 'model',  site: 'TBD — additional Duquesne, PA lines possible',
+        note: 'Dashboard model assumption toward ~11 GWh full build-out. Additional Duquesne lines may join the DOE loan guarantee pending LPO approvals and a NEPA Environmental Assessment.' }
+    ],
+    sources: [
+      { label: 'Line 2 commercial production (Jun 16, 2026)', url: 'https://www.stocktitan.net/news/EOSE/eos-energy-enterprises-launches-commercial-production-at-second-v3wz0x81mbo8.html' },
+      { label: 'Project AMAZE — $500M program', url: 'https://www.eose.com/eos-energy-enterprises-announces-project-amaze-a-500m-program-to-address-long-duration-energy-storage-demand/' },
+      { label: '$303.5M DOE Title 17 loan close (Dec 2024)', url: 'https://investors.eose.com/news-releases/news-release-details/eos-energy-closes-3035-million-loan-guaranteed-us-department' },
+      { label: 'DOE Loan Programs Office — Eos', url: 'https://www.energy.gov/edf/eos' },
+      { label: 'Marshall Township plant (Oct 2025)', url: 'https://www.solarpowerworldonline.com/2025/10/eos-energy-to-build-second-zinc-battery-storage-manufacturing-plant-in-pittsburgh/' }
+    ]
+  },
+
   // ────────── Uptime % — Q1'26 not yet disclosed quarterly; placeholder = Q4'25 ──────────
   uptime: [
     { q: '3Q24', v: 5.34  },

@@ -876,6 +876,54 @@
     }
   }
 
+  // ---------- NEW: Manufacturing build-out roadmap (§06) ----------
+  function renderProductionLines() {
+    const pl = D.productionLines;
+    if (!pl) return;
+    setEl('[data-lines-asof]', pl.asOf ? `as of ${pl.asOf}` : '');
+
+    const ladder = document.querySelector('[data-cap-ladder]');
+    if (ladder && Array.isArray(pl.milestones)) {
+      ladder.innerHTML = pl.milestones.map(m => `
+        <div class="ladder__step${m.stated ? '' : ' ladder__step--model'}">
+          <span class="ladder__tag ${m.stated ? 'ladder__tag--stated' : 'ladder__tag--model'}">${m.stated ? 'Stated' : 'Model'}</span>
+          <div class="ladder__gwh">${m.gwh}<span>GWh/yr</span></div>
+          <div class="ladder__when">${escHtml(m.when)}</div>
+          <div class="ladder__note">${escHtml(m.note)}</div>
+        </div>`).join('');
+    }
+
+    const rows = document.querySelector('[data-prod-lines]');
+    if (rows && Array.isArray(pl.lines)) {
+      const peak = pl.peakGwh || Math.max(...pl.lines.map(l => l.gwh));
+      rows.innerHTML = pl.lines.map(l => {
+        const pct = Math.max(12, Math.round((l.gwh / peak) * 100));  // min width so the label fits
+        return `<div class="line-row">
+          <div>
+            <div class="line-row__name">${escHtml(l.name)}</div>
+            <div class="line-row__site">${escHtml(l.site)}</div>
+          </div>
+          <div>
+            <div class="line-row__bartrack">
+              <div class="line-row__bar line-row__bar--${l.tone}" style="width:${pct}%">${l.gwh} GWh/yr</div>
+            </div>
+            <div class="line-row__meta">
+              <span class="line-row__badge line-row__badge--${l.tone}">${escHtml(l.status)}</span>
+            </div>
+            <div class="line-row__note">${escHtml(l.note)}</div>
+          </div>
+        </div>`;
+      }).join('');
+    }
+
+    const srcs = document.querySelector('[data-prod-lines-sources]');
+    if (srcs && Array.isArray(pl.sources)) {
+      srcs.innerHTML = pl.sources
+        .map(s => `<a href="${escHtml(s.url)}" target="_blank" rel="noopener" style="color:var(--accent);text-decoration:underline">${escHtml(s.label)}</a>`)
+        .join(' · ');
+    }
+  }
+
   // ---------- NEW: Today strip (headline + key-date countdown chips) ----------
   function renderToday() {
     const strip = document.getElementById('today');
@@ -1591,6 +1639,7 @@
     renderMorningNote();
     renderToday();
     renderLatest();
+    renderProductionLines();
     initIcsDownload();
     renderHistory();
     renderAnalysts();

@@ -680,6 +680,28 @@
         </div>
       </div>
 
+      <!-- Manufacturing build-out roadmap — line-by-line status + capacity ladder -->
+      <div class="card" style="margin-bottom:14px;border-left:3px solid var(--accent)">
+        <div class="card__head">
+          <div>
+            <h3 class="card__title">Manufacturing build-out — line by line</h3>
+            <div class="card__sub">From operating lines to the DOE-funded expansion · <span data-lines-asof></span></div>
+          </div>
+          <div class="card__legend">
+            <span><span class="swatch" style="background:var(--accent)"></span>Operating</span>
+            <span><span class="swatch" style="background:var(--blue)"></span>Funded</span>
+            <span><span class="swatch" style="background:repeating-linear-gradient(45deg,var(--fg-3) 0 2.5px,transparent 2.5px 5px);border:1px solid var(--line-2)"></span>Modeled</span>
+          </div>
+        </div>
+        <!-- capacity ladder (company-stated milestones + model) -->
+        <div class="ladder" data-cap-ladder></div>
+        <!-- per-line roster with capacity bars -->
+        <div class="lines" data-prod-lines></div>
+        <p style="font-size:11.5px;color:var(--fg-3);margin-top:14px;border-top:1px solid var(--line-1);padding-top:10px">
+          <strong style="color:var(--fg-1)">Capacity milestones of 4 GWh (end-2026) and 8 GWh (2027) are company/DOE-stated</strong>; the ~11 GWh full five-line build-out is a dashboard model assumption, not company guidance. Sources: <span data-prod-lines-sources></span>
+        </p>
+      </div>
+
       <div class="grid-12">
         <div class="card col-8">
           <div class="card__head">
