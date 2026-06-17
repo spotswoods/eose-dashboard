@@ -30,23 +30,23 @@ window.EOSE_DATA = {
   // Refreshed by /equity-research:morning-note via a scheduled task in Cowork.
   // session = 'pre-open' (Swedish AM, ~07:00 CEST) | 'post-close' (Swedish PM, ~22:30 CEST)
   morningNote: {
-    updatedAt: '2026-06-16T14:00:00+02:00',
+    updatedAt: '2026-06-17T14:30:00+02:00',
     session:   'pre-open',
-    headline:  'Milestone: Line 2 hits commercial production — Eos doubles its manufacturing base ahead of schedule',
-    takeaway:  'Before the open on Jun 16 (~8:30 am ET), Eos announced its second battery line at Thorn Hill, PA has begun commercial production after passing Site Acceptance Testing — beating the end-of-Q2 target. This is the single most important execution gate for the FY26 $300–400M revenue guide: scaling output is what turns the $24B pipeline into revenue. Line 2 targets a combined ~4 GWh annual run-rate by end-2026.',
+    headline:  'Eos goes international: exclusive German (DACH) Indensity framework — 750 MWh, pathway to 2 GWh',
+    takeaway:  'Before the open Jun 17, Eos announced a binding Master Supply Agreement with German developer CAPAC Energy — its first international commercial framework for Indensity, exclusive across Germany, Austria and Switzerland through 2031. It commits 750 MWh with a pathway to 2 GWh, and lands the day after Line 2 hit commercial production: capacity is scaling and a new demand geography just opened on the same week.',
     bullets: [
-      'Line 2 is LIVE: commercial production began after Site Acceptance Testing — ahead of the end-of-Q2 (Jun 30) target Eos had guided to at Q1. Removes the biggest near-term execution overhang on the FY26 guide.',
-      'Capacity: the two lines target ~4 GWh combined annual run-rate by end-2026. Line 2\'s optimized layout cuts raw-material travel ~86% and line length ~40% vs. Line 1 — a yield/cost step-up, not just added volume.',
-      'Demand context cited in the release: Line 1 already exceeded its full-year 2025 output in the first 164 days of 2026; multi-GWh agreements across the US and UK underpin the ramp.',
-      'No change to FY26 guidance ($300–400M) in the release — but on-time commissioning is what makes that bridge credible; watch fixed-cost absorption per cube as Line 2 volumes build.',
-      'Capital story unchanged and running in parallel: rights-offering record date is July 1 (rights distributed July 2) to fund the ~$150M Frontier Power USA contribution. See §00→rights-offering explainer.',
-      'Watch next: JPM Energy & Natural Resources Conference Jun 23 (first management appearance post-milestone + offering color), the rights-offering prospectus supplement, and the still-pending record-date 8-K on EDGAR.'
+      'Binding MSA with CAPAC Energy (a German BESS developer/operator, formerly Nala Energy) — exclusive across the DACH region (Germany, Austria, Switzerland) through 2031.',
+      'Eos\' FIRST international commercial framework for Indensity — its high-density architecture aimed at footprint-constrained European sites. 750 MWh initial commitment, pathway to scale to 2 GWh.',
+      'CAPAC\'s first German projects target commercial operation in late 2026. As purchase orders are issued they flow into Eos\' reported backlog — so this is framework value today, backlog conversion to watch.',
+      'CCO Nathan Kroeker: the deal "establishes Eos\' entry into a critical international market with a customer already moving projects into construction."',
+      'Context: comes one day after Line 2 reached commercial production (Jun 16) — the supply side scales just as a new demand region opens. Rights-offering record date July 1 still funds the ~$150M Frontier USA contribution in parallel.',
+      'Watch next: first CAPAC purchase orders (backlog), JPM Energy & Natural Resources Conference Jun 23, and the rights-offering prospectus supplement.'
     ],
-    price:   { last: 6.38, changePct: null, note: 'Latest dashboard quote (Jun 15 close $6.38, +5.3%) · Line 2 news broke pre-market Jun 16 — see live ticker above for the current print' },
+    price:   { last: 6.38, changePct: null, note: 'Latest dashboard quote feed · Germany MSA broke pre-market Jun 17 — see the live ticker above for the current print' },
     sources: [
-      { label: 'Line 2 commercial production — announcement', url: 'https://www.stocktitan.net/news/EOSE/eos-energy-enterprises-launches-commercial-production-at-second-v3wz0x81mbo8.html' },
+      { label: 'Germany / CAPAC MSA — announcement', url: 'https://www.stocktitan.net/news/EOSE/eos-energy-enterprises-establishes-strategic-entry-into-germany-mvli0yodpemn.html' },
+      { label: 'Line 2 commercial production (Jun 16)', url: 'https://www.eose.com/eos-energy-enterprises-launches-commercial-production-at-second-manufacturing-facility/' },
       { label: 'Eos IR newsroom', url: 'https://investors.eose.com/news-releases' },
-      { label: 'Rights offering record date — GlobeNewswire', url: 'https://www.globenewswire.com/news-release/2026/06/11/3310798/0/en/Eos-Energy-Announces-Record-Date-for-Rights-Offering.html' },
       { label: 'How the rights offering works — explainer', url: 'rights-offering.html' }
     ]
   },
@@ -400,6 +400,7 @@ window.EOSE_DATA = {
     { customer: 'Frontier Power Ltd. (UK) — 5 GWh framework', mwh: 5000, region: 'UK',     status: 'Framework',     value: '~$1.1B*' },
     { customer: 'Frontier Power USA — Bimergen Texas portfolio (3 ERCOT projects)', mwh: 480, region: 'USA (TX)', status: 'Firm — NTPs mid-2026', value: '~$108M*' },
     { customer: 'Frontier Power USA — remaining capacity reservation',                mwh: 1520, region: 'USA',     status: 'Reservation',          value: '~$342M*'  },
+    { customer: 'CAPAC Energy — DACH master supply agreement (Indensity)', mwh: 750, region: 'Germany/AT/CH', status: 'Framework (MSA)', value: '~$169M*' },
     { customer: 'TURBINE-X Energy (JDA, AI data center)', mwh: '≤2000', region: 'USA', status: 'Negotiation',  value: 'TBD (JDA)' },
     { customer: 'MN8 Energy',                        mwh: '~590',  region: 'USA',     status: 'Delivering',   value: '~$133M*'  },
     { customer: 'Indian Energy / Viejas microgrid',  mwh: 300,     region: 'USA (CA)', status: 'Contracted',   value: '~$68M*'  },
@@ -450,6 +451,8 @@ window.EOSE_DATA = {
     { date: 'Jun 8, 2026',  event: 'Lagi CFO effective date · Kroeker returns to CCO-only role',           status: 'Imminent [Company]',         tone: 'soon'   },
     { date: 'Spring 2026',  event: 'Ofgem publishes Initial Decision List for LDES Cap & Floor Window 1 (UK)', status: 'Watch [Regulator]',        tone: 'soon'   },
     { date: 'Jun 16, 2026', event: 'Line 2 LAUNCHED commercial production at Thorn Hill (after Site Acceptance Testing) — ahead of the end-Q2 target; ~4 GWh combined run-rate targeted by end-2026', status: 'Reported [Company]', tone: 'done' },
+    { date: 'Jun 17, 2026', event: 'Germany/DACH entry: binding Master Supply Agreement with CAPAC Energy — exclusive Germany/Austria/Switzerland through 2031, 750 MWh committed (pathway to 2 GWh), first international Indensity framework; first projects target commercial ops late 2026', status: 'Reported [Company]', tone: 'done' },
+    { date: 'Late 2026',    event: 'CAPAC\'s first German Indensity projects target commercial operation — purchase orders flow into reported backlog',  status: 'Watch [Counterparty]',  tone: 'soon' },
     { date: 'Jul 1, 2026',  event: 'Rights offering record date (5 pm ET; announced Jun 11) — rights distributed Jul 2; units of stock + warrants at ~10–20% VWAP discount; exact ratio/price in the prospectus supplement', status: 'Announced [Company]', tone: 'soon' },
     { date: 'Q2 2026',      event: 'Frontier Power USA closing conditions (Cerberus warrants + controlling JV equity)',      status: 'Watch [Company]',            tone: 'soon'   },
     { date: 'Summer 2026',  event: 'Ofgem final cap & floor awards (Window 1) — Frontier UK\'s 11 GWh of Eos-tech projects either awarded the revenue floor or not', status: 'Catalyst [Regulator]', tone: 'soon' },
@@ -721,7 +724,7 @@ window.EOSE_DATA = {
       name:        'Eos Indensity™',
       tagline:     'Stackable, high-density LDES architecture',
       launched:    'January 14, 2026',
-      summary:     'New modular architecture that integrates Z3 modules, DawnOS controls, onboard cooling, and power management into a self-contained "Indensity Core™" — stackable horizontally and vertically into a steel superstructure. Designed for sites where conventional BESS footprints don\'t fit.',
+      summary:     'New modular architecture that integrates Z3 modules, DawnOS controls, onboard cooling, and power management into a self-contained "Indensity Core™" — stackable horizontally and vertically into a steel superstructure. Designed for sites where conventional BESS footprints don\'t fit. On June 17, 2026 Indensity landed its first international commercial framework: an exclusive DACH-region (Germany/Austria/Switzerland) Master Supply Agreement with CAPAC Energy through 2031 — 750 MWh committed with a pathway to 2 GWh, first projects targeting commercial operation in late 2026.',
       attributes: [
         { k: 'Energy density',           v: '~1 GWh per acre',                       note: '~4× incumbent BESS (~250 MWh/acre)' },
         { k: 'Round-trip efficiency',    v: 'Up to 90%',                              note: 'Materially above legacy Cube (~75–80%) — driven by integrated DawnOS controls' },
@@ -737,7 +740,8 @@ window.EOSE_DATA = {
       applications: ['AI data centers', 'Military bases', 'Manufacturing facilities', 'Urban infrastructure', 'Grid support'],
       sources: [
         { label: 'eose.com · Indensity solution page',  url: 'https://www.eose.com/solutions/eos-indensity/' },
-        { label: 'Eos IR · Indensity launch (Jan 2026)', url: 'https://investors.eose.com/news-releases/news-release-details/eos-energy-announces-indensitytm-breakthrough-battery-energy' }
+        { label: 'Eos IR · Indensity launch (Jan 2026)', url: 'https://investors.eose.com/news-releases/news-release-details/eos-energy-announces-indensitytm-breakthrough-battery-energy' },
+        { label: 'CAPAC Energy DACH MSA (Jun 17, 2026)', url: 'https://www.stocktitan.net/news/EOSE/eos-energy-enterprises-establishes-strategic-entry-into-germany-mvli0yodpemn.html' }
       ]
     },
     cube: {
@@ -924,7 +928,7 @@ window.EOSE_DATA = {
       { point: 'UK pipeline: Frontier Power Ltd. has ~11 GWh in Ofgem Cap & Floor Window 1 second-round evaluation, all using Eos Z3 tech. Approval is pending — Initial Decision Spring 2026, final awards Summer 2026. If awarded, the regulated revenue floor de-risks project finance.', src: 'Ofgem / Modo Energy' },
       { point: 'Cerberus is doubling down on BOTH sides of the Atlantic: $100M into Frontier USA + £159M earlier into Frontier UK. Lock-up extended through YE 2026.', src: 'Frontier releases · PwC UK' },
       { point: 'Execution on schedule: Line 2 launched commercial production Jun 16, 2026 — ahead of the end-Q2 target — doubling the manufacturing base toward ~4 GWh/yr. Directly rebuts the "can\'t scale manufacturing" bear/lawsuit narrative. Margin trajectory backs it: GM −78% Q1\'26, +157 ppt YoY, +16 ppt sequentially; cube deliveries +5.7×.', src: 'Jun 16 Line 2 release · Q1\'26 release' },
-      { point: 'AI/data-center demand vector: TURBINE-X JDA targets up to 2 GWh of hyperscale capacity with first deployments 2027. NYSERDA ISC awards (Q3 2026) is another concrete near-term catalyst.', src: 'TURBINE-X release · NYSERDA' },
+      { point: 'Demand vectors broadening: AI/data-center via the TURBINE-X JDA (up to 2 GWh, first deployments 2027); and as of Jun 17, 2026 a first international framework — an exclusive DACH-region MSA with CAPAC Energy (750 MWh, pathway to 2 GWh, Indensity) through 2031. NYSERDA ISC awards (Q3 2026) add another near-term catalyst.', src: 'TURBINE-X / CAPAC releases · NYSERDA' },
       { point: '45X PTC preserved under OBBBA with FEOC guardrails — structurally favors US-content LDES vs. China-linked competitors. $21.4M grant receivable on Q1\'26 BS.', src: 'OBBBA / 10-Q' },
       { point: 'Short interest ~31% of float (~103.5M sh); ~3.4 days to cover. CEO Mastrangelo bought 23,900 shares post-FY25 crash; Director Dimitrief bought 15,000 at $6.04. Asymmetric setup on any clean catalyst.', src: 'Nasdaq SI · Form 4 / OpenInsider' }
     ],

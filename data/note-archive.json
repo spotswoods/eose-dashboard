@@ -1,5 +1,24 @@
 [
  {
+  "updatedAt": "2026-06-17T14:30:00+02:00",
+  "session": "pre-open",
+  "headline": "Eos goes international: exclusive German (DACH) Indensity framework — 750 MWh, pathway to 2 GWh",
+  "takeaway": "Before the open Jun 17, Eos announced a binding Master Supply Agreement with German developer CAPAC Energy — its first international commercial framework for Indensity, exclusive across Germany, Austria and Switzerland through 2031. It commits 750 MWh with a pathway to 2 GWh, and lands the day after Line 2 hit commercial production: capacity is scaling and a new demand geography just opened on the same week.",
+  "bullets": [
+   "Binding MSA with CAPAC Energy (a German BESS developer/operator, formerly Nala Energy) — exclusive across the DACH region (Germany, Austria, Switzerland) through 2031.",
+   "Eos' FIRST international commercial framework for Indensity — its high-density architecture aimed at footprint-constrained European sites. 750 MWh initial commitment, pathway to scale to 2 GWh.",
+   "CAPAC's first German projects target commercial operation in late 2026. As purchase orders are issued they flow into Eos' reported backlog — so this is framework value today, backlog conversion to watch.",
+   "CCO Nathan Kroeker: the deal \"establishes Eos' entry into a critical international market with a customer already moving projects into construction.\"",
+   "Context: comes one day after Line 2 reached commercial production (Jun 16) — the supply side scales just as a new demand region opens. Rights-offering record date July 1 still funds the ~$150M Frontier USA contribution in parallel.",
+   "Watch next: first CAPAC purchase orders (backlog), JPM Energy & Natural Resources Conference Jun 23, and the rights-offering prospectus supplement."
+  ],
+  "price": {
+   "last": 6.38,
+   "changePct": null,
+   "note": "Latest dashboard quote feed · Germany MSA broke pre-market Jun 17 — see the live ticker above for the current print"
+  }
+ },
+ {
   "updatedAt": "2026-06-16T14:00:00+02:00",
   "session": "pre-open",
   "headline": "Milestone: Line 2 hits commercial production — Eos doubles its manufacturing base ahead of schedule",

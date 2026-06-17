@@ -1,6 +1,6 @@
 {
   "meta": {
-    "_refreshed": "2026-06-16T22:57:30.197Z",
+    "_refreshed": "2026-06-17T13:12:12.413Z",
     "sources": [
       "eose.com (WordPress REST API)",
       "SEC EDGAR submissions API",
@@ -9,11 +9,20 @@
     "counts": {
       "pressReleases": 20,
       "secFilings": 307,
-      "manual": 0,
+      "manual": 1,
       "shown": 14
     }
   },
   "items": [
+    {
+      "iso": "2026-06-17T12:30:00Z",
+      "date": "2026-06-17",
+      "source": "Eos Energy (press release)",
+      "headline": "Eos Energy Enterprises Establishes Strategic Entry into Germany Through Exclusive Long-Duration Storage Partnership",
+      "url": "https://www.stocktitan.net/news/EOSE/eos-energy-enterprises-establishes-strategic-entry-into-germany-mvli0yodpemn.html",
+      "summary": "Binding Master Supply Agreement with German developer CAPAC Energy — exclusive across Germany, Austria & Switzerland (DACH) through 2031. 750 MWh initial commitment with a pathway to 2 GWh; Eos' first international commercial framework for Indensity. CAPAC's first German projects target commercial operation in late 2026; purchase orders will flow into reported backlog.",
+      "tag": "catalyst"
+    },
     {
       "iso": "2026-06-16T08:59:37",
       "date": "2026-06-16",
@@ -129,15 +138,6 @@
       "headline": "Proxy statement (DEF 14A)",
       "url": "https://www.sec.gov/Archives/edgar/data/1805077/000162828026025071/eose-20260414.htm",
       "summary": "DEF 14A",
-      "tag": "sec-filing"
-    },
-    {
-      "iso": "2026-04-09T12:00:00Z",
-      "date": "2026-04-09",
-      "source": "SEC EDGAR",
-      "headline": "Material event (8-K)",
-      "url": "https://www.sec.gov/Archives/edgar/data/1805077/000162828026024345/eose-20260409.htm",
-      "summary": "8-K",
       "tag": "sec-filing"
     }
   ]
