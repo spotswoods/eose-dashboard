@@ -30,24 +30,24 @@ window.EOSE_DATA = {
   // Refreshed by /equity-research:morning-note via a scheduled task in Cowork.
   // session = 'pre-open' (Swedish AM, ~07:00 CEST) | 'post-close' (Swedish PM, ~22:30 CEST)
   morningNote: {
-    updatedAt: '2026-06-18T22:30:00+02:00',
+    updatedAt: '2026-06-18T23:00:00+02:00',
     session:   'post-close',
-    headline:  'EOSE flat/down ~0.6% as two-day 19% surge digests; JPM fireside Jun 23, rights record date Jul 1',
-    takeaway:  'EOSE gave back a modest ~0.6% to ~$7.56 Thursday on thin volume (~10M shares), consolidating the two-day, 19% run driven by Germany CAPAC MSA (Jun 17) and Line 2 launch (Jun 16). No new filings or news. Setup into JPM conference Jun 23 and rights record date Jul 1.',
+    headline:  'Reservation → order: Eos books first firm PO under FPUSA\'s 2 GWh deal (Redbird, 400 MWh) — third catalyst in three days',
+    takeaway:  'Eos announced its FIRST purchase order under the Frontier Power USA 2 GWh capacity reservation — the Redbird project (100 MW / 400 MWh, 4-hour, ERCOT, Z3). This is the conversion the market has been waiting to see: reservation turning into a firm order. It caps an extraordinary three-day run (rights record date → Line 2 commercial production → Germany → first FPUSA PO) and the release added two fresh data points: ~50% of a 1 GWh Bridgelink MSA already fulfilled, and a 12 GWh development pipeline across ERCOT, PJM, CAISO and MISO.',
     bullets: [
-      'Price action: ~$7.56 close (-0.6%) on ~10M shares — well below Jun 17\'s 47.6M surge vol. Back-to-back catalyst sessions (Germany MSA + Line 2 launch) drove cumulative +19%; market digesting.',
-      'Rights offering: Record date Jul 1 (13 days), distribution Jul 2. Sub price at 10–20% discount to VWAP through Jun 30. At ~$7.56 avg VWAP, effective sub price ~$6.05–6.80; dilution watch active.',
-      'JPM Energy & Natural Resources Conference Jun 23 (5 days): CEO Mastrangelo fireside with Mark Strouse — first sell-side forum post-Germany deal. Watch for CAPAC PO conversion to backlog and FPUSA pipeline update.',
-      'Germany CAPAC MSA (750 MWh, exclusive DACH through 2031): first projects in construction, late-2026 COD target. Framework only converts to reported backlog as purchase orders are issued — none booked yet.',
-      'Q2 earnings confirmed Jul 29 (vs. Aug 12 est. in key dates — manual keyDates update needed). Street watches Q2 production ramp and first FPUSA pipeline-to-revenue conversion color.'
+      'First firm PO under the FPUSA 2 GWh reservation: Redbird — 100 MW / 400 MWh (4-hour) in ERCOT, on Eos Z3. The reservation-to-order conversion is the key proof point that the FPUSA structure actually moves Eos hardware. ~$90M of demand at our $225/kWh model basis.',
+      'New disclosures in the release: ~50% of the 1 GWh Bridgelink master supply agreement already fulfilled, plus a 12 GWh development pipeline across ERCOT, PJM, CAISO and MISO — a broader FPUSA funnel than previously detailed.',
+      'Third catalyst in three sessions: rights record date (Jun 11) → Line 2 commercial production (Jun 16) → Germany/CAPAC framework (Jun 17) → first FPUSA PO (Jun 18). The two-day Germany/Line 2 surge had already lifted EOSE ~+19%.',
+      'Rights offering: record date Jul 1 (distribution Jul 2); units of stock + warrants at a ~10–20% discount to a 15–30 day VWAP. The recent rally lifts the effective subscription price — dilution math stays live for holders.',
+      'Still conspicuously absent: Ofgem\'s UK Cap & Floor Window 1 Initial Decision, guided to "Spring 2026" but not yet published as the window closes — the most overdue catalyst on the board (see §08b).',
+      'Watch next: JPM Energy & Natural Resources Conference Jun 23 (CEO Mastrangelo fireside); more FPUSA POs / backlog conversion; the rights-offering prospectus supplement; Q2 earnings (now indicated Jul 29).'
     ],
-    price:   { last: 7.56, changePct: -0.59, note: 'Stooq delayed · Jun 18 close est.' },
+    price:   { last: 7.60, changePct: null, note: 'Latest dashboard quote feed · first-PO news dated Jun 18 — see the live ticker above for the current print' },
     sources: [
-      { label: 'Germany CAPAC MSA (Jun 17)', url: 'https://www.globenewswire.com/news-release/2026/06/17/3313418/0/en/Eos-Energy-Enterprises-Establishes-Strategic-Entry-into-Germany-Through-Exclusive-Long-Duration-Storage-Partnership.html' },
-      { label: 'Line 2 commercial production (Jun 16)', url: 'https://www.globenewswire.com/news-release/2026/06/16/3312575/0/en/Eos-Energy-Enterprises-Launches-Commercial-Production-at-Second-Manufacturing-Facility.html' },
-      { label: 'Rights offering record date (Jun 11)', url: 'https://investors.eose.com/news-releases/news-release-details/eos-energy-announces-record-date-rights-offering' },
-      { label: 'StockAnalysis — EOSE overview', url: 'https://stockanalysis.com/stocks/eose/' },
-      { label: 'Stooq EOSE.US price', url: 'https://stooq.com/q/?s=eose.us' }
+      { label: 'First FPUSA purchase order — Redbird (Jun 18)', url: 'https://investors.eose.com/news-releases/news-release-details/eos-energy-enterprises-announces-first-purchase-order-under' },
+      { label: 'Germany CAPAC MSA (Jun 17)', url: 'https://www.stocktitan.net/news/EOSE/eos-energy-enterprises-establishes-strategic-entry-into-germany-mvli0yodpemn.html' },
+      { label: 'Line 2 commercial production (Jun 16)', url: 'https://www.eose.com/eos-energy-enterprises-launches-commercial-production-at-second-manufacturing-facility/' },
+      { label: 'Eos IR newsroom', url: 'https://investors.eose.com/news-releases' }
     ]
   },
 
@@ -398,8 +398,10 @@ window.EOSE_DATA = {
   contracts: [
     { customer: 'Frontier Power Ltd. (UK) — first order',  mwh: 228,    region: 'UK',       status: 'Delivering',   value: '~$51M*' },
     { customer: 'Frontier Power Ltd. (UK) — 5 GWh framework', mwh: 5000, region: 'UK',     status: 'Framework',     value: '~$1.1B*' },
-    { customer: 'Frontier Power USA — Bimergen Texas portfolio (3 ERCOT projects)', mwh: 480, region: 'USA (TX)', status: 'Firm — NTPs mid-2026', value: '~$108M*' },
+    { customer: 'Frontier Power USA — Redbird (first firm PO, ERCOT, in Bimergen portfolio)', mwh: 400, region: 'USA (TX)', status: 'Firm PO — Jun 18', value: '~$90M*' },
+    { customer: 'Frontier Power USA — Bimergen Texas portfolio (3 ERCOT projects, incl. Redbird)', mwh: 480, region: 'USA (TX)', status: 'Converting — NTPs mid-2026', value: '~$108M*' },
     { customer: 'Frontier Power USA — remaining capacity reservation',                mwh: 1520, region: 'USA',     status: 'Reservation',          value: '~$342M*'  },
+    { customer: 'Bridgelink — master supply agreement (FPUSA pipeline)',               mwh: 1000, region: 'USA',     status: '~50% fulfilled',       value: '~$225M*'  },
     { customer: 'CAPAC Energy — DACH master supply agreement (Indensity)', mwh: 750, region: 'Germany/AT/CH', status: 'Framework (MSA)', value: '~$169M*' },
     { customer: 'TURBINE-X Energy (JDA, AI data center)', mwh: '≤2000', region: 'USA', status: 'Negotiation',  value: 'TBD (JDA)' },
     { customer: 'MN8 Energy',                        mwh: '~590',  region: 'USA',     status: 'Delivering',   value: '~$133M*'  },
@@ -447,6 +449,7 @@ window.EOSE_DATA = {
     { date: 'Apr 30, 2026', event: 'CFO appointment announced: Alessandro Lagi (from Johnson Controls, prior Baker Hughes)',  status: 'Reported [Company]',     tone: 'done'   },
     { date: 'May 13, 2026', event: 'Q1 2026 earnings · Frontier Power USA formation · S-3ASR shelf filed', status: 'Reported [Company]',         tone: 'done'   },
     { date: 'May 21, 2026', event: 'FPUSA converts 480 MWh from Bimergen (3 ERCOT projects) — first deployment under the 2 GWh reservation', status: 'Reported [Counterparty]', tone: 'done' },
+    { date: 'Jun 18, 2026', event: 'First firm purchase order under FPUSA\'s 2 GWh reservation — Redbird (100 MW / 400 MWh, ERCOT, Z3); release also cites ~50% of a 1 GWh Bridgelink MSA fulfilled + 12 GWh dev pipeline (ERCOT/PJM/CAISO/MISO)', status: 'Reported [Company]', tone: 'done' },
     { date: 'Mid-2026',     event: 'Notices-to-Proceed (NTPs) on the 480 MWh Texas portfolio',              status: 'Watch [Counterparty]',     tone: 'soon'   },
     { date: 'Jun 8, 2026',  event: 'Lagi CFO effective date · Kroeker returns to CCO-only role',           status: 'Imminent [Company]',         tone: 'soon'   },
     { date: 'Spring 2026',  event: 'Ofgem publishes Initial Decision List for LDES Cap & Floor Window 1 (UK)', status: 'Watch [Regulator]',        tone: 'soon'   },
@@ -456,7 +459,7 @@ window.EOSE_DATA = {
     { date: 'Jul 1, 2026',  event: 'Rights offering record date (5 pm ET; announced Jun 11) — rights distributed Jul 2; units of stock + warrants at ~10–20% VWAP discount; exact ratio/price in the prospectus supplement', status: 'Announced [Company]', tone: 'soon' },
     { date: 'Q2 2026',      event: 'Frontier Power USA closing conditions (Cerberus warrants + controlling JV equity)',      status: 'Watch [Company]',            tone: 'soon'   },
     { date: 'Summer 2026',  event: 'Ofgem final cap & floor awards (Window 1) — Frontier UK\'s 11 GWh of Eos-tech projects either awarded the revenue floor or not', status: 'Catalyst [Regulator]', tone: 'soon' },
-    { date: '~Aug 2026',    event: 'Q2 2026 earnings release (estimated cadence)',                         status: 'Pending',                    tone: 'future' },
+    { date: 'Jul 29, 2026', event: 'Q2 2026 earnings release (indicated)',                                  status: 'Scheduled [Company]',        tone: 'soon'   },
     { date: 'Q3 2026',      event: 'NYSERDA Bulk Storage Program ISCRFP25-1 awards (Eos qualifies for 8+ hr tier)', status: 'Catalyst [Regulator]', tone: 'soon' },
     { date: 'YE 2026',      event: 'Cerberus equity lock-up expiration (extended through year-end 2026)',  status: 'Confirmed [Company]',        tone: 'live'   },
     { date: 'YE 2026',      event: 'Treasury safe-harbor tables for 45X FEOC scoring (sets credit magnitude)', status: 'Watch [Regulator]',    tone: 'future' },
@@ -488,9 +491,9 @@ window.EOSE_DATA = {
     { date: '2026-07-02', short: 'Rights distribution', est: false,
       label: 'Rights distribution date',
       detail: 'Subscription rights distributed to eligible holders; final ratio, price and transferability are set in the prospectus supplement at offering commencement.' },
-    { date: '2026-08-12', short: 'Q2 earnings (est.)',  est: true,
-      label: 'Q2 2026 earnings release (estimated cadence)',
-      detail: 'Estimated from prior reporting cadence (Q1 reported May 13); the actual date has not been announced.' },
+    { date: '2026-07-29', short: 'Q2 earnings',  est: false,
+      label: 'Q2 2026 earnings release',
+      detail: 'Indicated for July 29, 2026. Street will watch the Line 1+2 production ramp and the first FPUSA reservation-to-revenue conversion.' },
     { date: '2026-09-22', short: 'Ofgem final awards',  est: true,
       label: 'Ofgem final cap & floor awards — Window 1',
       detail: 'End of the regulator\'s stated Summer 2026 window (estimate). Decides the regulated revenue floor for Frontier UK\'s Eos-tech pipeline.' },
@@ -924,7 +927,7 @@ window.EOSE_DATA = {
     bull: [
       { point: 'Q1\'26 revenue +445% YoY with adj. EPS beating consensus by 154 ppt ($0.12 vs −$0.22). Two consecutive quarters now exceed full FY25.', src: 'Q1\'26 8-K' },
       { point: 'Pipeline $24.3B (+56% YoY); backlog $644.6M; post-quarter +2 GWh Frontier USA reservation. Demand isn\'t the constraint.', src: '10-Q + Frontier 8-K' },
-      { point: 'Frontier USA executing fast: 480 MWh (24% of the 2 GWh reservation) converted from "reservation" to "firm projects" via the Bimergen acquisition on May 21 — 8 days after FPUSA\'s formation. Three ERCOT projects, NTPs mid-2026, Z3 + Ariel Green TPI deployed.', src: 'May 21 Yahoo Finance / Bimergen release' },
+      { point: 'Frontier USA executing fast — and now CONVERTING: 480 MWh acquired via Bimergen (May 21), then on Jun 18 the first firm purchase order under the 2 GWh reservation (Redbird, 100 MW / 400 MWh, ERCOT, Z3). Reservation→order is the proof the vehicle pulls hardware. Release also cited ~50% of a 1 GWh Bridgelink MSA fulfilled + a 12 GWh ERCOT/PJM/CAISO/MISO pipeline.', src: 'Jun 18 first-PO release · May 21 Bimergen release' },
       { point: 'UK pipeline: Frontier Power Ltd. has ~11 GWh in Ofgem Cap & Floor Window 1 second-round evaluation, all using Eos Z3 tech. Approval is pending — Initial Decision Spring 2026, final awards Summer 2026. If awarded, the regulated revenue floor de-risks project finance.', src: 'Ofgem / Modo Energy' },
       { point: 'Cerberus is doubling down on BOTH sides of the Atlantic: $100M into Frontier USA + £159M earlier into Frontier UK. Lock-up extended through YE 2026.', src: 'Frontier releases · PwC UK' },
       { point: 'Execution on schedule: Line 2 launched commercial production Jun 16, 2026 — ahead of the end-Q2 target — doubling the manufacturing base toward ~4 GWh/yr. Directly rebuts the "can\'t scale manufacturing" bear/lawsuit narrative. Margin trajectory backs it: GM −78% Q1\'26, +157 ppt YoY, +16 ppt sequentially; cube deliveries +5.7×.', src: 'Jun 16 Line 2 release · Q1\'26 release' },
@@ -1120,6 +1123,12 @@ window.EOSE_DATA = {
 
   // ────────── NEW: Recent history (context for cold readers) ──────────
   recentHistory: [
+    {
+      date:  '2026-06-18',
+      title: 'First firm purchase order under FPUSA\'s 2 GWh reservation — Redbird (400 MWh)',
+      body:  'Eos booked its FIRST purchase order under the Frontier Power USA 2 GWh capacity reservation: the Redbird project — 100 MW / 400 MWh, four-hour duration, in ERCOT (Texas), on Eos Z3. This is the reservation-to-firm-order conversion the market had been waiting for — the proof that the FPUSA vehicle actually pulls Eos hardware (~$90M at our $225/kWh model basis). The release also disclosed, for the first time at this granularity, that ~50% of a 1 GWh Bridgelink master supply agreement is already fulfilled and that FPUSA is advancing a 12 GWh development pipeline across ERCOT, PJM, CAISO and MISO. Fourth catalyst in a remarkable week.',
+      url:   'https://investors.eose.com/news-releases/news-release-details/eos-energy-enterprises-announces-first-purchase-order-under'
+    },
     {
       date:  '2026-06-17',
       title: 'Germany/DACH entry: exclusive CAPAC Indensity framework — capping a ~19% two-day surge',

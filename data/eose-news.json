@@ -1,6 +1,6 @@
 {
   "meta": {
-    "_refreshed": "2026-06-17T22:53:32.769Z",
+    "_refreshed": "2026-06-18T12:59:37.789Z",
     "sources": [
       "eose.com (WordPress REST API)",
       "SEC EDGAR submissions API",
@@ -9,11 +9,20 @@
     "counts": {
       "pressReleases": 20,
       "secFilings": 307,
-      "manual": 1,
+      "manual": 2,
       "shown": 14
     }
   },
   "items": [
+    {
+      "iso": "2026-06-18T12:30:00Z",
+      "date": "2026-06-18",
+      "source": "Eos Energy (press release)",
+      "headline": "Eos Energy Enterprises Announces First Purchase Order Under Frontier Power USA's 2 GWh Capacity Reservation Agreement",
+      "url": "https://investors.eose.com/news-releases/news-release-details/eos-energy-enterprises-announces-first-purchase-order-under",
+      "summary": "First firm purchase order under the FPUSA 2 GWh reservation: the Redbird project — 100 MW / 400 MWh (4-hour), ERCOT (Texas), Eos Z3 — converting reservation into a firm order. Release also disclosed ~50% of the 1 GWh Bridgelink master supply agreement fulfilled and a 12 GWh development pipeline across ERCOT, PJM, CAISO and MISO.",
+      "tag": "catalyst"
+    },
     {
       "iso": "2026-06-17T12:30:00Z",
       "date": "2026-06-17",
@@ -130,15 +139,6 @@
       "url": "https://www.eose.com/eos-energy-enterprises-reports-preliminary-q1-revenue-highlights-record-output-and-capacity-expansion/",
       "summary": "PITTSBURGH, April 09, 2026 (GLOBE NEWSWIRE) — Eos Energy Enterprises, Inc. (NASDAQ: EOSE) (“Eos” or the “Company”), an American energy company and the leading innovator in designing, sourcing, manufacturing, and providing zinc-based…",
       "tag": "catalyst"
-    },
-    {
-      "iso": "2026-04-14T12:00:00Z",
-      "date": "2026-04-14",
-      "source": "SEC EDGAR",
-      "headline": "Proxy statement (DEF 14A)",
-      "url": "https://www.sec.gov/Archives/edgar/data/1805077/000162828026025071/eose-20260414.htm",
-      "summary": "DEF 14A",
-      "tag": "sec-filing"
     }
   ]
 }
