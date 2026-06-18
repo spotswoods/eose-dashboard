@@ -30,24 +30,24 @@ window.EOSE_DATA = {
   // Refreshed by /equity-research:morning-note via a scheduled task in Cowork.
   // session = 'pre-open' (Swedish AM, ~07:00 CEST) | 'post-close' (Swedish PM, ~22:30 CEST)
   morningNote: {
-    updatedAt: '2026-06-17T14:30:00+02:00',
+    updatedAt: '2026-06-18T07:30:00+02:00',
     session:   'pre-open',
-    headline:  'Eos goes international: exclusive German (DACH) Indensity framework — 750 MWh, pathway to 2 GWh',
-    takeaway:  'Before the open Jun 17, Eos announced a binding Master Supply Agreement with German developer CAPAC Energy — its first international commercial framework for Indensity, exclusive across Germany, Austria and Switzerland through 2031. It commits 750 MWh with a pathway to 2 GWh, and lands the day after Line 2 hit commercial production: capacity is scaling and a new demand geography just opened on the same week.',
+    headline:  'Digesting the Germany surge — rights clock ticking, JPM conference Jun 23',
+    takeaway:  'No fresh catalysts overnight after EOSE\'s ~10% jump on Jun 17 (Germany CAPAC MSA + Line 2 commercial production). Attention shifts to the rights offering record date (July 1, 13 days out) and CEO Mastrangelo\'s JPM fireside on June 23.',
     bullets: [
-      'Binding MSA with CAPAC Energy (a German BESS developer/operator, formerly Nala Energy) — exclusive across the DACH region (Germany, Austria, Switzerland) through 2031.',
-      'Eos\' FIRST international commercial framework for Indensity — its high-density architecture aimed at footprint-constrained European sites. 750 MWh initial commitment, pathway to scale to 2 GWh.',
-      'CAPAC\'s first German projects target commercial operation in late 2026. As purchase orders are issued they flow into Eos\' reported backlog — so this is framework value today, backlog conversion to watch.',
-      'CCO Nathan Kroeker: the deal "establishes Eos\' entry into a critical international market with a customer already moving projects into construction."',
-      'Context: comes one day after Line 2 reached commercial production (Jun 16) — the supply side scales just as a new demand region opens. Rights-offering record date July 1 still funds the ~$150M Frontier USA contribution in parallel.',
-      'Watch next: first CAPAC purchase orders (backlog), JPM Energy & Natural Resources Conference Jun 23, and the rights-offering prospectus supplement.'
+      'No material overnight news — Jun 17 double catalyst (Germany CAPAC MSA + Line 2 commercial production) now baked in. Stock closed ~$7.68 (+9.8% on Jun 17); digestion mode into today\'s open.',
+      'Rights offering record date July 1 (13 days). $150M at 10–20% discount to VWAP over 15–30 trading days before record date. Stock\'s recent rally lifts the effective sub price — rights dilution math now relevant for existing holders.',
+      'JPM Energy & Natural Resources Conference June 23: CEO Mastrangelo fireside with Mark Strouse (JPM). First major sell-side forum since the Germany deal — watch for backlog/pipeline update and CAPAC PO colour.',
+      'Needham Buy/$11 (top-of-Street, initiated Jun 16); consensus ~$9.62 across 10 analysts. Share increase to 800M authorized approved June 5 — structural prerequisite for rights offering cleared.',
+      'Germany CAPAC MSA (750 MWh, exclusive DACH through 2031) remains framework value today — first CAPAC purchase orders converting to reported backlog is the key conversion metric to watch.',
+      'Watch: Q2 production update (Line 1 already exceeded all of FY25 output in 164 days); DOE consent for Frontier Power USA JV; rights offering prospectus supplement timing.'
     ],
-    price:   { last: 6.38, changePct: null, note: 'Latest dashboard quote feed · Germany MSA broke pre-market Jun 17 — see the live ticker above for the current print' },
+    price:   { last: 7.68, changePct: 9.8, note: 'Stooq delayed · Jun 17 close; no Jun 18 pre-mkt data at time of refresh' },
     sources: [
-      { label: 'Germany / CAPAC MSA — announcement', url: 'https://www.stocktitan.net/news/EOSE/eos-energy-enterprises-establishes-strategic-entry-into-germany-mvli0yodpemn.html' },
-      { label: 'Line 2 commercial production (Jun 16)', url: 'https://www.eose.com/eos-energy-enterprises-launches-commercial-production-at-second-manufacturing-facility/' },
-      { label: 'Eos IR newsroom', url: 'https://investors.eose.com/news-releases' },
-      { label: 'How the rights offering works — explainer', url: 'rights-offering.html' }
+      { label: 'Germany CAPAC MSA announcement (Jun 17)', url: 'https://investors.eose.com/news-releases/news-release-details/eos-energy-enterprises-establishes-strategic-entry-germany' },
+      { label: 'Line 2 commercial production (Jun 16)', url: 'https://investors.eose.com/news-releases/news-release-details/eos-energy-enterprises-launches-commercial-production-second' },
+      { label: 'Rights offering record date (Jun 11)', url: 'https://investors.eose.com/news-releases/news-release-details/eos-energy-announces-record-date-rights-offering' },
+      { label: 'Eos IR newsroom', url: 'https://investors.eose.com/news-releases/' }
     ]
   },
 
