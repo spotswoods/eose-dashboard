@@ -30,24 +30,24 @@ window.EOSE_DATA = {
   // Refreshed by /equity-research:morning-note via a scheduled task in Cowork.
   // session = 'pre-open' (Swedish AM, ~07:00 CEST) | 'post-close' (Swedish PM, ~22:30 CEST)
   morningNote: {
-    updatedAt: '2026-06-18T07:30:00+02:00',
-    session:   'pre-open',
-    headline:  'Digesting the Germany surge — rights clock ticking, JPM conference Jun 23',
-    takeaway:  'No fresh catalysts overnight after EOSE\'s ~10% jump on Jun 17 (Germany CAPAC MSA + Line 2 commercial production). Attention shifts to the rights offering record date (July 1, 13 days out) and CEO Mastrangelo\'s JPM fireside on June 23.',
+    updatedAt: '2026-06-18T22:30:00+02:00',
+    session:   'post-close',
+    headline:  'EOSE flat/down ~0.6% as two-day 19% surge digests; JPM fireside Jun 23, rights record date Jul 1',
+    takeaway:  'EOSE gave back a modest ~0.6% to ~$7.56 Thursday on thin volume (~10M shares), consolidating the two-day, 19% run driven by Germany CAPAC MSA (Jun 17) and Line 2 launch (Jun 16). No new filings or news. Setup into JPM conference Jun 23 and rights record date Jul 1.',
     bullets: [
-      'No material overnight news — Jun 17 double catalyst (Germany CAPAC MSA + Line 2 commercial production) now baked in. Stock closed ~$7.68 (+9.8% on Jun 17); digestion mode into today\'s open.',
-      'Rights offering record date July 1 (13 days). $150M at 10–20% discount to VWAP over 15–30 trading days before record date. Stock\'s recent rally lifts the effective sub price — rights dilution math now relevant for existing holders.',
-      'JPM Energy & Natural Resources Conference June 23: CEO Mastrangelo fireside with Mark Strouse (JPM). First major sell-side forum since the Germany deal — watch for backlog/pipeline update and CAPAC PO colour.',
-      'Needham Buy/$11 (top-of-Street, initiated Jun 16); consensus ~$9.62 across 10 analysts. Share increase to 800M authorized approved June 5 — structural prerequisite for rights offering cleared.',
-      'Germany CAPAC MSA (750 MWh, exclusive DACH through 2031) remains framework value today — first CAPAC purchase orders converting to reported backlog is the key conversion metric to watch.',
-      'Watch: Q2 production update (Line 1 already exceeded all of FY25 output in 164 days); DOE consent for Frontier Power USA JV; rights offering prospectus supplement timing.'
+      'Price action: ~$7.56 close (-0.6%) on ~10M shares — well below Jun 17\'s 47.6M surge vol. Back-to-back catalyst sessions (Germany MSA + Line 2 launch) drove cumulative +19%; market digesting.',
+      'Rights offering: Record date Jul 1 (13 days), distribution Jul 2. Sub price at 10–20% discount to VWAP through Jun 30. At ~$7.56 avg VWAP, effective sub price ~$6.05–6.80; dilution watch active.',
+      'JPM Energy & Natural Resources Conference Jun 23 (5 days): CEO Mastrangelo fireside with Mark Strouse — first sell-side forum post-Germany deal. Watch for CAPAC PO conversion to backlog and FPUSA pipeline update.',
+      'Germany CAPAC MSA (750 MWh, exclusive DACH through 2031): first projects in construction, late-2026 COD target. Framework only converts to reported backlog as purchase orders are issued — none booked yet.',
+      'Q2 earnings confirmed Jul 29 (vs. Aug 12 est. in key dates — manual keyDates update needed). Street watches Q2 production ramp and first FPUSA pipeline-to-revenue conversion color.'
     ],
-    price:   { last: 7.68, changePct: 9.8, note: 'Stooq delayed · Jun 17 close; no Jun 18 pre-mkt data at time of refresh' },
+    price:   { last: 7.56, changePct: -0.59, note: 'Stooq delayed · Jun 18 close est.' },
     sources: [
-      { label: 'Germany CAPAC MSA announcement (Jun 17)', url: 'https://investors.eose.com/news-releases/news-release-details/eos-energy-enterprises-establishes-strategic-entry-germany' },
-      { label: 'Line 2 commercial production (Jun 16)', url: 'https://investors.eose.com/news-releases/news-release-details/eos-energy-enterprises-launches-commercial-production-second' },
+      { label: 'Germany CAPAC MSA (Jun 17)', url: 'https://www.globenewswire.com/news-release/2026/06/17/3313418/0/en/Eos-Energy-Enterprises-Establishes-Strategic-Entry-into-Germany-Through-Exclusive-Long-Duration-Storage-Partnership.html' },
+      { label: 'Line 2 commercial production (Jun 16)', url: 'https://www.globenewswire.com/news-release/2026/06/16/3312575/0/en/Eos-Energy-Enterprises-Launches-Commercial-Production-at-Second-Manufacturing-Facility.html' },
       { label: 'Rights offering record date (Jun 11)', url: 'https://investors.eose.com/news-releases/news-release-details/eos-energy-announces-record-date-rights-offering' },
-      { label: 'Eos IR newsroom', url: 'https://investors.eose.com/news-releases/' }
+      { label: 'StockAnalysis — EOSE overview', url: 'https://stockanalysis.com/stocks/eose/' },
+      { label: 'Stooq EOSE.US price', url: 'https://stooq.com/q/?s=eose.us' }
     ]
   },
 
