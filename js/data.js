@@ -615,14 +615,14 @@ window.EOSE_DATA = {
   //   - Describe Eos exposure factually
   //   - Pair "upside" + "downside" + "base" outcomes equally — don't predict
   catalystWindow: {
-    framing: 'Three regulatory decisions sit within the next ~5 months that touch the project-finance bottleneck LDES has always had. Eos hardware is in the application stack on all three. The decisions don\'t guarantee Eos revenue — they shape it, in both directions.',
+    framing: 'Three regulatory decisions sit within the next ~5 months that touch the project-finance bottleneck LDES has always had. Eos hardware is in the application stack on all three. The decisions don\'t guarantee Eos revenue — they shape it, in both directions. Note: as of mid-June 2026, Ofgem has NOT yet published its Window 1 Initial Decision List — the "Spring 2026" window is at its very end with no announcement, so this is the most overdue item to watch.',
     upcoming: [
       {
         targetEnd: '2026-06-20',
         anchor:    'Spring 2026',
         regulator: 'Ofgem (UK)',
         label:     'Initial Decision List · LDES Cap & Floor Window 1',
-        eosExposure: 'Frontier UK\'s ~11 GWh of Eos-based projects either advance to the shortlist or don\'t. A "yes" doesn\'t commit revenue; a "no" prunes the UK pipeline materially.',
+        eosExposure: 'STILL PENDING as of mid-June 2026 — no decision published; the stated Spring window is essentially closing. Frontier UK\'s ~11 GWh of Eos-based projects either advance to the shortlist or don\'t. A "yes" doesn\'t commit revenue; a "no" prunes the UK pipeline materially.',
         kind: 'preliminary'
       },
       {
@@ -1120,6 +1120,24 @@ window.EOSE_DATA = {
 
   // ────────── NEW: Recent history (context for cold readers) ──────────
   recentHistory: [
+    {
+      date:  '2026-06-17',
+      title: 'Germany/DACH entry: exclusive CAPAC Indensity framework — capping a ~19% two-day surge',
+      body:  'Eos signed a binding Master Supply Agreement with German developer CAPAC Energy — exclusive across Germany, Austria and Switzerland through 2031, committing 750 MWh with a pathway to 2 GWh. It is Eos\' first international commercial framework for Indensity; first German projects target commercial operation in late 2026, with purchase orders flowing into reported backlog as issued. Landing one day after the Line 2 production launch, it drove EOSE ~+9.8% (to ~$7.68) on heavy volume — the back-to-back catalysts lifted the stock roughly +19% in two sessions off the ~$6.38 Jun 15 close. Framework value today; backlog conversion is the metric to watch.',
+      url:   'https://www.stocktitan.net/news/EOSE/eos-energy-enterprises-establishes-strategic-entry-into-germany-mvli0yodpemn.html'
+    },
+    {
+      date:  '2026-06-16',
+      title: 'Line 2 launches commercial production — manufacturing base doubles, ahead of schedule',
+      body:  'Battery Line 2 at Thorn Hill (Turtle Creek), PA began commercial production after passing Site Acceptance Testing — ahead of the end-of-Q2 target Eos guided to at Q1. It takes the two lines toward a combined ~4 GWh annual run-rate by end-2026 (Line 2 full run-rate targeted Q4\'26), with a layout that cuts raw-material travel ~86% and line length ~40% vs. Line 1. The single most important execution gate for the FY26 $300–400M guide — and it directly rebuts the "can\'t scale manufacturing" bear/lawsuit narrative. Stock rose to ~$6.81 on ~39M shares (vs. ~14M the prior session).',
+      url:   'https://www.eose.com/eos-energy-enterprises-launches-commercial-production-at-second-manufacturing-facility/'
+    },
+    {
+      date:  '2026-06-11',
+      title: 'Rights offering record date set — July 1',
+      body:  'Eos set the record date for the ~$150M rights offering funding its Frontier Power USA contribution: holders of record as of 5 pm ET July 1 receive subscription rights on July 2 to buy units of common stock + warrants at a ~10–20% discount to a 15–30 day VWAP, with an over-subscription privilege. It puts the long-flagged dilution overhang on a concrete schedule; the exact ratio and price land in the prospectus supplement at commencement. DOE and debt-holder consents remain. See the rights-offering explainer for the mechanics and dilution math.',
+      url:   'https://www.eose.com/eos-energy-announces-record-date-for-rights-offering/'
+    },
     {
       date:  '2026-05-21',
       title: 'Frontier Power USA converts 480 MWh from Bimergen — first deployment under the 2 GWh reservation',

@@ -1,5 +1,23 @@
 [
  {
+  "updatedAt": "2026-06-18T22:30:00+02:00",
+  "session": "post-close",
+  "headline": "EOSE flat/down ~0.6% as two-day 19% surge digests; JPM fireside Jun 23, rights record date Jul 1",
+  "takeaway": "EOSE gave back a modest ~0.6% to ~$7.56 Thursday on thin volume (~10M shares), consolidating the two-day, 19% run driven by Germany CAPAC MSA (Jun 17) and Line 2 launch (Jun 16). No new filings or news. Setup into JPM conference Jun 23 and rights record date Jul 1.",
+  "bullets": [
+   "Price action: ~$7.56 close (-0.6%) on ~10M shares — well below Jun 17's 47.6M surge vol. Back-to-back catalyst sessions (Germany MSA + Line 2 launch) drove cumulative +19%; market digesting.",
+   "Rights offering: Record date Jul 1 (13 days), distribution Jul 2. Sub price at 10–20% discount to VWAP through Jun 30. At ~$7.56 avg VWAP, effective sub price ~$6.05–6.80; dilution watch active.",
+   "JPM Energy & Natural Resources Conference Jun 23 (5 days): CEO Mastrangelo fireside with Mark Strouse — first sell-side forum post-Germany deal. Watch for CAPAC PO conversion to backlog and FPUSA pipeline update.",
+   "Germany CAPAC MSA (750 MWh, exclusive DACH through 2031): first projects in construction, late-2026 COD target. Framework only converts to reported backlog as purchase orders are issued — none booked yet.",
+   "Q2 earnings confirmed Jul 29 (vs. Aug 12 est. in key dates — manual keyDates update needed). Street watches Q2 production ramp and first FPUSA pipeline-to-revenue conversion color."
+  ],
+  "price": {
+   "last": 7.56,
+   "changePct": -0.59,
+   "note": "Stooq delayed · Jun 18 close est."
+  }
+ },
+ {
   "updatedAt": "2026-06-17T14:30:00+02:00",
   "session": "pre-open",
   "headline": "Eos goes international: exclusive German (DACH) Indensity framework — 750 MWh, pathway to 2 GWh",
