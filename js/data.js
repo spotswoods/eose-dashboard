@@ -30,24 +30,24 @@ window.EOSE_DATA = {
   // Refreshed by /equity-research:morning-note via a scheduled task in Cowork.
   // session = 'pre-open' (Swedish AM, ~07:00 CEST) | 'post-close' (Swedish PM, ~22:30 CEST)
   morningNote: {
-    updatedAt: '2026-06-19T07:15:00+02:00',
-    session:   'pre-open',
-    headline:  'Quiet overnight — EOSE digests +33% in 3 sessions, JPM fireside Mon Jun 23 next up',
-    takeaway:  'No new filings or PRs overnight. Stock enters Friday consolidating a 3-catalyst, 3-session surge (+33%). Momentum is real but vol-thin; CEO Mastrangelo\'s JPM Energy fireside Monday is the next potential inflection.',
+    updatedAt: '2026-06-19T22:24:00+02:00',
+    session:   'post-close',
+    headline:  'EOSE -2.9% Friday as catalyst week digests; JPM fireside Mon Jun 23 next setup',
+    takeaway:  'No new news or filings Jun 19. Stock gapped to $8.23 then faded to close $7.38 (-2.89% vs Jun 18 close $7.60) on 26M vol — profit-taking, not panic. Week\'s +35% trifecta is priced in; JPM fireside Monday and rights record date Jul 1 are the next markers.',
     bullets: [
-      'EOSE last close $7.46 (+9.5% Jun 18, +33% over 3 sessions Jun 16–18). Volume thinned each day — 10.7M on the biggest move vs 22.1M avg — flagging limited new-money participation in the rally.',
-      'No overnight news, SEC filings, or IR press releases as of 07:00 CEST Jun 19. Week ends quietly after trifecta of Line 2 (Jun 16), Germany CAPAC MSA (Jun 17), Redbird FPUSA PO (Jun 18).',
-      'JPM Energy Conference fireside: CEO Mastrangelo Mon Jun 23. First major public Q&A post-catalyst week. Watch for FPUSA pipeline color, next PO timing, and any UK/Germany project progress.',
-      'Rights offering overhang: record date Jul 1 (12 days), distribution Jul 2. At $7.46, the ~10–20% VWAP discount implies a subscription price near $6.00–$6.70. Dilution math warrants position-sizing discipline.',
-      'Ofgem Cap & Floor Window 1 Initial Decision still absent ("Spring 2026" guidance, now overdue). Final ruling targeted end-Q2 2026; a positive outcome remains an unpriced catalyst for the UK LDES thesis.',
-      'Q2 earnings expected Jul 29 (~6 weeks). Key monitors: Line 2 ramp throughput, additional FPUSA PO conversions from the 12 GWh pipeline, and any TURBINE-X/AI data-center pilot announcement.'
+      'EOSE closed $7.38 (-2.89%), vol 26M (above 22.1M avg). Opened $8.04, hit $8.23 intraday then faded — classic post-catalyst Friday reversal, selling into strength rather than panic liquidation.',
+      'No new SEC filings or IR press releases Jun 19. Week\'s trifecta fully absorbed: Line 2 (Jun 16), Germany CAPAC MSA (Jun 17), Redbird FPUSA first PO under 2 GWh reservation (Jun 18).',
+      'Rights offering looms: record date Jul 1 (12 days), distribution Jul 2. At $7.38, estimated 10–20% VWAP discount implies subscription price ~$5.90–$6.65. Dilution math caps near-term upside.',
+      'Next catalyst: CEO Mastrangelo fireside at JPM Energy Conference Mon Jun 23. Watch for FPUSA pipeline conversion update (12 GWh backlog), UK CAPAC timeline, and TURBINE-X/AI pilot progress.',
+      'Ofgem Cap & Floor Window 1 Initial Decision still absent ("Spring 2026" window, now overdue). Positive UK LDES ruling remains highest-magnitude unpriced binary catalyst for the bull thesis.',
+      'Analyst consensus Hold, avg PT $9.63 (+30.5% upside). Week\'s rally compressed the gap to target; next leg requires accelerating FPUSA PO conversions or rights offer resolution.'
     ],
-    price:   { last: 7.65, changePct: 0.66, note: 'Stooq delayed · pre-market ~11:43 UTC Jun 19' },
+    price:   { last: 7.38, changePct: -2.89, note: 'close Jun 19 · StockAnalysis delayed' },
     sources: [
       { label: 'Eos IR news releases', url: 'https://investors.eose.com/news-releases' },
-      { label: 'Redbird FPUSA PO (Jun 18)', url: 'https://investors.eose.com/news-releases/news-release-details/eos-energy-enterprises-announces-first-purchase-order-under' },
-      { label: 'Rights offering record date (Jun 11)', url: 'https://investors.eose.com/news-releases/news-release-details/eos-energy-announces-record-date-rights-offering' },
-      { label: 'JPM conference (Apr 23 announcement)', url: 'https://investors.eose.com/news-releases/news-release-details/eos-energy-enterprises-announces-date-first-quarter-2026' },
+      { label: 'StockAnalysis EOSE overview', url: 'https://stockanalysis.com/stocks/eose/' },
+      { label: 'EOSE Jun 18 rights/insider article', url: 'https://www.timothysykes.com/news/eos-energy-enterprises-inc-eose-news-2026_06_18/' },
+      { label: 'MarketBeat EOSE analysis', url: 'https://www.marketbeat.com/stocks/NASDAQ/EOSE/' },
       { label: 'Ofgem LDES Cap & Floor Window 1', url: 'https://ofgem.gov.uk/decision/long-duration-electricity-storage-cap-and-floor-application-window-1' }
     ]
   },
