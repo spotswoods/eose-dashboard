@@ -30,25 +30,25 @@ window.EOSE_DATA = {
   // Refreshed by /equity-research:morning-note via a scheduled task in Cowork.
   // session = 'pre-open' (Swedish AM, ~07:00 CEST) | 'post-close' (Swedish PM, ~22:30 CEST)
   morningNote: {
-    updatedAt: '2026-06-18T23:15:00+02:00',
-    session:   'post-close',
-    headline:  'Redbird PO: FPUSA reservation converts to firm order — EOSE +9.5% on catalyst day',
-    takeaway:  'First firm PO under the FPUSA 2 GWh reservation confirms Redbird (100 MW / 400 MWh, ERCOT, Z3). Reservation-to-order conversion is the key proof point; PR also reveals ~50% of Bridgelink MSA fulfilled and a 12 GWh pipeline across four ISOs.',
+    updatedAt: '2026-06-19T07:15:00+02:00',
+    session:   'pre-open',
+    headline:  'Quiet overnight — EOSE digests +33% in 3 sessions, JPM fireside Mon Jun 23 next up',
+    takeaway:  'No new filings or PRs overnight. Stock enters Friday consolidating a 3-catalyst, 3-session surge (+33%). Momentum is real but vol-thin; CEO Mastrangelo\'s JPM Energy fireside Monday is the next potential inflection.',
     bullets: [
-      'EOSE closed $7.46 (+9.5% vs Jun 17 $6.81); range $6.99–$7.72, vol 10.7M vs 22.1M avg. Below-avg volume on a strong catalyst day — thin participation worth monitoring into Friday.',
-      'First firm PO under FPUSA 2 GWh reservation: Redbird — 100 MW / 400 MWh (4-hr) ERCOT Z3. FPUSA provides 100% construction equity. ~$90M of incremental demand at $225/kWh model basis.',
-      'New disclosures: ~50% of 1 GWh Bridgelink MSA already fulfilled; 12 GWh FPUSA development pipeline across ERCOT, PJM, CAISO & MISO — broader funnel than previously disclosed.',
-      'Third catalyst in 3 sessions: Line 2 production (Jun 16) → Germany CAPAC MSA (Jun 17) → Redbird PO (Jun 18). Two-day Germany/Line 2 surge had already added ~+19% before today\'s move.',
-      'Rights offering: record date Jul 1, distribution Jul 2; units at ~10–20% discount to 15–30 day VWAP. The rally lifts the effective subscription price — dilution math stays live for holders.',
-      'Still absent: Ofgem Cap & Floor Window 1 Initial Decision (guided "Spring 2026," overdue). Next: JPM Energy Conf Jun 23 (CEO fireside), more FPUSA POs, rights prospectus, Q2 Jul 29.'
+      'EOSE last close $7.46 (+9.5% Jun 18, +33% over 3 sessions Jun 16–18). Volume thinned each day — 10.7M on the biggest move vs 22.1M avg — flagging limited new-money participation in the rally.',
+      'No overnight news, SEC filings, or IR press releases as of 07:00 CEST Jun 19. Week ends quietly after trifecta of Line 2 (Jun 16), Germany CAPAC MSA (Jun 17), Redbird FPUSA PO (Jun 18).',
+      'JPM Energy Conference fireside: CEO Mastrangelo Mon Jun 23. First major public Q&A post-catalyst week. Watch for FPUSA pipeline color, next PO timing, and any UK/Germany project progress.',
+      'Rights offering overhang: record date Jul 1 (12 days), distribution Jul 2. At $7.46, the ~10–20% VWAP discount implies a subscription price near $6.00–$6.70. Dilution math warrants position-sizing discipline.',
+      'Ofgem Cap & Floor Window 1 Initial Decision still absent ("Spring 2026" guidance, now overdue). Final ruling targeted end-Q2 2026; a positive outcome remains an unpriced catalyst for the UK LDES thesis.',
+      'Q2 earnings expected Jul 29 (~6 weeks). Key monitors: Line 2 ramp throughput, additional FPUSA PO conversions from the 12 GWh pipeline, and any TURBINE-X/AI data-center pilot announcement.'
     ],
-    price:   { last: 7.46, changePct: 9.5, note: 'close · NASDAQ/history.json; prev close $6.81 (Jun 17); range $6.99–$7.72, vol 10.7M' },
+    price:   { last: 7.65, changePct: 0.66, note: 'Stooq delayed · pre-market ~11:43 UTC Jun 19' },
     sources: [
-      { label: 'First FPUSA PO — Redbird (Jun 18)', url: 'https://investors.eose.com/news-releases/news-release-details/eos-energy-enterprises-announces-first-purchase-order-under' },
-      { label: 'StockTitan — Redbird detail (Jun 18)', url: 'https://www.stocktitan.net/news/EOSE/eos-energy-enterprises-announces-first-purchase-order-under-frontier-k7djrvu26fn7.html' },
-      { label: 'Germany CAPAC MSA (Jun 17)', url: 'https://www.stocktitan.net/news/EOSE/eos-energy-enterprises-establishes-strategic-entry-into-germany-mvli0yodpemn.html' },
-      { label: 'Line 2 commercial production (Jun 16)', url: 'https://www.eose.com/eos-energy-enterprises-launches-commercial-production-at-second-manufacturing-facility/' },
-      { label: 'Eos IR newsroom', url: 'https://investors.eose.com/news-releases' }
+      { label: 'Eos IR news releases', url: 'https://investors.eose.com/news-releases' },
+      { label: 'Redbird FPUSA PO (Jun 18)', url: 'https://investors.eose.com/news-releases/news-release-details/eos-energy-enterprises-announces-first-purchase-order-under' },
+      { label: 'Rights offering record date (Jun 11)', url: 'https://investors.eose.com/news-releases/news-release-details/eos-energy-announces-record-date-rights-offering' },
+      { label: 'JPM conference (Apr 23 announcement)', url: 'https://investors.eose.com/news-releases/news-release-details/eos-energy-enterprises-announces-date-first-quarter-2026' },
+      { label: 'Ofgem LDES Cap & Floor Window 1', url: 'https://ofgem.gov.uk/decision/long-duration-electricity-storage-cap-and-floor-application-window-1' }
     ]
   },
 
