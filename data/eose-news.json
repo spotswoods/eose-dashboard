@@ -1,6 +1,6 @@
 {
   "meta": {
-    "_refreshed": "2026-06-22T17:55:01.940Z",
+    "_refreshed": "2026-06-22T22:55:45.578Z",
     "sources": [
       "eose.com (WordPress REST API)",
       "SEC EDGAR submissions API",
@@ -9,19 +9,19 @@
     "counts": {
       "pressReleases": 20,
       "secFilings": 307,
-      "manual": 1,
+      "manual": 0,
       "shown": 14
     }
   },
   "items": [
     {
-      "iso": "2026-06-22T12:30:00Z",
+      "iso": "2026-06-22T17:45:01",
       "date": "2026-06-22",
       "source": "Eos Energy (press release)",
       "headline": "Independent Fire Testing Confirms Eos Z3 Battery System Exhibited No Thermal Runaway, No Sustained Fire, and No Propagation Under Abuse Testing; Company Receives ISO 14001 Certification",
-      "url": "https://investors.eose.com/news-releases/news-release-details/independent-fire-testing-confirms-eos-z3-battery-system",
-      "summary": "Independent destructive-abuse testing by the Energy Safety Response Group (direct flame + overcharge) confirmed the Z3 system showed no thermal runaway, no sustained fire, no module-to-module propagation and no off-gas ignition — third-party validation of Z3's core safety advantage, supporting siting/permitting, insurance and NFPA 855 alignment. Eos also received ISO 14001 environmental-management certification.",
-      "tag": "catalyst"
+      "url": "https://www.eose.com/independent-fire-testing-confirms-eos-z3-battery-system-exhibited-no-thermal-runaway-no-sustained-fire-and-no-propagation-under-abuse-testing-company-receives-iso-14001-certification/",
+      "summary": "Energy Safety Response Group testing found no thermal runaway, no sustained fire, and no propagation under direct flame impingement and overcharge abuse, supporting safe siting of long-duration storage in dense urban environments…",
+      "tag": "general"
     },
     {
       "iso": "2026-06-18T09:46:49",
