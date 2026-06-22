@@ -1,6 +1,6 @@
 {
   "meta": {
-    "_refreshed": "2026-06-22T08:00:41.353Z",
+    "_refreshed": "2026-06-22T12:36:04.894Z",
     "sources": [
       "eose.com (WordPress REST API)",
       "SEC EDGAR submissions API",
@@ -9,11 +9,20 @@
     "counts": {
       "pressReleases": 20,
       "secFilings": 307,
-      "manual": 0,
+      "manual": 1,
       "shown": 14
     }
   },
   "items": [
+    {
+      "iso": "2026-06-22T12:30:00Z",
+      "date": "2026-06-22",
+      "source": "Eos Energy (press release)",
+      "headline": "Independent Fire Testing Confirms Eos Z3 Battery System Exhibited No Thermal Runaway, No Sustained Fire, and No Propagation Under Abuse Testing; Company Receives ISO 14001 Certification",
+      "url": "https://investors.eose.com/news-releases/news-release-details/independent-fire-testing-confirms-eos-z3-battery-system",
+      "summary": "Independent destructive-abuse testing by the Energy Safety Response Group (direct flame + overcharge) confirmed the Z3 system showed no thermal runaway, no sustained fire, no module-to-module propagation and no off-gas ignition — third-party validation of Z3's core safety advantage, supporting siting/permitting, insurance and NFPA 855 alignment. Eos also received ISO 14001 environmental-management certification.",
+      "tag": "catalyst"
+    },
     {
       "iso": "2026-06-18T09:46:49",
       "date": "2026-06-18",
@@ -129,15 +138,6 @@
       "headline": "Eos Energy Enterprises & TURBINE-X Launch Private Power Infrastructure Solution for AI, Delivering Hyperscale Capacity in Months, Not Years",
       "url": "https://www.eose.com/eos-energy-enterprises-turbine-x-launch-private-power-infrastructure-solution-for-ai-delivering-hyperscale-capacity-in-months-not-years/",
       "summary": "Joint Development Agreement establishes integrated gas-fired generation and Indensity™ storage architecture to meet accelerating power demands of AI infrastructure PITTSBURGH and HOUSTON, April 15, 2026 (GLOBE NEWSWIRE) — Eos Energy…",
-      "tag": "catalyst"
-    },
-    {
-      "iso": "2026-04-16T01:08:19",
-      "date": "2026-04-16",
-      "source": "Eos Energy (press release)",
-      "headline": "Eos Energy Enterprises Reports Preliminary Q1 Revenue, Highlights Record Output and Capacity Expansion",
-      "url": "https://www.eose.com/eos-energy-enterprises-reports-preliminary-q1-revenue-highlights-record-output-and-capacity-expansion/",
-      "summary": "PITTSBURGH, April 09, 2026 (GLOBE NEWSWIRE) — Eos Energy Enterprises, Inc. (NASDAQ: EOSE) (“Eos” or the “Company”), an American energy company and the leading innovator in designing, sourcing, manufacturing, and providing zinc-based…",
       "tag": "catalyst"
     }
   ]

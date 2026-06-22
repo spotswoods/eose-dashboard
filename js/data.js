@@ -30,25 +30,24 @@ window.EOSE_DATA = {
   // Refreshed by /equity-research:morning-note via a scheduled task in Cowork.
   // session = 'pre-open' (Swedish AM, ~07:00 CEST) | 'post-close' (Swedish PM, ~22:30 CEST)
   morningNote: {
-    updatedAt: '2026-06-22T09:15:00+02:00',
+    updatedAt: '2026-06-22T15:00:00+02:00',
     session:   'pre-open',
-    headline:  'EOSE reclaims $7.65; Mastrangelo JPM fireside Tue Jun 23 is next live catalyst',
-    takeaway:  'No new filings or press releases since Jun 18 Redbird PO. Stock recovered Mon Jun 21 (+3.8%, $7.67) after Friday\'s post-catalyst fade. Rights record date Jul 1 is nine days out; all eyes on JPM fireside tomorrow for FPUSA pipeline and Germany/CAPAC update.',
+    headline:  'Fifth catalyst in two weeks: independent fire testing validates Z3 safety; ISO 14001 certified',
+    takeaway:  'Before the Monday open (Jun 22), Eos said independent destructive-abuse testing by the Energy Safety Response Group found the Z3 system exhibited no thermal runaway, no sustained fire, no module-to-module propagation and no off-gas ignition \u2014 third-party validation of Z3\'s core safety pitch \u2014 and that it earned ISO 14001 certification. It extends an unusually dense run of announcements into the weeks before the Jul 1 rights-offering record date.',
     bullets: [
-      'Stock closed $7.67 Mon Jun 21, up from $7.38 Friday close on 33.9M vol (above 25.8M avg). Intraday range $7.20\u2013$8.50 \u2014 buyers absorbed the dip, but intraday rejection at $8.50 shows near-term resistance.',
-      'No new IR releases or SEC filings since Jun 18 (Redbird FPUSA first PO, 100 MW / 400 MWh ERCOT). Jun week\'s trifecta \u2014 Line 2 commercial startup, CAPAC Germany MSA (750 MWh / 2 GWh pathway), Redbird \u2014 remains the operative tape.',
-      'JPM Natural Resources Conference: CEO Mastrangelo fireside Tue Jun 23, hosted by JPM analyst Mark Strouse (Neutral, $9 PT). Watch for FPUSA 12 GWh pipeline conversion update, Germany CAPAC milestone timing, TURBINE-X/AI pilot scope.',
-      'Rights offering clock: record date Jul 1 (9 days), distribution Jul 2. At $7.65 spot, estimated 10\u201320% VWAP discount implies subscription price ~$6.10\u2013$6.90. Dilution event keeps short sellers active; execution terms due at commencement.',
-      'Ofgem Cap & Floor Window 1 Initial Decision remains absent \u2014 "Spring 2026" window now overdue. A positive UK ruling is the single largest unpriced binary catalyst for the bull case; silence is not a negative signal, just unresolved.',
-      'Analyst setup: 4 Buy / 5 Hold / 0 Sell, avg PT $9.63 (+26% upside from $7.65). Needham top at $11. Next PT move likely contingent on rights offer pricing or FPUSA second PO conversion.'
+      'Independent fire testing (Energy Safety Response Group): under direct-flame and overcharge abuse, the Z3 system showed no thermal runaway, no sustained fire, no propagation between modules, no off-gas ignition. Hard third-party backing for the "non-flammable, no thermal-runaway" advantage vs. lithium-ion.',
+      'Why it matters commercially: safety validation eases siting/permitting, supports insurance underwriting, and aligns with NFPA 855 \u2014 increasingly decisive for utility- and data-center-scale projects. Eos also received ISO 14001 environmental-management certification.',
+      'Cadence watch (both ways): this is the fifth catalyst in ~two weeks \u2014 record date (Jun 11) \u2192 Line 2 (Jun 16) \u2192 Germany/CAPAC (Jun 17) \u2192 first FPUSA PO (Jun 18) \u2192 fire test (Jun 22). A bull reads momentum; a skeptic notes good news clustering just ahead of a dilutive raise. We surface it; you weigh it.',
+      'Price context: last traded close was Thursday Jun 18 at $7.65 (+0.7%). US markets were closed Friday Jun 19 (Juneteenth) and over the weekend, so Monday Jun 22 opens with the tape unchanged from Thursday \u2014 the fire-test news hits an untraded gap.',
+      'Rights offering clock: record date Jul 1 (9 days), distribution Jul 2; units of stock + warrants at a ~10\u201320% discount to a 15\u201330 day VWAP (rough subscription price ~$6.10\u2013$6.90 at recent levels). CEO Mastrangelo\'s JPM Energy & Natural Resources fireside is tomorrow, Tue Jun 23.',
+      'Still absent: Ofgem\'s UK Cap & Floor Window 1 Initial Decision, guided to "Spring 2026" and now overdue with the window elapsed \u2014 the largest unpriced binary for the bull case (see \u00a708b).'
     ],
-    price:   { last: 7.65, changePct: null, note: 'auto-refresh 07:03Z Jun 22 \u00b7 Stooq delayed' },
+    price:   { last: 7.65, changePct: null, note: 'Jun 18 close $7.65 \u2014 last session before the Juneteenth (Jun 19) holiday + weekend; fire-test news broke pre-open Mon Jun 22 (see live ticker for the current print)' },
     sources: [
-      { label: 'Eos IR news releases', url: 'https://investors.eose.com/news-releases' },
-      { label: 'EOSE Jun 18 Redbird FPUSA PO', url: 'https://investors.eose.com/news-releases/news-release-details/eos-energy-enterprises-announces-first-purchase-order-under' },
-      { label: 'Rights offering record date Jun 11', url: 'https://investors.eose.com/news-releases/news-release-details/eos-energy-announces-record-date-rights-offering' },
-      { label: 'MarketBeat EOSE ratings', url: 'https://www.marketbeat.com/stocks/NASDAQ/EOSE/' },
-      { label: 'StockTitan EOSE news', url: 'https://www.stocktitan.net/news/EOSE/' }
+      { label: 'Independent fire testing + ISO 14001 (Jun 22)', url: 'https://investors.eose.com/news-releases/news-release-details/independent-fire-testing-confirms-eos-z3-battery-system' },
+      { label: 'First FPUSA purchase order \u2014 Redbird (Jun 18)', url: 'https://investors.eose.com/news-releases/news-release-details/eos-energy-enterprises-announces-first-purchase-order-under' },
+      { label: 'Rights offering record date (Jun 11)', url: 'https://investors.eose.com/news-releases/news-release-details/eos-energy-announces-record-date-rights-offering' },
+      { label: 'Eos IR newsroom', url: 'https://investors.eose.com/news-releases' }
     ]
   },
 
@@ -451,6 +450,7 @@ window.EOSE_DATA = {
     { date: 'May 13, 2026', event: 'Q1 2026 earnings · Frontier Power USA formation · S-3ASR shelf filed', status: 'Reported [Company]',         tone: 'done'   },
     { date: 'May 21, 2026', event: 'FPUSA converts 480 MWh from Bimergen (3 ERCOT projects) — first deployment under the 2 GWh reservation', status: 'Reported [Counterparty]', tone: 'done' },
     { date: 'Jun 18, 2026', event: 'First firm purchase order under FPUSA\'s 2 GWh reservation — Redbird (100 MW / 400 MWh, ERCOT, Z3); release also cites ~50% of a 1 GWh Bridgelink MSA fulfilled + 12 GWh dev pipeline (ERCOT/PJM/CAISO/MISO)', status: 'Reported [Company]', tone: 'done' },
+    { date: 'Jun 22, 2026', event: 'Independent fire testing (Energy Safety Response Group) confirms Z3 system — no thermal runaway, no sustained fire, no propagation, no off-gas ignition; Eos also earns ISO 14001 certification', status: 'Reported [Company]', tone: 'done' },
     { date: 'Mid-2026',     event: 'Notices-to-Proceed (NTPs) on the 480 MWh Texas portfolio',              status: 'Watch [Counterparty]',     tone: 'soon'   },
     { date: 'Jun 8, 2026',  event: 'Lagi CFO effective date · Kroeker returns to CCO-only role',           status: 'Imminent [Company]',         tone: 'soon'   },
     { date: 'Spring 2026',  event: 'Ofgem publishes Initial Decision List for LDES Cap & Floor Window 1 (UK)', status: 'Watch [Regulator]',        tone: 'soon'   },
@@ -739,7 +739,7 @@ window.EOSE_DATA = {
         { k: 'Form factor',              v: 'Indensity Core™ slotted into steel superstructure',    note: 'Stacks horizontally AND vertically' },
         { k: 'Deployment',               v: 'Indoor + outdoor weather-ready',        note: 'Adapts to constrained site footprints' },
         { k: 'Integrated components',    v: 'Z3 modules + DawnOS + onboard cooling + power mgmt', note: 'Single self-contained unit' },
-        { k: 'Safety',                   v: 'Non-flammable, recyclable, cyber-hardened via DawnOS', note: 'No thermal runaway risk' }
+        { k: 'Safety',                   v: 'Non-flammable, recyclable, cyber-hardened via DawnOS', note: 'No thermal runaway risk — independently validated Jun 2026 (Energy Safety Response Group abuse testing: no thermal runaway, fire or propagation)' }
       ],
       applications: ['AI data centers', 'Military bases', 'Manufacturing facilities', 'Urban infrastructure', 'Grid support'],
       sources: [
@@ -764,7 +764,8 @@ window.EOSE_DATA = {
         { k: 'Design life',              v: '25+ years',                              note: 'No moving parts; closed system' },
         { k: 'Capacity retention',       v: '~97% of rated capacity',                 note: 'eose.com Cube page' },
         { k: 'Hazmat classification',    v: '"Zero charge" for shipping',             note: 'Non-flammable, non-corrosive' },
-        { k: 'Certifications',           v: 'UL 1973 + UL 9540A',                     note: 'Per Z3 module product sheet' }
+        { k: 'Certifications',           v: 'UL 1973 + UL 9540A',                     note: 'Per Z3 module product sheet' },
+        { k: 'Independent fire test',    v: 'No thermal runaway / fire / propagation', note: 'Energy Safety Response Group destructive-abuse testing, Jun 2026 — no off-gas ignition; supports NFPA 855 siting. Company also ISO 14001 certified.' }
       ],
       sources: [
         { label: 'eose.com · Cube solution page',           url: 'https://www.eose.com/solutions/eos-cube/' },
@@ -1124,6 +1125,12 @@ window.EOSE_DATA = {
 
   // ────────── NEW: Recent history (context for cold readers) ──────────
   recentHistory: [
+    {
+      date:  '2026-06-22',
+      title: 'Independent fire testing validates Z3 safety; ISO 14001 certified',
+      body:  'Independent destructive-abuse testing by the Energy Safety Response Group found the Eos Z3 system exhibited no thermal runaway, no sustained fire, no module-to-module propagation and no off-gas ignition under direct-flame and overcharge conditions — third-party validation of the safety profile that is Z3\'s core differentiator versus lithium-ion. Eos also received ISO 14001 environmental-management certification. Commercially this eases siting/permitting, supports insurance underwriting, and aligns with NFPA 855 — increasingly decisive for utility- and data-center-scale projects. It is the fifth catalyst in roughly two weeks, an unusually dense run of announcements landing just ahead of the Jul 1 rights-offering record date.',
+      url:   'https://investors.eose.com/news-releases/news-release-details/independent-fire-testing-confirms-eos-z3-battery-system'
+    },
     {
       date:  '2026-06-18',
       title: 'First firm purchase order under FPUSA\'s 2 GWh reservation — Redbird (400 MWh)',

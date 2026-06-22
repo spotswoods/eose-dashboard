@@ -1,1 +1,12 @@
-[]
+[
+  {
+    "iso": "2026-06-22T12:30:00Z",
+    "date": "2026-06-22",
+    "source": "Eos Energy (press release)",
+    "headline": "Independent Fire Testing Confirms Eos Z3 Battery System Exhibited No Thermal Runaway, No Sustained Fire, and No Propagation Under Abuse Testing; Company Receives ISO 14001 Certification",
+    "url": "https://investors.eose.com/news-releases/news-release-details/independent-fire-testing-confirms-eos-z3-battery-system",
+    "summary": "Independent destructive-abuse testing by the Energy Safety Response Group (direct flame + overcharge) confirmed the Z3 system showed no thermal runaway, no sustained fire, no module-to-module propagation and no off-gas ignition — third-party validation of Z3's core safety advantage, supporting siting/permitting, insurance and NFPA 855 alignment. Eos also received ISO 14001 environmental-management certification.",
+    "tag": "catalyst",
+    "expires": "2026-08-22"
+  }
+]
