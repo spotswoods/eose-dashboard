@@ -30,24 +30,24 @@ window.EOSE_DATA = {
   // Refreshed by /equity-research:morning-note via a scheduled task in Cowork.
   // session = 'pre-open' (Swedish AM, ~07:00 CEST) | 'post-close' (Swedish PM, ~22:30 CEST)
   morningNote: {
-    updatedAt: '2026-06-22T15:00:00+02:00',
-    session:   'pre-open',
-    headline:  'Fifth catalyst in two weeks: independent fire testing validates Z3 safety; ISO 14001 certified',
-    takeaway:  'Before the Monday open (Jun 22), Eos said independent destructive-abuse testing by the Energy Safety Response Group found the Z3 system exhibited no thermal runaway, no sustained fire, no module-to-module propagation and no off-gas ignition \u2014 third-party validation of Z3\'s core safety pitch \u2014 and that it earned ISO 14001 certification. It extends an unusually dense run of announcements into the weeks before the Jul 1 rights-offering record date.',
+    updatedAt: '2026-06-22T22:30:00+02:00',
+    session:   'post-close',
+    headline:  'Fire-test pop fades to a -2.6% close; stock drifts to $7.45 on thin volume',
+    takeaway:  'EOSE closed Jun 22 at $7.45 (-2.6% vs Jun 18 $7.65) on only 10.1M shares — less than half the 22M avg. The pre-open safety catalyst got a brief bid (high $7.80) then sold off steadily all session. JPM fireside tomorrow is the next test; rights record date Jul 1.',
     bullets: [
-      'Independent fire testing (Energy Safety Response Group): under direct-flame and overcharge abuse, the Z3 system showed no thermal runaway, no sustained fire, no propagation between modules, no off-gas ignition. Hard third-party backing for the "non-flammable, no thermal-runaway" advantage vs. lithium-ion.',
-      'Why it matters commercially: safety validation eases siting/permitting, supports insurance underwriting, and aligns with NFPA 855 \u2014 increasingly decisive for utility- and data-center-scale projects. Eos also received ISO 14001 environmental-management certification.',
-      'Cadence watch (both ways): this is the fifth catalyst in ~two weeks \u2014 record date (Jun 11) \u2192 Line 2 (Jun 16) \u2192 Germany/CAPAC (Jun 17) \u2192 first FPUSA PO (Jun 18) \u2192 fire test (Jun 22). A bull reads momentum; a skeptic notes good news clustering just ahead of a dilutive raise. We surface it; you weigh it.',
-      'Price context: last traded close was Thursday Jun 18 at $7.65 (+0.7%). US markets were closed Friday Jun 19 (Juneteenth) and over the weekend, so Monday Jun 22 opens with the tape unchanged from Thursday \u2014 the fire-test news hits an untraded gap.',
-      'Rights offering clock: record date Jul 1 (9 days), distribution Jul 2; units of stock + warrants at a ~10\u201320% discount to a 15\u201330 day VWAP (rough subscription price ~$6.10\u2013$6.90 at recent levels). CEO Mastrangelo\'s JPM Energy & Natural Resources fireside is tomorrow, Tue Jun 23.',
-      'Still absent: Ofgem\'s UK Cap & Floor Window 1 Initial Decision, guided to "Spring 2026" and now overdue with the window elapsed \u2014 the largest unpriced binary for the bull case (see \u00a708b).'
+      'Jun 22 session (first day since Juneteenth): opened $7.67 on fire-test tailwind, hit $7.80 intraday, faded to close $7.45 (-2.6% vs Jun 18). Volume 10.1M vs ~22M avg — thin post-holiday tape, not a conviction sell.',
+      'Fire test priced and forgotten: the pre-open ESRG safety release got a brief bid but didn\'t hold. Six catalysts in two weeks has compressed per-announcement lift; market wants backlog conversion, not more PRs.',
+      'After-hours quote: $7.34 at ~16:17 ET (first post-close print), drift lower consistent with no new catalyst. Monitor for any AH headline before the open.',
+      'Catalyst tomorrow (Jun 23): CEO Mastrangelo at JPM Energy & Natural Resources Conference. Watch for FPUSA ramp commentary, UK/Ofgem update, or Q2 throughput color — any of those would move the stock.',
+      'Rights offering: record date Jul 1 (9 days), distribution Jul 2. Est. subscription price ~$6.10–$6.90 (10–20% discount to VWAP). Overhang visible — buyers reluctant to pay up ahead of the dilutive raise.',
+      'Key unpriced binary: Ofgem Cap & Floor Window 1 Initial Decision (Frontier Power Ltd. ~11 GWh). Guided "Spring 2026," weeks overdue. No update today. A green light reopens the UK thesis materially.'
     ],
-    price:   { last: 7.65, changePct: null, note: 'Jun 18 close $7.65 \u2014 last session before the Juneteenth (Jun 19) holiday + weekend; fire-test news broke pre-open Mon Jun 22 (see live ticker for the current print)' },
+    price:   { last: 7.45, changePct: -2.61, note: 'Jun 22 close · open $7.67 / high $7.80 / low $7.34 · 10.1M vol vs ~22M avg · data/history.json (GH Actions)' },
     sources: [
       { label: 'Independent fire testing + ISO 14001 (Jun 22)', url: 'https://investors.eose.com/news-releases/news-release-details/independent-fire-testing-confirms-eos-z3-battery-system' },
-      { label: 'First FPUSA purchase order \u2014 Redbird (Jun 18)', url: 'https://investors.eose.com/news-releases/news-release-details/eos-energy-enterprises-announces-first-purchase-order-under' },
-      { label: 'Rights offering record date (Jun 11)', url: 'https://investors.eose.com/news-releases/news-release-details/eos-energy-announces-record-date-rights-offering' },
-      { label: 'Eos IR newsroom', url: 'https://investors.eose.com/news-releases' }
+      { label: 'EOSE price data — data/history.json', url: 'https://finance.yahoo.com/quote/EOSE/' },
+      { label: 'JPM Energy conference Jun 23', url: 'https://investors.eose.com/events-and-presentations' },
+      { label: 'Rights offering record date (Jun 11)', url: 'https://investors.eose.com/news-releases/news-release-details/eos-energy-announces-record-date-rights-offering' }
     ]
   },
 
