@@ -52,6 +52,19 @@ and the .ics calendar download):
   quarter to keep the block readable.
 - Fuzzy, undated milestones belong in `catalysts`, not `keyDates`.
 
+**Never invent a trading session.** US equity markets are closed on weekends
+and market holidays (New Year's, MLK Day, Presidents' Day, Good Friday,
+Memorial Day, **Juneteenth — Jun 19**, Independence Day, Labor Day,
+Thanksgiving, Christmas; an early 1pm close the day after Thanksgiving and on
+Christmas Eve). Before writing any price-action sentence, confirm the date was
+an actual trading day and use the real prior close — the authoritative series
+is `data/history.json` (each `bars[]` entry is a real session; if there's no
+bar for a date, the market was closed). Do not fabricate an intraday high/low
+or a close for a non-trading day, and get the day-of-week right (e.g. don't
+call Jun 23 "Monday" — verify against the calendar). When the last session is
+stale because of a holiday/weekend, say so explicitly rather than inventing a
+move.
+
 ## Content conventions
 
 - Every numeric claim links to a primary source (SEC EDGAR, Eos IR, Ofgem,

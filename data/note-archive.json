@@ -1,5 +1,24 @@
 [
  {
+  "updatedAt": "2026-06-22T09:15:00+02:00",
+  "session": "pre-open",
+  "headline": "Quiet long weekend after the catalyst run — JPM fireside Tue Jun 23 is the next live event",
+  "takeaway": "No new filings or press releases since the Jun 18 Redbird PO. The last trading day was Thursday Jun 18 ($7.65 close) — US markets were closed Friday Jun 19 for Juneteenth, so the stock has not traded since the catalyst week capped out. Attention now turns to CEO Mastrangelo's JPM fireside tomorrow (Tue Jun 23) and the rights-offering record date on Jul 1.",
+  "bullets": [
+   "No price action since Thursday: last close was $7.65 on Jun 18 (+0.7% vs Jun 17), on ~33.9M shares. Markets were shut Fri Jun 19 (Juneteenth) and over the weekend, so Monday Jun 22 opens with the tape unchanged from Thursday.",
+   "The week that was: a four-catalyst run — rights record date (Jun 11) → Line 2 commercial production (Jun 16) → Germany/CAPAC MSA (Jun 17) → first FPUSA purchase order, Redbird (Jun 18) — lifted EOSE from ~$6.38 (Jun 15) to $7.65, roughly +20% in four sessions.",
+   "No new IR releases or SEC filings since Jun 18 (Redbird, 100 MW / 400 MWh, ERCOT, Z3). That week's trifecta-plus remains the operative story into the JPM event.",
+   "JPM Energy & Natural Resources Conference: CEO Mastrangelo fireside on Tue Jun 23 (covering analyst Mark Strouse, JPM, Neutral/$9 PT). Watch for color on the 12 GWh FPUSA development pipeline, Germany/CAPAC milestone timing, and TURBINE-X.",
+   "Rights offering clock: record date Jul 1 (9 days), distribution Jul 2. At ~$7.65 a 10–20% discount to the VWAP window implies a rough subscription price of ~$6.10–$6.90; final terms come at commencement.",
+   "Still absent: Ofgem's UK Cap & Floor Window 1 Initial Decision, guided to \"Spring 2026\" and now overdue with the window closed — the largest unpriced binary for the bull case (see §08b). Silence is not a negative signal, just unresolved."
+  ],
+  "price": {
+   "last": 7.65,
+   "changePct": null,
+   "note": "Jun 18 close $7.65 — last session before the Juneteenth (Jun 19) holiday + weekend; quote feed carries it into Mon Jun 22 pre-open"
+  }
+ },
+ {
   "updatedAt": "2026-06-18T23:00:00+02:00",
   "session": "post-close",
   "headline": "Reservation → order: Eos books first firm PO under FPUSA's 2 GWh deal (Redbird, 400 MWh) — third catalyst in three days",

@@ -619,14 +619,14 @@ window.EOSE_DATA = {
   //   - Describe Eos exposure factually
   //   - Pair "upside" + "downside" + "base" outcomes equally — don't predict
   catalystWindow: {
-    framing: 'Three regulatory decisions sit within the next ~5 months that touch the project-finance bottleneck LDES has always had. Eos hardware is in the application stack on all three. The decisions don\'t guarantee Eos revenue — they shape it, in both directions. Note: as of mid-June 2026, Ofgem has NOT yet published its Window 1 Initial Decision List — the "Spring 2026" window is at its very end with no announcement, so this is the most overdue item to watch.',
+    framing: 'Three regulatory decisions sit within the next ~5 months that touch the project-finance bottleneck LDES has always had. Eos hardware is in the application stack on all three. The decisions don\'t guarantee Eos revenue — they shape it, in both directions. Note: as of late June 2026, Ofgem has NOT yet published its Window 1 Initial Decision List — the "Spring 2026" window has now elapsed with no announcement, so this is the most overdue item to watch.',
     upcoming: [
       {
         targetEnd: '2026-06-20',
         anchor:    'Spring 2026',
         regulator: 'Ofgem (UK)',
         label:     'Initial Decision List · LDES Cap & Floor Window 1',
-        eosExposure: 'STILL PENDING as of mid-June 2026 — no decision published; the stated Spring window is essentially closing. Frontier UK\'s ~11 GWh of Eos-based projects either advance to the shortlist or don\'t. A "yes" doesn\'t commit revenue; a "no" prunes the UK pipeline materially.',
+        eosExposure: 'STILL PENDING as of late June 2026 — no decision published; the stated Spring window has elapsed. Frontier UK\'s ~11 GWh of Eos-based projects either advance to the shortlist or don\'t. A "yes" doesn\'t commit revenue; a "no" prunes the UK pipeline materially.',
         kind: 'preliminary'
       },
       {
