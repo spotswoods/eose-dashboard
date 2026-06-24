@@ -30,24 +30,23 @@ window.EOSE_DATA = {
   // Refreshed by /equity-research:morning-note via a scheduled task in Cowork.
   // session = 'pre-open' (Swedish AM, ~07:00 CEST) | 'post-close' (Swedish PM, ~22:30 CEST)
   morningNote: {
-    updatedAt: '2026-06-22T22:30:00+02:00',
-    session:   'post-close',
-    headline:  'Fire-test pop fades to a -2.6% close; stock drifts to $7.45 on thin volume',
-    takeaway:  'EOSE closed Jun 22 at $7.45 (-2.6% vs Jun 18 $7.65) on only 10.1M shares — less than half the 22M avg. The pre-open safety catalyst got a brief bid (high $7.80) then sold off steadily all session. JPM fireside tomorrow is the next test; rights record date Jul 1.',
+    updatedAt: '2026-06-24T10:53:00+02:00',
+    session:   'pre-open',
+    headline:  'EOSE slides 14% from post-fire-test high to $6.54 as rights-offer dilution math bites into Jul 1',
+    takeaway:  'No new company news since the Jun 22 fire-test PR. EOSE fell 10.9% on Tuesday (Jun 23, $6.54 close) during CEO Mastrangelo\'s JPM Natural Resources Conference fireside — no negative catalyst, market is pricing dilution mechanics. Rights offering record date is 7 days away; subscription-price arithmetic is tightening fast.',
     bullets: [
-      'Jun 22 session (first day since Juneteenth): opened $7.67 on fire-test tailwind, hit $7.80 intraday, faded to close $7.45 (-2.6% vs Jun 18). Volume 10.1M vs ~22M avg — thin post-holiday tape, not a conviction sell.',
-      'Fire test priced and forgotten: the pre-open ESRG safety release got a brief bid but didn\'t hold. Six catalysts in two weeks has compressed per-announcement lift; market wants backlog conversion, not more PRs.',
-      'After-hours quote: $7.34 at ~16:17 ET (first post-close print), drift lower consistent with no new catalyst. Monitor for any AH headline before the open.',
-      'Catalyst tomorrow (Jun 23): CEO Mastrangelo at JPM Energy & Natural Resources Conference. Watch for FPUSA ramp commentary, UK/Ofgem update, or Q2 throughput color — any of those would move the stock.',
-      'Rights offering: record date Jul 1 (9 days), distribution Jul 2. Est. subscription price ~$6.10–$6.90 (10–20% discount to VWAP). Overhang visible — buyers reluctant to pay up ahead of the dilutive raise.',
-      'Key unpriced binary: Ofgem Cap & Floor Window 1 Initial Decision (Frontier Power Ltd. ~11 GWh). Guided "Spring 2026," weeks overdue. No update today. A green light reopens the UK thesis materially.'
+      'Jun 23 close $6.54 (−10.9%, −$0.80 from Jun 22 $7.34 AH) on no new negative catalyst — stock is −14% from the Mon Jun 22 intraday high of $7.80 and −15% from the Jun 18 close of $7.65. Selling pressure consistent with pre-record-date dilution positioning.',
+      'JPM Natural Resources Conference (Jun 23, 9:10 AM EDT): CEO Mastrangelo fireside with analyst Mark Strouse; included 1×1 meetings. No material new disclosures reported; webcast replay available on Eos IR events page.',
+      'Rights arithmetic tightening: Jul 1 record date now 7 days out. Trailing ~15-day VWAP est. ~$6.70 → implied sub price ~$5.35–$6.03 (10–20% discount). Stock at $6.54 trades near the top of that implied range — dilution overhang is live and measurable.',
+      'No new IR press releases or SEC 8-K filings since the Jun 22 fire-test / ISO 14001 PR. Pre-open quote ~$6.49 (Stooq, 10:45 CEST). Today is likely a quiet catalyst day — watch for any secondary market activity ahead of the record date.',
+      'Ofgem Cap & Floor Window 1 Initial Decision List: targeted for "Spring 2026," now running into summer with zero announcement. Largest unpriced binary for the EOSE bull case; an award inclusion would be an immediate re-rating catalyst (see §08b).'
     ],
-    price:   { last: 7.45, changePct: -2.61, note: 'Jun 22 close · open $7.67 / high $7.80 / low $7.34 · 10.1M vol vs ~22M avg · data/history.json (GH Actions)' },
+    price:   { last: 6.49, changePct: -10.9, note: 'Pre-open Jun 24 ~$6.49 (Stooq 10:45 CEST); Jun 23 close $6.54 (−10.9% on the day vs Jun 22 $7.34 AH)' },
     sources: [
+      { label: 'Eos IR newsroom (latest releases)', url: 'https://investors.eose.com/news-releases' },
       { label: 'Independent fire testing + ISO 14001 (Jun 22)', url: 'https://investors.eose.com/news-releases/news-release-details/independent-fire-testing-confirms-eos-z3-battery-system' },
-      { label: 'EOSE price data — data/history.json', url: 'https://finance.yahoo.com/quote/EOSE/' },
-      { label: 'JPM Energy conference Jun 23', url: 'https://investors.eose.com/events-and-presentations' },
-      { label: 'Rights offering record date (Jun 11)', url: 'https://investors.eose.com/news-releases/news-release-details/eos-energy-announces-record-date-rights-offering' }
+      { label: 'Rights offering record date (Jun 11)', url: 'https://investors.eose.com/news-releases/news-release-details/eos-energy-announces-record-date-rights-offering' },
+      { label: 'JPM Natural Resources Conference — Eos events page', url: 'https://investors.eose.com/events-and-presentations' }
     ]
   },
 
