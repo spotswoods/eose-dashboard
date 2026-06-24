@@ -30,25 +30,25 @@ window.EOSE_DATA = {
   // Refreshed by /equity-research:morning-note via a scheduled task in Cowork.
   // session = 'pre-open' (Swedish AM, ~07:00 CEST) | 'post-close' (Swedish PM, ~22:30 CEST)
   morningNote: {
-    updatedAt: '2026-06-24T22:30:00+02:00',
+    updatedAt: '2026-06-24T22:00:00+02:00',
     session:   'post-close',
-    headline:  'EOSE +13% gap-up reversed; closes near day low ~$6.62, rights record date one week out',
-    takeaway:  'EOSE opened Jun 24 at $7.35 (gap up +13% from Jun 23\'s $6.49 close) on no new company catalyst, then sold off all session to close near the day low of ~$6.62. After-hours bid/ask ~$6.52 suggests the gain evaporates. Jul 1 rights-offering record date keeps dilution math front-of-mind with 7 days to go.',
+    headline:  'EOSE slides ~7.5% second day; post-JPM two-day loss ~18%; rights record date Jul 1',
+    takeaway:  'EOSE opened flat at $6.52 Wed (no gap recovery) and continued declining to ~$6.00 by mid-session (-7.5%), extending the post-JPM-conference two-day loss to ~18% from Jun 22\'s $7.34 close. No new filings or PRs; rights-offering record date Jul 1 is the next major event.',
     bullets: [
-      'Jun 24 session: opened $7.35 (gap up +13.3% from Jun 23\'s $6.49 close, matching Jun 22\'s $7.34 close), reversed to close near day low ~$6.62 (+2.0%); after-hours ~$6.52. Day range $6.62–$7.35 — opened at the high, a classically bearish reversal candle.',
-      'No new Eos press releases Jun 24 — IR newsroom unchanged since Jun 22 fire-testing + ISO 14001 PR. No 8-K or Form 4 detected via EDGAR search. Quiet news day; all eyes on the Jul 1 record date.',
-      'Rights-offering overhang: Jul 1 record date is 7 days out; distribution Jul 2. Sub price ~10–20% discount to 15–30-day VWAP (trailing ~$6.50) → implied floor ~$5.20–$5.85. Any bounce keeps inviting dilution-driven sellers.',
-      'Insider filing: Dir. Walters sold 30K option-exercise shares at ~$9.18 (May 28 transaction; Form 4 ~Jun 23). Motley Fool coverage ran Jun 23 — likely amplified that session\'s 11.6% selloff; Jun 24 gap-up consistent with short-covering.',
-      'Jun 23 context: sector sold hard (FLNC −12%, NASDAQ −2.2%); EOSE fell 11.6% ($7.34→$6.49). Jun 24 partial recovery fully reversed — stock is now ~14% below Jun 17\'s $8.10 close and ~18% off the Jun 17 intraday high of $8.10.',
-      'Ofgem Cap & Floor Window 1 Initial Decision still absent — \'Spring 2026\' guidance elapsed. Largest unpriced binary for the bull case. Next structured catalyst: Q2 2026 earnings (est. Aug 2026).'
+      'Jun 24 session: opened $6.52 (+0.5% from $6.49 prev close), declined to ~$6.00 by 1:30 PM ET (-7.5%); volume ~9.8M shares by mid-session (elevated pace). Day low likely tested below $6.05; no late-day recovery observed.',
+      'Two-day cumulative decline ~18% from Jun 22\'s $7.34 close, driven by CEO Mastrangelo\'s J.P. Morgan Natural Resources Conference fireside chat Jun 23; no bounce materialised in today\'s session.',
+      'JPM conference substance (Jun 23): management discussed Line 1+2 manufacturing scale-up, Frontier Power USA pipeline growth, hyperscaler demand; bullish framing but rights-offering dilution math dominated price action.',
+      'Rights offering overhang: Jul 1 record date (7 days); Jul 2 distribution. ~$150M raise at 10–20% discount to 15–30-day VWAP (trailing ~$6.50) → implied sub price ~$5.20–$5.85; creating systematic selling pressure above the implied floor.',
+      'No new catalysts Jun 24: Eos IR unchanged since Jun 22 fire-safety + ISO 14001 PR; no 8-K, Form 4 or material EDGAR activity detected. Quiet news session.',
+      'Next catalysts: rights subscription docs expected ~Jul 2+; Q2 2026 earnings Jul 29. Analyst consensus Hold, avg PT $9.63 (+60% from ~$6.00). Ofgem Cap & Floor Window 1 Initial Decision still pending (Spring 2026 guidance elapsed).'
     ],
-    price:   { last: 6.62, changePct: 2.0, note: 'Jun 24 est. close — opened $7.35 (day high), reversed to low $6.62; A/H bid/ask ~$6.52 · pending GitHub Actions close refresh' },
+    price:   { last: 6.00, changePct: -7.55, note: 'intraday ~1:30 PM ET · StockAnalysis/CBOE delayed · final close pending history.json refresh' },
     sources: [
+      { label: 'StockAnalysis — EOSE quote & news', url: 'https://stockanalysis.com/stocks/eose/' },
       { label: 'Eos Energy IR newsroom', url: 'https://investors.eose.com/news-releases/' },
-      { label: 'Independent fire testing + ISO 14001 (Jun 22, last PR)', url: 'https://investors.eose.com/news-releases/news-release-details/independent-fire-testing-confirms-eos-z3-battery-system' },
+      { label: 'JPM conference transcript (Jun 23)', url: 'https://stockanalysis.com/stocks/eose/transcripts/699631-j-p-morgan-natural-resources-conference-2026/' },
       { label: 'Rights offering record date (Jul 1)', url: 'https://investors.eose.com/news-releases/news-release-details/eos-energy-announces-record-date-rights-offering' },
-      { label: 'Dir. Walters Form 4 — May 28 option exercise/sale', url: 'https://www.sec.gov/Archives/edgar/data/1805077/000162828026039131/0001628280-26-039131-index.htm' },
-      { label: 'Motley Fool — insider sale coverage (Jun 23)', url: 'https://www.fool.com/coverage/filings/2026/06/23/an-insider-just-sold-eos-energy-stock-should-you-too/' }
+      { label: 'StockTitan — EOSE SEC filings (most recent May 14)', url: 'https://www.stocktitan.net/sec-filings/EOSE/' }
     ]
   },
 
