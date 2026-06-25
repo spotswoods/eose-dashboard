@@ -30,25 +30,24 @@ window.EOSE_DATA = {
   // Refreshed by /equity-research:morning-note via a scheduled task in Cowork.
   // session = 'pre-open' (Swedish AM, ~07:00 CEST) | 'post-close' (Swedish PM, ~22:30 CEST)
   morningNote: {
-    updatedAt: '2026-06-24T22:00:00+02:00',
+    updatedAt: '2026-06-25T22:30:00+02:00',
     session:   'post-close',
-    headline:  'EOSE slides ~7.5% second day; post-JPM two-day loss ~18%; rights record date Jul 1',
-    takeaway:  'EOSE opened flat at $6.52 Wed (no gap recovery) and continued declining to ~$6.00 by mid-session (-7.5%), extending the post-JPM-conference two-day loss to ~18% from Jun 22\'s $7.34 close. No new filings or PRs; rights-offering record date Jul 1 is the next major event.',
+    headline:  'FPUSA engages KKR Capital Markets for debt structuring — EOSE closes +2.8% at $6.23',
+    takeaway:  'Frontier Power USA tapped KKR Capital Markets as structuring agent for FPUSA\'s debt financing program, the lone catalyst of the session. EOSE recovered from an early dip to close +2.8% at $6.23 on below-average volume with the Jul 1 rights record date 6 days away.',
     bullets: [
-      'Jun 24 session: opened $6.52 (+0.5% from $6.49 prev close), declined to ~$6.00 by 1:30 PM ET (-7.5%); volume ~9.8M shares by mid-session (elevated pace). Day low likely tested below $6.05; no late-day recovery observed.',
-      'Two-day cumulative decline ~18% from Jun 22\'s $7.34 close, driven by CEO Mastrangelo\'s J.P. Morgan Natural Resources Conference fireside chat Jun 23; no bounce materialised in today\'s session.',
-      'JPM conference substance (Jun 23): management discussed Line 1+2 manufacturing scale-up, Frontier Power USA pipeline growth, hyperscaler demand; bullish framing but rights-offering dilution math dominated price action.',
-      'Rights offering overhang: Jul 1 record date (7 days); Jul 2 distribution. ~$150M raise at 10–20% discount to 15–30-day VWAP (trailing ~$6.50) → implied sub price ~$5.20–$5.85; creating systematic selling pressure above the implied floor.',
-      'No new catalysts Jun 24: Eos IR unchanged since Jun 22 fire-safety + ISO 14001 PR; no 8-K, Form 4 or material EDGAR activity detected. Quiet news session.',
-      'Next catalysts: rights subscription docs expected ~Jul 2+; Q2 2026 earnings Jul 29. Analyst consensus Hold, avg PT $9.63 (+60% from ~$6.00). Ofgem Cap & Floor Window 1 Initial Decision still pending (Spring 2026 guidance elapsed).'
+      'Jun 25 close: EOSE +$0.17 (+2.8%) to $6.23 (range $5.80–$6.59); vol 17.6M vs ~24M avg (73%). Opened $6.15, dipped to ~$5.80 early, then recovered as the FPUSA/KKR headline crossed mid-session.',
+      'FPUSA engaged KKR Capital Markets as structuring agent for its debt program — construction finance, tax equity, and LT project finance. KCM has arranged $2.5T+ globally. Marquee validation for FPUSA.',
+      'Rights countdown: Jul 1 record date at 5 PM ET (6 days away); subscription rights distribute Jul 2. ~$150M raise at 10–20% VWAP discount; over-subscription privilege available. Prospectus supplement TBD.',
+      'No new Eos Energy EDGAR filings today. Last IR release: Jun 22 Z3 fire-testing pass + ISO 14001 certification. Analyst consensus: Hold; avg PT $9.63 (+54% upside from $6.23 close).',
+      'EOSE is −15% from Jun 22\'s $7.34 high as rights-offering pressure persists; KKR\'s mandate on FPUSA debt structure is a structural positive that lowers FPUSA capital-raise execution risk.',
+      'Catalysts: rights subscription docs ~Jul 2+; Q2\'26 earnings Jul 29; Ofgem Cap & Floor Window 1 Initial Decision (outstanding); FPUSA incremental purchase orders under 2 GWh reservation.'
     ],
-    price:   { last: 6.00, changePct: -7.55, note: 'intraday ~1:30 PM ET · StockAnalysis/CBOE delayed · final close pending history.json refresh' },
+    price:   { last: 6.23, changePct: 2.81, note: 'Jun 25 close · StockAnalysis/CBOE delayed · prior close $6.06 (Jun 24)' },
     sources: [
       { label: 'StockAnalysis — EOSE quote & news', url: 'https://stockanalysis.com/stocks/eose/' },
+      { label: 'FPUSA / KKR Capital Markets announcement', url: 'https://www.globenewswire.com/news-release/2026/06/25/3317521/0/en/Frontier-Power-USA-Engages-KKR-Capital-Markets-to-Support-Scaled-Deployment-of-Long-Duration-Energy-Storage.html' },
       { label: 'Eos Energy IR newsroom', url: 'https://investors.eose.com/news-releases/' },
-      { label: 'JPM conference transcript (Jun 23)', url: 'https://stockanalysis.com/stocks/eose/transcripts/699631-j-p-morgan-natural-resources-conference-2026/' },
-      { label: 'Rights offering record date (Jul 1)', url: 'https://investors.eose.com/news-releases/news-release-details/eos-energy-announces-record-date-rights-offering' },
-      { label: 'StockTitan — EOSE SEC filings (most recent May 14)', url: 'https://www.stocktitan.net/sec-filings/EOSE/' }
+      { label: 'Rights offering record date (Jul 1)', url: 'https://investors.eose.com/news-releases/news-release-details/eos-energy-announces-record-date-rights-offering' }
     ]
   },
 
