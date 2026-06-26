@@ -30,23 +30,24 @@ window.EOSE_DATA = {
   // Refreshed by /equity-research:morning-note via a scheduled task in Cowork.
   // session = 'pre-open' (Swedish AM, ~07:00 CEST) | 'post-close' (Swedish PM, ~22:30 CEST)
   morningNote: {
-    updatedAt: '2026-06-25T22:30:00+02:00',
-    session:   'post-close',
-    headline:  'FPUSA engages KKR Capital Markets for debt structuring — EOSE closes +2.8% at $6.23',
-    takeaway:  'Frontier Power USA tapped KKR Capital Markets as structuring agent for FPUSA\'s debt financing program, the lone catalyst of the session. EOSE recovered from an early dip to close +2.8% at $6.23 on below-average volume with the Jul 1 rights record date 6 days away.',
+    updatedAt: '2026-06-26T07:30:00+02:00',
+    session:   'pre-open',
+    headline:  'Quiet overnight — rights record date now 5 days away; EOSE setup into Friday open',
+    takeaway:  'No new press releases or EDGAR filings from Eos Energy overnight. EOSE enters Friday from a $6.23 close (+2.8% on Thursday\'s FPUSA/KKR news). The rights offering record date (Jul 1) and distribution (Jul 2) loom as the near-term overhang; the structural news flow of the past two weeks remains firmly positive.',
     bullets: [
-      'Jun 25 close: EOSE +$0.17 (+2.8%) to $6.23 (range $5.80–$6.59); vol 17.6M vs ~24M avg (73%). Opened $6.15, dipped to ~$5.80 early, then recovered as the FPUSA/KKR headline crossed mid-session.',
-      'FPUSA engaged KKR Capital Markets as structuring agent for its debt program — construction finance, tax equity, and LT project finance. KCM has arranged $2.5T+ globally. Marquee validation for FPUSA.',
-      'Rights countdown: Jul 1 record date at 5 PM ET (6 days away); subscription rights distribute Jul 2. ~$150M raise at 10–20% VWAP discount; over-subscription privilege available. Prospectus supplement TBD.',
-      'No new Eos Energy EDGAR filings today. Last IR release: Jun 22 Z3 fire-testing pass + ISO 14001 certification. Analyst consensus: Hold; avg PT $9.63 (+54% upside from $6.23 close).',
-      'EOSE is −15% from Jun 22\'s $7.34 high as rights-offering pressure persists; KKR\'s mandate on FPUSA debt structure is a structural positive that lowers FPUSA capital-raise execution risk.',
-      'Catalysts: rights subscription docs ~Jul 2+; Q2\'26 earnings Jul 29; Ofgem Cap & Floor Window 1 Initial Decision (outstanding); FPUSA incremental purchase orders under 2 GWh reservation.'
+      'Last close: $6.23 (Jun 25, +2.8%); prior close $6.06 (Jun 24). No overnight news or EDGAR filings from Eos Energy or FPUSA as of 07:30 CEST — today\'s session enters on yesterday\'s KKR catalyst.',
+      'Rights countdown: Jul 1 record date (5 calendar days away); rights distribute Jul 2. Prospectus supplement with subscription terms still outstanding — publication is the next watchpoint. ~$150M raise at 10–20% VWAP discount; over-subscription privilege available.',
+      'FPUSA/KKR confirmed as structuring agent (Jun 25): construction finance, tax equity, and LT project finance for FPUSA\'s 2 GWh pipeline. KCM has arranged $2.5T+ globally — significant de-risking of FPUSA\'s capitalisation plan.',
+      'Recent positive catalysts stack up: Battery Line 2 live at Thorn Hill (Jun 16, targeting 4 GWh annual capacity by end-2026); CAPAC/Germany MSA (Jun 17, 750 MWh committed, up to 2 GWh through 2031); first FPUSA PO — Redbird 400 MWh / ERCOT (Jun 18); Z3 fire-testing pass + ISO 14001 (Jun 22).',
+      'Bear case: rights offering dilution (~$150M new equity) pressures near-term price; EOSE still −15% from Jun 22\'s $7.34 high. Bull case: FPUSA debt structure + Cerberus $100M equity backstops execution; KKR mandate upgrades credibility of the broader capital raise.',
+      'Key upcoming: rights subscription prospectus supplement (imminent); Q2\'26 earnings Jul 29; Ofgem Cap & Floor Window 1 Initial Decision (no date yet); additional FPUSA purchase orders under 2 GWh reservation. Analyst consensus: Hold, avg PT $9.63 (+55% from last close).'
     ],
     price:   { last: 6.23, changePct: 2.81, note: 'Jun 25 close · StockAnalysis/CBOE delayed · prior close $6.06 (Jun 24)' },
     sources: [
       { label: 'StockAnalysis — EOSE quote & news', url: 'https://stockanalysis.com/stocks/eose/' },
-      { label: 'FPUSA / KKR Capital Markets announcement', url: 'https://www.globenewswire.com/news-release/2026/06/25/3317521/0/en/Frontier-Power-USA-Engages-KKR-Capital-Markets-to-Support-Scaled-Deployment-of-Long-Duration-Energy-Storage.html' },
-      { label: 'Eos Energy IR newsroom', url: 'https://investors.eose.com/news-releases/' },
+      { label: 'Eos Energy IR newsroom (last release Jun 22)', url: 'https://investors.eose.com/news-releases/' },
+      { label: 'FPUSA / KKR Capital Markets (Jun 25)', url: 'https://www.globenewswire.com/news-release/2026/06/25/3317521/0/en/Frontier-Power-USA-Engages-KKR-Capital-Markets-to-Support-Scaled-Deployment-of-Long-Duration-Energy-Storage.html' },
+      { label: 'FPUSA Redbird first PO — 400 MWh ERCOT (Jun 18)', url: 'https://www.globenewswire.com/news-release/2026/06/18/3314167/0/en/Eos-Energy-Enterprises-Announces-First-Purchase-Order-Under-Frontier-Power-USA-s-2-GWh-Capacity-Reservation-Agreement.html' },
       { label: 'Rights offering record date (Jul 1)', url: 'https://investors.eose.com/news-releases/news-release-details/eos-energy-announces-record-date-rights-offering' }
     ]
   },
