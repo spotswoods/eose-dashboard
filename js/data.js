@@ -32,21 +32,23 @@ window.EOSE_DATA = {
   morningNote: {
     updatedAt: '2026-06-26T07:30:00+02:00',
     session:   'pre-open',
-    headline:  'Quiet overnight — rights record date now 5 days away; EOSE setup into Friday open',
-    takeaway:  'No new press releases or EDGAR filings from Eos Energy overnight. EOSE enters Friday from a $6.23 close (+2.8% on Thursday\'s FPUSA/KKR news). The rights offering record date (Jul 1) and distribution (Jul 2) loom as the near-term overhang; the structural news flow of the past two weeks remains firmly positive.',
+    headline:  'Ofgem publishes minded-to (provisional) LDES Window 1 decisions — the long-awaited UK catalyst, in proposal form; rights record date Jul 1',
+    takeaway:  'EOSE enters Friday from a $6.23 close (+2.8% on Thursday\'s FPUSA/KKR news). New today: Ofgem published its "minded-to" (provisional) decisions for the UK LDES Cap & Floor Window 1 — the long-awaited UK catalyst, landing in provisional form (consultation to Aug 7, binding awards after). "Minded-to" means proposed, not final; whether Frontier UK\'s Eos-tech projects are on the provisional award list should be confirmed against Ofgem\'s project tables. The rights-offering record date (Jul 1) and distribution (Jul 2) remain the near-term overhang; the structural news flow of the past two weeks stays firmly positive.',
     bullets: [
       'Last close: $6.23 (Jun 25, +2.8%); prior close $6.06 (Jun 24). No overnight news or EDGAR filings from Eos Energy or FPUSA as of 07:30 CEST — today\'s session enters on yesterday\'s KKR catalyst.',
       'Rights countdown: Jul 1 record date (5 calendar days away); rights distribute Jul 2. Prospectus supplement with subscription terms still outstanding — publication is the next watchpoint. ~$150M raise at 10–20% VWAP discount; over-subscription privilege available.',
       'FPUSA/KKR confirmed as structuring agent (Jun 25): construction finance, tax equity, and LT project finance for FPUSA\'s 2 GWh pipeline. KCM has arranged $2.5T+ globally — significant de-risking of FPUSA\'s capitalisation plan.',
       'Recent positive catalysts stack up: Battery Line 2 live at Thorn Hill (Jun 16, targeting 4 GWh annual capacity by end-2026); CAPAC/Germany MSA (Jun 17, 750 MWh committed, up to 2 GWh through 2031); first FPUSA PO — Redbird 400 MWh / ERCOT (Jun 18); Z3 fire-testing pass + ISO 14001 (Jun 22).',
       'Bear case: rights offering dilution (~$150M new equity) pressures near-term price; EOSE still −15% from Jun 22\'s $7.34 high. Bull case: FPUSA debt structure + Cerberus $100M equity backstops execution; KKR mandate upgrades credibility of the broader capital raise.',
-      'Key upcoming: rights subscription prospectus supplement (imminent); Q2\'26 earnings Jul 29; Ofgem Cap & Floor Window 1 Initial Decision (no date yet); additional FPUSA purchase orders under 2 GWh reservation. Analyst consensus: Hold, avg PT $9.63 (+55% from last close).'
+      'Ofgem (NEW, Jun 26): "minded-to" (provisional) Cap & Floor Window 1 decisions published — out for consultation to Aug 7, with final binding awards after. This is the long-flagged UK catalyst arriving in provisional form. Whether Frontier UK\'s ~16 Eos/Invinity projects (cleared the Sept 2025 eligibility round) are on the provisional list needs confirming against Ofgem\'s tables; "minded-to" is proposed, not awarded.',
+      'Key upcoming: rights subscription prospectus supplement (imminent); Q2\'26 earnings Jul 29; Ofgem final cap & floor awards (after the Aug 7 consultation close); additional FPUSA purchase orders under the 2 GWh reservation. Analyst consensus: Hold, avg PT $9.63 (+55% from last close).'
     ],
     price:   { last: 6.23, changePct: 2.81, note: 'Jun 25 close · StockAnalysis/CBOE delayed · prior close $6.06 (Jun 24)' },
     sources: [
       { label: 'StockAnalysis — EOSE quote & news', url: 'https://stockanalysis.com/stocks/eose/' },
       { label: 'Eos Energy IR newsroom (last release Jun 22)', url: 'https://investors.eose.com/news-releases/' },
       { label: 'FPUSA / KKR Capital Markets (Jun 25)', url: 'https://www.globenewswire.com/news-release/2026/06/25/3317521/0/en/Frontier-Power-USA-Engages-KKR-Capital-Markets-to-Support-Scaled-Deployment-of-Long-Duration-Energy-Storage.html' },
+      { label: 'Ofgem LDES Window 1 minded-to decisions (Jun 26)', url: 'https://www.ofgem.gov.uk/consultation/long-duration-electricity-storage-window-1-minded-decisions' },
       { label: 'FPUSA Redbird first PO — 400 MWh ERCOT (Jun 18)', url: 'https://www.globenewswire.com/news-release/2026/06/18/3314167/0/en/Eos-Energy-Enterprises-Announces-First-Purchase-Order-Under-Frontier-Power-USA-s-2-GWh-Capacity-Reservation-Agreement.html' },
       { label: 'Rights offering record date (Jul 1)', url: 'https://investors.eose.com/news-releases/news-release-details/eos-energy-announces-record-date-rights-offering' }
     ]
@@ -454,13 +456,14 @@ window.EOSE_DATA = {
     { date: 'Jun 22, 2026', event: 'Independent fire testing (Energy Safety Response Group) confirms Z3 system — no thermal runaway, no sustained fire, no propagation, no off-gas ignition; Eos also earns ISO 14001 certification', status: 'Reported [Company]', tone: 'done' },
     { date: 'Mid-2026',     event: 'Notices-to-Proceed (NTPs) on the 480 MWh Texas portfolio',              status: 'Watch [Counterparty]',     tone: 'soon'   },
     { date: 'Jun 8, 2026',  event: 'Lagi CFO effective date · Kroeker returns to CCO-only role',           status: 'Imminent [Company]',         tone: 'soon'   },
-    { date: 'Spring 2026',  event: 'Ofgem publishes Initial Decision List for LDES Cap & Floor Window 1 (UK)', status: 'Watch [Regulator]',        tone: 'soon'   },
+    { date: 'Jun 26, 2026', event: 'Ofgem publishes "minded-to" (provisional) decisions for LDES Cap & Floor Window 1 — consultation open to Aug 7; Frontier UK\'s Eos-tech project status to be confirmed against the project list', status: 'Reported [Regulator]', tone: 'done' },
     { date: 'Jun 16, 2026', event: 'Line 2 LAUNCHED commercial production at Thorn Hill (after Site Acceptance Testing) — ahead of the end-Q2 target; ~4 GWh combined run-rate targeted by end-2026', status: 'Reported [Company]', tone: 'done' },
     { date: 'Jun 17, 2026', event: 'Germany/DACH entry: binding Master Supply Agreement with CAPAC Energy — exclusive Germany/Austria/Switzerland through 2031, 750 MWh committed (pathway to 2 GWh), first international Indensity framework; first projects target commercial ops late 2026', status: 'Reported [Company]', tone: 'done' },
     { date: 'Late 2026',    event: 'CAPAC\'s first German Indensity projects target commercial operation — purchase orders flow into reported backlog',  status: 'Watch [Counterparty]',  tone: 'soon' },
+    { date: 'Jun 25, 2026', event: 'Frontier Power USA engages KKR Capital Markets as structuring agent — construction finance, tax equity + long-term project finance for the 2 GWh pipeline; de-risks FPUSA capitalisation alongside Cerberus\' $100M equity', status: 'Reported [Counterparty]', tone: 'done' },
     { date: 'Jul 1, 2026',  event: 'Rights offering record date (5 pm ET; announced Jun 11) — rights distributed Jul 2; units of stock + warrants at ~10–20% VWAP discount; exact ratio/price in the prospectus supplement', status: 'Announced [Company]', tone: 'soon' },
     { date: 'Q2 2026',      event: 'Frontier Power USA closing conditions (Cerberus warrants + controlling JV equity)',      status: 'Watch [Company]',            tone: 'soon'   },
-    { date: 'Summer 2026',  event: 'Ofgem final cap & floor awards (Window 1) — Frontier UK\'s 11 GWh of Eos-tech projects either awarded the revenue floor or not', status: 'Catalyst [Regulator]', tone: 'soon' },
+    { date: 'After Aug 7, 2026', event: 'Ofgem FINAL cap & floor awards (Window 1) — follows the Aug 7 consultation close; this is the binding step where Frontier UK\'s Eos-tech projects are awarded the revenue floor or not', status: 'Catalyst [Regulator]', tone: 'soon' },
     { date: 'Jul 29, 2026', event: 'Q2 2026 earnings release (indicated)',                                  status: 'Scheduled [Company]',        tone: 'soon'   },
     { date: 'Q3 2026',      event: 'NYSERDA Bulk Storage Program ISCRFP25-1 awards (Eos qualifies for 8+ hr tier)', status: 'Catalyst [Regulator]', tone: 'soon' },
     { date: 'YE 2026',      event: 'Cerberus equity lock-up expiration (extended through year-end 2026)',  status: 'Confirmed [Company]',        tone: 'live'   },
@@ -478,9 +481,9 @@ window.EOSE_DATA = {
   // are filtered out automatically — append new ones as they're announced.
   // `short` is the compact chip label; `label` goes in the calendar file.
   keyDates: [
-    { date: '2026-06-20', short: 'Ofgem initial list',  est: true,
-      label: 'Ofgem Initial Decision List — LDES Cap & Floor Window 1',
-      detail: 'End of the regulator\'s stated Spring 2026 window (estimate, not an announced date). Frontier UK has ~11 GWh of Eos-tech projects in the second-round evaluation.' },
+    { date: '2026-08-07', short: 'Ofgem consult close', est: false,
+      label: 'Ofgem LDES Window 1 — minded-to consultation closes',
+      detail: 'Ofgem published its "minded-to" (provisional) Window 1 cap & floor decisions on Jun 26, 2026; consultation runs to Aug 7, ahead of final binding awards. Confirm Frontier UK\'s Eos-tech project status against Ofgem\'s project list.' },
     { date: '2026-06-23', short: 'JPM conference',      est: false,
       label: 'J.P. Morgan Energy & Natural Resources Conference',
       detail: 'CEO fireside + 1x1s expected — the likely venue for rights-offering structure/timing color and CFO Lagi\'s first public investor appearance.' },
@@ -498,7 +501,7 @@ window.EOSE_DATA = {
       detail: 'Indicated for July 29, 2026. Street will watch the Line 1+2 production ramp and the first FPUSA reservation-to-revenue conversion.' },
     { date: '2026-09-22', short: 'Ofgem final awards',  est: true,
       label: 'Ofgem final cap & floor awards — Window 1',
-      detail: 'End of the regulator\'s stated Summer 2026 window (estimate). Decides the regulated revenue floor for Frontier UK\'s Eos-tech pipeline.' },
+      detail: 'Estimated timing for the FINAL, binding awards that follow the Aug 7 consultation close. Decides the regulated revenue floor for Frontier UK\'s Eos-tech pipeline.' },
     { date: '2026-09-30', short: 'NYSERDA awards',      est: true,
       label: 'NYSERDA Bulk Storage ISCRFP25-1 awards expected',
       detail: 'End of NYSERDA\'s stated Q3 2026 window (estimate). Eos qualifies for the 8+ hour duration tier.' }
@@ -623,11 +626,11 @@ window.EOSE_DATA = {
     framing: 'Three regulatory decisions sit within the next ~5 months that touch the project-finance bottleneck LDES has always had. Eos hardware is in the application stack on all three. The decisions don\'t guarantee Eos revenue — they shape it, in both directions. Note: as of late June 2026, Ofgem has NOT yet published its Window 1 Initial Decision List — the "Spring 2026" window has now elapsed with no announcement, so this is the most overdue item to watch.',
     upcoming: [
       {
-        targetEnd: '2026-06-20',
-        anchor:    'Spring 2026',
+        targetEnd: '2026-08-07',
+        anchor:    'consultation to Aug 7',
         regulator: 'Ofgem (UK)',
-        label:     'Initial Decision List · LDES Cap & Floor Window 1',
-        eosExposure: 'STILL PENDING as of late June 2026 — no decision published; the stated Spring window has elapsed. Frontier UK\'s ~11 GWh of Eos-based projects either advance to the shortlist or don\'t. A "yes" doesn\'t commit revenue; a "no" prunes the UK pipeline materially.',
+        label:     'Minded-to (provisional) decision · LDES Cap & Floor Window 1',
+        eosExposure: 'PUBLISHED Jun 26, 2026 — Ofgem issued its "minded-to" (provisional) decisions for Window 1, now out for consultation until Aug 7 before final awards. "Minded-to" = Ofgem\'s proposed list, not yet binding. Whether Frontier UK\'s Eos-tech projects are on the provisional award list should be confirmed against Ofgem\'s project list; the final cap-and-floor awards are the binding step.',
         kind: 'preliminary'
       },
       {
@@ -682,12 +685,13 @@ window.EOSE_DATA = {
       framework: 'UK regulated revenue floor (and cap) for long-duration storage. Designed to make non-lithium LDES bankable for project lenders. First-of-its-kind in Europe — analogous in spirit to NYSERDA\'s ISC but with both floor and cap.',
       timeline: [
         { date: 'April 8, 2025',  event: 'Window 1 application opens' },
-        { date: 'September 2025', event: '77 applications pass eligibility screening into Phase 2 (project assessment)' },
-        { date: 'Spring 2026',    event: 'Ofgem publishes Initial Decision List (catalyst)' },
-        { date: 'Summer 2026',    event: 'Final cap & floor awards (Window 1) — concrete catalyst' },
-        { date: 'TBD (Q1 2026+)', event: 'Window 2 timing to be announced post-Window 1 learnings' }
+        { date: 'September 2025', event: '77 applications (28.7 GW) pass eligibility into Phase 2 (project assessment)' },
+        { date: 'June 26, 2026',  event: '"Minded-to" (provisional) decisions published — out for consultation (catalyst)' },
+        { date: 'August 7, 2026', event: 'Consultation on the minded-to decisions closes' },
+        { date: 'After Aug 7',    event: 'FINAL cap & floor awards (Window 1) — the binding step' },
+        { date: 'TBD',            event: 'Window 2 timing to be announced post-Window 1 learnings' }
       ],
-      eosRelevance: 'Frontier Power Ltd. (UK) has ~11 GWh of LDES projects in Window 1\'s second-round Project Assessment phase — all using Eos Z3 zinc-bromide technology. These are NOT yet awarded the cap-and-floor revenue mechanism; the Initial Decision List is due Spring 2026 and final awards Summer 2026. Eos is also one of two battery technologies named in the Cerberus £159M / Frontier UK partnership (the other being vanadium flow). Award outcomes flow directly to Eos hardware demand.',
+      eosRelevance: 'Frontier Power Ltd. (UK) entered Window 1 with ~16 projects (~2.6 GW / ~20 GWh) using a mix of Eos Z3 zinc-bromide and Invinity vanadium-flow technology, all of which cleared the September 2025 eligibility round (77 projects / 28.7 GW). On June 26, 2026 Ofgem published its "minded-to" (provisional) decisions for Window 1, now out for consultation to Aug 7 ahead of final, binding awards. "Minded-to" means proposed, not yet awarded — confirm whether Frontier\'s Eos-tech projects are on the provisional list against Ofgem\'s published project tables. A final cap-and-floor award would underpin project-finance for those projects and flow to Eos hardware demand; exclusion would prune the UK pipeline.',
       sources: [
         { label: 'Ofgem LDES Cap & Floor decision page',  url: 'https://www.ofgem.gov.uk/decision/long-duration-electricity-storage-cap-and-floor-application-window-1' },
         { label: 'Modo Energy — Window 1 project ranking', url: 'https://modoenergy.com/research/gb-great-britain-long-duration-energy-electricity-storage-ldes-cap-floor-ofgem-eligibility-september-2025-assessment-bess' },
@@ -1126,6 +1130,18 @@ window.EOSE_DATA = {
 
   // ────────── NEW: Recent history (context for cold readers) ──────────
   recentHistory: [
+    {
+      date:  '2026-06-26',
+      title: 'Ofgem publishes "minded-to" (provisional) LDES Window 1 cap & floor decisions',
+      body:  'Ofgem published its "minded-to" decisions for the UK Long Duration Electricity Storage cap & floor scheme, Window 1 — the long-flagged UK regulatory catalyst, arriving in provisional form. "Minded-to" is regulator-speak for a proposed decision opened for consultation before it is finalised (the confusing part: it reads as suggestions, because that is exactly what it is — Ofgem\'s proposed list, not a binding award). Consultation runs to Aug 7, 2026, with final, binding cap & floor awards after. Frontier Power Ltd. (UK) entered Window 1 with ~16 projects (~2.6 GW / ~20 GWh) using Eos Z3 zinc-bromide and Invinity vanadium-flow, all of which cleared the Sept 2025 eligibility round; whether those specific projects are on the June 26 provisional award list should be confirmed against Ofgem\'s published project tables. A final award would underpin project finance for Frontier UK\'s Eos-tech pipeline; exclusion would prune it.',
+      url:   'https://www.ofgem.gov.uk/consultation/long-duration-electricity-storage-window-1-minded-decisions'
+    },
+    {
+      date:  '2026-06-25',
+      title: 'Frontier Power USA engages KKR Capital Markets to structure its financing',
+      body:  'FPUSA engaged KKR Capital Markets (KCM) as structuring agent to arrange construction finance, tax equity and long-term project finance for its 2 GWh development pipeline. KCM has arranged $2.5T+ of financings globally; the mandate materially de-risks FPUSA\'s capitalisation plan, which sits alongside Cerberus\' $100M equity anchor and the Ariel Green TPI wrap. It complements (does not replace) Eos\' own ~$150M rights-offering contribution. EOSE rose ~2.8% to $6.23 the next session.',
+      url:   'https://www.globenewswire.com/news-release/2026/06/25/3317521/0/en/Frontier-Power-USA-Engages-KKR-Capital-Markets-to-Support-Scaled-Deployment-of-Long-Duration-Energy-Storage.html'
+    },
     {
       date:  '2026-06-22',
       title: 'Independent fire testing validates Z3 safety; ISO 14001 certified',

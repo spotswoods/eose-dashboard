@@ -1,6 +1,6 @@
 {
   "meta": {
-    "_refreshed": "2026-06-23T22:39:20.036Z",
+    "_refreshed": "2026-06-26T07:18:17.485Z",
     "sources": [
       "eose.com (WordPress REST API)",
       "SEC EDGAR submissions API",
@@ -9,11 +9,29 @@
     "counts": {
       "pressReleases": 20,
       "secFilings": 307,
-      "manual": 0,
+      "manual": 2,
       "shown": 14
     }
   },
   "items": [
+    {
+      "iso": "2026-06-26T09:00:00Z",
+      "date": "2026-06-26",
+      "source": "Ofgem (UK regulator)",
+      "headline": "Ofgem publishes \"minded-to\" (provisional) decisions for LDES Cap & Floor Window 1",
+      "url": "https://www.ofgem.gov.uk/consultation/long-duration-electricity-storage-window-1-minded-decisions",
+      "summary": "Ofgem's provisional Window 1 cap & floor decisions for UK long-duration storage, opened for consultation to Aug 7, 2026 before final binding awards. \"Minded-to\" = proposed, not yet awarded. Frontier Power Ltd. (UK) entered Window 1 with ~16 Eos-zinc / Invinity-flow projects (~2.6 GW / 20 GWh); their status on the provisional list should be confirmed against Ofgem's project tables.",
+      "tag": "catalyst"
+    },
+    {
+      "iso": "2026-06-25T12:30:00Z",
+      "date": "2026-06-25",
+      "source": "Frontier Power USA (press release)",
+      "headline": "Frontier Power USA Engages KKR Capital Markets to Support Scaled Deployment of Long-Duration Energy Storage",
+      "url": "https://www.globenewswire.com/news-release/2026/06/25/3317521/0/en/Frontier-Power-USA-Engages-KKR-Capital-Markets-to-Support-Scaled-Deployment-of-Long-Duration-Energy-Storage.html",
+      "summary": "FPUSA engaged KKR Capital Markets as structuring agent for construction finance, tax equity and long-term project finance across its 2 GWh pipeline — de-risking FPUSA's capitalisation alongside Cerberus' $100M equity anchor and the Ariel Green TPI wrap; complements Eos' ~$150M rights-offering contribution.",
+      "tag": "catalyst"
+    },
     {
       "iso": "2026-06-22T17:45:01",
       "date": "2026-06-22",
@@ -120,24 +138,6 @@
       "headline": "Eos Energy Enterprises Appoints Alessandro Lagi as Chief Financial Officer to Advance American Storage Infrastructure at Scale",
       "url": "https://www.eose.com/eos-energy-enterprises-appoints-alessandro-lagi-as-chief-financial-officer-to-advance-american-storage-infrastructure-at-scale/",
       "summary": "Veteran finance executive brings 25 Years of global energy value chain leadership to Eos PITTSBURGH, April 30, 2026 (GLOBE NEWSWIRE) — Eos Energy Enterprises, Inc. (NASDAQ: EOSE) (“Eos” or the “Company”), an American energy company and…",
-      "tag": "catalyst"
-    },
-    {
-      "iso": "2026-04-30T12:00:00Z",
-      "date": "2026-04-30",
-      "source": "SEC EDGAR",
-      "headline": "Material event (8-K)",
-      "url": "https://www.sec.gov/Archives/edgar/data/1805077/000162828026028611/eose-20260429.htm",
-      "summary": "8-K",
-      "tag": "sec-filing"
-    },
-    {
-      "iso": "2026-04-16T01:09:40",
-      "date": "2026-04-16",
-      "source": "Eos Energy (press release)",
-      "headline": "Eos Energy Enterprises & TURBINE-X Launch Private Power Infrastructure Solution for AI, Delivering Hyperscale Capacity in Months, Not Years",
-      "url": "https://www.eose.com/eos-energy-enterprises-turbine-x-launch-private-power-infrastructure-solution-for-ai-delivering-hyperscale-capacity-in-months-not-years/",
-      "summary": "Joint Development Agreement establishes integrated gas-fired generation and Indensity™ storage architecture to meet accelerating power demands of AI infrastructure PITTSBURGH and HOUSTON, April 15, 2026 (GLOBE NEWSWIRE) — Eos Energy…",
       "tag": "catalyst"
     }
   ]

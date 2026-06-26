@@ -1,12 +1,22 @@
 [
   {
-    "iso": "2026-06-22T12:30:00Z",
-    "date": "2026-06-22",
-    "source": "Eos Energy (press release)",
-    "headline": "Independent Fire Testing Confirms Eos Z3 Battery System Exhibited No Thermal Runaway, No Sustained Fire, and No Propagation Under Abuse Testing; Company Receives ISO 14001 Certification",
-    "url": "https://investors.eose.com/news-releases/news-release-details/independent-fire-testing-confirms-eos-z3-battery-system",
-    "summary": "Independent destructive-abuse testing by the Energy Safety Response Group (direct flame + overcharge) confirmed the Z3 system showed no thermal runaway, no sustained fire, no module-to-module propagation and no off-gas ignition — third-party validation of Z3's core safety advantage, supporting siting/permitting, insurance and NFPA 855 alignment. Eos also received ISO 14001 environmental-management certification.",
+    "iso": "2026-06-26T09:00:00Z",
+    "date": "2026-06-26",
+    "source": "Ofgem (UK regulator)",
+    "headline": "Ofgem publishes \"minded-to\" (provisional) decisions for LDES Cap & Floor Window 1",
+    "url": "https://www.ofgem.gov.uk/consultation/long-duration-electricity-storage-window-1-minded-decisions",
+    "summary": "Ofgem's provisional Window 1 cap & floor decisions for UK long-duration storage, opened for consultation to Aug 7, 2026 before final binding awards. \"Minded-to\" = proposed, not yet awarded. Frontier Power Ltd. (UK) entered Window 1 with ~16 Eos-zinc / Invinity-flow projects (~2.6 GW / 20 GWh); their status on the provisional list should be confirmed against Ofgem's project tables.",
     "tag": "catalyst",
-    "expires": "2026-08-22"
+    "expires": "2026-08-10"
+  },
+  {
+    "iso": "2026-06-25T12:30:00Z",
+    "date": "2026-06-25",
+    "source": "Frontier Power USA (press release)",
+    "headline": "Frontier Power USA Engages KKR Capital Markets to Support Scaled Deployment of Long-Duration Energy Storage",
+    "url": "https://www.globenewswire.com/news-release/2026/06/25/3317521/0/en/Frontier-Power-USA-Engages-KKR-Capital-Markets-to-Support-Scaled-Deployment-of-Long-Duration-Energy-Storage.html",
+    "summary": "FPUSA engaged KKR Capital Markets as structuring agent for construction finance, tax equity and long-term project finance across its 2 GWh pipeline — de-risking FPUSA's capitalisation alongside Cerberus' $100M equity anchor and the Ariel Green TPI wrap; complements Eos' ~$150M rights-offering contribution.",
+    "tag": "catalyst",
+    "expires": "2026-08-10"
   }
 ]
