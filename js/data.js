@@ -30,26 +30,24 @@ window.EOSE_DATA = {
   // Refreshed by /equity-research:morning-note via a scheduled task in Cowork.
   // session = 'pre-open' (Swedish AM, ~07:00 CEST) | 'post-close' (Swedish PM, ~22:30 CEST)
   morningNote: {
-    updatedAt: '2026-06-26T22:30:00+02:00',
-    session:   'post-close',
-    headline:  'Ofgem provisionally selects Frontier Legacy (Eos zinc-halide tech) in LDES Window 1 list',
-    takeaway:  'Ofgem\'s "minded-to" decisions (Jun 26) confirm 16 projects, 7,645 MW. Frontier Power UK\'s Frontier Legacy (520 MWh, north Wales; ~50% Eos zinc-halide + ~50% Invinity VFB) is on the list. Provisional — consultation to Aug 7; binding awards after. Rights record date Tuesday Jul 1.',
+    updatedAt: '2026-06-29T07:30:00+02:00',
+    session:   'pre-open',
+    headline:  'Rights record date Tue Jul 1; EOSE -2.6% on Fri despite Ofgem LDES provisional win',
+    takeaway:  'EOSE closed Fri Jun 26 ~$5.93 (-2.6% vs Thu $6.09), reversing a brief Ofgem pop. Rights dilution (~$150M raise at VWAP discount, Cerberus $100M backstop) appears the primary drag; record date two sessions away (Tue Jul 1). Prospectus supplement still outstanding — the key near-term watchpoint.',
     bullets: [
-      'Ofgem LDES W1 minded-to (Jun 26): 16 projects, 7,645 MW. Frontier Power UK confirmed as owner-operator. Frontier Legacy (520 MWh, north Wales) on the list — ~50% Invinity VFB / ~50% Eos zinc-halide tech.',
-      'Invinity RNS (Jun 26): Ofgem cited VFB tech as a \'key factor\' in the Frontier Legacy minded-to decision; ~260 MWh will use Eos zinc-halide. Financial close \'coming months\' — no guarantee.',
-      'No new EDGAR filings Jun 26. Jun 25 close $6.09 (+0.50%), vol ~15.9M (below catalyst-day avg). Jun 26 close unconfirmed at press time; pre-market $6.00 pre-Ofgem, news published ~07:50 UK / ~02:50 ET.',
-      'Rights: record date Tue Jul 1, distribution Jul 2. Prospectus supplement still outstanding — next watchpoint. ~$150M raise at VWAP discount; Cerberus $100M backstop; over-subscription privilege.',
-      'Bear: minded-to ≠ final award; Aug 7 consultation precedes binding decision; rights dilution. Bull: seven catalyst weeks culminate in UK regulatory validation + strong US execution track record.',
-      'Next: rights prospectus supplement (imminent); Ofgem binding awards after Aug 7 consultation; FPUSA additional POs; Q2\'26 earnings Jul 29. Analyst consensus Hold, avg PT $9.63 (+58% vs $6.09).'
+      'Fri Jun 26 close ~$5.93 (-2.6% vs Thu $6.09). Ofgem minded-to broke ~07:50 UK / 02:50 ET pre-open but EOSE sold off intraday — rights dilution overhang the likely culprit.',
+      'Rights record date Tue Jul 1 (5 pm ET), distribution Jul 2. Prospectus supplement for ~$150M raise still outstanding; Cerberus backstops $100M. Over-subscription privilege available.',
+      'Ofgem LDES W1 minded-to (Jun 26): 16 projects, 7,645 MW. Frontier Legacy (520 MWh, north Wales) provisionally included. Public consultation to Aug 7; binding awards afterward — not final.',
+      'No new EDGAR filings or press releases since Jun 18 Redbird/FPUSA PO (100 MW / 400 MWh ERCOT). Quiet weekend; zero overnight wire catalysts into Mon\'s US session (opens 15:30 Stockholm).',
+      'Key catalysts ahead: rights prospectus supplement (expected imminently), additional FPUSA POs under 2 GWh reservation, Q2\'26 earnings Jul 29. Analyst avg PT $9.63 vs ~$5.93 last (+62%).'
     ],
-    price:   { last: 6.09, changePct: 0.50, note: 'Jun 25 close · StockAnalysis/CBOE · Jun 26 close unconfirmed (fetched pre-market); Ofgem news published pre-US-open' },
+    price:   { last: 5.93, changePct: -2.6, note: 'Jun 26 close (Fri) · StockAnalysis/stocktitan — Jun 27–28 no trading (weekend)' },
     sources: [
       { label: 'StockAnalysis — EOSE quote', url: 'https://stockanalysis.com/stocks/eose/' },
+      { label: 'StockTitan — EOSE news & overview', url: 'https://www.stocktitan.net/overview/EOSE/' },
       { label: 'Ofgem LDES W1 minded-to decisions (Jun 26)', url: 'https://consult.ofgem.gov.uk/energy-generation/ldes-window-1-minded-to-decision/supporting_documents/ldes-window-1-minded-to-decisions-consultationpdf' },
-      { label: 'Frontier Power welcomes Ofgem assessment (Jun 26)', url: 'https://www.manilatimes.net/2026/06/26/tmt-newswire/globenewswire/frontier-power-welcomes-provisional-assessment-from-ofgem-on-window-1-ldes-projects/2373514' },
-      { label: 'Invinity RNS — Frontier Legacy minded-to confirmed (Jun 26)', url: 'https://www.investegate.co.uk/announcement/rns/invinity-energy-systems--ies/update-on-uk-ldes-cap-and-floor-scheme/9639092' },
-      { label: 'Energy-Storage.News — Ofgem LDES winners (Jun 26)', url: 'https://www.energy-storage.news/uks-ofgem-goes-big-on-ldes-cap-and-floor-window-1-18-hour-lithium-ion-among-winners/' },
-      { label: 'reNEWS — Ofgem minded-to decisions (Jun 26)', url: 'https://www.renews.biz/other-news/energy-storage/ofgem-names-long-duration-support-winners/' }
+      { label: 'Eos Energy IR — news releases', url: 'https://investors.eose.com/news-releases/' },
+      { label: 'FPUSA Redbird first PO press release (Jun 18)', url: 'https://investors.eose.com/news-releases/news-release-details/eos-energy-enterprises-announces-first-purchase-order-under' }
     ]
   },
 
