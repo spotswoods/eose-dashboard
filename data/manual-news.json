@@ -1,12 +1,22 @@
 [
   {
+    "iso": "2026-06-30T20:30:00Z",
+    "date": "2026-06-30",
+    "source": "SEC EDGAR (8-K + 424B5)",
+    "headline": "Frontier USA JV recapitalised: Hudson Bay Capital joins; rights offering priced at $5.481; DOE consent obtained",
+    "url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0001805077&type=8-K",
+    "summary": "An 8-K + 424B5 (Jun 30) set out a binding amended term sheet making Frontier Power USA a three-way JV — Eos, Cerberus ($100M + founder equity + 20.0M warrants) and new partner Hudson Bay Capital ($50M Class C + a registered direct purchase of Eos stock/warrants + 10.0M warrants). The rights offering is now priced: $5.481 per unit (1 share + 0.4388 warrant, $5.481 strike, 10-yr). DOE and Cerberus-lender consents obtained; remaining is completing the rights offering.",
+    "tag": "catalyst",
+    "expires": "2026-08-31"
+  },
+  {
     "iso": "2026-06-26T09:00:00Z",
     "date": "2026-06-26",
     "source": "Ofgem (UK regulator)",
-    "headline": "Ofgem publishes \"minded-to\" (provisional) decisions for LDES Cap & Floor Window 1",
+    "headline": "Ofgem LDES Window 1 minded-to decisions — only 16 of 73 projects provisionally awarded; Frontier UK largely excluded",
     "url": "https://www.ofgem.gov.uk/consultation/long-duration-electricity-storage-window-1-minded-decisions",
-    "summary": "Ofgem's provisional Window 1 cap & floor decisions for UK long-duration storage, opened for consultation to Aug 7, 2026 before final binding awards. \"Minded-to\" = proposed, not yet awarded. Frontier Power Ltd. (UK) entered Window 1 with ~16 Eos-zinc / Invinity-flow projects (~2.6 GW / 20 GWh); their status on the provisional list should be confirmed against Ofgem's project tables.",
-    "tag": "catalyst",
+    "summary": "Provisional cap & floor awards skew to pumped hydro + long-duration; of Frontier UK's ~16 projects (~2.6 GW, all 8-hour) only one — Frontier Legacy, 65 MW — made the provisional list. The 'VFB/Zn' category does not confirm Eos vs Invinity tech. Consultation to Aug 7; final awards Autumn 2026; a Window 2 is expected.",
+    "tag": "general",
     "expires": "2026-08-10"
   },
   {
@@ -15,7 +25,7 @@
     "source": "Frontier Power USA (press release)",
     "headline": "Frontier Power USA Engages KKR Capital Markets to Support Scaled Deployment of Long-Duration Energy Storage",
     "url": "https://www.globenewswire.com/news-release/2026/06/25/3317521/0/en/Frontier-Power-USA-Engages-KKR-Capital-Markets-to-Support-Scaled-Deployment-of-Long-Duration-Energy-Storage.html",
-    "summary": "FPUSA engaged KKR Capital Markets as structuring agent for construction finance, tax equity and long-term project finance across its 2 GWh pipeline — de-risking FPUSA's capitalisation alongside Cerberus' $100M equity anchor and the Ariel Green TPI wrap; complements Eos' ~$150M rights-offering contribution.",
+    "summary": "FPUSA engaged KKR Capital Markets as structuring agent for construction finance, tax equity and long-term project finance across its 2 GWh pipeline — de-risking FPUSA's capitalisation alongside Cerberus' $100M equity anchor.",
     "tag": "catalyst",
     "expires": "2026-08-10"
   }

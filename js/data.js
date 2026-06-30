@@ -30,23 +30,23 @@ window.EOSE_DATA = {
   // Refreshed by /equity-research:morning-note via a scheduled task in Cowork.
   // session = 'pre-open' (Swedish AM, ~07:00 CEST) | 'post-close' (Swedish PM, ~22:30 CEST)
   morningNote: {
-    updatedAt: '2026-06-30T07:08:00+02:00',
-    session:   'pre-open',
-    headline:  'Last day to buy for rights: record date Jul 1, prospectus supplement still pending',
-    takeaway:  'Jun 30 is the last T+1 settlement day before the Jul 1 (5pm ET) rights record date. Buyers today receive Jul 2 rights distribution. No overnight catalysts or new filings; prospectus supplement — setting subscription price at 10–20% VWAP discount — still pending.',
+    updatedAt: '2026-06-30T17:00:00+02:00',
+    session:   'post-close',
+    headline:  'Big one: Hudson Bay joins the Frontier JV, rights offering priced at $5.481, and DOE consent is in (two filings, Jun 30)',
+    takeaway:  'Two SEC filings on Jun 30 (an 8-K + a 424B5 prospectus supplement) reshape the FPUSA funding. A second major investor — Hudson Bay Capital (HBC) — joins the JV alongside Cerberus, the long-awaited rights-offering terms are now concrete ($5.481 per unit), and the key gating conditions (U.S. DOE consent + Cerberus lender consent) are cleared. The deal is bigger, better-backed and materially de-risked — at the cost of more dilution, now quantified rather than open-ended.',
     bullets: [
-      'Today (Jun 30) is the final day to buy EOSE with T+1 settlement and appear on the Jul 1 (5pm ET) record date. Rights distributed Jul 2; expected 10–20% VWAP discount + warrants (~25–50% of raise, Black-Scholes).',
-      'Prospectus supplement not yet filed as of 07:00 CEST — was expected pre-open today. Document will set the exact subscription price, warrant structure, and subscription window dates.',
-      'No new SEC filings or IR press releases overnight. Most recent catalysts: FPUSA/KKR Capital Markets (Jun 25), Germany 750 MWh CAPAC deal (Jun 17), FPUSA 1st purchase order 480 MWh ERCOT (Jun 18).',
-      'Battery Line 2 at Thorn Hill, PA: commercial production confirmed Jun 16 — milestone delivered ahead of end-of-Q2 target. Line 1 + Line 2 together underpin 2026 guidance of $300–$400M.',
-      'ITC (48E) for standalone storage intact after Jul \'25 tax bill; FEOC rules tightening in 2026 favor US-made zinc chemistry — structural tailwind for EOSE vs. tariff-exposed Chinese LFP.'
+      'New partner: Hudson Bay Capital (via HBC MSF Capital Solutions Blocker II) joins the Frontier Power USA JV — $50M directly into the JV (Class C units) PLUS a registered direct purchase of Eos stock + warrants (the 424B5). A second top-tier financial backer alongside Cerberus is a real validation and reduces reliance on retail rights uptake.',
+      'Rights offering is now PRICED: subscription $5.481 per unit; each unit = 1 Eos share + 0.4388 of a warrant; warrant strike $5.481, 10-year tenor, cashless exercise; over-subscription right included. Targets $150M (won\'t exceed without Cerberus consent). The long "terms TBD" overhang is resolved.',
+      'Conditions cleared: the U.S. Department of Energy gave consent (2nd + 3rd Limited Consents, Jun 26 & 29) to the stock/warrant offerings and use of proceeds for Frontier; Cerberus as lender (CCM Denali) also consented Jun 29. These were the outstanding gates — now largely done; remaining is completing the rights offering + a Commercial Framework.',
+      'Capital stack now three-way: Cerberus $100M (Class A-2) + founder equity + 20.0M CCM warrants; HBC $50M (Class C) + 10.0M HBC warrants; Eos contributes (HBC registered-direct proceeds + rights-offering proceeds) as Class B. JV units priced at $1.00.',
+      'The catch (bear read): $5.481 sits below the recent ~$6.1–6.5 tape, so it anchors the stock near-term; and the registered direct + ~30M new CCM/HBC warrants add dilution on top of the rights offering. But it is now KNOWN dilution funding a defined, multi-backer JV — markets often prefer that to an open question.',
+      'Still on the watch list: Ofgem\'s UK Window 1 minded-to result was a miss for Frontier UK (only 1 of ~16 projects provisionally listed — see §08b); the US/FPUSA story (this funding, KKR, the first PO) is the larger, more concrete leg.'
     ],
-    price:   { last: 6.16, changePct: 3.9, note: 'Jun 29 close · StockAnalysis/StockTitan delayed' },
+    price:   { last: 6.16, changePct: null, note: 'Last close $6.16 (Jun 29) · the two filings hit Jun 30 — see the live ticker for the current print' },
     sources: [
-      { label: 'Eos Energy IR — rights offering record date', url: 'https://investors.eose.com/news-releases/news-release-details/eos-energy-announces-record-date-rights-offering' },
-      { label: 'GlobeNewsWire — rights offering record date (Jun 11)', url: 'https://www.globenewswire.com/news-release/2026/06/11/3310798/0/en/Eos-Energy-Announces-Record-Date-for-Rights-Offering.html' },
-      { label: 'StockTitan — EOSE news feed', url: 'https://www.stocktitan.net/news/EOSE/' },
-      { label: 'FPUSA/KKR Capital Markets press release (Jun 25)', url: 'https://www.globenewswire.com/news-release/2026/06/25/3317521/0/en/Frontier-Power-USA-Engages-KKR-Capital-Markets-to-Support-Scaled-Deployment-of-Long-Duration-Energy-Storage.html' },
+      { label: '8-K — A&R term sheet, HBC joins, rights priced, DOE consent (Jun 30)', url: 'https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0001805077&type=8-K' },
+      { label: '424B5 — registered direct offering prospectus supplement (Jun 30)', url: 'https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0001805077&type=424B5' },
+      { label: 'How the rights offering works — explainer', url: 'rights-offering.html' },
       { label: 'Eos Energy IR — news releases', url: 'https://investors.eose.com/news-releases/' }
     ]
   },
@@ -453,7 +453,8 @@ window.EOSE_DATA = {
     { date: 'Jun 22, 2026', event: 'Independent fire testing (Energy Safety Response Group) confirms Z3 system — no thermal runaway, no sustained fire, no propagation, no off-gas ignition; Eos also earns ISO 14001 certification', status: 'Reported [Company]', tone: 'done' },
     { date: 'Mid-2026',     event: 'Notices-to-Proceed (NTPs) on the 480 MWh Texas portfolio',              status: 'Watch [Counterparty]',     tone: 'soon'   },
     { date: 'Jun 8, 2026',  event: 'Lagi CFO effective date · Kroeker returns to CCO-only role',           status: 'Imminent [Company]',         tone: 'soon'   },
-    { date: 'Jun 26, 2026', event: 'Ofgem publishes "minded-to" (provisional) decisions for LDES Cap & Floor Window 1 — consultation open to Aug 7; Frontier UK\'s Eos-tech project status to be confirmed against the project list', status: 'Reported [Regulator]', tone: 'done' },
+    { date: 'Jun 26, 2026', event: 'Ofgem "minded-to" (provisional) LDES Window 1 decisions — only 16 of 73 projects (7,645 MW) provisionally awarded; of Frontier UK\'s ~16 projects (~2.6 GW), just ONE (Frontier Legacy, 65 MW) made the list — and the doc\'s "VFB/Zn" category does not confirm Eos vs Invinity tech. A miss for the UK leg. Consultation to Aug 7', status: 'Reported [Regulator]', tone: 'soon' },
+    { date: 'Jun 30, 2026', event: 'FPUSA JV recapitalised (8-K + 424B5): Hudson Bay Capital joins as third partner ($50M Class C + registered direct of Eos stock/warrants); rights offering PRICED at $5.481/unit (1 share + 0.4388 warrant, $5.481 strike); DOE + Cerberus-lender consents OBTAINED', status: 'Reported [Company]', tone: 'done' },
     { date: 'Jun 16, 2026', event: 'Line 2 LAUNCHED commercial production at Thorn Hill (after Site Acceptance Testing) — ahead of the end-Q2 target; ~4 GWh combined run-rate targeted by end-2026', status: 'Reported [Company]', tone: 'done' },
     { date: 'Jun 17, 2026', event: 'Germany/DACH entry: binding Master Supply Agreement with CAPAC Energy — exclusive Germany/Austria/Switzerland through 2031, 750 MWh committed (pathway to 2 GWh), first international Indensity framework; first projects target commercial ops late 2026', status: 'Reported [Company]', tone: 'done' },
     { date: 'Late 2026',    event: 'CAPAC\'s first German Indensity projects target commercial operation — purchase orders flow into reported backlog',  status: 'Watch [Counterparty]',  tone: 'soon' },
@@ -590,12 +591,16 @@ window.EOSE_DATA = {
       name:      'Frontier Power USA',
       founded:   'May 13, 2026',
       announced: 'May 13, 2026 (8-K Ex. 99.2)',
-      summary:   'Stand-alone US development & investment company formed with Cerberus to build, own, and operate LDES projects deploying Eos\' Z3. Targeting Independent Power Producer (IPP) status. NOT to be confused with Frontier Power Ltd. (UK).',
-      why:       'Combines (1) Eos\' vertically integrated technology, (2) Cerberus institutional capital + operating muscle, and (3) a Technology Performance Insurance (TPI) wrap arranged with Ariel Green that lets project lenders treat Z3 output as financeable — unlocking project-finance for LDES that historically has been unbankable at scale.',
+      summary:   'Stand-alone US development & investment company (JV entity: Frontier Power USA Parent, LLC) to build, own, and operate LDES projects deploying Eos\' Z3. Targeting Independent Power Producer (IPP) status. NOT to be confused with Frontier Power Ltd. (UK). A binding amended-and-restated term sheet (Jun 30, 2026) made it a THREE-way JV — Eos, Cerberus (CCM Frontier) and Hudson Bay Capital (HBC).',
+      why:       'Combines (1) Eos\' vertically integrated technology, (2) institutional capital + operating muscle from TWO top-tier backers — Cerberus and now Hudson Bay Capital — plus KKR Capital Markets as structuring agent (Jun 25), and (3) a Technology Performance Insurance (TPI) wrap arranged with Ariel Green that lets project lenders treat Z3 output as financeable — unlocking project-finance for LDES that historically has been unbankable at scale.',
       terms: [
-        { k: 'First deployment (May 21, 2026)', v: '480 MWh portfolio acquired from Bimergen Energy Corp. (NYSE: BESS) — 3 ERCOT projects (2× ~40 MWh "Texas 10" + 1× 100MW/400MWh). FPUSA holds 92.5%, Bimergen retains 7.5%. NTPs expected mid-2026. Stella Energy Solutions execution partner. ~24% of the 2 GWh reservation now firm.' },
-        { k: 'Cerberus equity commitment',    v: '$100M anchor (subject to closing conditions) — Cerberus also expected to receive Eos warrants AND controlling equity in Frontier USA' },
-        { k: 'Eos target contribution',       v: '~$150M — to be funded via a pro-rata rights offering to EXISTING shareholders (structured to limit dilution to participating holders)' },
+        { k: 'JV structure (A&R term sheet, Jun 30, 2026)', v: 'Three-way preferred-unit JV at $1.00/unit: Cerberus = Class A (founder equity + $100M Class A-2) + 20.0M CCM warrants; Hudson Bay (HBC) = $50M Class C + 10.0M HBC warrants; Eos = Class B, funded by (HBC registered-direct proceeds + rights-offering proceeds).' },
+        { k: 'First deployment (May 21, 2026)', v: '480 MWh portfolio acquired from Bimergen Energy Corp. (NYSE: BESS) — 3 ERCOT projects (2× ~40 MWh "Texas 10" + 1× 100MW/400MWh). FPUSA holds 92.5%, Bimergen retains 7.5%. NTPs expected mid-2026. Stella Energy Solutions execution partner. First firm PO (Redbird, 400 MWh) booked Jun 18, 2026.' },
+        { k: 'Cerberus commitment',           v: '$100M (Class A-2) + founder equity (Class A-1) + a CCM warrant (20,017,772 warrants); controlling stake' },
+        { k: 'Hudson Bay (HBC) commitment',   v: 'NEW (Jun 30): $50M directly into the JV (Class C) + a registered direct purchase of Eos stock & warrants + an HBC warrant (10,008,886 warrants)' },
+        { k: 'Eos target contribution',       v: '~$150M+ as Class B — funded by net proceeds of (a) the HBC registered direct offering and (b) the pro-rata rights offering to existing shareholders' },
+        { k: 'Rights offering (priced Jun 30)', v: '$5.481 per unit = 1 Eos share + 0.4388 warrant; warrant strike $5.481, 10-yr, cashless; over-subscription right; $150M target' },
+        { k: 'Closing conditions',            v: 'DOE consent — OBTAINED (2nd + 3rd Limited Consents, Jun 26 & 29); Cerberus lender consent — OBTAINED (Jun 29). Remaining: complete the rights offering + a Commercial Framework.' },
         { k: 'Anchor reservation',            v: '2 GWh firm capacity reservation agreement (480 MWh deployed May 21, 2026; 1,520 MWh remaining)' },
         { k: 'Pipeline target',               v: 'Multi-GWh across data center, utility, and industrial end markets' },
         { k: 'Tech Performance Insurance',    v: '~$1.5B project-level capacity · 15-year non-cancellable · written through Lloyd\'s of London consortium (A+/AA-) · arranged with Ariel Green (a division of Ariel Re)' },
@@ -627,7 +632,7 @@ window.EOSE_DATA = {
         anchor:    'consultation to Aug 7',
         regulator: 'Ofgem (UK)',
         label:     'Minded-to (provisional) decision · LDES Cap & Floor Window 1',
-        eosExposure: 'PUBLISHED Jun 26, 2026 — Ofgem issued its "minded-to" (provisional) decisions for Window 1, now out for consultation until Aug 7 before final awards. "Minded-to" = Ofgem\'s proposed list, not yet binding. Whether Frontier UK\'s Eos-tech projects are on the provisional award list should be confirmed against Ofgem\'s project list; the final cap-and-floor awards are the binding step.',
+        eosExposure: 'RESULT IN (Jun 26, 2026) — and it was a MISS for the UK leg. Ofgem is minded to award only 16 of 73 projects (7,645 MW), skewed to pumped hydro + long-duration (12–32h). Of Frontier UK\'s ~16 projects (~2.6 GW, all 8-hour), just ONE — Frontier Legacy, 65 MW in N Wales — is on the provisional list; the other ~2.5 GW were excluded. Caveat: the document\'s "VFB/Zn" (vanadium-flow / zinc) category does NOT attribute projects to Eos vs Invinity, so even that 65 MW is not confirmed as Eos tech. Provisional only — consultation to Aug 7, final awards Autumn 2026; a Window 2 is expected (decision by 2027).',
         kind: 'preliminary'
       },
       {
@@ -932,7 +937,7 @@ window.EOSE_DATA = {
       { point: 'Q1\'26 revenue +445% YoY with adj. EPS beating consensus by 154 ppt ($0.12 vs −$0.22). Two consecutive quarters now exceed full FY25.', src: 'Q1\'26 8-K' },
       { point: 'Pipeline $24.3B (+56% YoY); backlog $644.6M; post-quarter +2 GWh Frontier USA reservation. Demand isn\'t the constraint.', src: '10-Q + Frontier 8-K' },
       { point: 'Frontier USA executing fast — and now CONVERTING: 480 MWh acquired via Bimergen (May 21), then on Jun 18 the first firm purchase order under the 2 GWh reservation (Redbird, 100 MW / 400 MWh, ERCOT, Z3). Reservation→order is the proof the vehicle pulls hardware. Release also cited ~50% of a 1 GWh Bridgelink MSA fulfilled + a 12 GWh ERCOT/PJM/CAISO/MISO pipeline.', src: 'Jun 18 first-PO release · May 21 Bimergen release' },
-      { point: 'UK pipeline: Frontier Power Ltd. has ~11 GWh in Ofgem Cap & Floor Window 1 second-round evaluation, all using Eos Z3 tech. Approval is pending — Initial Decision Spring 2026, final awards Summer 2026. If awarded, the regulated revenue floor de-risks project finance.', src: 'Ofgem / Modo Energy' },
+      { point: 'Two top-tier financial backers now in Frontier USA: Cerberus ($100M) AND, as of Jun 30, Hudson Bay Capital ($50M into the JV + a registered direct buy of Eos stock), with KKR Capital Markets as structuring agent. DOE + lender consents cleared and the rights offering is priced ($5.481). The JV funding is largely de-risked.', src: 'Jun 30 8-K + 424B5' },
       { point: 'Cerberus is doubling down on BOTH sides of the Atlantic: $100M into Frontier USA + £159M earlier into Frontier UK. Lock-up extended through YE 2026.', src: 'Frontier releases · PwC UK' },
       { point: 'Execution on schedule: Line 2 launched commercial production Jun 16, 2026 — ahead of the end-Q2 target — doubling the manufacturing base toward ~4 GWh/yr. Directly rebuts the "can\'t scale manufacturing" bear/lawsuit narrative. Margin trajectory backs it: GM −78% Q1\'26, +157 ppt YoY, +16 ppt sequentially; cube deliveries +5.7×.', src: 'Jun 16 Line 2 release · Q1\'26 release' },
       { point: 'Demand vectors broadening: AI/data-center via the TURBINE-X JDA (up to 2 GWh, first deployments 2027); and as of Jun 17, 2026 a first international framework — an exclusive DACH-region MSA with CAPAC Energy (750 MWh, pathway to 2 GWh, Indensity) through 2031. NYSERDA ISC awards (Q3 2026) add another near-term catalyst.', src: 'TURBINE-X / CAPAC releases · NYSERDA' },
@@ -945,7 +950,8 @@ window.EOSE_DATA = {
       { point: 'Active securities class action (Yung v. Eos, D.N.J. 26-cv-02372) alleging misrepresentation of FY25 production capacity. Settlement risk is material if certified.', src: 'court filings' },
       { point: 'Shares outstanding +18% trailing 12 months. Insiders sold $14M more than they bought over the same window — Stidolph $11.5M, Kroeker (interim CFO) $802k, Silberman (CLO) $739k.', src: 'OpenInsider / Simply Wall St' },
       { point: 'Customer concentration: 93.3% of Q1\'26 revenue from a handful of >10% customers. One project slip = guidance miss.', src: '10-Q footnotes' },
-      { point: 'Frontier needs Eos to fund ~$150M — explicitly "subject to ability to raise funding." That funding likely comes from the shelf. Bear: dilution wrapped in growth story.', src: 'Frontier release language' },
+      { point: 'Dilution is now quantified and stacking: the Jun 30 deal adds a registered direct to Hudson Bay PLUS ~30M new warrants to Cerberus (20.0M) and HBC (10.0M), on top of the ~$150M rights offering (units = stock + 0.4388 warrant). The $5.481 subscription price sits below the recent tape and anchors it. Funded — but at real cost to non-participating holders.', src: 'Jun 30 8-K + 424B5' },
+      { point: 'UK Ofgem was a miss: in the Jun 26 Window 1 minded-to decisions, only 1 of Frontier UK\'s ~16 projects (Frontier Legacy, 65 MW) made the provisional list — ~2.5 GW excluded — and even that one is not confirmed as Eos (vs Invinity) tech. A long-cited bull leg is largely off for Window 1.', src: 'Ofgem Window 1 minded-to decisions' },
       { point: 'No public hyperscaler customer despite the AI narrative. TURBINE-X is targeting hyperscalers; nothing closed. The "AI demand" thesis is bidding, not winning, today.', src: 'all public disclosures' },
       { point: 'JPMorgan cut PT $9→$6 (Neutral) post-FY25; Roth Capital $6 PT (Chip Moore). Consensus PT compressed from $9.71 to $8.86. Sell-side is skeptical.', src: 'JPMorgan, Roth Capital research' }
     ]
