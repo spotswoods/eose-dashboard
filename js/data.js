@@ -30,24 +30,24 @@ window.EOSE_DATA = {
   // Refreshed by /equity-research:morning-note via a scheduled task in Cowork.
   // session = 'pre-open' (Swedish AM, ~07:00 CEST) | 'post-close' (Swedish PM, ~22:30 CEST)
   morningNote: {
-    updatedAt: '2026-06-29T07:30:00+02:00',
+    updatedAt: '2026-06-30T07:08:00+02:00',
     session:   'pre-open',
-    headline:  'Rights record date Tue Jul 1; EOSE -2.6% on Fri despite Ofgem LDES provisional win',
-    takeaway:  'EOSE closed Fri Jun 26 ~$5.93 (-2.6% vs Thu $6.09), reversing a brief Ofgem pop. Rights dilution (~$150M raise at VWAP discount, Cerberus $100M backstop) appears the primary drag; record date two sessions away (Tue Jul 1). Prospectus supplement still outstanding — the key near-term watchpoint.',
+    headline:  'Last day to buy for rights: record date Jul 1, prospectus supplement still pending',
+    takeaway:  'Jun 30 is the last T+1 settlement day before the Jul 1 (5pm ET) rights record date. Buyers today receive Jul 2 rights distribution. No overnight catalysts or new filings; prospectus supplement — setting subscription price at 10–20% VWAP discount — still pending.',
     bullets: [
-      'Fri Jun 26 close ~$5.93 (-2.6% vs Thu $6.09). Ofgem minded-to broke ~07:50 UK / 02:50 ET pre-open but EOSE sold off intraday — rights dilution overhang the likely culprit.',
-      'Rights record date Tue Jul 1 (5 pm ET), distribution Jul 2. Prospectus supplement for ~$150M raise still outstanding; Cerberus backstops $100M. Over-subscription privilege available.',
-      'Ofgem LDES W1 minded-to (Jun 26): 16 projects, 7,645 MW. Frontier Legacy (520 MWh, north Wales) provisionally included. Public consultation to Aug 7; binding awards afterward — not final.',
-      'No new EDGAR filings or press releases since Jun 18 Redbird/FPUSA PO (100 MW / 400 MWh ERCOT). Quiet weekend; zero overnight wire catalysts into Mon\'s US session (opens 15:30 Stockholm).',
-      'Key catalysts ahead: rights prospectus supplement (expected imminently), additional FPUSA POs under 2 GWh reservation, Q2\'26 earnings Jul 29. Analyst avg PT $9.63 vs ~$5.93 last (+62%).'
+      'Today (Jun 30) is the final day to buy EOSE with T+1 settlement and appear on the Jul 1 (5pm ET) record date. Rights distributed Jul 2; expected 10–20% VWAP discount + warrants (~25–50% of raise, Black-Scholes).',
+      'Prospectus supplement not yet filed as of 07:00 CEST — was expected pre-open today. Document will set the exact subscription price, warrant structure, and subscription window dates.',
+      'No new SEC filings or IR press releases overnight. Most recent catalysts: FPUSA/KKR Capital Markets (Jun 25), Germany 750 MWh CAPAC deal (Jun 17), FPUSA 1st purchase order 480 MWh ERCOT (Jun 18).',
+      'Battery Line 2 at Thorn Hill, PA: commercial production confirmed Jun 16 — milestone delivered ahead of end-of-Q2 target. Line 1 + Line 2 together underpin 2026 guidance of $300–$400M.',
+      'ITC (48E) for standalone storage intact after Jul \'25 tax bill; FEOC rules tightening in 2026 favor US-made zinc chemistry — structural tailwind for EOSE vs. tariff-exposed Chinese LFP.'
     ],
-    price:   { last: 5.93, changePct: -2.6, note: 'Jun 26 close (Fri) · StockAnalysis/stocktitan — Jun 27–28 no trading (weekend)' },
+    price:   { last: 6.16, changePct: 3.9, note: 'Jun 29 close · StockAnalysis/StockTitan delayed' },
     sources: [
-      { label: 'StockAnalysis — EOSE quote', url: 'https://stockanalysis.com/stocks/eose/' },
-      { label: 'StockTitan — EOSE news & overview', url: 'https://www.stocktitan.net/overview/EOSE/' },
-      { label: 'Ofgem LDES W1 minded-to decisions (Jun 26)', url: 'https://consult.ofgem.gov.uk/energy-generation/ldes-window-1-minded-to-decision/supporting_documents/ldes-window-1-minded-to-decisions-consultationpdf' },
-      { label: 'Eos Energy IR — news releases', url: 'https://investors.eose.com/news-releases/' },
-      { label: 'FPUSA Redbird first PO press release (Jun 18)', url: 'https://investors.eose.com/news-releases/news-release-details/eos-energy-enterprises-announces-first-purchase-order-under' }
+      { label: 'Eos Energy IR — rights offering record date', url: 'https://investors.eose.com/news-releases/news-release-details/eos-energy-announces-record-date-rights-offering' },
+      { label: 'GlobeNewsWire — rights offering record date (Jun 11)', url: 'https://www.globenewswire.com/news-release/2026/06/11/3310798/0/en/Eos-Energy-Announces-Record-Date-for-Rights-Offering.html' },
+      { label: 'StockTitan — EOSE news feed', url: 'https://www.stocktitan.net/news/EOSE/' },
+      { label: 'FPUSA/KKR Capital Markets press release (Jun 25)', url: 'https://www.globenewswire.com/news-release/2026/06/25/3317521/0/en/Frontier-Power-USA-Engages-KKR-Capital-Markets-to-Support-Scaled-Deployment-of-Long-Duration-Energy-Storage.html' },
+      { label: 'Eos Energy IR — news releases', url: 'https://investors.eose.com/news-releases/' }
     ]
   },
 
