@@ -30,23 +30,22 @@ window.EOSE_DATA = {
   // Refreshed by /equity-research:morning-note via a scheduled task in Cowork.
   // session = 'pre-open' (Swedish AM, ~07:00 CEST) | 'post-close' (Swedish PM, ~22:30 CEST)
   morningNote: {
-    updatedAt: '2026-06-30T17:00:00+02:00',
-    session:   'post-close',
-    headline:  'Big one: Hudson Bay joins the Frontier JV, rights offering priced at $5.481, and DOE consent is in (two filings, Jun 30)',
-    takeaway:  'Two SEC filings on Jun 30 (an 8-K + a 424B5 prospectus supplement) reshape the FPUSA funding. A second major investor — Hudson Bay Capital (HBC) — joins the JV alongside Cerberus, the long-awaited rights-offering terms are now concrete ($5.481 per unit), and the key gating conditions (U.S. DOE consent + Cerberus lender consent) are cleared. The deal is bigger, better-backed and materially de-risked — at the cost of more dilution, now quantified rather than open-ended.',
+    updatedAt: '2026-07-01T07:30:00+02:00',
+    session:   'pre-open',
+    headline:  'Rights Record Date Is TODAY — FPUSA Equity Stack Reaches $375M',
+    takeaway:  'Today July 1 is the rights offering record date (5:00 PM ET); rights distribute tomorrow (Jul 2). Hudson Bay\'s $75M registered-direct into Eos + $50M into FPUSA (both priced Jun 30) completes a three-institution equity stack of ~$375M, structured to support >$1.5B in project deployment.',
     bullets: [
-      'New partner: Hudson Bay Capital (via HBC MSF Capital Solutions Blocker II) joins the Frontier Power USA JV — $50M directly into the JV (Class C units) PLUS a registered direct purchase of Eos stock + warrants (the 424B5). A second top-tier financial backer alongside Cerberus is a real validation and reduces reliance on retail rights uptake.',
-      'Rights offering is now PRICED: subscription $5.481 per unit; each unit = 1 Eos share + 0.4388 of a warrant; warrant strike $5.481, 10-year tenor, cashless exercise; over-subscription right included. Targets $150M (won\'t exceed without Cerberus consent). The long "terms TBD" overhang is resolved.',
-      'Conditions cleared: the U.S. Department of Energy gave consent (2nd + 3rd Limited Consents, Jun 26 & 29) to the stock/warrant offerings and use of proceeds for Frontier; Cerberus as lender (CCM Denali) also consented Jun 29. These were the outstanding gates — now largely done; remaining is completing the rights offering + a Commercial Framework.',
-      'Capital stack now three-way: Cerberus $100M (Class A-2) + founder equity + 20.0M CCM warrants; HBC $50M (Class C) + 10.0M HBC warrants; Eos contributes (HBC registered-direct proceeds + rights-offering proceeds) as Class B. JV units priced at $1.00.',
-      'The catch (bear read): $5.481 sits below the recent ~$6.1–6.5 tape, so it anchors the stock near-term; and the registered direct + ~30M new CCM/HBC warrants add dilution on top of the rights offering. But it is now KNOWN dilution funding a defined, multi-backer JV — markets often prefer that to an open question.',
-      'Still on the watch list: Ofgem\'s UK Window 1 minded-to result was a miss for Frontier UK (only 1 of ~16 projects provisionally listed — see §08b); the US/FPUSA story (this funding, KKR, the first PO) is the larger, more concrete leg.'
+      'Record date live today at 5:00 PM ET — eligible holders of common stock and qualified warrants receive rights tomorrow (Jul 2) to subscribe at $5.481/unit (1 share + 0.4388 warrant, 10-yr cashless). Each right buys ~0.0714 of a Unit; over-subscription available.',
+      'FPUSA equity now ~$375M: Cerberus $100M (Class A) + Hudson Bay $75M registered-direct + HBC $50M into JV (Class C) + Eos ~$150M via rights offering. At ~75% LTV the platform targets >$1.5B in deployable project capital — the largest LDES private-equity stack in the US.',
+      'Pipeline execution moving: ~16 GWh FPUSA portfolio, 2.7 GWh high-probability conversion, ~1.2 GWh ready to sign; KKR Capital Markets building scalable project-finance framework; Ariel Green $1.5B tech-performance insurance in place. A portion near NTP in near term.',
+      'Jun 30 tape: EOSE closed ~$5.89 (-3.3%) on dilution-overhang selling tied to the registered-direct pricing; pre-market Jul 1 showing ~$6.00, a partial recovery as known dilution replaces the open-ended overhang that weighed on shares the prior week.',
+      'Subscribe-or-dilute decision opens tomorrow: rights at $5.481 are ~8% below ~$6.00 pre-market — economically rational to participate for FPUSA believers. HBC entered on these exact same terms. Non-subscribers face dilution from rights + ~30M new CCM/HBC warrants.'
     ],
-    price:   { last: 6.16, changePct: null, note: 'Last close $6.16 (Jun 29) · the two filings hit Jun 30 — see the live ticker for the current print' },
+    price:   { last: 6.00, changePct: null, note: 'Pre-market ~$6.00 (Jul 1); Jun 30 close ~$5.89 / -3.3% (dilution selling on registered-direct pricing)' },
     sources: [
-      { label: '8-K — A&R term sheet, HBC joins, rights priced, DOE consent (Jun 30)', url: 'https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0001805077&type=8-K' },
-      { label: '424B5 — registered direct offering prospectus supplement (Jun 30)', url: 'https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0001805077&type=424B5' },
-      { label: 'How the rights offering works — explainer', url: 'rights-offering.html' },
+      { label: 'Eos — Updated Rights Offering Terms (Jun 30)', url: 'https://www.globenewswire.com/news-release/2026/06/30/3319575/0/en/Eos-Energy-Announces-Updated-Terms-for-Rights-Offering.html' },
+      { label: 'Eos — $125M Hudson Bay Investment, FPUSA equity to $375M (Jun 30)', url: 'https://www.globenewswire.com/news-release/2026/06/30/3319576/0/en/Eos-Announces-125-Million-Investment-for-Frontier-Power-USA-Bringing-Expected-Frontier-Equity-Investment-up-to-375-Million.html' },
+      { label: 'SEC EDGAR — EOSE 8-K filings', url: 'https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0001805077&type=8-K' },
       { label: 'Eos Energy IR — news releases', url: 'https://investors.eose.com/news-releases/' }
     ]
   },
