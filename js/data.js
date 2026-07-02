@@ -30,24 +30,25 @@ window.EOSE_DATA = {
   // Refreshed by /equity-research:morning-note via a scheduled task in Cowork.
   // session = 'pre-open' (Swedish AM, ~07:00 CEST) | 'post-close' (Swedish PM, ~22:30 CEST)
   morningNote: {
-    updatedAt: '2026-07-01T22:30:00+02:00',
-    session:   'post-close',
-    headline:  'Record date passes; EOSE reclaims $6+ on quiet session (+2.9%) — rights distribute tomorrow',
-    takeaway:  'The Jul 1 record date for the rights offering passed at 5pm ET with EOSE closing at $6.06 (+2.9% vs Jun 30\'s $5.89), comfortably above the $5.481 subscription price. Rights distribute to eligible holders tomorrow (Jul 2); no new filings or catalysts today — session was a quiet consolidation ahead of the subscription period.',
+    updatedAt: '2026-07-02T07:30:00+02:00',
+    session:   'pre-open',
+    headline:  'Rights on accounts today — subscription period opens; EOSE holds $6.06 vs $5.481 strike',
+    takeaway:  'Jul 2 is rights distribution day — eligible holders receive rights in brokerage accounts this morning. Each right entitles purchase of ~0.0714 units at $5.481 (1 share + 0.4388 warrant); stock last at $6.06 (Jul 1 close) puts units ~$0.58 in-the-money. Commencement PR and prospectus supplement expected today.',
     bullets: [
-      'Record date passed (5pm ET Jul 1): eligible holders of EOSE common stock receive rights on Jul 2 — each right entitles ~0.0714 of a unit at $5.481/unit (1 share + 0.4388 warrants, strike $5.481, 10-yr tenor). Over-subscription right also available.',
-      'Session: closed $6.06 (+$0.17, +2.9% vs Jun 30), vol 17.3M (0.58x 20-day avg of ~30M). Light, below-average volume; the $6.06 close vs $5.481 subscription price implies ~$0.58 of intrinsic value per right.',
-      'No new SEC filings or press releases on Jul 1. Jun 30 8-K (HBC joins JV; DOE + Cerberus consents cleared) and 424B5 (HBC registered direct priced) remain the controlling deal documents.',
-      'Routine Form 4s filed Jun 30: CAO Sumeet Puri sold 8,823 shares ($51,702, range $5.68–$6.12) and CAO Michelle Buczkowski sold shares (~$67,323), both under pre-set 10b5-1 plans for RSU tax withholding — not a directional signal.',
-      'Setup into Jul 2+: rights distribution triggers the formal subscription period; watch for prospectus supplement filing and commencement announcement. Full $150M target requires broad participation; over-subscription right + ~$0.58 intrinsic value per right incentivize uptake alongside HBC ($125M total) and CCM ($100M) already committed.'
+      'Rights distribution day: eligible EOSE holders receive ~0.0714 rights/share via their broker today. Each right buys 1 unit at $5.481 (1 share + 0.4388 warrant, 10-yr $5.481 strike); over-subscription right available.',
+      'Jun 30 8-K: all consent conditions cleared — DOE granted Second + Third Limited Consents; CCM Cerberus credit-facility consent secured. Frontier JV remains conditional only on definitive docs + rights-offering close.',
+      '424B5 filed: HBC registered direct priced at $5.481/unit (13.7M shares + 6.0M warrants, ~$75M proceeds). Rights offering targets $150M. Together = ~$225M EOSE Initial Class B JV contribution.',
+      'Watch today: commencement PR and rights-offering prospectus supplement filing expected. Subscription period ~30 trading days; over-subscription right lets keen holders mop up any unsubscribed units.',
+      'Intrinsic value: EOSE at $6.06 (Jul 1 close) vs $5.481 sub price = ~$0.58/unit in-the-money — each right worth ~$0.041 theoretically (0.0714 × $0.58) plus 10-yr warrant sweetener.',
+      'Bear watch: HBC direct + full rights raise adds ~40M shares + ~18M warrants. Frontier Power USA JV definitive docs still unexecuted; platform remains pre-revenue and closing is not guaranteed.'
     ],
-    price:   { last: 6.06, changePct: 2.88, note: 'close Jul 1, 2026 · vol 17.3M (0.58x avg) · Yahoo Finance delayed' },
+    price:   { last: 6.06, changePct: 2.88, note: 'close Jul 1, 2026 · last confirmed session · Stooq delayed' },
     sources: [
-      { label: 'Eos Energy — Record Date for Rights Offering (Jun 11 PR)', url: 'https://investors.eose.com/news-releases/news-release-details/eos-energy-announces-record-date-rights-offering' },
+      { label: 'Jun 30 8-K — A&R Term Sheet, DOE Consents, CCM Consent (SEC)', url: 'https://www.sec.gov/Archives/edgar/data/0001805077/000095010326009739/dp249222_8k.htm' },
       { label: 'Eos Energy — Updated Terms for Rights Offering (Jun 30 PR)', url: 'https://www.globenewswire.com/news-release/2026/06/30/3319575/0/en/Eos-Energy-Announces-Updated-Terms-for-Rights-Offering.html' },
       { label: 'Eos — $125M HBC Investment, FPUSA equity to $375M (Jun 30)', url: 'https://www.globenewswire.com/news-release/2026/06/30/3319576/0/en/Eos-Announces-125-Million-Investment-for-Frontier-Power-USA-Bringing-Expected-Frontier-Equity-Investment-up-to-375-Million.html' },
-      { label: 'Form 4 — CAO Puri RSU tax sale (Jun 30)', url: 'https://www.stocktitan.net/sec-filings/EOSE/form-4-eos-energy-enterprises-inc-insider-trading-activity-b72dea5acf81.html' },
-      { label: 'Eos Energy IR — news releases', url: 'https://investors.eose.com/news-releases/' }
+      { label: '424B5 — HBC Registered Direct Prospectus Supplement (SEC)', url: 'https://www.sec.gov/Archives/edgar/data/0001805077/000095010326009742/dp249117_424b5.htm' },
+      { label: 'Eos Energy IR — News Releases', url: 'https://investors.eose.com/news-releases/' }
     ]
   },
 
