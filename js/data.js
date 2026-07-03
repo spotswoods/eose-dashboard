@@ -30,25 +30,26 @@ window.EOSE_DATA = {
   // Refreshed by /equity-research:morning-note via a scheduled task in Cowork.
   // session = 'pre-open' (Swedish AM, ~07:00 CEST) | 'post-close' (Swedish PM, ~22:30 CEST)
   morningNote: {
-    updatedAt: '2026-07-02T07:30:00+02:00',
-    session:   'pre-open',
-    headline:  'Rights on accounts today — subscription period opens; EOSE holds $6.06 vs $5.481 strike',
-    takeaway:  'Jul 2 is rights distribution day — eligible holders receive rights in brokerage accounts this morning. Each right entitles purchase of ~0.0714 units at $5.481 (1 share + 0.4388 warrant); stock last at $6.06 (Jul 1 close) puts units ~$0.58 in-the-money. Commencement PR and prospectus supplement expected today.',
+    updatedAt: '2026-07-03T22:30:00+02:00',
+    session:   'post-close',
+    headline:  'No session Jul 3 — holiday bridge; EOSER rights launch Monday on soft-jobs macro',
+    takeaway:  'NYSE/Nasdaq closed Thu Jul 3 (Independence Day observed, Jul 4 on Saturday); last EOSE print $5.55 (Jul 2, −8.4%). Monday Jul 6 is the key setup: EOSER begins Nasdaq trading, virtual roadshow kicks off, and June\'s soft NFP (+57K vs +115K est.) reduces rate-hike risk.',
     bullets: [
-      'Rights distribution day: eligible EOSE holders receive ~0.0714 rights/share via their broker today. Each right buys 1 unit at $5.481 (1 share + 0.4388 warrant, 10-yr $5.481 strike); over-subscription right available.',
-      'Jun 30 8-K: all consent conditions cleared — DOE granted Second + Third Limited Consents; CCM Cerberus credit-facility consent secured. Frontier JV remains conditional only on definitive docs + rights-offering close.',
-      '424B5 filed: HBC registered direct priced at $5.481/unit (13.7M shares + 6.0M warrants, ~$75M proceeds). Rights offering targets $150M. Together = ~$225M EOSE Initial Class B JV contribution.',
-      'Watch today: commencement PR and rights-offering prospectus supplement filing expected. Subscription period ~30 trading days; over-subscription right lets keen holders mop up any unsubscribed units.',
-      'Intrinsic value: EOSE at $6.06 (Jul 1 close) vs $5.481 sub price = ~$0.58/unit in-the-money — each right worth ~$0.041 theoretically (0.0714 × $0.58) plus 10-yr warrant sweetener.',
-      'Bear watch: HBC direct + full rights raise adds ~40M shares + ~18M warrants. Frontier Power USA JV definitive docs still unexecuted; platform remains pre-revenue and closing is not guaranteed.'
+      'No session today (Jul 3): NYSE/Nasdaq closed — Independence Day observed. Last close $5.55 (Jul 2, −8.4%) reflects ex-rights adjustment on 27.4M unit distribution; vol 16.4M below 22.1M avg, no fundamental bad news.',
+      'Monday Jul 6: EOSER rights begin Nasdaq trading; company hosts virtual investor roadshow via NetRoadshow (wk of Jul 6). Day 1 EOSER price vs. $5.481 sub price will be the market\'s first real verdict on subscription appetite.',
+      'Macro tailwind: June NFP +57K vs +115K est. (4-month low); dollar on course for biggest weekly drop since April. Fed holds at 3.50–3.75% — soft data reduces Jul 29 FOMC hike risk, constructive for LDES development.',
+      'Execution milestone: Thorn Hill Line 2 in commercial production since Jun 16; first Frontier PO placed — Redbird 100 MW / 400 MWh (Texas) under the 2 GWh FPUSA capacity reservation. JV thesis has real-world evidence.',
+      'Capital formation on track: HBC direct ($75M, Jul 1) + rights offering ($150M target) = ~$225M EOSE JV contribution. Rights sub window closes Jul 21 at 5 pm ET; Frontier definitive docs still unsigned — key open risk.',
+      'Bear watch: ~30% short float, 5× days-to-cover. EOSER\'s Day 1 trading sets the tone; poor rights appetite could reopen dilution debates ahead of Jul 21 subscription close.'
     ],
-    price:   { last: 6.06, changePct: 2.88, note: 'close Jul 1, 2026 · last confirmed session · Stooq delayed' },
+    price:   { last: 5.55, changePct: -8.4, note: 'last close Jul 2, 2026 · no session Jul 3 (market holiday)' },
     sources: [
-      { label: 'Jun 30 8-K — A&R Term Sheet, DOE Consents, CCM Consent (SEC)', url: 'https://www.sec.gov/Archives/edgar/data/0001805077/000095010326009739/dp249222_8k.htm' },
-      { label: 'Eos Energy — Updated Terms for Rights Offering (Jun 30 PR)', url: 'https://www.globenewswire.com/news-release/2026/06/30/3319575/0/en/Eos-Energy-Announces-Updated-Terms-for-Rights-Offering.html' },
-      { label: 'Eos — $125M HBC Investment, FPUSA equity to $375M (Jun 30)', url: 'https://www.globenewswire.com/news-release/2026/06/30/3319576/0/en/Eos-Announces-125-Million-Investment-for-Frontier-Power-USA-Bringing-Expected-Frontier-Equity-Investment-up-to-375-Million.html' },
-      { label: '424B5 — HBC Registered Direct Prospectus Supplement (SEC)', url: 'https://www.sec.gov/Archives/edgar/data/0001805077/000095010326009742/dp249117_424b5.htm' },
-      { label: 'Eos Energy IR — News Releases', url: 'https://investors.eose.com/news-releases/' }
+      { label: 'NYSE/Nasdaq closed Jul 3 — Benzinga', url: 'https://www.benzinga.com/markets/market-summary/26/07/60264249/stock-market-open-on-july-3-what-us-investors-need-to-know-about-nyse-nasdaq-and-bank-holiday-hours-for-the-fourth-of-july-weekend' },
+      { label: 'Rights Offering Commencement PR (Jul 2, investors.eose.com)', url: 'https://investors.eose.com/news-releases/news-release-details/eos-energy-announces-commencement-rights-offering' },
+      { label: 'Jul 2 8-K — Rights Commencement (SEC)', url: 'https://www.sec.gov/Archives/edgar/data/0001805077/000095010326010023/dp249395_8k.htm' },
+      { label: 'Jul 1 8-K — HBC Direct Closed (SEC)', url: 'https://www.sec.gov/Archives/edgar/data/0001805077/000095010326009976/dp249372_8k.htm' },
+      { label: 'BLS — Employment Situation Jun 2026', url: 'https://www.bls.gov/news.release/empsit.nr0.htm' },
+      { label: 'Thorn Hill Line 2 Launch + Redbird PO (investors.eose.com)', url: 'https://investors.eose.com/news-releases/news-release-details/eos-energy-enterprises-launches-commercial-production-second' }
     ]
   },
 
