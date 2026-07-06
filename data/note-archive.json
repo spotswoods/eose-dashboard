@@ -1,5 +1,24 @@
 [
  {
+  "updatedAt": "2026-07-06T07:36:00+02:00",
+  "session": "pre-open",
+  "headline": "EOSER Day 1 on Nasdaq — roadshow live, rights sub closes Jul 21, last EOSE $5.55",
+  "takeaway": "EOSER begins Nasdaq trading today — the market's first verdict on rights demand for the ~$150M FPUSA contribution. Virtual roadshow (NetRoadshow) kicks off this week. Last EOSE $5.55 (Jul 2, −8.4%); sub price $5.481 leaves a thin exercise premium. Frontier definitive docs still unsigned — the key open risk.",
+  "bullets": [
+   "EOSER Day 1: rights trade Nasdaq today (Jul 6) under symbol EOSER until Jul 21, 5 pm ET. Sub price $5.481/unit (1 share + 0.4388 warrant). Opening price vs. last EOSE close ($5.55) sets subscription appetite tone.",
+   "Rights roadshow live: Eos hosts virtual investor presentation via NetRoadshow this week — key pitch is $150M rights contribution to FPUSA alongside Cerberus $100M + HBC $50M for the 2 GWh LDES platform.",
+   "Frontier JV: definitive docs unsigned — HBC direct ($75M) closed Jul 1, Cerberus $100M committed. FPUSA still on binding term sheet; 8-K with final agreement is the trigger shot for this story.",
+   "Bear case: ~30% short float, 5× days-to-cover. Soft EOSER Day 1 trade or below-par rights appetite could reopen dilution debates with 15 days left in the subscription window. Watch opening bid vs. $5.481.",
+   "BNEF: 158 GW global storage in 2026 (+41% YoY); LDES additions quadrupling. US Li-ion supply-chain tariff pressure accelerating RFP interest in alternative chemistries — Eos Z3 zinc-bromide a direct beneficiary.",
+   "Calendar: rights sub window closes Jul 21 5 pm ET; Q2 earnings indicated Jul 29. Watch Ofgem consultation close Aug 7 (Frontier UK LDES pipeline)."
+  ],
+  "price": {
+   "last": 5.55,
+   "changePct": -8.4,
+   "note": "last close Jul 2, 2026 · market closed Jul 3–5 (holiday + weekend) · EOSER Day 1 pre-open"
+  }
+ },
+ {
   "updatedAt": "2026-07-01T22:30:00+02:00",
   "session": "post-close",
   "headline": "Record date passes; EOSE reclaims $6+ on quiet session (+2.9%) — rights distribute tomorrow",
