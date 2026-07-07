@@ -30,25 +30,26 @@ window.EOSE_DATA = {
   // Refreshed by /equity-research:morning-note via a scheduled task in Cowork.
   // session = 'pre-open' (Swedish AM, ~07:00 CEST) | 'post-close' (Swedish PM, ~22:30 CEST)
   morningNote: {
-    updatedAt: '2026-07-06T07:36:00+02:00',
+    updatedAt: '2026-07-07T07:30:00+02:00',
     session:   'pre-open',
-    headline:  'EOSER Day 1 on Nasdaq — roadshow live, rights sub closes Jul 21, last EOSE $5.55',
-    takeaway:  'EOSER begins Nasdaq trading today — the market\'s first verdict on rights demand for the ~$150M FPUSA contribution. Virtual roadshow (NetRoadshow) kicks off this week. Last EOSE $5.55 (Jul 2, −8.4%); sub price $5.481 leaves a thin exercise premium. Frontier definitive docs still unsigned — the key open risk.',
+    headline:  'EOSER Day 2 — rights near ATM at ~$5.52, Frontier docs still unsigned, Fed min Wed',
+    takeaway:  'EOSE held ~$5.52 on EOSER Day 1 (Jul 6, −0.59% per Stooq), leaving sub price $5.481 essentially at-the-money. With 14 days left in the window (closes Jul 21), subscription appetite and a Frontier definitive 8-K remain the two key catalysts. Fed minutes from Warsh\'s first FOMC meeting due Wednesday.',
     bullets: [
-      'EOSER Day 1: rights trade Nasdaq today (Jul 6) under symbol EOSER until Jul 21, 5 pm ET. Sub price $5.481/unit (1 share + 0.4388 warrant). Opening price vs. last EOSE close ($5.55) sets subscription appetite tone.',
-      'Rights roadshow live: Eos hosts virtual investor presentation via NetRoadshow this week — key pitch is $150M rights contribution to FPUSA alongside Cerberus $100M + HBC $50M for the 2 GWh LDES platform.',
-      'Frontier JV: definitive docs unsigned — HBC direct ($75M) closed Jul 1, Cerberus $100M committed. FPUSA still on binding term sheet; 8-K with final agreement is the trigger shot for this story.',
-      'Bear case: ~30% short float, 5× days-to-cover. Soft EOSER Day 1 trade or below-par rights appetite could reopen dilution debates with 15 days left in the subscription window. Watch opening bid vs. $5.481.',
-      'BNEF: 158 GW global storage in 2026 (+41% YoY); LDES additions quadrupling. US Li-ion supply-chain tariff pressure accelerating RFP interest in alternative chemistries — Eos Z3 zinc-bromide a direct beneficiary.',
-      'Calendar: rights sub window closes Jul 21 5 pm ET; Q2 earnings indicated Jul 29. Watch Ofgem consultation close Aug 7 (Frontier UK LDES pipeline).'
+      'EOSER Day 2 on Nasdaq (16-day window closes Jul 21 5pm ET). Sub price $5.481/unit (1 share + 0.4388W); EOSE ~$5.52 = 0.7% exercise premium — any stock dip below $5.481 flips exercise incentive negative. Watch daily EOSER volume as the best available proxy for subscription demand.',
+      'Frontier still on binding term sheet: Cerberus $100M equity committed; HBC $75M to EOSE direct offering (closed Jun 30) + $50M direct to FPUSA. KKR Capital Markets engaged Jun 25 as FPUSA structuring agent for construction and project finance debt. Definitive 8-K is the trigger shot.',
+      'Macro: June jobs +57K vs +190K consensus (weakest since Q1 2025); rate-cut bias supports risk-on. Nasdaq futures +1.1% Jul 6 open on Foxconn Q2 beat (AI demand intact). Fed minutes from Warsh\'s inaugural FOMC meeting due Wednesday Jul 8 — watch for rate-cut timeline signals.',
+      'Z3 safety milestone (Jun 22): independent fire testing confirmed no thermal runaway, no sustained fire, no propagation under abuse conditions + ISO 14001 environmental cert. Reduces TPI insurance friction and improves project bankability for FPUSA\'s 16 GWh pipeline.',
+      'Bear: ~30% short float, 5× DTC. Sub essentially ATM — EOSE below $5.481 makes exercising irrational. Frontier still unsigned (DOE consent + definitive docs pending). Rights expire Jul 21, Q2 earnings Jul 29 — both are live event risks within the next three weeks.',
+      'Calendar: EOSER sub closes Jul 21 5pm ET · Fed minutes Jul 8 · Q2 earnings Jul 29 · Ofgem consultation close Aug 7 · NYSERDA bulk storage awards est. Q3 2026.'
     ],
-    price:   { last: 5.55, changePct: -8.4, note: 'last close Jul 2, 2026 · market closed Jul 3–5 (holiday + weekend) · EOSER Day 1 pre-open' },
+    price:   { last: 5.52, changePct: -0.59, note: 'Stooq delayed · est. Jul 6 close (−0.59% from Jul 2 $5.55)' },
     sources: [
-      { label: 'Rights Offering Commencement PR (investors.eose.com)', url: 'https://investors.eose.com/news-releases/news-release-details/eos-energy-announces-commencement-rights-offering' },
-      { label: 'EOSER 8-A Registration Cert (SEC EDGAR)', url: 'https://www.sec.gov/Archives/edgar/data/0001805077/000135445726000639/EOSER_8A_Cert_1805077.pdf' },
-      { label: 'GlobeNewsWire — Rights Commencement Jul 2', url: 'https://www.globenewswire.com/news-release/2026/07/02/3321267/0/en/Eos-Energy-Announces-Commencement-of-Rights-Offering.html' },
-      { label: 'Jul 2 8-K — Rights Commencement (SEC)', url: 'https://www.sec.gov/Archives/edgar/data/0001805077/000095010326010023/dp249395_8k.htm' },
-      { label: 'BNEF — Energy Storage 100 GW Era', url: 'https://about.bnef.com/insights/clean-energy/energy-storage-enters-the-100-gigawatt-era-three-things-to-know/' }
+      { label: 'Rights Offering Commencement 8-K (SEC Jul 2)', url: 'https://www.sec.gov/Archives/edgar/data/0001805077/000095010326010023/dp249395_8k.htm' },
+      { label: 'FPUSA/KKR Capital Markets engagement (GNW Jun 25)', url: 'https://www.globenewswire.com/news-release/2026/06/25/3317521/0/en/Frontier-Power-USA-Engages-KKR-Capital-Markets-to-Support-Scaled-Deployment-of-Long-Duration-Energy-Storage.html' },
+      { label: 'HBC $125M commitment — FPUSA + EOSE (GNW Jun 30)', url: 'https://www.globenewswire.com/news-release/2026/06/30/3319696/0/en/Frontier-Power-USA-Welcomes-50-Million-Investment-from-Hudson-Bay-Capital-as-Part-of-a-125-Million-Hudson-Bay-Commitment-in-Support-of-FPUSA.html' },
+      { label: 'Z3 fire test + ISO 14001 cert (StockTitan Jun 22)', url: 'https://www.stocktitan.net/news/EOSE/independent-fire-testing-confirms-eos-z3-battery-system-exhibited-no-udhxieoxvgud.html' },
+      { label: 'Market today Jul 6 — Yahoo Finance', url: 'https://finance.yahoo.com/markets/stocks/live/stock-market-today-monday-july-6-225645420.html' },
+      { label: 'EOSE.US price — Stooq', url: 'https://stooq.com/q/?s=eose.us' }
     ]
   },
 

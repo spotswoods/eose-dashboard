@@ -166,9 +166,9 @@
     <section class="dd-sec">
       <div class="dd-sec__num">PART 4</div>
       <h2>The dilution math (worked example)</h2>
-      <p>The exact subscription ratio and price won't be known until Eos files the offering prospectus. The numbers below are <b>illustrative</b> — to show the <em>shape</em> of the math, not the final terms.</p>
+      <p>As of the June 30, 2026 prospectus supplement the terms are set: <b>$5.481 per unit</b>. The simplified example below shows the <em>shape</em> of the dilution; the <b>interactive calculator right after it</b> uses the real unit + warrant mechanics for your own share count.</p>
       <div class="note-box">
-        <h4>Illustrative — assumes a $150M raise priced at ~$5.50 (a discount to the ~$6–7 June 2026 trading range)</h4>
+        <h4>Illustrative — a $150M raise priced at ~$5.48 (a discount to the ~$6–7 June 2026 trading range)</h4>
         <div class="row"><span>New shares issued (≈ $150M ÷ $5.50)</span><b>~27.3M</b></div>
         <div class="row"><span>Shares outstanding before (Q1'26)</span><b>~339.5M</b></div>
         <div class="row"><span>Shares outstanding after</span><b>~366.8M</b></div>
@@ -181,6 +181,74 @@
         <span class="lead">Context worth remembering</span>
         Eos shareholders have already been diluted heavily — share count grew ~49% over the past year (from ~225M to ~340M). The rights offering adds to that, but unlike most of the prior dilution, this one comes with a built-in way to protect your percentage.
       </div>
+    </section>
+
+    <!-- Part 4B — interactive calculator -->
+    <section class="dd-sec">
+      <div class="dd-sec__num">PART 4 · INTERACTIVE</div>
+      <h2>Run your own numbers</h2>
+      <p>Enter the shares you hold and drag a target price. This uses the <b>actual</b> priced terms — $5.481 per unit, each unit = 1 share + 0.4388 warrant (strike $5.481) — and compares subscribing against putting the same cash into plain stock.</p>
+
+      <div class="roi">
+        <div class="roi-inputs">
+          <div class="roi-ctrl">
+            <label for="roi-shares">Shares you hold</label>
+            <input type="number" id="roi-shares" value="1000" min="14" max="10000000" step="1" inputmode="numeric">
+            <small>Held on the July 1 record date · 1 share = 1 right</small>
+          </div>
+          <div class="roi-ctrl">
+            <label for="roi-price">If EOSE climbs to… <output id="roi-priceOut">$8.00</output></label>
+            <input type="range" id="roi-price" min="3" max="20" step="0.25" value="8">
+            <small>Comparison entry ≈ $5.25 · warrant strike $5.481 · 52-week high $19.86</small>
+          </div>
+        </div>
+
+        <div class="roi-flow" aria-label="Your allotment">
+          <div class="roi-step"><div class="n" id="roi-fRights">—</div><div class="l">rights</div></div>
+          <div class="roi-step"><div class="n" id="roi-fUnits">—</div><div class="l">units (÷ ~14)</div></div>
+          <div class="roi-step"><div class="n" id="roi-fCost">—</div><div class="l">cost to subscribe</div></div>
+          <div class="roi-step"><div class="n"><em id="roi-fShares">—</em></div><div class="l">new shares</div></div>
+          <div class="roi-step"><div class="n"><em id="roi-fWarr">—</em></div><div class="l">warrants ($5.481)</div></div>
+        </div>
+
+        <div class="roi-compare">
+          <div class="roi-card roi-card--units">
+            <h3><span class="roi-dot roi-dot--a"></span>Subscribe to the offering</h3>
+            <div class="roi-desc" id="roi-uDesc">—</div>
+            <div class="roi-profit" id="roi-uProfit">—</div>
+            <div class="roi-profitl">profit on <span id="roi-uCostL">—</span> at your target</div>
+            <div class="roi-rows">
+              <div class="roi-row"><span>New shares worth</span><span id="roi-uSharesV">—</span></div>
+              <div class="roi-row"><span>Warrants worth (intrinsic)</span><span id="roi-uWarrV">—</span></div>
+              <div class="roi-row"><span>Total package</span><span id="roi-uTotal">—</span></div>
+            </div>
+          </div>
+          <div class="roi-card">
+            <h3><span class="roi-dot roi-dot--s"></span>Same money in plain stock</h3>
+            <div class="roi-desc" id="roi-sDesc">—</div>
+            <div class="roi-profit" id="roi-sProfit">—</div>
+            <div class="roi-profitl">profit on <span id="roi-sCostL">—</span> at your target</div>
+            <div class="roi-rows">
+              <div class="roi-row"><span>Shares worth</span><span id="roi-sSharesV">—</span></div>
+              <div class="roi-row"><span>Warrants</span><span>none</span></div>
+              <div class="roi-row"><span>Total package</span><span id="roi-sTotal">—</span></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="roi-delta"><span class="lead" id="roi-dLead">—</span><span id="roi-dText">—</span></div>
+
+        <div class="roi-board">
+          <svg id="roi-chart" viewBox="0 0 800 300" role="img" aria-label="Profit of each route across EOSE prices"></svg>
+          <div class="roi-legend">
+            <span class="roi-chip"><span class="roi-sw roi-sw--a"></span>subscribe (shares + warrants)</span>
+            <span class="roi-chip"><span class="roi-sw roi-sw--s"></span>plain stock</span>
+            <span class="roi-chip" style="color:var(--fg-3)">dashed = break-even</span>
+          </div>
+        </div>
+      </div>
+
+      <p style="font-size:12px;color:var(--fg-3);margin-top:12px;line-height:1.6">Mechanics: 1 right per share held; 1 right ≈ 0.071193 unit (estimated from a $150M raise ÷ shares outstanding); units round down to whole; each unit = 1 share + 0.4388 warrant (strike $5.481). The plain-stock route spends the identical cash at ≈$5.25. Warrants valued at <em>intrinsic only</em> — selling the warrants on-market before expiry typically adds premium on top, which favours subscribing. Excludes fees, FX and taxes, and your existing shares (identical either way). <strong>Scenario math, not investment advice.</strong></p>
     </section>
 
     <!-- Part 5 -->
@@ -346,6 +414,9 @@
     </div>
 
   </main>
+
+  <!-- Interactive rights-offering payoff calculator (Part 4B) -->
+  <script src="js/rights-calc.js"></script>
 
   <!-- Cloudflare Web Analytics (cookieless, deferred) -->
   <script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "7f21e028bb474554a12d8c8472c9cdb2"}'></script>

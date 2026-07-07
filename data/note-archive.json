@@ -1,5 +1,24 @@
 [
  {
+  "updatedAt": "2026-07-07T07:30:00+02:00",
+  "session": "pre-open",
+  "headline": "EOSER Day 2 — rights near ATM at ~$5.52, Frontier docs still unsigned, Fed min Wed",
+  "takeaway": "EOSE held ~$5.52 on EOSER Day 1 (Jul 6, −0.59% per Stooq), leaving sub price $5.481 essentially at-the-money. With 14 days left in the window (closes Jul 21), subscription appetite and a Frontier definitive 8-K remain the two key catalysts. Fed minutes from Warsh's first FOMC meeting due Wednesday.",
+  "bullets": [
+   "EOSER Day 2 on Nasdaq (16-day window closes Jul 21 5pm ET). Sub price $5.481/unit (1 share + 0.4388W); EOSE ~$5.52 = 0.7% exercise premium — any stock dip below $5.481 flips exercise incentive negative. Watch daily EOSER volume as the best available proxy for subscription demand.",
+   "Frontier still on binding term sheet: Cerberus $100M equity committed; HBC $75M to EOSE direct offering (closed Jun 30) + $50M direct to FPUSA. KKR Capital Markets engaged Jun 25 as FPUSA structuring agent for construction and project finance debt. Definitive 8-K is the trigger shot.",
+   "Macro: June jobs +57K vs +190K consensus (weakest since Q1 2025); rate-cut bias supports risk-on. Nasdaq futures +1.1% Jul 6 open on Foxconn Q2 beat (AI demand intact). Fed minutes from Warsh's inaugural FOMC meeting due Wednesday Jul 8 — watch for rate-cut timeline signals.",
+   "Z3 safety milestone (Jun 22): independent fire testing confirmed no thermal runaway, no sustained fire, no propagation under abuse conditions + ISO 14001 environmental cert. Reduces TPI insurance friction and improves project bankability for FPUSA's 16 GWh pipeline.",
+   "Bear: ~30% short float, 5× DTC. Sub essentially ATM — EOSE below $5.481 makes exercising irrational. Frontier still unsigned (DOE consent + definitive docs pending). Rights expire Jul 21, Q2 earnings Jul 29 — both are live event risks within the next three weeks.",
+   "Calendar: EOSER sub closes Jul 21 5pm ET · Fed minutes Jul 8 · Q2 earnings Jul 29 · Ofgem consultation close Aug 7 · NYSERDA bulk storage awards est. Q3 2026."
+  ],
+  "price": {
+   "last": 5.52,
+   "changePct": -0.59,
+   "note": "Stooq delayed · est. Jul 6 close (−0.59% from Jul 2 $5.55)"
+  }
+ },
+ {
   "updatedAt": "2026-07-06T07:36:00+02:00",
   "session": "pre-open",
   "headline": "EOSER Day 1 on Nasdaq — roadshow live, rights sub closes Jul 21, last EOSE $5.55",
