@@ -30,23 +30,23 @@ window.EOSE_DATA = {
   // Refreshed by /equity-research:morning-note via a scheduled task in Cowork.
   // session = 'pre-open' (Swedish AM, ~07:00 CEST) | 'post-close' (Swedish PM, ~22:30 CEST)
   morningNote: {
-    updatedAt: '2026-07-09T09:15:00+02:00',
-    session:   'pre-open',
-    headline:  'EOSE into Jul 9 open: 12 days to rights expiry, Iran risk-off, no overnight catalysts',
-    takeaway:  'No new EOSE catalysts overnight; stock ended Jul 8 at $4.69 (AH $4.75) on thin 3.8M volume. EOSER expires in 12 days with sub price $0.81 above spot — still deeply underwater. Iran escalation sustains risk-off macro backdrop; US session opens at 15:30 Stockholm.',
+    updatedAt: '2026-07-09T22:10:00+02:00',
+    session:   'post-close',
+    headline:  'EOSE -1.9% to ~$4.60 post-close Jul 9; NetRoadshow live, rights expiry in 12 days',
+    takeaway:  'EOSE closed Jul 9 at ~$4.60 (-1.9% vs Jul 8) on low conviction; AH drifted to ~$4.50. Today\'s only catalyst: virtual NetRoadshow presentation for EOSER rights offering. Sub price $5.481 remains $0.88 above spot (-16%); 12 days to Jul 21 expiry.',
     bullets: [
-      'Prior close: $4.69 (−1.1%) Jul 8 on 3.8M vol (~15% of 24.9M avg); AH ticked to $4.75. Continued digestion of Tue\'s 54M flush and capital-raise overhang — no new catalyst.',
-      'Rights clock: EOSER expires Jul 21 5pm ET (12 days). Sub price $5.481 vs ~$4.69 spot = −$0.81 (−14.8% underwater); stock needs ~17% rally to flip exercise economics positive.',
-      'FPUSA/Stella: Jul 7 PR — FPUSA exercised selection rights on 4 Stella projects (920 MWh Z3 batteries). Definitive 8-K still pending; deal close contingent on rights offering.',
-      'Iran escalation: Trump declared ceasefire \'over\' after renewed Jul 7-8 strikes; WTI elevated, markets risk-off. Higher-for-longer headwind for LDES discount rates persists.',
-      'No new EOSE filings overnight: no 8-K, Form 4, or IR press release as of pre-open. June existing home sales data + PepsiCo Q2 earnings on today\'s macro calendar.',
-      'Calendar: EOSER sub expires Jul 21 (12 days) · Q2 earnings est. Jul 29 · FPUSA rights offering close awaited · Ofgem consult close Aug 7 · NYSERDA awards est. Q3 2026.'
+      'Close ~$4.60 (-1.9% Jul 9) on thin volume; day range $4.40-$4.77. AH slid to ~$4.50 (-2.1%). Stock compresses in the $4.40-$4.77 band post-Jul 7 flush; no incremental catalyst to break out.',
+      'Key event today (Jul 9, 8:21am ET): Eos posted virtual NetRoadshow presentation for EOSER rights offering — accessible until Jul 21 expiry. No material new info vs the Jul 2 prospectus supplement.',
+      'Rights clock: EOSER expires Jul 21 5pm ET (12 days). Sub price $5.481 vs ~$4.60 spot = -$0.88 (-16.1% underwater); needs ~19% rally to flip exercise economics positive.',
+      'No new SEC filings Jul 9: no 8-K, Form 4, or earnings activity. FPUSA/Stella 920 MWh definitive 8-K still pending; deal close contingent on rights offering completion.',
+      'Macro: Iran risk-off persists; WTI elevated. No EOSE catalyst expected pre-market Jul 10. Watch for FPUSA deal 8-K or Form 4 before Jul 21 EOSER expiry; absence of catalysts keeps range-bound trade likely.',
+      'Calendar: EOSER expiry Jul 21 · Q2 earnings est. Jul 29 · FPUSA deal close awaited · Ofgem consult close Aug 7 · NYSERDA awards est. Q3 2026.'
     ],
-    price:   { last: 4.69, changePct: -1.05, note: 'prior close · Jul 8 2026 · AH $4.75 (Yahoo Finance delayed)' },
+    price:   { last: 4.60, changePct: -1.92, note: 'close · Jul 9 2026 · AH ~$4.50 (Stooq/Yahoo delayed)' },
     sources: [
       { label: 'EOSE Quote — Yahoo Finance', url: 'https://finance.yahoo.com/quote/EOSE/' },
-      { label: 'FPUSA/Stella 920 MWh PR — GlobeNewsWire (Jul 7)', url: 'https://www.globenewswire.com/news-release/2026/07/07/3323096/0/en/Frontier-Power-USA-Converts-920-MWh-Battery-Storage-Project-Portfolio-Under-Stella-Strategic-Framework.html' },
-      { label: '2026 Iran war — Britannica', url: 'https://www.britannica.com/event/2026-Iran-war' },
+      { label: 'Eos NetRoadshow PR — GlobeNewswire (Jul 9)', url: 'https://www.globenewswire.com/news-release/2026/07/09/3324772/0/en/Eos-Energy-Announces-a-Virtual-Investor-Presentation-for-Rights-Offering.html' },
+      { label: 'EOSE IR — Rights Offering Commencement', url: 'https://investors.eose.com/news-releases/news-release-details/eos-energy-announces-commencement-rights-offering' },
       { label: 'EOSE Jul 7 slide — Motley Fool', url: 'https://www.fool.com/coverage/stock-market-today/2026/07/07/stock-market-today-july-7-eos-energy-slides-after-power-project-selection-news/' },
       { label: 'Eos IR — News Releases', url: 'https://investors.eose.com/news-releases' }
     ]
