@@ -30,24 +30,25 @@ window.EOSE_DATA = {
   // Refreshed by /equity-research:morning-note via a scheduled task in Cowork.
   // session = 'pre-open' (Swedish AM, ~07:00 CEST) | 'post-close' (Swedish PM, ~22:30 CEST)
   morningNote: {
-    updatedAt: '2026-07-07T22:30:00+02:00',
-    session:   'post-close',
-    headline:  'FPUSA lands 920 MWh of Stella projects; EOSE reverses below sub price',
-    takeaway:  'FPUSA selected four Stella Energy projects (230 MW / 920 MWh) — first named US pipeline conversions — but EOSE erased a premarket +6.7% gain to close at $5.10 (−7.6%), now $0.37 beneath the $5.481 sub price. Rights exercise is underwater with 14 days left.',
+    updatedAt: '2026-07-09T09:15:00+02:00',
+    session:   'pre-open',
+    headline:  'EOSE into Jul 9 open: 12 days to rights expiry, Iran risk-off, no overnight catalysts',
+    takeaway:  'No new EOSE catalysts overnight; stock ended Jul 8 at $4.69 (AH $4.75) on thin 3.8M volume. EOSER expires in 12 days with sub price $0.81 above spot — still deeply underwater. Iran escalation sustains risk-off macro backdrop; US session opens at 15:30 Stockholm.',
     bullets: [
-      'Price action: EOSE opened higher on FPUSA/Stella news, hit $5.55 intraday (near sub price), then reversed hard to close $5.10 (−7.6% vs Jul 6 $5.52); vol 28.2M vs 20.8M avg (1.35×) — "sell the news" unwind, dilution concern weighing.',
-      'FPUSA catalyst (pre-mkt PR): Blanquilla BESS, Aransas Pass, Nash & Wallis projects (230 MW / 920 MWh) selected from Stella\'s 2+ GWh pipeline; FPUSA funds 100% construction equity; project closing contingent on rights offering close.',
-      'Rights math now negative: EOSE $5.10 = $0.37 below $5.481 sub price — rational holder sells EOSER rather than exercises; EOSER bid ~$0.17 (time value only). 14 days left before Jul 21 5 pm ET expiry; stock must recover above $5.481 to restore exercise incentive.',
-      'Significant options activity flagged today (GuruFocus); ~30% short float, 5× DTC — elevated binary vol into Jul 21 expiry. Bear: sub underwater + FPUSA definitive 8-K still pending. Bull: 920 MWh pipeline now real with four named Texas projects.',
-      'Fed minutes tomorrow (Jul 8) from Warsh\'s inaugural FOMC meeting; soft June jobs (+57K vs +190K est.) keeps rate-cut bias intact — constructive for long-duration LDES infrastructure discount rates.',
-      'Calendar: EOSER sub closes Jul 21 5 pm ET · Fed minutes Jul 8 · Q2 earnings Jul 29 · Ofgem consultation close Aug 7 · NYSERDA bulk storage awards est. Q3 2026.'
+      'Prior close: $4.69 (−1.1%) Jul 8 on 3.8M vol (~15% of 24.9M avg); AH ticked to $4.75. Continued digestion of Tue\'s 54M flush and capital-raise overhang — no new catalyst.',
+      'Rights clock: EOSER expires Jul 21 5pm ET (12 days). Sub price $5.481 vs ~$4.69 spot = −$0.81 (−14.8% underwater); stock needs ~17% rally to flip exercise economics positive.',
+      'FPUSA/Stella: Jul 7 PR — FPUSA exercised selection rights on 4 Stella projects (920 MWh Z3 batteries). Definitive 8-K still pending; deal close contingent on rights offering.',
+      'Iran escalation: Trump declared ceasefire \'over\' after renewed Jul 7-8 strikes; WTI elevated, markets risk-off. Higher-for-longer headwind for LDES discount rates persists.',
+      'No new EOSE filings overnight: no 8-K, Form 4, or IR press release as of pre-open. June existing home sales data + PepsiCo Q2 earnings on today\'s macro calendar.',
+      'Calendar: EOSER sub expires Jul 21 (12 days) · Q2 earnings est. Jul 29 · FPUSA rights offering close awaited · Ofgem consult close Aug 7 · NYSERDA awards est. Q3 2026.'
     ],
-    price:   { last: 5.10, changePct: -7.61, note: 'close · Jul 7 2026 · high $5.55, low $5.04, vol 28.2M (web search)' },
+    price:   { last: 4.69, changePct: -1.05, note: 'prior close · Jul 8 2026 · AH $4.75 (Yahoo Finance delayed)' },
     sources: [
-      { label: 'EOSE gains on FPUSA battery storage project selection (Investing.com Jul 7)', url: 'https://www.investing.com/news/stock-market-news/eos-energy-stock-gains-on-battery-storage-project-selection-93CH-4779426' },
-      { label: 'Significant options activity for EOSE (GuruFocus Jul 7)', url: 'https://www.gurufocus.com/news/8947546/significant-options-activity-for-eos-energy-eose' },
-      { label: 'EOSER price — Yahoo Finance', url: 'https://finance.yahoo.com/quote/EOSER/' },
-      { label: 'EOSE quote — Yahoo Finance', url: 'https://finance.yahoo.com/quote/EOSE/' }
+      { label: 'EOSE Quote — Yahoo Finance', url: 'https://finance.yahoo.com/quote/EOSE/' },
+      { label: 'FPUSA/Stella 920 MWh PR — GlobeNewsWire (Jul 7)', url: 'https://www.globenewswire.com/news-release/2026/07/07/3323096/0/en/Frontier-Power-USA-Converts-920-MWh-Battery-Storage-Project-Portfolio-Under-Stella-Strategic-Framework.html' },
+      { label: '2026 Iran war — Britannica', url: 'https://www.britannica.com/event/2026-Iran-war' },
+      { label: 'EOSE Jul 7 slide — Motley Fool', url: 'https://www.fool.com/coverage/stock-market-today/2026/07/07/stock-market-today-july-7-eos-energy-slides-after-power-project-selection-news/' },
+      { label: 'Eos IR — News Releases', url: 'https://investors.eose.com/news-releases' }
     ]
   },
 
