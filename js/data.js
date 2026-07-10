@@ -30,25 +30,25 @@ window.EOSE_DATA = {
   // Refreshed by /equity-research:morning-note via a scheduled task in Cowork.
   // session = 'pre-open' (Swedish AM, ~07:00 CEST) | 'post-close' (Swedish PM, ~22:30 CEST)
   morningNote: {
-    updatedAt: '2026-07-09T22:10:00+02:00',
-    session:   'post-close',
-    headline:  'EOSE -1.9% to ~$4.60 post-close Jul 9; NetRoadshow live, rights expiry in 12 days',
-    takeaway:  'EOSE closed Jul 9 at ~$4.60 (-1.9% vs Jul 8) on low conviction; AH drifted to ~$4.50. Today\'s only catalyst: virtual NetRoadshow presentation for EOSER rights offering. Sub price $5.481 remains $0.88 above spot (-16%); 12 days to Jul 21 expiry.',
+    updatedAt: '2026-07-10T07:15:00+02:00',
+    session:   'pre-open',
+    headline:  'EOSE flat pre-open Jul 10; board reshuffle 8-K filed, EOSER expiry in 11 days',
+    takeaway:  'No new operational catalysts overnight. Eos filed a board/CLO 8-K Jul 9: Haiyan Song joins as tech director, Marie Batz Martin becomes CLO Jul 13. EOSER rights expire Jul 21 (11 days); sub price $5.481 vs ~$4.60 EOSE = -16% underwater, needs ~19% rally to flip.',
     bullets: [
-      'Close ~$4.60 (-1.9% Jul 9) on thin volume; day range $4.40-$4.77. AH slid to ~$4.50 (-2.1%). Stock compresses in the $4.40-$4.77 band post-Jul 7 flush; no incremental catalyst to break out.',
-      'Key event today (Jul 9, 8:21am ET): Eos posted virtual NetRoadshow presentation for EOSER rights offering — accessible until Jul 21 expiry. No material new info vs the Jul 2 prospectus supplement.',
-      'Rights clock: EOSER expires Jul 21 5pm ET (12 days). Sub price $5.481 vs ~$4.60 spot = -$0.88 (-16.1% underwater); needs ~19% rally to flip exercise economics positive.',
-      'No new SEC filings Jul 9: no 8-K, Form 4, or earnings activity. FPUSA/Stella 920 MWh definitive 8-K still pending; deal close contingent on rights offering completion.',
-      'Macro: Iran risk-off persists; WTI elevated. No EOSE catalyst expected pre-market Jul 10. Watch for FPUSA deal 8-K or Form 4 before Jul 21 EOSER expiry; absence of catalysts keeps range-bound trade likely.',
-      'Calendar: EOSER expiry Jul 21 · Q2 earnings est. Jul 29 · FPUSA deal close awaited · Ofgem consult close Aug 7 · NYSERDA awards est. Q3 2026.'
+      'Board 8-K filed Jul 9: Haiyan Song (technologist, age 60) joins as Class III director; Nathaniel Fick moves to preferred-stock seat; Greg Nixon resigns. Marie Batz Martin becomes CLO Jul 13; Silberman stays through Sep 11.',
+      'EOSER rights clock: 11 days to Jul 21 5pm ET expiry. Sub price $5.481 vs ~$4.60 EOSE spot = -$0.88 (-16.1% underwater); ~19% EOSE rally needed to flip exercise economics. EOSER bid ~$0.04 (Nasdaq).',
+      'FPUSA/Stella 920 MWh deal (4 projects: Blanquilla, Aransas Pass, Nash, Wallis) selected Jul 7 — definitive agreements still pending. Deal close remains contingent on successful completion of the rights offering.',
+      'No new Eos press releases or Form 4 insider filings Jul 9\u201310 pre-open. NetRoadshow for rights offering accessible at eosrightsoffering.com until Jul 21 expiry.',
+      "Macro: Intersolar Europe 2026 opens in Munich Jul 10 \u2014 modest LDES sentiment backdrop. No EOSE-specific catalyst at today's open; tape likely range-bound in the $4.40\u2013$4.77 band absent new news.",
+      'Calendar: CLO transition Jul 13 \u00b7 EOSER expiry Jul 21 \u00b7 Q2 earnings Jul 29 \u00b7 FPUSA deal close awaited \u00b7 Ofgem consult close Aug 7 \u00b7 NYSERDA awards est. Q3 2026.'
     ],
-    price:   { last: 4.60, changePct: -1.92, note: 'close · Jul 9 2026 · AH ~$4.50 (Stooq/Yahoo delayed)' },
+    price:   { last: 4.60, changePct: null, note: 'close \u00b7 Jul 9 2026 (Stooq/Yahoo delayed; pre-market Jul 10 not yet available)' },
     sources: [
-      { label: 'EOSE Quote — Yahoo Finance', url: 'https://finance.yahoo.com/quote/EOSE/' },
-      { label: 'Eos NetRoadshow PR — GlobeNewswire (Jul 9)', url: 'https://www.globenewswire.com/news-release/2026/07/09/3324772/0/en/Eos-Energy-Announces-a-Virtual-Investor-Presentation-for-Rights-Offering.html' },
-      { label: 'EOSE IR — Rights Offering Commencement', url: 'https://investors.eose.com/news-releases/news-release-details/eos-energy-announces-commencement-rights-offering' },
-      { label: 'EOSE Jul 7 slide — Motley Fool', url: 'https://www.fool.com/coverage/stock-market-today/2026/07/07/stock-market-today-july-7-eos-energy-slides-after-power-project-selection-news/' },
-      { label: 'Eos IR — News Releases', url: 'https://investors.eose.com/news-releases' }
+      { label: 'Eos 8-K Jul 9 \u2014 Board & CLO changes (SEC EDGAR)', url: 'https://www.sec.gov/Archives/edgar/data/0001805077/000095010326010023/dp249395_8k.htm' },
+      { label: 'EOSE Quote \u2014 Yahoo Finance', url: 'https://finance.yahoo.com/quote/EOSE/' },
+      { label: 'FPUSA/Stella 920 MWh \u2014 GlobeNewswire Jul 7', url: 'https://www.globenewswire.com/news-release/2026/07/07/3323096/0/en/Frontier-Power-USA-Converts-920-MWh-Battery-Storage-Project-Portfolio-Under-Stella-Strategic-Framework.html' },
+      { label: 'Eos IR \u2014 News Releases', url: 'https://investors.eose.com/news-releases' },
+      { label: 'Benzinga \u2014 EOSER industrials pre-market Jul 9', url: 'https://www.benzinga.com/trading-ideas/movers/26/07/60353916/12-industrials-stocks-moving-thursday-s-pre-market-session' }
     ]
   },
 
