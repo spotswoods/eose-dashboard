@@ -30,25 +30,25 @@ window.EOSE_DATA = {
   // Refreshed by /equity-research:morning-note via a scheduled task in Cowork.
   // session = 'pre-open' (Swedish AM, ~07:00 CEST) | 'post-close' (Swedish PM, ~22:30 CEST)
   morningNote: {
-    updatedAt: '2026-07-10T07:15:00+02:00',
-    session:   'pre-open',
-    headline:  'EOSE flat pre-open Jul 10; board reshuffle 8-K filed, EOSER expiry in 11 days',
-    takeaway:  'No new operational catalysts overnight. Eos filed a board/CLO 8-K Jul 9: Haiyan Song joins as tech director, Marie Batz Martin becomes CLO Jul 13. EOSER rights expire Jul 21 (11 days); sub price $5.481 vs ~$4.60 EOSE = -16% underwater, needs ~19% rally to flip.',
+    updatedAt: '2026-07-13T22:30:00+02:00',
+    session:   'post-close',
+    headline:  'Stifel cuts PT to $10, Buy intact; EOSE -6.9% to $4.09 sets new 52-wk low',
+    takeaway:  'Stifel Nicolaus trimmed its price target from $12 to $10 (Buy retained) on dilution pressure, triggering a 6.9% slide. EOSE hit $4.07 intraday — a new 52-week low — closing at ~$4.09. EOSER rights ~34% OTM with 8 days to Jul 21 expiry; Q2 earnings 16 days out on Jul 29.',
     bullets: [
-      'Board 8-K filed Jul 9: Haiyan Song (technologist, age 60) joins as Class III director; Nathaniel Fick moves to preferred-stock seat; Greg Nixon resigns. Marie Batz Martin becomes CLO Jul 13; Silberman stays through Sep 11.',
-      'EOSER rights clock: 11 days to Jul 21 5pm ET expiry. Sub price $5.481 vs ~$4.60 EOSE spot = -$0.88 (-16.1% underwater); ~19% EOSE rally needed to flip exercise economics. EOSER bid ~$0.04 (Nasdaq).',
-      'FPUSA/Stella 920 MWh deal (4 projects: Blanquilla, Aransas Pass, Nash, Wallis) selected Jul 7 — definitive agreements still pending. Deal close remains contingent on successful completion of the rights offering.',
-      'No new Eos press releases or Form 4 insider filings Jul 9\u201310 pre-open. NetRoadshow for rights offering accessible at eosrightsoffering.com until Jul 21 expiry.',
-      "Macro: Intersolar Europe 2026 opens in Munich Jul 10 \u2014 modest LDES sentiment backdrop. No EOSE-specific catalyst at today's open; tape likely range-bound in the $4.40\u2013$4.77 band absent new news.",
-      'Calendar: CLO transition Jul 13 \u00b7 EOSER expiry Jul 21 \u00b7 Q2 earnings Jul 29 \u00b7 FPUSA deal close awaited \u00b7 Ofgem consult close Aug 7 \u00b7 NYSERDA awards est. Q3 2026.'
+      'EOSE -6.9% to close ~$4.09 (range $4.07–$4.34), breaching the prior 52-wk low of $4.39 to set new lows. Stifel PT cut drove early selling; no material AH headlines in first 30 min post-close.',
+      'Stifel Nicolaus cut PT $12→$10, maintained Buy — reflecting dilution from the $75M direct offering + 27.4M-unit rights structure, not a thesis change. Consensus PT ~$9.44 across 10 analysts.',
+      'EOSER rights 8 days to Jul 21 5pm ET expiry. Sub price $5.481 vs ~$4.09 close = ~34% OTM. Rights appear economically worthless; no repricing 8-K filed today — watch for any amendment PR midweek.',
+      'CFO Kroeker sold 79,309 shares Jul 7 at $4.68 ($371K) under 10b5-1 tax-withholding plan — not directional. CLO Silberman sold 14,998 shares Jun 30 at $5.87 under same plan.',
+      'CLO Batz Martin officially in role as of today (Jul 13); Silberman remains non-exec through Sep 11. No new 8-K or Form 4 filed Jul 13 per SEC EDGAR search.',
+      'Next catalyst: Q2 earnings Jul 29 — first full quarter with Line 1+2 both running (Line 2 commercial Jun 16). Street focus: combined throughput, cash burn vs $472M Q1 close, FPUSA definitive agreement status.'
     ],
-    price:   { last: 4.60, changePct: null, note: 'close \u00b7 Jul 9 2026 (Stooq/Yahoo delayed; pre-market Jul 10 not yet available)' },
+    price:   { last: 4.09, changePct: -6.9, note: 'close · Mon Jul 13 2026 · MarketBeat / StocksToTrade (Stooq delayed)' },
     sources: [
-      { label: 'Eos 8-K Jul 9 \u2014 Board & CLO changes (SEC EDGAR)', url: 'https://www.sec.gov/Archives/edgar/data/0001805077/000095010326010023/dp249395_8k.htm' },
-      { label: 'EOSE Quote \u2014 Yahoo Finance', url: 'https://finance.yahoo.com/quote/EOSE/' },
-      { label: 'FPUSA/Stella 920 MWh \u2014 GlobeNewswire Jul 7', url: 'https://www.globenewswire.com/news-release/2026/07/07/3323096/0/en/Frontier-Power-USA-Converts-920-MWh-Battery-Storage-Project-Portfolio-Under-Stella-Strategic-Framework.html' },
-      { label: 'Eos IR \u2014 News Releases', url: 'https://investors.eose.com/news-releases' },
-      { label: 'Benzinga \u2014 EOSER industrials pre-market Jul 9', url: 'https://www.benzinga.com/trading-ideas/movers/26/07/60353916/12-industrials-stocks-moving-thursday-s-pre-market-session' }
+      { label: 'Stifel PT cut $12→$10 — Markets Daily Jul 13', url: 'https://www.themarketsdaily.com/2026/07/13/eos-energy-enterprises-nasdaqeose-given-new-10-00-price-target-at-stifel-nicolaus.html' },
+      { label: 'EOSE -6.9% on analyst downgrade — MarketBeat Jul 13', url: 'https://www.marketbeat.com/instant-alerts/eos-energy-enterprises-nasdaqeose-shares-down-69-after-analyst-downgrade-2026-07-13/' },
+      { label: 'EOSE stock slides Jul 13 — StocksToTrade', url: 'https://stockstotrade.com/news/eos-energy-enterprises-inc-eose-news-2026_07_13/' },
+      { label: 'Rights Offering Commencement — GlobeNewswire Jul 2', url: 'https://www.globenewswire.com/news-release/2026/07/02/3321267/0/en/eos-energy-announces-commencement-of-rights-offering.html' },
+      { label: 'EOSE Quote — Yahoo Finance', url: 'https://finance.yahoo.com/quote/EOSE/' }
     ]
   },
 
