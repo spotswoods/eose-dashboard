@@ -30,25 +30,27 @@ window.EOSE_DATA = {
   // Refreshed by /equity-research:morning-note via a scheduled task in Cowork.
   // session = 'pre-open' (Swedish AM, ~07:00 CEST) | 'post-close' (Swedish PM, ~22:30 CEST)
   morningNote: {
-    updatedAt: '2026-07-15T16:00:00+02:00',
+    updatedAt: '2026-07-15T23:55:00+02:00',
     session:   'post-close',
-    headline:  'Preliminary Q2: revenue $68–69M (>3× shipments YoY), margin loss narrows to −69/−73%, ~$364M cash',
-    takeaway:  'Eos pre-announced strong preliminary Q2 results on Jul 15 (an 8-K, two weeks ahead of the scheduled Jul 29 print): revenue of $68–69M — a record and a >3× jump in shipments YoY — with the gross-margin loss narrowing to −69/−73% (from −78% in Q1) and total cash of ~$364M. Notably, the pre-announcement lands with the EOSER rights (strike $5.481) deep out-of-the-money and expiring Jul 21 — good operating news, dropped at a moment that could help lift a struggling raise. Full audited Q2 is still Jul 29.',
+    headline:  'Eos picked for "Golden Dome" defense shield — same day as a record prelim Q2 ($68–69M rev, $807M backlog)',
+    takeaway:  'Two notable items Jul 15. After the close (~5pm ET), Eos said the U.S. Department of War selected it under the "Golden Dome for America" missile-defense initiative to deploy a Z3 zinc-based storage prototype at a critical defense installation — a strategic new demand door (national security), leaning directly on Z3\'s ~91% domestic content, NDAA/FEOC compliance and non-flammable safety. It\'s a prototype selection (multi-million $, size undisclosed) — a validation and a foot in the door, not yet a large order. Earlier, a pre-market 8-K pre-announced a record prelim Q2 (revenue $68–69M, backlog $807M); the stock closed ~+5% at ~$4.51 on light volume. EOSER rights still expire Jul 21, deeply OTM.',
     bullets: [
-      'Preliminary Q2 (unaudited, 8-K Jul 15): revenue $68–69M vs $57M in Q1 (+~20% QoQ) on a more than three-fold YoY jump in shipments — a new company record. Gross-margin loss of −69% to −73%, improving from −78% in Q1.',
-      'First quarter with BOTH lines commercial: Line 2 (live since late June) is posting yield and cycle times ahead of Line 1 — the strongest evidence yet that the manufacturing scale-up is working. Start-up costs still pressure near-term cost absorption.',
-      'Liquidity: total cash incl. restricted ~$364M at Jun 30 (from $472M at Q1) — ~$108M used in the quarter, before the Frontier funding (rights offering + Hudson Bay registered direct) lands in Q3.',
-      'Context — the rights offering is struggling: EOSER expires Jul 21 at a $5.481 strike, well out-of-the-money after the stock fell to the low-$4s in mid-July (a Stifel PT cut to $10 and a 52-week low). Pre-announcing a record quarter now reads, at least partly, as an attempt to get the stock — and the raise — moving. We flag the timing; you weigh it.',
-      'Also since July 1: rights offering commenced Jul 2 (trading as EOSER); the Hudson Bay registered direct priced/closed; FPUSA converted a 920 MWh Stella portfolio (Jul 7); and governance changes — Haiyan Song to the board and Marie Martin as CLO (Jul 9).',
-      'Next: EOSER expiry Jul 21; full, audited Q2 earnings Jul 29 (watch combined line throughput, the real cash bridge, and FPUSA definitive-agreement status). Ofgem UK Window 1 was a miss for Frontier (§08b).'
+      'Golden Dome for America (Jul 15, ~5pm ET): U.S. Department of War selected Eos to deliver a Z3 LDES prototype at a critical defense installation for the national missile-defense shield. ~91% domestic content, Section 842 NDAA + FEOC compliant, made in Pittsburgh. A strategically meaningful new (defense) demand vector — but a prototype/selection, not a disclosed-size order yet.',
+      'Prelim Q2 (8-K, pre-mkt Jul 15): record revenue $68–69M on >3× YoY shipments; GM loss −69% to −73% (from −78% Q1); backlog record $807M (+25% QoQ, orders exceeded shipments). Cash ~$364M; customer collections $78M exceeded quarterly revenue.',
+      'Close: ~$4.51 (+5.2% vs $4.29 prev close); opened $4.61 on the prelim 8-K, day range $3.80–$4.66. Volume light vs. 22.1M average — gap more relieved than chased.',
+      'Line 2 operational update: achieving higher yields and faster cycle times than Line 1 in early ramp. Bipolar automation 50% through Site Acceptance Testing; full commissioning targeted July 2026. Commissioning is the start of the ramp, not the finish.',
+      'Truist upgraded to Strong-Buy, $7 PT (Jul 14) ahead of the prelim — first Strong-Buy on Street. Avg consensus Hold, avg PT $9.17 (11 analysts). JPMorgan Neutral, $6 PT. CFO Kroeker sold 79,309 shares Jul 7 at $4.68 (10b5-1 plan, tax withholding).',
+      'CORRECTION: Full Q2 print + call now confirmed Aug 5 at 8:30am ET per the 8-K (prior expectation Jul 29). Say Technologies Q&A opens Jul 20.',
+      'Next: EOSER rights (strike $5.481) expire Jul 21 — 6 days, deeply OTM. Key binary before expiry. Full audited Q2 on Aug 5: watch combined-line throughput, cash bridge, and FPUSA definitive-agreement status.'
     ],
-    price:   { last: 4.09, changePct: null, note: 'Last verified close ~$4.09 (Jul 13) · prelim-Q2 news broke Jul 15 — the dashboard price feed is lagging; see the live ticker for the current print' },
+    price:   { last: 4.51, changePct: 5.2, note: 'close · Jul 15 2026 · MarketBeat/Stooq delayed' },
     sources: [
-      { label: 'Preliminary Q2 results — 8-K (Jul 15)', url: 'https://www.sec.gov/Archives/edgar/data/1805077/000162828026048253/eose-20260715.htm' },
-      { label: 'Rights offering commencement (Jul 2)', url: 'https://www.eose.com/eos-energy-announces-commencement-of-rights-offering/' },
-      { label: 'Board + CLO changes (Jul 9)', url: 'https://www.eose.com/eos-energy-enterprises-appoints-cybersecurity-and-software-leader-haiyan-song-to-board-of-directors-names-marie-martin-chief-legal-officer-in-planned-transition/' },
-      { label: 'FPUSA 920 MWh Stella conversion (Jul 7)', url: 'https://www.globenewswire.com/news-release/2026/07/07/3323096/0/en/Frontier-Power-USA-Converts-920-MWh-Battery-Storage-Project-Portfolio-Under-Stella-Strategic-Framework.html' },
-      { label: 'Eos IR — news releases', url: 'https://investors.eose.com/news-releases/' }
+      { label: 'Golden Dome for America selection — Eos IR (Jul 15)', url: 'https://investors.eose.com/news-releases/news-release-details/eos-energy-enterprises-selected-deliver-mission-ready-power' },
+      { label: 'Prelim Q2 8-K / GlobeNewsWire (Jul 15)', url: 'https://www.globenewswire.com/news-release/2026/07/15/3327698/0/en/Eos-Energy-Enterprises-Announces-Preliminary-Second-Quarter-2026-Financial-Results-Expects-Record-Quarterly-Revenue-and-Backlog-and-Sets-Second-Quarter-2026-Conference-Call-Date.html' },
+      { label: 'MarketBeat — EOSE gap up (Jul 15)', url: 'https://www.marketbeat.com/instant-alerts/eos-energy-enterprises-nasdaqeose-shares-gap-up-time-to-buy-2026-07-15/' },
+      { label: 'Truist Strong-Buy upgrade', url: 'https://www.marketbeat.com/instant-alerts/truist-financial-upgrades-eos-energy-enterprises-nasdaqeose-to-strong-buy-2026-07-15/' },
+      { label: 'Eos IR — news releases', url: 'https://investors.eose.com/news-releases/' },
+      { label: 'SEC EDGAR — prelim Q2 8-K', url: 'https://www.sec.gov/Archives/edgar/data/1805077/000162828026048253/eose-20260715.htm' }
     ]
   },
 
@@ -463,11 +465,12 @@ window.EOSE_DATA = {
     { date: 'Jul 2, 2026',  event: 'Rights offering COMMENCES — rights trade as EOSER; $5.481/unit (1 share + 0.4388 warrant); Hudson Bay registered direct prices/closes. Stock later slid to low-$4s (Stifel PT cut to $10), leaving EOSER out-of-the-money', status: 'Reported [Company]', tone: 'done' },
     { date: 'Jul 7, 2026',  event: 'FPUSA converts 920 MWh Stella portfolio (ERCOT: Blanquilla, Aransas Pass, Nash, Wallis); ~16 GWh total pipeline cited',  status: 'Reported [Counterparty]',  tone: 'done' },
     { date: 'Jul 9, 2026',  event: 'Governance: Haiyan Song appointed to board (cybersecurity/software); Marie Martin named Chief Legal Officer',  status: 'Reported [Company]',  tone: 'done' },
-    { date: 'Jul 15, 2026', event: 'PRELIMINARY Q2 pre-announced (8-K): record revenue $68–69M (>3× shipments YoY); gross-margin loss −69/−73% (vs −78% Q1); ~$364M cash. Both lines commercial, Line 2 ahead of Line 1 on yield/cycle time. Full audited Q2 Jul 29', status: 'Reported [Company]', tone: 'done' },
+    { date: 'Jul 15, 2026', event: 'PRELIMINARY Q2 pre-announced (8-K): record revenue $68–69M (>3× shipments YoY); RECORD backlog ~$807M (+25% QoQ); gross-margin loss −69/−73% (vs −78% Q1); ~$364M cash. Both lines commercial, Line 2 ahead of Line 1. Full audited Q2 + call now Aug 5', status: 'Reported [Company]', tone: 'done' },
+    { date: 'Jul 15, 2026', event: 'DEFENSE WIN: U.S. Department of War selects Eos under "Golden Dome for America" (missile-defense shield) to deploy a Z3 prototype at a critical defense installation — ~91% domestic content, NDAA/FEOC compliant. Prototype selection (size undisclosed), a strategic new defense demand vector', status: 'Reported [Company/DoW]', tone: 'done' },
+    { date: 'Aug 5, 2026',  event: 'Full audited Q2 2026 earnings + conference call (8:30am ET) — confirmed date (moved from ~Jul 29)', status: 'Scheduled [Company]', tone: 'soon' },
     { date: 'Jul 21, 2026', event: 'EOSER rights offering EXPIRES (5 pm ET) — deeply out-of-the-money at $5.481 strike unless the stock rallies; determines how much of the ~$150M actually funds', status: 'Watch [Company]', tone: 'soon' },
     { date: 'Q2 2026',      event: 'Frontier Power USA closing conditions (Cerberus warrants + controlling JV equity)',      status: 'Watch [Company]',            tone: 'soon'   },
     { date: 'After Aug 7, 2026', event: 'Ofgem FINAL cap & floor awards (Window 1) — follows the Aug 7 consultation close; this is the binding step where Frontier UK\'s Eos-tech projects are awarded the revenue floor or not', status: 'Catalyst [Regulator]', tone: 'soon' },
-    { date: 'Jul 29, 2026', event: 'Q2 2026 earnings release (indicated)',                                  status: 'Scheduled [Company]',        tone: 'soon'   },
     { date: 'Q3 2026',      event: 'NYSERDA Bulk Storage Program ISCRFP25-1 awards (Eos qualifies for 8+ hr tier)', status: 'Catalyst [Regulator]', tone: 'soon' },
     { date: 'YE 2026',      event: 'Cerberus equity lock-up expiration (extended through year-end 2026)',  status: 'Confirmed [Company]',        tone: 'live'   },
     { date: 'YE 2026',      event: 'Treasury safe-harbor tables for 45X FEOC scoring (sets credit magnitude)', status: 'Watch [Regulator]',    tone: 'future' },
@@ -499,9 +502,9 @@ window.EOSE_DATA = {
     { date: '2026-07-02', short: 'Rights distribution', est: false,
       label: 'Rights distribution date',
       detail: 'Subscription rights distributed to eligible holders; final ratio, price and transferability are set in the prospectus supplement at offering commencement.' },
-    { date: '2026-07-29', short: 'Q2 earnings',  est: false,
-      label: 'Q2 2026 earnings release',
-      detail: 'Indicated for July 29, 2026. Street will watch the Line 1+2 production ramp and the first FPUSA reservation-to-revenue conversion.' },
+    { date: '2026-08-05', short: 'Q2 earnings',  est: false,
+      label: 'Q2 2026 earnings release + call (8:30am ET)',
+      detail: 'Confirmed Aug 5, 2026 (moved from ~Jul 29). Full audited Q2 follows the Jul 15 preliminary print ($68–69M rev, ~$807M backlog); Street will watch combined Line 1+2 throughput, the cash bridge, and FPUSA definitive-agreement status.' },
     { date: '2026-09-22', short: 'Ofgem final awards',  est: true,
       label: 'Ofgem final cap & floor awards — Window 1',
       detail: 'Estimated timing for the FINAL, binding awards that follow the Aug 7 consultation close. Decides the regulated revenue floor for Frontier UK\'s Eos-tech pipeline.' },
@@ -945,7 +948,7 @@ window.EOSE_DATA = {
       { point: 'Two top-tier financial backers now in Frontier USA: Cerberus ($100M) AND, as of Jun 30, Hudson Bay Capital ($50M into the JV + a registered direct buy of Eos stock), with KKR Capital Markets as structuring agent. DOE + lender consents cleared and the rights offering is priced ($5.481). The JV funding is largely de-risked.', src: 'Jun 30 8-K + 424B5' },
       { point: 'Cerberus is doubling down on BOTH sides of the Atlantic: $100M into Frontier USA + £159M earlier into Frontier UK. Lock-up extended through YE 2026.', src: 'Frontier releases · PwC UK' },
       { point: 'Execution on schedule: Line 2 launched commercial production Jun 16, 2026 — ahead of the end-Q2 target — doubling the manufacturing base toward ~4 GWh/yr. Directly rebuts the "can\'t scale manufacturing" bear/lawsuit narrative. Margin trajectory backs it: GM −78% Q1\'26, +157 ppt YoY, +16 ppt sequentially; cube deliveries +5.7×.', src: 'Jun 16 Line 2 release · Q1\'26 release' },
-      { point: 'Demand vectors broadening: AI/data-center via the TURBINE-X JDA (up to 2 GWh, first deployments 2027); and as of Jun 17, 2026 a first international framework — an exclusive DACH-region MSA with CAPAC Energy (750 MWh, pathway to 2 GWh, Indensity) through 2031. NYSERDA ISC awards (Q3 2026) add another near-term catalyst.', src: 'TURBINE-X / CAPAC releases · NYSERDA' },
+      { point: 'Demand vectors broadening on four fronts: AI/data-center (TURBINE-X JDA, up to 2 GWh); international (exclusive DACH MSA with CAPAC, Jun 17); DEFENSE — the U.S. Department of War selected Z3 for the "Golden Dome" missile-defense shield (Jul 15), leaning on ~91% domestic content + non-flammable safety; and utility (NYSERDA ISC awards, Q3 2026). Backlog hit a record ~$807M in the prelim Q2.', src: 'TURBINE-X / CAPAC / Golden Dome releases · Q2 prelim' },
       { point: '45X PTC preserved under OBBBA with FEOC guardrails — structurally favors US-content LDES vs. China-linked competitors. $21.4M grant receivable on Q1\'26 BS.', src: 'OBBBA / 10-Q' },
       { point: 'Short interest ~31% of float (~103.5M sh); ~3.4 days to cover. CEO Mastrangelo bought 23,900 shares post-FY25 crash; Director Dimitrief bought 15,000 at $6.04. Asymmetric setup on any clean catalyst.', src: 'Nasdaq SI · Form 4 / OpenInsider' }
     ],
@@ -1140,9 +1143,15 @@ window.EOSE_DATA = {
   recentHistory: [
     {
       date:  '2026-07-15',
-      title: 'Preliminary Q2 pre-announced — record revenue $68–69M, margin loss narrowing',
-      body:  'Two weeks ahead of the scheduled Jul 29 print, Eos issued an 8-K with preliminary, unaudited Q2 results: revenue of $68–69M — a company record and a more-than-threefold YoY jump in shipments — up from $57M in Q1. The gross-margin loss narrowed to −69% to −73% (from −78% in Q1). Total cash including restricted was ~$364M at Jun 30 (from $472M at Q1, ~$108M used pre-Frontier-funding). It was the first quarter with both production lines commercial; Line 2 is posting yield and cycle times ahead of Line 1. Worth noting the timing: a record quarter dropped while the EOSER rights (strike $5.481) sat deep out-of-the-money and days from their Jul 21 expiry — good operating news at a moment that could also help a struggling raise. Full audited numbers land Jul 29.',
-      url:   'https://www.sec.gov/Archives/edgar/data/1805077/000162828026048253/eose-20260715.htm'
+      title: '"Golden Dome" defense selection — U.S. Department of War picks Z3 for the missile-defense shield',
+      body:  'After the close on Jul 15, Eos said the U.S. Department of War selected it under the "Golden Dome for America" national missile-defense initiative to deploy a Z3 zinc-based long-duration storage prototype at a critical defense installation. The selection leans directly on Z3\'s ~91% domestic content, Section 842 NDAA and FEOC compliance, and non-flammable safety — all decisive for hardened, critical-infrastructure sites. Read it as a strategically important new demand vector (national security / defense) and a validation of the US-made thesis — but calibrate: it is a prototype selection of undisclosed (multi-million-dollar) size, a foot in the door rather than a large booked order. It landed the same day as the record preliminary Q2.',
+      url:   'https://investors.eose.com/news-releases/news-release-details/eos-energy-enterprises-selected-deliver-mission-ready-power'
+    },
+    {
+      date:  '2026-07-15',
+      title: 'Preliminary Q2 pre-announced — record revenue $68–69M and record $807M backlog',
+      body:  'Before the open on Jul 15, Eos issued an 8-K with preliminary, unaudited Q2 results: revenue of $68–69M — a company record and a more-than-threefold YoY jump in shipments — up from $57M in Q1, with a RECORD backlog of ~$807M (+25% QoQ, as orders ran ahead of shipments). The gross-margin loss narrowed to −69% to −73% (from −78% in Q1); total cash including restricted was ~$364M at Jun 30 (customer collections of ~$78M actually exceeded quarterly revenue). It was the first quarter with both production lines commercial; Line 2 is posting yield and cycle times ahead of Line 1. Truist upgraded to Strong-Buy ($7 PT) the day before. EOSE closed ~+5% (~$4.51) on light volume — with the EOSER rights (strike $5.481) still deep out-of-the-money days from their Jul 21 expiry. Full audited Q2 + call now Aug 5 (moved from ~Jul 29).',
+      url:   'https://www.globenewswire.com/news-release/2026/07/15/3327698/0/en/Eos-Energy-Enterprises-Announces-Preliminary-Second-Quarter-2026-Financial-Results-Expects-Record-Quarterly-Revenue-and-Backlog-and-Sets-Second-Quarter-2026-Conference-Call-Date.html'
     },
     {
       date:  '2026-07-07',

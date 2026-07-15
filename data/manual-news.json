@@ -1,13 +1,23 @@
 [
   {
-    "iso": "2026-07-15T12:30:00Z",
+    "iso": "2026-07-15T21:05:00Z",
+    "date": "2026-07-15",
+    "source": "Eos Energy (press release)",
+    "headline": "Eos Energy Selected to Deliver Mission-Ready Power for \"Golden Dome for America\" (U.S. Department of War)",
+    "url": "https://investors.eose.com/news-releases/news-release-details/eos-energy-enterprises-selected-deliver-mission-ready-power",
+    "summary": "The U.S. Department of War selected Eos under the Golden Dome for America missile-defense initiative to deploy a Z3 zinc-based long-duration storage prototype at a critical defense installation. Leans on Z3's ~91% domestic content, Section 842 NDAA + FEOC compliance and non-flammable safety. A strategically important new defense demand vector — but a prototype selection of undisclosed (multi-million-dollar) size, not yet a large booked order.",
+    "tag": "catalyst",
+    "expires": "2026-09-15"
+  },
+  {
+    "iso": "2026-07-15T12:15:00Z",
     "date": "2026-07-15",
     "source": "Eos Energy (preliminary Q2, 8-K)",
-    "headline": "Eos pre-announces preliminary Q2: revenue $68–69M (>3× shipments YoY), gross-margin loss −69/−73%, ~$364M cash",
+    "headline": "Eos pre-announces preliminary Q2: record revenue $68–69M, record ~$807M backlog, margin loss −69/−73%",
     "url": "https://investors.eose.com/news-releases/",
-    "summary": "Preliminary, unaudited Q2 (ended Jun 30): record revenue of $68–69M on a more-than-threefold YoY jump in shipments; gross-margin loss narrowing to −69% to −73% (from −78% in Q1); total cash incl. restricted ~$364M. First quarter with both Line 1 and Line 2 commercial — Line 2 posting yield/cycle times ahead of Line 1. Full audited Q2 earnings scheduled Jul 29.",
+    "summary": "Preliminary, unaudited Q2 (ended Jun 30): record revenue of $68–69M on a >3× YoY jump in shipments; RECORD backlog ~$807M (+25% QoQ); gross-margin loss narrowing to −69% to −73% (from −78% in Q1); total cash incl. restricted ~$364M (collections ~$78M exceeded revenue). First quarter with both lines commercial — Line 2 ahead of Line 1 on yield/cycle time. Full audited Q2 + call moved to Aug 5.",
     "tag": "catalyst",
-    "expires": "2026-07-31"
+    "expires": "2026-08-06"
   },
   {
     "iso": "2026-07-07T12:30:00Z",

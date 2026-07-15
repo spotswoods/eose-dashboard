@@ -1,6 +1,6 @@
 {
   "meta": {
-    "_refreshed": "2026-07-15T13:58:28.353Z",
+    "_refreshed": "2026-07-15T21:10:44.087Z",
     "sources": [
       "eose.com (WordPress REST API)",
       "SEC EDGAR submissions API",
@@ -9,18 +9,27 @@
     "counts": {
       "pressReleases": 20,
       "secFilings": 314,
-      "manual": 3,
+      "manual": 4,
       "shown": 14
     }
   },
   "items": [
     {
-      "iso": "2026-07-15T12:30:00Z",
+      "iso": "2026-07-15T21:05:00Z",
+      "date": "2026-07-15",
+      "source": "Eos Energy (press release)",
+      "headline": "Eos Energy Selected to Deliver Mission-Ready Power for \"Golden Dome for America\" (U.S. Department of War)",
+      "url": "https://investors.eose.com/news-releases/news-release-details/eos-energy-enterprises-selected-deliver-mission-ready-power",
+      "summary": "The U.S. Department of War selected Eos under the Golden Dome for America missile-defense initiative to deploy a Z3 zinc-based long-duration storage prototype at a critical defense installation. Leans on Z3's ~91% domestic content, Section 842 NDAA + FEOC compliance and non-flammable safety. A strategically important new defense demand vector — but a prototype selection of undisclosed (multi-million-dollar) size, not yet a large booked order.",
+      "tag": "catalyst"
+    },
+    {
+      "iso": "2026-07-15T12:15:00Z",
       "date": "2026-07-15",
       "source": "Eos Energy (preliminary Q2, 8-K)",
-      "headline": "Eos pre-announces preliminary Q2: revenue $68–69M (>3× shipments YoY), gross-margin loss −69/−73%, ~$364M cash",
+      "headline": "Eos pre-announces preliminary Q2: record revenue $68–69M, record ~$807M backlog, margin loss −69/−73%",
       "url": "https://investors.eose.com/news-releases/",
-      "summary": "Preliminary, unaudited Q2 (ended Jun 30): record revenue of $68–69M on a more-than-threefold YoY jump in shipments; gross-margin loss narrowing to −69% to −73% (from −78% in Q1); total cash incl. restricted ~$364M. First quarter with both Line 1 and Line 2 commercial — Line 2 posting yield/cycle times ahead of Line 1. Full audited Q2 earnings scheduled Jul 29.",
+      "summary": "Preliminary, unaudited Q2 (ended Jun 30): record revenue of $68–69M on a >3× YoY jump in shipments; RECORD backlog ~$807M (+25% QoQ); gross-margin loss narrowing to −69% to −73% (from −78% in Q1); total cash incl. restricted ~$364M (collections ~$78M exceeded revenue). First quarter with both lines commercial — Line 2 ahead of Line 1 on yield/cycle time. Full audited Q2 + call moved to Aug 5.",
       "tag": "catalyst"
     },
     {
@@ -129,15 +138,6 @@
       "headline": "Eos Energy Enterprises, Inc. Announces Proposed Registered Direct Offering of Common Stock and Warrants to Fund Investment in Frontier Power USA",
       "url": "https://www.eose.com/eos-energy-enterprises-inc-announces-proposed-registered-direct-offering-of-common-stock-and-warrants-to-fund-investment-in-frontier-power-usa/",
       "summary": "EDISON, N.J., June 30, 2026 (GLOBE NEWSWIRE) — Eos Energy Enterprises, Inc. (NASDAQ: EOSE) (“Eos” or the “Company”) today announced that it has commenced a registered direct offering (the “Offering”) of common stock and warrants. The…",
-      "tag": "catalyst"
-    },
-    {
-      "iso": "2026-06-30T10:41:51",
-      "date": "2026-06-30",
-      "source": "Eos Energy (press release)",
-      "headline": "Eos Announces Pricing of Registered Direct Offering of Common Stock and Warrants to Fund Investment in Frontier Power USA",
-      "url": "https://www.eose.com/eos-announces-pricing-of-registered-direct-offering-of-common-stock-and-warrants-to-fund-investment-in-frontier-power-usa/",
-      "summary": "EDISON, N.J., June 30, 2026 (GLOBE NEWSWIRE) — Eos Energy Enterprises, Inc. (NASDAQ: EOSE) (“Eos” or the “Company”) today announced the pricing of a registered direct offering (the “Offering”) to Hudson Bay Capital Management of…",
       "tag": "catalyst"
     }
   ]

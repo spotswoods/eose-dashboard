@@ -1,5 +1,25 @@
 [
  {
+  "updatedAt": "2026-07-15T23:55:00+02:00",
+  "session": "post-close",
+  "headline": "Eos picked for \"Golden Dome\" defense shield — same day as a record prelim Q2 ($68–69M rev, $807M backlog)",
+  "takeaway": "Two notable items Jul 15. After the close (~5pm ET), Eos said the U.S. Department of War selected it under the \"Golden Dome for America\" missile-defense initiative to deploy a Z3 zinc-based storage prototype at a critical defense installation — a strategic new demand door (national security), leaning directly on Z3's ~91% domestic content, NDAA/FEOC compliance and non-flammable safety. It's a prototype selection (multi-million $, size undisclosed) — a validation and a foot in the door, not yet a large order. Earlier, a pre-market 8-K pre-announced a record prelim Q2 (revenue $68–69M, backlog $807M); the stock closed ~+5% at ~$4.51 on light volume. EOSER rights still expire Jul 21, deeply OTM.",
+  "bullets": [
+   "Golden Dome for America (Jul 15, ~5pm ET): U.S. Department of War selected Eos to deliver a Z3 LDES prototype at a critical defense installation for the national missile-defense shield. ~91% domestic content, Section 842 NDAA + FEOC compliant, made in Pittsburgh. A strategically meaningful new (defense) demand vector — but a prototype/selection, not a disclosed-size order yet.",
+   "Prelim Q2 (8-K, pre-mkt Jul 15): record revenue $68–69M on >3× YoY shipments; GM loss −69% to −73% (from −78% Q1); backlog record $807M (+25% QoQ, orders exceeded shipments). Cash ~$364M; customer collections $78M exceeded quarterly revenue.",
+   "Close: ~$4.51 (+5.2% vs $4.29 prev close); opened $4.61 on the prelim 8-K, day range $3.80–$4.66. Volume light vs. 22.1M average — gap more relieved than chased.",
+   "Line 2 operational update: achieving higher yields and faster cycle times than Line 1 in early ramp. Bipolar automation 50% through Site Acceptance Testing; full commissioning targeted July 2026. Commissioning is the start of the ramp, not the finish.",
+   "Truist upgraded to Strong-Buy, $7 PT (Jul 14) ahead of the prelim — first Strong-Buy on Street. Avg consensus Hold, avg PT $9.17 (11 analysts). JPMorgan Neutral, $6 PT. CFO Kroeker sold 79,309 shares Jul 7 at $4.68 (10b5-1 plan, tax withholding).",
+   "CORRECTION: Full Q2 print + call now confirmed Aug 5 at 8:30am ET per the 8-K (prior expectation Jul 29). Say Technologies Q&A opens Jul 20.",
+   "Next: EOSER rights (strike $5.481) expire Jul 21 — 6 days, deeply OTM. Key binary before expiry. Full audited Q2 on Aug 5: watch combined-line throughput, cash bridge, and FPUSA definitive-agreement status."
+  ],
+  "price": {
+   "last": 4.51,
+   "changePct": 5.2,
+   "note": "close · Jul 15 2026 · MarketBeat/Stooq delayed"
+  }
+ },
+ {
   "updatedAt": "2026-07-15T16:00:00+02:00",
   "session": "post-close",
   "headline": "Preliminary Q2: revenue $68–69M (>3× shipments YoY), margin loss narrows to −69/−73%, ~$364M cash",
