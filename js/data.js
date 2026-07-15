@@ -30,25 +30,25 @@ window.EOSE_DATA = {
   // Refreshed by /equity-research:morning-note via a scheduled task in Cowork.
   // session = 'pre-open' (Swedish AM, ~07:00 CEST) | 'post-close' (Swedish PM, ~22:30 CEST)
   morningNote: {
-    updatedAt: '2026-07-14T07:30:00+02:00',
-    session:   'pre-open',
-    headline:  'EOSER 7 days to expiry, still 34% OTM; Q2 earnings Jul 29 the next real reset',
-    takeaway:  'No new overnight news after Mon\'s Stifel-driven -6.9% slide to $4.09 (new 52-wk low). EOSER rights expire Jul 21 — 7 calendar days away — still 34% OTM at $5.481 sub price; rights appear economically worthless absent a rally. Q2 earnings Jul 29 are the next meaningful catalyst.',
+    updatedAt: '2026-07-15T16:00:00+02:00',
+    session:   'post-close',
+    headline:  'Preliminary Q2: revenue $68–69M (>3× shipments YoY), margin loss narrows to −69/−73%, ~$364M cash',
+    takeaway:  'Eos pre-announced strong preliminary Q2 results on Jul 15 (an 8-K, two weeks ahead of the scheduled Jul 29 print): revenue of $68–69M — a record and a >3× jump in shipments YoY — with the gross-margin loss narrowing to −69/−73% (from −78% in Q1) and total cash of ~$364M. Notably, the pre-announcement lands with the EOSER rights (strike $5.481) deep out-of-the-money and expiring Jul 21 — good operating news, dropped at a moment that could help lift a struggling raise. Full audited Q2 is still Jul 29.',
     bullets: [
-      'Stifel $12→$10 (Buy) PT cut digested in Mon\'s -6.9%/$4.09 close; intraday low $4.07 set a new 52-wk floor. No overnight analyst actions or AH press releases found heading into Tue pre-open.',
-      'EOSER rights expire Jul 21 5pm ET (7 days). Sub price $5.481 vs $4.09 Mon close = 34% OTM. No repricing 8-K filed; watch for any amendment PR mid-week. Rights appear economically worthless at current levels.',
-      'FPUSA pipeline builds: 920 MWh Stella portfolio converted Jul 7 (Blanquilla, Aransas Pass, Nash, Wallis). ~16 GWh total pipeline; 2.7 GWh high-probability. Closing contingent on rights offering success.',
-      'Leadership settled: CFO Lagi active since Jun 8, CLO Batz Martin in role from Jul 13. Haiyan Song appointed to board Jul 9 (cybersecurity/software). Silberman (outgoing CLO) non-exec through Sep 11.',
-      'Q2 earnings Jul 29 (15 days) — first print with Line 1+2 both commercial (Line 2 commercial Jun 16). Street focus: combined throughput, cash burn vs $472M Q1 close, FPUSA definitive agreement status.',
-      'Sector tailwind intact: BloombergNEF forecasts 158GW global BESS in 2026 (+41% YoY); LDES sub-segment expected to quadruple to ~2GW — non-Li-ion chemistries, including zinc, leading growth.'
+      'Preliminary Q2 (unaudited, 8-K Jul 15): revenue $68–69M vs $57M in Q1 (+~20% QoQ) on a more than three-fold YoY jump in shipments — a new company record. Gross-margin loss of −69% to −73%, improving from −78% in Q1.',
+      'First quarter with BOTH lines commercial: Line 2 (live since late June) is posting yield and cycle times ahead of Line 1 — the strongest evidence yet that the manufacturing scale-up is working. Start-up costs still pressure near-term cost absorption.',
+      'Liquidity: total cash incl. restricted ~$364M at Jun 30 (from $472M at Q1) — ~$108M used in the quarter, before the Frontier funding (rights offering + Hudson Bay registered direct) lands in Q3.',
+      'Context — the rights offering is struggling: EOSER expires Jul 21 at a $5.481 strike, well out-of-the-money after the stock fell to the low-$4s in mid-July (a Stifel PT cut to $10 and a 52-week low). Pre-announcing a record quarter now reads, at least partly, as an attempt to get the stock — and the raise — moving. We flag the timing; you weigh it.',
+      'Also since July 1: rights offering commenced Jul 2 (trading as EOSER); the Hudson Bay registered direct priced/closed; FPUSA converted a 920 MWh Stella portfolio (Jul 7); and governance changes — Haiyan Song to the board and Marie Martin as CLO (Jul 9).',
+      'Next: EOSER expiry Jul 21; full, audited Q2 earnings Jul 29 (watch combined line throughput, the real cash bridge, and FPUSA definitive-agreement status). Ofgem UK Window 1 was a miss for Frontier (§08b).'
     ],
-    price:   { last: 4.09, changePct: -6.9, note: 'close · Mon Jul 13 2026 · no premarket data available (Stooq delayed)' },
+    price:   { last: 4.09, changePct: null, note: 'Last verified close ~$4.09 (Jul 13) · prelim-Q2 news broke Jul 15 — the dashboard price feed is lagging; see the live ticker for the current print' },
     sources: [
-      { label: 'FPUSA 920 MWh Stella conversion — GlobeNewswire Jul 7', url: 'https://www.globenewswire.com/news-release/2026/07/07/3323096/0/en/Frontier-Power-USA-Converts-920-MWh-Battery-Storage-Project-Portfolio-Under-Stella-Strategic-Framework.html' },
-      { label: 'Rights Offering Commencement — GlobeNewswire Jul 2', url: 'https://www.globenewswire.com/news-release/2026/07/02/3321267/0/en/eos-energy-announces-commencement-of-rights-offering.html' },
-      { label: 'Board / CLO appointments — Eos IR Jul 9', url: 'https://investors.eose.com/news-releases' },
-      { label: 'EOSE stock slides Jul 13 — StocksToTrade', url: 'https://stockstotrade.com/news/eos-energy-enterprises-inc-eose-news-2026_07_13/' },
-      { label: 'BNEF 158GW global BESS forecast 2026 — Energy-Storage.News', url: 'https://www.energy-storage.news/bloombergnef-forecasts-158gw-of-global-energy-storage-deployments-in-2026/' }
+      { label: 'Preliminary Q2 results — 8-K (Jul 15)', url: 'https://www.sec.gov/Archives/edgar/data/1805077/000162828026048253/eose-20260715.htm' },
+      { label: 'Rights offering commencement (Jul 2)', url: 'https://www.eose.com/eos-energy-announces-commencement-of-rights-offering/' },
+      { label: 'Board + CLO changes (Jul 9)', url: 'https://www.eose.com/eos-energy-enterprises-appoints-cybersecurity-and-software-leader-haiyan-song-to-board-of-directors-names-marie-martin-chief-legal-officer-in-planned-transition/' },
+      { label: 'FPUSA 920 MWh Stella conversion (Jul 7)', url: 'https://www.globenewswire.com/news-release/2026/07/07/3323096/0/en/Frontier-Power-USA-Converts-920-MWh-Battery-Storage-Project-Portfolio-Under-Stella-Strategic-Framework.html' },
+      { label: 'Eos IR — news releases', url: 'https://investors.eose.com/news-releases/' }
     ]
   },
 
@@ -460,7 +460,11 @@ window.EOSE_DATA = {
     { date: 'Jun 17, 2026', event: 'Germany/DACH entry: binding Master Supply Agreement with CAPAC Energy — exclusive Germany/Austria/Switzerland through 2031, 750 MWh committed (pathway to 2 GWh), first international Indensity framework; first projects target commercial ops late 2026', status: 'Reported [Company]', tone: 'done' },
     { date: 'Late 2026',    event: 'CAPAC\'s first German Indensity projects target commercial operation — purchase orders flow into reported backlog',  status: 'Watch [Counterparty]',  tone: 'soon' },
     { date: 'Jun 25, 2026', event: 'Frontier Power USA engages KKR Capital Markets as structuring agent — construction finance, tax equity + long-term project finance for the 2 GWh pipeline; de-risks FPUSA capitalisation alongside Cerberus\' $100M equity', status: 'Reported [Counterparty]', tone: 'done' },
-    { date: 'Jul 1, 2026',  event: 'Rights offering record date (5 pm ET; announced Jun 11) — rights distributed Jul 2; units of stock + warrants at ~10–20% VWAP discount; exact ratio/price in the prospectus supplement', status: 'Announced [Company]', tone: 'soon' },
+    { date: 'Jul 2, 2026',  event: 'Rights offering COMMENCES — rights trade as EOSER; $5.481/unit (1 share + 0.4388 warrant); Hudson Bay registered direct prices/closes. Stock later slid to low-$4s (Stifel PT cut to $10), leaving EOSER out-of-the-money', status: 'Reported [Company]', tone: 'done' },
+    { date: 'Jul 7, 2026',  event: 'FPUSA converts 920 MWh Stella portfolio (ERCOT: Blanquilla, Aransas Pass, Nash, Wallis); ~16 GWh total pipeline cited',  status: 'Reported [Counterparty]',  tone: 'done' },
+    { date: 'Jul 9, 2026',  event: 'Governance: Haiyan Song appointed to board (cybersecurity/software); Marie Martin named Chief Legal Officer',  status: 'Reported [Company]',  tone: 'done' },
+    { date: 'Jul 15, 2026', event: 'PRELIMINARY Q2 pre-announced (8-K): record revenue $68–69M (>3× shipments YoY); gross-margin loss −69/−73% (vs −78% Q1); ~$364M cash. Both lines commercial, Line 2 ahead of Line 1 on yield/cycle time. Full audited Q2 Jul 29', status: 'Reported [Company]', tone: 'done' },
+    { date: 'Jul 21, 2026', event: 'EOSER rights offering EXPIRES (5 pm ET) — deeply out-of-the-money at $5.481 strike unless the stock rallies; determines how much of the ~$150M actually funds', status: 'Watch [Company]', tone: 'soon' },
     { date: 'Q2 2026',      event: 'Frontier Power USA closing conditions (Cerberus warrants + controlling JV equity)',      status: 'Watch [Company]',            tone: 'soon'   },
     { date: 'After Aug 7, 2026', event: 'Ofgem FINAL cap & floor awards (Window 1) — follows the Aug 7 consultation close; this is the binding step where Frontier UK\'s Eos-tech projects are awarded the revenue floor or not', status: 'Catalyst [Regulator]', tone: 'soon' },
     { date: 'Jul 29, 2026', event: 'Q2 2026 earnings release (indicated)',                                  status: 'Scheduled [Company]',        tone: 'soon'   },
@@ -1134,6 +1138,24 @@ window.EOSE_DATA = {
 
   // ────────── NEW: Recent history (context for cold readers) ──────────
   recentHistory: [
+    {
+      date:  '2026-07-15',
+      title: 'Preliminary Q2 pre-announced — record revenue $68–69M, margin loss narrowing',
+      body:  'Two weeks ahead of the scheduled Jul 29 print, Eos issued an 8-K with preliminary, unaudited Q2 results: revenue of $68–69M — a company record and a more-than-threefold YoY jump in shipments — up from $57M in Q1. The gross-margin loss narrowed to −69% to −73% (from −78% in Q1). Total cash including restricted was ~$364M at Jun 30 (from $472M at Q1, ~$108M used pre-Frontier-funding). It was the first quarter with both production lines commercial; Line 2 is posting yield and cycle times ahead of Line 1. Worth noting the timing: a record quarter dropped while the EOSER rights (strike $5.481) sat deep out-of-the-money and days from their Jul 21 expiry — good operating news at a moment that could also help a struggling raise. Full audited numbers land Jul 29.',
+      url:   'https://www.sec.gov/Archives/edgar/data/1805077/000162828026048253/eose-20260715.htm'
+    },
+    {
+      date:  '2026-07-07',
+      title: 'FPUSA converts 920 MWh Stella portfolio (ERCOT)',
+      body:  'Frontier Power USA converted a 920 MWh battery-storage portfolio (Blanquilla, Aransas Pass, Nash, Wallis) under its Stella Energy Solutions framework — more reservation-to-pipeline conversion in ERCOT, on top of the Redbird first PO (Jun 18). FPUSA cited a total pipeline of ~16 GWh (~2.7 GWh high-probability). The conversions keep building the US demand case; final capitalisation still hinges on the rights-offering funding closing.',
+      url:   'https://www.globenewswire.com/news-release/2026/07/07/3323096/0/en/Frontier-Power-USA-Converts-920-MWh-Battery-Storage-Project-Portfolio-Under-Stella-Strategic-Framework.html'
+    },
+    {
+      date:  '2026-07-02',
+      title: 'Rights offering commences (trading as EOSER); Hudson Bay registered direct closes',
+      body:  'The ~$150M rights offering opened Jul 2 — rights trade on Nasdaq as EOSER, expiring Jul 21 at a $5.481 subscription price (1 share + 0.4388 warrant per unit). The concurrent Hudson Bay registered direct (common stock + warrants) priced and closed to help fund Eos\' Frontier Power USA contribution. But the stock slid into the low-$4s in mid-July (a Stifel PT cut to $10, a new 52-week low), leaving the rights well out-of-the-money — a raise now under real pressure. Governance also shifted Jul 9: Haiyan Song joined the board (cybersecurity/software) and Marie Martin became Chief Legal Officer.',
+      url:   'https://www.eose.com/eos-energy-announces-commencement-of-rights-offering/'
+    },
     {
       date:  '2026-06-26',
       title: 'Ofgem publishes "minded-to" (provisional) LDES Window 1 cap & floor decisions',

@@ -1,6 +1,6 @@
 {
   "meta": {
-    "_refreshed": "2026-06-30T10:58:50.839Z",
+    "_refreshed": "2026-07-15T13:58:28.353Z",
     "sources": [
       "eose.com (WordPress REST API)",
       "SEC EDGAR submissions API",
@@ -8,20 +8,101 @@
     ],
     "counts": {
       "pressReleases": 20,
-      "secFilings": 309,
+      "secFilings": 314,
       "manual": 3,
       "shown": 14
     }
   },
   "items": [
     {
-      "iso": "2026-06-30T20:30:00Z",
-      "date": "2026-06-30",
-      "source": "SEC EDGAR (8-K + 424B5)",
-      "headline": "Frontier USA JV recapitalised: Hudson Bay Capital joins; rights offering priced at $5.481; DOE consent obtained",
-      "url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0001805077&type=8-K",
-      "summary": "An 8-K + 424B5 (Jun 30) set out a binding amended term sheet making Frontier Power USA a three-way JV — Eos, Cerberus ($100M + founder equity + 20.0M warrants) and new partner Hudson Bay Capital ($50M Class C + a registered direct purchase of Eos stock/warrants + 10.0M warrants). The rights offering is now priced: $5.481 per unit (1 share + 0.4388 warrant, $5.481 strike, 10-yr). DOE and Cerberus-lender consents obtained; remaining is completing the rights offering.",
+      "iso": "2026-07-15T12:30:00Z",
+      "date": "2026-07-15",
+      "source": "Eos Energy (preliminary Q2, 8-K)",
+      "headline": "Eos pre-announces preliminary Q2: revenue $68–69M (>3× shipments YoY), gross-margin loss −69/−73%, ~$364M cash",
+      "url": "https://investors.eose.com/news-releases/",
+      "summary": "Preliminary, unaudited Q2 (ended Jun 30): record revenue of $68–69M on a more-than-threefold YoY jump in shipments; gross-margin loss narrowing to −69% to −73% (from −78% in Q1); total cash incl. restricted ~$364M. First quarter with both Line 1 and Line 2 commercial — Line 2 posting yield/cycle times ahead of Line 1. Full audited Q2 earnings scheduled Jul 29.",
       "tag": "catalyst"
+    },
+    {
+      "iso": "2026-07-15T12:00:00Z",
+      "date": "2026-07-15",
+      "source": "SEC EDGAR",
+      "headline": "Material event (8-K)",
+      "url": "https://www.sec.gov/Archives/edgar/data/1805077/000162828026048253/eose-20260715.htm",
+      "summary": "8-K",
+      "tag": "sec-filing"
+    },
+    {
+      "iso": "2026-07-09T12:00:00Z",
+      "date": "2026-07-09",
+      "source": "SEC EDGAR",
+      "headline": "Material event (8-K)",
+      "url": "https://www.sec.gov/Archives/edgar/data/1805077/000162828026047796/eose-20260708.htm",
+      "summary": "8-K",
+      "tag": "sec-filing"
+    },
+    {
+      "iso": "2026-07-09T11:17:50",
+      "date": "2026-07-09",
+      "source": "Eos Energy (press release)",
+      "headline": "Eos Energy Enterprises Appoints Cybersecurity and Software Leader Haiyan Song to Board of Directors, Names Marie Martin Chief Legal Officer in Planned Transition",
+      "url": "https://www.eose.com/eos-energy-enterprises-appoints-cybersecurity-and-software-leader-haiyan-song-to-board-of-directors-names-marie-martin-chief-legal-officer-in-planned-transition/",
+      "summary": "Song brings deep technology, cybersecurity, software, edge computing, and digital infrastructure expertise as Eos scales American-made energy storage for an increasingly complex grid Pittsburgh-based Martin brings two decades of legal…",
+      "tag": "general"
+    },
+    {
+      "iso": "2026-07-09T11:08:17",
+      "date": "2026-07-09",
+      "source": "Eos Energy (press release)",
+      "headline": "Eos Energy Announces a Virtual Investor Presentation for Rights Offering",
+      "url": "https://www.eose.com/eos-energy-announces-a-virtual-investor-presentation-for-rights-offering/",
+      "summary": "EDISON, N.J., July 09, 2026 (GLOBE NEWSWIRE) — Eos Energy Enterprises, Inc. (NASDAQ: EOSE) (“Eos” or the “Company”), America’s leading innovator in designing, manufacturing, and providing zinc-based long duration energy storage (LDES)…",
+      "tag": "catalyst"
+    },
+    {
+      "iso": "2026-07-07T12:30:00Z",
+      "date": "2026-07-07",
+      "source": "Frontier Power USA (press release)",
+      "headline": "Frontier Power USA Converts 920 MWh Battery Storage Project Portfolio Under Stella Strategic Framework",
+      "url": "https://www.globenewswire.com/news-release/2026/07/07/3323096/0/en/Frontier-Power-USA-Converts-920-MWh-Battery-Storage-Project-Portfolio-Under-Stella-Strategic-Framework.html",
+      "summary": "FPUSA converted a 920 MWh portfolio (Blanquilla, Aransas Pass, Nash, Wallis) under its Stella Energy Solutions framework — further reservation-to-pipeline conversion in ERCOT. Total FPUSA pipeline cited at ~16 GWh (~2.7 GWh high-probability); closing contingent on the rights-offering funding.",
+      "tag": "catalyst"
+    },
+    {
+      "iso": "2026-07-02T12:00:00Z",
+      "date": "2026-07-02",
+      "source": "SEC EDGAR",
+      "headline": "Material event (8-K)",
+      "url": "https://www.sec.gov/Archives/edgar/data/1805077/000095010326010023/dp249395_8k.htm",
+      "summary": "FORM 8-K",
+      "tag": "sec-filing"
+    },
+    {
+      "iso": "2026-07-02T10:37:10",
+      "date": "2026-07-02",
+      "source": "Eos Energy (press release)",
+      "headline": "Eos Energy Announces Commencement of Rights Offering",
+      "url": "https://www.eose.com/eos-energy-announces-commencement-of-rights-offering/",
+      "summary": "EDISON, N.J., July 02, 2026 (GLOBE NEWSWIRE) — Eos Energy Enterprises, Inc. (NASDAQ: EOSE) (“Eos” or the “Company”), America’s leading innovator in designing, manufacturing, and providing zinc-based long duration energy storage (LDES)…",
+      "tag": "catalyst"
+    },
+    {
+      "iso": "2026-07-01T12:00:00Z",
+      "date": "2026-07-01",
+      "source": "SEC EDGAR",
+      "headline": "Material event (8-K)",
+      "url": "https://www.sec.gov/Archives/edgar/data/1805077/000095010326009976/dp249372_8k.htm",
+      "summary": "FORM 8-K",
+      "tag": "sec-filing"
+    },
+    {
+      "iso": "2026-06-30T12:00:00Z",
+      "date": "2026-06-30",
+      "source": "SEC EDGAR",
+      "headline": "Prospectus (424B5)",
+      "url": "https://www.sec.gov/Archives/edgar/data/1805077/000095010326009829/dp249285_424b5.htm",
+      "summary": "FORM 424B5",
+      "tag": "sec-filing"
     },
     {
       "iso": "2026-06-30T12:00:00Z",
@@ -42,103 +123,22 @@
       "tag": "sec-filing"
     },
     {
-      "iso": "2026-06-26T09:00:00Z",
-      "date": "2026-06-26",
-      "source": "Ofgem (UK regulator)",
-      "headline": "Ofgem LDES Window 1 minded-to decisions — only 16 of 73 projects provisionally awarded; Frontier UK largely excluded",
-      "url": "https://www.ofgem.gov.uk/consultation/long-duration-electricity-storage-window-1-minded-decisions",
-      "summary": "Provisional cap & floor awards skew to pumped hydro + long-duration; of Frontier UK's ~16 projects (~2.6 GW, all 8-hour) only one — Frontier Legacy, 65 MW — made the provisional list. The 'VFB/Zn' category does not confirm Eos vs Invinity tech. Consultation to Aug 7; final awards Autumn 2026; a Window 2 is expected.",
-      "tag": "general"
-    },
-    {
-      "iso": "2026-06-25T12:30:00Z",
-      "date": "2026-06-25",
-      "source": "Frontier Power USA (press release)",
-      "headline": "Frontier Power USA Engages KKR Capital Markets to Support Scaled Deployment of Long-Duration Energy Storage",
-      "url": "https://www.globenewswire.com/news-release/2026/06/25/3317521/0/en/Frontier-Power-USA-Engages-KKR-Capital-Markets-to-Support-Scaled-Deployment-of-Long-Duration-Energy-Storage.html",
-      "summary": "FPUSA engaged KKR Capital Markets as structuring agent for construction finance, tax equity and long-term project finance across its 2 GWh pipeline — de-risking FPUSA's capitalisation alongside Cerberus' $100M equity anchor.",
+      "iso": "2026-06-30T10:42:50",
+      "date": "2026-06-30",
+      "source": "Eos Energy (press release)",
+      "headline": "Eos Energy Enterprises, Inc. Announces Proposed Registered Direct Offering of Common Stock and Warrants to Fund Investment in Frontier Power USA",
+      "url": "https://www.eose.com/eos-energy-enterprises-inc-announces-proposed-registered-direct-offering-of-common-stock-and-warrants-to-fund-investment-in-frontier-power-usa/",
+      "summary": "EDISON, N.J., June 30, 2026 (GLOBE NEWSWIRE) — Eos Energy Enterprises, Inc. (NASDAQ: EOSE) (“Eos” or the “Company”) today announced that it has commenced a registered direct offering (the “Offering”) of common stock and warrants. The…",
       "tag": "catalyst"
     },
     {
-      "iso": "2026-06-22T17:45:01",
-      "date": "2026-06-22",
+      "iso": "2026-06-30T10:41:51",
+      "date": "2026-06-30",
       "source": "Eos Energy (press release)",
-      "headline": "Independent Fire Testing Confirms Eos Z3 Battery System Exhibited No Thermal Runaway, No Sustained Fire, and No Propagation Under Abuse Testing; Company Receives ISO 14001 Certification",
-      "url": "https://www.eose.com/independent-fire-testing-confirms-eos-z3-battery-system-exhibited-no-thermal-runaway-no-sustained-fire-and-no-propagation-under-abuse-testing-company-receives-iso-14001-certification/",
-      "summary": "Energy Safety Response Group testing found no thermal runaway, no sustained fire, and no propagation under direct flame impingement and overcharge abuse, supporting safe siting of long-duration storage in dense urban environments…",
-      "tag": "general"
-    },
-    {
-      "iso": "2026-06-18T09:46:49",
-      "date": "2026-06-18",
-      "source": "Eos Energy (press release)",
-      "headline": "Eos Energy Enterprises Announces First Purchase Order Under Frontier Power USA’s 2 GWh Capacity Reservation Agreement",
-      "url": "https://www.eose.com/eos-energy-enterprises-announces-first-purchase-order-under-frontier-power-usas-2-gwh-capacity-reservation-agreement/",
-      "summary": "PITTSBURGH, Pa., June 18, 2026 (GLOBE NEWSWIRE) — Eos Energy Enterprises, Inc. (NASDAQ: EOSE) (“Eos” or the “Company”), America’s leading innovator in designing, manufacturing, and providing zinc-based long-duration energy storage…",
+      "headline": "Eos Announces Pricing of Registered Direct Offering of Common Stock and Warrants to Fund Investment in Frontier Power USA",
+      "url": "https://www.eose.com/eos-announces-pricing-of-registered-direct-offering-of-common-stock-and-warrants-to-fund-investment-in-frontier-power-usa/",
+      "summary": "EDISON, N.J., June 30, 2026 (GLOBE NEWSWIRE) — Eos Energy Enterprises, Inc. (NASDAQ: EOSE) (“Eos” or the “Company”) today announced the pricing of a registered direct offering (the “Offering”) to Hudson Bay Capital Management of…",
       "tag": "catalyst"
-    },
-    {
-      "iso": "2026-06-17T09:44:48",
-      "date": "2026-06-17",
-      "source": "Eos Energy (press release)",
-      "headline": "Eos Energy Enterprises Establishes Strategic Entry into Germany Through Exclusive Long-Duration Storage Partnership",
-      "url": "https://www.eose.com/eos-energy-enterprises-establishes-strategic-entry-into-germany-through-exclusive-long-duration-storage-partnership/",
-      "summary": "Binding Master Supply Agreement secures a 750 MWh capacity commitment with a pathway to scale up to 2 GWh of Indensity™ deployments across Germany, Austria and Switzerland through 2031 First projects under a previously executed purchase…",
-      "tag": "catalyst"
-    },
-    {
-      "iso": "2026-06-16T08:59:37",
-      "date": "2026-06-16",
-      "source": "Eos Energy (press release)",
-      "headline": "Eos Energy Enterprises Launches Commercial Production at Second Manufacturing Facility",
-      "url": "https://www.eose.com/eos-energy-enterprises-launches-commercial-production-at-second-manufacturing-facility/",
-      "summary": "Successful startup of Battery Line 2 supports repeatable manufacturing platform, expands production capacity, and advances path toward 4 GWh annualized capacity PITTSBURGH, June 16, 2026 (GLOBE NEWSWIRE) — Eos Energy Enterprises, Inc.…",
-      "tag": "general"
-    },
-    {
-      "iso": "2026-06-11T09:11:21",
-      "date": "2026-06-11",
-      "source": "Eos Energy (press release)",
-      "headline": "Eos Energy Announces Record Date for Rights Offering",
-      "url": "https://www.eose.com/eos-energy-announces-record-date-for-rights-offering/",
-      "summary": "EDISON, N.J., June 11, 2026 (GLOBE NEWSWIRE) — Eos Energy Enterprises, Inc. (NASDAQ: EOSE) (“Eos” or the “Company”), America’s leading innovator in designing, manufacturing, and providing zinc-based long duration energy storage (LDES)…",
-      "tag": "catalyst"
-    },
-    {
-      "iso": "2026-06-05T12:00:00Z",
-      "date": "2026-06-05",
-      "source": "SEC EDGAR",
-      "headline": "Material event (8-K)",
-      "url": "https://www.sec.gov/Archives/edgar/data/1805077/000162828026041078/eose-20260603.htm",
-      "summary": "8-K",
-      "tag": "sec-filing"
-    },
-    {
-      "iso": "2026-05-13T21:15:06",
-      "date": "2026-05-13",
-      "source": "Eos Energy (press release)",
-      "headline": "Eos Energy Enterprises and Cerberus Capital Management Announce Frontier Power USA to Deploy American-Made Long Duration Energy Storage at Scale",
-      "url": "https://www.eose.com/eos-energy-enterprises-and-cerberus-capital-management-announce-frontier-power-usa-to-deploy-american-made-long-duration-energy-storage-at-scale/",
-      "summary": "Frontier Power USA is expected to be a purpose-built independent development and investment company utilizing Eos’ vertically integrated technology stack to accelerate gigawatt-scale deployment of American-made energy storage 2 GWh Firm…",
-      "tag": "catalyst"
-    },
-    {
-      "iso": "2026-05-13T21:13:14",
-      "date": "2026-05-13",
-      "source": "Eos Energy (press release)",
-      "headline": "Eos Energy Enterprises Reports First Quarter 2026 Financial Results and Announces Frontier Power USA",
-      "url": "https://www.eose.com/eos-energy-enterprises-reports-first-quarter-2026-financial-results-and-announces-frontier-power-usa/",
-      "summary": "Announced with Cerberus the formation of Frontier Power USA, a stand-alone purpose-built entity to develop, finance, and operate LDES projects to accelerate energy storage deployments Entered into a 2 GWh firm capacity reservation…",
-      "tag": "catalyst"
-    },
-    {
-      "iso": "2026-05-13T12:00:00Z",
-      "date": "2026-05-13",
-      "source": "SEC EDGAR",
-      "headline": "Quarterly report (10-Q)",
-      "url": "https://www.sec.gov/Archives/edgar/data/1805077/000162828026034368/eose-20260331.htm",
-      "summary": "10-Q",
-      "tag": "sec-filing"
     }
   ]
 }
