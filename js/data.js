@@ -30,27 +30,25 @@ window.EOSE_DATA = {
   // Refreshed by /equity-research:morning-note via a scheduled task in Cowork.
   // session = 'pre-open' (Swedish AM, ~07:00 CEST) | 'post-close' (Swedish PM, ~22:30 CEST)
   morningNote: {
-    updatedAt: '2026-07-15T23:55:00+02:00',
+    updatedAt: '2026-07-16T22:20:00+02:00',
     session:   'post-close',
-    headline:  'Eos picked for "Golden Dome" defense shield — same day as a record prelim Q2 ($68–69M rev, $807M backlog)',
-    takeaway:  'Two notable items Jul 15. After the close (~5pm ET), Eos said the U.S. Department of War selected it under the "Golden Dome for America" missile-defense initiative to deploy a Z3 zinc-based storage prototype at a critical defense installation — a strategic new demand door (national security), leaning directly on Z3\'s ~91% domestic content, NDAA/FEOC compliance and non-flammable safety. It\'s a prototype selection (multi-million $, size undisclosed) — a validation and a foot in the door, not yet a large order. Earlier, a pre-market 8-K pre-announced a record prelim Q2 (revenue $68–69M, backlog $807M); the stock closed ~+5% at ~$4.51 on light volume. EOSER rights still expire Jul 21, deeply OTM.',
+    headline:  'Golden Dome glow fades: EOSE gaps up 8.9%, reverses to close -7.3% at $4.18',
+    takeaway:  'EOSE opened Thursday on the prior session\'s Golden Dome / DoW selection and record prelim Q2, hitting $4.82 pre-market, then sold off throughout the session on sub-average volume (16.5M vs 27M avg) to close at $4.18 — down 7.3% from the Jul 15 close. No new filings, analyst actions, or catalysts on Jul 16. Next hard binary: EOSER rights expiry Jul 21 (strike $5.481, ~31% OTM), then full Q2 print Aug 5.',
     bullets: [
-      'Golden Dome for America (Jul 15, ~5pm ET): U.S. Department of War selected Eos to deliver a Z3 LDES prototype at a critical defense installation for the national missile-defense shield. ~91% domestic content, Section 842 NDAA + FEOC compliant, made in Pittsburgh. A strategically meaningful new (defense) demand vector — but a prototype/selection, not a disclosed-size order yet.',
-      'Prelim Q2 (8-K, pre-mkt Jul 15): record revenue $68–69M on >3× YoY shipments; GM loss −69% to −73% (from −78% Q1); backlog record $807M (+25% QoQ, orders exceeded shipments). Cash ~$364M; customer collections $78M exceeded quarterly revenue.',
-      'Close: ~$4.51 (+5.2% vs $4.29 prev close); opened $4.61 on the prelim 8-K, day range $3.80–$4.66. Volume light vs. 22.1M average — gap more relieved than chased.',
-      'Line 2 operational update: achieving higher yields and faster cycle times than Line 1 in early ramp. Bipolar automation 50% through Site Acceptance Testing; full commissioning targeted July 2026. Commissioning is the start of the ramp, not the finish.',
-      'Truist upgraded to Strong-Buy, $7 PT (Jul 14) ahead of the prelim — first Strong-Buy on Street. Avg consensus Hold, avg PT $9.17 (11 analysts). JPMorgan Neutral, $6 PT. CFO Kroeker sold 79,309 shares Jul 7 at $4.68 (10b5-1 plan, tax withholding).',
-      'CORRECTION: Full Q2 print + call now confirmed Aug 5 at 8:30am ET per the 8-K (prior expectation Jul 29). Say Technologies Q&A opens Jul 20.',
-      'Next: EOSER rights (strike $5.481) expire Jul 21 — 6 days, deeply OTM. Key binary before expiry. Full audited Q2 on Aug 5: watch combined-line throughput, cash bridge, and FPUSA definitive-agreement status.'
+      'Price action: pre-mkt +8.9% to ~$4.78 on Golden Dome carry-over; intraday high $4.82, low $4.13, close $4.18 (−7.3% vs Jul 15 close of $4.51). Volume 16.5M vs 27.3M avg — gap-and-crap on thin conviction from both sides.',
+      'No new SEC filings Jul 16. Jul 15 8-K (prelim Q2 + Golden Dome selection) remains the most recent. No Form 4 insider activity filed today.',
+      'EOSER rights (strike $5.481) expire Jul 21 at 5pm ET — with EOSE at $4.18 they are ~31% OTM and effectively worthless. Unexercised rights lapse; $150M target unlikely to clear through exercise alone without a sharp pre-Monday recovery.',
+      'FPUSA latest: Jul 14 — Wildfire 400 MWh BESS (Caldwell County, TX) selected from Bimergen, lifting closed+selected platform capacity to 1.8 GWh. No new FPUSA update Jul 16; definitive JV agreement still pending.',
+      'No analyst rating changes Jul 16. Most recent: Truist Strong-Buy / $7 PT (Jul 15). Avg consensus PT ~$9.17 across 11 analysts — stock trades at ~55% discount to consensus.',
+      'Next: Say Technologies Q&A opens Jul 20; EOSER expires Jul 21; full audited Q2 call Aug 5 at 8:30am ET — watch Line 2 ramp throughput, cash bridge, and FPUSA definitive-agreement status.'
     ],
-    price:   { last: 4.51, changePct: 5.2, note: 'close · Jul 15 2026 · MarketBeat/Stooq delayed' },
+    price:   { last: 4.18, changePct: -7.3, note: 'close · Jul 16 2026 · Benzinga/Stooq delayed' },
     sources: [
-      { label: 'Golden Dome for America selection — Eos IR (Jul 15)', url: 'https://investors.eose.com/news-releases/news-release-details/eos-energy-enterprises-selected-deliver-mission-ready-power' },
-      { label: 'Prelim Q2 8-K / GlobeNewsWire (Jul 15)', url: 'https://www.globenewswire.com/news-release/2026/07/15/3327698/0/en/Eos-Energy-Enterprises-Announces-Preliminary-Second-Quarter-2026-Financial-Results-Expects-Record-Quarterly-Revenue-and-Backlog-and-Sets-Second-Quarter-2026-Conference-Call-Date.html' },
-      { label: 'MarketBeat — EOSE gap up (Jul 15)', url: 'https://www.marketbeat.com/instant-alerts/eos-energy-enterprises-nasdaqeose-shares-gap-up-time-to-buy-2026-07-15/' },
-      { label: 'Truist Strong-Buy upgrade', url: 'https://www.marketbeat.com/instant-alerts/truist-financial-upgrades-eos-energy-enterprises-nasdaqeose-to-strong-buy-2026-07-15/' },
-      { label: 'Eos IR — news releases', url: 'https://investors.eose.com/news-releases/' },
-      { label: 'SEC EDGAR — prelim Q2 8-K', url: 'https://www.sec.gov/Archives/edgar/data/1805077/000162828026048253/eose-20260715.htm' }
+      { label: 'Benzinga — why EOSE gained Thursday (Jul 16)', url: 'https://www.benzinga.com/trading-ideas/movers/26/07/60491580/eos-energy-eyes-best-quarter-ever-with-record-revenue-807-million-backlog' },
+      { label: 'GuruFocus — EOSE 8.9% pre-mkt surge Jul 16', url: 'https://www.gurufocus.com/news/8962139/eos-energy-enterprises-eose-sees-89-surge-ahead-of-market-open' },
+      { label: 'FPUSA Wildfire 400 MWh selection (Jul 14)', url: 'https://www.globenewswire.com/news-release/2026/07/14/3326849/0/en/Frontier-Power-USA-Selects-400-MWh-Wildfire-BESS-Project-from-Bimergen-Energy-Bringing-Closed-and-Selected-Eos-Backed-Project-Capacity-to-1.8-GWh.html' },
+      { label: 'EOSER rights offering — Eos IR', url: 'https://investors.eose.com/news-releases/news-release-details/eos-energy-announces-commencement-rights-offering/' },
+      { label: 'SEC EDGAR — prelim Q2 8-K (Jul 15)', url: 'https://www.sec.gov/Archives/edgar/data/1805077/000162828026048253/eose-20260715.htm' }
     ]
   },
 
