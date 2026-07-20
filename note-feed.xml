@@ -6,7 +6,14 @@
     <atom:link href="https://eosesource.com/note-feed.xml" rel="self" type="application/rss+xml"/>
     <description>Twice-daily independent EOSE market note: price action, filings, catalysts. Not investment advice.</description>
     <language>en-us</language>
-    <lastBuildDate>Wed, 15 Jul 2026 21:55:00 GMT</lastBuildDate>
+    <lastBuildDate>Fri, 17 Jul 2026 20:30:00 GMT</lastBuildDate>
+    <item>
+      <title>Post-close: EOSE steadies at ~$4.22 (+1%) as EOSER rights enter final weekend before Jul 21 expiry</title>
+      <link>https://eosesource.com/notes.html#note-2026-07-17T2230</link>
+      <guid isPermaLink="false">eose-note-2026-07-17T22:30:00+02:00</guid>
+      <pubDate>Fri, 17 Jul 2026 20:30:00 GMT</pubDate>
+      <description>&lt;p&gt;EOSE recovered marginally on quiet Friday trade, closing ~$4.22 (+1%) after three consecutive down sessions. No new filings, analyst actions, or FPUSA updates on Jul 17. EOSER rights trade at ~$0.04 — ~23% OTM — near-certain to lapse unexercised Mon Jul 21 at 5pm ET. Say Q&amp;A opens Jul 20; full Q2 call Aug 5.&lt;/p&gt;&lt;ul&gt;&lt;li&gt;Price action: EOSE closed ~$4.22 (+1.0% vs $4.18 Jul 16 close) on subdued volume with no fresh catalyst. Stock is 41% below the $7.17 direct-offering price (Jun 30) and 23% below the $5.481 rights subscription strike.&lt;/li&gt;&lt;li&gt;EOSER rights near-worthless: closed ~$0.04, massively OTM (~23% below $5.481 strike). Market prices near-zero chance of exercise. Rights lapse Jul 21 5pm ET — $150M target falls well short; no backstop arrangement disclosed.&lt;/li&gt;&lt;li&gt;No new SEC filings Jul 17. Most recent: Jul 15 8-K (prelim Q2 rev $68-69M, backlog $807M, Line 2 commercial). No Form 4 insider activity filed today.&lt;/li&gt;&lt;li&gt;FPUSA platform at 1.8 GWh selected/closed (90% of 2 GWh Eos reservation) after Jul 14 Wildfire 400 MWh pick. No new FPUSA update Jul 17. Definitive JV agreement with Hudson Bay still pending.&lt;/li&gt;&lt;li&gt;Next catalysts: Say Technologies Q&amp;A opens Jul 20; EOSER expires Jul 21 at 5pm ET; full audited Q2 call Aug 5 at 8:30am ET — watch Line 2 throughput, cash bridge, FPUSA definitive agreement.&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;&lt;a href="https://eosesource.com/#daily-note"&gt;Full dashboard →&lt;/a&gt;&lt;/p&gt;</description>
+    </item>
     <item>
       <title>Post-close: Eos picked for "Golden Dome" defense shield — same day as a record prelim Q2 ($68–69M rev, $807M backlog)</title>
       <link>https://eosesource.com/notes.html#note-2026-07-15T2355</link>

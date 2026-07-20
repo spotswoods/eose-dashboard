@@ -137,12 +137,12 @@ window.EOSE_DATA = {
   // ────────── KPI strip — Q1'26 actuals ──────────
   // accent drives the card's left border (meaning-tied): pos | warn | neg | info
   kpis: [
-    { label: 'Q1\'26 Revenue',      value: '$57.0M',     delta: '+445% YoY · cube deliv. +5.7×', tone: 'up',   accent: 'pos'  },
-    { label: 'Adj. EPS surprise',   value: '$0.12',      delta: 'vs. −$0.22 cons. · beat 154%',  tone: 'up',   accent: 'pos'  },
-    { label: 'Backlog (3/31/26)',   value: '$644.6M',    delta: '2.6 GWh · +2 GWh Frontier',     tone: 'up',   accent: 'pos'  },
-    { label: 'Commercial Pipeline', value: '$24.3B',     delta: 'Proposals + LOIs · +56% YoY · not contracted', tone: 'up', accent: 'info' },
-    { label: 'Total Cash',          value: '$472.4M',    delta: 'Q1 op. cash flow: −$119.7M',    tone: 'flat', accent: 'neg'  },
-    { label: 'FY26 Guidance',       value: '$300–400M',  delta: 'Reaffirmed Q1\'26',              tone: 'up',   accent: 'warn' }
+    { label: 'Q2\'26 Revenue (prelim)', value: '$68–69M', delta: 'Record · >3× shipments YoY · vs $57.0M Q1', tone: 'up',   accent: 'pos'  },
+    { label: 'Backlog (6/30/26, prelim)', value: '~$807M', delta: 'Record · +25% QoQ · orders > shipments',   tone: 'up',   accent: 'pos'  },
+    { label: 'Gross margin (prelim)', value: '−69/−73%',  delta: 'Improving from −78% in Q1 · still negative', tone: 'up',   accent: 'warn' },
+    { label: 'Total Cash (6/30/26)',  value: '~$364M',    delta: '−$108M QoQ · pre-Frontier funding',        tone: 'flat', accent: 'neg'  },
+    { label: 'Commercial Pipeline',   value: '$24.3B',    delta: 'As of Q1\'26 · proposals + LOIs · not contracted', tone: 'up', accent: 'info' },
+    { label: 'FY26 Guidance',         value: '$300–400M', delta: 'Set at Q1\'26 · watch the Aug 5 audited print', tone: 'up',   accent: 'warn' }
   ],
 
   // ────────── Quarterly revenue ($M) — actuals from 10-Qs / 10-Ks ──────────
@@ -161,7 +161,7 @@ window.EOSE_DATA = {
     { q: '4Q25', v: 58.00, type: 'actual'    },
     { q: '1Q26', v: 56.96, type: 'actual'    },  // 10-Q Q1'26: $56,963K
     // Projections — sum of FY26 ~ guidance midpoint $350M
-    { q: '2Q26', v: 82.0,  type: 'projected' },
+    { q: '2Q26', v: 68.5,  type: 'actual'    },
     { q: '3Q26', v: 100.0, type: 'projected' },
     { q: '4Q26', v: 110.0, type: 'projected' },
     { q: '1Q27', v: 146.0, type: 'projected' },
@@ -197,7 +197,7 @@ window.EOSE_DATA = {
     { q: '3Q25', v: -111,  type: 'actual'    },
     { q: '4Q25', v: -94,   type: 'actual'    },
     { q: '1Q26', v: -78,   type: 'actual'    },   // -44.43 / 56.96 = -78.0%
-    { q: '2Q26', v: -55,   type: 'projected' },
+    { q: '2Q26', v: -71,  type: 'actual'    },
     { q: '3Q26', v: -35,   type: 'projected' },
     { q: '4Q26', v: -15,   type: 'projected' },
     { q: '1Q27', v: 0,     type: 'projected' },
@@ -238,7 +238,7 @@ window.EOSE_DATA = {
     { q: '3Q25', v: 126.8,  type: 'actual'    },
     { q: '4Q25', v: 624.6,  type: 'actual'    },
     { q: '1Q26', v: 472.4,  type: 'actual'    },
-    { q: '2Q26', v: 420.0,  type: 'projected' },
+    { q: '2Q26', v: 364.0,  type: 'actual'    },
     { q: '3Q26', v: 370.0,  type: 'projected' },
     { q: '4Q26', v: 320.0,  type: 'projected' },
     { q: '1Q27', v: 280.0,  type: 'projected' },
@@ -255,7 +255,7 @@ window.EOSE_DATA = {
     { q: '3Q25', rev: 30.51, gm: -111, op: -61.22, liq: 126.8, type: 'A' },
     { q: '4Q25', rev: 58.00, gm: -94,  op: -81.27, liq: 624.6, type: 'A' },
     { q: '1Q26', rev: 56.96, gm: -78,  op: -79.31, liq: 472.4, type: 'A' },
-    { q: '2Q26', rev: 82.0,  gm: -55,  op: -65.0,  liq: 420.0, type: 'E' },
+    { q: '2Q26', rev: 68.5,  gm: -71,  op: -65.0,  liq: 364.0, type: 'A' },
     { q: '3Q26', rev: 100.0, gm: -35,  op: -48.0,  liq: 370.0, type: 'E' },
     { q: '4Q26', rev: 110.0, gm: -15,  op: -32.0,  liq: 320.0, type: 'E' }
   ],
@@ -358,7 +358,7 @@ window.EOSE_DATA = {
     { q: '4Q25', v: 701.5 },
     { q: '1Q26', v: 644.6 },
     // 2 GWh Frontier USA at $225/kWh = ~$450M added to Q1'26 backlog of $644.6M
-    { q: '2Q26', v: 1095.0, type: 'projected' }
+    { q: '2Q26', v: 807.0 }
   ],
 
   // ────────── New bookings per quarter ($M) ──────────
@@ -728,7 +728,7 @@ window.EOSE_DATA = {
       { k: 'Total shareholders\' deficit',v: '$(868.4)M' },
       { k: '45X IRA grant receivable',    v: '$21.4M' }
     ],
-    note: 'The $868M shareholders\' deficit is driven by non-cash mark-to-market adjustments on Cerberus warrants and preferred instruments — it does not reflect cash consumed or owed. Series B preferred remeasurement alone was +$778.9M in Q1\'26 (non-cash). Reconcile against the 10-Q before acting on any single line item. <br/><br/><strong style="color:var(--warning)">Coming change to watch:</strong> Eos has stated (May 13, 2026 release) it intends to fund its ~$150M Frontier USA equity contribution via a pro-rata rights offering to existing shareholders (subscription rights + corresponding warrants). The structure is designed to limit dilution to <em>participating</em> shareholders — non-participants will be diluted. Cerberus is separately expected to receive Eos warrants in exchange for its $100M Frontier USA anchor. Pricing + timing TBD; watch for the supplemental prospectus filing.'
+    note: 'The $868M shareholders\' deficit is driven by non-cash mark-to-market adjustments on Cerberus warrants and preferred instruments — it does not reflect cash consumed or owed. Series B preferred remeasurement alone was +$778.9M in Q1\'26 (non-cash). Reconcile against the 10-Q before acting on any single line item. <br/><br/><strong style="color:var(--warning)">The live issue — the rights offering is underwater:</strong> the offering is priced at <strong>$5.481 per unit</strong> (1 share + 0.4388 warrant, warrant strike $5.481), per the Jun 30, 2026 424B5. The rights trade as <strong>EOSER and expire Jul 21, 2026</strong> — but the stock sits well below $5.481, so they are <strong>out-of-the-money</strong>. Rational holders have little reason to exercise, which means the <strong>~$150M target may raise materially less</strong>. Those proceeds were earmarked for Eos’ Class B contribution to Frontier Power USA (alongside Cerberus’ $100M and Hudson Bay’s $50M + registered direct). A shortfall implies a funding gap — watch for renegotiated terms, alternative financing, or further dilution. Unexercised, unsold rights simply expire worthless. Separately, Cerberus (20.0M) and Hudson Bay (10.0M) receive Eos warrants regardless.'
   },
 
   // ────────── NEW: Product family (Indensity / Cube / DawnOS) ──────────
@@ -955,7 +955,8 @@ window.EOSE_DATA = {
       { point: 'Active securities class action (Yung v. Eos, D.N.J. 26-cv-02372) alleging misrepresentation of FY25 production capacity. Settlement risk is material if certified.', src: 'court filings' },
       { point: 'Shares outstanding +18% trailing 12 months. Insiders sold $14M more than they bought over the same window — Stidolph $11.5M, Kroeker (interim CFO) $802k, Silberman (CLO) $739k.', src: 'OpenInsider / Simply Wall St' },
       { point: 'Customer concentration: 93.3% of Q1\'26 revenue from a handful of >10% customers. One project slip = guidance miss.', src: '10-Q footnotes' },
-      { point: 'Dilution is now quantified and stacking: the Jun 30 deal adds a registered direct to Hudson Bay PLUS ~30M new warrants to Cerberus (20.0M) and HBC (10.0M), on top of the ~$150M rights offering (units = stock + 0.4388 warrant). The $5.481 subscription price sits below the recent tape and anchors it. Funded — but at real cost to non-participating holders.', src: 'Jun 30 8-K + 424B5' },
+      { point: 'THE RIGHTS OFFERING IS UNDERWATER — the biggest live risk. Subscription is $5.481/unit but the stock trades well below that, so the rights (EOSER) are out-of-the-money days from their Jul 21 expiry. Rational holders have no reason to exercise, so the ~$150M target may raise far less. Those proceeds were earmarked for Eos\' contribution to Frontier USA — a shortfall means a funding gap, and likely renegotiation, alternative financing, or further dilution.', src: 'Jun 30 424B5 · EOSER market price' },
+      { point: 'Dilution is stacking regardless of the raise\'s outcome: the Jun 30 deal adds a registered direct to Hudson Bay PLUS ~30M new warrants to Cerberus (20.0M) and HBC (10.0M), on top of whatever the rights offering issues (units = stock + 0.4388 warrant). Non-participating holders absorb it either way.', src: 'Jun 30 8-K + 424B5' },
       { point: 'UK Ofgem was a miss: in the Jun 26 Window 1 minded-to decisions, only 1 of Frontier UK\'s ~16 projects (Frontier Legacy, 65 MW) made the provisional list — ~2.5 GW excluded — and even that one is not confirmed as Eos (vs Invinity) tech. A long-cited bull leg is largely off for Window 1.', src: 'Ofgem Window 1 minded-to decisions' },
       { point: 'No public hyperscaler customer despite the AI narrative. TURBINE-X is targeting hyperscalers; nothing closed. The "AI demand" thesis is bidding, not winning, today.', src: 'all public disclosures' },
       { point: 'JPMorgan cut PT $9→$6 (Neutral) post-FY25; Roth Capital $6 PT (Chip Moore). Consensus PT compressed from $9.71 to $8.86. Sell-side is skeptical.', src: 'JPMorgan, Roth Capital research' }
