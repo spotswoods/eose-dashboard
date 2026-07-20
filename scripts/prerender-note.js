@@ -149,8 +149,9 @@ function buildArchivePage(archive) {
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>EOSE Daily Note Archive — Independent Investor Notes</title>
-  <meta name="description" content="Archive of the twice-daily independent EOSE (Eos Energy) investor note from eosesource.com: price action, SEC filings, catalysts, and rights-offering coverage. Not investment advice." />
-  <meta name="robots" content="index, follow" />
+  <meta name="description" content="Archive of the twice-daily independent Eos Energy (EOSE) investor note: price action, SEC filings, catalysts and rights-offering coverage." />
+  <meta name="robots" content="index, follow, max-image-preview:large" />
+  <meta name="author" content="spotswoods (independent investor research)" />
   <link rel="canonical" href="https://eosesource.com/notes.html" />
   <meta name="theme-color" content="#02130E" />
   <link rel="icon" type="image/png" href="assets/eose-logo.png" />
@@ -160,9 +161,46 @@ function buildArchivePage(archive) {
   <meta property="og:url" content="https://eosesource.com/notes.html" />
   <meta property="og:image" content="https://eosesource.com/assets/og-daily.png" />
   <meta property="article:modified_time" content="${esc(newest)}" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="EOSE Daily Note Archive — Independent Investor Notes" />
+  <meta name="twitter:image" content="https://eosesource.com/assets/og-daily.png" />
+  <script type="application/ld+json">
+${JSON.stringify({
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'Blog',
+      '@id': 'https://eosesource.com/notes.html#blog',
+      name: 'EOSE Daily Investor Note',
+      description: 'Twice-daily independent Eos Energy (EOSE) market note: price action, SEC filings, catalysts.',
+      url: 'https://eosesource.com/notes.html',
+      inLanguage: 'en',
+      dateModified: newest,
+      author: { '@type': 'Person', name: 'spotswoods' },
+      blogPost: archive.slice(0, 25).map((n) => ({
+        '@type': 'BlogPosting',
+        headline: n.headline,
+        description: n.takeaway,
+        datePublished: n.updatedAt,
+        dateModified: n.updatedAt,
+        url: `https://eosesource.com/notes.html#${noteAnchor(n)}`,
+        author: { '@type': 'Person', name: 'spotswoods' },
+      })),
+    },
+    {
+      '@type': 'BreadcrumbList',
+      itemListElement: [
+        { '@type': 'ListItem', position: 1, name: 'EOSE Investor Dashboard', item: 'https://eosesource.com/' },
+        { '@type': 'ListItem', position: 2, name: 'Daily Note Archive', item: 'https://eosesource.com/notes.html' },
+      ],
+    },
+  ],
+}, null, 2)}
+  </script>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap" media="print" onload="this.media='all'" />
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap" /></noscript>
   <link rel="stylesheet" href="css/styles.css" />
 </head>
 <body>
