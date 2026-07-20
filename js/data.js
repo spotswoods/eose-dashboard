@@ -30,24 +30,24 @@ window.EOSE_DATA = {
   // Refreshed by /equity-research:morning-note via a scheduled task in Cowork.
   // session = 'pre-open' (Swedish AM, ~07:00 CEST) | 'post-close' (Swedish PM, ~22:30 CEST)
   morningNote: {
-    updatedAt: '2026-07-17T22:30:00+02:00',
+    updatedAt: '2026-07-20T22:30:00+02:00',
     session:   'post-close',
-    headline:  'EOSE steadies at ~$4.22 (+1%) as EOSER rights enter final weekend before Jul 21 expiry',
-    takeaway:  'EOSE recovered marginally on quiet Friday trade, closing ~$4.22 (+1%) after three consecutive down sessions. No new filings, analyst actions, or FPUSA updates on Jul 17. EOSER rights trade at ~$0.04 \u2014 ~23% OTM \u2014 near-certain to lapse unexercised Mon Jul 21 at 5pm ET. Say Q&A opens Jul 20; full Q2 call Aug 5.',
+    headline:  'EOSE falls 6% to $3.96 on light volume; EOSER expires tomorrow OTM, Say Q&A opens',
+    takeaway:  'EOSE shed ~6% to $3.96 on well-below-average volume (7.96M vs 30.5M avg) with no fresh catalyst. The $5.481 EOSER rights expire tomorrow Jul 21 at 5pm ET \u2014 stock ~38% below the strike, near-certain to lapse. Say Q&A opened today ahead of the Aug 5 Q2 call; FPUSA definitive JV agreement the key pending watch.',
     bullets: [
-      'Price action: EOSE closed ~$4.22 (+1.0% vs $4.18 Jul 16 close) on subdued volume with no fresh catalyst. Stock is 41% below the $7.17 direct-offering price (Jun 30) and 23% below the $5.481 rights subscription strike.',
-      'EOSER rights near-worthless: closed ~$0.04, massively OTM (~23% below $5.481 strike). Market prices near-zero chance of exercise. Rights lapse Jul 21 5pm ET \u2014 $150M target falls well short; no backstop arrangement disclosed.',
-      'No new SEC filings Jul 17. Most recent: Jul 15 8-K (prelim Q2 rev $68-69M, backlog $807M, Line 2 commercial). No Form 4 insider activity filed today.',
-      'FPUSA platform at 1.8 GWh selected/closed (90% of 2 GWh Eos reservation) after Jul 14 Wildfire 400 MWh pick. No new FPUSA update Jul 17. Definitive JV agreement with Hudson Bay still pending.',
-      'Next catalysts: Say Technologies Q&A opens Jul 20; EOSER expires Jul 21 at 5pm ET; full audited Q2 call Aug 5 at 8:30am ET \u2014 watch Line 2 throughput, cash bridge, FPUSA definitive agreement.'
+      'Price action: EOSE closed $3.96 (\u22126.2% vs ~$4.22 Jul 17) on subdued 7.96M volume \u2014 ~26% of the 30.5M 30-day avg. No news catalyst; pre-expiry rights-overhang pressure likely.',
+      'EOSER expires tomorrow Jul 21 at 5pm ET \u2014 stock ~38% below the $5.481 strike, rights near-certain to lapse unexercised. No backstop; $150M Frontier USA contribution target falls well short.',
+      'No new SEC filings Jul 18\u201320. Jul 15 8-K also flagged a DoW Golden Dome Z3 prototype win (~91% domestic content, NDAA/FEOC compliant) \u2014 defense demand vector not yet in Street models.',
+      'Say Q&A opens today 9am ET (closes Aug 2 5pm ET) ahead of Aug 5 Q2 call (8:30am ET). Key asks: FPUSA definitive JV close, combined Lines 1+2 throughput, and cash bridge.',
+      'FPUSA holds at 1.8 GWh selected/closed (90% of 2 GWh reservation); KKR Capital Markets engaged for construction finance. Three-way JV (Eos/Cerberus/Hudson Bay) definitive agreement still pending.'
     ],
-    price:   { last: 4.22, changePct: 1.0, note: 'close \u00b7 Jul 17 2026 \u00b7 Yahoo/delayed approx' },
+    price:   { last: 3.96, changePct: -6.2, note: 'close \u00b7 Jul 20 2026 \u00b7 Yahoo Finance delayed' },
     sources: [
-      { label: 'SEC EDGAR \u2014 prelim Q2 8-K (Jul 15)', url: 'https://www.sec.gov/Archives/edgar/data/0001805077/000162828026048253/eose-20260715.htm' },
+      { label: 'EOSE quote \u2014 Yahoo Finance', url: 'https://finance.yahoo.com/quote/EOSE/' },
+      { label: 'EOSE prelim Q2 + Golden Dome 8-K (Jul 15)', url: 'https://www.sec.gov/Archives/edgar/data/0001805077/000162828026048253/eose-20260715.htm' },
       { label: 'FPUSA Wildfire 400 MWh selection (Jul 14)', url: 'https://www.globenewswire.com/news-release/2026/07/14/3326849/0/en/Frontier-Power-USA-Selects-400-MWh-Wildfire-BESS-Project-from-Bimergen-Energy-Bringing-Closed-and-Selected-Eos-Backed-Project-Capacity-to-1.8-GWh.html' },
-      { label: 'EOSER rights quote \u2014 Yahoo Finance', url: 'https://finance.yahoo.com/quote/EOSER/' },
-      { label: 'Stifel PT cut $12\u2192$10 / Buy maintained (Jul 13)', url: 'https://www.marketbeat.com/instant-alerts/eos-energy-enterprises-nasdaqeose-shares-down-69-after-analyst-downgrade-2026-07-13/' },
-      { label: 'EOSE quote \u2014 Yahoo Finance', url: 'https://finance.yahoo.com/quote/EOSE/' }
+      { label: 'FPUSA Stella 920 MWh selection (Jul 7)', url: 'https://www.globenewswire.com/news-release/2026/07/07/3323096/0/en/Frontier-Power-USA-Converts-920-MWh-Battery-Storage-Project-Portfolio-Under-Stella-Strategic-Framework.html' },
+      { label: 'Eos IR \u2014 news releases', url: 'https://investors.eose.com/news-releases' }
     ]
   },
 

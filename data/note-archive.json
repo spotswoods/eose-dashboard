@@ -1,5 +1,23 @@
 [
  {
+  "updatedAt": "2026-07-20T22:30:00+02:00",
+  "session": "post-close",
+  "headline": "EOSE falls 6% to $3.96 on light volume; EOSER expires tomorrow OTM, Say Q&A opens",
+  "takeaway": "EOSE shed ~6% to $3.96 on well-below-average volume (7.96M vs 30.5M avg) with no fresh catalyst. The $5.481 EOSER rights expire tomorrow Jul 21 at 5pm ET — stock ~38% below the strike, near-certain to lapse. Say Q&A opened today ahead of the Aug 5 Q2 call; FPUSA definitive JV agreement the key pending watch.",
+  "bullets": [
+   "Price action: EOSE closed $3.96 (−6.2% vs ~$4.22 Jul 17) on subdued 7.96M volume — ~26% of the 30.5M 30-day avg. No news catalyst; pre-expiry rights-overhang pressure likely.",
+   "EOSER expires tomorrow Jul 21 at 5pm ET — stock ~38% below the $5.481 strike, rights near-certain to lapse unexercised. No backstop; $150M Frontier USA contribution target falls well short.",
+   "No new SEC filings Jul 18–20. Jul 15 8-K also flagged a DoW Golden Dome Z3 prototype win (~91% domestic content, NDAA/FEOC compliant) — defense demand vector not yet in Street models.",
+   "Say Q&A opens today 9am ET (closes Aug 2 5pm ET) ahead of Aug 5 Q2 call (8:30am ET). Key asks: FPUSA definitive JV close, combined Lines 1+2 throughput, and cash bridge.",
+   "FPUSA holds at 1.8 GWh selected/closed (90% of 2 GWh reservation); KKR Capital Markets engaged for construction finance. Three-way JV (Eos/Cerberus/Hudson Bay) definitive agreement still pending."
+  ],
+  "price": {
+   "last": 3.96,
+   "changePct": -6.2,
+   "note": "close · Jul 20 2026 · Yahoo Finance delayed"
+  }
+ },
+ {
   "updatedAt": "2026-07-17T22:30:00+02:00",
   "session": "post-close",
   "headline": "EOSE steadies at ~$4.22 (+1%) as EOSER rights enter final weekend before Jul 21 expiry",
