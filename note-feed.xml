@@ -6,7 +6,14 @@
     <atom:link href="https://eosesource.com/note-feed.xml" rel="self" type="application/rss+xml"/>
     <description>Twice-daily independent EOSE market note: price action, filings, catalysts. Not investment advice.</description>
     <language>en-us</language>
-    <lastBuildDate>Mon, 20 Jul 2026 20:30:00 GMT</lastBuildDate>
+    <lastBuildDate>Tue, 21 Jul 2026 20:30:00 GMT</lastBuildDate>
+    <item>
+      <title>Post-close: EOSE +4.4% to $4.24 as EOSER rights expire OTM; JPM cuts PT to $6, Aug 5 call in focus</title>
+      <link>https://eosesource.com/notes.html#note-2026-07-21T2230</link>
+      <guid isPermaLink="false">eose-note-2026-07-21T22:30:00+02:00</guid>
+      <pubDate>Tue, 21 Jul 2026 20:30:00 GMT</pubDate>
+      <description>&lt;p&gt;EOSE bounced 4.4% to $4.24 (17.8M vol, 80% of avg) as EOSER rights lapsed OTM at the $5.481 strike — dilution overhang cleared, but the targeted $150M FPUSA equity contribution goes unraised. JPMorgan cut PT $9→$6 (Neutral) today. Aug 5 Q2 earnings call is the next major catalyst.&lt;/p&gt;&lt;ul&gt;&lt;li&gt;Price action: EOSE closed $4.24 (+4.4%) on 17.8M shares (80% of 22.1M avg). Range $4.07–$4.27; AH $4.26 (+0.47%). Broad tape green: S&amp;P +0.89%, Nasdaq +1.29%.&lt;/li&gt;&lt;li&gt;EOSER rights expired 5pm ET — EOSE at $4.24 was ~23% below the $5.481 strike; ~27.4M units lapsed OTM. Eos's targeted $150M FPUSA contribution unraised; only the Jun 30 Hudson Bay $75M direct is closed.&lt;/li&gt;&lt;li&gt;JPMorgan (Mark Strouse) cut PT $9→$6 today, keeps Neutral — second JPM cut in 2026. Reflects capital shortfall from lapsed rights offering and ongoing execution risk ahead of Aug 5 Q2 results.&lt;/li&gt;&lt;li&gt;No new 8-K or Form 4 filings Jul 21. Most recent: Jul 15 8-K (prelim Q2 record revenue + Golden Dome Z3 NDAA win). Say Q&amp;A closes Aug 2 5pm ET; Q2 call Aug 5 8:30am ET.&lt;/li&gt;&lt;li&gt;FPUSA at 1.8 GWh selected/closed (90% of 2 GWh reservation); KKR Capital Markets engaged for construction finance. Three-way JV definitive agreement (Eos/Cerberus/Hudson Bay) still outstanding — key update Aug 5.&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;&lt;a href="https://eosesource.com/#daily-note"&gt;Full dashboard →&lt;/a&gt;&lt;/p&gt;</description>
+    </item>
     <item>
       <title>Post-close: EOSE falls 6% to $3.96 on light volume; EOSER expires tomorrow OTM, Say Q&amp;A opens</title>
       <link>https://eosesource.com/notes.html#note-2026-07-20T2230</link>
