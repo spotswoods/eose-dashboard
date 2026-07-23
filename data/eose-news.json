@@ -1,6 +1,6 @@
 {
   "meta": {
-    "_refreshed": "2026-07-15T21:10:44.087Z",
+    "_refreshed": "2026-07-23T13:26:44.058Z",
     "sources": [
       "eose.com (WordPress REST API)",
       "SEC EDGAR submissions API",
@@ -8,12 +8,30 @@
     ],
     "counts": {
       "pressReleases": 20,
-      "secFilings": 314,
-      "manual": 4,
+      "secFilings": 315,
+      "manual": 5,
       "shown": 14
     }
   },
   "items": [
+    {
+      "iso": "2026-07-23T12:00:00Z",
+      "date": "2026-07-23",
+      "source": "SEC EDGAR",
+      "headline": "Material event (8-K)",
+      "url": "https://www.sec.gov/Archives/edgar/data/1805077/000162828026049296/eose-20260721.htm",
+      "summary": "8-K",
+      "tag": "sec-filing"
+    },
+    {
+      "iso": "2026-07-23T11:00:00Z",
+      "date": "2026-07-23",
+      "source": "Eos Energy (press release)",
+      "headline": "Eos Energy Announces Expiration and Results of Rights Offering — 25.2% take-up, ~$37.7M raised",
+      "url": "https://investors.eose.com/news-releases/news-release-details/eos-energy-announces-expiration-and-results-rights-offering",
+      "summary": "Holders subscribed for 6,885,218 of the 27,367,171 units distributed at $5.481 — a 25.2% take-up raising ~$37.7M gross against the ~$150M maximum; 20,481,953 units expired worthless at 5pm ET Jul 21. Subscribers paid a 37.7% premium to the $3.98 Jul 22 close, suggesting pro-rata defence rather than price-driven demand. Settlement on or about Aug 3; ~3.02M warrants at $5.481 to be issued and submitted for Nasdaq listing as EOSEW (approval not assured). Including Hudson Bay and Cerberus, Eos says ~$263M gross is now raised for Frontier Power USA — above target and enough to initially support $1B+ of deployable project capital.",
+      "tag": "catalyst"
+    },
     {
       "iso": "2026-07-15T21:05:00Z",
       "date": "2026-07-15",
@@ -22,6 +40,15 @@
       "url": "https://investors.eose.com/news-releases/news-release-details/eos-energy-enterprises-selected-deliver-mission-ready-power",
       "summary": "The U.S. Department of War selected Eos under the Golden Dome for America missile-defense initiative to deploy a Z3 zinc-based long-duration storage prototype at a critical defense installation. Leans on Z3's ~91% domestic content, Section 842 NDAA + FEOC compliance and non-flammable safety. A strategically important new defense demand vector — but a prototype selection of undisclosed (multi-million-dollar) size, not yet a large booked order.",
       "tag": "catalyst"
+    },
+    {
+      "iso": "2026-07-15T19:03:32",
+      "date": "2026-07-15",
+      "source": "Eos Energy (press release)",
+      "headline": "Eos Energy Enterprises Selected to Deliver Mission-Ready Power for Golden Dome for America",
+      "url": "https://www.eose.com/eos-energy-enterprises-selected-to-deliver-mission-ready-power-for-golden-dome-for-america/",
+      "summary": "PITTSBURGH, July 15, 2026 (GLOBE NEWSWIRE) — Eos Energy Enterprises, Inc. (NASDAQ: EOSE) (“Eos” or the “Company”), America’s leading innovator in designing, manufacturing, and providing zinc-based long-duration energy storage (LDES)…",
+      "tag": "general"
     },
     {
       "iso": "2026-07-15T12:15:00Z",
@@ -112,33 +139,6 @@
       "url": "https://www.sec.gov/Archives/edgar/data/1805077/000095010326009829/dp249285_424b5.htm",
       "summary": "FORM 424B5",
       "tag": "sec-filing"
-    },
-    {
-      "iso": "2026-06-30T12:00:00Z",
-      "date": "2026-06-30",
-      "source": "SEC EDGAR",
-      "headline": "Prospectus (424B5)",
-      "url": "https://www.sec.gov/Archives/edgar/data/1805077/000095010326009742/dp249117_424b5.htm",
-      "summary": "FORM 424B5",
-      "tag": "sec-filing"
-    },
-    {
-      "iso": "2026-06-30T12:00:00Z",
-      "date": "2026-06-30",
-      "source": "SEC EDGAR",
-      "headline": "Material event (8-K)",
-      "url": "https://www.sec.gov/Archives/edgar/data/1805077/000095010326009739/dp249222_8k.htm",
-      "summary": "FORM 8-K",
-      "tag": "sec-filing"
-    },
-    {
-      "iso": "2026-06-30T10:42:50",
-      "date": "2026-06-30",
-      "source": "Eos Energy (press release)",
-      "headline": "Eos Energy Enterprises, Inc. Announces Proposed Registered Direct Offering of Common Stock and Warrants to Fund Investment in Frontier Power USA",
-      "url": "https://www.eose.com/eos-energy-enterprises-inc-announces-proposed-registered-direct-offering-of-common-stock-and-warrants-to-fund-investment-in-frontier-power-usa/",
-      "summary": "EDISON, N.J., June 30, 2026 (GLOBE NEWSWIRE) — Eos Energy Enterprises, Inc. (NASDAQ: EOSE) (“Eos” or the “Company”) today announced that it has commenced a registered direct offering (the “Offering”) of common stock and warrants. The…",
-      "tag": "catalyst"
     }
   ]
 }
