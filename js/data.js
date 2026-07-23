@@ -30,26 +30,25 @@ window.EOSE_DATA = {
   // Refreshed by /equity-research:morning-note via a scheduled task in Cowork.
   // session = 'pre-open' (Swedish AM, ~07:00 CEST) | 'post-close' (Swedish PM, ~22:30 CEST)
   morningNote: {
-    updatedAt: '2026-07-23T15:35:00+02:00',
-    session:   'pre-open',
-    headline:  'Rights offering raises $37.7M on 25% take-up — FPUSA total hits ~$263M, above target',
-    takeaway:  'Eos disclosed the rights-offering results pre-open today: 6,885,218 of 27,367,171 units subscribed — a 25.2% take-up raising ~$37.7M gross against the ~$150M maximum, with 20.5M units lapsing worthless. Subscribers paid $5.481 while the stock closed $3.98 on Jul 22, a ~38% premium, so this looks like pro-rata defence rather than opportunistic buying. Combined with Hudson Bay and Cerberus, Eos says ~$263M gross is now raised for Frontier Power USA — above its own target. Next: settlement on/about Aug 3, then the Aug 5 Q2 call.',
+    updatedAt: '2026-07-23T22:30:00+02:00',
+    session:   'post-close',
+    headline:  'EOSE opened −2.3% on rights results; $263M FPUSA total clears the bar — Aug 5 Q2 call is next hard catalyst',
+    takeaway:  'EOSE opened at ~$3.89 (−2.3% from the $3.98 Jul 22 close) on the pre-market rights results (25.2% take-up, $37.7M of ~$150M raised). The headline miss obscures the broader picture: combined with Hudson Bay and Cerberus, <b>total FPUSA financing is ~$263M, above the original target</b> and sized to support >$1B of deployable project capital. Session close not confirmed from a primary source at time of writing. Rights settlement ~Aug 3; <b>Q2 earnings call Aug 5</b> is the next hard event.',
     bullets: [
-      '<b>The number:</b> 6,885,218 units subscribed of 27,367,171 distributed — <b>25.2% take-up, ~$37.7M gross</b> vs the ~$150.0M maximum. The remaining 20,481,953 units expired unexercised at 5pm ET Jul 21 and are worthless. Tabulated by Broadridge; disclosed in today’s 8-K (Item 8.01, Exhibit 99.1).',
-      '<b>Correction to our Jul 21 note:</b> we wrote that the targeted $150M “goes unraised.” That was wrong — about a quarter of it was raised. The shortfall against the maximum is <b>~$112.3M</b>, not the full $150M.',
-      '<b>Why exercise into a ~38% loss?</b> Paying $5.481 with EOSE at $3.98 is irrational at spot, and the attached 0.4388 warrant struck at the same $5.481 carries little value. A 25% take-up therefore points at holders defending pro-rata ownership rather than retail chasing a discount — the offering also extended to 2023/2025 warrant holders. Watch post-settlement 13D/A and Form 4 filings for who actually stepped up.',
-      '<b>Dilution:</b> 6,885,218 new shares (+2.0% on the Q1 339.5M count) plus <b>~3,021,234 warrants</b> at a $5.481 strike — ~2.9% fully diluted. Shares, warrants and sale proceeds distribute <b>on or about Aug 3, 2026</b>. Eos notes completion “remains subject to the satisfaction of certain conditions,” so this is not yet closed.',
-      '<b>FPUSA funding cleared its bar:</b> rights + the Hudson Bay investment + the Cerberus commitment total <b>~$263M gross</b> — which Eos says exceeds the target set when the JV was announced and should initially support <b>more than $1B of deployable project capital</b>. The rights supplied only ~14% of that total, which is why a 75% miss on the rights is not a 75% miss on the JV.',
-      '<b>Watch the warrant listing:</b> Eos has applied to trade the new warrants on Nasdaq as <b>EOSEW</b>, but explicitly warns the application may not be approved — in which case they may not trade at all. Next hard catalyst is the <b>Aug 5</b> Q2 call, where the three-way FPUSA definitive agreement is the item to press on.',
-      '<b>Price:</b> EOSE closed <b>$3.98 on Wed Jul 22 (−6.1%)</b>, the last completed session. In early trade on Jul 23 it is around <b>$3.89 (≈2.3%)</b> — an intraday print minutes after the open, not a close. The market’s first read on the results is therefore mildly negative, but the session is young.'
+      '<b>Session open:</b> EOSE printed ~$3.89 shortly after the Jul 23 open (−2.3% vs the $3.98 Jul 22 close) — initial market reaction to the sub-target rights take-up. Jul 23 official close not confirmed from a primary source at time of writing; MacroTrends last-published close remains the Jul 22 figure of $3.98. Volume and directional trend into the close unavailable.',
+      '<b>Rights results (pre-market 8-K, Jul 23):</b> 6,885,218 of 27,367,171 units subscribed — <b>25.2% take-up, ~$37.7M gross</b> vs the ~$150M maximum. Subscribers paid $5.481 into a $3.98 close — 37.7% premium implies strategic pro-rata defence, not retail arbitrage. Combined with Hudson Bay + Cerberus: <b>~$263M gross raised for Frontier Power USA, exceeding the original target</b>, set to support >$1B of deployable project capital.',
+      '<b>Dilution now in motion:</b> 6,885,218 new shares (+2.0% on the Q1 count) plus ~3,021,234 EOSEW warrants ($5.481 strike, 10-yr term) to distribute <b>on or about Aug 3, 2026</b>. Eos applied to list EOSEW on Nasdaq — <b>no assurance of approval</b>; warrants may be illiquid if denied. Watch post-settlement 13D/A + Form 4 filings to identify the 25% exercisers.',
+      '<b>Sell-side:</b> JPMorgan PT <b>$6</b> (cut from $9, Jul 21, Neutral). 11-analyst consensus: Buy, avg PT $8.78 (StockAnalysis). At the $3.89 open, EOSE traded 35% below the JPM floor — overhang is dilution pace and FPUSA project-close velocity ahead of the Aug 5 call.',
+      '<b>No new filings post-open:</b> No Form 4s, no 8-Ks, no press releases observed after the pre-market 8-K. No AH headlines in the first ~30 min post-close. Next EDGAR watch: insider filings ~Aug 3 post-settlement and the 10-Q/8-K on Aug 5.',
+      '<b>Catalysts into next week:</b> Rights settlement ~<b>Aug 3</b> (13D/A + Form 4 flow); <b>Aug 5 Q2 call</b> at 8:30am ET — prelim print: record Q2 rev $68–69M, record $807M backlog, H1 2026 already > full-year 2025. Key question: three-way FPUSA JV definitive agreement — signed or not? Line 1+2 combined throughput and cash runway will also be closely watched.'
     ],
-    price:   { last: 3.89, changePct: -2.26, note: 'intraday · Thu Jul 23 2026, shortly after the open · vs $3.98 Jul 22 close · Finnhub' },
+    price:   { last: 3.89, changePct: -2.26, note: 'intraday · shortly after open · Jul 23 2026 · Finnhub via pre-open note; Jul 23 session close not yet confirmed' },
     sources: [
-      { label: 'Rights offering results 8-K (Jul 23, 2026)', url: 'https://www.sec.gov/Archives/edgar/data/1805077/000162828026049296/eose-20260721.htm' },
-      { label: 'Exhibit 99.1 — expiration & results press release', url: 'https://www.sec.gov/Archives/edgar/data/1805077/000162828026049296/eos-rightsofferingpressr.htm' },
-      { label: 'Eos IR — expiration and results of rights offering', url: 'https://investors.eose.com/news-releases/news-release-details/eos-energy-announces-expiration-and-results-rights-offering' },
-      { label: 'EOSE prelim Q2 + Golden Dome 8-K (Jul 15)', url: 'https://www.sec.gov/Archives/edgar/data/0001805077/000162828026048253/eose-20260715.htm' },
-      { label: 'EOSE quote — StockAnalysis', url: 'https://stockanalysis.com/stocks/eose/' }
+      { label: 'Rights results 8-K (Jul 23, 2026)', url: 'https://www.sec.gov/Archives/edgar/data/1805077/000162828026049296/eose-20260721.htm' },
+      { label: 'Eos IR — expiration & results PR (GlobeNewswire)', url: 'https://www.manilatimes.net/2026/07/23/tmt-newswire/globenewswire/eos-energy-announces-expiration-and-results-of-rights-offering/2390326' },
+      { label: 'EOSE price history — MacroTrends (Jul 22 last confirmed close)', url: 'https://www.macrotrends.net/stocks/charts/EOSE/eos-energy-enterprises/stock-price-history' },
+      { label: 'EOSE quote & news — StockAnalysis', url: 'https://stockanalysis.com/stocks/eose/' },
+      { label: 'Prelim Q2 + Golden Dome — Motley Fool (Jul 15)', url: 'https://www.fool.com/investing/2026/07/15/why-did-eos-energy-stock-jump-today/' }
     ]
   },
 
