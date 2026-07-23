@@ -32,23 +32,22 @@ window.EOSE_DATA = {
   morningNote: {
     updatedAt: '2026-07-23T22:30:00+02:00',
     session:   'post-close',
-    headline:  'EOSE opened −2.3% on rights results; $263M FPUSA total clears the bar — Aug 5 Q2 call is next hard catalyst',
-    takeaway:  'EOSE opened at ~$3.89 (−2.3% from the $3.98 Jul 22 close) on the pre-market rights results (25.2% take-up, $37.7M of ~$150M raised). The headline miss obscures the broader picture: combined with Hudson Bay and Cerberus, <b>total FPUSA financing is ~$263M, above the original target</b> and sized to support >$1B of deployable project capital. Session close not confirmed from a primary source at time of writing. Rights settlement ~Aug 3; <b>Q2 earnings call Aug 5</b> is the next hard event.',
+    headline:  'EOSE posts new 52-wk low $3.76 (−5.5%) on rights miss; $263M FPUSA total exceeds target',
+    takeaway:  'EOSE closed at $3.76 on Jul 23 2026 (−5.5% vs $3.98 prior close), touching an intraday low of $3.65 — a new 52-week low — as the market digested the 25.2% rights take-up ($37.7M of ~$150M raised). The headline miss obscures the broader picture: with Hudson Bay and Cerberus, <b>total FPUSA financing is ~$263M, above the original target</b>. Rights settle ~Aug 3; <b>Q2 call Aug 5</b> is the next hard catalyst.',
     bullets: [
-      '<b>Session open:</b> EOSE printed ~$3.89 shortly after the Jul 23 open (−2.3% vs the $3.98 Jul 22 close) — initial market reaction to the sub-target rights take-up. Jul 23 official close not confirmed from a primary source at time of writing; MacroTrends last-published close remains the Jul 22 figure of $3.98. Volume and directional trend into the close unavailable.',
-      '<b>Rights results (pre-market 8-K, Jul 23):</b> 6,885,218 of 27,367,171 units subscribed — <b>25.2% take-up, ~$37.7M gross</b> vs the ~$150M maximum. Subscribers paid $5.481 into a $3.98 close — 37.7% premium implies strategic pro-rata defence, not retail arbitrage. Combined with Hudson Bay + Cerberus: <b>~$263M gross raised for Frontier Power USA, exceeding the original target</b>, set to support >$1B of deployable project capital.',
-      '<b>Dilution now in motion:</b> 6,885,218 new shares (+2.0% on the Q1 count) plus ~3,021,234 EOSEW warrants ($5.481 strike, 10-yr term) to distribute <b>on or about Aug 3, 2026</b>. Eos applied to list EOSEW on Nasdaq — <b>no assurance of approval</b>; warrants may be illiquid if denied. Watch post-settlement 13D/A + Form 4 filings to identify the 25% exercisers.',
-      '<b>Sell-side:</b> JPMorgan PT <b>$6</b> (cut from $9, Jul 21, Neutral). 11-analyst consensus: Buy, avg PT $8.78 (StockAnalysis). At the $3.89 open, EOSE traded 35% below the JPM floor — overhang is dilution pace and FPUSA project-close velocity ahead of the Aug 5 call.',
-      '<b>No new filings post-open:</b> No Form 4s, no 8-Ks, no press releases observed after the pre-market 8-K. No AH headlines in the first ~30 min post-close. Next EDGAR watch: insider filings ~Aug 3 post-settlement and the 10-Q/8-K on Aug 5.',
-      '<b>Catalysts into next week:</b> Rights settlement ~<b>Aug 3</b> (13D/A + Form 4 flow); <b>Aug 5 Q2 call</b> at 8:30am ET — prelim print: record Q2 rev $68–69M, record $807M backlog, H1 2026 already > full-year 2025. Key question: three-way FPUSA JV definitive agreement — signed or not? Line 1+2 combined throughput and cash runway will also be closely watched.'
+      '<b>Confirmed close $3.76 (−5.5%):</b> EOSE settled at $3.76 on Jul 23 2026, down 5.5% from the $3.98 Jul 22 close. Intraday range $3.65–$4.05; the $3.65 low is a new 52-week low. Volume 20.61M vs 25.36M avg — below-average despite the material 8-K; no sign of panic selling.',
+      '<b>Rights results (pre-market 8-K, Jul 23):</b> 6,885,218 of 27,367,171 units subscribed — <b>25.2% take-up, $37.7M gross</b> vs ~$150M max. Subscribers paid $5.481 into a $3.76 close (46% premium to market). With Hudson Bay + Cerberus: <b>~$263M total raised for FPUSA, exceeding the target</b>, sized for >$1B deployable project capital.',
+      '<b>Dilution ~Aug 3:</b> 6.9M new shares (+2% to float) + ~3M EOSEW warrants ($5.481 strike) distributing on or about Aug 3 2026. Eos applied to list EOSEW on Nasdaq — <b>no approval guaranteed</b>. Watch post-settlement 13D/A + Form 4 filings to identify the 25% exercisers.',
+      '<b>Sell-side:</b> JPMorgan $6 (Neutral, PT cut from $9 Apr 16). Truist Buy/$7 (Jul 13). Wall Street Zen + Weiss Ratings both Sell. Consensus avg PT ~$9.17 (11 analysts) — EOSE closed 59% below Street. Overhang: dilution pace and FPUSA JV definitive-agreement timing.',
+      '<b>No new filings during or after session:</b> No Form 4, 8-K, or press releases beyond the pre-market rights results 8-K. No AH headlines in first ~30 min post-close.',
+      '<b>Catalysts into next week:</b> Rights settle ~<b>Aug 3</b> (EOSEW Nasdaq listing decision; 13D/A + Form 4 flow); <b>Aug 5 Q2 call</b> 8:30am ET — prelim Q2: record rev $68–69M, record $807M backlog. Key question: FPUSA three-way JV definitive agreement signed or not? Cash runway and manufacturing throughput also in focus.'
     ],
-    price:   { last: 3.89, changePct: -2.26, note: 'intraday · shortly after open · Jul 23 2026 · Finnhub via pre-open note; Jul 23 session close not yet confirmed' },
+    price:   { last: 3.76, changePct: -5.53, note: 'close · Jul 23 2026 · Yahoo Finance / CNN · range $3.65–$4.05 · vol 20.6M' },
     sources: [
-      { label: 'Rights results 8-K (Jul 23, 2026)', url: 'https://www.sec.gov/Archives/edgar/data/1805077/000162828026049296/eose-20260721.htm' },
-      { label: 'Eos IR — expiration & results PR (GlobeNewswire)', url: 'https://www.manilatimes.net/2026/07/23/tmt-newswire/globenewswire/eos-energy-announces-expiration-and-results-of-rights-offering/2390326' },
-      { label: 'EOSE price history — MacroTrends (Jul 22 last confirmed close)', url: 'https://www.macrotrends.net/stocks/charts/EOSE/eos-energy-enterprises/stock-price-history' },
-      { label: 'EOSE quote & news — StockAnalysis', url: 'https://stockanalysis.com/stocks/eose/' },
-      { label: 'Prelim Q2 + Golden Dome — Motley Fool (Jul 15)', url: 'https://www.fool.com/investing/2026/07/15/why-did-eos-energy-stock-jump-today/' }
+      { label: 'Rights results 8-K & PR (SEC, Jul 23 2026)', url: 'https://www.sec.gov/Archives/edgar/data/0001805077/000162828026049296/eos-rightsofferingpressr.htm' },
+      { label: 'EOSE 52-wk low — Markets Daily (Jul 23)', url: 'https://www.themarketsdaily.com/2026/07/23/eos-energy-enterprises-nasdaqeose-hits-new-52-week-low-time-to-sell.html' },
+      { label: 'EOSE quote & analyst targets — StockAnalysis', url: 'https://stockanalysis.com/stocks/eose/' },
+      { label: 'EOSE price — Yahoo Finance', url: 'https://finance.yahoo.com/quote/EOSE/' }
     ]
   },
 
