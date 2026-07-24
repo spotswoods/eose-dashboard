@@ -30,24 +30,25 @@ window.EOSE_DATA = {
   // Refreshed by /equity-research:morning-note via a scheduled task in Cowork.
   // session = 'pre-open' (Swedish AM, ~07:00 CEST) | 'post-close' (Swedish PM, ~22:30 CEST)
   morningNote: {
-    updatedAt: '2026-07-23T22:30:00+02:00',
+    updatedAt: '2026-07-24T22:30:00+02:00',
     session:   'post-close',
-    headline:  'EOSE posts new 52-wk low $3.76 (−5.5%) on rights miss; $263M FPUSA total exceeds target',
-    takeaway:  'EOSE closed at $3.76 on Jul 23 2026 (−5.5% vs $3.98 prior close), touching an intraday low of $3.65 — a new 52-week low — as the market digested the 25.2% rights take-up ($37.7M of ~$150M raised). The headline miss obscures the broader picture: with Hudson Bay and Cerberus, <b>total FPUSA financing is ~$263M, above the original target</b>. Rights settle ~Aug 3; <b>Q2 call Aug 5</b> is the next hard catalyst.',
+    headline:  'EOSE drifts to ~$3.62 (−3.7%); TD Cowen flags Q2 gross margin miss, Hold',
+    takeaway:  'EOSE settled near $3.62 on Jul 24 2026 (est. −3.7% vs $3.76 Jul 23), a new 52-week closing low, on no new company news. Market focus shifts to Q2 margin execution: TD Cowen\'s Jul 21 note (pub today) flagged gross margins as a bigger miss than expected despite record revenue. <b>Q2 call Aug 5</b> is the next hard catalyst.',
     bullets: [
-      '<b>Confirmed close $3.76 (−5.5%):</b> EOSE settled at $3.76 on Jul 23 2026, down 5.5% from the $3.98 Jul 22 close. Intraday range $3.65–$4.05; the $3.65 low is a new 52-week low. Volume 20.61M vs 25.36M avg — below-average despite the material 8-K; no sign of panic selling.',
-      '<b>Rights results (pre-market 8-K, Jul 23):</b> 6,885,218 of 27,367,171 units subscribed — <b>25.2% take-up, $37.7M gross</b> vs ~$150M max. Subscribers paid $5.481 into a $3.76 close (46% premium to market). With Hudson Bay + Cerberus: <b>~$263M total raised for FPUSA, exceeding the target</b>, sized for >$1B deployable project capital.',
-      '<b>Dilution ~Aug 3:</b> 6.9M new shares (+2% to float) + ~3M EOSEW warrants ($5.481 strike) distributing on or about Aug 3 2026. Eos applied to list EOSEW on Nasdaq — <b>no approval guaranteed</b>. Watch post-settlement 13D/A + Form 4 filings to identify the 25% exercisers.',
-      '<b>Sell-side:</b> JPMorgan $6 (Neutral, PT cut from $9 Apr 16). Truist Buy/$7 (Jul 13). Wall Street Zen + Weiss Ratings both Sell. Consensus avg PT ~$9.17 (11 analysts) — EOSE closed 59% below Street. Overhang: dilution pace and FPUSA JV definitive-agreement timing.',
-      '<b>No new filings during or after session:</b> No Form 4, 8-K, or press releases beyond the pre-market rights results 8-K. No AH headlines in first ~30 min post-close.',
-      '<b>Catalysts into next week:</b> Rights settle ~<b>Aug 3</b> (EOSEW Nasdaq listing decision; 13D/A + Form 4 flow); <b>Aug 5 Q2 call</b> 8:30am ET — prelim Q2: record rev $68–69M, record $807M backlog. Key question: FPUSA three-way JV definitive agreement signed or not? Cash runway and manufacturing throughput also in focus.'
+      '<b>Close ~$3.62 (−3.7%):</b> EOSE settled near $3.62 on Jul 24 2026, down ~3.7% from the $3.76 Jul 23 close — another new 52-week closing low. Stock is now down ~40% from the Jun 29 high (~$6.09). Volume data pending confirmation from delayed sources.',
+      '<b>No new filings or IR news:</b> No 8-K, Form 4, or press release on Jul 24. Last company action was the Jul 23 rights-completion 8-K; total FPUSA financing ~$263M. No AH headlines in first ~30 min post-close.',
+      '<b>TD Cowen Hold (Jul 21, pub Jul 24):</b> Jeff Osborne: Q2 gross margin miss "significantly larger than market anticipated" despite record revenue; Battery Line 2 start-up costs cited. Path from −70%+ margins to profitability in two quarters "uncertain." Frontier\'s reliance on institutional funding also flagged.',
+      '<b>JPMorgan Hold/$6 (Jul 21) + Truist Buy:</b> JPM\'s Mark Strouse reiterated Hold at $6 PT on execution risk. Truist maintained Buy. Consensus avg PT ~$9 across 11 analysts — stock now ~60% below Street median.',
+      '<b>Rights settlement ~Aug 3:</b> 6.9M new shares + ~3M EOSEW warrants ($5.481 strike) distribute on/about Aug 3. Nasdaq EOSEW listing decision pending. Watch 13D/A + Form 4 flow from the 25.2% of rights holders who subscribed.',
+      '<b>Q2 call Aug 5 8:30am ET:</b> Prelim Q2 rev $68–69M (record); backlog $807M (record). Key questions: Line 2 margin ramp from Q1\'s −78%; FPUSA JV definitive agreement signed or not; cash runway post-rights settlement.'
     ],
-    price:   { last: 3.76, changePct: -5.53, note: 'close · Jul 23 2026 · Yahoo Finance / CNN · range $3.65–$4.05 · vol 20.6M' },
+    price:   { last: 3.62, changePct: -3.72, note: 'close · Jul 24 2026 · Finviz/search delayed · est. new 52-wk closing low' },
     sources: [
-      { label: 'Rights results 8-K & PR (SEC, Jul 23 2026)', url: 'https://www.sec.gov/Archives/edgar/data/0001805077/000162828026049296/eos-rightsofferingpressr.htm' },
-      { label: 'EOSE 52-wk low — Markets Daily (Jul 23)', url: 'https://www.themarketsdaily.com/2026/07/23/eos-energy-enterprises-nasdaqeose-hits-new-52-week-low-time-to-sell.html' },
-      { label: 'EOSE quote & analyst targets — StockAnalysis', url: 'https://stockanalysis.com/stocks/eose/' },
-      { label: 'EOSE price — Yahoo Finance', url: 'https://finance.yahoo.com/quote/EOSE/' }
+      { label: 'TD Cowen Hold note — TipRanks (Jul 24 2026)', url: 'https://www.tipranks.com/news/ratings/jeff-osborne-maintains-hold-on-eose-amid-frontier-financing-reliance-and-uncertain-margin-improvement-path-ratings-news' },
+      { label: 'Eos Energy IR news releases', url: 'https://investors.eose.com/news-releases' },
+      { label: 'EOSE price history — MacroTrends', url: 'https://www.macrotrends.net/stocks/charts/EOSE/eos-energy-enterprises/stock-price-history' },
+      { label: 'EOSE quote — Yahoo Finance', url: 'https://finance.yahoo.com/quote/EOSE/' },
+      { label: 'Rights completion PR (Jul 23 2026)', url: 'https://investors.eose.com/news-releases/news-release-details/completed-rights-offering-together-hudson-bay-capital-management' }
     ]
   },
 
