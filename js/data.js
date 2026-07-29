@@ -30,25 +30,25 @@ window.EOSE_DATA = {
   // Refreshed by /equity-research:morning-note via a scheduled task in Cowork.
   // session = 'pre-open' (Swedish AM, ~07:00 CEST) | 'post-close' (Swedish PM, ~22:30 CEST)
   morningNote: {
-    updatedAt: '2026-07-24T22:30:00+02:00',
+    updatedAt: '2026-07-29T22:30:00+02:00',
     session:   'post-close',
-    headline:  'EOSE drifts to ~$3.62 (−3.7%); TD Cowen flags Q2 gross margin miss, Hold',
-    takeaway:  'EOSE settled near $3.62 on Jul 24 2026 (est. −3.7% vs $3.76 Jul 23), a new 52-week closing low, on no new company news. Market focus shifts to Q2 margin execution: TD Cowen\'s Jul 21 note (pub today) flagged gross margins as a bigger miss than expected despite record revenue. <b>Q2 call Aug 5</b> is the next hard catalyst.',
+    headline:  'EOSE holds ~$3.39, outperforms as Iran-driven selloff hits markets; CEO RSU vest disclosed',
+    takeaway:  'EOSE closed ~$3.39 on Jul 29 2026 (+0.9% vs Tue\'s $3.36 close), modestly outperforming a broad selloff (S&P -1.6%, Nasdaq -2.2%) driven by Iran\'s missile strike on US forces. No company news; CEO Form 4 (filed Jul 28) was a routine RSU tax-withhold, not a discretionary sale. Q2 call Aug 5.',
     bullets: [
-      '<b>Close ~$3.62 (−3.7%):</b> EOSE settled near $3.62 on Jul 24 2026, down ~3.7% from the $3.76 Jul 23 close — another new 52-week closing low. Stock is now down ~40% from the Jun 29 high (~$6.09). Volume data pending confirmation from delayed sources.',
-      '<b>No new filings or IR news:</b> No 8-K, Form 4, or press release on Jul 24. Last company action was the Jul 23 rights-completion 8-K; total FPUSA financing ~$263M. No AH headlines in first ~30 min post-close.',
-      '<b>TD Cowen Hold (Jul 21, pub Jul 24):</b> Jeff Osborne: Q2 gross margin miss "significantly larger than market anticipated" despite record revenue; Battery Line 2 start-up costs cited. Path from −70%+ margins to profitability in two quarters "uncertain." Frontier\'s reliance on institutional funding also flagged.',
-      '<b>JPMorgan Hold/$6 (Jul 21) + Truist Buy:</b> JPM\'s Mark Strouse reiterated Hold at $6 PT on execution risk. Truist maintained Buy. Consensus avg PT ~$9 across 11 analysts — stock now ~60% below Street median.',
-      '<b>Rights settlement ~Aug 3:</b> 6.9M new shares + ~3M EOSEW warrants ($5.481 strike) distribute on/about Aug 3. Nasdaq EOSEW listing decision pending. Watch 13D/A + Form 4 flow from the 25.2% of rights holders who subscribed.',
-      '<b>Q2 call Aug 5 8:30am ET:</b> Prelim Q2 rev $68–69M (record); backlog $807M (record). Key questions: Line 2 margin ramp from Q1\'s −78%; FPUSA JV definitive agreement signed or not; cash runway post-rights settlement.'
+      '<b>Close ~$3.39 (+0.9%):</b> EOSE held near $3.39 on Jul 29 2026 (day range ~$3.39–$3.42), up ~0.9% from Tue Jul 28\'s close of $3.36. Stock is down ~44% from the Jun 29 2026 peak (~$6.09). 52-wk closing low: $3.36 (Jul 28 2026).',
+      '<b>CEO RSU Form 4 (filed Jul 28):</b> CEO Mastrangelo converted 333,334 RSUs to shares (Jul 25); withheld 159,154 at $3.61 for taxes (Jul 27) — routine compensation under the 2020 Incentive Plan, not an open-market sale. CAO separately sold 29,167 shares under a 10b5-1 plan.',
+      '<b>13G/A + director RSU grants:</b> A passive investor filed an amended 13G on Jul 28 (ownership threshold update). Two directors received 5,942 RSU grants each (Jul 27 — standard board comp). No company 8-K or IR press release on Jul 28–29.',
+      '<b>Iran missiles + macro:</b> Iran struck US forces Jul 29 (ceasefire ends); oil +7%, S&P -1.6%, Nasdaq -2.2%. EOSE held near flat — Golden Dome designation (Jul 15) may have provided mild support in energy/defense-focused session.',
+      '<b>Securities litigation investigation:</b> A class-action firm opened an investigation into potential claims against EOSE officers/directors in late Jul 2026. Early stage — no lawsuit filed. Adds headline risk into the Aug 5 earnings call.',
+      '<b>Q2 call Aug 5, 8:30am ET:</b> Prelim: $68–69M rev (record), ~$807M backlog (record), gross margin -69/-73%. Key Qs: FPUSA definitive agreement status, Line 2 margin ramp, cash runway. Rights settle ~Aug 3 (6.9M shares + ~3M EOSEW warrants).'
     ],
-    price:   { last: 3.62, changePct: -3.72, note: 'close · Jul 24 2026 · Finviz/search delayed · est. new 52-wk closing low' },
+    price:   { last: 3.39, changePct: 0.89, note: 'close · Jul 29 2026 · Yahoo Finance/Robinhood delayed · est.' },
     sources: [
-      { label: 'TD Cowen Hold note — TipRanks (Jul 24 2026)', url: 'https://www.tipranks.com/news/ratings/jeff-osborne-maintains-hold-on-eose-amid-frontier-financing-reliance-and-uncertain-margin-improvement-path-ratings-news' },
-      { label: 'Eos Energy IR news releases', url: 'https://investors.eose.com/news-releases' },
+      { label: 'CEO Form 4 — StockTitan (filed Jul 28 2026)', url: 'https://www.stocktitan.net/sec-filings/EOSE/form-4-eos-energy-enterprises-inc-insider-trading-activity-56ebfb1054b5.html' },
+      { label: 'EOSE analysis Jul 28 2026 — StocksToTrade', url: 'https://stockstotrade.com/news/eos-energy-enterprises-inc-eose-news-2026_07_28/' },
       { label: 'EOSE price history — MacroTrends', url: 'https://www.macrotrends.net/stocks/charts/EOSE/eos-energy-enterprises/stock-price-history' },
-      { label: 'EOSE quote — Yahoo Finance', url: 'https://finance.yahoo.com/quote/EOSE/' },
-      { label: 'Rights completion PR (Jul 23 2026)', url: 'https://investors.eose.com/news-releases/news-release-details/completed-rights-offering-together-hudson-bay-capital-management' }
+      { label: 'Eos Energy IR news releases', url: 'https://investors.eose.com/news-releases' },
+      { label: 'EOSE quote — Yahoo Finance', url: 'https://finance.yahoo.com/quote/EOSE/' }
     ]
   },
 
