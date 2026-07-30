@@ -30,25 +30,26 @@ window.EOSE_DATA = {
   // Refreshed by /equity-research:morning-note via a scheduled task in Cowork.
   // session = 'pre-open' (Swedish AM, ~07:00 CEST) | 'post-close' (Swedish PM, ~22:30 CEST)
   morningNote: {
-    updatedAt: '2026-07-29T22:30:00+02:00',
+    updatedAt: '2026-07-30T22:00:00+02:00',
     session:   'post-close',
-    headline:  'EOSE holds ~$3.39, outperforms as Iran-driven selloff hits markets; CEO RSU vest disclosed',
-    takeaway:  'EOSE closed ~$3.39 on Jul 29 2026 (+0.9% vs Tue\'s $3.36 close), modestly outperforming a broad selloff (S&P -1.6%, Nasdaq -2.2%) driven by Iran\'s missile strike on US forces. No company news; CEO Form 4 (filed Jul 28) was a routine RSU tax-withhold, not a discretionary sale. Q2 call Aug 5.',
+    headline:  'Truist Buy/$7 lifts EOSE ~+9% to ~$3.44; rights cleared, Q2 full results Aug 5',
+    takeaway:  'EOSE surged ~+9% on Jul 30 2026 to ~$3.44 as Truist initiated coverage with Buy/$7 — the first formal Street initiation since the rights offering closed above its $250M target. Full Q2 earnings drop Aug 5 pre-market; the next hard catalyst.',
     bullets: [
-      '<b>Close ~$3.39 (+0.9%):</b> EOSE held near $3.39 on Jul 29 2026 (day range ~$3.39–$3.42), up ~0.9% from Tue Jul 28\'s close of $3.36. Stock is down ~44% from the Jun 29 2026 peak (~$6.09). 52-wk closing low: $3.36 (Jul 28 2026).',
-      '<b>CEO RSU Form 4 (filed Jul 28):</b> CEO Mastrangelo converted 333,334 RSUs to shares (Jul 25); withheld 159,154 at $3.61 for taxes (Jul 27) — routine compensation under the 2020 Incentive Plan, not an open-market sale. CAO separately sold 29,167 shares under a 10b5-1 plan.',
-      '<b>13G/A + director RSU grants:</b> A passive investor filed an amended 13G on Jul 28 (ownership threshold update). Two directors received 5,942 RSU grants each (Jul 27 — standard board comp). No company 8-K or IR press release on Jul 28–29.',
-      '<b>Iran missiles + macro:</b> Iran struck US forces Jul 29 (ceasefire ends); oil +7%, S&P -1.6%, Nasdaq -2.2%. EOSE held near flat — Golden Dome designation (Jul 15) may have provided mild support in energy/defense-focused session.',
-      '<b>Securities litigation investigation:</b> A class-action firm opened an investigation into potential claims against EOSE officers/directors in late Jul 2026. Early stage — no lawsuit filed. Adds headline risk into the Aug 5 earnings call.',
-      '<b>Q2 call Aug 5, 8:30am ET:</b> Prelim: $68–69M rev (record), ~$807M backlog (record), gross margin -69/-73%. Key Qs: FPUSA definitive agreement status, Line 2 margin ramp, cash runway. Rights settle ~Aug 3 (6.9M shares + ~3M EOSEW warrants).'
+      '<b>Close ~$3.44 (+9.2%):</b> EOSE traded from ~$3.18 premarket to ~$3.47 intraday high on Jul 30 2026, settling ~$3.44. Stock remains down ~32% from the Jul 6 2026 high (~$5.06) but staging a bounce on fresh sell-side coverage.',
+      '<b>Truist initiates Buy/$7:</b> Christopher Souther launched coverage citing manufacturing expansion, $807M backlog, and undervalued long-term growth potential. First new initiation post-rights close — adds bullish framing vs. recent JPM/Stifel target cuts.',
+      '<b>Sell-side recap:</b> JPMorgan trimmed PT $9→$6 (Neutral) and Stifel cut $12→$10 (Buy), both citing dilution from the capital raise. Truist offsets at $7 (Buy). Street consensus still above current price — acknowledges backlog vs. margin burn.',
+      '<b>Rights offering closed above target (Jul 23):</b> $150M rights + $75M Hudson Bay direct + $50M into FPUSA = ~$375M gross equity raised. Settlement of ~6.9M shares + ~3M EOSEW warrants ($5.481 strike) expected ~Aug 3.',
+      '<b>Q2 prelim recap (Jul 15):</b> $68–69M rev (record, >3× YoY shipments), ~$807M backlog (record, +25% QoQ), gross margin loss 69–73%. Battery Line 2 in commercial production since mid-Jun. Full results Aug 5 pre-mkt, call 8:30 AM ET.',
+      '<b>Litigation watch + Golden Dome:</b> Securities class-action probe (late Jul) remains early-stage — no suit filed. Golden Dome defense contract (Jul 15, Z3 zinc batteries for missile-defense power infra) adds strategic credibility; no new AH filings noted.'
     ],
-    price:   { last: 3.39, changePct: 0.89, note: 'close · Jul 29 2026 · Yahoo Finance/Robinhood delayed · est.' },
+    price:   { last: 3.44, changePct: 9.24, note: 'intraday ~$3.44 at 12:33 ET · Jul 30 2026 · StocksToTrade delayed · est. close' },
     sources: [
-      { label: 'CEO Form 4 — StockTitan (filed Jul 28 2026)', url: 'https://www.stocktitan.net/sec-filings/EOSE/form-4-eos-energy-enterprises-inc-insider-trading-activity-56ebfb1054b5.html' },
-      { label: 'EOSE analysis Jul 28 2026 — StocksToTrade', url: 'https://stockstotrade.com/news/eos-energy-enterprises-inc-eose-news-2026_07_28/' },
-      { label: 'EOSE price history — MacroTrends', url: 'https://www.macrotrends.net/stocks/charts/EOSE/eos-energy-enterprises/stock-price-history' },
-      { label: 'Eos Energy IR news releases', url: 'https://investors.eose.com/news-releases' },
-      { label: 'EOSE quote — Yahoo Finance', url: 'https://finance.yahoo.com/quote/EOSE/' }
+      { label: 'EOSE Jul 30 2026 — StocksToTrade/TimothySykes', url: 'https://timothysykes.com/news/eos-energy-enterprises-inc-eose-news-2026_07_30/' },
+      { label: 'Q2 2026 prelim results (Jul 15) — Eos IR', url: 'https://investors.eose.com/news-releases/news-release-details/eos-energy-enterprises-selected-deliver-mission-ready-power' },
+      { label: 'Q2 2026 prelim PR — Eos IR', url: 'https://investors.eose.com/news-releases/news-release-details/eos-energy-enterprises-announces-preliminary-second-quarter-2026' },
+      { label: 'Rights offering results (Jul 23) — Eos IR', url: 'https://investors.eose.com/news-releases/news-release-details/eos-energy-announces-expiration-and-results-rights-offering' },
+      { label: 'Truist initiation — ScanX', url: 'https://scanx.trade/stock-market-news/investment-ideas/truist-initiates-coverage-on-eos-energy-enterprises-with-buy-rating/45574022' },
+      { label: 'Eos Energy IR news releases', url: 'https://investors.eose.com/news-releases' }
     ]
   },
 
