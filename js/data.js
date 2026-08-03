@@ -30,26 +30,25 @@ window.EOSE_DATA = {
   // Refreshed by /equity-research:morning-note via a scheduled task in Cowork.
   // session = 'pre-open' (Swedish AM, ~07:00 CEST) | 'post-close' (Swedish PM, ~22:30 CEST)
   morningNote: {
-    updatedAt: '2026-07-30T22:00:00+02:00',
+    updatedAt: '2026-08-03T22:15:00+02:00',
     session:   'post-close',
-    headline:  'Truist Buy/$7 lifts EOSE ~+9% to ~$3.44; rights cleared, Q2 full results Aug 5',
-    takeaway:  'EOSE surged ~+9% on Jul 30 2026 to ~$3.44 as Truist initiated coverage with Buy/$7 — the first formal Street initiation since the rights offering closed above its $250M target. Full Q2 earnings drop Aug 5 pre-market; the next hard catalyst.',
+    headline:  'EOSE rips +11% to $3.75 into Wednesday\u2019s Q2 print as EOSEW warrants list and the rights offering settles',
+    takeaway:  'EOSE jumped +10.9% to close $3.75 on Mon Aug 3 2026 \u2014 the day the rights offering settled and its new warrants began listing on Nasdaq as EOSEW. The move is best read as positioning two days ahead of the full audited Q2 results (pre-market Wed Aug 5), which replace the Jul 15 preliminary print and reveal real operating income, cash burn and \u2014 critically \u2014 whether the three-way Frontier Power USA definitive agreement has been signed.',
     bullets: [
-      '<b>Close ~$3.44 (+9.2%):</b> EOSE traded from ~$3.18 premarket to ~$3.47 intraday high on Jul 30 2026, settling ~$3.44. Stock remains down ~32% from the Jul 6 2026 high (~$5.06) but staging a bounce on fresh sell-side coverage.',
-      '<b>Truist initiates Buy/$7:</b> Christopher Souther launched coverage citing manufacturing expansion, $807M backlog, and undervalued long-term growth potential. First new initiation post-rights close — adds bullish framing vs. recent JPM/Stifel target cuts.',
-      '<b>Sell-side recap:</b> JPMorgan trimmed PT $9→$6 (Neutral) and Stifel cut $12→$10 (Buy), both citing dilution from the capital raise. Truist offsets at $7 (Buy). Street consensus still above current price — acknowledges backlog vs. margin burn.',
-      '<b>Rights offering closed above target (Jul 23):</b> $150M rights + $75M Hudson Bay direct + $50M into FPUSA = ~$375M gross equity raised. Settlement of ~6.9M shares + ~3M EOSEW warrants ($5.481 strike) expected ~Aug 3.',
-      '<b>Q2 prelim recap (Jul 15):</b> $68–69M rev (record, >3× YoY shipments), ~$807M backlog (record, +25% QoQ), gross margin loss 69–73%. Battery Line 2 in commercial production since mid-Jun. Full results Aug 5 pre-mkt, call 8:30 AM ET.',
-      '<b>Litigation watch + Golden Dome:</b> Securities class-action probe (late Jul) remains early-stage — no suit filed. Golden Dome defense contract (Jul 15, Z3 zinc batteries for missile-defense power infra) adds strategic credibility; no new AH filings noted.'
+      '<b>Close $3.75 (+10.9%):</b> EOSE opened $3.35 and ran to a $3.80 intraday high, closing $3.75 vs the $3.38 Jul 31 close (day range $3.22\u2013$3.80). It is the sharpest up-day in weeks but still ~26% below the $5.06 Jul 6 high \u2014 a relief bounce into earnings, not a trend break. (Finnhub, delayed.)',
+      '<b>EOSEW warrants now listed:</b> Eos filed a Form 8-A12B and Nasdaq listing certification on Aug 3 to register the rights-offering warrants for trading as <b>EOSEW</b>. That clears the \u201clisting not assured\u201d caveat we flagged on Jul 23 \u2014 the ~3.02M warrants (strike $5.481, 10-yr) are now exchange-tradable rather than stranded.',
+      '<b>Rights offering settled:</b> the ~$37.7M raise (6,885,218 units, <b>25.2% take-up</b>) reached its expected on-or-about Aug 3 settlement \u2014 6,885,218 new shares (+2.0%) plus the EOSEW warrants distributed by Broadridge. NOTE: this raised <b>$37.7M, not $150M</b>; the rights were only ~14% of the ~$263M total raised for Frontier Power USA (rights + Hudson Bay + Cerberus).',
+      '<b>The real event is Wednesday:</b> full audited Q2 2026 lands <b>pre-market Aug 5</b> (call 8:30am ET). The Jul 15 preliminary print gave record revenue ($68\u2013$69M, >3\u00d7 shipments YoY) and record backlog (~$807M, +25% QoQ) but no operating income or audited cash figure. Watch the Line 1+2 combined throughput, the cash bridge off the ~$364M prelim, and any FPUSA definitive-agreement update.',
+      '<b>Sell-side, refreshed:</b> Truist initiated <b>Buy, $7</b> (Jul 2026) on manufacturing expansion and backlog; Stifel cut its target <b>$12\u2192$10 but kept Buy</b>, flagging rights-offering dilution; JPMorgan sits at <b>Neutral, $6</b> after its Jul cut. Even the low active target is above the $3.75 close \u2014 the debate is dilution and margin timing, not demand.',
+      '<b>No new adverse filings:</b> beyond the Aug 3 warrant-listing paperwork, EDGAR shows routine Form 4s (Jul 27\u201328) and an S-8; the Yung v. Eos securities class action remains early-stage with no ruling. Golden Dome (Jul 15) and the German/DACH CAPAC framework still anchor the demand-broadening story into the print.'
     ],
-    price:   { last: 3.44, changePct: 9.24, note: 'intraday ~$3.44 at 12:33 ET · Jul 30 2026 · StocksToTrade delayed · est. close' },
+    price:   { last: 3.75, changePct: 10.95, note: 'close \u00b7 Mon Aug 3 2026 \u00b7 vs $3.38 Jul 31 close \u00b7 Finnhub delayed' },
     sources: [
-      { label: 'EOSE Jul 30 2026 — StocksToTrade/TimothySykes', url: 'https://timothysykes.com/news/eos-energy-enterprises-inc-eose-news-2026_07_30/' },
-      { label: 'Q2 2026 prelim results (Jul 15) — Eos IR', url: 'https://investors.eose.com/news-releases/news-release-details/eos-energy-enterprises-selected-deliver-mission-ready-power' },
-      { label: 'Q2 2026 prelim PR — Eos IR', url: 'https://investors.eose.com/news-releases/news-release-details/eos-energy-enterprises-announces-preliminary-second-quarter-2026' },
-      { label: 'Rights offering results (Jul 23) — Eos IR', url: 'https://investors.eose.com/news-releases/news-release-details/eos-energy-announces-expiration-and-results-rights-offering' },
-      { label: 'Truist initiation — ScanX', url: 'https://scanx.trade/stock-market-news/investment-ideas/truist-initiates-coverage-on-eos-energy-enterprises-with-buy-rating/45574022' },
-      { label: 'Eos Energy IR news releases', url: 'https://investors.eose.com/news-releases' }
+      { label: 'EOSEW warrant listing \u2014 Form 8-A12B (Aug 3, 2026)', url: 'https://www.sec.gov/Archives/edgar/data/1805077/000095010326011602/dp251101_8a12b.htm' },
+      { label: 'Rights offering results 8-K (Jul 23, 2026)', url: 'https://www.sec.gov/Archives/edgar/data/1805077/000162828026049296/eose-20260721.htm' },
+      { label: 'Eos IR \u2014 expiration and results of rights offering', url: 'https://investors.eose.com/news-releases/news-release-details/eos-energy-announces-expiration-and-results-rights-offering' },
+      { label: 'EOSE prelim Q2 + Golden Dome 8-K (Jul 15)', url: 'https://www.sec.gov/Archives/edgar/data/0001805077/000162828026048253/eose-20260715.htm' },
+      { label: 'EOSE quote \u2014 StockAnalysis', url: 'https://stockanalysis.com/stocks/eose/' }
     ]
   },
 
