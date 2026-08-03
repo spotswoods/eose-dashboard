@@ -2,7 +2,7 @@
 // Projections beyond Q1'26 are model assumptions consistent with management's
 // reaffirmed FY2026 guidance ($300–400M revenue). Not investment advice.
 //
-// Last refresh: 2026-06-12
+// Last refresh: 2026-08-03
 // Primary sources:
 //   10-Q   https://www.sec.gov/Archives/edgar/data/1805077/000162828026034368/eose-20260331.htm
 //   8-K    https://www.sec.gov/Archives/edgar/data/1805077/000162828026034367/
@@ -466,7 +466,8 @@ window.EOSE_DATA = {
     { date: 'Jul 15, 2026', event: 'PRELIMINARY Q2 pre-announced (8-K): record revenue $68–69M (>3× shipments YoY); RECORD backlog ~$807M (+25% QoQ); gross-margin loss −69/−73% (vs −78% Q1); ~$364M cash. Both lines commercial, Line 2 ahead of Line 1. Full audited Q2 + call now Aug 5', status: 'Reported [Company]', tone: 'done' },
     { date: 'Jul 15, 2026', event: 'DEFENSE WIN: U.S. Department of War selects Eos under "Golden Dome for America" (missile-defense shield) to deploy a Z3 prototype at a critical defense installation — ~91% domestic content, NDAA/FEOC compliant. Prototype selection (size undisclosed), a strategic new defense demand vector', status: 'Reported [Company/DoW]', tone: 'done' },
     { date: 'Aug 5, 2026',  event: 'Full audited Q2 2026 earnings + conference call (8:30am ET) — confirmed date (moved from ~Jul 29)', status: 'Scheduled [Company]', tone: 'soon' },
-    { date: 'Jul 21, 2026', event: 'EOSER rights offering EXPIRES (5 pm ET) — deeply out-of-the-money at $5.481 strike unless the stock rallies; determines how much of the ~$150M actually funds', status: 'Watch [Company]', tone: 'soon' },
+    { date: 'Jul 21, 2026', event: 'EOSER rights offering EXPIRED (5 pm ET) — 25.2% take-up, ~$37.7M of a possible $150M raised (20.5M units lapsed worthless). Settled Aug 3; ~6.9M new shares + ~3.0M warrants now listed on Nasdaq as EOSEW', status: 'Reported [Company]', tone: 'done' },
+    { date: 'Aug 3, 2026',  event: 'Rights offering SETTLES + warrants list as EOSEW (Form 8-A12B + Nasdaq CERT). EOSE closed +10.9% at $3.75 into the Aug 5 print', status: 'Reported [Company]', tone: 'done' },
     { date: 'Q2 2026',      event: 'Frontier Power USA closing conditions (Cerberus warrants + controlling JV equity)',      status: 'Watch [Company]',            tone: 'soon'   },
     { date: 'After Aug 7, 2026', event: 'Ofgem FINAL cap & floor awards (Window 1) — follows the Aug 7 consultation close; this is the binding step where Frontier UK\'s Eos-tech projects are awarded the revenue floor or not', status: 'Catalyst [Regulator]', tone: 'soon' },
     { date: 'Q3 2026',      event: 'NYSERDA Bulk Storage Program ISCRFP25-1 awards (Eos qualifies for 8+ hr tier)', status: 'Catalyst [Regulator]', tone: 'soon' },
@@ -488,24 +489,13 @@ window.EOSE_DATA = {
     { date: '2026-08-07', short: 'Ofgem consult close', est: false,
       label: 'Ofgem LDES Window 1 — minded-to consultation closes',
       detail: 'Ofgem published its "minded-to" (provisional) Window 1 cap & floor decisions on Jun 26, 2026; consultation runs to Aug 7, ahead of final binding awards. Confirm Frontier UK\'s Eos-tech project status against Ofgem\'s project list.' },
-    { date: '2026-06-23', short: 'JPM conference',      est: false,
-      label: 'J.P. Morgan Energy & Natural Resources Conference',
-      detail: 'CEO fireside + 1x1s expected — the likely venue for rights-offering structure/timing color and CFO Lagi\'s first public investor appearance.' },
-    // Line 2 initial-production target (was 2026-06-30) — ACHIEVED EARLY: commercial
-    // production launched Jun 16, 2026. Removed from the upcoming-dates strip; the
-    // milestone now lives in §06 Production and the news feed.
-    { date: '2026-07-01', short: 'Rights record date',  est: false,
-      label: 'Rights offering record date (5:00 pm ET)',
-      detail: 'Holders of record as of 5 pm ET July 1 receive subscription rights for the ~$150M offering; announced June 11, 2026.' },
-    { date: '2026-07-02', short: 'Rights distribution', est: false,
-      label: 'Rights distribution date',
-      detail: 'Subscription rights distributed to eligible holders; final ratio, price and transferability are set in the prospectus supplement at offering commencement.' },
-    { date: '2026-08-03', short: 'Rights settlement', est: false,
-      label: 'Rights offering settlement — shares & warrants distributed',
-      detail: 'Eos expects Broadridge to distribute the 6,885,218 subscribed shares, ~3,021,234 warrants ($5.481 strike) and sale proceeds on or about Aug 3, 2026. Per the Jul 23, 2026 8-K, completion "remains subject to the satisfaction of certain conditions."' },
+    // Rights-offering milestones (record date Jul 1, distribution Jul 2, expiry
+    // Jul 21, settlement + EOSEW Nasdaq listing Aug 3) are all complete — pruned
+    // from the upcoming-dates strip. See §00 note, §05 cap structure, the news
+    // feed, and rights-offering.html for the results (25.2% take-up, ~$37.7M).
     { date: '2026-08-05', short: 'Q2 earnings',  est: false,
       label: 'Q2 2026 earnings release + call (8:30am ET)',
-      detail: 'Confirmed Aug 5, 2026 (moved from ~Jul 29). Full audited Q2 follows the Jul 15 preliminary print ($68–69M rev, ~$807M backlog); Street will watch combined Line 1+2 throughput, the cash bridge, and FPUSA definitive-agreement status.' },
+      detail: 'Confirmed Aug 5, 2026 (moved from ~Jul 29). Full audited Q2 replaces the Jul 15 preliminary print ($68–69M rev, ~$807M backlog) and adds real operating income + the audited cash figure. Street will watch combined Line 1+2 throughput, the cash bridge off ~$364M, and whether the three-way Frontier Power USA definitive agreement has been signed.' },
     { date: '2026-09-22', short: 'Ofgem final awards',  est: true,
       label: 'Ofgem final cap & floor awards — Window 1',
       detail: 'Estimated timing for the FINAL, binding awards that follow the Aug 7 consultation close. Decides the regulated revenue floor for Frontier UK\'s Eos-tech pipeline.' },
@@ -732,7 +722,7 @@ window.EOSE_DATA = {
       { k: 'Total shareholders\' deficit',v: '$(868.4)M' },
       { k: '45X IRA grant receivable',    v: '$21.4M' }
     ],
-    note: 'The $868M shareholders\' deficit is driven by non-cash mark-to-market adjustments on Cerberus warrants and preferred instruments — it does not reflect cash consumed or owed. Series B preferred remeasurement alone was +$778.9M in Q1\'26 (non-cash). Reconcile against the 10-Q before acting on any single line item. <br/><br/><strong style="color:var(--warning)">Resolved — the rights offering expired Jul 21, 2026 and raised $37.7M of a possible $150M:</strong> the offering was priced at <strong>$5.481 per unit</strong> (1 share + 0.4388 warrant, warrant strike $5.481) and traded as EOSER. Per the <strong>Jul 23, 2026 8-K</strong>, holders subscribed for <strong>6,885,218 of the 27,367,171 units</strong> distributed — a <strong>25.2% take-up</strong> yielding <strong>~$37.7M gross</strong>, with the other 20,481,953 units expiring worthless. That is a <strong>~$112.3M shortfall against the maximum</strong>, not the full $150M miss that an out-of-the-money expiry would normally imply. Note the take-up is economically odd: subscribers paid $5.481 while the stock closed $3.98 on Jul 22 — a <strong>37.7% premium</strong> — which points to holders protecting pro-rata ownership rather than price-driven demand. <strong>Dilution:</strong> 6,885,218 new shares (+2.0% on the count above) plus ~3,021,234 new warrants at $5.481 (~2.9% fully diluted); settlement is expected <strong>on or about Aug 3, 2026</strong> and Eos states completion "remains subject to the satisfaction of certain conditions." Eos has applied to list the warrants as <strong>EOSEW</strong> — approval is not assured. Crucially, the rights were only ~14% of the JV funding: combined with Hudson Bay and Cerberus, Eos reports <strong>~$263M gross raised for Frontier Power USA</strong>, above its stated target and sufficient, it says, to initially support <strong>$1B+ of deployable project capital</strong>. Separately, Cerberus (20.0M) and Hudson Bay (10.0M) receive Eos warrants regardless.'
+    note: 'The $868M shareholders\' deficit is driven by non-cash mark-to-market adjustments on Cerberus warrants and preferred instruments — it does not reflect cash consumed or owed. Series B preferred remeasurement alone was +$778.9M in Q1\'26 (non-cash). Reconcile against the 10-Q before acting on any single line item. <br/><br/><strong style="color:var(--warning)">Resolved — the rights offering expired Jul 21, 2026 and raised $37.7M of a possible $150M:</strong> the offering was priced at <strong>$5.481 per unit</strong> (1 share + 0.4388 warrant, warrant strike $5.481) and traded as EOSER. Per the <strong>Jul 23, 2026 8-K</strong>, holders subscribed for <strong>6,885,218 of the 27,367,171 units</strong> distributed — a <strong>25.2% take-up</strong> yielding <strong>~$37.7M gross</strong>, with the other 20,481,953 units expiring worthless. That is a <strong>~$112.3M shortfall against the maximum</strong>, not the full $150M miss that an out-of-the-money expiry would normally imply. Note the take-up is economically odd: subscribers paid $5.481 while the stock closed $3.98 on Jul 22 — a <strong>37.7% premium</strong> — which points to holders protecting pro-rata ownership rather than price-driven demand. <strong>Dilution:</strong> 6,885,218 new shares (+2.0% on the count above) plus ~3,021,234 new warrants at $5.481 (~2.9% fully diluted). The offering <strong>settled on Aug 3, 2026</strong> and the warrants are now <strong>listed on Nasdaq as EOSEW</strong> (Form 8-A12B + Nasdaq certification filed that day), clearing the earlier "listing not assured" caveat. Crucially, the rights were only ~14% of the JV funding: combined with Hudson Bay and Cerberus, Eos reports <strong>~$263M gross raised for Frontier Power USA</strong>, above its stated target and sufficient, it says, to initially support <strong>$1B+ of deployable project capital</strong>. Separately, Cerberus (20.0M) and Hudson Bay (10.0M) receive Eos warrants regardless.'
   },
 
   // ────────── NEW: Product family (Indensity / Cube / DawnOS) ──────────
@@ -853,23 +843,21 @@ window.EOSE_DATA = {
   // ────────── NEW: Analyst coverage ──────────
   // Consensus as of mid-May 2026 per Simply Wall St + public.com + Benzinga aggregations.
   analystCoverage: {
-    asOf: 'Updated June 12, 2026',
+    asOf: 'Updated August 3, 2026',
     consensus: {
-      // Aggregators genuinely disagree (different analyst sets + update timing):
-      // stockanalysis $9.63 (10) · Benzinga $7.96 (15) · MarketBeat $10.94 (10).
-      // We show MarketBeat's blended figure and surface the dispersion in the note.
-      avgPriceTarget: 10.94,
-      highTarget:     22.00,
+      avgPriceTarget: 7.89,
+      highTarget:     11.00,
       lowTarget:       5.00,
-      coveringAnalysts: '10–15 (varies by source)',
-      priorAvgTarget:  10.94,   // unchanged since the May 24 refresh
-      ratingMix:       'Hold-skew (2 Strong Buy · 1 Buy · 7 Hold per StockAnalysis; MarketBeat adds 1 Sell). Newest voice is Needham\'s May 22 Buy/$11 initiation; avg PT runs $7.96–$10.94 by aggregator.'
+      coveringAnalysts: 11,
+      priorAvgTarget:  10.94,   // our prior tracked figure
+      ratingMix:       'Buy-lean but Hold-heavy: 3 Strong Buy / 1 Buy / 7 Hold, no Sells of 11 covering (S&P Global consensus “Buy”). Even the low active target ($5) sits above the ~$3.75 quote — the debate is dilution and margin timing, not demand. The old $22 high has rolled off; range is now $5–$11.'
     },
     recentActions: [
-      { date: '2026-05-22', firm: 'Needham',       analyst: 'Sean Milligan', action: 'Initiated Buy, PT $11',      note: 'First new coverage post-Frontier announcement; most bullish recent call' },
-      { date: '2026-05-14', firm: 'TD Cowen',      analyst: 'Jeff Osborne',  action: 'Maintains Hold, PT $7 → $8', note: 'First post-Q1\'26 action; modest raise, neutral stance' },
-      { date: '2026-04-16', firm: 'JPMorgan',      analyst: 'Mark Strouse',  action: 'PT cut $9 → $6, Neutral',    note: 'Cited cash burn + Frontier capital-stack questions' },
-      { date: 'Range',      firm: '10–15 covering',analyst: '—',             action: 'PT range $5–$22',            note: 'Wide dispersion; consensus avg $7.96–$10.94 depending on aggregator' }
+      { date: '2026-07-24', firm: 'TD Cowen', analyst: 'Jeff Osborne', action: 'Maintains Hold, PT $8', note: 'First take after the rights-offering results; neutral stance held' },
+      { date: '2026-07-23', firm: 'Truist', analyst: 'Christopher Souther', action: 'Reiterates Buy, PT $7', note: 'Initiated Buy in mid-July on manufacturing expansion + $807M backlog; most bullish new voice' },
+      { date: '2026-07-21', firm: 'JPMorgan', analyst: 'Mark Strouse', action: 'PT cut $9 → $6, Neutral', note: 'Cut on rights-offering dilution and execution risk into Q2' },
+      { date: '2026-07-13', firm: 'Stifel', analyst: 'Stephen Gengaro', action: 'PT cut $12 → $10, Buy', note: 'Trimmed target for dilution but kept Buy; ~89M new shares flagged' },
+      { date: 'Range', firm: '11 covering', analyst: '—', action: 'PT range $5–$11', note: 'Bull case leans on backlog conversion + Frontier project flow; consensus avg $7.89, median $8' }
     ],
     sentiment: {
       retail: 'Stocktwits "extremely bullish" post-Q1\'26 print',
@@ -954,16 +942,16 @@ window.EOSE_DATA = {
       { point: 'Short interest ~31% of float (~103.5M sh); ~3.4 days to cover. CEO Mastrangelo bought 23,900 shares post-FY25 crash; Director Dimitrief bought 15,000 at $6.04. Asymmetric setup on any clean catalyst.', src: 'Nasdaq SI · Form 4 / OpenInsider' }
     ],
     bear: [
-      { point: 'Q1\'26 operating cash flow was −$119.7M (per cash flow statement — distinct from the −$79.3M operating loss on the P&L). At that pace, $472M total cash is ~4 quarters of runway absent new capital. S-3ASR shelf filed May 13 + a pro-rata rights offering targeting ~$150M to fund the Frontier USA contribution. Dilution is a "when," not "if."', src: '10-Q cash flow + S-3ASR + Frontier 8-K' },
+      { point: 'Q1\'26 operating cash flow was −$119.7M (per cash flow statement — distinct from the −$79.3M operating loss on the P&L). Prelim Q2 cash fell to ~$364M (−$108M QoQ), so at that burn rate runway is ~3 quarters absent new capital. The rights offering added only ~$37.7M; an S-3ASR shelf remains filed. Dilution has been a "when," not "if" — the Aug 5 audited cash figure is the number to watch.', src: '10-Q cash flow + prelim Q2 + S-3ASR' },
       { point: 'GM still −78%. The path to mgmt\'s implied FY27 GM-positive requires both Line 2 ramping AND Z3 unit economics holding at higher volume. Neither proven yet.', src: 'Q1\'26 release' },
       { point: 'Active securities class action (Yung v. Eos, D.N.J. 26-cv-02372) alleging misrepresentation of FY25 production capacity. Settlement risk is material if certified.', src: 'court filings' },
       { point: 'Shares outstanding +18% trailing 12 months. Insiders sold $14M more than they bought over the same window — Stidolph $11.5M, Kroeker (interim CFO) $802k, Silberman (CLO) $739k.', src: 'OpenInsider / Simply Wall St' },
       { point: 'Customer concentration: 93.3% of Q1\'26 revenue from a handful of >10% customers. One project slip = guidance miss.', src: '10-Q footnotes' },
-      { point: 'THE RIGHTS OFFERING IS UNDERWATER — the biggest live risk. Subscription is $5.481/unit but the stock trades well below that, so the rights (EOSER) are out-of-the-money days from their Jul 21 expiry. Rational holders have no reason to exercise, so the ~$150M target may raise far less. Those proceeds were earmarked for Eos\' contribution to Frontier USA — a shortfall means a funding gap, and likely renegotiation, alternative financing, or further dilution.', src: 'Jun 30 424B5 · EOSER market price' },
+      { point: 'THE RIGHTS OFFERING LARGELY FAILED — it expired Jul 21 with only a 25.2% take-up, raising ~$37.7M of a possible $150M (settled Aug 3, warrants now listed as EOSEW). Eos still says total Frontier USA funding reached ~$263M via Hudson Bay + Cerberus, but the ~$112M rights shortfall means the JV leans harder on those partners and on Eos\' own balance sheet, and the weak holder participation is itself a low-conviction signal into the Aug 5 print.', src: 'Jul 23 8-K · Aug 3 8-A12B' },
       { point: 'Dilution is stacking regardless of the raise\'s outcome: the Jun 30 deal adds a registered direct to Hudson Bay PLUS ~30M new warrants to Cerberus (20.0M) and HBC (10.0M), on top of whatever the rights offering issues (units = stock + 0.4388 warrant). Non-participating holders absorb it either way.', src: 'Jun 30 8-K + 424B5' },
       { point: 'UK Ofgem was a miss: in the Jun 26 Window 1 minded-to decisions, only 1 of Frontier UK\'s ~16 projects (Frontier Legacy, 65 MW) made the provisional list — ~2.5 GW excluded — and even that one is not confirmed as Eos (vs Invinity) tech. A long-cited bull leg is largely off for Window 1.', src: 'Ofgem Window 1 minded-to decisions' },
       { point: 'No public hyperscaler customer despite the AI narrative. TURBINE-X is targeting hyperscalers; nothing closed. The "AI demand" thesis is bidding, not winning, today.', src: 'all public disclosures' },
-      { point: 'JPMorgan cut PT $9→$6 (Neutral) post-FY25; Roth Capital $6 PT (Chip Moore). Consensus PT compressed from $9.71 to $8.86. Sell-side is skeptical.', src: 'JPMorgan, Roth Capital research' }
+      { point: 'Sell-side targets have compressed and split after the raise: JPMorgan Neutral $6, TD Cowen Hold $8, Stifel Buy $10 (cut from $12 on dilution), Truist Buy $7. Consensus avg PT fell from ~$10.94 to $7.89 across 11 analysts and the old $22 high has rolled off — even the bulls have trimmed.', src: 'StockAnalysis / firm notes (Jul 2026)' }
     ]
   },
 

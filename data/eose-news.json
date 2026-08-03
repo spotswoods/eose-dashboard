@@ -1,6 +1,6 @@
 {
   "meta": {
-    "_refreshed": "2026-07-23T13:26:44.058Z",
+    "_refreshed": "2026-08-03T21:30:07.096Z",
     "sources": [
       "eose.com (WordPress REST API)",
       "SEC EDGAR submissions API",
@@ -8,12 +8,30 @@
     ],
     "counts": {
       "pressReleases": 20,
-      "secFilings": 315,
-      "manual": 5,
+      "secFilings": 316,
+      "manual": 6,
       "shown": 14
     }
   },
   "items": [
+    {
+      "iso": "2026-08-03T13:00:00Z",
+      "date": "2026-08-03",
+      "source": "SEC EDGAR (Form 8-A12B)",
+      "headline": "Eos lists rights-offering warrants on Nasdaq as EOSEW; rights offering settles",
+      "url": "https://www.sec.gov/Archives/edgar/data/1805077/000095010326011602/dp251101_8a12b.htm",
+      "summary": "Eos filed a Form 8-A12B and a Nasdaq listing certification on Aug 3, 2026 to register the ~3,021,234 rights-offering warrants (exercise price $5.481, 10-year term) for trading as EOSEW — clearing the “listing not assured” caveat from the Jul 23 results. The same day was the expected settlement of the offering, distributing 6,885,218 new shares (+2.0%) plus the warrants via Broadridge. The rights raised ~$37.7M (25.2% take-up); combined with Hudson Bay and Cerberus, total funding for Frontier Power USA is ~$263M. EOSE closed +10.9% at $3.75, two days ahead of full audited Q2 results on Aug 5.",
+      "tag": "sec-filing"
+    },
+    {
+      "iso": "2026-07-23T12:00:00Z",
+      "date": "2026-07-23",
+      "source": "SEC EDGAR",
+      "headline": "Equity plan registration (S-8)",
+      "url": "https://www.sec.gov/Archives/edgar/data/1805077/000095010326011099/dp250458_s8.htm",
+      "summary": "FORM S-8",
+      "tag": "sec-filing"
+    },
     {
       "iso": "2026-07-23T12:00:00Z",
       "date": "2026-07-23",
@@ -121,24 +139,6 @@
       "url": "https://www.eose.com/eos-energy-announces-commencement-of-rights-offering/",
       "summary": "EDISON, N.J., July 02, 2026 (GLOBE NEWSWIRE) — Eos Energy Enterprises, Inc. (NASDAQ: EOSE) (“Eos” or the “Company”), America’s leading innovator in designing, manufacturing, and providing zinc-based long duration energy storage (LDES)…",
       "tag": "catalyst"
-    },
-    {
-      "iso": "2026-07-01T12:00:00Z",
-      "date": "2026-07-01",
-      "source": "SEC EDGAR",
-      "headline": "Material event (8-K)",
-      "url": "https://www.sec.gov/Archives/edgar/data/1805077/000095010326009976/dp249372_8k.htm",
-      "summary": "FORM 8-K",
-      "tag": "sec-filing"
-    },
-    {
-      "iso": "2026-06-30T12:00:00Z",
-      "date": "2026-06-30",
-      "source": "SEC EDGAR",
-      "headline": "Prospectus (424B5)",
-      "url": "https://www.sec.gov/Archives/edgar/data/1805077/000095010326009829/dp249285_424b5.htm",
-      "summary": "FORM 424B5",
-      "tag": "sec-filing"
     }
   ]
 }
