@@ -1,5 +1,24 @@
 [
  {
+  "updatedAt": "2026-08-04T22:30:00+02:00",
+  "session": "post-close",
+  "headline": "EOSE ~$4.38 pre-earnings hold; full audited Q2 lands pre-market Wed Aug 5",
+  "takeaway": "EOSE held Monday's +11% rights-offer pop, drifting to an estimated ~$4.38 close on Tue Aug 4 in a quiet, no-news session. The real event is tomorrow: full audited Q2 2026 (operating income, FCF, FPUSA definitive-agreement status) lands pre-market Wed Aug 5, replacing the Jul 15 preliminary.",
+  "bullets": [
+   "<b>Close ~$4.38 (+~17% est):</b> Search-sourced (StockInvest.us); no news or filings today — pure pre-earnings drift after Monday's +11% pop. Forecast was $3.52–$3.98; stock moved above range. Verify vs live at open Wed.",
+   "<b>Full Q2 print pre-mkt Aug 5:</b> Jul 15 prelim: $68–69M revenue, ~$807M backlog, ~$364M cash. Tomorrow adds audited operating income, real FCF, Line 2 throughput, and FY26 guidance update vs $300–$400M. Call 8:30am ET.",
+   "<b>FPUSA definitive agreement:</b> JV still lacks a signed definitive as of Aug 4. Watch the Aug 5 8-K and call — signed removes the thesis's biggest remaining risk; absent prolongs dilution uncertainty into Q3.",
+   "<b>No new EDGAR filings Aug 4:</b> No 8-K, Form 4, or supplement filed. EOSEW warrants (strike $5.481, 10-yr) have traded since the Aug 3 Nasdaq listing — warrant/common spread reflects market's FPUSA execution confidence.",
+   "<b>Sell-side into the print:</b> Truist Buy/$7, Stifel Buy/$10 (cut from $12), JPMorgan Neutral/$6, Needham Buy/$11. Consensus ~$7–$8 vs ~$4.38 est close — gap reflects dilution and margin-ramp risk, not demand.",
+   "<b>Setup Aug 5:</b> Audited Q2, FPUSA definitive-agreement, and FY26 guidance all land simultaneously pre-market. Call 8:30am ET. No FPUSA signing likely reverses the two-day rally even on a revenue beat."
+  ],
+  "price": {
+   "last": 4.38,
+   "changePct": 16.8,
+   "note": "est close · Tue Aug 4 2026 · vs $3.75 Aug 3 · search-sourced (StockInvest.us) · verify at open"
+  }
+ },
+ {
   "updatedAt": "2026-08-03T22:15:00+02:00",
   "session": "post-close",
   "headline": "EOSE rips +11% to $3.75 into Wednesday’s Q2 print as EOSEW warrants list and the rights offering settles",
