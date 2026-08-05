@@ -1,6 +1,6 @@
 // EOSE data — sourced from primary SEC filings (Q1 2026 10-Q + 8-K filed May 13, 2026).
 // Projections beyond Q1'26 are model assumptions consistent with management's
-// reaffirmed FY2026 guidance ($300–400M revenue). Not investment advice.
+// FY2026 guidance ($300–350M revenue, top end cut from $400M on Aug 5, 2026). Not investment advice.
 //
 // Last refresh: 2026-08-03
 // Primary sources:
@@ -30,24 +30,24 @@ window.EOSE_DATA = {
   // Refreshed by /equity-research:morning-note via a scheduled task in Cowork.
   // session = 'pre-open' (Swedish AM, ~07:00 CEST) | 'post-close' (Swedish PM, ~22:30 CEST)
   morningNote: {
-    updatedAt: '2026-08-04T22:30:00+02:00',
-    session:   'post-close',
-    headline:  'EOSE ~$4.38 pre-earnings hold; full audited Q2 lands pre-market Wed Aug 5',
-    takeaway:  'EOSE held Monday\'s +11% rights-offer pop, drifting to an estimated ~$4.38 close on Tue Aug 4 in a quiet, no-news session. The real event is tomorrow: full audited Q2 2026 (operating income, FCF, FPUSA definitive-agreement status) lands pre-market Wed Aug 5, replacing the Jul 15 preliminary.',
+    updatedAt: '2026-08-05T14:30:00+02:00',
+    session:   'pre-open',
+    headline:  'Q2: revenue "record" but 80% related-party, FY guidance top end cut to $350M, FPUSA JV closes \u2014 the market\u2019s "bad" read is mostly fair',
+    takeaway:  'The audited Q2 print is softer than the Jul 15 preliminary looked. Total revenue was $68.8M (+351% YoY) \u2014 but $55.0M of that (80%) came from a single Cerberus-financed related-party project that was contributed to FPUSA on Aug 4; third-party revenue was just $13.7M, DOWN 10% YoY. Eos cut the top of FY26 guidance to $300\u2013$350M (from $300\u2013$400M) and will consolidate manufacturing into Thorn Hill. Offsetting the gloom: the Frontier Power USA JV formally closed Aug 4 with ~$263M funded, and a $100M Blanquilla PO landed post-quarter. After a +16% run-up into the print, a negative premarket reaction is a reasonable "sell-the-news."',
     bullets: [
-      '<b>Close ~$4.38 (+~17% est):</b> Search-sourced (StockInvest.us); no news or filings today \u2014 pure pre-earnings drift after Monday\'s +11% pop. Forecast was $3.52\u2013$3.98; stock moved above range. Verify vs live at open Wed.',
-      '<b>Full Q2 print pre-mkt Aug 5:</b> Jul 15 prelim: $68\u201369M revenue, ~$807M backlog, ~$364M cash. Tomorrow adds audited operating income, real FCF, Line 2 throughput, and FY26 guidance update vs $300\u2013$400M. Call 8:30am ET.',
-      '<b>FPUSA definitive agreement:</b> JV still lacks a signed definitive as of Aug 4. Watch the Aug 5 8-K and call \u2014 signed removes the thesis\'s biggest remaining risk; absent prolongs dilution uncertainty into Q3.',
-      '<b>No new EDGAR filings Aug 4:</b> No 8-K, Form 4, or supplement filed. EOSEW warrants (strike $5.481, 10-yr) have traded since the Aug 3 Nasdaq listing \u2014 warrant/common spread reflects market\'s FPUSA execution confidence.',
-      '<b>Sell-side into the print:</b> Truist Buy/$7, Stifel Buy/$10 (cut from $12), JPMorgan Neutral/$6, Needham Buy/$11. Consensus ~$7\u2013$8 vs ~$4.38 est close \u2014 gap reflects dilution and margin-ramp risk, not demand.',
-      '<b>Setup Aug 5:</b> Audited Q2, FPUSA definitive-agreement, and FY26 guidance all land simultaneously pre-market. Call 8:30am ET. No FPUSA signing likely reverses the two-day rally even on a revenue beat.'
+      '<b>Revenue quality is the story:</b> total revenue $68.8M (+351% YoY) but <b>$55.0M (80%) was a single related-party project</b> (Cerberus-financed, contributed to FPUSA on Aug 4). Strip it out and <b>third-party revenue was $13.7M, down ~10% YoY</b> ($15.2M in Q2\u201925). The headline growth is real cash but not broad commercial demand \u2014 this is the number behind the negative reaction.',
+      '<b>Guidance cut:</b> FY2026 revenue tightened to <b>$300\u2013$350M from $300\u2013$400M</b> \u2014 the floor held but the ceiling came down $50M, tied to the timing of consolidating production into the Thorn Hill facility. Management frames the consolidation as a lower-cost footprint; the market can also read it as capacity being rationalized.',
+      '<b>Losses: optically huge, mostly non-cash.</b> Net loss attributable was <b>\u2212$275.7M</b>, but that is driven by mark-to-market swings on Cerberus warrants/derivatives tied to the quarter-end share price \u2014 not operations. The cleaner reads: <b>GAAP operating loss \u2212$83.8M</b> (vs \u2212$63.8M YoY), <b>gross margin \u221271%</b> (better than Q1\u2019s \u221278% but still deep), and <b>adjusted EBITDA loss \u2212$71.4M</b> (wider than \u2212$51.6M YoY).',
+      '<b>Cash burn accelerated:</b> H1 operating cash outflow was <b>\u2212$191.8M</b> (vs \u2212$95.0M a year ago); total cash was <b>$364.1M</b> incl. restricted at Jun 30 ($305.5M unrestricted). That is before the ~$37.7M rights offering (settled Aug 3) and July financings, but the burn rate is the runway question the Aug 5 call must address.',
+      '<b>The genuine positives:</b> the <b>Frontier Power USA JV formally closed Aug 4</b> (the long-open definitive agreement) with ~$263M raised and >$1B of deployable project capital; a <b>$100M Blanquilla Phase I purchase order</b> landed post-quarter; backlog is a record $807M (3.4 GWh); H1 revenue already exceeded all of FY2025; and Line 2 is running with a 10% cycle-time gain. Note ~49% of backlog is FPUSA/related-party.',
+      '<b>Price into it:</b> EOSE closed <b>$4.35 (+16%) on Aug 4</b>, a run-up into the print; the initial premarket reaction to the results is negative. Treat any intraday figure as developing until the close \u2014 the Aug 5 call (8:30am ET) and how management frames the guidance cut + Thorn Hill consolidation will set the tone.'
     ],
-    price:   { last: 4.38, changePct: 16.8, note: 'est close \u00b7 Tue Aug 4 2026 \u00b7 vs $3.75 Aug 3 \u00b7 search-sourced (StockInvest.us) \u00b7 verify at open' },
+    price:   { last: 4.35, changePct: 16.00, note: 'prior close \u00b7 Tue Aug 4 2026 (run-up into the print) \u00b7 vs $3.75 Aug 3 \u00b7 Finnhub; Aug 5 reaction developing' },
     sources: [
-      { label: 'EOSE Q2 prelim 8-K \u2014 Jul 15, 2026', url: 'https://www.sec.gov/Archives/edgar/data/0001805077/000162828026048253/eose-20260715.htm' },
-      { label: 'Eos IR \u2014 Q2 2026 preliminary results', url: 'https://investors.eose.com/news-releases/news-release-details/eos-energy-enterprises-announces-preliminary-second-quarter-2026' },
-      { label: 'Rights offering results 8-K (Jul 23, 2026)', url: 'https://www.sec.gov/Archives/edgar/data/1805077/000162828026049296/eose-20260721.htm' },
-      { label: 'EOSE quote \u2014 StockInvest.us (search-sourced)', url: 'https://stockinvest.us/stock/EOSE' },
+      { label: 'Q2 2026 results 8-K + earnings release (Aug 5, 2026)', url: 'https://www.sec.gov/Archives/edgar/data/1805077/000162828026052903/eoseq2fy26earningsreleas.htm' },
+      { label: 'Eos IR \u2014 Q2 2026 financial results', url: 'https://investors.eose.com/news-releases/news-release-details/eos-energy-enterprises-reports-second-quarter-2026-financial' },
+      { label: 'Q2 2026 8-K cover (Item 2.02)', url: 'https://www.sec.gov/Archives/edgar/data/1805077/000162828026052903/eose-20260805.htm' },
+      { label: 'EOSE quote \u2014 StockAnalysis', url: 'https://stockanalysis.com/stocks/eose/' },
       { label: 'EOSE analyst ratings \u2014 StockAnalysis', url: 'https://stockanalysis.com/stocks/eose/forecast/' }
     ]
   },
@@ -138,12 +138,12 @@ window.EOSE_DATA = {
   // ────────── KPI strip — Q1'26 actuals ──────────
   // accent drives the card's left border (meaning-tied): pos | warn | neg | info
   kpis: [
-    { label: 'Q2\'26 Revenue (prelim)', value: '$68–69M', delta: 'Record · >3× shipments YoY · vs $57.0M Q1', tone: 'up',   accent: 'pos'  },
-    { label: 'Backlog (6/30/26, prelim)', value: '~$807M', delta: 'Record · +25% QoQ · orders > shipments',   tone: 'up',   accent: 'pos'  },
-    { label: 'Gross margin (prelim)', value: '−69/−73%',  delta: 'Improving from −78% in Q1 · still negative', tone: 'up',   accent: 'warn' },
-    { label: 'Total Cash (6/30/26)',  value: '~$364M',    delta: '−$108M QoQ · pre-Frontier funding',        tone: 'flat', accent: 'neg'  },
-    { label: 'Commercial Pipeline',   value: '$24.3B',    delta: 'As of Q1\'26 · proposals + LOIs · not contracted', tone: 'up', accent: 'info' },
-    { label: 'FY26 Guidance',         value: '$300–400M', delta: 'Set at Q1\'26 · watch the Aug 5 audited print', tone: 'up',   accent: 'warn' }
+    { label: 'Q2\'26 Revenue (audited)', value: '$68.8M', delta: '+351% YoY — but $55.0M (80%) related-party; 3rd-party $13.7M, −10% YoY', tone: 'flat', accent: 'warn' },
+    { label: 'Backlog (6/30/26)', value: '$807M', delta: 'Record · 3.4 GWh · +25% QoQ · but ~49% is FPUSA/related-party',   tone: 'up',   accent: 'pos'  },
+    { label: 'Gross margin (audited)', value: '−71%',  delta: 'Better than −78% Q1 · gross loss −$48.8M · still deep', tone: 'up',   accent: 'warn' },
+    { label: 'Total Cash (6/30/26)',  value: '$364.1M',    delta: 'incl. restricted · H1 operating burn −$191.8M',        tone: 'flat', accent: 'neg'  },
+    { label: 'Op. loss / Adj. EBITDA', value: '−$83.8M / −$71.4M', delta: 'Both wider YoY · net loss −$275.7M (mostly non-cash MTM)', tone: 'down', accent: 'neg' },
+    { label: 'FY26 Guidance (cut)',   value: '$300–350M', delta: 'Top end cut from $400M · Thorn Hill consolidation', tone: 'down',   accent: 'neg' }
   ],
 
   // ────────── Quarterly revenue ($M) — actuals from 10-Qs / 10-Ks ──────────
@@ -161,10 +161,10 @@ window.EOSE_DATA = {
     { q: '3Q25', v: 30.51, type: 'actual'    },
     { q: '4Q25', v: 58.00, type: 'actual'    },
     { q: '1Q26', v: 56.96, type: 'actual'    },  // 10-Q Q1'26: $56,963K
-    // Projections — sum of FY26 ~ guidance midpoint $350M
-    { q: '2Q26', v: 68.5,  type: 'actual'    },
-    { q: '3Q26', v: 100.0, type: 'projected' },
-    { q: '4Q26', v: 110.0, type: 'projected' },
+    // Projections — sum of FY26 ~ guidance midpoint $325M (range cut to $300–350M on Aug 5)
+    { q: '2Q26', v: 68.8,  type: 'actual'    },
+    { q: '3Q26', v: 95.0,  type: 'projected' },
+    { q: '4Q26', v: 104.0, type: 'projected' },
     { q: '1Q27', v: 146.0, type: 'projected' },
     { q: '2Q27', v: 183.0, type: 'projected' },
     { q: '3Q27', v: 226.0, type: 'projected' },
@@ -182,7 +182,7 @@ window.EOSE_DATA = {
     { y: 'FY23', v: 16.4,   type: 'actual'    },
     { y: 'FY24', v: 15.6,   type: 'actual'    },
     { y: 'FY25', v: 114.2,  type: 'actual'    },
-    { y: 'FY26', v: 350.0,  type: 'projected' },   // guidance midpoint
+    { y: 'FY26', v: 325.0,  type: 'projected' },   // guidance midpoint ($300–350M, cut Aug 5)
     { y: 'FY27', v: 791.0,  type: 'projected' },
     { y: 'FY28', v: 1126.0, type: 'projected' }
   ],
@@ -218,7 +218,7 @@ window.EOSE_DATA = {
     { q: '3Q25', v: -61.22, type: 'actual'    },
     { q: '4Q25', v: -81.27, type: 'actual'    },
     { q: '1Q26', v: -79.31, type: 'actual'    },   // 10-Q Q1'26: $(79,312)K
-    { q: '2Q26', v: -65.0,  type: 'projected' },
+    { q: '2Q26', v: -83.81, type: 'actual'    },   // Q2'26 earnings release: loss from operations $(83,811)K
     { q: '3Q26', v: -48.0,  type: 'projected' },
     { q: '4Q26', v: -32.0,  type: 'projected' },
     { q: '1Q27', v: -22.0,  type: 'projected' },
@@ -239,7 +239,7 @@ window.EOSE_DATA = {
     { q: '3Q25', v: 126.8,  type: 'actual'    },
     { q: '4Q25', v: 624.6,  type: 'actual'    },
     { q: '1Q26', v: 472.4,  type: 'actual'    },
-    { q: '2Q26', v: 364.0,  type: 'actual'    },
+    { q: '2Q26', v: 364.1,  type: 'actual'    },
     { q: '3Q26', v: 370.0,  type: 'projected' },
     { q: '4Q26', v: 320.0,  type: 'projected' },
     { q: '1Q27', v: 280.0,  type: 'projected' },
@@ -256,7 +256,7 @@ window.EOSE_DATA = {
     { q: '3Q25', rev: 30.51, gm: -111, op: -61.22, liq: 126.8, type: 'A' },
     { q: '4Q25', rev: 58.00, gm: -94,  op: -81.27, liq: 624.6, type: 'A' },
     { q: '1Q26', rev: 56.96, gm: -78,  op: -79.31, liq: 472.4, type: 'A' },
-    { q: '2Q26', rev: 68.5,  gm: -71,  op: -65.0,  liq: 364.0, type: 'A' },
+    { q: '2Q26', rev: 68.8,  gm: -71,  op: -83.81, liq: 364.1, type: 'A' },
     { q: '3Q26', rev: 100.0, gm: -35,  op: -48.0,  liq: 370.0, type: 'E' },
     { q: '4Q26', rev: 110.0, gm: -15,  op: -32.0,  liq: 320.0, type: 'E' }
   ],
@@ -337,10 +337,10 @@ window.EOSE_DATA = {
 
   // ────────── Opportunity funnel — 10-Q discloses $24.3B pipeline ──────────
   funnel: [
-    { stage: 'Commercial pipeline (Q1\'26)', value: 24300,  label: '$24.3B'  },
+    { stage: 'Commercial pipeline (Q2\'26)', value: 24600,  label: '$24.6B'  },
     { stage: '+ Frontier USA 2 GWh reservation @ $225/kWh', value: 450,    label: '~$450M*' },
     { stage: 'Contracted backlog (3/31/26)', value: 644.6,  label: '$644.6M' },
-    { stage: 'FY26 revenue (guidance mid)',  value: 350,    label: '$350M'   }
+    { stage: 'FY26 revenue (guidance mid)',  value: 325,    label: '$325M'   }
   ],
 
   // ────────── Backlog over time ($M) ──────────
@@ -465,16 +465,16 @@ window.EOSE_DATA = {
     { date: 'Jul 9, 2026',  event: 'Governance: Haiyan Song appointed to board (cybersecurity/software); Marie Martin named Chief Legal Officer',  status: 'Reported [Company]',  tone: 'done' },
     { date: 'Jul 15, 2026', event: 'PRELIMINARY Q2 pre-announced (8-K): record revenue $68–69M (>3× shipments YoY); RECORD backlog ~$807M (+25% QoQ); gross-margin loss −69/−73% (vs −78% Q1); ~$364M cash. Both lines commercial, Line 2 ahead of Line 1. Full audited Q2 + call now Aug 5', status: 'Reported [Company]', tone: 'done' },
     { date: 'Jul 15, 2026', event: 'DEFENSE WIN: U.S. Department of War selects Eos under "Golden Dome for America" (missile-defense shield) to deploy a Z3 prototype at a critical defense installation — ~91% domestic content, NDAA/FEOC compliant. Prototype selection (size undisclosed), a strategic new defense demand vector', status: 'Reported [Company/DoW]', tone: 'done' },
-    { date: 'Aug 5, 2026',  event: 'Full audited Q2 2026 earnings + conference call (8:30am ET) — confirmed date (moved from ~Jul 29)', status: 'Scheduled [Company]', tone: 'soon' },
+    { date: 'Aug 5, 2026',  event: 'AUDITED Q2 2026 (8-K): revenue $68.8M (+351% YoY) but $55.0M/80% related-party — 3rd-party rev $13.7M, −10% YoY; gross margin −71%; operating loss −$83.8M; net loss −$275.7M (mostly non-cash MTM); cash $364.1M; H1 op-cash burn −$191.8M. FY26 guidance top end CUT to $300–350M; manufacturing to consolidate into Thorn Hill', status: 'Reported [Company]', tone: 'done' },
+    { date: 'Aug 4, 2026',  event: 'Frontier Power USA JV FORMALLY CLOSED — the long-open three-way definitive agreement; ~$263M equity raised (exceeds $250M target), >$1B deployable project capital, ~16 GWh pipeline. A pre-existing Cerberus-financed project (Q2 related-party revenue) was contributed to the JV at close', status: 'Reported [Company]', tone: 'done' },
     { date: 'Jul 21, 2026', event: 'EOSER rights offering EXPIRED (5 pm ET) — 25.2% take-up, ~$37.7M of a possible $150M raised (20.5M units lapsed worthless). Settled Aug 3; ~6.9M new shares + ~3.0M warrants now listed on Nasdaq as EOSEW', status: 'Reported [Company]', tone: 'done' },
     { date: 'Aug 3, 2026',  event: 'Rights offering SETTLES + warrants list as EOSEW (Form 8-A12B + Nasdaq CERT). EOSE closed +10.9% at $3.75 into the Aug 5 print', status: 'Reported [Company]', tone: 'done' },
-    { date: 'Q2 2026',      event: 'Frontier Power USA closing conditions (Cerberus warrants + controlling JV equity)',      status: 'Watch [Company]',            tone: 'soon'   },
     { date: 'After Aug 7, 2026', event: 'Ofgem FINAL cap & floor awards (Window 1) — follows the Aug 7 consultation close; this is the binding step where Frontier UK\'s Eos-tech projects are awarded the revenue floor or not', status: 'Catalyst [Regulator]', tone: 'soon' },
     { date: 'Q3 2026',      event: 'NYSERDA Bulk Storage Program ISCRFP25-1 awards (Eos qualifies for 8+ hr tier)', status: 'Catalyst [Regulator]', tone: 'soon' },
     { date: 'YE 2026',      event: 'Cerberus equity lock-up expiration (extended through year-end 2026)',  status: 'Confirmed [Company]',        tone: 'live'   },
     { date: 'YE 2026',      event: 'Treasury safe-harbor tables for 45X FEOC scoring (sets credit magnitude)', status: 'Watch [Regulator]',    tone: 'future' },
     { date: '2026–27',      event: 'TURBINE-X JDA execution (gas + storage hybrid, up to 2 GWh)',          status: 'Signed JDA [Company]',       tone: 'live'   },
-    { date: 'FY2026',       event: 'Revenue $300–400M (management guidance, reaffirmed at Q1\'26)',        status: 'Guidance [Company]',         tone: 'live'   },
+    { date: 'FY2026',       event: 'Revenue $300–350M (guidance top end cut from $400M on Aug 5 Q2 call, tied to Thorn Hill consolidation timing)', status: 'Guidance [Company]', tone: 'live'   },
     { date: 'FY2027',       event: 'Gross margin positive — our model assumption, not company guidance',   status: 'Projected [Model]',          tone: 'future' },
     { date: 'FY2027–28',    event: 'Operating income breakeven — our model assumption, not company guidance', status: 'Projected [Model]',       tone: 'future' }
   ],
@@ -489,13 +489,14 @@ window.EOSE_DATA = {
     { date: '2026-08-07', short: 'Ofgem consult close', est: false,
       label: 'Ofgem LDES Window 1 — minded-to consultation closes',
       detail: 'Ofgem published its "minded-to" (provisional) Window 1 cap & floor decisions on Jun 26, 2026; consultation runs to Aug 7, ahead of final binding awards. Confirm Frontier UK\'s Eos-tech project status against Ofgem\'s project list.' },
-    // Rights-offering milestones (record date Jul 1, distribution Jul 2, expiry
-    // Jul 21, settlement + EOSEW Nasdaq listing Aug 3) are all complete — pruned
-    // from the upcoming-dates strip. See §00 note, §05 cap structure, the news
-    // feed, and rights-offering.html for the results (25.2% take-up, ~$37.7M).
-    { date: '2026-08-05', short: 'Q2 earnings',  est: false,
-      label: 'Q2 2026 earnings release + call (8:30am ET)',
-      detail: 'Confirmed Aug 5, 2026 (moved from ~Jul 29). Full audited Q2 replaces the Jul 15 preliminary print ($68–69M rev, ~$807M backlog) and adds real operating income + the audited cash figure. Street will watch combined Line 1+2 throughput, the cash bridge off ~$364M, and whether the three-way Frontier Power USA definitive agreement has been signed.' },
+    // Completed & pruned from the upcoming strip: rights offering (record Jul 1 →
+    // expiry Jul 21 → settlement + EOSEW listing Aug 3), FPUSA JV close (Aug 4),
+    // and Q2 2026 earnings (Aug 5). See §00 note, §05 cap structure, the scorecard
+    // and news feed for results (Q2 rev $68.8M/80% related-party; FY guide cut to
+    // $300–350M; FPUSA closed; rights 25.2% take-up, ~$37.7M).
+    { date: '2026-11-04', short: 'Q3 earnings (est.)',  est: true,
+      label: 'Q3 2026 earnings release + call (estimated)',
+      detail: 'Estimated early-November timing based on Eos\' recent reporting cadence. First print as a consolidated FPUSA parent and the first test of the cut $300–350M FY guidance and the Thorn Hill manufacturing consolidation.' },
     { date: '2026-09-22', short: 'Ofgem final awards',  est: true,
       label: 'Ofgem final cap & floor awards — Window 1',
       detail: 'Estimated timing for the FINAL, binding awards that follow the Aug 7 consultation close. Decides the regulated revenue floor for Frontier UK\'s Eos-tech pipeline.' },
@@ -548,7 +549,7 @@ window.EOSE_DATA = {
   // ────────── Revenue × margin bridge (valuation tab) ──────────
   bridge: [
     { y: 'FY25', rev: 114,  gm: -65 },
-    { y: 'FY26', rev: 350,  gm: -5  },     // guidance midpoint, GM exit-rate
+    { y: 'FY26', rev: 325,  gm: -5  },     // guidance midpoint ($300–350M), GM exit-rate
     { y: 'FY27', rev: 791,  gm: 11  },
     { y: 'FY28', rev: 1126, gm: 22  }
   ],
@@ -932,21 +933,24 @@ window.EOSE_DATA = {
   scorecard: {
     bull: [
       { point: 'Q1\'26 revenue +445% YoY with adj. EPS beating consensus by 154 ppt ($0.12 vs −$0.22). Two consecutive quarters now exceed full FY25.', src: 'Q1\'26 8-K' },
-      { point: 'Pipeline $24.3B (+56% YoY); backlog $644.6M; post-quarter +2 GWh Frontier USA reservation. Demand isn\'t the constraint.', src: '10-Q + Frontier 8-K' },
+      { point: 'Pipeline $24.6B; record backlog $807M (3.4 GWh) at audited Q2; the FPUSA 2 GWh reservation is now converting to firm orders ($100M Blanquilla, Redbird 400 MWh). Demand isn\'t the constraint — revenue quality and margins are.', src: 'Q2\'26 release' },
       { point: 'Frontier USA executing fast — and now CONVERTING: 480 MWh acquired via Bimergen (May 21), then on Jun 18 the first firm purchase order under the 2 GWh reservation (Redbird, 100 MW / 400 MWh, ERCOT, Z3). Reservation→order is the proof the vehicle pulls hardware. Release also cited ~50% of a 1 GWh Bridgelink MSA fulfilled + a 12 GWh ERCOT/PJM/CAISO/MISO pipeline.', src: 'Jun 18 first-PO release · May 21 Bimergen release' },
-      { point: 'Two top-tier financial backers now in Frontier USA: Cerberus ($100M) AND, as of Jun 30, Hudson Bay Capital ($50M into the JV + a registered direct buy of Eos stock), with KKR Capital Markets as structuring agent. DOE + lender consents cleared and the rights offering is priced ($5.481). The JV funding is largely de-risked.', src: 'Jun 30 8-K + 424B5' },
+      { point: 'FRONTIER POWER USA FORMALLY CLOSED (Aug 4, 2026) — the long-open three-way definitive agreement is signed and funded: ~$263M equity raised (Eos + Cerberus + Hudson Bay), exceeding the $250M target, with access to >$1B of deployable project capital and a ~16 GWh pipeline (~5.0 GWh acquired/selected/in diligence, ~1.8 GWh under construction or nearing NTP). This removes the single biggest execution overhang and moves project funding off Eos\' balance sheet.', src: 'Q2\'26 release (Aug 5) · JV close Aug 4' },
+      { point: 'Post-quarter order flow is real: a $100M purchase order for Phase I of the Blanquilla project (Aug 5) plus the Redbird 100 MW / 400 MWh PO, both under FPUSA\'s 2 GWh Capacity Reservation Agreement — the reservation→firm-order conversion the vehicle was built to produce.', src: 'Q2\'26 release · FPUSA PO' },
       { point: 'Cerberus is doubling down on BOTH sides of the Atlantic: $100M into Frontier USA + £159M earlier into Frontier UK. Lock-up extended through YE 2026.', src: 'Frontier releases · PwC UK' },
-      { point: 'Execution on schedule: Line 2 launched commercial production Jun 16, 2026 — ahead of the end-Q2 target — doubling the manufacturing base toward ~4 GWh/yr. Directly rebuts the "can\'t scale manufacturing" bear/lawsuit narrative. Margin trajectory backs it: GM −78% Q1\'26, +157 ppt YoY, +16 ppt sequentially; cube deliveries +5.7×.', src: 'Jun 16 Line 2 release · Q1\'26 release' },
-      { point: 'Demand vectors broadening on four fronts: AI/data-center (TURBINE-X JDA, up to 2 GWh); international (exclusive DACH MSA with CAPAC, Jun 17); DEFENSE — the U.S. Department of War selected Z3 for the "Golden Dome" missile-defense shield (Jul 15), leaning on ~91% domestic content + non-flammable safety; and utility (NYSERDA ISC awards, Q3 2026). Backlog hit a record ~$807M in the prelim Q2.', src: 'TURBINE-X / CAPAC / Golden Dome releases · Q2 prelim' },
+      { point: 'Execution on schedule: Line 2 launched commercial production Jun 16, 2026 — ahead of the end-Q2 target — doubling the manufacturing base toward ~4 GWh/yr. Directly rebuts the "can\'t scale manufacturing" bear/lawsuit narrative. Margin trajectory backs it: GM improved to −71% in Q2 (+132 ppt YoY, +7 ppt sequentially), with a 10% cube cycle-time gain on Line 2 vs Line 1; cube deliveries +207% YoY.', src: 'Q2\'26 release · Jun 16 Line 2 release' },
+      { point: 'Demand vectors broadening on four fronts: AI/data-center (TURBINE-X JDA, up to 2 GWh); international (exclusive DACH MSA with CAPAC, Jun 17); DEFENSE — the U.S. Department of War selected Z3 for the "Golden Dome" missile-defense shield (Jul 15), leaning on ~91% domestic content + non-flammable safety; and utility (NYSERDA ISC awards, Q3 2026). Backlog hit a record $807M (3.4 GWh) in audited Q2, and H1 2026 revenue already exceeded all of FY2025.', src: 'TURBINE-X / CAPAC / Golden Dome releases · Q2\'26' },
       { point: '45X PTC preserved under OBBBA with FEOC guardrails — structurally favors US-content LDES vs. China-linked competitors. $21.4M grant receivable on Q1\'26 BS.', src: 'OBBBA / 10-Q' },
       { point: 'Short interest ~31% of float (~103.5M sh); ~3.4 days to cover. CEO Mastrangelo bought 23,900 shares post-FY25 crash; Director Dimitrief bought 15,000 at $6.04. Asymmetric setup on any clean catalyst.', src: 'Nasdaq SI · Form 4 / OpenInsider' }
     ],
     bear: [
-      { point: 'Q1\'26 operating cash flow was −$119.7M (per cash flow statement — distinct from the −$79.3M operating loss on the P&L). Prelim Q2 cash fell to ~$364M (−$108M QoQ), so at that burn rate runway is ~3 quarters absent new capital. The rights offering added only ~$37.7M; an S-3ASR shelf remains filed. Dilution has been a "when," not "if" — the Aug 5 audited cash figure is the number to watch.', src: '10-Q cash flow + prelim Q2 + S-3ASR' },
-      { point: 'GM still −78%. The path to mgmt\'s implied FY27 GM-positive requires both Line 2 ramping AND Z3 unit economics holding at higher volume. Neither proven yet.', src: 'Q1\'26 release' },
+      { point: 'Q2 REVENUE QUALITY IS WEAK — the headline "$68.8M, +351% YoY" is carried by a single related-party project: $55.0M (80% of revenue) came from a pre-existing Cerberus-financed project that was contributed to FPUSA on Aug 4. Strip it out and third-party revenue was just $13.7M — DOWN ~10% YoY. Broad commercial demand did not grow in the quarter, and ~49% of the record backlog is FPUSA/related-party.', src: 'Q2\'26 earnings release (Aug 5)' },
+      { point: 'GUIDANCE CUT — FY26 revenue top end lowered to $300–350M from $300–400M on the Aug 5 call, tied to the timing of consolidating production into Thorn Hill. Coming a quarter after the Q1 reaffirmation, a ceiling cut plus a manufacturing-footprint consolidation reads as capacity/output being trimmed, not just "efficiency."', src: 'Q2\'26 earnings release (Aug 5)' },
+      { point: 'Cash burn accelerated: H1 2026 operating cash outflow was −$191.8M (vs −$95.0M a year ago); Q2 GAAP operating loss −$83.8M and adjusted EBITDA loss −$71.4M both widened YoY. Total cash $364.1M incl. restricted at Jun 30 ($305.5M unrestricted) — before the ~$37.7M rights offering. The net loss of −$275.7M is mostly non-cash mark-to-market, but the operating burn is real and the runway math is tight.', src: 'Q2\'26 release · cash flow statement' },
+      { point: 'GM still −71% (Q2 audited, better than −78% in Q1 but deeply negative). The path to mgmt\'s implied GM-positive requires the Thorn Hill consolidation to lower conversion cost AND Z3 unit economics to hold at higher volume. Neither proven yet.', src: 'Q2\'26 release' },
       { point: 'Active securities class action (Yung v. Eos, D.N.J. 26-cv-02372) alleging misrepresentation of FY25 production capacity. Settlement risk is material if certified.', src: 'court filings' },
       { point: 'Shares outstanding +18% trailing 12 months. Insiders sold $14M more than they bought over the same window — Stidolph $11.5M, Kroeker (interim CFO) $802k, Silberman (CLO) $739k.', src: 'OpenInsider / Simply Wall St' },
-      { point: 'Customer concentration: 93.3% of Q1\'26 revenue from a handful of >10% customers. One project slip = guidance miss.', src: '10-Q footnotes' },
+      { point: 'Customer concentration got worse, not better: one related-party (FPUSA/Cerberus) project was 80% of Q2 revenue, vs 93.3% from a handful of >10% customers in Q1. The business is still one or two projects away from a guidance miss.', src: 'Q2\'26 release · 10-Q footnotes' },
       { point: 'THE RIGHTS OFFERING LARGELY FAILED — it expired Jul 21 with only a 25.2% take-up, raising ~$37.7M of a possible $150M (settled Aug 3, warrants now listed as EOSEW). Eos still says total Frontier USA funding reached ~$263M via Hudson Bay + Cerberus, but the ~$112M rights shortfall means the JV leans harder on those partners and on Eos\' own balance sheet, and the weak holder participation is itself a low-conviction signal into the Aug 5 print.', src: 'Jul 23 8-K · Aug 3 8-A12B' },
       { point: 'Dilution is stacking regardless of the raise\'s outcome: the Jun 30 deal adds a registered direct to Hudson Bay PLUS ~30M new warrants to Cerberus (20.0M) and HBC (10.0M), on top of whatever the rights offering issues (units = stock + 0.4388 warrant). Non-participating holders absorb it either way.', src: 'Jun 30 8-K + 424B5' },
       { point: 'UK Ofgem was a miss: in the Jun 26 Window 1 minded-to decisions, only 1 of Frontier UK\'s ~16 projects (Frontier Legacy, 65 MW) made the provisional list — ~2.5 GW excluded — and even that one is not confirmed as Eos (vs Invinity) tech. A long-cited bull leg is largely off for Window 1.', src: 'Ofgem Window 1 minded-to decisions' },

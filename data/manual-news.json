@@ -1,5 +1,15 @@
 [
   {
+    "iso": "2026-08-05T11:00:00Z",
+    "date": "2026-08-05",
+    "source": "Eos Energy (8-K / press release)",
+    "headline": "Eos reports audited Q2 2026: revenue $68.8M (80% related-party), FY guidance cut to $300–350M, Frontier Power USA JV closed",
+    "url": "https://investors.eose.com/news-releases/news-release-details/eos-energy-enterprises-reports-second-quarter-2026-financial",
+    "summary": "Total revenue $68.8M (+351% YoY) — but $55.0M (80%) was a single Cerberus-financed related-party project contributed to FPUSA at its Aug 4 close; third-party revenue was $13.7M, down ~10% YoY. Gross margin −71% (gross loss $48.8M); GAAP operating loss −$83.8M; adjusted EBITDA loss −$71.4M; net loss −$275.7M (mostly non-cash mark-to-market). Cash $364.1M incl. restricted at Jun 30; H1 operating burn −$191.8M. Backlog a record $807M (3.4 GWh). Eos cut the top of FY2026 revenue guidance to $300–350M (from $300–400M) and will consolidate manufacturing into Thorn Hill. Positives: FPUSA JV formally closed Aug 4 (~$263M funded, >$1B deployable) and a $100M Blanquilla Phase I PO landed post-quarter.",
+    "tag": "catalyst",
+    "expires": "2026-09-30"
+  },
+  {
     "iso": "2026-08-03T13:00:00Z",
     "date": "2026-08-03",
     "source": "SEC EDGAR (Form 8-A12B)",

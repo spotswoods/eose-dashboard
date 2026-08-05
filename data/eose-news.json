@@ -1,6 +1,6 @@
 {
   "meta": {
-    "_refreshed": "2026-08-03T21:30:07.096Z",
+    "_refreshed": "2026-08-05T11:10:22.316Z",
     "sources": [
       "eose.com (WordPress REST API)",
       "SEC EDGAR submissions API",
@@ -8,12 +8,39 @@
     ],
     "counts": {
       "pressReleases": 20,
-      "secFilings": 316,
-      "manual": 6,
+      "secFilings": 318,
+      "manual": 7,
       "shown": 14
     }
   },
   "items": [
+    {
+      "iso": "2026-08-05T12:00:00Z",
+      "date": "2026-08-05",
+      "source": "SEC EDGAR",
+      "headline": "Quarterly report (10-Q)",
+      "url": "https://www.sec.gov/Archives/edgar/data/1805077/000162828026052906/eose-20260630.htm",
+      "summary": "10-Q",
+      "tag": "sec-filing"
+    },
+    {
+      "iso": "2026-08-05T12:00:00Z",
+      "date": "2026-08-05",
+      "source": "SEC EDGAR",
+      "headline": "Material event (8-K)",
+      "url": "https://www.sec.gov/Archives/edgar/data/1805077/000162828026052903/eose-20260805.htm",
+      "summary": "8-K",
+      "tag": "sec-filing"
+    },
+    {
+      "iso": "2026-08-05T11:00:00Z",
+      "date": "2026-08-05",
+      "source": "Eos Energy (8-K / press release)",
+      "headline": "Eos reports audited Q2 2026: revenue $68.8M (80% related-party), FY guidance cut to $300–350M, Frontier Power USA JV closed",
+      "url": "https://investors.eose.com/news-releases/news-release-details/eos-energy-enterprises-reports-second-quarter-2026-financial",
+      "summary": "Total revenue $68.8M (+351% YoY) — but $55.0M (80%) was a single Cerberus-financed related-party project contributed to FPUSA at its Aug 4 close; third-party revenue was $13.7M, down ~10% YoY. Gross margin −71% (gross loss $48.8M); GAAP operating loss −$83.8M; adjusted EBITDA loss −$71.4M; net loss −$275.7M (mostly non-cash mark-to-market). Cash $364.1M incl. restricted at Jun 30; H1 operating burn −$191.8M. Backlog a record $807M (3.4 GWh). Eos cut the top of FY2026 revenue guidance to $300–350M (from $300–400M) and will consolidate manufacturing into Thorn Hill. Positives: FPUSA JV formally closed Aug 4 (~$263M funded, >$1B deployable) and a $100M Blanquilla Phase I PO landed post-quarter.",
+      "tag": "catalyst"
+    },
     {
       "iso": "2026-08-03T13:00:00Z",
       "date": "2026-08-03",
@@ -111,33 +138,6 @@
       "headline": "Eos Energy Announces a Virtual Investor Presentation for Rights Offering",
       "url": "https://www.eose.com/eos-energy-announces-a-virtual-investor-presentation-for-rights-offering/",
       "summary": "EDISON, N.J., July 09, 2026 (GLOBE NEWSWIRE) — Eos Energy Enterprises, Inc. (NASDAQ: EOSE) (“Eos” or the “Company”), America’s leading innovator in designing, manufacturing, and providing zinc-based long duration energy storage (LDES)…",
-      "tag": "catalyst"
-    },
-    {
-      "iso": "2026-07-07T12:30:00Z",
-      "date": "2026-07-07",
-      "source": "Frontier Power USA (press release)",
-      "headline": "Frontier Power USA Converts 920 MWh Battery Storage Project Portfolio Under Stella Strategic Framework",
-      "url": "https://www.globenewswire.com/news-release/2026/07/07/3323096/0/en/Frontier-Power-USA-Converts-920-MWh-Battery-Storage-Project-Portfolio-Under-Stella-Strategic-Framework.html",
-      "summary": "FPUSA converted a 920 MWh portfolio (Blanquilla, Aransas Pass, Nash, Wallis) under its Stella Energy Solutions framework — further reservation-to-pipeline conversion in ERCOT. Total FPUSA pipeline cited at ~16 GWh (~2.7 GWh high-probability); closing contingent on the rights-offering funding.",
-      "tag": "catalyst"
-    },
-    {
-      "iso": "2026-07-02T12:00:00Z",
-      "date": "2026-07-02",
-      "source": "SEC EDGAR",
-      "headline": "Material event (8-K)",
-      "url": "https://www.sec.gov/Archives/edgar/data/1805077/000095010326010023/dp249395_8k.htm",
-      "summary": "FORM 8-K",
-      "tag": "sec-filing"
-    },
-    {
-      "iso": "2026-07-02T10:37:10",
-      "date": "2026-07-02",
-      "source": "Eos Energy (press release)",
-      "headline": "Eos Energy Announces Commencement of Rights Offering",
-      "url": "https://www.eose.com/eos-energy-announces-commencement-of-rights-offering/",
-      "summary": "EDISON, N.J., July 02, 2026 (GLOBE NEWSWIRE) — Eos Energy Enterprises, Inc. (NASDAQ: EOSE) (“Eos” or the “Company”), America’s leading innovator in designing, manufacturing, and providing zinc-based long duration energy storage (LDES)…",
       "tag": "catalyst"
     }
   ]
