@@ -1,5 +1,23 @@
 [
  {
+  "updatedAt": "2026-08-05T22:20:00+02:00",
+  "session": "post-close",
+  "headline": "Q2 sell-the-news: EOSE falls ~10% to $3.93 as guidance cut and revenue quality weigh",
+  "takeaway": "EOSE closed ~$3.93 (−9.7%) on Aug 5 as the Q2 call confirmed pre-open concerns: guidance tightened to $300–$350M and 80% of Q2 revenue was a single related-party project. Golden Dome DoD contract and CAPAC Energy DACH deal are genuine positives; −$191.8M H1 OCF burn and −71% gross margin are the key H2 overhangs.",
+  "bullets": [
+   "<b>Price action:</b> EOSE closed ~$3.93, −9.7% vs Aug 4’s $4.35 close — textbook sell-the-news on elevated volume; the pre-earnings run-in had fully priced good news that only partially materialized.",
+   "<b>Call framing:</b> CEO Mastrangelo: “converting demand into profitable growth.” Market focused on the $50M guidance ceiling cut (now $300–$350M) and −71% gross margin; adj. EBITDA loss widened to −$71.4M vs −$51.6M YoY.",
+   "<b>Golden Dome DoD:</b> Eos Z3™ selected for a critical U.S. defense installation under the Golden Dome for America initiative (announced Jul 15, confirmed in Q2 release) — structured to scale; national security angle but no specific revenue figure disclosed.",
+   "<b>Cash runway:</b> $305.5M unrestricted at Jun 30; −$191.8M H1 OCF burn implies <2-quarter horizon at that rate; FPUSA $263M equity raised and DOE loan draw are the key bridge items management must quantify in H2.",
+   "<b>Setup Thu Aug 6:</b> Watch analyst PT revisions (consensus ~$7.89 avg, Buy, vs $3.93); key debate: Thorn Hill consolidation timeline, H2 revenue back-weighting vs the $300–$350M guide, and non-FPUSA backlog conversion."
+  ],
+  "price": {
+   "last": 3.93,
+   "changePct": -9.66,
+   "note": "close · Wed Aug 5 2026 · sell-the-news vs $4.35 (Aug 4) · Quiver Quantitative / web sources (delayed)"
+  }
+ },
+ {
   "updatedAt": "2026-08-05T14:30:00+02:00",
   "session": "pre-open",
   "headline": "Q2: revenue \"record\" but 80% related-party, FY guidance top end cut to $350M, FPUSA JV closes — the market’s \"bad\" read is mostly fair",
@@ -545,25 +563,6 @@
    "last": 6.38,
    "changePct": null,
    "note": "Latest dashboard quote (Jun 15 close $6.38, +5.3%) · Line 2 news broke pre-market Jun 16 — see live ticker above for the current print"
-  }
- },
- {
-  "updatedAt": "2026-06-11T22:50:00+02:00",
-  "session": "post-close",
-  "headline": "Rights offering record date set: July 1 — the $150M raise is formally in motion",
-  "takeaway": "After the Jun 11 close (~4:15 pm ET), Eos set the record date for the rights offering that funds its Frontier Power USA contribution: holders as of July 1 (5 pm ET) receive rights on July 2 to buy units of common stock + warrants at a ~10–20% discount to a 15–30 day VWAP. The dilution overhang now has a schedule — the prospectus supplement with the final ratio and price is the next gate.",
-  "bullets": [
-   "Record date July 1, 2026 (5:00 pm ET); rights distributed July 2. Eligible: common holders plus warrant holders from the Apr/May 2023, Dec 2023 and Nov 2025 issuances.",
-   "Unit structure: common stock + warrants. Subscription price at an approximate 10–20% discount to a 15–30 day VWAP ending the trading day before the record date; warrants valued at ~25–50% of the offering amount (Black-Scholes).",
-   "Over-subscription privilege confirmed — holders who exercise in full can bid for unsubscribed units, supporting the ~$150M target even if participation is uneven.",
-   "Proceeds fund Eos' initial Class B contribution to Frontier Power USA (Cerberus' $100M anchor already committed). This was the last company-controlled step after the June 3 AGM share authorization.",
-   "Mechanics come via a prospectus supplement under the existing S-3 shelf — final ratio, price and rights transferability are set at offering commencement; completion remains conditional (including consents). The 8-K had not hit EDGAR as of ~4:40 pm ET.",
-   "Watch next: the prospectus supplement / 8-K on EDGAR, JPM Energy & Natural Resources Conference Jun 23 (management color on the offering), and Line 2 first production target Jun 30 — three offering-relevant events inside three weeks."
-  ],
-  "price": {
-   "last": 6.07,
-   "changePct": null,
-   "note": "Jun 11 close (dashboard quote feed) · record date announced ~4:15 pm ET, after the close"
   }
  }
 ]

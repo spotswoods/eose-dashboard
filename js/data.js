@@ -30,25 +30,24 @@ window.EOSE_DATA = {
   // Refreshed by /equity-research:morning-note via a scheduled task in Cowork.
   // session = 'pre-open' (Swedish AM, ~07:00 CEST) | 'post-close' (Swedish PM, ~22:30 CEST)
   morningNote: {
-    updatedAt: '2026-08-05T14:30:00+02:00',
-    session:   'pre-open',
-    headline:  'Q2: revenue "record" but 80% related-party, FY guidance top end cut to $350M, FPUSA JV closes \u2014 the market\u2019s "bad" read is mostly fair',
-    takeaway:  'The audited Q2 print is softer than the Jul 15 preliminary looked. Total revenue was $68.8M (+351% YoY) \u2014 but $55.0M of that (80%) came from a single Cerberus-financed related-party project that was contributed to FPUSA on Aug 4; third-party revenue was just $13.7M, DOWN 10% YoY. Eos cut the top of FY26 guidance to $300\u2013$350M (from $300\u2013$400M) and will consolidate manufacturing into Thorn Hill. Offsetting the gloom: the Frontier Power USA JV formally closed Aug 4 with ~$263M funded, and a $100M Blanquilla PO landed post-quarter. After a +16% run-up into the print, a negative premarket reaction is a reasonable "sell-the-news."',
+    updatedAt: '2026-08-05T22:20:00+02:00',
+    session:   'post-close',
+    headline:  'Q2 sell-the-news: EOSE falls ~10% to $3.93 as guidance cut and revenue quality weigh',
+    takeaway:  'EOSE closed ~$3.93 (\u22129.7%) on Aug 5 as the Q2 call confirmed pre-open concerns: guidance tightened to $300\u2013$350M and 80% of Q2 revenue was a single related-party project. Golden Dome DoD contract and CAPAC Energy DACH deal are genuine positives; \u2212$191.8M H1 OCF burn and \u221271% gross margin are the key H2 overhangs.',
     bullets: [
-      '<b>Revenue quality is the story:</b> total revenue $68.8M (+351% YoY) but <b>$55.0M (80%) was a single related-party project</b> (Cerberus-financed, contributed to FPUSA on Aug 4). Strip it out and <b>third-party revenue was $13.7M, down ~10% YoY</b> ($15.2M in Q2\u201925). The headline growth is real cash but not broad commercial demand \u2014 this is the number behind the negative reaction.',
-      '<b>Guidance cut:</b> FY2026 revenue tightened to <b>$300\u2013$350M from $300\u2013$400M</b> \u2014 the floor held but the ceiling came down $50M, tied to the timing of consolidating production into the Thorn Hill facility. Management frames the consolidation as a lower-cost footprint; the market can also read it as capacity being rationalized.',
-      '<b>Losses: optically huge, mostly non-cash.</b> Net loss attributable was <b>\u2212$275.7M</b>, but that is driven by mark-to-market swings on Cerberus warrants/derivatives tied to the quarter-end share price \u2014 not operations. The cleaner reads: <b>GAAP operating loss \u2212$83.8M</b> (vs \u2212$63.8M YoY), <b>gross margin \u221271%</b> (better than Q1\u2019s \u221278% but still deep), and <b>adjusted EBITDA loss \u2212$71.4M</b> (wider than \u2212$51.6M YoY).',
-      '<b>Cash burn accelerated:</b> H1 operating cash outflow was <b>\u2212$191.8M</b> (vs \u2212$95.0M a year ago); total cash was <b>$364.1M</b> incl. restricted at Jun 30 ($305.5M unrestricted). That is before the ~$37.7M rights offering (settled Aug 3) and July financings, but the burn rate is the runway question the Aug 5 call must address.',
-      '<b>The genuine positives:</b> the <b>Frontier Power USA JV formally closed Aug 4</b> (the long-open definitive agreement) with ~$263M raised and >$1B of deployable project capital; a <b>$100M Blanquilla Phase I purchase order</b> landed post-quarter; backlog is a record $807M (3.4 GWh); H1 revenue already exceeded all of FY2025; and Line 2 is running with a 10% cycle-time gain. Note ~49% of backlog is FPUSA/related-party.',
-      '<b>Price into it:</b> EOSE closed <b>$4.35 (+16%) on Aug 4</b>, a run-up into the print; the initial premarket reaction to the results is negative. Treat any intraday figure as developing until the close \u2014 the Aug 5 call (8:30am ET) and how management frames the guidance cut + Thorn Hill consolidation will set the tone.'
+      '<b>Price action:</b> EOSE closed ~$3.93, \u22129.7% vs Aug 4\u2019s $4.35 close \u2014 textbook sell-the-news on elevated volume; the pre-earnings run-in had fully priced good news that only partially materialized.',
+      '<b>Call framing:</b> CEO Mastrangelo: \u201cconverting demand into profitable growth.\u201d Market focused on the $50M guidance ceiling cut (now $300\u2013$350M) and \u221271% gross margin; adj. EBITDA loss widened to \u2212$71.4M vs \u2212$51.6M YoY.',
+      '<b>Golden Dome DoD:</b> Eos Z3\u2122 selected for a critical U.S. defense installation under the Golden Dome for America initiative (announced Jul 15, confirmed in Q2 release) \u2014 structured to scale; national security angle but no specific revenue figure disclosed.',
+      '<b>Cash runway:</b> $305.5M unrestricted at Jun 30; \u2212$191.8M H1 OCF burn implies <2-quarter horizon at that rate; FPUSA $263M equity raised and DOE loan draw are the key bridge items management must quantify in H2.',
+      '<b>Setup Thu Aug 6:</b> Watch analyst PT revisions (consensus ~$7.89 avg, Buy, vs $3.93); key debate: Thorn Hill consolidation timeline, H2 revenue back-weighting vs the $300\u2013$350M guide, and non-FPUSA backlog conversion.'
     ],
-    price:   { last: 4.35, changePct: 16.00, note: 'prior close \u00b7 Tue Aug 4 2026 (run-up into the print) \u00b7 vs $3.75 Aug 3 \u00b7 Finnhub; Aug 5 reaction developing' },
+    price:   { last: 3.93, changePct: -9.66, note: 'close \u00b7 Wed Aug 5 2026 \u00b7 sell-the-news vs $4.35 (Aug 4) \u00b7 Quiver Quantitative / web sources (delayed)' },
     sources: [
-      { label: 'Q2 2026 results 8-K + earnings release (Aug 5, 2026)', url: 'https://www.sec.gov/Archives/edgar/data/1805077/000162828026052903/eoseq2fy26earningsreleas.htm' },
+      { label: 'Q2 2026 earnings release \u2014 GlobeNewswire', url: 'https://www.globenewswire.com/news-release/2026/08/05/3339134/0/en/Eos-Energy-Enterprises-Reports-Second-Quarter-2026-Financial-Results-and-Tightens-Full-Year-Revenue-Guidance.html' },
       { label: 'Eos IR \u2014 Q2 2026 financial results', url: 'https://investors.eose.com/news-releases/news-release-details/eos-energy-enterprises-reports-second-quarter-2026-financial' },
-      { label: 'Q2 2026 8-K cover (Item 2.02)', url: 'https://www.sec.gov/Archives/edgar/data/1805077/000162828026052903/eose-20260805.htm' },
-      { label: 'EOSE quote \u2014 StockAnalysis', url: 'https://stockanalysis.com/stocks/eose/' },
-      { label: 'EOSE analyst ratings \u2014 StockAnalysis', url: 'https://stockanalysis.com/stocks/eose/forecast/' }
+      { label: 'Golden Dome contract \u2014 Eos IR', url: 'https://investors.eose.com/news-releases/news-release-details/eos-energy-enterprises-selected-deliver-mission-ready-power' },
+      { label: 'EOSE Q2 2026 earnings \u2014 Quiver Quantitative', url: 'https://www.quiverquant.com/news/EOS+ENERGY+ENTERPRISES+(%24EOSE)+Releases+Q2+2026+Earnings' },
+      { label: 'EOSE analyst forecast \u2014 StockAnalysis', url: 'https://stockanalysis.com/stocks/eose/forecast/' }
     ]
   },
 
