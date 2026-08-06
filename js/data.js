@@ -30,24 +30,24 @@ window.EOSE_DATA = {
   // Refreshed by /equity-research:morning-note via a scheduled task in Cowork.
   // session = 'pre-open' (Swedish AM, ~07:00 CEST) | 'post-close' (Swedish PM, ~22:30 CEST)
   morningNote: {
-    updatedAt: '2026-08-05T22:20:00+02:00',
+    updatedAt: '2026-08-06T22:15:00+02:00',
     session:   'post-close',
-    headline:  'Q2 sell-the-news: EOSE falls ~10% to $3.93 as guidance cut and revenue quality weigh',
-    takeaway:  'EOSE closed ~$3.93 (\u22129.7%) on Aug 5 as the Q2 call confirmed pre-open concerns: guidance tightened to $300\u2013$350M and 80% of Q2 revenue was a single related-party project. Golden Dome DoD contract and CAPAC Energy DACH deal are genuine positives; \u2212$191.8M H1 OCF burn and \u221271% gross margin are the key H2 overhangs.',
+    headline:  'EOSE bounces 3% to $3.94 as PT cuts land; TD Cowen and Roth slash targets to $4',
+    takeaway:  'EOSE reclaimed $3.94 (+3.1% vs Aug 5\u2019s $3.82 post-earnings low) on near-average volume despite a wave of sell-side PT cuts. TD Cowen halved its target to $4 from $8; Roth Capital cut to $4 from $6; Stifel trimmed to $9 from $10. Truist reaffirmed Buy/$7. AH flat at $3.95.',
     bullets: [
-      '<b>Price action:</b> EOSE closed ~$3.93, \u22129.7% vs Aug 4\u2019s $4.35 close \u2014 textbook sell-the-news on elevated volume; the pre-earnings run-in had fully priced good news that only partially materialized.',
-      '<b>Call framing:</b> CEO Mastrangelo: \u201cconverting demand into profitable growth.\u201d Market focused on the $50M guidance ceiling cut (now $300\u2013$350M) and \u221271% gross margin; adj. EBITDA loss widened to \u2212$71.4M vs \u2212$51.6M YoY.',
-      '<b>Golden Dome DoD:</b> Eos Z3\u2122 selected for a critical U.S. defense installation under the Golden Dome for America initiative (announced Jul 15, confirmed in Q2 release) \u2014 structured to scale; national security angle but no specific revenue figure disclosed.',
-      '<b>Cash runway:</b> $305.5M unrestricted at Jun 30; \u2212$191.8M H1 OCF burn implies <2-quarter horizon at that rate; FPUSA $263M equity raised and DOE loan draw are the key bridge items management must quantify in H2.',
-      '<b>Setup Thu Aug 6:</b> Watch analyst PT revisions (consensus ~$7.89 avg, Buy, vs $3.93); key debate: Thorn Hill consolidation timeline, H2 revenue back-weighting vs the $300\u2013$350M guide, and non-FPUSA backlog conversion.'
+      '<b>Price action:</b> Closed $3.94 (+$0.12, +3.1%) on 23.3M shares (vs 22.1M avg) \u2014 technical stabilisation from Aug 5\u2019s $3.82 post-earnings close; day range $3.61\u2013$4.23. AH $3.95 (+0.25%), no catalyst.',
+      '<b>Sell-side PT cuts:</b> TD Cowen lowered to $4 from $8; Roth Capital to $4 from $6; Stifel to $9 from $10 \u2014 all citing Q2 EPS miss (\u2212$1.20 vs \u2212$0.19 est) and FPUSA revenue concentration risk. Truist reaffirmed Buy/$7 (initiated Jul 13).',
+      '<b>Q2 quality concerns:</b> ~80% of Q2\u2019s $68.8M revenue traced to a single FPUSA-related project; gross margin \u221271%; adj. EBITDA loss widened to \u2212$71.4M. Record backlog $807M (+25% QoQ) and $375M FPUSA equity raised are the bull offsets.',
+      '<b>FPUSA / capital floor:</b> Rights offering closed Jul 23 raising >$250M (Cerberus + Hudson Bay), bringing total FPUSA equity to ~$375M above the original $263M target. DOE loan draw timing and Thorn Hill ramp pace are next.',
+      '<b>Setup into Fri Aug 7:</b> No catalysts scheduled; watch for additional analyst revisions, DOE loan draw news, and any FPUSA Blanquilla Phase I update. Consensus PT now stale \u2014 $4 floor cuts reset the near-term debate.'
     ],
-    price:   { last: 3.93, changePct: -9.66, note: 'close \u00b7 Wed Aug 5 2026 \u00b7 sell-the-news vs $4.35 (Aug 4) \u00b7 Quiver Quantitative / web sources (delayed)' },
+    price:   { last: 3.94, changePct: 3.14, note: 'close \u00b7 Thu Aug 6 2026 \u00b7 bounce from $3.82 (Aug 5) \u00b7 public.com / web sources (delayed)' },
     sources: [
+      { label: 'EOSE after-hours history \u2014 public.com', url: 'https://public.com/stocks/eose/after-hours' },
       { label: 'Q2 2026 earnings release \u2014 GlobeNewswire', url: 'https://www.globenewswire.com/news-release/2026/08/05/3339134/0/en/Eos-Energy-Enterprises-Reports-Second-Quarter-2026-Financial-Results-and-Tightens-Full-Year-Revenue-Guidance.html' },
-      { label: 'Eos IR \u2014 Q2 2026 financial results', url: 'https://investors.eose.com/news-releases/news-release-details/eos-energy-enterprises-reports-second-quarter-2026-financial' },
-      { label: 'Golden Dome contract \u2014 Eos IR', url: 'https://investors.eose.com/news-releases/news-release-details/eos-energy-enterprises-selected-deliver-mission-ready-power' },
-      { label: 'EOSE Q2 2026 earnings \u2014 Quiver Quantitative', url: 'https://www.quiverquant.com/news/EOS+ENERGY+ENTERPRISES+(%24EOSE)+Releases+Q2+2026+Earnings' },
-      { label: 'EOSE analyst forecast \u2014 StockAnalysis', url: 'https://stockanalysis.com/stocks/eose/forecast/' }
+      { label: 'EOSE analyst forecasts \u2014 MarketBeat', url: 'https://www.marketbeat.com/stocks/NASDAQ/EOSE/forecast/' },
+      { label: 'EOSE analyst forecast \u2014 StockAnalysis', url: 'https://stockanalysis.com/stocks/eose/forecast/' },
+      { label: 'Eos IR \u2014 news releases', url: 'https://investors.eose.com/news-releases' }
     ]
   },
 
