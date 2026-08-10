@@ -30,23 +30,23 @@ window.EOSE_DATA = {
   // Refreshed by /equity-research:morning-note via a scheduled task in Cowork.
   // session = 'pre-open' (Swedish AM, ~07:00 CEST) | 'post-close' (Swedish PM, ~22:30 CEST)
   morningNote: {
-    updatedAt: '2026-08-06T22:15:00+02:00',
+    updatedAt: '2026-08-10T22:20:00+02:00',
     session:   'post-close',
-    headline:  'EOSE bounces 3% to $3.94 as PT cuts land; TD Cowen and Roth slash targets to $4',
-    takeaway:  'EOSE reclaimed $3.94 (+3.1% vs Aug 5\u2019s $3.82 post-earnings low) on near-average volume despite a wave of sell-side PT cuts. TD Cowen halved its target to $4 from $8; Roth Capital cut to $4 from $6; Stifel trimmed to $9 from $10. Truist reaffirmed Buy/$7. AH flat at $3.95.',
+    headline:  'EOSE slides -2.6% to $4.05 on avg volume \u2014 quiet Monday, no new catalysts',
+    takeaway:  'EOSE drifted lower Monday, closing $4.05 (-2.6% vs Fri\'s confirmed $4.16) on 15.8M shares (\u2248 15.9M avg). No new SEC filings, IR releases, or analyst actions today. Market continues to digest the post-Q2 sell-side PT reset; AH ticked up to $4.09 on thin flow. Setup into Tuesday is quiet.',
     bullets: [
-      '<b>Price action:</b> Closed $3.94 (+$0.12, +3.1%) on 23.3M shares (vs 22.1M avg) \u2014 technical stabilisation from Aug 5\u2019s $3.82 post-earnings close; day range $3.61\u2013$4.23. AH $3.95 (+0.25%), no catalyst.',
-      '<b>Sell-side PT cuts:</b> TD Cowen lowered to $4 from $8; Roth Capital to $4 from $6; Stifel to $9 from $10 \u2014 all citing Q2 EPS miss (\u2212$1.20 vs \u2212$0.19 est) and FPUSA revenue concentration risk. Truist reaffirmed Buy/$7 (initiated Jul 13).',
-      '<b>Q2 quality concerns:</b> ~80% of Q2\u2019s $68.8M revenue traced to a single FPUSA-related project; gross margin \u221271%; adj. EBITDA loss widened to \u2212$71.4M. Record backlog $807M (+25% QoQ) and $375M FPUSA equity raised are the bull offsets.',
-      '<b>FPUSA / capital floor:</b> Rights offering closed Jul 23 raising >$250M (Cerberus + Hudson Bay), bringing total FPUSA equity to ~$375M above the original $263M target. DOE loan draw timing and Thorn Hill ramp pace are next.',
-      '<b>Setup into Fri Aug 7:</b> No catalysts scheduled; watch for additional analyst revisions, DOE loan draw news, and any FPUSA Blanquilla Phase I update. Consensus PT now stale \u2014 $4 floor cuts reset the near-term debate.'
+      '<b>Price action (Mon Aug 10):</b> Opened $4.14, traded $3.99\u2013$4.18, settled $4.05 (-$0.11, -2.6% vs Fri $4.16) on 15.8M shares (\u2248 avg). AH: $4.09 (+0.99%, range $4.04\u2013$4.09). No single driver \u2014 likely residual gravity from last week\'s analyst PT cuts.',
+      '<b>No new SEC filings or IR news today:</b> Nothing filed on EDGAR Aug 10; most recent is the Aug 5 Q2 8-K. Eos IR page confirms no release since Aug 5. No Form 4 insider activity identified.',
+      '<b>Post-Q2 PT cuts (Aug 5\u20136):</b> Stifel $9 Buy (\u2193 from $10), TD Cowen $4 Hold (\u2193 from $8), Roth $4 Neutral (\u2193 from $6). Needham $11 Buy / JPMorgan $6 Neutral / Truist $7 Buy unchanged. Street avg ~$7 across 11 analysts \u2014 stock at $4.05 implies ~73% upside to mean PT.',
+      '<b>FPUSA Blanquilla + Golden Dome:</b> $100M PO for Phase\u00a0I of 800\u00a0MWh Blanquilla BESS (FPUSA) booked post-Q2; $263M equity raise closed Aug 5, 1.8\u00a0GWh in pipeline. Jul\u00a015 Golden Dome defense contract adds DOD credibility \u2014 commercial terms not yet disclosed.',
+      '<b>Setup into Tue Aug 11:</b> No scheduled catalysts. Watches: DOE loan draw announcement, FPUSA Blanquilla construction timeline, Ofgem LDES Window\u00a01 binding awards (~Sep\u00a022 est.). Support: $3.99 (today\'s low) / $3.11 (52-wk low). Resistance: $4.16 (Fri close).'
     ],
-    price:   { last: 3.94, changePct: 3.14, note: 'close \u00b7 Thu Aug 6 2026 \u00b7 bounce from $3.82 (Aug 5) \u00b7 public.com / web sources (delayed)' },
+    price:   { last: 4.05, changePct: -2.64, note: 'close \u00b7 Mon Aug 10 2026 \u00b7 Public.com/Xignite confirmed 4:30\u202fPM ET' },
     sources: [
-      { label: 'EOSE after-hours history \u2014 public.com', url: 'https://public.com/stocks/eose/after-hours' },
-      { label: 'Q2 2026 earnings release \u2014 GlobeNewswire', url: 'https://www.globenewswire.com/news-release/2026/08/05/3339134/0/en/Eos-Energy-Enterprises-Reports-Second-Quarter-2026-Financial-Results-and-Tightens-Full-Year-Revenue-Guidance.html' },
-      { label: 'EOSE analyst forecasts \u2014 MarketBeat', url: 'https://www.marketbeat.com/stocks/NASDAQ/EOSE/forecast/' },
-      { label: 'EOSE analyst forecast \u2014 StockAnalysis', url: 'https://stockanalysis.com/stocks/eose/forecast/' },
+      { label: 'EOSE after-hours history \u2014 Public.com', url: 'https://public.com/stocks/eose/after-hours' },
+      { label: 'EOSE intraday quote \u2014 StockAnalysis', url: 'https://stockanalysis.com/stocks/eose/' },
+      { label: 'Post-Q2 analyst PT cuts \u2014 TipRanks/TheFly', url: 'https://www.tipranks.com/news/the-fly/eos-energy-price-target-lowered-to-4-from-8-at-td-cowen-thefly-news' },
+      { label: 'FPUSA Blanquilla $263M close \u2014 GlobeNewsWire', url: 'https://www.globenewswire.com/news-release/2026/08/05/3339178/0/en/frontier-power-usa-closes-263-million-capital-raise-and-advances-800-mwh-blanquilla-bess-project.html' },
       { label: 'Eos IR \u2014 news releases', url: 'https://investors.eose.com/news-releases' }
     ]
   },
