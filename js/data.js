@@ -30,24 +30,25 @@ window.EOSE_DATA = {
   // Refreshed by /equity-research:morning-note via a scheduled task in Cowork.
   // session = 'pre-open' (Swedish AM, ~07:00 CEST) | 'post-close' (Swedish PM, ~22:30 CEST)
   morningNote: {
-    updatedAt: '2026-08-10T22:20:00+02:00',
+    updatedAt: '2026-08-11T22:20:00+02:00',
     session:   'post-close',
-    headline:  'EOSE slides -2.6% to $4.05 on avg volume \u2014 quiet Monday, no new catalysts',
-    takeaway:  'EOSE drifted lower Monday, closing $4.05 (-2.6% vs Fri\'s confirmed $4.16) on 15.8M shares (\u2248 15.9M avg). No new SEC filings, IR releases, or analyst actions today. Market continues to digest the post-Q2 sell-side PT reset; AH ticked up to $4.09 on thin flow. Setup into Tuesday is quiet.',
+    headline:  'EOSE rebounds +3.1% to $3.94 \u2014 below-avg volume, digesting post-Q2 gains',
+    takeaway:  'EOSE gained +3.1% to close $3.94 on 23.2M shares (82% of avg) as the market continued digesting last week\'s Q2 beat: revenue $68.8M (+351% YoY), backlog $807M, guidance tightened to $300\u2013$350M. No new EDGAR filings today; FPUSA pipeline advancing with 1.8\u00a0GWh of selected/closed projects.',
     bullets: [
-      '<b>Price action (Mon Aug 10):</b> Opened $4.14, traded $3.99\u2013$4.18, settled $4.05 (-$0.11, -2.6% vs Fri $4.16) on 15.8M shares (\u2248 avg). AH: $4.09 (+0.99%, range $4.04\u2013$4.09). No single driver \u2014 likely residual gravity from last week\'s analyst PT cuts.',
-      '<b>No new SEC filings or IR news today:</b> Nothing filed on EDGAR Aug 10; most recent is the Aug 5 Q2 8-K. Eos IR page confirms no release since Aug 5. No Form 4 insider activity identified.',
-      '<b>Post-Q2 PT cuts (Aug 5\u20136):</b> Stifel $9 Buy (\u2193 from $10), TD Cowen $4 Hold (\u2193 from $8), Roth $4 Neutral (\u2193 from $6). Needham $11 Buy / JPMorgan $6 Neutral / Truist $7 Buy unchanged. Street avg ~$7 across 11 analysts \u2014 stock at $4.05 implies ~73% upside to mean PT.',
-      '<b>FPUSA Blanquilla + Golden Dome:</b> $100M PO for Phase\u00a0I of 800\u00a0MWh Blanquilla BESS (FPUSA) booked post-Q2; $263M equity raise closed Aug 5, 1.8\u00a0GWh in pipeline. Jul\u00a015 Golden Dome defense contract adds DOD credibility \u2014 commercial terms not yet disclosed.',
-      '<b>Setup into Tue Aug 11:</b> No scheduled catalysts. Watches: DOE loan draw announcement, FPUSA Blanquilla construction timeline, Ofgem LDES Window\u00a01 binding awards (~Sep\u00a022 est.). Support: $3.99 (today\'s low) / $3.11 (52-wk low). Resistance: $4.16 (Fri close).'
+      '<b>Price action (Tue Aug 11):</b> Opened $3.72, traded $3.61\u2013$4.23, closed $3.94 (+$0.12, +3.14% vs Aug\u00a010\'s $3.82) on 23.2M shares (82% of 28.2M avg). AH: $3.93 (-0.15%). Quiet session \u2014 no single catalyst, post-Q2 consolidation continues.',
+      '<b>No new EDGAR filings (Aug 11):</b> Nothing filed today; most recent is Q2 8-K (Aug 5). Simply Wall St published three EOSE valuation pieces today: "bargain on cash flow but fully priced on sales" \u2014 no new data, pure digest.',
+      '<b>Q2 recap (Aug 5):</b> Record revenue $68.8M (+351% YoY), backlog $807M (+25% QoQ), 2026 guidance tightened to $300\u2013$350M. Manufacturing consolidation to Thorn Hill targets gross margin improvement in H2 2026; EPS loss narrowed.',
+      '<b>FPUSA pipeline 1.8\u00a0GWh:</b> $263M capital raise closed Aug 5; $100M PO for 800\u00a0MWh Blanquilla Phase\u00a01; 400\u00a0MWh Wildfire BESS selected; Stella Energy 920\u00a0MWh (4 projects) selected. Remaining Texas\u00a010 conversions expected Q3 2026.',
+      '<b>Sell-side post-Q2 (Aug 5\u20136):</b> Stifel Buy $9 (\u2193$10), TD Cowen Hold $4 (\u2193$8), Roth Neutral $4 (\u2193$6). Consensus avg ~$7.89 (11 analysts) vs $3.94 stock \u2014 implies ~100% upside to mean PT.',
+      '<b>Setup into Wed Aug 12:</b> No catalysts scheduled. Watch: Q3 FPUSA Texas\u00a010 conversions, DOE loan draw, Ofgem LDES Window\u00a01 (~Sep 2026). Support $3.61 (today\'s low) / $3.11 (52-wk low). Next earnings est. Nov\u00a04, 2026.'
     ],
-    price:   { last: 4.05, changePct: -2.64, note: 'close \u00b7 Mon Aug 10 2026 \u00b7 Public.com/Xignite confirmed 4:30\u202fPM ET' },
+    price:   { last: 3.94, changePct: 3.14, note: 'close \u00b7 Tue Aug 11 2026 \u00b7 Yahoo Finance (4:00\u202fPM ET)' },
     sources: [
-      { label: 'EOSE after-hours history \u2014 Public.com', url: 'https://public.com/stocks/eose/after-hours' },
-      { label: 'EOSE intraday quote \u2014 StockAnalysis', url: 'https://stockanalysis.com/stocks/eose/' },
-      { label: 'Post-Q2 analyst PT cuts \u2014 TipRanks/TheFly', url: 'https://www.tipranks.com/news/the-fly/eos-energy-price-target-lowered-to-4-from-8-at-td-cowen-thefly-news' },
-      { label: 'FPUSA Blanquilla $263M close \u2014 GlobeNewsWire', url: 'https://www.globenewswire.com/news-release/2026/08/05/3339178/0/en/frontier-power-usa-closes-263-million-capital-raise-and-advances-800-mwh-blanquilla-bess-project.html' },
-      { label: 'Eos IR \u2014 news releases', url: 'https://investors.eose.com/news-releases' }
+      { label: 'EOSE quote \u2014 Yahoo Finance', url: 'https://finance.yahoo.com/quote/EOSE/' },
+      { label: 'Eos Energy Q2 2026 earnings \u2014 investors.eose.com', url: 'https://investors.eose.com/news-releases/news-release-details/eos-energy-enterprises-reports-second-quarter-2026-financial' },
+      { label: 'FPUSA Blanquilla $263M close \u2014 GlobeNewswire', url: 'https://www.globenewswire.com/news-release/2026/08/05/3339178/0/en/Frontier-Power-USA-Closes-263-Million-Capital-Raise-and-Advances-800-MWh-Blanquilla-BESS-Project.html' },
+      { label: 'FPUSA Wildfire 400\u00a0MWh selected \u2014 MarketScreener', url: 'https://www.marketscreener.com/news/frontier-power-usa-selects-400-mwh-wildfire-bess-project-from-bimergen-energy-bringing-closed-and-s-ce7f5eddd08ff721' },
+      { label: 'EOSE SEC filings \u2014 Nasdaq', url: 'https://www.nasdaq.com/market-activity/stocks/eose/sec-filings' }
     ]
   },
 
