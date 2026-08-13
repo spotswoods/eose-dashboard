@@ -1,5 +1,43 @@
 [
  {
+  "updatedAt": "2026-08-13T22:30:00+02:00",
+  "session": "post-close",
+  "headline": "EOSE flat ~$4.24 on quiet Thursday — no filings, week-long $4.14–$4.45 coil holds",
+  "takeaway": "EOSE drifted to ~$4.24 (~-0.1%) with no new catalysts or EDGAR filings, tracing a fourth straight session inside the $4.14–$4.45 range. Post-Q2 digest continues; low-energy setup into Friday with no known catalysts.",
+  "bullets": [
+   "<b>Price action (Thu Aug 13):</b> Closed ~$4.24 (~-0.1% vs Wed’s ~$4.22 est. close) on no identifiable catalyst. Stock has traded in the $4.14–$4.45 band all week — fourth consecutive session without a directional break. Volume near average.",
+   "<b>No new EDGAR filings (Aug 13):</b> Nothing filed today. Most recent activity: Q2 8-K (Aug 5, revenue $68.8M, backlog $807M) and Cerberus 13D/A (Aug 6, 32.6% stake, 20M warrants at $5.481 strike). Q2 10-Q (Jun 30 quarter) expected in coming weeks.",
+   "<b>Q2 2026 recap (Aug 5):</b> Record revenue $68.8M (+351% YoY), backlog $807M (+25% QoQ), FY2026 guidance tightened to $300–$350M. Net loss $275.7M; EPS -$1.20 vs consensus -$0.19 on Battery Line 2 ramp costs at Thorn Hill. H2 margin improvement is the key watch.",
+   "<b>FPUSA / TURBINE-X:</b> $263M JV capital close (Aug 4) backstops 1.8+ GWh pipeline — Blanquilla 800 MWh (PO received), Wildfire 400 MWh (selected), Stella 920 MWh (4 projects). TURBINE-X JDA targets 2 GWh in HPC-adjacent deployments.",
+   "<b>Sell-side (post-Q2):</b> TD Cowen Hold $4 (↓$8), Roth Neutral $4 (↓$6), JPMorgan Neutral $6 (↓$9), Stifel Buy $9 (↓$10). Consensus avg PT ~$7.00 (11 analysts) vs ~$4.24 stock — ~65% implied upside. CEO sold ~159k shares at $3.61 (Jul 27 option exercise).",
+   "<b>Setup into Fri Aug 14:</b> No catalysts scheduled. Watch: FPUSA Texas 10 project conversions (Q3), DOE loan draw timing, Ofgem LDES Window 1 (~Sep 2026). Support $4.14 (week low); resistance $4.45 (week high). Next earnings est. Nov 4, 2026."
+  ],
+  "price": {
+   "last": 4.24,
+   "changePct": -0.09,
+   "note": "est. close · Thu Aug 13 2026 · Yahoo Finance / search data delayed"
+  }
+ },
+ {
+  "updatedAt": "2026-08-12T22:30:00+02:00",
+  "session": "post-close",
+  "headline": "EOSE gaps +4.7% at open, fades to ~flat $4.22 est. close — Q2 digest continues",
+  "takeaway": "EOSE gapped up to $4.44 on no identifiable catalyst then sold off all session, closing approximately flat near $4.22 on near-avg volume. No new EDGAR filings today; market still absorbing Q2 beat and guidance tighten from Aug 5.",
+  "bullets": [
+   "<b>Price action (Wed Aug 12):</b> Opened $4.44 (+4.7% gap vs $4.24 prev close), ranged $4.14–$4.45 intraday before fading to ~$4.22 est. close (~flat). Est. volume ~20–22M shares (near 22.1M avg). No single catalyst; gap likely momentum/algorithmic follow-through post-Q2.",
+   "<b>No new EDGAR filings (Aug 12):</b> Nothing filed today. Most recent activity: Q2 8-K (Aug 5, revenue $68.8M, backlog $807M) and Cerberus 13D/A (Aug 6, 32.6% stake, 20M warrants at $5.481 strike). No Form 4 or 8-K today.",
+   "<b>Q2 2026 recap (Aug 5):</b> Record revenue $68.8M (+351% YoY), backlog $807M (+25% QoQ), FY2026 guidance tightened to $300–$350M. Cash ~$364M. Gross margin -69% to -73% reflecting Battery Line 2 ramp at Thorn Hill; margin improvement targeted H2.",
+   "<b>FPUSA pipeline at 1.8 GWh:</b> $263M JV capital raise closed Aug 4. Projects closed/selected: Blanquilla 800 MWh (Phase 1 PO received), Wildfire 400 MWh (selected), Stella 920 MWh (4 projects, selected). Q3 watch: Texas 10 conversions.",
+   "<b>Sell-side post-Q2 (Aug 5–6):</b> Stifel Buy $9 (↓$10), TD Cowen Hold $4 (↓$8), Roth Neutral $4 (↓$6), JPMorgan Neutral $6 (↓$9). Consensus avg PT ~$7.00 (11 analysts) vs ~$4.22 stock — ~65% implied upside to mean.",
+   "<b>Setup into Thu Aug 13:</b> No catalysts scheduled. Watch: FPUSA Texas 10 conversions (Q3), DOE loan draw timing, Ofgem LDES Window 1 (~Sep 2026). Support $4.14 (today's low); resistance $4.45 (today's high). Next earnings est. Nov 4, 2026."
+  ],
+  "price": {
+   "last": 4.22,
+   "changePct": -0.47,
+   "note": "est. close · Wed Aug 12 2026 · StockAnalysis delayed (2:37 PM ET snapshot)"
+  }
+ },
+ {
   "updatedAt": "2026-08-11T22:20:00+02:00",
   "session": "post-close",
   "headline": "EOSE rebounds +3.1% to $3.94 — below-avg volume, digesting post-Q2 gains",
@@ -524,44 +562,6 @@
    "last": 6.23,
    "changePct": 2.81,
    "note": "Jun 25 close · StockAnalysis/CBOE delayed · prior close $6.06 (Jun 24)"
-  }
- },
- {
-  "updatedAt": "2026-06-22T15:00:00+02:00",
-  "session": "pre-open",
-  "headline": "Fifth catalyst in two weeks: independent fire testing validates Z3 safety; ISO 14001 certified",
-  "takeaway": "Before the Monday open (Jun 22), Eos said independent destructive-abuse testing by the Energy Safety Response Group found the Z3 system exhibited no thermal runaway, no sustained fire, no module-to-module propagation and no off-gas ignition — third-party validation of Z3's core safety pitch — and that it earned ISO 14001 certification. It extends an unusually dense run of announcements into the weeks before the Jul 1 rights-offering record date.",
-  "bullets": [
-   "Independent fire testing (Energy Safety Response Group): under direct-flame and overcharge abuse, the Z3 system showed no thermal runaway, no sustained fire, no propagation between modules, no off-gas ignition. Hard third-party backing for the \"non-flammable, no thermal-runaway\" advantage vs. lithium-ion.",
-   "Why it matters commercially: safety validation eases siting/permitting, supports insurance underwriting, and aligns with NFPA 855 — increasingly decisive for utility- and data-center-scale projects. Eos also received ISO 14001 environmental-management certification.",
-   "Cadence watch (both ways): this is the fifth catalyst in ~two weeks — record date (Jun 11) → Line 2 (Jun 16) → Germany/CAPAC (Jun 17) → first FPUSA PO (Jun 18) → fire test (Jun 22). A bull reads momentum; a skeptic notes good news clustering just ahead of a dilutive raise. We surface it; you weigh it.",
-   "Price context: last traded close was Thursday Jun 18 at $7.65 (+0.7%). US markets were closed Friday Jun 19 (Juneteenth) and over the weekend, so Monday Jun 22 opens with the tape unchanged from Thursday — the fire-test news hits an untraded gap.",
-   "Rights offering clock: record date Jul 1 (9 days), distribution Jul 2; units of stock + warrants at a ~10–20% discount to a 15–30 day VWAP (rough subscription price ~$6.10–$6.90 at recent levels). CEO Mastrangelo's JPM Energy & Natural Resources fireside is tomorrow, Tue Jun 23.",
-   "Still absent: Ofgem's UK Cap & Floor Window 1 Initial Decision, guided to \"Spring 2026\" and now overdue with the window elapsed — the largest unpriced binary for the bull case (see §08b)."
-  ],
-  "price": {
-   "last": 7.65,
-   "changePct": null,
-   "note": "Jun 18 close $7.65 — last session before the Juneteenth (Jun 19) holiday + weekend; fire-test news broke pre-open Mon Jun 22 (see live ticker for the current print)"
-  }
- },
- {
-  "updatedAt": "2026-06-22T09:15:00+02:00",
-  "session": "pre-open",
-  "headline": "Quiet long weekend after the catalyst run — JPM fireside Tue Jun 23 is the next live event",
-  "takeaway": "No new filings or press releases since the Jun 18 Redbird PO. The last trading day was Thursday Jun 18 ($7.65 close) — US markets were closed Friday Jun 19 for Juneteenth, so the stock has not traded since the catalyst week capped out. Attention now turns to CEO Mastrangelo's JPM fireside tomorrow (Tue Jun 23) and the rights-offering record date on Jul 1.",
-  "bullets": [
-   "No price action since Thursday: last close was $7.65 on Jun 18 (+0.7% vs Jun 17), on ~33.9M shares. Markets were shut Fri Jun 19 (Juneteenth) and over the weekend, so Monday Jun 22 opens with the tape unchanged from Thursday.",
-   "The week that was: a four-catalyst run — rights record date (Jun 11) → Line 2 commercial production (Jun 16) → Germany/CAPAC MSA (Jun 17) → first FPUSA purchase order, Redbird (Jun 18) — lifted EOSE from ~$6.38 (Jun 15) to $7.65, roughly +20% in four sessions.",
-   "No new IR releases or SEC filings since Jun 18 (Redbird, 100 MW / 400 MWh, ERCOT, Z3). That week's trifecta-plus remains the operative story into the JPM event.",
-   "JPM Energy & Natural Resources Conference: CEO Mastrangelo fireside on Tue Jun 23 (covering analyst Mark Strouse, JPM, Neutral/$9 PT). Watch for color on the 12 GWh FPUSA development pipeline, Germany/CAPAC milestone timing, and TURBINE-X.",
-   "Rights offering clock: record date Jul 1 (9 days), distribution Jul 2. At ~$7.65 a 10–20% discount to the VWAP window implies a rough subscription price of ~$6.10–$6.90; final terms come at commencement.",
-   "Still absent: Ofgem's UK Cap & Floor Window 1 Initial Decision, guided to \"Spring 2026\" and now overdue with the window closed — the largest unpriced binary for the bull case (see §08b). Silence is not a negative signal, just unresolved."
-  ],
-  "price": {
-   "last": 7.65,
-   "changePct": null,
-   "note": "Jun 18 close $7.65 — last session before the Juneteenth (Jun 19) holiday + weekend; quote feed carries it into Mon Jun 22 pre-open"
   }
  }
 ]
