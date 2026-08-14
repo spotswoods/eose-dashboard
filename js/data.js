@@ -30,25 +30,25 @@ window.EOSE_DATA = {
   // Refreshed by /equity-research:morning-note via a scheduled task in Cowork.
   // session = 'pre-open' (Swedish AM, ~07:00 CEST) | 'post-close' (Swedish PM, ~22:30 CEST)
   morningNote: {
-    updatedAt: '2026-08-13T22:30:00+02:00',
+    updatedAt: '2026-08-14T22:30:00+02:00',
     session:   'post-close',
-    headline:  'EOSE flat ~$4.24 on quiet Thursday \u2014 no filings, week-long $4.14\u2013$4.45 coil holds',
-    takeaway:  'EOSE drifted to ~$4.24 (~-0.1%) with no new catalysts or EDGAR filings, tracing a fourth straight session inside the $4.14\u2013$4.45 range. Post-Q2 digest continues; low-energy setup into Friday with no known catalysts.',
+    headline:  'EOSE slides to $4.16 on quiet Friday \u2014 $4.05 low pierces week\u2019s $4.14 support',
+    takeaway:  'EOSE closed $4.16 (-1.89%) on below-average volume (63% of avg) with no news or filings. The $4.05 session low broke below the $4.14 floor that held Mon\u2013Thu. No catalysts until Q2 10-Q drops and Ofgem final awards (~Sep\u00a022).',
     bullets: [
-      '<b>Price action (Thu Aug\u00a013):</b> Closed ~$4.24 (~-0.1% vs Wed\u2019s ~$4.22 est. close) on no identifiable catalyst. Stock has traded in the $4.14\u2013$4.45 band all week \u2014 fourth consecutive session without a directional break. Volume near average.',
-      '<b>No new EDGAR filings (Aug\u00a013):</b> Nothing filed today. Most recent activity: Q2 8-K (Aug\u00a05, revenue $68.8M, backlog $807M) and Cerberus 13D/A (Aug\u00a06, 32.6% stake, 20M warrants at $5.481 strike). Q2 10-Q (Jun\u00a030 quarter) expected in coming weeks.',
-      '<b>Q2 2026 recap (Aug\u00a05):</b> Record revenue $68.8M (+351% YoY), backlog $807M (+25% QoQ), FY2026 guidance tightened to $300\u2013$350M. Net loss $275.7M; EPS -$1.20 vs consensus -$0.19 on Battery Line\u00a02 ramp costs at Thorn Hill. H2 margin improvement is the key watch.',
-      '<b>FPUSA / TURBINE-X:</b> $263M JV capital close (Aug\u00a04) backstops 1.8+\u00a0GWh pipeline \u2014 Blanquilla 800\u00a0MWh (PO received), Wildfire 400\u00a0MWh (selected), Stella 920\u00a0MWh (4 projects). TURBINE-X JDA targets 2\u00a0GWh in HPC-adjacent deployments.',
-      '<b>Sell-side (post-Q2):</b> TD Cowen Hold $4 (\u2193$8), Roth Neutral $4 (\u2193$6), JPMorgan Neutral $6 (\u2193$9), Stifel Buy $9 (\u2193$10). Consensus avg PT ~$7.00 (11 analysts) vs ~$4.24 stock \u2014 ~65% implied upside. CEO sold ~159k shares at $3.61 (Jul\u00a027 option exercise).',
-      '<b>Setup into Fri Aug\u00a014:</b> No catalysts scheduled. Watch: FPUSA Texas\u00a010 project conversions (Q3), DOE loan draw timing, Ofgem LDES Window\u00a01 (~Sep\u00a02026). Support $4.14 (week low); resistance $4.45 (week high). Next earnings est. Nov\u00a04, 2026.'
+      '<b>Price action (Fri Aug\u00a014):</b> Closed $4.16 (-1.89%) range $4.05\u2013$4.32, vol 16.3M (63% of avg\u00a025.65M). Session low $4.05 pierced the $4.14 support floor that held Mon\u2013Thu \u2014 quiet end-of-week drift with no identifiable catalyst.',
+      '<b>No EDGAR filings (Aug\u00a014):</b> Nothing filed today. Q2 10-Q (Jun\u00a030 quarter) pending. Most recent: Aug\u00a005 8-K (Q2 results, revenue $68.8M) and Aug\u00a006 Cerberus 13D/A (32.6% stake, 20M warrants at $5.481).',
+      '<b>Q2 / manufacturing:</b> Record $68.8M revenue (+351% YoY), backlog $807M, FY guide $300\u2013$350M. GM \u221271%; Line\u00a02 at Thorn Hill 10% faster than Line\u00a01; consolidation to single site under evaluation. Golden Dome for America defense contract (Jul\u00a015) intact.',
+      '<b>FPUSA / TURBINE-X:</b> $263M JV equity closed Aug\u00a004. Blanquilla 800\u00a0MWh (PO received), Wildfire 400\u00a0MWh (selected), Stella 920\u00a0MWh (4-project pipeline). TURBINE-X JDA targets 2\u00a0GWh HPC-adjacent. No new FPUSA PR this week.',
+      '<b>Sell-side:</b> No new rating actions this week. Consensus avg PT ~$7.00 (~68% upside) vs $4.16 stock. TD Cowen Hold $4, Roth Neutral $4, JPM Neutral $6, Stifel Buy $9 (all post-Q2 Aug\u00a005). Bear FV floor ~$3.20 (Simply Wall St.).',
+      '<b>Setup into Mon Aug\u00a017:</b> No catalysts scheduled. Watch: Q2 10-Q filing (pending), Ofgem final Window\u00a01 awards (~Sep\u00a022 est.), NYSERDA BESS awards (~Sep\u00a030 est.), Q3 earnings Nov\u00a004 est. Support $4.05 (Fri low); resistance $4.32 (Fri high).'
     ],
-    price:   { last: 4.24, changePct: -0.09, note: 'est. close \u00b7 Thu Aug\u00a013 2026 \u00b7 Yahoo Finance / search data delayed' },
+    price:   { last: 4.16, changePct: -1.89, note: 'close \u00b7 Fri Aug\u00a014 2026 \u00b7 Yahoo Finance delayed' },
     sources: [
       { label: 'EOSE quote \u2014 Yahoo Finance', url: 'https://finance.yahoo.com/quote/EOSE/' },
+      { label: 'EOSE news \u2014 StockTitan', url: 'https://www.stocktitan.net/news/EOSE/' },
       { label: 'Eos Energy Q2 2026 earnings \u2014 GlobeNewsWire', url: 'https://www.globenewswire.com/news-release/2026/08/05/3339134/0/en/eos-energy-enterprises-reports-second-quarter-2026-financial-results-and-tightens-full-year-revenue-guidance.html' },
-      { label: 'FPUSA capital raise \u2014 investors.eose.com', url: 'https://investors.eose.com/news-releases/news-release-details/eos-energy-enterprises-reports-second-quarter-2026-financial' },
       { label: 'Cerberus 13D/A \u2014 StockTitan', url: 'https://www.stocktitan.net/sec-filings/EOSE/schedule-13d-a-eos-energy-enterprises-inc-amended-major-shareholder-r-d4c4922662d1.html' },
-      { label: 'EOSE SEC filings \u2014 investors.eose.com', url: 'https://investors.eose.com/financials/sec-filings' }
+      { label: 'FPUSA capital close \u2014 StockTitan', url: 'https://www.stocktitan.net/news/EOSE/completed-rights-offering-together-with-hudson-bay-capital-lazrrt26gh9g.html' }
     ]
   },
 
