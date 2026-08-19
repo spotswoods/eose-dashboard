@@ -30,25 +30,25 @@ window.EOSE_DATA = {
   // Refreshed by /equity-research:morning-note via a scheduled task in Cowork.
   // session = 'pre-open' (Swedish AM, ~07:00 CEST) | 'post-close' (Swedish PM, ~22:30 CEST)
   morningNote: {
-    updatedAt: '2026-08-18T22:30:00+02:00',
+    updatedAt: '2026-08-19T22:30:00+02:00',
     session:   'post-close',
-    headline:  'EOSE dips to ~$4.02 (-3.4%) as post-Q2 guidance re-rating grinds on',
-    takeaway:  'EOSE continued its post-earnings drift Tuesday (Aug\u00a018) with no fresh catalysts or filings. Stock ~-17% from Aug\u00a005 Q2 reaction high as market digests narrowed FY guide ($300\u2013$350M); bull thesis rests on FPUSA optionality and analyst avg PT ~$7.',
+    headline:  'Q2 10-Q filed to EDGAR; Aug\u00a019 close unconfirmed \u2014 overnight ATS ~$4.16',
+    takeaway:  'EOSE\u2019s Q2 2026 10-Q landed on EDGAR (period Jun\u00a030, 2026): 364M shares outstanding as of Aug\u00a003 vs 340.6M at quarter-end, cash $305M. Aug\u00a019 session close unavailable (sources delayed); overnight Blue Ocean ATS ~$4.16. No other new filings or catalysts today.',
     bullets: [
-      '<b>Price action (Tue Aug\u00a018):</b> Closed ~$4.02 (-3.4% approx.) on quiet volume. No AH move. Intraday dip to ~$3.65 reversed into close \u2014 late-session buyers absorbed the early selloff. Source: web data, delayed.',
-      '<b>No EDGAR filings (Aug\u00a018):</b> Nothing filed today. Q2 10-Q (Jun\u00a030 quarter) still pending \u2014 now ~49 days post-quarter-end; likely imminent. Last filed: Aug\u00a005 8-K (Q2 results) and Aug\u00a006 Cerberus 13D/A (32.6% stake, 20M warrants at $5.481).',
-      '<b>Q2 fundamentals (Aug\u00a005):</b> Revenue $68.8M (+351% YoY), backlog $807M (+25% seq.), FY guide tightened to $300\u2013$350M (from $300\u2013$400M). GM \u221271% (+132pp YoY). Cash $364M. Line\u00a02 Thorn Hill 10% faster; full capacity target Q4 2026.',
-      '<b>FPUSA / defense:</b> $263M equity closed Aug\u00a004; $100M Blanquilla 800\u00a0MWh PO received post-Q; 16\u00a0GWh development pipeline (~5\u00a0GWh active). Golden Dome for America contract (Dept of War, Jul\u00a015) intact. CAPAC MSA: 750\u00a0MWh DACH exclusivity to 2031.',
-      '<b>Sell-side (post-Q2):</b> TD Cowen Hold $4 (from $8, Aug\u00a006), B.\u00a0Riley Neutral $5 (from $8), Stifel Buy $9 (from $10), JPM Neutral ~$6. Avg PT ~$7 (\u223c74% upside vs today\u2019s close). Bear FV floor ~$3.20 (Simply Wall St.).',
-      '<b>Setup into Wed Aug\u00a019:</b> No catalysts scheduled. Watch: Q2 10-Q filing (imminent), Ofgem Window\u00a01 final awards (~Sep\u00a022 est.), NYSERDA BESS awards (~Sep\u00a030 est.), Q3 earnings Nov\u00a004 est. Support: ~$3.65 (Tue intraday low); resistance: ~$4.16.'
+      '<b>Price (Wed Aug\u00a019):</b> Close unavailable \u2014 Yahoo data delayed (last confirmed session Aug\u00a013 @ $4.16). Overnight Blue Ocean ATS: ~$4.16. Prior close: ~$4.02 (Aug\u00a018). No catalyst-driven intraday move detected.',
+      '<b>Q2 10-Q filed to EDGAR:</b> Period ended Jun\u00a030, 2026. Cash $305M (+$44M restricted). LT debt $454M (DOE) + $163M related-party notes. Shares 340.6M (Jun\u00a030) \u2192 364.2M (Aug\u00a003) \u2014 23.6M new shares issued post-quarter.',
+      '<b>Balance sheet (10-Q):</b> Series\u00a0B preferred $713M (down from $1.36B at Dec\u00a031). Warrants liability $389M ($135M public + $254M related party). Total liabilities $1.22B vs $1.76B Dec\u00a031 \u2014 notable deleveraging.',
+      '<b>Q2 recap:</b> Revenue $68.8M (+351%\u00a0YoY), backlog $807M (record, +25%\u00a0seq.), FY guide $300\u2013$350M. GM \u221271% (+132pp\u00a0YoY). Line\u00a02 Thorn Hill commissioning; full capacity target Q4\u00a02026.',
+      '<b>FPUSA / defense:</b> $263M equity closed Aug\u00a004; Blanquilla 800\u00a0MWh $100M PO active; 16\u00a0GWh development pipeline. Golden Dome / Dept of War contract intact. CAPAC MSA: 750\u00a0MWh DACH exclusivity to 2031.',
+      '<b>Setup into Thu Aug\u00a020:</b> Watch Form\u00a04 insider activity post-10-Q, Ofgem Window\u00a01 final awards (~Sep\u00a022 est.), NYSERDA BESS awards (~Sep\u00a030 est.), Q3 earnings Nov\u00a004 est. Support: ~$3.65; resistance: ~$4.35+.'
     ],
-    price:   { last: 4.02, changePct: -3.4, note: 'close \u00b7 Tue Aug\u00a018 2026 \u00b7 web search data delayed' },
+    price:   { last: null, changePct: null, note: 'close unavailable \u00b7 Aug\u00a019 2026 \u00b7 sources delayed \u00b7 overnight ATS ~$4.16' },
     sources: [
       { label: 'EOSE quote \u2014 Yahoo Finance', url: 'https://finance.yahoo.com/quote/EOSE/' },
-      { label: 'Eos Energy Q2 2026 earnings \u2014 EOSE IR', url: 'https://investors.eose.com/news-releases/news-release-details/eos-energy-enterprises-reports-second-quarter-2026-financial' },
-      { label: 'EOSE SEC filings \u2014 EDGAR', url: 'https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0001805077&type=&dateb=&owner=include&count=40' },
-      { label: 'Analyst ratings \u2014 StockAnalysis', url: 'https://stockanalysis.com/stocks/eose/forecast/' },
-      { label: 'EOSE news \u2014 StockTitan', url: 'https://www.stocktitan.net/news/EOSE/' }
+      { label: 'EOSE Q2 10-Q \u2014 SEC EDGAR', url: 'https://www.sec.gov/Archives/edgar/data/0001805077/000162828026052906/eose-20260630.htm' },
+      { label: 'Eos Energy Q2 2026 results \u2014 EOSE IR', url: 'https://investors.eose.com/news-releases/news-release-details/eos-energy-enterprises-reports-second-quarter-2026-financial' },
+      { label: 'Cerberus 13D/A \u2014 EOSE IR', url: 'https://investors.eose.com/static-files/7c4371c7-d45d-4694-a9bd-ee664b57377d' },
+      { label: 'EOSE filings \u2014 StockTitan', url: 'https://www.stocktitan.net/sec-filings/EOSE/' }
     ]
   },
 
