@@ -30,25 +30,24 @@ window.EOSE_DATA = {
   // Refreshed by /equity-research:morning-note via a scheduled task in Cowork.
   // session = 'pre-open' (Swedish AM, ~07:00 CEST) | 'post-close' (Swedish PM, ~22:30 CEST)
   morningNote: {
-    updatedAt: '2026-08-19T22:30:00+02:00',
+    updatedAt: '2026-08-21T22:20:00+02:00',
     session:   'post-close',
-    headline:  'Q2 10-Q filed to EDGAR; Aug\u00a019 close unconfirmed \u2014 overnight ATS ~$4.16',
-    takeaway:  'EOSE\u2019s Q2 2026 10-Q landed on EDGAR (period Jun\u00a030, 2026): 364M shares outstanding as of Aug\u00a003 vs 340.6M at quarter-end, cash $305M. Aug\u00a019 session close unavailable (sources delayed); overnight Blue Ocean ATS ~$4.16. No other new filings or catalysts today.',
+    headline:  'EOSE drops 7.5% to $3.46 on elevated volume \u2014 stock trading below all analyst price targets',
+    takeaway:  'Eos fell $0.28 (-7.5%) on Friday, closing at $3.46 on volume of 36.2M shares (1.4\u00d7 the 25.5M avg). Broad market sold off (S&P 500 -0.87%, Nasdaq -1.0%) but EOSE underperformed sharply. No new filings or IR releases. Stock is now below every published sell-side PT.',
     bullets: [
-      '<b>Price (Wed Aug\u00a019):</b> Close unavailable \u2014 Yahoo data delayed (last confirmed session Aug\u00a013 @ $4.16). Overnight Blue Ocean ATS: ~$4.16. Prior close: ~$4.02 (Aug\u00a018). No catalyst-driven intraday move detected.',
-      '<b>Q2 10-Q filed to EDGAR:</b> Period ended Jun\u00a030, 2026. Cash $305M (+$44M restricted). LT debt $454M (DOE) + $163M related-party notes. Shares 340.6M (Jun\u00a030) \u2192 364.2M (Aug\u00a003) \u2014 23.6M new shares issued post-quarter.',
-      '<b>Balance sheet (10-Q):</b> Series\u00a0B preferred $713M (down from $1.36B at Dec\u00a031). Warrants liability $389M ($135M public + $254M related party). Total liabilities $1.22B vs $1.76B Dec\u00a031 \u2014 notable deleveraging.',
-      '<b>Q2 recap:</b> Revenue $68.8M (+351%\u00a0YoY), backlog $807M (record, +25%\u00a0seq.), FY guide $300\u2013$350M. GM \u221271% (+132pp\u00a0YoY). Line\u00a02 Thorn Hill commissioning; full capacity target Q4\u00a02026.',
-      '<b>FPUSA / defense:</b> $263M equity closed Aug\u00a004; Blanquilla 800\u00a0MWh $100M PO active; 16\u00a0GWh development pipeline. Golden Dome / Dept of War contract intact. CAPAC MSA: 750\u00a0MWh DACH exclusivity to 2031.',
-      '<b>Setup into Thu Aug\u00a020:</b> Watch Form\u00a04 insider activity post-10-Q, Ofgem Window\u00a01 final awards (~Sep\u00a022 est.), NYSERDA BESS awards (~Sep\u00a030 est.), Q3 earnings Nov\u00a004 est. Support: ~$3.65; resistance: ~$4.35+.'
+      '<b>Price (Fri Aug\u00a021):</b> Closed $3.46 (-7.49%), range $3.28\u2013$3.67; prev close $3.74 (Aug\u00a020). Vol 36.2M vs 25.5M avg (1.4\u00d7). A/H: $3.45 (-0.3%). 52-wk low: $3.11.',
+      '<b>Macro context:</b> Risk-off session across equities \u2014 S&P 500 -0.87%, Nasdaq -1.0%, VIX +7.5% to 16.01. EOSE underperformed meaningfully; elevated volume suggests forced selling or momentum continuation.',
+      '<b>No new catalysts today:</b> No EDGAR filings (8-K, Form 4) or IR press releases posted Aug\u00a021. Slide appears purely technical \u2014 post-Q2 derating extends into a second week.',
+      '<b>Analyst PT wall:</b> B. Riley cut PT $8\u2192$5 (Neutral, Aug\u00a014); TD Cowen $4 (Hold); Roth Capital $4 (Neutral). Consensus 1-yr target ~$6.67. EOSE now trades below the lowest PT on the Street.',
+      '<b>Bull/Bear:</b> Bull \u2014 $305M cash, $807M record backlog, FPUSA $263M funded Aug\u00a04, Golden Dome & CAPAC defense contracts intact. Bear \u2014 stock at multi-week low, class-action scrutiny, $276M Q2 net loss, 364M+ diluted shares.',
+      '<b>Setup Mon Aug\u00a024:</b> No scheduled catalysts. Watch EDGAR for Form\u00a04 insiders; Ofgem Window\u00a01 final awards (~Sep\u00a022 est.); NYSERDA BESS (~Sep\u00a030 est.); Q3 earnings ~Nov\u00a04 est. Key support $3.28 (today\u2019s low); floor $3.11 (52-wk low).'
     ],
-    price:   { last: null, changePct: null, note: 'close unavailable \u00b7 Aug\u00a019 2026 \u00b7 sources delayed \u00b7 overnight ATS ~$4.16' },
+    price:   { last: 3.46, changePct: -7.49, note: 'close \u00b7 Fri Aug\u00a021 2026 \u00b7 Yahoo Finance delayed' },
     sources: [
       { label: 'EOSE quote \u2014 Yahoo Finance', url: 'https://finance.yahoo.com/quote/EOSE/' },
-      { label: 'EOSE Q2 10-Q \u2014 SEC EDGAR', url: 'https://www.sec.gov/Archives/edgar/data/0001805077/000162828026052906/eose-20260630.htm' },
-      { label: 'Eos Energy Q2 2026 results \u2014 EOSE IR', url: 'https://investors.eose.com/news-releases/news-release-details/eos-energy-enterprises-reports-second-quarter-2026-financial' },
-      { label: 'Cerberus 13D/A \u2014 EOSE IR', url: 'https://investors.eose.com/static-files/7c4371c7-d45d-4694-a9bd-ee664b57377d' },
-      { label: 'EOSE filings \u2014 StockTitan', url: 'https://www.stocktitan.net/sec-filings/EOSE/' }
+      { label: 'EOSE analyst insights \u2014 Yahoo Finance', url: 'https://finance.yahoo.com/quote/EOSE/analyst-insights/' },
+      { label: 'Eos Energy Q2 results \u2014 EOSE IR', url: 'https://investors.eose.com/news-releases/news-release-details/eos-energy-enterprises-reports-second-quarter-2026-financial' },
+      { label: 'EOSE IR news releases', url: 'https://investors.eose.com/news-releases' }
     ]
   },
 
