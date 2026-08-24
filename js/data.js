@@ -30,24 +30,24 @@ window.EOSE_DATA = {
   // Refreshed by /equity-research:morning-note via a scheduled task in Cowork.
   // session = 'pre-open' (Swedish AM, ~07:00 CEST) | 'post-close' (Swedish PM, ~22:30 CEST)
   morningNote: {
-    updatedAt: '2026-08-21T22:20:00+02:00',
+    updatedAt: '2026-08-24T22:30:00+02:00',
     session:   'post-close',
-    headline:  'EOSE drops 7.5% to $3.46 on elevated volume \u2014 stock trading below all analyst price targets',
-    takeaway:  'Eos fell $0.28 (-7.5%) on Friday, closing at $3.46 on volume of 36.2M shares (1.4\u00d7 the 25.5M avg). Broad market sold off (S&P 500 -0.87%, Nasdaq -1.0%) but EOSE underperformed sharply. No new filings or IR releases. Stock is now below every published sell-side PT.',
+    headline:  'EOSE bounces 10% to $3.81 on Mon Aug\u00a024 \u2014 risk-on tape lifts battered zinc-battery name',
+    takeaway:  'Eos snapped back $0.35 (+10.12%) to $3.81 on 28.3M shares (1.1\u00d7 avg), reversing last week\'s slide. Broader market was constructive (S&P 500 +0.43%, VIX -5.5% to 15.13). No new filings or IR releases; move appears technical/macro-driven.',
     bullets: [
-      '<b>Price (Fri Aug\u00a021):</b> Closed $3.46 (-7.49%), range $3.28\u2013$3.67; prev close $3.74 (Aug\u00a020). Vol 36.2M vs 25.5M avg (1.4\u00d7). A/H: $3.45 (-0.3%). 52-wk low: $3.11.',
-      '<b>Macro context:</b> Risk-off session across equities \u2014 S&P 500 -0.87%, Nasdaq -1.0%, VIX +7.5% to 16.01. EOSE underperformed meaningfully; elevated volume suggests forced selling or momentum continuation.',
-      '<b>No new catalysts today:</b> No EDGAR filings (8-K, Form 4) or IR press releases posted Aug\u00a021. Slide appears purely technical \u2014 post-Q2 derating extends into a second week.',
-      '<b>Analyst PT wall:</b> B. Riley cut PT $8\u2192$5 (Neutral, Aug\u00a014); TD Cowen $4 (Hold); Roth Capital $4 (Neutral). Consensus 1-yr target ~$6.67. EOSE now trades below the lowest PT on the Street.',
-      '<b>Bull/Bear:</b> Bull \u2014 $305M cash, $807M record backlog, FPUSA $263M funded Aug\u00a04, Golden Dome & CAPAC defense contracts intact. Bear \u2014 stock at multi-week low, class-action scrutiny, $276M Q2 net loss, 364M+ diluted shares.',
-      '<b>Setup Mon Aug\u00a024:</b> No scheduled catalysts. Watch EDGAR for Form\u00a04 insiders; Ofgem Window\u00a01 final awards (~Sep\u00a022 est.); NYSERDA BESS (~Sep\u00a030 est.); Q3 earnings ~Nov\u00a04 est. Key support $3.28 (today\u2019s low); floor $3.11 (52-wk low).'
+      '<b>Price (Mon Aug\u00a024):</b> Closed $3.81 (+10.12%, +$0.35); range $3.48\u2013$3.82; prev close $3.46 (Aug\u00a021). Vol 28.3M vs 25.6M avg (1.1\u00d7). A/H: $3.82 (+0.26%). 52-wk range $3.11\u2013$19.86.',
+      '<b>Macro tailwind:</b> Risk-on Monday \u2014 S&P 500 +0.43%, Nasdaq +0.43%, VIX -5.5% to 15.13. Broad small-cap / high-beta bid lifted EOSE off last week\'s oversold levels; no EOSE-specific news drove the move.',
+      '<b>No new filings or PR:</b> No EDGAR 8-K or Form\u00a04 activity Aug\u00a024. No IR press releases. Last filing was FPUSA $263M capital-raise 8-K (Aug\u00a05). Bounce is purely technical.',
+      '<b>Analyst context:</b> B. Riley PT $5 (Neutral, Aug\u00a014); TD Cowen $4 (Hold); Roth Capital $4 (Neutral); Needham $11 (Buy); Stifel $12 (Buy). Consensus ~$6.67. EOSE still ~43% below Street average.',
+      '<b>Bull/Bear:</b> Bull \u2014 $305M cash, $807M backlog, FPUSA $263M funded, Golden Dome/CAPAC defense pipeline intact. Bear \u2014 $276M Q2 net loss, tightened FY26 guidance to $300\u2013$350M, 364M+ diluted shares, class-action scrutiny.',
+      '<b>Setup Tue Aug\u00a025:</b> No scheduled catalysts. Watch EDGAR for Form\u00a04s; Ofgem Window\u00a01 final awards (~Sep\u00a022 est.); NYSERDA BESS (~Sep\u00a030 est.); Q3 earnings ~Nov\u00a04 est. Key resistance $3.82 (today\'s high); next support $3.46 (prior close).'
     ],
-    price:   { last: 3.46, changePct: -7.49, note: 'close \u00b7 Fri Aug\u00a021 2026 \u00b7 Yahoo Finance delayed' },
+    price:   { last: 3.81, changePct: 10.12, note: 'close \u00b7 Mon Aug\u00a024 2026 \u00b7 Yahoo Finance delayed' },
     sources: [
       { label: 'EOSE quote \u2014 Yahoo Finance', url: 'https://finance.yahoo.com/quote/EOSE/' },
       { label: 'EOSE analyst insights \u2014 Yahoo Finance', url: 'https://finance.yahoo.com/quote/EOSE/analyst-insights/' },
-      { label: 'Eos Energy Q2 results \u2014 EOSE IR', url: 'https://investors.eose.com/news-releases/news-release-details/eos-energy-enterprises-reports-second-quarter-2026-financial' },
-      { label: 'EOSE IR news releases', url: 'https://investors.eose.com/news-releases' }
+      { label: 'EOSE EDGAR filings', url: 'https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0001805077&type=8-K&dateb=&owner=include&count=10' },
+      { label: 'Eos Energy IR news releases', url: 'https://investors.eose.com/news-releases' }
     ]
   },
 
