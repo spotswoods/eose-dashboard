@@ -30,24 +30,24 @@ window.EOSE_DATA = {
   // Refreshed by /equity-research:morning-note via a scheduled task in Cowork.
   // session = 'pre-open' (Swedish AM, ~07:00 CEST) | 'post-close' (Swedish PM, ~22:30 CEST)
   morningNote: {
-    updatedAt: '2026-08-24T22:30:00+02:00',
+    updatedAt: '2026-08-25T23:46:00+02:00',
     session:   'post-close',
-    headline:  'EOSE bounces 10% to $3.81 on Mon Aug\u00a024 \u2014 risk-on tape lifts battered zinc-battery name',
-    takeaway:  'Eos snapped back $0.35 (+10.12%) to $3.81 on 28.3M shares (1.1\u00d7 avg), reversing last week\'s slide. Broader market was constructive (S&P 500 +0.43%, VIX -5.5% to 15.13). No new filings or IR releases; move appears technical/macro-driven.',
+    headline:  'EOSE +2.3% to $3.54 Tue Aug\u00a025 \u2014 CCO shakeup announced, below-avg volume',
+    takeaway:  'Eos edged up $0.08 (+2.31%) as the market calmly absorbed the CCO leadership change: Buczkowski (CAO) steps in, Kroeker departs Oct\u00a020. Volume 22.9M (0.84\u00d7 avg) \u2014 no panic; after-hours flat. Key news day, muted price reaction.',
     bullets: [
-      '<b>Price (Mon Aug\u00a024):</b> Closed $3.81 (+10.12%, +$0.35); range $3.48\u2013$3.82; prev close $3.46 (Aug\u00a021). Vol 28.3M vs 25.6M avg (1.1\u00d7). A/H: $3.82 (+0.26%). 52-wk range $3.11\u2013$19.86.',
-      '<b>Macro tailwind:</b> Risk-on Monday \u2014 S&P 500 +0.43%, Nasdaq +0.43%, VIX -5.5% to 15.13. Broad small-cap / high-beta bid lifted EOSE off last week\'s oversold levels; no EOSE-specific news drove the move.',
-      '<b>No new filings or PR:</b> No EDGAR 8-K or Form\u00a04 activity Aug\u00a024. No IR press releases. Last filing was FPUSA $263M capital-raise 8-K (Aug\u00a05). Bounce is purely technical.',
-      '<b>Analyst context:</b> B. Riley PT $5 (Neutral, Aug\u00a014); TD Cowen $4 (Hold); Roth Capital $4 (Neutral); Needham $11 (Buy); Stifel $12 (Buy). Consensus ~$6.67. EOSE still ~43% below Street average.',
-      '<b>Bull/Bear:</b> Bull \u2014 $305M cash, $807M backlog, FPUSA $263M funded, Golden Dome/CAPAC defense pipeline intact. Bear \u2014 $276M Q2 net loss, tightened FY26 guidance to $300\u2013$350M, 364M+ diluted shares, class-action scrutiny.',
-      '<b>Setup Tue Aug\u00a025:</b> No scheduled catalysts. Watch EDGAR for Form\u00a04s; Ofgem Window\u00a01 final awards (~Sep\u00a022 est.); NYSERDA BESS (~Sep\u00a030 est.); Q3 earnings ~Nov\u00a04 est. Key resistance $3.82 (today\'s high); next support $3.46 (prior close).'
+      '<b>Price (Tue Aug\u00a025):</b> Closed $3.54 (+2.31%, +$0.08); range $3.44\u2013$3.63; prev close $3.46 (Mon Aug\u00a024). Vol 22.9M vs 27.2M avg (0.84\u00d7). A/H $3.54 (0.00%). 52-wk $3.11\u2013$19.86.',
+      '<b>CCO transition (8-K Aug\u00a024, PR Aug\u00a025):</b> Buczkowski (CAO since Nov\u00a025) named CCO eff. Aug\u00a024; secured $24M PA manufacturing grant and led Golden Dome engagement. Kroeker departs Oct\u00a020 after orderly handoff.',
+      '<b>Kroeker legacy:</b> Joined Jan\u00a02023 as CFO, became CCO in 2025. Led $2B+ in capital commitments (Cerberus DDTL, DOE Loan Guarantee). Separation agreement terms not yet finalized; amendment to 8-K expected.',
+      '<b>Analyst context:</b> Aug\u00a06 sweep \u2014 Stifel Buy/$9, Truist Buy/$7, Needham Buy/$11; J.P. Morgan Hold/$5, TD Cowen Hold/$4, Roth Hold/$4, B. Riley Neutral/$5 (Aug\u00a014). Street avg PT $6.67 vs $3.54 (+88% implied upside).',
+      '<b>Bull/Bear:</b> Bull \u2014 $305M cash, $807M backlog, FPUSA $375M funded, Golden Dome/CAPAC pipeline. Bear \u2014 $276M Q2 net loss, FY26 guide $300\u2013$350M (trimmed), 364M+ diluted shares, CCO transition risk, class-action scrutiny.',
+      '<b>Setup Wed Aug\u00a026:</b> No scheduled catalysts. Watch EDGAR for Form\u00a04s and Kroeker separation agreement amendment; Ofgem Window\u00a01 final awards (~Sep\u00a022 est.); NYSERDA BESS (~Sep\u00a030 est.); Q3 earnings ~Nov\u00a04 est. Resistance $3.63; support $3.44.'
     ],
-    price:   { last: 3.81, changePct: 10.12, note: 'close \u00b7 Mon Aug\u00a024 2026 \u00b7 Yahoo Finance delayed' },
+    price:   { last: 3.54, changePct: 2.31, note: 'close \u00b7 Tue Aug\u00a025 2026 \u00b7 Google Finance' },
     sources: [
-      { label: 'EOSE quote \u2014 Yahoo Finance', url: 'https://finance.yahoo.com/quote/EOSE/' },
-      { label: 'EOSE analyst insights \u2014 Yahoo Finance', url: 'https://finance.yahoo.com/quote/EOSE/analyst-insights/' },
-      { label: 'EOSE EDGAR filings', url: 'https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0001805077&type=8-K&dateb=&owner=include&count=10' },
-      { label: 'Eos Energy IR news releases', url: 'https://investors.eose.com/news-releases' }
+      { label: 'EOSE 8-K (CCO transition) \u2014 SEC EDGAR', url: 'https://www.sec.gov/Archives/edgar/data/0001805077/000162828026058890/eose-20260824.htm' },
+      { label: 'EOSE CCO press release \u2014 SEC EDGAR', url: 'https://www.sec.gov/Archives/edgar/data/0001805077/000162828026058890/eos-ccoxtransitionxrelea.htm' },
+      { label: 'EOSE quote \u2014 Google Finance', url: 'https://www.google.com/finance/quote/EOSE:NASDAQ' },
+      { label: 'EOSE quote \u2014 Yahoo Finance', url: 'https://finance.yahoo.com/quote/EOSE/' }
     ]
   },
 
