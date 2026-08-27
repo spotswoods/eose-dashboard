@@ -30,24 +30,25 @@ window.EOSE_DATA = {
   // Refreshed by /equity-research:morning-note via a scheduled task in Cowork.
   // session = 'pre-open' (Swedish AM, ~07:00 CEST) | 'post-close' (Swedish PM, ~22:30 CEST)
   morningNote: {
-    updatedAt: '2026-08-25T23:46:00+02:00',
+    updatedAt: '2026-08-27T12:36:00+02:00',
     session:   'post-close',
-    headline:  'EOSE +2.3% to $3.54 Tue Aug\u00a025 \u2014 CCO shakeup announced, below-avg volume',
-    takeaway:  'Eos edged up $0.08 (+2.31%) as the market calmly absorbed the CCO leadership change: Buczkowski (CAO) steps in, Kroeker departs Oct\u00a020. Volume 22.9M (0.84\u00d7 avg) \u2014 no panic; after-hours flat. Key news day, muted price reaction.',
+    headline:  'EOSE -5.6% to $3.34 Wed Aug\u00a026 \u2014 CCO rally fades, insider Form\u00a04 filed',
+    takeaway:  'Eos gave back its post-CCO announcement gains, dropping 5.6% on no fresh catalysts while the S&P gained 0.4%. A Form\u00a04 insider filing hit EDGAR on Aug\u00a026. Pre-market Thu recovers 2.1% to $3.41 on BofA stake build.',
     bullets: [
-      '<b>Price (Tue Aug\u00a025):</b> Closed $3.54 (+2.31%, +$0.08); range $3.44\u2013$3.63; prev close $3.46 (Mon Aug\u00a024). Vol 22.9M vs 27.2M avg (0.84\u00d7). A/H $3.54 (0.00%). 52-wk $3.11\u2013$19.86.',
-      '<b>CCO transition (8-K Aug\u00a024, PR Aug\u00a025):</b> Buczkowski (CAO since Nov\u00a025) named CCO eff. Aug\u00a024; secured $24M PA manufacturing grant and led Golden Dome engagement. Kroeker departs Oct\u00a020 after orderly handoff.',
-      '<b>Kroeker legacy:</b> Joined Jan\u00a02023 as CFO, became CCO in 2025. Led $2B+ in capital commitments (Cerberus DDTL, DOE Loan Guarantee). Separation agreement terms not yet finalized; amendment to 8-K expected.',
-      '<b>Analyst context:</b> Aug\u00a06 sweep \u2014 Stifel Buy/$9, Truist Buy/$7, Needham Buy/$11; J.P. Morgan Hold/$5, TD Cowen Hold/$4, Roth Hold/$4, B. Riley Neutral/$5 (Aug\u00a014). Street avg PT $6.67 vs $3.54 (+88% implied upside).',
-      '<b>Bull/Bear:</b> Bull \u2014 $305M cash, $807M backlog, FPUSA $375M funded, Golden Dome/CAPAC pipeline. Bear \u2014 $276M Q2 net loss, FY26 guide $300\u2013$350M (trimmed), 364M+ diluted shares, CCO transition risk, class-action scrutiny.',
-      '<b>Setup Wed Aug\u00a026:</b> No scheduled catalysts. Watch EDGAR for Form\u00a04s and Kroeker separation agreement amendment; Ofgem Window\u00a01 final awards (~Sep\u00a022 est.); NYSERDA BESS (~Sep\u00a030 est.); Q3 earnings ~Nov\u00a04 est. Resistance $3.63; support $3.44.'
+      '<b>Price (Wed Aug\u00a026):</b> Closed $3.34 (\u22125.65%, \u2212$0.20); range $3.31\u2013$3.59; prev close $3.54 (Tue Aug\u00a025). Avg vol ~27.4M. Pre-mkt Thu Aug\u00a027: $3.41 (+2.10%). 52-wk $3.11\u2013$19.86.',
+      '<b>No company catalysts:</b> No new 8-K or press release from Eos on Aug\u00a026. Pullback appears profit-taking after the Aug\u00a025 CCO transition announcement; broad market (S&P +0.43%, Nasdaq +0.43%) moved higher while EOSE diverged lower.',
+      '<b>Form\u00a04 filed (Aug\u00a026):</b> An insider share trade was reported with the SEC on Aug\u00a026 (Stock Titan). Specific insider and transaction size unconfirmed; Kroeker separation agreement amendment (flagged in Aug\u00a024 8-K) may still be forthcoming on EDGAR.',
+      '<b>BofA raises stake (pre-mkt Aug\u00a027):</b> Bank of America Corp DE increased its EOSE position per regulatory disclosure, signaling continued institutional accumulation ahead of near-term catalysts.',
+      '<b>Analyst consensus (unchanged):</b> Stifel Buy/$9, Truist Buy/$7, Needham Buy/$11; JPM Hold/$5, TD Cowen Hold/$4, Roth Hold/$4, B. Riley Neutral/$5 (Aug\u00a014). Street avg PT $6.67 vs $3.34 (+100% implied upside).',
+      '<b>Setup Thu Aug\u00a027:</b> Pre-market +2.1% to $3.41. Watch EDGAR for Kroeker separation amendment and Form\u00a04 detail. Catalysts: Ofgem Window\u00a01 final awards (~Sep\u00a022 est.); NYSERDA BESS (~Sep\u00a030 est.); Q3 earnings ~Nov\u00a04 est. Resistance $3.54; support $3.31.'
     ],
-    price:   { last: 3.54, changePct: 2.31, note: 'close \u00b7 Tue Aug\u00a025 2026 \u00b7 Google Finance' },
+    price:   { last: 3.34, changePct: -5.65, note: 'close \u00b7 Wed Aug\u00a026 2026 \u00b7 Google Finance' },
     sources: [
-      { label: 'EOSE 8-K (CCO transition) \u2014 SEC EDGAR', url: 'https://www.sec.gov/Archives/edgar/data/0001805077/000162828026058890/eose-20260824.htm' },
-      { label: 'EOSE CCO press release \u2014 SEC EDGAR', url: 'https://www.sec.gov/Archives/edgar/data/0001805077/000162828026058890/eos-ccoxtransitionxrelea.htm' },
       { label: 'EOSE quote \u2014 Google Finance', url: 'https://www.google.com/finance/quote/EOSE:NASDAQ' },
-      { label: 'EOSE quote \u2014 Yahoo Finance', url: 'https://finance.yahoo.com/quote/EOSE/' }
+      { label: 'EOSE quote \u2014 Yahoo Finance', url: 'https://finance.yahoo.com/quote/EOSE/' },
+      { label: 'Eos IR news releases', url: 'https://investors.eose.com/news-releases' },
+      { label: 'EOSE Form\u00a04 \u2014 Stock Titan', url: 'https://www.stocktitan.net/sec-filings/EOSE/form-4-eos-energy-enterprises-inc-insider-trading-activity-bb78bc9e4e58.html' },
+      { label: 'BofA stake raise \u2014 MarketBeat', url: 'https://www.marketbeat.com/instant-alerts/filing-bank-of-america-corp-de-raises-stock-position-in-eos-energy-enterprises-inc-eose-2026-08-27/' }
     ]
   },
 
