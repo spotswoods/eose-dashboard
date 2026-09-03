@@ -30,23 +30,23 @@ window.EOSE_DATA = {
   // Refreshed by /equity-research:morning-note via a scheduled task in Cowork.
   // session = 'pre-open' (Swedish AM, ~07:00 CEST) | 'post-close' (Swedish PM, ~22:30 CEST)
   morningNote: {
-    updatedAt: '2026-08-27T22:30:00+02:00',
+    updatedAt: '2026-09-03T22:20:00+02:00',
     session:   'post-close',
-    headline:  'EOSE +22% to ~$4.08 Thu Aug\u00a027 \u2014 Thorn Hill consolidation confirmed',
-    takeaway:  'Eos surged ~22% after formally announcing the consolidation of all battery manufacturing at Thorn Hill (Warrendale, PA) \u2014 a move telegraphed on the Aug\u00a05 Q2 call and contained within FY2026 guidance of $300\u2013$350\u00a0M. Expected 10\u201315% conversion-cost reduction by 2027.',
+    headline:  'EOSE -0.6% to $3.61 on Sep\u00a03 \u2014 consolidating Google\u2013MN8 bounce on light volume',
+    takeaway:  'EOSE slipped -0.55% to $3.61 on Thu Sep\u00a03\u00a02026, digesting the prior session\u2019s 12.8% Google\u2013MN8 WV deal surge on well-below-average volume (~14.7M vs ~22M avg). No new filings on the day; the Aug\u00a031 S-3ASR registering 56.5M shares for resale remains the key near-term overhang.',
     bullets: [
-      '<b>Price (Thu Aug\u00a027):</b> Approx. close ~$4.08 (+21.7\u201322.8%, from $3.34 prev close); volume elevated on Thorn Hill PR. AH ~$4.97 (public.com). 52-wk range $3.11\u2013$19.86. Avg vol ~22\u00a0M.',
-      '<b>Thorn Hill consolidation (PR, 09:21\u00a0ET):</b> All Z3\u2122 battery mfg relocating from Turtle Creek Bldg\u00a0700 to the 432,000 sq\u00a0ft Thorn Hill facility (Warrendale, PA); Cube assembly/testing stays at Turtle Creek Bldg\u00a0200. Target: 10\u201315% conversion-cost cut; ~4\u00a0GWh nameplate capacity once both lines run.',
-      '<b>Employees &amp; timeline:</b> ~250 impacted employees (incl. ~205 USW union workers) each offered a role at Thorn Hill, Bldg\u00a0200, or corp HQ. Move starts Q4\'26, wraps early 2027, subject to lender approvals. Customer delivery commitments held unchanged.',
-      '<b>Within guidance \u2014 no surprise:</b> Consolidation was outlined on the Aug\u00a05 Q2 earnings call. FY2026 guidance remains $300\u2013$350\u00a0M; Q2 actuals $68.8\u00a0M (+351%\u00a0YoY); backlog record $807\u00a0M. No new 8-K filed today on EDGAR; announcement via press release only.',
-      '<b>Setup Fri Aug\u00a028:</b> Watch EDGAR for lender-approval 8-K on the consolidation. Catalysts: Ofgem Window\u00a01 final awards (~Sep\u00a022 est.); NYSERDA BESS (~Sep\u00a030 est.); Q3 earnings ~Nov est. Analyst PTs: Needham Buy/$11, Stifel Buy/$9, Truist Buy/$7 vs ~$4.08 close. Support $3.74; resistance $4.40.'
+      '<b>Price (Thu Sep\u00a03\u00a02026 close):</b> $3.61 (-0.55%) from $3.63; day range $3.21\u2013$3.69; volume ~14.7M vs ~22M avg \u2014 classic post-catalyst consolidation, no intraday follow-through on the Google\u2013MN8 WV deal.',
+      '<b>S-3ASR overhang (Aug\u00a031):</b> 56.5M shares registered for resale \u2014 39.1M from Frontier warrants/exchange rights, 16.2M from Series\u00a0B preferred conversion, 1.2M from purchase-agreement warrant. Eos receives no proceeds from resales.',
+      '<b>CCO change (8-K Aug\u00a024):</b> Michelle Buczkowski appointed Chief Commercial Officer, succeeding Nathan Kroeker who exits Oct\u00a020. Sales, BD, gov\u2019t affairs, and marketing now report to Buczkowski; she secured the $24M Pennsylvania manufacturing grant.',
+      '<b>Q2 2026 backdrop:</b> $68.8M revenue (+351% YoY); FY26 guide tightened to $300\u2013$350M; gross margin -71% (+132\u00a0pp YoY). Z3 Indensity ramp ongoing at Turtle Creek, PA. Next report ~Nov\u00a04, 2026 (est.).',
+      '<b>Setup Fri Sep\u00a04:</b> No discrete binary catalyst on deck. Watch for sell-side PT lifts post-Google/WV deal. Catalyst calendar: Ofgem BESS awards ~Sep\u00a022, NYSERDA ~Sep\u00a030, Q3 earnings ~Nov\u00a04 (est.).'
     ],
-    price:   { last: 4.08, changePct: 22.2, note: 'approx close \u00b7 Thu Aug\u00a027 2026 \u00b7 derived from news-reported % move (Yahoo Finance / Simply Wall St)' },
+    price:   { last: 3.61, changePct: -0.55, note: 'close \u00b7 Thu Sep\u00a03\u00a02026 \u00b7 Yahoo Finance / Robinhood' },
     sources: [
-      { label: 'Thorn Hill consolidation PR \u2014 GlobeNewswire', url: 'https://www.globenewswire.com/news-release/2026/08/27/3352097/0/en/eos-energy-enterprises-to-consolidate-battery-manufacturing-at-thorn-hill-location.html' },
-      { label: 'EOSE +21.7% on consolidation \u2014 Yahoo Finance', url: 'https://finance.yahoo.com/markets/stocks/articles/eos-energy-eose-21-7-161233365.html' },
-      { label: 'EOSE +22.8% \u2014 Simply Wall St', url: 'https://simplywall.st/stocks/us/capital-goods/nasdaq-eose/eos-energy-enterprises/news/why-eos-energy-eose-is-up-228-after-tightening-2026-outlook' },
       { label: 'EOSE quote \u2014 Yahoo Finance', url: 'https://finance.yahoo.com/quote/EOSE/' },
+      { label: 'EOSE price & range \u2014 Robinhood', url: 'https://robinhood.com/us/en/stocks/EOSE/' },
+      { label: 'S-3ASR 56.5M shares (Aug\u00a031) \u2014 SEC EDGAR', url: 'https://www.sec.gov/Archives/edgar/data/0001805077/000162828026059608/eos-sx3asr.htm' },
+      { label: '8-K CCO appointment (Aug\u00a024) \u2014 SEC EDGAR', url: 'https://www.sec.gov/Archives/edgar/data/0001805077/000162828026058890/eose-20260824.htm' },
       { label: 'Eos IR news releases', url: 'https://investors.eose.com/news-releases' }
     ]
   },

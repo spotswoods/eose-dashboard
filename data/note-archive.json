@@ -1,5 +1,59 @@
 [
  {
+  "updatedAt": "2026-09-03T22:20:00+02:00",
+  "session": "post-close",
+  "headline": "EOSE -0.6% to $3.61 on Sep 3 — consolidating Google–MN8 bounce on light volume",
+  "takeaway": "EOSE slipped -0.55% to $3.61 on Thu Sep 3 2026, digesting the prior session’s 12.8% Google–MN8 WV deal surge on well-below-average volume (~14.7M vs ~22M avg). No new filings on the day; the Aug 31 S-3ASR registering 56.5M shares for resale remains the key near-term overhang.",
+  "bullets": [
+   "<b>Price (Thu Sep 3 2026 close):</b> $3.61 (-0.55%) from $3.63; day range $3.21–$3.69; volume ~14.7M vs ~22M avg — classic post-catalyst consolidation, no intraday follow-through on the Google–MN8 WV deal.",
+   "<b>S-3ASR overhang (Aug 31):</b> 56.5M shares registered for resale — 39.1M from Frontier warrants/exchange rights, 16.2M from Series B preferred conversion, 1.2M from purchase-agreement warrant. Eos receives no proceeds from resales.",
+   "<b>CCO change (8-K Aug 24):</b> Michelle Buczkowski appointed Chief Commercial Officer, succeeding Nathan Kroeker who exits Oct 20. Sales, BD, gov’t affairs, and marketing now report to Buczkowski; she secured the $24M Pennsylvania manufacturing grant.",
+   "<b>Q2 2026 backdrop:</b> $68.8M revenue (+351% YoY); FY26 guide tightened to $300–$350M; gross margin -71% (+132 pp YoY). Z3 Indensity ramp ongoing at Turtle Creek, PA. Next report ~Nov 4, 2026 (est.).",
+   "<b>Setup Fri Sep 4:</b> No discrete binary catalyst on deck. Watch for sell-side PT lifts post-Google/WV deal. Catalyst calendar: Ofgem BESS awards ~Sep 22, NYSERDA ~Sep 30, Q3 earnings ~Nov 4 (est.)."
+  ],
+  "price": {
+   "last": 3.61,
+   "changePct": -0.55,
+   "note": "close · Thu Sep 3 2026 · Yahoo Finance / Robinhood"
+  }
+ },
+ {
+  "updatedAt": "2026-09-01T22:22:00+02:00",
+  "session": "post-close",
+  "headline": "EOSE -1.2% to $3.22 on Sep 1 — S-3ASR shelf live, no new filings",
+  "takeaway": "EOSE confirmed $3.22 close on Tue Sep 1 2026 (−1.23%), extending the post-shelf slide on below-average volume; the Aug 31 S-3ASR registering 56.5M shares for resale (Frontier JV warrants + Series B preferred) remains the dominant overhang. No new 8-K or Form 4 detected. Sep 22 Ofgem and Sep 30 NYSERDA awards are the next binary catalysts.",
+  "bullets": [
+   "<b>Price (Tue Sep 1 2026 close):</b> $3.22 (−1.23%); prior close $3.26 (Fri Aug 28, −4.68%). Light vol — Labor Day week. 52-wk range $3.11–$19.86. AH quiet. Source: Yahoo Finance.",
+   "<b>S-3ASR (filed Aug 31) now live:</b> Registers 39.1M Frontier Warrant/Exchange-Right shares (Cerberus/Hudson Bay JV) + 16.2M Series B preferred-conversion + 1.2M purchase-warrant shares. Eos receives no proceeds from any resale; warrant holders may sell immediately.",
+   "<b>Frontier JV dilution math:</b> Warrants issued Aug 4 at FPUSA JV close; 30-day registration obligation triggered the shelf. Full exercise/resale: Cerberus 35.0%→ 27.4%; Hudson Bay 9.2%→ 4.1%.",
+   "<b>EDGAR/IR (Sep 1):</b> No new 8-K, Form 4, or press release detected. Thorn Hill lender-approval 8-K still outstanding; CCO Kroeker departure (Aug 25) leaves commercial leadership gap.",
+   "<b>Setup Wed Sep 2:</b> Ofgem final BESS awards ~Sep 22, NYSERDA BESS round ~Sep 30, Q3 earnings ~Nov 4 (est.). Consensus PT $6.67 (11 analysts); B. Riley Neutral $5 (Aug 14). Q2 26: $68.8M rev (+351% YoY), FY guide $300–$350M."
+  ],
+  "price": {
+   "last": 3.22,
+   "changePct": -1.23,
+   "note": "close · Tue Sep 1 2026 · Yahoo Finance"
+  }
+ },
+ {
+  "updatedAt": "2026-09-01T22:30:00+02:00",
+  "session": "post-close",
+  "headline": "S-3ASR files 56.5M-share resale shelf — Frontier JV warrant overhang now live",
+  "takeaway": "The Aug 31 S-3ASR registers 56.5M shares for resale (Cerberus/Hudson Bay Frontier JV warrants + Series B preferred), cementing a structural dilution overhang one session after Thorn Hill’s surge faded on Fri’s −4.7% to $3.26. Sep 22 Ofgem and Sep 30 NYSERDA are next binary catalysts.",
+  "bullets": [
+   "<b>Price (Fri Aug 28 close):</b> $3.26 (−4.68%); prev close $3.42. Vol 15.8M vs 25.5M avg (62%). AH Fri ~$3.27 (+0.31%). Sep 1 real-time close not confirmed via static feed; last confirmed price $3.26. 52-wk range $3.11–$19.86.",
+   "<b>S-3ASR (filed Aug 31, post-close):</b> Registers 39.1M Frontier Warrant/Exchange-Right shares (Cerberus/Hudson Bay JV) + 16.2M Series B preferred-conversion shares + 1.2M purchase-warrant shares. Eos receives no proceeds from any resale.",
+   "<b>Frontier JV context:</b> Warrants issued Aug 4 at FPUSA JV close; 30-day registration obligation triggered the shelf. If all shares sold: Cerberus stake 35.0%→ 27.4%; Hudson Bay 9.2%→ 4.1%.",
+   "<b>EDGAR/IR today (Sep 1):</b> No lender-approval 8-K for Thorn Hill consolidation filed as of post-close. No new Form 4 or press release detected. S-3ASR remains the dominant headline.",
+   "<b>Setup Wed Sep 2:</b> Ofgem final awards ~Sep 22, NYSERDA BESS ~Sep 30, Q3 earnings ~Nov 4 (est.). Consensus PT $6.67; B. Riley Neutral $5 (Aug 14, lowered from $8). Thorn Hill lender approval still outstanding."
+  ],
+  "price": {
+   "last": 3.26,
+   "changePct": -4.68,
+   "note": "close · Fri Aug 28 2026 · Yahoo Finance (Sep 1 real-time data not confirmed via static feed)"
+  }
+ },
+ {
   "updatedAt": "2026-08-27T22:30:00+02:00",
   "session": "post-close",
   "headline": "EOSE +22% to ~$4.08 Thu Aug 27 — Thorn Hill consolidation confirmed",
@@ -506,62 +560,6 @@
    "last": 4.09,
    "changePct": -6.9,
    "note": "close · Mon Jul 13 2026 · no premarket data available (Stooq delayed)"
-  }
- },
- {
-  "updatedAt": "2026-07-13T22:30:00+02:00",
-  "session": "post-close",
-  "headline": "Stifel cuts PT to $10, Buy intact; EOSE -6.9% to $4.09 sets new 52-wk low",
-  "takeaway": "Stifel Nicolaus trimmed its price target from $12 to $10 (Buy retained) on dilution pressure, triggering a 6.9% slide. EOSE hit $4.07 intraday — a new 52-week low — closing at ~$4.09. EOSER rights ~34% OTM with 8 days to Jul 21 expiry; Q2 earnings 16 days out on Jul 29.",
-  "bullets": [
-   "EOSE -6.9% to close ~$4.09 (range $4.07–$4.34), breaching the prior 52-wk low of $4.39 to set new lows. Stifel PT cut drove early selling; no material AH headlines in first 30 min post-close.",
-   "Stifel Nicolaus cut PT $12→$10, maintained Buy — reflecting dilution from the $75M direct offering + 27.4M-unit rights structure, not a thesis change. Consensus PT ~$9.44 across 10 analysts.",
-   "EOSER rights 8 days to Jul 21 5pm ET expiry. Sub price $5.481 vs ~$4.09 close = ~34% OTM. Rights appear economically worthless; no repricing 8-K filed today — watch for any amendment PR midweek.",
-   "CFO Kroeker sold 79,309 shares Jul 7 at $4.68 ($371K) under 10b5-1 tax-withholding plan — not directional. CLO Silberman sold 14,998 shares Jun 30 at $5.87 under same plan.",
-   "CLO Batz Martin officially in role as of today (Jul 13); Silberman remains non-exec through Sep 11. No new 8-K or Form 4 filed Jul 13 per SEC EDGAR search.",
-   "Next catalyst: Q2 earnings Jul 29 — first full quarter with Line 1+2 both running (Line 2 commercial Jun 16). Street focus: combined throughput, cash burn vs $472M Q1 close, FPUSA definitive agreement status."
-  ],
-  "price": {
-   "last": 4.09,
-   "changePct": -6.9,
-   "note": "close · Mon Jul 13 2026 · MarketBeat / StocksToTrade (Stooq delayed)"
-  }
- },
- {
-  "updatedAt": "2026-07-10T22:30:00+02:00",
-  "session": "post-close",
-  "headline": "EOSE hits 52-wk low $4.32 intraday, closes $4.39 (-4.6%); rights overhang deepens 11 days out",
-  "takeaway": "EOSE fell to a new 52-week low of $4.32 intraday Jul 10, closing at $4.39 (-4.6% vs Jul 9 close). No new filings or PR today. EOSER sub price ($5.481) is now ~25% above spot with 11 days to expiry; Q2 earnings Jul 29 is the next hard catalyst.",
-  "bullets": [
-   "EOSE -$0.21 (-4.6%) to $4.39; intraday range $4.32–$4.65 — $4.32 is now the 52-week low. Volume subdued vs 27.5M avg. No single catalyst; continued post-FPUSA/Stella rights-overhang unwinding since Jul 7 (-6%).",
-   "EOSER rights: 11 days to Jul 21 5pm ET expiry. Sub $5.481 vs $4.39 close = -$1.09 (-19.9%) underwater; ~25% EOSE rally needed to flip exercise economics. Rights bid ~$0.04 (Nasdaq). No oversubscription update from Eos.",
-   "No new 8-K or PR today. Jul 8 board 8-K: Greg Nixon resigned, Nathaniel Fick moved to preferred seat, Haiyan Song (tech, age 60) joins as Class III director. Marie Batz Martin becomes CLO Jul 13; Silberman stays through Sep 11.",
-   "FPUSA/Stella 920 MWh (Blanquilla, Aransas Pass, Nash, Wallis — ERCOT): definitive agreements still pending; deal close contingent on successful rights offering completion. No TURBINE-X or other operational update.",
-   "Calendar: CLO transition Jul 13 · EOSER expiry Jul 21 · Q2 earnings est. Jul 29 · FPUSA deal close awaited · Ofgem consult Aug 7 · NYSERDA awards est. Q3 2026. 52-wk low test = technical inflection to watch."
-  ],
-  "price": {
-   "last": 4.39,
-   "changePct": -4.57,
-   "note": "close · Jul 10 2026 (Motley Fool/Xignite delayed)"
-  }
- },
- {
-  "updatedAt": "2026-07-10T07:15:00+02:00",
-  "session": "pre-open",
-  "headline": "EOSE flat pre-open Jul 10; board reshuffle 8-K filed, EOSER expiry in 11 days",
-  "takeaway": "No new operational catalysts overnight. Eos filed a board/CLO 8-K Jul 9: Haiyan Song joins as tech director, Marie Batz Martin becomes CLO Jul 13. EOSER rights expire Jul 21 (11 days); sub price $5.481 vs ~$4.60 EOSE = -16% underwater, needs ~19% rally to flip.",
-  "bullets": [
-   "Board 8-K filed Jul 9: Haiyan Song (technologist, age 60) joins as Class III director; Nathaniel Fick moves to preferred-stock seat; Greg Nixon resigns. Marie Batz Martin becomes CLO Jul 13; Silberman stays through Sep 11.",
-   "EOSER rights clock: 11 days to Jul 21 5pm ET expiry. Sub price $5.481 vs ~$4.60 EOSE spot = -$0.88 (-16.1% underwater); ~19% EOSE rally needed to flip exercise economics. EOSER bid ~$0.04 (Nasdaq).",
-   "FPUSA/Stella 920 MWh deal (4 projects: Blanquilla, Aransas Pass, Nash, Wallis) selected Jul 7 — definitive agreements still pending. Deal close remains contingent on successful completion of the rights offering.",
-   "No new Eos press releases or Form 4 insider filings Jul 9–10 pre-open. NetRoadshow for rights offering accessible at eosrightsoffering.com until Jul 21 expiry.",
-   "Macro: Intersolar Europe 2026 opens in Munich Jul 10 — modest LDES sentiment backdrop. No EOSE-specific catalyst at today's open; tape likely range-bound in the $4.40–$4.77 band absent new news.",
-   "Calendar: CLO transition Jul 13 · EOSER expiry Jul 21 · Q2 earnings Jul 29 · FPUSA deal close awaited · Ofgem consult close Aug 7 · NYSERDA awards est. Q3 2026."
-  ],
-  "price": {
-   "last": 4.6,
-   "changePct": null,
-   "note": "close · Jul 9 2026 (Stooq/Yahoo delayed; pre-market Jul 10 not yet available)"
   }
  }
 ]
