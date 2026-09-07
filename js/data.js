@@ -30,24 +30,23 @@ window.EOSE_DATA = {
   // Refreshed by /equity-research:morning-note via a scheduled task in Cowork.
   // session = 'pre-open' (Swedish AM, ~07:00 CEST) | 'post-close' (Swedish PM, ~22:30 CEST)
   morningNote: {
-    updatedAt: '2026-09-03T22:20:00+02:00',
+    updatedAt: '2026-09-07T22:30:00+02:00',
     session:   'post-close',
-    headline:  'EOSE -0.6% to $3.61 on Sep\u00a03 \u2014 consolidating Google\u2013MN8 bounce on light volume',
-    takeaway:  'EOSE slipped -0.55% to $3.61 on Thu Sep\u00a03\u00a02026, digesting the prior session\u2019s 12.8% Google\u2013MN8 WV deal surge on well-below-average volume (~14.7M vs ~22M avg). No new filings on the day; the Aug\u00a031 S-3ASR registering 56.5M shares for resale remains the key near-term overhang.',
+    headline:  'Labor Day (Sep\u00a07) \u2014 no US session; EOSE last at $3.04 (Fri Sep\u00a04), quiet long weekend',
+    takeaway:  'US markets closed today for Labor Day. EOSE\'s last recorded close was $3.04 (\u22125.59%) on Fri Sep\u00a04. No new filings, press releases, or analyst actions over the three-day weekend. First look at any price reaction comes Tue Sep\u00a08.',
     bullets: [
-      '<b>Price (Thu Sep\u00a03\u00a02026 close):</b> $3.61 (-0.55%) from $3.63; day range $3.21\u2013$3.69; volume ~14.7M vs ~22M avg \u2014 classic post-catalyst consolidation, no intraday follow-through on the Google\u2013MN8 WV deal.',
-      '<b>S-3ASR overhang (Aug\u00a031):</b> 56.5M shares registered for resale \u2014 39.1M from Frontier warrants/exchange rights, 16.2M from Series\u00a0B preferred conversion, 1.2M from purchase-agreement warrant. Eos receives no proceeds from resales.',
-      '<b>CCO change (8-K Aug\u00a024):</b> Michelle Buczkowski appointed Chief Commercial Officer, succeeding Nathan Kroeker who exits Oct\u00a020. Sales, BD, gov\u2019t affairs, and marketing now report to Buczkowski; she secured the $24M Pennsylvania manufacturing grant.',
-      '<b>Q2 2026 backdrop:</b> $68.8M revenue (+351% YoY); FY26 guide tightened to $300\u2013$350M; gross margin -71% (+132\u00a0pp YoY). Z3 Indensity ramp ongoing at Turtle Creek, PA. Next report ~Nov\u00a04, 2026 (est.).',
-      '<b>Setup Fri Sep\u00a04:</b> No discrete binary catalyst on deck. Watch for sell-side PT lifts post-Google/WV deal. Catalyst calendar: Ofgem BESS awards ~Sep\u00a022, NYSERDA ~Sep\u00a030, Q3 earnings ~Nov\u00a04 (est.).'
+      '<b>No session today (Labor Day, Sep\u00a07):</b> US equity markets closed. Last close: EOSE $3.04 (\u22125.59%) Fri Sep\u00a04; range $3.01\u2013$3.16; vol ~13.5M vs ~25.2M avg. 52-wk low set intraday at $3.01.',
+      '<b>Quiet long weekend \u2014 no new filings or PRs (Sep\u00a05\u20137):</b> Most recent IR release: Sep\u00a02 MN8/Google/WV Z3 BESS deal. Most recent SEC filing: S-3ASR 56.5M-share resale shelf (Aug\u00a031). No Form\u00a04 or 8-K activity found.',
+      '<b>S-3ASR overhang persists:</b> 56.5M-share resale shelf (Aug\u00a031) remains active; dilution ceiling on any recovery attempt. Consensus ~$6.67 avg PT (10 analysts, +119% implied upside from $3.04).',
+      '<b>Tue Sep\u00a08 reopen setup:</b> No EOSE-specific catalyst on the calendar. Macro tone on first day back sets direction. Key watch: Ofgem LDES cap-and-floor award window ~Sep\u00a022 (est.) and NYSERDA bulk storage contracting completion.',
+      '<b>Catalyst calendar:</b> Ofgem BESS awards ~Sep\u00a022 (est.), NYSERDA results \u2014 contracting pending, Q3 earnings Nov\u00a04\u00a02026 (confirmed). Thorn Hill mfg consolidation ongoing; CCO Michelle Buczkowski in role since Aug\u00a025.'
     ],
-    price:   { last: 3.61, changePct: -0.55, note: 'close \u00b7 Thu Sep\u00a03\u00a02026 \u00b7 Yahoo Finance / Robinhood' },
+    price:   { last: 3.04, changePct: -5.59, note: 'last close \u00b7 Fri Sep\u00a04\u00a02026 \u00b7 Yahoo Finance (Labor Day \u2014 no session Sep\u00a07)' },
     sources: [
-      { label: 'EOSE quote \u2014 Yahoo Finance', url: 'https://finance.yahoo.com/quote/EOSE/' },
-      { label: 'EOSE price & range \u2014 Robinhood', url: 'https://robinhood.com/us/en/stocks/EOSE/' },
+      { label: 'Eos IR news releases', url: 'https://investors.eose.com/news-releases' },
+      { label: 'MN8/Google/WV deal (Sep\u00a02) \u2014 Eos IR', url: 'https://investors.eose.com/news-releases/news-release-details/mn8-energy-google-and-eos-energy-enterprises-bring-advanced' },
       { label: 'S-3ASR 56.5M shares (Aug\u00a031) \u2014 SEC EDGAR', url: 'https://www.sec.gov/Archives/edgar/data/0001805077/000162828026059608/eos-sx3asr.htm' },
-      { label: '8-K CCO appointment (Aug\u00a024) \u2014 SEC EDGAR', url: 'https://www.sec.gov/Archives/edgar/data/0001805077/000162828026058890/eose-20260824.htm' },
-      { label: 'Eos IR news releases', url: 'https://investors.eose.com/news-releases' }
+      { label: 'NYSERDA Bulk Energy Storage Program', url: 'https://www.nyserda.ny.gov/All-Programs/Energy-Storage-Program/Developers-and-Contractors/Bulk-Storage-Incentives' }
     ]
   },
 
