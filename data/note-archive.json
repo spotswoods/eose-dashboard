@@ -1,23 +1,5 @@
 [
  {
-  "updatedAt": "2026-09-03T22:20:00+02:00",
-  "session": "post-close",
-  "headline": "EOSE -0.6% to $3.61 on Sep 3 — consolidating Google–MN8 bounce on light volume",
-  "takeaway": "EOSE slipped -0.55% to $3.61 on Thu Sep 3 2026, digesting the prior session’s 12.8% Google–MN8 WV deal surge on well-below-average volume (~14.7M vs ~22M avg). No new filings on the day; the Aug 31 S-3ASR registering 56.5M shares for resale remains the key near-term overhang.",
-  "bullets": [
-   "<b>Price (Thu Sep 3 2026 close):</b> $3.61 (-0.55%) from $3.63; day range $3.21–$3.69; volume ~14.7M vs ~22M avg — classic post-catalyst consolidation, no intraday follow-through on the Google–MN8 WV deal.",
-   "<b>S-3ASR overhang (Aug 31):</b> 56.5M shares registered for resale — 39.1M from Frontier warrants/exchange rights, 16.2M from Series B preferred conversion, 1.2M from purchase-agreement warrant. Eos receives no proceeds from resales.",
-   "<b>CCO change (8-K Aug 24):</b> Michelle Buczkowski appointed Chief Commercial Officer, succeeding Nathan Kroeker who exits Oct 20. Sales, BD, gov’t affairs, and marketing now report to Buczkowski; she secured the $24M Pennsylvania manufacturing grant.",
-   "<b>Q2 2026 backdrop:</b> $68.8M revenue (+351% YoY); FY26 guide tightened to $300–$350M; gross margin -71% (+132 pp YoY). Z3 Indensity ramp ongoing at Turtle Creek, PA. Next report ~Nov 4, 2026 (est.).",
-   "<b>Setup Fri Sep 4:</b> No discrete binary catalyst on deck. Watch for sell-side PT lifts post-Google/WV deal. Catalyst calendar: Ofgem BESS awards ~Sep 22, NYSERDA ~Sep 30, Q3 earnings ~Nov 4 (est.)."
-  ],
-  "price": {
-   "last": 3.61,
-   "changePct": -0.55,
-   "note": "close · Thu Sep 3 2026 · Yahoo Finance / Robinhood"
-  }
- },
- {
   "updatedAt": "2026-09-01T22:22:00+02:00",
   "session": "post-close",
   "headline": "EOSE -1.2% to $3.22 on Sep 1 — S-3ASR shelf live, no new filings",
@@ -560,6 +542,25 @@
    "last": 4.09,
    "changePct": -6.9,
    "note": "close · Mon Jul 13 2026 · no premarket data available (Stooq delayed)"
+  }
+ },
+ {
+  "updatedAt": "2026-07-13T22:30:00+02:00",
+  "session": "post-close",
+  "headline": "Stifel cuts PT to $10, Buy intact; EOSE -6.9% to $4.09 sets new 52-wk low",
+  "takeaway": "Stifel Nicolaus trimmed its price target from $12 to $10 (Buy retained) on dilution pressure, triggering a 6.9% slide. EOSE hit $4.07 intraday — a new 52-week low — closing at ~$4.09. EOSER rights ~34% OTM with 8 days to Jul 21 expiry; Q2 earnings 16 days out on Jul 29.",
+  "bullets": [
+   "EOSE -6.9% to close ~$4.09 (range $4.07–$4.34), breaching the prior 52-wk low of $4.39 to set new lows. Stifel PT cut drove early selling; no material AH headlines in first 30 min post-close.",
+   "Stifel Nicolaus cut PT $12→$10, maintained Buy — reflecting dilution from the $75M direct offering + 27.4M-unit rights structure, not a thesis change. Consensus PT ~$9.44 across 10 analysts.",
+   "EOSER rights 8 days to Jul 21 5pm ET expiry. Sub price $5.481 vs ~$4.09 close = ~34% OTM. Rights appear economically worthless; no repricing 8-K filed today — watch for any amendment PR midweek.",
+   "CFO Kroeker sold 79,309 shares Jul 7 at $4.68 ($371K) under 10b5-1 tax-withholding plan — not directional. CLO Silberman sold 14,998 shares Jun 30 at $5.87 under same plan.",
+   "CLO Batz Martin officially in role as of today (Jul 13); Silberman remains non-exec through Sep 11. No new 8-K or Form 4 filed Jul 13 per SEC EDGAR search.",
+   "Next catalyst: Q2 earnings Jul 29 — first full quarter with Line 1+2 both running (Line 2 commercial Jun 16). Street focus: combined throughput, cash burn vs $472M Q1 close, FPUSA definitive agreement status."
+  ],
+  "price": {
+   "last": 4.09,
+   "changePct": -6.9,
+   "note": "close · Mon Jul 13 2026 · MarketBeat / StocksToTrade (Stooq delayed)"
   }
  }
 ]

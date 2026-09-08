@@ -30,23 +30,24 @@ window.EOSE_DATA = {
   // Refreshed by /equity-research:morning-note via a scheduled task in Cowork.
   // session = 'pre-open' (Swedish AM, ~07:00 CEST) | 'post-close' (Swedish PM, ~22:30 CEST)
   morningNote: {
-    updatedAt: '2026-09-07T22:30:00+02:00',
+    updatedAt: '2026-09-08T22:30:00+02:00',
     session:   'post-close',
-    headline:  'Labor Day (Sep\u00a07) \u2014 no US session; EOSE last at $3.04 (Fri Sep\u00a04), quiet long weekend',
-    takeaway:  'US markets closed today for Labor Day. EOSE\'s last recorded close was $3.04 (\u22125.59%) on Fri Sep\u00a04. No new filings, press releases, or analyst actions over the three-day weekend. First look at any price reaction comes Tue Sep\u00a08.',
+    headline:  'FPUSA names world-class leadership team; EOSE surges +13% on first session back',
+    takeaway:  'EOSE rallied 13.4% to ~$4.40 on its first session back from Labor Day, driven by FPUSA\'s announcement of a senior leadership team to scale U.S. LDES. Volume ran 40M+ by 3\u00a0pm vs ~25M avg. No new EOSE-specific SEC filings or insider activity today.',
     bullets: [
-      '<b>No session today (Labor Day, Sep\u00a07):</b> US equity markets closed. Last close: EOSE $3.04 (\u22125.59%) Fri Sep\u00a04; range $3.01\u2013$3.16; vol ~13.5M vs ~25.2M avg. 52-wk low set intraday at $3.01.',
-      '<b>Quiet long weekend \u2014 no new filings or PRs (Sep\u00a05\u20137):</b> Most recent IR release: Sep\u00a02 MN8/Google/WV Z3 BESS deal. Most recent SEC filing: S-3ASR 56.5M-share resale shelf (Aug\u00a031). No Form\u00a04 or 8-K activity found.',
-      '<b>S-3ASR overhang persists:</b> 56.5M-share resale shelf (Aug\u00a031) remains active; dilution ceiling on any recovery attempt. Consensus ~$6.67 avg PT (10 analysts, +119% implied upside from $3.04).',
-      '<b>Tue Sep\u00a08 reopen setup:</b> No EOSE-specific catalyst on the calendar. Macro tone on first day back sets direction. Key watch: Ofgem LDES cap-and-floor award window ~Sep\u00a022 (est.) and NYSERDA bulk storage contracting completion.',
-      '<b>Catalyst calendar:</b> Ofgem BESS awards ~Sep\u00a022 (est.), NYSERDA results \u2014 contracting pending, Q3 earnings Nov\u00a04\u00a02026 (confirmed). Thorn Hill mfg consolidation ongoing; CCO Michelle Buczkowski in role since Aug\u00a025.'
+      '<b>Price action (Tue Sep\u00a08):</b> EOSE closed ~$4.40 (+13.4% vs Sep\u00a04 close $3.88); range $3.97\u2013$4.59, open $3.99, vol 40M+ (well above ~25M avg) \u2014 sharp rebound from 52-wk lows set last week.',
+      '<b>Key catalyst \u2014 FPUSA leadership (Sep\u00a08):</b> Frontier Power USA announced a world-class senior leadership team to scale U.S. LDES. Validates JV execution ramp and investor commitment to the Cerberus-backed platform.',
+      '<b>No new EOSE filings today:</b> Last IR Sep\u00a002 MN8/Google/WV Z3 BESS deal. Form\u00a04s Aug\u00a024 (CEO Mastrangelo 611K RSUs, CFO Lagi 195K). S-3ASR 56.5M-share shelf (Aug\u00a031) still active \u2014 dilution overhang caps upside.',
+      '<b>Analyst consensus unchanged:</b> 11 analysts, avg PT $6.67 (+51% from today\'s close). Stifel Buy/$9 is high; B.\u00a0Riley Neutral/$5, TD Cowen Hold/$4, Roth Neutral/$4 frame the bear case.',
+      '<b>Catalyst watch:</b> Ofgem LDES cap-and-floor awards ~Sep\u00a022 (est.) is the next binary; NYSERDA bulk storage contracting still pending. Q3 earnings Nov\u00a04\u00a02026 (confirmed) is the next hard fundamental read.'
     ],
-    price:   { last: 3.04, changePct: -5.59, note: 'last close \u00b7 Fri Sep\u00a04\u00a02026 \u00b7 Yahoo Finance (Labor Day \u2014 no session Sep\u00a07)' },
+    price:   { last: 4.40, changePct: 13.40, note: 'near-close \u00b7 Sep\u00a08\u00a02026 \u00b7 StockAnalysis/CBOE delayed' },
     sources: [
+      { label: 'FPUSA leadership (Sep\u00a08) \u2014 GlobeNewsWire', url: 'https://www.globenewswire.com/news-release/2026/09/08/3357597/0/en/frontier-power-usa-announces-appointment-of-world-class-leadership-team-to-scale-u-s-long-duration-energy-storage.html' },
+      { label: 'EOSE quote \u2014 StockAnalysis', url: 'https://stockanalysis.com/stocks/eose/' },
       { label: 'Eos IR news releases', url: 'https://investors.eose.com/news-releases' },
-      { label: 'MN8/Google/WV deal (Sep\u00a02) \u2014 Eos IR', url: 'https://investors.eose.com/news-releases/news-release-details/mn8-energy-google-and-eos-energy-enterprises-bring-advanced' },
       { label: 'S-3ASR 56.5M shares (Aug\u00a031) \u2014 SEC EDGAR', url: 'https://www.sec.gov/Archives/edgar/data/0001805077/000162828026059608/eos-sx3asr.htm' },
-      { label: 'NYSERDA Bulk Energy Storage Program', url: 'https://www.nyserda.ny.gov/All-Programs/Energy-Storage-Program/Developers-and-Contractors/Bulk-Storage-Incentives' }
+      { label: 'Analyst ratings \u2014 StockAnalysis', url: 'https://stockanalysis.com/stocks/eose/forecast/' }
     ]
   },
 
