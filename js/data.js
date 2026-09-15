@@ -30,24 +30,24 @@ window.EOSE_DATA = {
   // Refreshed by /equity-research:morning-note via a scheduled task in Cowork.
   // session = 'pre-open' (Swedish AM, ~07:00 CEST) | 'post-close' (Swedish PM, ~22:30 CEST)
   morningNote: {
-    updatedAt: '2026-09-08T22:30:00+02:00',
+    updatedAt: '2026-09-15T22:30:00+02:00',
     session:   'post-close',
-    headline:  'FPUSA names world-class leadership team; EOSE surges +13% on first session back',
-    takeaway:  'EOSE rallied 13.4% to ~$4.40 on its first session back from Labor Day, driven by FPUSA\'s announcement of a senior leadership team to scale U.S. LDES. Volume ran 40M+ by 3\u00a0pm vs ~25M avg. No new EOSE-specific SEC filings or insider activity today.',
+    headline:  'EOSE dips 3.3% to $3.82 on quiet Sep\u00a015 tape; Roth lifts PT to $4.50',
+    takeaway:  'EOSE closed $3.82 Tue Sep\u00a015, down 3.3% vs Monday\'s $3.95 close on below-average volume (21.0M vs 26.5M avg). No new SEC filings or press releases today; tape quietly digests the DOE $87M advance (Sep\u00a014) while Roth Capital\'s Sep\u00a010 PT lift to $4.50 (Neutral) is the freshest sell-side signal.',
     bullets: [
-      '<b>Price action (Tue Sep\u00a08):</b> EOSE closed ~$4.40 (+13.4% vs Sep\u00a04 close $3.88); range $3.97\u2013$4.59, open $3.99, vol 40M+ (well above ~25M avg) \u2014 sharp rebound from 52-wk lows set last week.',
-      '<b>Key catalyst \u2014 FPUSA leadership (Sep\u00a08):</b> Frontier Power USA announced a world-class senior leadership team to scale U.S. LDES. Validates JV execution ramp and investor commitment to the Cerberus-backed platform.',
-      '<b>No new EOSE filings today:</b> Last IR Sep\u00a002 MN8/Google/WV Z3 BESS deal. Form\u00a04s Aug\u00a024 (CEO Mastrangelo 611K RSUs, CFO Lagi 195K). S-3ASR 56.5M-share shelf (Aug\u00a031) still active \u2014 dilution overhang caps upside.',
-      '<b>Analyst consensus unchanged:</b> 11 analysts, avg PT $6.67 (+51% from today\'s close). Stifel Buy/$9 is high; B.\u00a0Riley Neutral/$5, TD Cowen Hold/$4, Roth Neutral/$4 frame the bear case.',
-      '<b>Catalyst watch:</b> Ofgem LDES cap-and-floor awards ~Sep\u00a022 (est.) is the next binary; NYSERDA bulk storage contracting still pending. Q3 earnings Nov\u00a04\u00a02026 (confirmed) is the next hard fundamental read.'
+      '<b>Price action (Tue Sep\u00a015):</b> Close $3.82 (range $3.75\u2013$3.97), vol 21.0M vs 26.5M avg (\u221219%). Settled lower from Mon\'s $3.95 close; overnight Blue Ocean ATS $3.83 (+0.26%). Orderly tape, no catalyst-driven move.',
+      '<b>No new filings today:</b> EDGAR shows no Form 4 or 8-K dated Sep\u00a015. Most recent filing remains the DOE $87M FFB advance (8-K Sep\u00a010; PR Sep\u00a014), bringing total DOE drawings to ~$178M of the $277.5M facility.',
+      '<b>Roth Capital (Sep\u00a010):</b> Maintains Neutral; raised PT $4.00\u2192$4.50 citing DOE drawdown progress and Thorn Hill Line\u00a02 ramp. Consensus avg PT $6.72, range $4.00\u2013$11.00 across 11 analysts \u2014 wide spread signals high uncertainty around execution.',
+      '<b>NYSERDA watch:</b> Bulk storage procurement decision est. ~Sep\u00a030 \u2014 next binary catalyst within ~2 weeks. An award could validate Z3 for US grid-scale markets; no decision yet.',
+      '<b>Q3 setup:</b> Earnings est. Nov\u00a004, 2026. Market watching Thorn Hill Line\u00a02 delivery rates and backlog additions vs the $300\u2013$350M FY2026 guide. S-3ASR 56.5M-share shelf (Aug\u00a031) remains active dilution overhang.'
     ],
-    price:   { last: 4.40, changePct: 13.40, note: 'near-close \u00b7 Sep\u00a08\u00a02026 \u00b7 StockAnalysis/CBOE delayed' },
+    price:   { last: 3.82, changePct: -3.29, note: 'close Sep\u00a015 \u00b7 range $3.75\u2013$3.97 \u00b7 vol 21.0M \u00b7 Yahoo Finance' },
     sources: [
-      { label: 'FPUSA leadership (Sep\u00a08) \u2014 GlobeNewsWire', url: 'https://www.globenewswire.com/news-release/2026/09/08/3357597/0/en/frontier-power-usa-announces-appointment-of-world-class-leadership-team-to-scale-u-s-long-duration-energy-storage.html' },
-      { label: 'EOSE quote \u2014 StockAnalysis', url: 'https://stockanalysis.com/stocks/eose/' },
+      { label: 'EOSE price Sep\u00a015 \u2014 Yahoo Finance', url: 'https://finance.yahoo.com/quote/EOSE/' },
+      { label: 'Roth Capital PT raise \u2014 Yahoo Finance analyst insights', url: 'https://finance.yahoo.com/quote/EOSE/analyst-insights/' },
       { label: 'Eos IR news releases', url: 'https://investors.eose.com/news-releases' },
-      { label: 'S-3ASR 56.5M shares (Aug\u00a031) \u2014 SEC EDGAR', url: 'https://www.sec.gov/Archives/edgar/data/0001805077/000162828026059608/eos-sx3asr.htm' },
-      { label: 'Analyst ratings \u2014 StockAnalysis', url: 'https://stockanalysis.com/stocks/eose/forecast/' }
+      { label: 'Eos DOE $87M advance PR (Sep\u00a014)', url: 'https://investors.eose.com/news-releases/news-release-details/eos-energy-enterprises-receives-87-million-advance-under-us' },
+      { label: 'Eos 8-K Sep\u00a010 \u2014 SEC EDGAR', url: 'https://www.sec.gov/Archives/edgar/data/0001805077/000162828026061689/eose-20260910.htm' }
     ]
   },
 
