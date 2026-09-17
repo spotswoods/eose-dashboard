@@ -30,24 +30,26 @@ window.EOSE_DATA = {
   // Refreshed by /equity-research:morning-note via a scheduled task in Cowork.
   // session = 'pre-open' (Swedish AM, ~07:00 CEST) | 'post-close' (Swedish PM, ~22:30 CEST)
   morningNote: {
-    updatedAt: '2026-09-15T22:30:00+02:00',
+    updatedAt: '2026-09-17T22:20:00+02:00',
     session:   'post-close',
-    headline:  'EOSE dips 3.3% to $3.82 on quiet Sep\u00a015 tape; Roth lifts PT to $4.50',
-    takeaway:  'EOSE closed $3.82 Tue Sep\u00a015, down 3.3% vs Monday\'s $3.95 close on below-average volume (21.0M vs 26.5M avg). No new SEC filings or press releases today; tape quietly digests the DOE $87M advance (Sep\u00a014) while Roth Capital\'s Sep\u00a010 PT lift to $4.50 (Neutral) is the freshest sell-side signal.',
+    headline:  'EOSE slips 3.3% to $3.82 as CEO/CAO RSU sales surface; Ofgem binding step est. Sep\u00a022',
+    takeaway:  'EOSE closed $3.82 Thu Sep\u00a017, down 3.3% on 21M shares (\u221221% vs avg). Form\u00a04s reveal CEO Mastrangelo (250K shares) and CAO Puri (43.75K) sold at $3.92 on Sep\u00a016 via 10b5-1 plans. No new PR or filings; Ofgem binding cap\u00a0& floor step (est. Sep\u00a022) and NYSERDA ISCRFP25-1 (by Sep\u00a030) are the binary events ahead.',
     bullets: [
-      '<b>Price action (Tue Sep\u00a015):</b> Close $3.82 (range $3.75\u2013$3.97), vol 21.0M vs 26.5M avg (\u221219%). Settled lower from Mon\'s $3.95 close; overnight Blue Ocean ATS $3.83 (+0.26%). Orderly tape, no catalyst-driven move.',
-      '<b>No new filings today:</b> EDGAR shows no Form 4 or 8-K dated Sep\u00a015. Most recent filing remains the DOE $87M FFB advance (8-K Sep\u00a010; PR Sep\u00a014), bringing total DOE drawings to ~$178M of the $277.5M facility.',
-      '<b>Roth Capital (Sep\u00a010):</b> Maintains Neutral; raised PT $4.00\u2192$4.50 citing DOE drawdown progress and Thorn Hill Line\u00a02 ramp. Consensus avg PT $6.72, range $4.00\u2013$11.00 across 11 analysts \u2014 wide spread signals high uncertainty around execution.',
-      '<b>NYSERDA watch:</b> Bulk storage procurement decision est. ~Sep\u00a030 \u2014 next binary catalyst within ~2 weeks. An award could validate Z3 for US grid-scale markets; no decision yet.',
-      '<b>Q3 setup:</b> Earnings est. Nov\u00a004, 2026. Market watching Thorn Hill Line\u00a02 delivery rates and backlog additions vs the $300\u2013$350M FY2026 guide. S-3ASR 56.5M-share shelf (Aug\u00a031) remains active dilution overhang.'
+      '<b>Price action (Thu Sep\u00a017):</b> Close $3.82 (\u22123.3%, range $3.75\u2013$3.97), vol 21.0M vs 26.5M avg (\u221221%). Pulled back from Wed\u2019s $3.95 close; after-hours $3.83 (+0.26%, Blue Ocean ATS). No fresh catalyst.',
+      '<b>Insider Form\u00a04s (Sep\u00a017):</b> CEO Mastrangelo sold 250K shares at $3.92 on Sep\u00a016 (10b5-1 plan, PSRU vest). CAO Puri sold 43.75K at $3.92 same day. Routine tax-withholding \u2014 not directional, but added supply near $4.',
+      '<b>No new filings or PRs Sep\u00a017:</b> Last catalyst: DOE $87M advance 8-K (Sep\u00a010) + PR (Sep\u00a014), total draws ~$178M of $277.5M facility. Thorn Hill Line\u00a02 in commercial production, ramping toward 2\u00a0GWh/yr capacity.',
+      '<b>Ofgem LDES Window\u00a01 (est. Sep\u00a022, \u22645 days):</b> Jun\u00a026 minded-to decision named 16 projects; binding awards expected this week. Frontier UK\u2019s Eos-tech project inclusion not yet confirmed \u2014 binary outcome, award or exclusion.',
+      '<b>NYSERDA ISCRFP25-1 (by Sep\u00a030):</b> Bulk-storage award window closes end of Q3. Eos qualifies in 8+ hour tier; no announcement as of today. First US regulated LDES contract for Z3 would be a major re-rating catalyst.',
+      '<b>Sell-side / setup:</b> Roth Capital Neutral PT $4.50 (Sep\u00a010); consensus 1-yr PT $6.72 (Yahoo Finance). Earnings Nov\u00a04, 2026. S-3ASR 56.5M-share shelf (Aug\u00a031) live overhead. Next 13 days: Ofgem + NYSERDA binary.'
     ],
-    price:   { last: 3.82, changePct: -3.29, note: 'close Sep\u00a015 \u00b7 range $3.75\u2013$3.97 \u00b7 vol 21.0M \u00b7 Yahoo Finance' },
+    price:   { last: 3.82, changePct: -3.29, note: 'close Sep\u00a017 \u00b7 range $3.75\u2013$3.97 \u00b7 vol 21.0M \u00b7 Yahoo Finance' },
     sources: [
-      { label: 'EOSE price Sep\u00a015 \u2014 Yahoo Finance', url: 'https://finance.yahoo.com/quote/EOSE/' },
-      { label: 'Roth Capital PT raise \u2014 Yahoo Finance analyst insights', url: 'https://finance.yahoo.com/quote/EOSE/analyst-insights/' },
+      { label: 'EOSE price Sep\u00a017 \u2014 Yahoo Finance', url: 'https://finance.yahoo.com/quote/EOSE/' },
+      { label: 'Form\u00a04 \u2014 Mastrangelo (CEO) PSRU vest/sale Sep\u00a014\u201316', url: 'https://www.sec.gov/Archives/edgar/data/0001805077/000162828026062270/wk-form4_1789590447.xml' },
+      { label: 'Form\u00a04 \u2014 Puri (CAO) PSRU vest/sale Sep\u00a014\u201316', url: 'https://www.sec.gov/Archives/edgar/data/0001805077/000162828026062273/wk-form4_1789590505.xml' },
       { label: 'Eos IR news releases', url: 'https://investors.eose.com/news-releases' },
-      { label: 'Eos DOE $87M advance PR (Sep\u00a014)', url: 'https://investors.eose.com/news-releases/news-release-details/eos-energy-enterprises-receives-87-million-advance-under-us' },
-      { label: 'Eos 8-K Sep\u00a010 \u2014 SEC EDGAR', url: 'https://www.sec.gov/Archives/edgar/data/0001805077/000162828026061689/eose-20260910.htm' }
+      { label: 'Ofgem LDES cap & floor Window\u00a01 selection', url: 'https://www.hilldickinson.com/our-view/articles/ofgem-selects-16-long-duration-electricity-storage-projects-for-cap-and-floor-support/' },
+      { label: 'NYSERDA ISCRFP25-1 bulk storage', url: 'https://www.nyserda.ny.gov/All-Programs/Energy-Storage-Program/Developers-and-Contractors/Bulk-Storage-Incentives' }
     ]
   },
 
